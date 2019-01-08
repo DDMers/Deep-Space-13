@@ -49,6 +49,7 @@
 	desc = "It seems to be giving off its own small source of light" //Emergency lighting
 	icon_state = "wall"
 	smooth = TRUE
+	canSmoothWith = list(/turf/closed/wall/trek,/turf/closed/wall/trek/darksteel,/obj/structure/window/fulltile/trek,/obj/structure/window/fulltile/trek/viewport,/obj/machinery/door/airlock/trek,/obj/machinery/door/airlock/trek/tng)
 
 /turf/closed/wall/trek/darksteel
 	name = "Starship corridor"
@@ -67,6 +68,7 @@
 	icon = 'DS13/icons/obj/window.dmi'
 	desc = "It's a pane of glass through which you look. It has a small certification stamp on it that reads 'Utopia Planetia shipyards'"
 	icon_state = "darksteel_window"
+	smooth = FALSE
 
 /obj/structure/window/fulltile/trek/corridor
 	name = "Viewport"
