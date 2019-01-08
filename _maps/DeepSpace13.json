@@ -1,0 +1,11 @@
+{
+    "map_name": "DeepSpace13",
+    "map_path": "map_files/DeepSpace13",
+    "map_file": "DeepSpace13.dmm",
+    "shuttles": {
+	    "cargo": "cargo_box",
+	    "ferry": "ferry_fancy",
+	    "whiteship": "whiteship_box",
+	    "emergency": "emergency_box"
+    }
+}

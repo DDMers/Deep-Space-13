@@ -12,8 +12,12 @@ Format:
 	disabled (disables the map)
 endmap
 
-map boxstation
+map DeepSpace13
 	default
+	#voteweight 1.5
+endmap
+
+map boxstation
 	#voteweight 1.5
 endmap
 
