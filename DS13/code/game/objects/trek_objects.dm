@@ -49,7 +49,7 @@
 	desc = "It seems to be giving off its own small source of light" //Emergency lighting
 	icon_state = "wall"
 	smooth = TRUE
-	canSmoothWith = list(/turf/closed/wall/trek,/turf/closed/wall/trek/darksteel,/obj/structure/window/fulltile/trek,/obj/structure/window/fulltile/trek/viewport,/obj/machinery/door/airlock/trek,/obj/machinery/door/airlock/trek/tng)
+	canSmoothWith = list(/turf/closed/wall/trek,/turf/closed/wall/trek/darksteel,/turf/closed/wall/trek/room,/obj/structure/window/fulltile/trek,/obj/structure/window/fulltile/trek/viewport,/obj/structure/window/fulltile/trek/corridor,/obj/machinery/door/airlock/trek,/obj/machinery/door/airlock/trek/tng)
 
 /turf/closed/wall/trek/darksteel
 	name = "Starship corridor"
@@ -58,6 +58,13 @@
 	icon_state = "wall"
 	smooth = TRUE
 
+
+/turf/closed/wall/trek/room
+	name = "Starship corridor"
+	icon = 'DS13/icons/turf/room-wall.dmi'
+	desc = "A large chunk of metal used to seperate rooms, decks and even build structures in space." //Emergency lighting
+	icon_state = "wall"
+	smooth = TRUE
 
 /turf/closed/wall/trek/Initialize()
 	. = ..()
@@ -82,14 +89,79 @@
 	desc = "It's a pane of glass through which you look. It has a small certification stamp on it that reads 'Utopia Planetia shipyards'"
 	icon_state = "viewport"
 
+/obj/structure/window/fulltile/trek/porthole
+	name = "Viewport"
+	icon = 'DS13/icons/obj/window.dmi'
+	desc = "It's a pane of glass through which you look. It has a small certification stamp on it that reads 'Utopia Planetia shipyards'"
+	icon_state = "porthole"
+	smooth = FALSE
+
 /obj/machinery/door/airlock/trek
 	name = "Airlock"
 	icon = 'DS13/icons/obj/machinery/voy_door.dmi'
 	desc = "A sleek airlock for walking through"
 	icon_state = "closed"
+	doorOpen = 'DS13/sound/effects/ds9_door.ogg'
+	doorClose = 'DS13/sound/effects/ds9_door.ogg'
+	doorDeni = 'DS13/sound/effects/denybeep.ogg' // i'm thinkin' Deni's
 
 /obj/machinery/door/airlock/trek/tng
 	name = "Airlock"
 	icon = 'DS13/icons/obj/machinery/hall_door.dmi'
 	desc = "A sleek airlock for walking through"
 	icon_state = "closed"
+
+/obj/structure/railing
+	name = "railing"
+	desc = "A standard steel railing.  Play stupid games, win stupid prizes."
+	icon = 'DS13/icons/obj/railing.dmi'
+	density = TRUE
+	climbable = TRUE
+	anchored = TRUE
+	icon_state = "railing0"
+	smooth = FALSE
+
+/obj/structure/trek_decor
+	name = "Fluff item"
+	desc = "Add me!"
+	icon = 'DS13/icons/obj/decor/wall_decor.dmi'
+	icon_state = null
+	anchored = TRUE
+	density = FALSE
+
+/obj/structure/trek_decor/rack
+	name = "Rack"
+	desc = "Imagine what you could store here!."
+	icon_state = "rack"
+
+/obj/structure/trek_decor/viewscreen
+	name = "Viewscreen"
+	desc = "Bits of information are flashing all over it, seems pretty useless..."
+	icon_state = "viewscreen"
+
+/obj/structure/trek_decor/trophies
+	name = "Trophy rack"
+	desc = "You've broken your little spaceships captain Ahab."
+	icon_state = "trophies"
+
+/obj/structure/table/trek
+	name = "Epic sci fi space table"
+	desc = "In the 24th century, people still need tables."
+	icon = 'DS13/icons/obj/decor/tables.dmi'
+	icon_state = "table1"
+	anchored = TRUE
+	density = FALSE
+	smooth = FALSE
+	layer = 3.1
+
+/obj/structure/table/trek/continued
+	name = "Epic sci fi space table"
+	desc = "In the 24th century, people still need tables."
+	icon = 'DS13/icons/obj/decor/tables.dmi'
+	icon_state = "table1-contd"
+
+/obj/structure/table/trek/medium
+	name = "Epic sci fi space table"
+	desc = "In the 24th century, people still need tables."
+	icon = 'DS13/icons/obj/decor/tables.dmi'
+	icon_state = "table2"
