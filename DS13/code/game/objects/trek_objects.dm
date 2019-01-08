@@ -1,9 +1,10 @@
 /turf/open/floor/carpet/trek
 	name = "90s space carpet"
 	desc = "Who said that structural components couldn't be stylish?."
-	icon = 'DS13/icons/turf/floors.dmi'
+	icon = 'DS13/icons/turf/beige_trek_carpet.dmi'
 	icon_state = "beige"
-	smooth = FALSE
+	smooth = TRUE
+	canSmoothWith = list(/turf/open/floor/carpet/trek)
 
 /turf/open/floor/trek
 	name = "Hull plating"
