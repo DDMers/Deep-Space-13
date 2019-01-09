@@ -112,16 +112,6 @@
 	desc = "A sleek airlock for walking through"
 	icon_state = "closed"
 
-/obj/structure/railing
-	name = "railing"
-	desc = "A standard steel railing.  Play stupid games, win stupid prizes."
-	icon = 'DS13/icons/obj/railing.dmi'
-	density = TRUE
-	climbable = TRUE
-	anchored = TRUE
-	icon_state = "railing0"
-	smooth = FALSE
-
 /obj/structure/trek_decor
 	name = "Fluff item"
 	desc = "Add me!"

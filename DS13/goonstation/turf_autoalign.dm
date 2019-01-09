@@ -15,12 +15,15 @@
 	var/image/connect_image = null
 	var/d_state = 0
 	smooth = FALSE //Override /tg/ iconsmooths
+	var/connect_universally = FALSE //Connect to every subtype of the walls?
 
 	Initialize()
 		..()
 		START_PROCESSING(SSfastprocess,src)
 		src.update_icon()
 		set_light(6)
+		if(connect_universally)
+			connects_to += typecacheof(/turf/closed/wall/trek_smooth)
 	process()
 		update_icon() ///Tg/ code change, so these beauties actually smooth
 
@@ -72,4 +75,14 @@
 /turf/closed/wall/trek_smooth/room
 	name = "Wall"
 	icon = 'DS13/icons/turf/smooth_trek_walls.dmi'
+	mod = null
+
+/turf/closed/wall/trek_smooth/reinforced
+	name = "Outer hull"
+	mod = "R"
+	icon_state = "R0"
+
+/turf/closed/wall/trek_smooth/corridor
+	name = "Wall"
+	icon = 'DS13/icons/turf/trek_wall_bright.dmi'
 	mod = null
