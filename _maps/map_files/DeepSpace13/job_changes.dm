@@ -76,7 +76,7 @@
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/engineer/DS13
-	minimal_access =+ ACCESS_ATMOSPHERICS
+	minimal_access += ACCESS_ATMOSPHERICS
 
 
 /datum/outfit/job/engineer/DS13
@@ -157,8 +157,8 @@ MAP_REMOVE_JOB(atmos)
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/scientist/DS13
-	access =+ ACCESS_MORGUE
-	minimal_access =+ list(ACCESS_ROBOTICS, ACCESS_TECH_STORAGE)
+	access += ACCESS_MORGUE
+	minimal_access += list(ACCESS_ROBOTICS, ACCESS_TECH_STORAGE)
 
 /datum/outfit/job/scientist
 	name = "Trek-Scientist"
