@@ -11,7 +11,10 @@
 		#include "map_files\PubbyStation\PubbyStation.dmm"
 		#include "map_files\BoxStation\BoxStation.dmm"
 		#include "map_files\Donutstation\Donutstation.dmm"
-		#include "map_files\DeepSpace13\DeepSpace13.dmm"
+		//DS13
+		#include "map_files\DeepSpace13\DS13-D1.dmm"
+		#include "map_files\DeepSpace13\DS13-D2.dmm"
+		#include "map_files\DeepSpace13\DS13-D3.dmm"
 
 		#ifdef TRAVISBUILDING
 			#include "templates.dm"
