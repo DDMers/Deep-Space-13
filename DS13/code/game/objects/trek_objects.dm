@@ -77,6 +77,7 @@
 	desc = "It's a pane of glass through which you look. It has a small certification stamp on it that reads 'Utopia Planetia shipyards'"
 	icon_state = "darksteel_window"
 	smooth = FALSE
+	dir = 2
 
 /obj/structure/window/fulltile/trek/corridor
 	name = "Viewport"

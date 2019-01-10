@@ -15,7 +15,7 @@
 	var/image/connect_image = null
 	var/d_state = 0
 	smooth = FALSE //Override /tg/ iconsmooths
-	var/connect_universally = FALSE //Connect to every subtype of the walls?
+	var/connect_universally = TRUE //Connect to every subtype of the walls?
 
 	Initialize()
 		..()
