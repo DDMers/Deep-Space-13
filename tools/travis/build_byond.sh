@@ -72,7 +72,7 @@ if [ "$BUILD_TOOLS" = false ]; then
 	
 		cd travis_test
     	ln -s $HOME/libmariadb/libmariadb.so libmariadb.so
-		DreamDaemon tgstation.dmb -close -trusted -verbose -params "test-run&log-directory=travis"
+		DreamDaemon StarTrekking.dmb -close -trusted -verbose -params "test-run&log-directory=travis"
 		cd ..
 		cat travis_test/data/logs/travis/clean_run.lk
 
