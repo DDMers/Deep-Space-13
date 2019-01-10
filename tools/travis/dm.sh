@@ -1,16 +1,16 @@
 #!/bin/bash
 
-dmepath=""
+dmepath="Deep-Space-13"
 retval=1
 
-for var
-do
-	if [[ $var != -* && $var == *.dme ]]
-	then
-		dmepath=`echo $var | sed -r 's/.{4}$//'`
-		break
-	fi
-done
+#for var
+#do
+#	if [[ $var != -* && $var == *.dme ]]
+#	then
+#		dmepath=`echo $var | sed -r 's/.{4}$//'`
+#		break
+#	fi
+#done
 
 if [[ $dmepath == "" ]]
 then
