@@ -65,7 +65,7 @@
 /datum/job/chief_engineer/New()
 	..()
 	MAP_JOB_CHECK
-	outfit = /datum/outfit/job/chief_engineer/DS13
+	outfit = /datum/outfit/job/ce/DS13
 
 /datum/outfit/job/ce/DS13
 	name = "Trek-Chief Engineer"
