@@ -5,7 +5,7 @@
 //Command
 //-------
 
-/datum/job/captain/new()
+/datum/job/captain/New()
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/captain/DS13
@@ -15,7 +15,7 @@
 	uniform = /obj/item/clothing/under/trek/command/next
 
 
-/datum/job/hop/new()
+/datum/job/hop/New()
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/hop/DS13
@@ -31,26 +31,26 @@
 
 //Security
 
-/datum/job/hos/new()
+/datum/job/hos/New()
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/hos/DS13
 
-/datum/outfit/job/hos
+/datum/outfit/job/hos/DS13
 	name = "Trek-Head of Security"
 	uniform = /obj/item/clothing/under/trek/command/next
 
 
-/datum/job/warden/new()
+/datum/job/warden/New()
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/warden/DS13
 
-/datum/outfit/job/warden
+/datum/outfit/job/warden/DS13
 	name = "Trek-Warden"
 	uniform = /obj/item/clothing/under/trek/engsec/next
 
-/datum/job/officer/new()
+/datum/job/officer/New()
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/officer/DS13
@@ -62,7 +62,7 @@
 
 //Engineering
 
-/datum/job/chief_engineer/new()
+/datum/job/chief_engineer/New()
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/chief_engineer/DS13
@@ -72,7 +72,7 @@
 	uniform = /obj/item/clothing/under/trek/command/next
 
 
-/datum/job/engineer/new()
+/datum/job/engineer/New()
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/engineer/DS13
@@ -91,7 +91,7 @@ MAP_REMOVE_JOB(atmos)
 
 //Medbay
 
-/datum/job/cmo/new()
+/datum/job/cmo/New()
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/cmo/DS13
@@ -101,7 +101,7 @@ MAP_REMOVE_JOB(atmos)
 	uniform = /obj/item/clothing/under/trek/command/next
 
 
-/datum/job/doctor/new()
+/datum/job/doctor/New()
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/doctor/DS13
@@ -111,39 +111,39 @@ MAP_REMOVE_JOB(atmos)
 	uniform = /obj/item/clothing/under/trek/medsci/next
 
 
-/datum/job/chemist/new()
+/datum/job/chemist/New()
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/chemist/DS13
 
-/datum/outfit/job/chemist
+/datum/outfit/job/chemist/DS13
 	name = "Chemist (Trek)"
 	uniform = /obj/item/clothing/under/trek/medsci/next
 
 
-/datum/job/geneticist/new()
+/datum/job/geneticist/New()
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/geneticist/DS13
 
-/datum/outfit/job/geneticist
+/datum/outfit/job/geneticist/DS13
 	name = "Trek-Geneticist"
 	uniform = /obj/item/clothing/under/trek/medsci/next
 
 
-/datum/job/virologist/new()
+/datum/job/virologist/New()
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/virologist/DS13
 
-/datum/outfit/job/virologist
+/datum/outfit/job/virologist/DS13
 	name = "Trek-Virologist"
 	uniform = /obj/item/clothing/under/trek/medsci/next
 
 
 //Research
 
-/datum/job/rd/new()
+/datum/job/rd/New()
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/rd/DS13
@@ -153,14 +153,14 @@ MAP_REMOVE_JOB(atmos)
 	uniform = /obj/item/clothing/under/trek/command/next
 
 
-/datum/job/scientist/new()
+/datum/job/scientist/New()
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/scientist/DS13
 	access += ACCESS_MORGUE
 	minimal_access += list(ACCESS_ROBOTICS, ACCESS_TECH_STORAGE)
 
-/datum/outfit/job/scientist
+/datum/outfit/job/scientist/DS13
 	name = "Trek-Scientist"
 	uniform = /obj/item/clothing/under/trek/medsci/next
 
