@@ -47,9 +47,9 @@ if [ "$BUILD_TOOLS" = false ]; then
 
     source $HOME/BYOND/byond/bin/byondsetup
 	if [ "$BUILD_TESTING" = true ]; then
-		tools/travis/dm.sh -DTRAVISBUILDING -DTRAVISTESTING -DALL_MAPS tgstation.dme
+		tools/travis/dm.sh -DTRAVISBUILDING -DTRAVISTESTING -DALL_MAPS StarTrekking.dme
 	else
-		tools/travis/dm.sh -DTRAVISBUILDING tgstation.dme
+		tools/travis/dm.sh -DTRAVISBUILDING StarTrekking.dme
 		
 		tools/deploy.sh travis_test
 		mkdir travis_test/config
