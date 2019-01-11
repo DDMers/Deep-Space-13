@@ -18,11 +18,11 @@ cfg
 data
 SQL
 tgui/node_modules
-tgstation.dmb
-tgstation.int
-tgstation.rsc
-tgstation.lk
-tgstation.dyn.rsc
+DeepSpace13.dmb
+DeepSpace13.int
+DeepSpace13.rsc
+DeepSpace13.lk
+DeepSpace13.dyn.rsc
 libmariadb.dll
 rust_g.dll
 BSQL.dll
