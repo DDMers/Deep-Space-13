@@ -47,15 +47,9 @@ if [ "$BUILD_TOOLS" = false ]; then
 
     source $HOME/BYOND/byond/bin/byondsetup
 	if [ "$BUILD_TESTING" = true ]; then
-<<<<<<< HEAD
-		tools/travis/dm.sh -DTRAVISBUILDING -DTRAVISTESTING -DALL_MAPS Deep-Space-13.dme
-	else
-		tools/travis/dm.sh -DTRAVISBUILDING Deep-Space-13.dme
-=======
 		tools/travis/dm.sh -DTRAVISBUILDING -DTRAVISTESTING -DALL_MAPS DeepSpace13.dme
 	else
 		tools/travis/dm.sh -DTRAVISBUILDING DeepSpace13.dme
->>>>>>> 03391e59cbc1aa3acf313c54eadbf006bd0e1aeb
 		
 		tools/deploy.sh travis_test
 		mkdir travis_test/config
@@ -78,11 +72,7 @@ if [ "$BUILD_TOOLS" = false ]; then
 	
 		cd travis_test
     	ln -s $HOME/libmariadb/libmariadb.so libmariadb.so
-<<<<<<< HEAD
-		DreamDaemon Deep-Space-13.dmb -close -trusted -verbose -params "test-run&log-directory=travis"
-=======
 		DreamDaemon DeepSpace13.dmb -close -trusted -verbose -params "test-run&log-directory=travis"
->>>>>>> 03391e59cbc1aa3acf313c54eadbf006bd0e1aeb
 		cd ..
 		cat travis_test/data/logs/travis/clean_run.lk
 
