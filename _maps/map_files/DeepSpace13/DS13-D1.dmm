@@ -39,6 +39,13 @@
 /obj/effect/landmark/observer_start,
 /turf/open/floor/carpet/trek,
 /area/centcom)
+"ak" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/turf/open/floor/plasteel,
+/area/centcom)
 "al" = (
 /obj/structure/trek_decor/rack,
 /turf/closed/wall/trek_smooth/corridor,
@@ -47,6 +54,10 @@
 /obj/structure/window/fulltile/trek,
 /turf/open/floor/carpet/trek,
 /area/centcom)
+"an" = (
+/obj/docking_port/mobile/arrivals,
+/turf/open/space/basic,
+/area/space)
 "as" = (
 /turf/closed/wall/trek_smooth/corridor,
 /area/centcom)
@@ -536,19 +547,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
-	},
-/turf/open/floor/plasteel,
-/area/centcom)
-"bm" = (
-/obj/structure/cable,
-/obj/machinery/power/apc{
-	dir = 2;
-	name = "SMES room APC";
-	areastring = "/area/engine/engine_smes";
-	pixel_y = -24
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 10
 	},
 /turf/open/floor/plasteel,
 /area/centcom)
@@ -28473,7 +28471,7 @@ aa
 aa
 aa
 aa
-aa
+an
 aa
 aa
 aa
@@ -31739,7 +31737,7 @@ aD
 aV
 ba
 bh
-bm
+ak
 au
 bw
 bB
