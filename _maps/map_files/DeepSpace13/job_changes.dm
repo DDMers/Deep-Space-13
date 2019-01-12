@@ -12,8 +12,12 @@
 
 /datum/outfit/job/captain/DS13
 	name = "Trek-Captain"
-	uniform = /obj/item/clothing/under/trek/command/next
-
+	uniform = /obj/item/clothing/under/trek/command/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+	suit = null
+	gloves = /obj/item/clothing/gloves/color/black
+	head = null
 
 /datum/job/hop/New()
 	..()
@@ -22,8 +26,11 @@
 
 /datum/outfit/job/hop/DS13
 	name = "Trek-Head of Personnel"
-	uniform = /obj/item/clothing/under/trek/command/next
-
+	uniform = /obj/item/clothing/under/trek/command/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = null
+	gloves = /obj/item/clothing/gloves/color/black
 
 //------
 //EngSec
@@ -38,7 +45,9 @@
 
 /datum/outfit/job/hos/DS13
 	name = "Trek-Head of Security"
-	uniform = /obj/item/clothing/under/trek/command/next
+	uniform = /obj/item/clothing/under/trek/command/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
 
 
 /datum/job/warden/New()
@@ -48,7 +57,9 @@
 
 /datum/outfit/job/warden/DS13
 	name = "Trek-Warden"
-	uniform = /obj/item/clothing/under/trek/engsec/next
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
 
 /datum/job/officer/New()
 	..()
@@ -57,7 +68,9 @@
 
 /datum/outfit/job/officer/DS13
 	name = "Trek-Security Officer"
-	uniform = /obj/item/clothing/under/trek/engsec/next
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
 
 
 //Engineering
@@ -69,7 +82,9 @@
 
 /datum/outfit/job/ce/DS13
 	name = "Trek-Chief Engineer"
-	uniform = /obj/item/clothing/under/trek/command/next
+	uniform = /obj/item/clothing/under/trek/command/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
 
 
 /datum/job/engineer/New()
@@ -81,7 +96,9 @@
 
 /datum/outfit/job/engineer/DS13
 	name = "Trek-Station Engineer"
-	uniform = /obj/item/clothing/under/trek/engsec/next
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
 
 MAP_REMOVE_JOB(atmos)
 
@@ -98,7 +115,9 @@ MAP_REMOVE_JOB(atmos)
 
 /datum/outfit/job/cmo/DS13
 	name = "Trek-Chief Medical Officer"
-	uniform = /obj/item/clothing/under/trek/command/next
+	uniform = /obj/item/clothing/under/trek/command/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
 
 
 /datum/job/doctor/New()
@@ -108,7 +127,9 @@ MAP_REMOVE_JOB(atmos)
 
 /datum/outfit/job/doctor/DS13
 	name = "Trek-Medical Doctor"
-	uniform = /obj/item/clothing/under/trek/medsci/next
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
 
 
 /datum/job/chemist/New()
@@ -118,7 +139,9 @@ MAP_REMOVE_JOB(atmos)
 
 /datum/outfit/job/chemist/DS13
 	name = "Chemist (Trek)"
-	uniform = /obj/item/clothing/under/trek/medsci/next
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
 
 
 /datum/job/geneticist/New()
@@ -128,7 +151,9 @@ MAP_REMOVE_JOB(atmos)
 
 /datum/outfit/job/geneticist/DS13
 	name = "Trek-Geneticist"
-	uniform = /obj/item/clothing/under/trek/medsci/next
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
 
 
 /datum/job/virologist/New()
@@ -138,7 +163,9 @@ MAP_REMOVE_JOB(atmos)
 
 /datum/outfit/job/virologist/DS13
 	name = "Trek-Virologist"
-	uniform = /obj/item/clothing/under/trek/medsci/next
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
 
 
 //Research
@@ -150,7 +177,9 @@ MAP_REMOVE_JOB(atmos)
 
 /datum/outfit/job/rd/DS13
 	name = "Trek-Research Director"
-	uniform = /obj/item/clothing/under/trek/command/next
+	uniform = /obj/item/clothing/under/trek/command/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
 
 
 /datum/job/scientist/New()
@@ -162,6 +191,8 @@ MAP_REMOVE_JOB(atmos)
 
 /datum/outfit/job/scientist/DS13
 	name = "Trek-Scientist"
-	uniform = /obj/item/clothing/under/trek/medsci/next
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
 
 MAP_REMOVE_JOB(roboticist)
