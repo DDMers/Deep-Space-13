@@ -79,6 +79,14 @@
 	smooth = FALSE
 	dir = 2
 
+/obj/structure/window/fulltile/trek/middle
+	name = "Viewport"
+	icon = 'DS13/icons/obj/window.dmi'
+	desc = "It's a pane of glass through which you look. It has a small certification stamp on it that reads 'Utopia Planetia shipyards'"
+	icon_state = "darksteel_window_middle"
+	smooth = FALSE
+	dir = 2
+
 /obj/structure/window/fulltile/trek/corridor
 	name = "Viewport"
 	icon = 'DS13/icons/obj/window.dmi'
@@ -157,3 +165,9 @@
 	desc = "In the 24th century, people still need tables."
 	icon = 'DS13/icons/obj/decor/tables.dmi'
 	icon_state = "table2"
+
+/obj/structure/table/optable/trek
+	name = "biobed"
+	desc = "A bed with surgical facilities built in."
+	icon = 'DS13/icons/obj/decor/biobed.dmi'
+	icon_state = "biobed"

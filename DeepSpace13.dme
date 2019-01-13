@@ -2743,6 +2743,7 @@
 #include "code\modules\VR\vr_sleeper.dm"
 #include "code\modules\zombie\items.dm"
 #include "code\modules\zombie\organs.dm"
+#include "DS13\code\game\objects\multi-deck-relay.dm"
 #include "DS13\code\game\objects\railing.dm"
 #include "DS13\code\game\objects\trek_objects.dm"
 #include "DS13\code\modules\clothing\under\trek.dm"

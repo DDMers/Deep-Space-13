@@ -4,256 +4,46 @@
 /area/space)
 "ab" = (
 /turf/closed/wall/trek_smooth/room,
-/area/centcom)
+/area/bridge)
 "ac" = (
 /turf/closed/wall/trek_smooth/room,
-/area/space)
+/area/hallway/secondary/command)
 "ad" = (
+/obj/machinery/door/airlock/trek/goon/command,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"ae" = (
+/turf/closed/wall/trek_smooth/room,
+/area/crew_quarters/heads/hor)
+"af" = (
+/obj/item/twohanded/required/kirbyplants{
+	icon_state = "plant-21"
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"ag" = (
+/obj/structure/window/fulltile/trek/porthole,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hor)
+"ah" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
 /turf/open/floor/carpet/trek,
-/area/centcom)
-"ae" = (
-/obj/structure/railing{
-	icon_state = "railing0";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"af" = (
-/obj/structure/railing{
-	icon_state = "railing0";
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"ag" = (
-/obj/structure/railing{
-	icon_state = "railing0";
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"ah" = (
-/turf/open/floor/carpet/trek,
-/area/centcom)
+/area/crew_quarters/heads/hor)
 "ai" = (
-/obj/structure/railing,
 /turf/open/floor/carpet/trek,
-/area/centcom)
+/area/crew_quarters/heads/hor)
 "aj" = (
-/turf/open/openspace,
-/area/centcom)
-"ak" = (
-/obj/structure/ladder,
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"al" = (
-/obj/structure/window/fulltile/trek/viewport,
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"am" = (
-/obj/machinery/light,
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"an" = (
-/obj/structure/trek_decor/trophies,
-/turf/closed/wall/trek_smooth/room,
-/area/centcom)
-"ao" = (
-/obj/structure/trek_decor/viewscreen{
-	icon_state = "viewscreen";
-	dir = 8
-	},
-/turf/closed/wall/trek_smooth/room,
-/area/centcom)
-"ap" = (
-/obj/structure/table/trek,
-/obj/structure/chair/trek/standard,
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aq" = (
-/obj/structure/table/trek{
-	icon_state = "table1";
-	dir = 1
-	},
-/obj/structure/chair/trek/standard,
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"ar" = (
-/obj/structure/table/trek{
-	icon_state = "table1";
-	dir = 4
-	},
-/obj/structure/chair/trek/standard,
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"as" = (
-/obj/machinery/door/airlock/trek/goon{
-	icon_state = "closed";
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"at" = (
-/obj/effect/landmark/observer_start,
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"au" = (
-/obj/structure/chair/trek/standard{
-	icon_state = "chair";
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"av" = (
-/obj/structure/table/trek{
-	icon_state = "table1";
-	dir = 5
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aw" = (
-/obj/effect/landmark/observer_start,
-/obj/structure/table/trek/continued{
-	icon_state = "table1-contd";
-	dir = 9
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"ax" = (
-/obj/structure/table/trek{
-	icon_state = "table1";
-	dir = 9
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"ay" = (
-/obj/structure/chair/trek/standard{
-	icon_state = "chair";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"az" = (
-/obj/structure/table/trek/continued{
-	icon_state = "table1-contd";
-	dir = 9
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aA" = (
-/obj/structure/table/trek{
-	icon_state = "table1";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aB" = (
-/obj/structure/table/trek{
-	icon_state = "table1";
-	dir = 6
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aC" = (
-/obj/structure/trek_decor/rack,
-/turf/closed/wall/trek_smooth/room,
-/area/centcom)
-"aD" = (
-/obj/structure/table/trek/continued{
-	icon_state = "table1-contd";
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aE" = (
-/obj/structure/table/trek/continued{
-	icon_state = "table1-contd";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aF" = (
-/obj/structure/table/trek/continued{
-	icon_state = "table1-contd";
-	dir = 6
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aG" = (
-/obj/structure/trek_decor/viewscreen,
-/turf/closed/wall/trek_smooth/room,
-/area/centcom)
-"aH" = (
-/obj/structure/chair/trek/standard{
-	icon_state = "chair";
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aI" = (
-/obj/structure/railing,
-/obj/structure/railing{
-	icon_state = "railing0";
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aJ" = (
-/obj/structure/railing,
-/obj/structure/railing{
-	icon_state = "railing0";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aK" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aL" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aO" = (
-/obj/structure/railing{
-	icon_state = "railing0";
-	dir = 1
-	},
-/obj/structure/railing{
-	icon_state = "railing0";
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aP" = (
-/obj/structure/railing{
-	icon_state = "railing0";
-	dir = 1
-	},
-/obj/structure/railing{
-	icon_state = "railing0";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aQ" = (
-/obj/structure/window/fulltile/trek/porthole,
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aR" = (
 /obj/structure/table,
 /obj/machinery/computer/security/telescreen/rd,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/carpet/trek,
-/area/centcom)
-"aS" = (
+/area/crew_quarters/heads/hor)
+"ak" = (
 /obj/machinery/computer/aifixer{
 	dir = 8
 	},
@@ -261,17 +51,8 @@
 	dir = 4
 	},
 /turf/open/floor/carpet/trek,
-/area/centcom)
-"aT" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"aU" = (
-/turf/open/space/basic,
-/area/centcom)
-"aV" = (
+/area/crew_quarters/heads/hor)
+"al" = (
 /obj/structure/table,
 /obj/machinery/button/door{
 	id = "Biohazard";
@@ -291,15 +72,25 @@
 	dir = 8
 	},
 /turf/open/floor/carpet/trek,
-/area/centcom)
-"aW" = (
+/area/crew_quarters/heads/hor)
+"am" = (
 /obj/structure/chair/trek{
 	icon_state = "comfy";
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/effect/landmark/start/research_director,
 /turf/open/floor/carpet/trek,
-/area/centcom)
-"aX" = (
+/area/crew_quarters/heads/hor)
+"an" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hor)
+"ao" = (
 /obj/machinery/computer/robotics{
 	dir = 8
 	},
@@ -307,8 +98,8 @@
 	dir = 4
 	},
 /turf/open/floor/carpet/trek,
-/area/centcom)
-"aY" = (
+/area/crew_quarters/heads/hor)
+"ap" = (
 /obj/structure/table,
 /obj/item/paper_bin{
 	pixel_x = 1;
@@ -324,26 +115,18 @@
 	dir = 8
 	},
 /turf/open/floor/carpet/trek,
-/area/centcom)
-"aZ" = (
-/obj/structure/window/fulltile/trek/porthole,
+/area/crew_quarters/heads/hor)
+"aq" = (
 /turf/open/floor/carpet/trek,
-/area/space)
-"ba" = (
-/obj/machinery/computer/mecha{
-	dir = 8
+/area/bridge)
+"ar" = (
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
+/obj/machinery/holopad,
 /turf/open/floor/carpet/trek,
-/area/centcom)
-"bb" = (
-/obj/structure/railing,
-/obj/structure/chair/trek/standard,
-/turf/open/floor/carpet/trek,
-/area/centcom)
-"bc" = (
+/area/crew_quarters/heads/hor)
+"as" = (
 /obj/structure/railing{
 	icon_state = "railing0";
 	dir = 8
@@ -353,34 +136,1581 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/trek,
-/area/centcom)
+/area/hallway/primary/fore)
+"at" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"au" = (
+/turf/open/openspace,
+/area/hallway/secondary/command)
+"av" = (
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"aw" = (
+/obj/structure/ladder,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"ax" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"ay" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"az" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 1
+	},
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"aA" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"aB" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"aC" = (
+/obj/structure/railing,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"aD" = (
+/obj/structure/railing,
+/obj/machinery/light,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"aE" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"aF" = (
+/obj/structure/railing,
+/obj/item/twohanded/required/kirbyplants{
+	icon_state = "plant-21"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"aG" = (
+/obj/structure/railing,
+/obj/structure/chair/trek/standard,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"aH" = (
+/obj/structure/railing,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"aI" = (
+/turf/closed/wall/trek_smooth/room,
+/area/crew_quarters/dorms)
+"aJ" = (
+/obj/structure/railing,
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"aK" = (
+/obj/machinery/shower,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/crew_quarters/dorms)
+"aL" = (
+/obj/structure/trek_decor/rack,
+/turf/closed/wall/trek_smooth/room,
+/area/hallway/primary/fore)
+"aM" = (
+/obj/structure/window/fulltile/trek/viewport,
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"aN" = (
+/turf/closed/wall/trek_smooth/room,
+/area/crew_quarters/heads/captain)
+"aO" = (
+/obj/structure/trek_decor/viewscreen,
+/turf/closed/wall/trek_smooth/room,
+/area/hallway/primary/fore)
+"aP" = (
+/obj/machinery/light,
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"aQ" = (
+/obj/machinery/door/airlock/trek/goon,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"aR" = (
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"aS" = (
+/obj/item/twohanded/required/kirbyplants{
+	icon_state = "plant-21"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"aT" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"aU" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"aV" = (
+/turf/closed/wall/trek_smooth/room,
+/area/bridge/meeting_room)
+"aW" = (
+/obj/structure/trek_decor/trophies,
+/turf/closed/wall/trek_smooth/room,
+/area/bridge/meeting_room)
+"aX" = (
+/obj/machinery/vending/snack/random,
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"aY" = (
+/turf/closed/wall/trek_smooth/room,
+/area/crew_quarters/heads/hop)
+"aZ" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"ba" = (
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"bb" = (
+/obj/structure/table/trek,
+/obj/structure/chair/trek/standard,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"bc" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 1
+	},
+/obj/structure/chair/trek/standard,
+/turf/open/floor/carpet/trek,
+/area/bridge)
 "bd" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 4
+	},
+/obj/structure/chair/trek/standard,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"be" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"bf" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 5
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"bg" = (
+/obj/structure/railing,
+/obj/structure/chair/trek/standard,
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"bh" = (
+/obj/machinery/vending/cola,
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"bi" = (
+/turf/open/floor/plasteel/white,
+/area/bridge/meeting_room)
+"bj" = (
+/obj/effect/turf_decal/trek/grey{
+	icon_state = "trek_edge3";
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/bridge/meeting_room)
+"bk" = (
+/obj/effect/turf_decal/trek/grey{
+	icon_state = "trek_edge3";
+	dir = 1
+	},
+/obj/structure/weightmachine/stacklifter,
+/turf/open/floor/plasteel/white,
+/area/bridge/meeting_room)
+"bl" = (
+/obj/structure/table/trek/continued{
+	icon_state = "table1-contd";
+	dir = 9
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"bm" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 9
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"bn" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"bo" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"bp" = (
 /obj/structure/railing,
 /obj/item/twohanded/required/kirbyplants{
 	icon_state = "plant-21"
 	},
 /turf/open/floor/carpet/trek,
-/area/centcom)
-"be" = (
+/area/hallway/primary/fore)
+"bq" = (
 /obj/structure/railing,
 /obj/machinery/light,
 /turf/open/floor/carpet/trek,
-/area/centcom)
-"bf" = (
+/area/hallway/primary/fore)
+"br" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"bs" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 6
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"bt" = (
+/obj/structure/table/trek/continued{
+	icon_state = "table1-contd";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"bu" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"bv" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"bw" = (
+/obj/structure/table/trek/continued{
+	icon_state = "table1-contd";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"bx" = (
+/obj/structure/table/trek/continued{
+	icon_state = "table1-contd";
+	dir = 6
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"by" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"bz" = (
+/obj/structure/trek_decor/viewscreen,
+/turf/closed/wall/trek_smooth/room,
+/area/bridge)
+"bA" = (
+/obj/structure/window/fulltile/trek/viewport,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"bB" = (
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"bC" = (
+/obj/structure/railing,
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"bD" = (
+/obj/structure/table/trek,
+/obj/structure/chair/trek/standard,
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"bE" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 1
+	},
+/obj/structure/chair/trek/standard,
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"bF" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"bG" = (
+/obj/structure/window/fulltile/trek/porthole,
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"bH" = (
+/obj/machinery/door/airlock/trek/goon/maint,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/maintenance/department/bridge)
+"bI" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 4
+	},
+/obj/structure/chair/trek/standard,
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"bJ" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"bK" = (
+/obj/structure/railing,
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"bL" = (
+/obj/structure/railing,
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"bM" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"bN" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"bO" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"bP" = (
+/obj/machinery/door/airlock/trek/goon{
+	icon_state = "closed";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"bQ" = (
+/turf/closed/wall/trek_smooth,
+/area/maintenance/department/bridge)
+"bR" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/tile,
+/area/maintenance/department/bridge)
+"bS" = (
+/obj/machinery/power/power_relay,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/trek/tile,
+/area/maintenance/department/bridge)
+"bT" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"bU" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"bV" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/trek/tile,
+/area/maintenance/department/bridge)
+"bW" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/trek/tile,
+/area/maintenance/department/bridge)
+"bX" = (
+/turf/open/floor/trek/tile,
+/area/maintenance/department/bridge)
+"bY" = (
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"bZ" = (
+/obj/structure/chair/sofa/right,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"ca" = (
+/obj/structure/chair/sofa/left,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"cb" = (
+/obj/machinery/computer/prisoner{
+	icon_state = "computer";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"cc" = (
+/obj/machinery/computer/station_alert{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"cd" = (
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"ce" = (
+/obj/machinery/computer/shuttle/labor{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"cf" = (
+/obj/structure/chair/trek{
+	icon_state = "comfy";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"cg" = (
+/obj/item/twohanded/required/kirbyplants{
+	icon_state = "plant-21"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"ch" = (
+/obj/structure/chair/trek,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"ci" = (
+/obj/structure/chair/trek{
+	icon_state = "comfy";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"cj" = (
+/obj/machinery/computer/shuttle/mining{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"ck" = (
+/obj/machinery/computer/security{
+	icon_state = "computer";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"cl" = (
+/obj/machinery/keycard_auth{
+	pixel_x = 29;
+	pixel_y = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"cm" = (
+/obj/machinery/computer/communications{
+	icon_state = "computer";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"cn" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"co" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"cp" = (
+/obj/machinery/computer/atmos_alert{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"cq" = (
+/obj/structure/window/fulltile/trek/porthole,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"cr" = (
+/obj/machinery/power/apc/auto_name,
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"cs" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"ct" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"cu" = (
+/obj/structure/window/fulltile/trek/viewport,
+/obj/structure/curtain,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"cv" = (
+/obj/item/folder/blue,
+/obj/item/stamp/captain,
+/obj/structure/table/reinforced,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"cw" = (
+/obj/machinery/door/window/northleft{
+	name = "Reception Window";
+	icon_state = "right";
+	dir = 1
+	},
+/obj/machinery/door/window/brigdoor{
+	name = "Head of Personnel's Desk";
+	icon_state = "rightsecure";
+	dir = 2;
+	req_access = null;
+	req_access_txt = "57";
+	base_state = "rightsecure"
+	},
+/obj/structure/table/reinforced,
+/obj/item/stamp/hop,
+/obj/item/paper_bin{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/item/pen,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"cx" = (
+/obj/machinery/keycard_auth{
+	pixel_x = -24
+	},
+/obj/machinery/computer/bounty{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"cy" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"cz" = (
+/obj/structure/chair/trek{
+	icon_state = "comfy";
+	dir = 1
+	},
+/obj/effect/landmark/start/captain,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"cA" = (
+/obj/structure/trek_decor/trophies,
+/turf/closed/wall/trek_smooth/room,
+/area/crew_quarters/heads/captain)
+"cB" = (
+/obj/structure/chair/trek{
+	icon_state = "comfy";
+	dir = 1
+	},
+/obj/effect/landmark/start/head_of_personnel,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"cC" = (
+/obj/machinery/computer/card{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"cD" = (
+/obj/machinery/computer/cargo{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"cE" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"cF" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"cG" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"cH" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 1
+	},
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"cI" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 1
+	},
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"cJ" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"cK" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"cL" = (
 /obj/machinery/door/airlock/trek/goon/glass,
 /turf/open/floor/carpet/trek,
-/area/centcom)
-"bg" = (
+/area/hallway/primary/fore)
+"cM" = (
+/turf/closed/wall/trek_smooth/room,
+/area/hallway/primary/fore)
+"cN" = (
+/obj/machinery/door/airlock/trek/goon/glass,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"cO" = (
+/obj/structure/trek_decor/viewscreen{
+	icon_state = "viewscreen";
+	dir = 8
+	},
+/turf/closed/wall/trek_smooth/room,
+/area/hallway/primary/fore)
+"cP" = (
+/obj/machinery/door/airlock/trek/goon/command{
+	icon_state = "closed";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"cQ" = (
+/obj/effect/landmark/observer_start,
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"cR" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"cS" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"cT" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"cU" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"cV" = (
+/obj/machinery/power/apc/auto_name,
+/obj/structure/cable,
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"cW" = (
+/turf/open/openspace,
+/area/hallway/primary/fore)
+"cX" = (
+/obj/structure/table/trek,
+/obj/structure/chair/trek/standard,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"cY" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 1
+	},
+/obj/structure/chair/trek/standard,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"cZ" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 4
+	},
+/obj/structure/chair/trek/standard,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"da" = (
+/obj/machinery/door/airlock/trek/goon/command{
+	icon_state = "closed";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"db" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 5
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"dc" = (
+/obj/structure/table/trek/continued{
+	icon_state = "table1-contd";
+	dir = 9
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"dd" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 9
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"de" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"df" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"dg" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 6
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"dh" = (
+/obj/structure/table/trek/continued{
+	icon_state = "table1-contd";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"di" = (
+/obj/structure/table/trek/continued{
+	icon_state = "table1-contd";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"dj" = (
+/obj/structure/table/trek/continued{
+	icon_state = "table1-contd";
+	dir = 6
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"dk" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"dl" = (
+/obj/structure/table/glass,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"dm" = (
+/obj/item/bedsheet/red,
+/obj/structure/bed,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"dn" = (
+/obj/structure/closet/secure_closet/personal,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"do" = (
+/obj/structure/filingcabinet,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"dp" = (
+/obj/machinery/door/airlock/trek/goon/glass,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"dq" = (
+/obj/machinery/shower{
+	icon_state = "shower";
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/open/floor/plasteel/white,
+/area/crew_quarters/dorms)
+"dr" = (
+/obj/effect/turf_decal/trek/grey{
+	icon_state = "trek_edge3";
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/bridge/meeting_room)
+"ds" = (
+/turf/open/floor/plating/beach/water,
+/area/bridge/meeting_room)
+"dt" = (
+/obj/effect/turf_decal/trek/grey{
+	icon_state = "trek_edge3";
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/bridge/meeting_room)
+"du" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"dv" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 5
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"dw" = (
+/obj/structure/table/trek/continued{
+	icon_state = "table1-contd";
+	dir = 9
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"dx" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 9
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"dy" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"dz" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"dA" = (
+/obj/structure/table/trek{
+	icon_state = "table1";
+	dir = 6
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"dB" = (
+/obj/structure/table/trek/continued{
+	icon_state = "table1-contd";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"dC" = (
+/obj/structure/table/trek/continued{
+	icon_state = "table1-contd";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"dD" = (
+/obj/structure/table/trek/continued{
+	icon_state = "table1-contd";
+	dir = 6
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"dE" = (
+/obj/effect/turf_decal/trek/grey,
+/turf/open/floor/plasteel/white,
+/area/bridge/meeting_room)
+"dF" = (
+/obj/effect/turf_decal/trek/grey,
+/obj/structure/weightmachine/weightlifter,
+/turf/open/floor/plasteel/white,
+/area/bridge/meeting_room)
+"dG" = (
+/obj/structure/window/fulltile/trek/viewport,
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"dH" = (
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hor)
+"dI" = (
+/obj/machinery/computer/mecha{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hor)
+"dJ" = (
+/obj/structure/window/fulltile/trek/viewport,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hor)
+"dK" = (
+/obj/machinery/door/airlock/trek/goon/command,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hor)
+"dL" = (
 /obj/machinery/door/airlock/trek/goon/command,
 /turf/open/floor/carpet/trek,
-/area/centcom)
-"bh" = (
+/area/crew_quarters/heads/captain)
+"dM" = (
+/obj/structure/window/fulltile/trek/viewport,
+/obj/structure/curtain,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"dN" = (
+/obj/structure/filingcabinet,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"dO" = (
+/obj/machinery/computer/card{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"dP" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/item/soap,
+/turf/open/floor/plasteel/white,
+/area/crew_quarters/heads/captain)
+"dQ" = (
+/turf/open/floor/plasteel/white,
+/area/crew_quarters/heads/captain)
+"dR" = (
 /obj/machinery/door/airlock/trek/goon/glass{
 	icon_state = "closed";
 	dir = 8
 	},
+/obj/structure/curtain,
+/turf/open/floor/plasteel/white,
+/area/crew_quarters/heads/captain)
+"dS" = (
+/obj/machinery/computer/communications{
+	dir = 8
+	},
 /turf/open/floor/carpet/trek,
-/area/centcom)
+/area/crew_quarters/heads/captain)
+"dT" = (
+/obj/structure/closet/secure_closet/captains,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"dU" = (
+/obj/item/bedsheet/captain,
+/obj/structure/bed,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"dV" = (
+/obj/machinery/suit_storage_unit/captain,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"dW" = (
+/obj/structure/window/fulltile/trek/porthole,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"dX" = (
+/obj/machinery/door/airlock/trek/goon/glass{
+	icon_state = "closed";
+	dir = 8
+	},
+/obj/structure/curtain,
+/turf/open/floor/plasteel/white,
+/area/crew_quarters/heads/hop)
+"dY" = (
+/turf/open/floor/plasteel/white,
+/area/crew_quarters/heads/hop)
+"dZ" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/item/soap,
+/turf/open/floor/plasteel/white,
+/area/crew_quarters/heads/hop)
+"ea" = (
+/obj/machinery/vending/cart,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"eb" = (
+/obj/structure/bed,
+/obj/item/bedsheet/hop,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"ec" = (
+/obj/structure/closet/secure_closet/hop,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"ed" = (
+/obj/structure/window/fulltile/trek/porthole,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"ee" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/apc/auto_name,
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"ef" = (
+/obj/machinery/power/apc/auto_name,
+/obj/structure/cable,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"eg" = (
+/obj/machinery/power/apc/auto_name,
+/obj/structure/cable,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"eh" = (
+/obj/machinery/power/apc/auto_name,
+/obj/structure/cable,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"ei" = (
+/obj/machinery/door/airlock/trek/goon/command,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"ej" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"ek" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"el" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"em" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"en" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"eo" = (
+/obj/machinery/door/airlock/trek/goon/command{
+	icon_state = "closed";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"ep" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"eq" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"er" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"es" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"et" = (
+/obj/machinery/door/airlock/trek/goon/command,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"eu" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"ev" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"ew" = (
+/obj/machinery/door/airlock/trek/goon/command,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"ex" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"ey" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/power/apc/auto_name,
+/obj/structure/cable,
+/turf/open/floor/trek/tile,
+/area/maintenance/department/bridge)
+"ez" = (
+/turf/closed/wall/trek_smooth/room,
+/area/maintenance/department/bridge)
+"eA" = (
+/obj/machinery/holopad,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"eB" = (
+/turf/closed/wall/trek_smooth/reinforced,
+/area/maintenance/department/bridge)
+"eC" = (
+/obj/structure/sign/warning/radiation/rad_area{
+	pixel_x = 32
+	},
+/turf/closed/wall/trek_smooth/reinforced,
+/area/maintenance/department/bridge)
+"eD" = (
+/turf/closed/wall/trek_smooth/corridor,
+/area/maintenance/department/bridge)
+"eE" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/trek/goon/engi,
+/obj/structure/sign/warning/radiation/rad_area{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/maintenance/department/bridge)
+"eF" = (
+/turf/open/space/basic,
+/area/space/nearstation)
+"eG" = (
+/turf/closed/wall/trek_smooth/reinforced,
+/area/engine/gravity_generator)
+"eH" = (
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
+"eI" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
+"eJ" = (
+/obj/structure/table,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
+"eK" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
+"eL" = (
+/obj/machinery/power/smes{
+	charge = 5e+006
+	},
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
+"eM" = (
+/obj/structure/window/fulltile/trek,
+/obj/structure/grille,
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
+"eN" = (
+/obj/machinery/door/airlock/trek/goon/engi,
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
+"eO" = (
+/obj/effect/turf_decal/bot_white/right,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
+"eP" = (
+/obj/effect/turf_decal/bot_white,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
+"eQ" = (
+/obj/effect/turf_decal/bot_white/left,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
+"eR" = (
+/obj/machinery/gravity_generator/main/station,
+/obj/effect/turf_decal/bot_white,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
+"eS" = (
+/obj/machinery/door/airlock/trek/goon/maint{
+	icon_state = "closed";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"eT" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/trek/tile,
+/area/maintenance/department/bridge)
+"eU" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek/tile,
+/area/maintenance/department/bridge)
+"eV" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"eW" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"eX" = (
+/obj/structure/railing,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"eY" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"eZ" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"fa" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"fb" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"fc" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"fd" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"fe" = (
+/obj/machinery/light,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"ff" = (
+/obj/effect/turf_decal/trek/grey{
+	icon_state = "trek_edge3";
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/bridge/meeting_room)
 
 (1,1,1) = {"
 aa
@@ -23078,15 +24408,15 @@ aa
 aa
 aa
 aa
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+aI
+aI
+aI
+aI
+aI
+aI
+aI
+aI
+aI
 aa
 aa
 aa
@@ -23331,25 +24661,25 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ab
-aa
-aa
-aa
-aa
-aa
-aa
+aI
+aI
+aI
+aI
+aI
+aR
+bJ
+fc
+fc
+bJ
+bJ
+aR
+aI
+aI
+aI
+aI
+aI
+aI
+aI
 aa
 aa
 aa
@@ -23586,27 +24916,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ab
-aa
-aa
-aa
-aa
-aa
-aa
+aI
+aI
+aI
+dn
+fa
+dl
+aI
+aR
+aR
+aR
+aR
+aR
+aR
+aR
+aI
+dl
+fa
+dn
+aI
+aI
+aI
 aa
 aa
 aa
@@ -23843,27 +25173,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ab
-aa
-aa
-aa
-aa
-aa
-aa
+aI
+aK
+dp
+aR
+aR
+aR
+aQ
+aR
+aR
+aR
+aR
+aR
+aR
+aR
+aQ
+aR
+aR
+aR
+dp
+dq
+aI
 aa
 aa
 aa
@@ -24100,27 +25430,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ab
-aa
-aa
-aa
-aa
-aa
-aa
+aI
+aI
+aI
+do
+aR
+dm
+aI
+aR
+aR
+aR
+aR
+aR
+aR
+aR
+aI
+dm
+aR
+do
+aI
+aI
+aI
 aa
 aa
 aa
@@ -24359,25 +25689,25 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ab
-aa
-aa
-aa
-aa
-aa
-aa
+aI
+aI
+aI
+aI
+aI
+aR
+aR
+aR
+aR
+aR
+aR
+aR
+aI
+aI
+aI
+aI
+aI
+aI
+aI
 aa
 aa
 aa
@@ -24620,15 +25950,15 @@ aa
 aa
 aa
 aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ab
+aI
+aR
+aR
+aR
+aR
+aR
+aR
+aR
+aI
 aa
 aa
 aa
@@ -24873,25 +26203,25 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-al
-ah
-ah
-au
-au
-au
-ah
-ah
-ab
-aa
-aa
-aa
-aa
-aa
-aa
+aI
+aI
+aI
+aI
+aI
+aR
+aR
+bJ
+bJ
+bJ
+aR
+aR
+aI
+aI
+aI
+aI
+aI
+aI
+aI
 aa
 aa
 aa
@@ -25128,27 +26458,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-al
-ah
-ap
-av
-aA
-aD
-aH
-ah
-ab
-aa
-aa
-aa
-aa
-aa
-aa
+aI
+aI
+aI
+dn
+fa
+dl
+aI
+aR
+cX
+db
+df
+dh
+dk
+fe
+aI
+dl
+fa
+dn
+aI
+aI
+aI
 aa
 aa
 aa
@@ -25385,27 +26715,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-al
-ah
-aq
-aw
-az
-aE
-aH
-ah
-ab
-aa
-aa
-aa
-aa
-aa
-aa
+aI
+aK
+dp
+aR
+aR
+aR
+aQ
+aR
+cY
+dc
+dc
+di
+dk
+aR
+aQ
+aR
+aR
+aR
+dp
+dq
+aI
 aa
 aa
 aa
@@ -25642,27 +26972,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-al
-ah
-ar
-ax
-aB
-aF
-aH
-ah
-ab
-aa
-aa
-aa
-aa
-aa
-aa
+aI
+aI
+aI
+do
+aR
+dm
+aI
+aR
+cZ
+dd
+dg
+dj
+dk
+fe
+aI
+dm
+aR
+do
+aI
+aI
+aI
 aa
 aa
 aa
@@ -25901,25 +27231,25 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-al
-ah
-ah
-ay
-ay
-ay
-ah
-ah
-ab
-aa
-aa
-aa
-aa
-aa
-aa
+aI
+aI
+aI
+aI
+aI
+aR
+aR
+de
+de
+de
+aR
+aR
+aI
+aI
+aI
+aI
+aI
+aI
+aI
 aa
 aa
 aa
@@ -26162,15 +27492,15 @@ aa
 aa
 aa
 aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ab
+aI
+aR
+aR
+aR
+aR
+aR
+aR
+aR
+aI
 aa
 aa
 aa
@@ -26415,25 +27745,25 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ab
-aa
-aa
-aa
-aa
-aa
-aa
+aI
+aI
+aI
+aI
+aI
+aR
+aR
+aR
+aR
+aR
+aR
+aR
+aI
+aI
+aI
+aI
+aI
+aI
+aI
 aa
 aa
 aa
@@ -26670,27 +28000,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ab
-aa
-aa
-aa
-aa
-aa
-aa
+aI
+aI
+aI
+dn
+fa
+dl
+aI
+aR
+aR
+aR
+aR
+aR
+aR
+aR
+aI
+dl
+fa
+dn
+aI
+aI
+aI
 aa
 aa
 aa
@@ -26927,27 +28257,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ab
-aa
-aa
-aa
-aa
-aa
-aa
+aI
+aK
+dp
+aR
+aR
+aR
+aQ
+aR
+aR
+aR
+aR
+aR
+aR
+aR
+aQ
+aR
+aR
+aR
+dp
+dq
+aI
 aa
 aa
 aa
@@ -27184,27 +28514,27 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ab
-aa
-aa
-aa
-aa
-aa
-aa
+aI
+aI
+aI
+do
+aR
+dm
+aI
+aR
+aR
+aR
+aR
+aR
+aR
+aR
+aI
+dm
+aR
+do
+aI
+aI
+aI
 aa
 aa
 aa
@@ -27443,25 +28773,25 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ab
-aa
-aa
-aa
-aa
-aa
-aa
+aI
+aI
+aI
+aI
+aI
+aR
+aR
+fd
+aR
+aR
+aR
+aR
+aI
+aI
+aI
+aI
+aI
+aI
+aI
 aa
 aa
 aa
@@ -27692,27 +29022,27 @@ aa
 aa
 aa
 aa
-aU
-aU
-aU
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-bh
-ab
-bh
-ab
-ab
-ab
-ab
+aa
+aa
+aa
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+aI
+aI
+da
+aI
+da
+aI
+aI
+aI
+aI
 aa
 aa
 aa
@@ -27737,9 +29067,9 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
+aN
+aN
+aN
 aa
 aa
 aa
@@ -27949,24 +29279,24 @@ aa
 aa
 aa
 aa
-aU
-aU
-aU
-ab
-bc
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-bf
-ah
-ah
-ah
-ab
+aa
+aa
+aa
+cM
+as
+aA
+aA
+aA
+eY
+aA
+aA
+aA
+aA
+cL
+av
+av
+av
+cM
 aa
 aa
 aa
@@ -27994,9 +29324,9 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
+aN
+dP
+aN
 aa
 aa
 aa
@@ -28206,24 +29536,24 @@ aa
 aa
 aa
 aa
-aU
-aU
-aU
-ab
-af
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ab
-ah
-ah
-ah
-ab
+aa
+aa
+aa
+cM
+at
+av
+av
+av
+av
+av
+av
+av
+av
+cM
+av
+av
+av
+cM
 aa
 aa
 aa
@@ -28251,9 +29581,9 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
+aN
+dQ
+aN
 aa
 aa
 aa
@@ -28458,43 +29788,43 @@ aa
 aa
 aa
 aa
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-af
-ah
-ag
-ag
-ag
-ag
-ag
-ag
-ag
-bf
-ah
-ah
-ah
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+at
+aB
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+cN
+ay
+cR
+av
+cM
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
 aa
 aa
 aa
@@ -28502,16 +29832,16 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aN
+aN
+aN
+aN
+aN
+aN
+aN
+dR
+aN
+aN
 aa
 aa
 aa
@@ -28715,43 +30045,43 @@ aa
 aa
 aa
 aa
-ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-ai
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ah
-ah
-ah
-bf
-ah
-ag
-ag
-ag
-ag
-ag
-ag
-ag
-ag
-ag
-ag
-ag
-ah
-ab
+cM
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+at
+aC
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+av
+cS
+ay
+cN
+bF
+bM
+bM
+bM
+bM
+bM
+bM
+bM
+bM
+bM
+bM
+bM
+bO
+bG
 aa
 aa
 aa
@@ -28759,16 +30089,16 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aN
+aS
+ct
+ct
+ct
+cA
+dN
+er
+eg
+aN
 aa
 aa
 aa
@@ -28972,43 +30302,43 @@ aa
 aa
 aa
 aa
-ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-be
-ab
-aU
-aU
-aU
-aU
-aU
-aU
-ab
-ah
-ah
-ah
-aG
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-aQ
+cM
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+at
+aD
+cM
+aa
+aa
+aa
+aa
+aa
+aa
+cM
+av
+aE
+av
+aO
+bC
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+ee
+ac
 aa
 aa
 aa
@@ -29016,16 +30346,16 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aN
+bY
+er
+es
+es
+et
+es
+eu
+bY
+dW
 aa
 aa
 aa
@@ -29229,43 +30559,43 @@ aa
 aa
 aa
 aa
-ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-ai
-ab
-aU
-aU
-aU
-aU
-aU
-aU
-ab
-ah
-ah
-ah
-ao
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-aQ
+cM
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+at
+aC
+cM
+aa
+aa
+aa
+aa
+aa
+aa
+cM
+ax
+aE
+av
+cO
+bC
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+cE
+bG
 aa
 aa
 aa
@@ -29273,16 +30603,16 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aN
+bZ
+en
+cv
+cz
+dM
+bY
+bY
+dT
+dW
 aa
 aa
 aa
@@ -29486,60 +30816,60 @@ aa
 aa
 aa
 aa
-ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-ai
-ab
-aU
-aU
-aU
-aU
-aU
-aU
-ab
-ah
-ah
-ah
-ab
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-aQ
+cM
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+at
+aC
+cM
 aa
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+cM
+av
+aE
+av
+cM
+bC
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+cE
+ac
+bQ
+bQ
+bQ
+bQ
+bQ
+bQ
+bQ
+aN
+ca
+en
+cy
+bY
+dM
+bY
+bY
+dU
+dW
 aa
 aa
 aa
@@ -29743,60 +31073,60 @@ aa
 aa
 aa
 aa
-ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-be
-ab
-aU
-aU
-aU
-aU
-aU
-aU
-ab
-ah
-ah
-ah
-ab
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-aQ
+cM
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+at
+aD
+cM
 aa
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+cM
+av
+cT
+cV
+cM
+bC
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+cF
+bH
+bR
+bR
+bR
+bR
+bR
+bV
+bX
+aN
+bY
+en
+bY
+bY
+dL
+bY
+bY
+bY
+dW
 aa
 aa
 aa
@@ -30000,60 +31330,60 @@ aa
 aa
 aa
 aa
-ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-ai
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ah
-ah
-ah
-ab
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-aQ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+cM
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+at
+aC
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+av
+aE
+av
+cM
+bC
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+cE
+ac
+bS
+bR
+bR
+bR
+bR
+ey
+ez
+aN
+bY
+en
+bY
+bY
+cA
+dO
+dS
+dV
+aN
 aa
 aa
 aa
@@ -30257,60 +31587,60 @@ aa
 aa
 aa
 aa
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ah
-ah
-ag
-ag
-ag
-ag
-ab
-ab
-ab
-ah
-ah
-ah
-ab
-ab
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-ab
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+av
+aE
+br
+br
+br
+br
+cM
+cM
+cM
+av
+av
+aE
+cM
+cM
+bC
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+cE
 ac
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+eo
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
 aa
 aa
@@ -30519,55 +31849,55 @@ aa
 aa
 aa
 aa
-aU
-aU
-aU
+aa
+aa
+aa
+ae
+av
+aF
+cW
+cW
+cW
+cW
+cM
+aw
+cL
+av
+av
+aE
+aL
+bB
+bK
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+cH
+bO
 ab
-ah
-bd
-aj
-aj
-aj
-aj
-ab
-ak
-bf
-ah
-ah
-ah
-aC
-ah
-aI
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aO
-ah
-ac
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+af
+aq
+aq
+aq
+aq
+af
+bz
+aq
+ep
+bU
+cb
+ce
+ck
+bU
+aq
+cq
 aa
 aa
 aa
@@ -30775,56 +32105,56 @@ aa
 aa
 aa
 aa
-ab
-ab
-ab
-ab
-ab
-aT
-bb
-aj
-aj
-aj
-aj
-ab
-ab
-ab
-ah
-ah
-ah
-aC
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-aZ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ae
+ae
+ae
+ae
+ae
+ax
+aG
+cW
+cW
+cW
+cW
+cM
+cM
+cM
+av
+av
+aE
+aL
+bC
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+em
+ei
+ej
+ej
+ej
+ej
+ek
+ej
+ei
+ej
+bT
+aq
+aq
+cf
+aq
+aq
+aq
+cq
 aa
 aa
 aa
@@ -31032,56 +32362,56 @@ aa
 aa
 aa
 aa
-aQ
-ad
-aV
-aY
+ag
+ah
 al
-ah
-bb
-aj
-aj
-aj
-aj
+ap
+dJ
+av
+aG
+cW
+cW
+cW
+cW
+cM
+cM
+cM
+cO
+av
+aE
+aL
+eX
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+cG
 ab
+aq
+aq
+be
+be
+el
+ef
 ab
-ab
-ao
-ah
-ah
-aC
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-aZ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aq
+ep
+aq
+aq
+aq
+cl
+aq
+aq
+cq
 aa
 aa
 aa
@@ -31289,56 +32619,56 @@ aa
 aa
 aa
 aa
-aQ
-ah
-ah
-ah
-al
-ah
+ag
 ai
-aj
-aj
-aj
-aj
-ab
-ab
-ab
-ah
-ah
-ah
-al
 ai
-aj
-aj
-aj
-aj
-aj
-aj
-aK
-aj
-aj
-aj
-aj
-aj
-aj
-af
-aZ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ai
+ae
+av
+aC
+cW
+cW
+cW
+cW
+cM
+cM
+cM
+av
+av
+aE
+aM
+bC
+au
+au
+au
+au
+au
+bB
+aT
+bB
+au
+au
+au
+au
+au
+eW
+ab
+aq
+bb
+bf
+bo
+bt
+by
+bA
+aq
+ep
+bU
+aq
+bU
+bU
+aq
+aq
+cq
 aa
 aa
 aa
@@ -31546,56 +32876,56 @@ aa
 aa
 aa
 aa
-aQ
-aR
-aW
-ah
-bg
-ah
-ai
-aj
-aj
-aj
-aj
-ab
-ak
-bf
-ah
-at
-ah
-al
-ai
-aj
-aj
-aj
-aj
+ag
 aj
 am
+ar
+dK
+ay
+aH
+cW
+cW
+cW
+cW
+cM
+aw
+cL
+av
+cQ
+aE
+aM
+bC
+au
+au
+au
+au
+au
+aP
+ac
+bv
+au
+au
+au
+au
+au
+cG
 ab
-aT
-aj
-aj
-aj
-aj
-aj
-af
-aZ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aq
+bc
+bl
+bl
+bw
+by
+bA
+aq
+ep
+aq
+eA
+ch
+cm
+aq
+aq
+cq
 aa
 aa
 aa
@@ -31803,56 +33133,56 @@ aa
 aa
 aa
 aa
-aQ
-ah
-ah
-ah
-al
-ah
+ag
 ai
-aj
-aj
-aj
-aj
+an
+dH
+ae
+av
+aJ
+cW
+cW
+cW
+cW
+cM
+cM
+cM
+av
+av
+aE
+aM
+bC
+au
+au
+au
+au
+au
+bB
+aU
+bB
+au
+au
+au
+au
+au
+eW
 ab
-ab
-ab
-ah
-ah
-ah
-al
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aL
-aj
-aj
-aj
-aj
-aj
-aj
-af
-aZ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aq
+bd
+bm
+bs
+bx
+by
+bA
+aq
+ep
+bU
+aq
+bU
+co
+aq
+aq
+cq
 aa
 aa
 aa
@@ -32060,56 +33390,56 @@ aa
 aa
 aa
 aa
-aQ
-aS
-aX
-ba
-al
-ah
-bb
-aj
-aj
-aj
-aj
-ab
-ab
-ab
+ag
+ak
 ao
-ah
-ah
-aC
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-aZ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+dI
+dJ
+av
+bg
+cW
+cW
+cW
+cW
+cM
+cM
+cM
+cO
+av
+aE
+aL
+eX
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+cG
+ab
+aq
+aq
+bn
+bn
+bn
+aq
+ab
+aq
+ep
+aq
+aq
+aq
+aq
+aq
+aq
+cq
 aa
 aa
 aa
@@ -32317,56 +33647,56 @@ aa
 aa
 aa
 aa
-ab
-ab
-ab
-ab
-ab
-aT
-bb
-aj
-aj
-aj
-aj
-ab
-ab
-ab
-ah
-ah
-ah
-aC
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-aZ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ae
+ae
+ae
+ae
+ae
+ax
+bg
+cW
+cW
+cW
+cW
+cM
+cM
+cM
+av
+av
+aE
+aL
+bC
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+cG
+ad
+aq
+aq
+aq
+aq
+aq
+aq
+ad
+aq
+ep
+aq
+aq
+ci
+aq
+aq
+aq
+cq
 aa
 aa
 aa
@@ -32575,55 +33905,55 @@ aa
 aa
 aa
 aa
-aU
-aU
-aU
+aa
+aa
+aa
+ae
+av
+bp
+cW
+cW
+cW
+cW
+cM
+aw
+cL
+av
+av
+aE
+aL
+bB
+bL
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+cI
+bB
 ab
-ah
-bd
-aj
-aj
-aj
-aj
-ab
-ak
-bf
-ah
-ah
-ah
-aC
-ah
-aJ
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aP
-ah
-ac
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+af
+aq
+aq
+aq
+aq
+af
+bz
+aq
+ep
+bU
+cc
+cj
+cp
+bU
+aq
+cq
 aa
 aa
 aa
@@ -32827,60 +34157,60 @@ aa
 aa
 aa
 aa
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ah
-ah
-ae
-ae
-ae
-ae
-ab
-ab
-ab
-ah
-ah
-ah
-ab
-ab
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-ab
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+av
+av
+aA
+aA
+aA
+aA
+cM
+cM
+cM
+av
+av
+aE
+cM
+cM
+bC
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+cG
 ac
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+eo
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
 aa
 aa
@@ -33084,60 +34414,60 @@ aa
 aa
 aa
 aa
-ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-ai
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ah
-ah
-ah
-ab
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-aQ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+cM
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+at
+aJ
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+av
+aE
+av
+cM
+bC
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+cG
+ac
+bS
+bR
+bR
+bR
+bR
+bV
+ez
+aY
+cd
+eq
+cd
+cd
+aY
+cx
+cD
+ea
+aY
 aa
 aa
 aa
@@ -33341,60 +34671,60 @@ aa
 aa
 aa
 aa
-ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-be
-ab
-aU
-aU
-aU
-aU
-aU
-aU
-ab
-ah
-ah
-ah
-ab
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-aQ
+cM
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+at
+bq
+cM
 aa
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+cM
+av
+aE
+av
+cM
+bC
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+cJ
+bH
+bR
+bR
+bR
+bR
+bR
+bW
+bX
+aY
+cd
+ev
+cs
+cs
+ew
+cs
+ex
+cd
+ed
 aa
 aa
 aa
@@ -33598,60 +34928,60 @@ aa
 aa
 aa
 aa
-ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-ai
-ab
-aU
-aU
-aU
-aU
-aU
-aU
-ab
-ah
-ah
-ah
-ab
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-aQ
+cM
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+at
+aJ
+cM
 aa
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+cM
+av
+aE
+av
+cM
+bC
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+cE
+ac
+bQ
+bQ
+bQ
+bQ
+bQ
+bQ
+bQ
+aY
+cd
+cd
+cd
+cd
+cu
+cd
+eq
+eb
+ed
 aa
 aa
 aa
@@ -33855,43 +35185,43 @@ aa
 aa
 aa
 aa
-ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-ai
-ab
-aU
-aU
-aU
-aU
-aU
-aU
-ab
-ah
-ah
-ah
-ao
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-aQ
+cM
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+at
+aJ
+cM
+aa
+aa
+aa
+aa
+aa
+aa
+cM
+ax
+aE
+av
+cO
+bC
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+cE
+bG
 aa
 aa
 aa
@@ -33899,16 +35229,16 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+cd
+cd
+cd
+cd
+cu
+cd
+eq
+ec
+ed
 aa
 aa
 aa
@@ -34112,43 +35442,43 @@ aa
 aa
 aa
 aa
-ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-be
-ab
-aU
-aU
-aU
-aU
-aU
-aU
-ab
-ah
-ah
-ah
-aG
-ai
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-aQ
+cM
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+at
+bq
+cM
+aa
+aa
+aa
+aa
+aa
+aa
+cM
+av
+aE
+av
+aO
+bC
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+au
+cE
+ac
 aa
 aa
 aa
@@ -34156,16 +35486,16 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+cd
+cd
+cd
+cd
+cw
+cB
+eq
+cd
+ed
 aa
 aa
 aa
@@ -34369,43 +35699,43 @@ aa
 aa
 aa
 aa
-ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-af
-ai
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ah
-ah
-ah
-bf
-ah
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ah
-ab
+cM
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+cW
+at
+aJ
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+av
+cU
+ay
+cN
+bF
+bN
+eV
+bN
+bN
+bN
+bN
+bN
+bN
+bN
+bN
+bN
+cK
+bG
 aa
 aa
 aa
@@ -34413,16 +35743,16 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+cg
+cn
+cn
+cn
+aY
+cC
+ev
+eh
+aY
 aa
 aa
 aa
@@ -34626,43 +35956,43 @@ aa
 aa
 aa
 aa
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-af
-ah
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-bf
-ah
-ah
-ah
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+at
+av
+aA
+aA
+aA
+aA
+aA
+aA
+aA
+cL
+av
+av
+av
+cM
+ac
+ac
+eS
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
 aa
 aa
 aa
@@ -34670,16 +36000,16 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+dX
+aY
+aY
 aa
 aa
 aa
@@ -34888,24 +36218,29 @@ aa
 aa
 aa
 aa
-aU
-aU
-aU
-ab
-af
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ab
-ah
-ah
-ah
-ab
+aa
+aa
+aa
+cM
+at
+av
+av
+av
+av
+av
+av
+av
+av
+cM
+av
+av
+av
+cM
+bX
+bX
+eU
+bX
+eB
 aa
 aa
 aa
@@ -34928,14 +36263,9 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+dY
+aY
 aa
 aa
 aa
@@ -35145,24 +36475,29 @@ aa
 aa
 aa
 aa
-aU
-aU
-aU
-ab
-aO
-ag
-ag
-ag
-ag
-ag
-ag
-ag
-ag
-bf
-ah
-ah
-ah
-ab
+aa
+aa
+aa
+cM
+az
+br
+br
+br
+eZ
+br
+br
+br
+br
+cL
+av
+av
+av
+cM
+bX
+bX
+eU
+bX
+eB
 aa
 aa
 aa
@@ -35185,14 +36520,9 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+dZ
+aY
 aa
 aa
 aa
@@ -35402,26 +36732,29 @@ aa
 aa
 aa
 aa
-aU
-aU
-aU
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-bh
-ab
-bh
-ab
-ab
-ab
+aa
+aa
+aa
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cM
+cP
+cM
+cP
+cM
+cM
+cM
+eU
+bX
+eB
 aa
 aa
 aa
@@ -35444,12 +36777,9 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
 aa
 aa
 aa
@@ -35671,17 +37001,17 @@ aa
 aa
 aa
 aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ab
-aa
-aa
-aa
+aV
+aX
+ba
+ba
+ba
+ba
+cr
+aV
+eU
+bX
+eB
 aa
 aa
 aa
@@ -35928,26 +37258,26 @@ aa
 aa
 aa
 aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ab
+aV
+aZ
+ba
+ba
+ba
+ba
+ba
+aV
+eU
+bX
+eB
+eF
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+eG
+eG
+eG
+eG
+eG
+eG
+eG
 aa
 aa
 aa
@@ -36185,26 +37515,26 @@ aa
 aa
 aa
 aa
-an
-ah
-ah
-au
-au
-au
-ah
-al
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aW
+ba
+ba
+du
+du
+du
+ba
+dG
+eU
+bX
+eC
+eG
+eG
+eG
+eH
+eH
+eH
+eH
+eH
+eG
 aa
 aa
 aa
@@ -36442,26 +37772,26 @@ aa
 aa
 aa
 aa
-an
-ah
-ap
-av
-aA
-aD
-ah
-al
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aW
+ba
+bD
+dv
+dz
+dB
+ba
+dG
+eU
+bX
+eD
+eH
+eH
+eM
+eH
+eO
+eP
+eQ
+eH
+eG
 aa
 aa
 aa
@@ -36699,26 +38029,26 @@ aa
 aa
 aa
 aa
-an
-ah
-aq
-aw
-az
-aE
-ah
-al
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aW
+ba
+bE
+dw
+dw
+dC
+ba
+dG
+eT
+bR
+eE
+eI
+eK
+eN
+eH
+eP
+eH
+eR
+eH
+eG
 aa
 aa
 aa
@@ -36956,26 +38286,26 @@ aa
 aa
 aa
 aa
-an
-ah
-ar
-ax
-aB
-aF
-ah
-al
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aW
+ba
+bI
+dx
+dA
+dD
+ba
+dG
+bX
+bX
+eD
+eJ
+eL
+eM
+eH
+eQ
+eP
+eO
+eH
+eG
 aa
 aa
 aa
@@ -37213,26 +38543,26 @@ aa
 aa
 aa
 aa
-ab
-ah
-ah
-ay
-ay
-ay
-ah
-al
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aV
+bh
+ba
+dy
+dy
+dy
+ba
+dG
+bX
+bX
+eB
+eG
+eG
+eG
+eH
+eH
+eH
+eH
+eH
+eG
 aa
 aa
 aa
@@ -37470,26 +38800,26 @@ aa
 aa
 aa
 aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ab
+aV
+aX
+ba
+fb
+fb
+ba
+ba
+aV
+bX
+bX
+eB
+eF
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+eG
+eG
+eG
+eG
+eG
+eG
+eG
 aa
 aa
 aa
@@ -37727,17 +39057,17 @@ aa
 aa
 aa
 aa
-ab
-ab
-as
-ab
-ab
-as
-ab
-ab
-aa
-aa
-aa
+aV
+aV
+bP
+aV
+aV
+bP
+aV
+aV
+bX
+bX
+eB
 aa
 aa
 aa
@@ -37984,17 +39314,17 @@ aa
 aa
 aa
 aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ab
-aa
-aa
-aa
+aV
+bi
+dr
+dr
+dr
+dr
+bi
+aV
+bX
+bX
+eB
 aa
 aa
 aa
@@ -38241,17 +39571,17 @@ aa
 aa
 aa
 aa
-ab
-ah
-ah
-au
-au
-au
-ah
-al
-aa
-aa
-aa
+aV
+bj
+ds
+ds
+ds
+ds
+dE
+dG
+bX
+bX
+eB
 aa
 aa
 aa
@@ -38498,17 +39828,17 @@ aa
 aa
 aa
 aa
-an
-ah
-ap
-av
-aA
-aD
-ah
-al
-aa
-aa
-aa
+aV
+bk
+ds
+ds
+ds
+ds
+dF
+dG
+bX
+bX
+eB
 aa
 aa
 aa
@@ -38755,17 +40085,17 @@ aa
 aa
 aa
 aa
-an
-ah
-aq
-az
-az
-aE
-ah
-al
-aa
-aa
-aa
+aV
+ff
+ds
+ds
+ds
+ds
+dE
+dG
+bX
+bX
+eB
 aa
 aa
 aa
@@ -39012,17 +40342,17 @@ aa
 aa
 aa
 aa
-an
-ah
-ar
-ax
-aB
-aF
-ah
-al
-aa
-aa
-aa
+aV
+ff
+ds
+ds
+ds
+ds
+dE
+dG
+bX
+bX
+eB
 aa
 aa
 aa
@@ -39269,17 +40599,17 @@ aa
 aa
 aa
 aa
-an
-ah
-ah
-ay
-ay
-ay
-ah
-al
-aa
-aa
-aa
+aV
+bk
+ds
+ds
+ds
+ds
+dF
+dG
+bX
+bX
+eB
 aa
 aa
 aa
@@ -39526,17 +40856,17 @@ aa
 aa
 aa
 aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ab
-aa
-aa
-aa
+aV
+bj
+ds
+ds
+ds
+ds
+dE
+aV
+bX
+bX
+eB
 aa
 aa
 aa
@@ -39783,17 +41113,17 @@ aa
 aa
 aa
 aa
-ab
-ah
-ah
-ah
-ah
-ah
-ah
-ab
-aa
-aa
-aa
+aV
+bi
+dt
+dt
+dt
+dt
+bi
+aV
+bX
+bX
+eB
 aa
 aa
 aa
@@ -40040,17 +41370,17 @@ aa
 aa
 aa
 aa
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-aa
-aa
-aa
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+aV
+eB
+eB
+eB
 aa
 aa
 aa
