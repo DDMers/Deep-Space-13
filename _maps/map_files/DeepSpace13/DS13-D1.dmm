@@ -2888,7 +2888,7 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/entry)
 "hc" = (
-/obj/machinery/door/airlock/trek/goon/external,
+/obj/machinery/door/airlock/trek/goon/external/public,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -2901,7 +2901,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
-/obj/machinery/door/airlock/trek/goon/external,
+/obj/machinery/door/airlock/trek/goon/external/public,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/entry)
 "hf" = (
@@ -2910,17 +2910,17 @@
 /turf/open/floor/plating,
 /area/hallway/primary/aft)
 "hg" = (
-/obj/machinery/door/airlock/trek/goon/external,
+/obj/machinery/door/airlock/trek/goon/external/public,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/entry)
 "hh" = (
-/obj/machinery/door/airlock/trek/goon/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/machinery/door/airlock/trek/goon/external/public,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/entry)
 "hi" = (
+/obj/machinery/door/airlock/trek/goon/external/public,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/machinery/door/airlock/trek/goon/external,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/entry)
 "hj" = (
@@ -3352,7 +3352,7 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/aft)
 "iJ" = (
-/obj/machinery/door/airlock/trek/goon/external{
+/obj/machinery/door/airlock/trek/goon/external/public{
 	icon_state = "closed";
 	dir = 4
 	},
@@ -3365,7 +3365,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
-/obj/machinery/door/airlock/trek/goon/external{
+/obj/machinery/door/airlock/trek/goon/external/public{
 	icon_state = "closed";
 	dir = 4
 	},
@@ -38789,7 +38789,7 @@ iA
 fe
 fe
 fe
-fe
+iI
 fe
 fe
 fe
@@ -39817,7 +39817,7 @@ iA
 fe
 fe
 fe
-fe
+iI
 fe
 fe
 fe
