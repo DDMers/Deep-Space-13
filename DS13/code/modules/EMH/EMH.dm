@@ -1,4 +1,3 @@
-GLOBAL_VAR_INIT(EMH_present, FALSE) //Stop multiple holograms for now...To avoid mass grief.
 GLOBAL_LIST_INIT(EMH_blacklist, list())
 
 //EMITTER
@@ -8,16 +7,23 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	desc = "Simply click this device and an emergency medical hologram will be summoned. Swipe it with a captain level ID to terminate the current EMH if it's misbehaving."
 	icon = 'DS13/icons/obj/decor/wall_decor.dmi'
 	icon_state = "emh-off"
-	var/mob/living/carbon/human/species/holographic/emh
 	anchored = TRUE
 	density = FALSE
 	pixel_y = 32 //Put on the tile below a wall etc etc modular fun time mapping mayhem
 	var/range = 10 //10 tiles? Pretty damn generous.
+	var/mob/living/carbon/human/species/holographic/emh
 	req_access = list(ACCESS_CAPTAIN)
+
+/obj/machinery/emh_emitter/proc/EMH_present()
+	var/mob/living/carbon/human/species/holographic/S = locate(/mob/living/carbon/human/species/holographic) in GLOB.alive_mob_list
+	if(istype(S) && !QDELETED(S))
+		return TRUE
+	else
+		return FALSE
 
 /obj/machinery/emh_emitter/examine(mob/user)
 	. = ..()
-	if(GLOB.EMH_present)
+	if(EMH_present())
 		if(emh.client)
 			to_chat(user, "<i>The panel shows that there is an active EMH on the network.</i>")
 		else
@@ -46,17 +52,19 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		if(ID && istype(ID))
 			if(check_access(ID))
 				var/question = alert("Terminate the current EMH? (this kills the current EMH)",name,"yes","no")
+				var/blacklist = alert("Blacklist the current EMH player for the duration of this round? ",name,"yes","no")
 				if(question == "yes")
-					if(emh.client && emh.client.key)
-						if(!emh.client.key in GLOB.EMH_blacklist)
-							to_chat(user, "Blacklist the current EMH? (THIS MEANS THEY CANNOT BECOME AN EMH AGAIN THIS ROUND. ADMINS WILL BE NOTIFIED OF THIS, SO ONLY DO THIS IF THE EMH IS GRIEFING / BEING A MAJOR INCONVENIENCE! FALSE BLACKLISTING MAY LEAD TO A BAN!")
-							var/blacklist = alert("Blacklist the current EMH for the duration of this round? ",name,"yes","no")
-							if(blacklist == "yes")
-								GLOB.EMH_blacklist += emh.client.key
-								to_chat(emh, "<span_class='boldnotice'>[user] has blacklisted you from becoming an EMH for the duration of this round! If you feel this was in error, please ahelp immediately.")
-								message_admins("[user] just blacklisted [emh.client.key] from becoming an EMH for the duration of this round. Use the edit-emh-blacklist verb to undo this!")
-					emh.death()//Kill the emh.
-					emh = null
+					if(!emh)
+						emh = locate(/mob/living/carbon/human/species/holographic) in GLOB.alive_mob_list
+					if(emh.client && emh.client.key && blacklist == "yes")
+						GLOB.EMH_blacklist += emh.client.key
+						to_chat(emh, "<span_class='boldnotice'>[user] has blacklisted you from becoming an EMH for the duration of this round! If you feel this was in error, please ahelp immediately.")
+						message_admins("[user] just blacklisted [emh.client.key] from becoming an EMH for the duration of this round. Use the edit-emh-blacklist verb to undo this.")
+					if(emh)
+						emh.death()//Kill the emh.
+						emh = null
+					else
+						to_chat(user, "Unable to locate an EMH on the network.")
 
 /obj/machinery/emh_emitter/Destroy()
 	if(emh)
@@ -199,7 +207,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 			return TRUE
 		else
 			return FALSE
-	if(GLOB.EMH_present)
+	if(EMH_present())
 		return TRUE
 	return FALSE
 
@@ -226,7 +234,6 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	damage_overlay_type = ""//You're a hologram, you don't bleed.
 
 /datum/species/holographic/spec_death(gibbed = FALSE, mob/living/carbon/human/H)
-	GLOB.EMH_present = FALSE //Free up the slot for a new EMH
 	H.unequip_everything() //Don't spawn in as an EMH, rush the spare, then suicide so it deletes
 	playsound(H.loc, 'DS13/sound/effects/holofizzle.ogg', 100, 0)
 	H.visible_message("[H] fizzles away quietly...")

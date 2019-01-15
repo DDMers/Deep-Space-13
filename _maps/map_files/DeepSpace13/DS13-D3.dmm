@@ -1810,6 +1810,17 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/white,
 /area/crew_quarters/lounge)
+"UM" = (
+/obj/machinery/door/airlock/trek/goon/maint{
+	icon_state = "closed";
+	dir = 8
+	},
+/turf/open/floor/trek/tile,
+/area/maintenance/department/bridge)
+"VN" = (
+/obj/machinery/telecomms/relay/preset/station,
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
 
 (1,1,1) = {"
 aa
@@ -30953,7 +30964,7 @@ au
 cE
 ac
 bQ
-bX
+UM
 bQ
 bQ
 bQ
@@ -31702,7 +31713,7 @@ br
 br
 br
 cM
-cM
+av
 cM
 av
 av
@@ -32216,7 +32227,7 @@ cW
 cW
 cW
 cM
-cM
+av
 cM
 av
 av
@@ -32730,7 +32741,7 @@ cW
 cW
 cW
 cM
-cM
+av
 cM
 av
 av
@@ -33244,7 +33255,7 @@ cW
 cW
 cW
 cM
-cM
+av
 cM
 av
 av
@@ -33758,7 +33769,7 @@ cW
 cW
 cW
 cM
-cM
+av
 cM
 av
 av
@@ -34272,7 +34283,7 @@ aA
 aA
 aA
 cM
-cM
+av
 cM
 av
 av
@@ -35065,7 +35076,7 @@ au
 cE
 ac
 bQ
-bX
+UM
 bQ
 bQ
 bQ
@@ -37883,7 +37894,7 @@ eU
 fm
 eD
 eH
-eH
+VN
 eM
 eH
 eO

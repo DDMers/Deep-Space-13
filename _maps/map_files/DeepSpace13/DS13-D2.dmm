@@ -2896,7 +2896,7 @@
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "ik" = (
-/obj/machinery/door/airlock/trek/goon/research,
+/obj/machinery/door/airlock/trek/goon/medical,
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "il" = (
@@ -3163,10 +3163,10 @@
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
 "iU" = (
-/obj/machinery/door/airlock/trek/goon/research,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/trek/goon/medical,
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
 "iV" = (
@@ -3268,6 +3268,13 @@
 /obj/machinery/emh_emitter,
 /turf/open/floor/trek/tile,
 /area/quartermaster/storage)
+"uM" = (
+/turf/open/space/basic,
+/area/hallway/primary/central)
+"Jz" = (
+/obj/machinery/telecomms/relay/preset/station,
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
 
 (1,1,1) = {"
 aa
@@ -33930,8 +33937,8 @@ al
 an
 al
 gm
-bm
-bm
+uM
+uM
 bm
 ff
 ff
@@ -34958,8 +34965,8 @@ al
 al
 al
 gm
-bm
-bm
+uM
+uM
 bm
 ff
 ff
@@ -41956,7 +41963,7 @@ et
 et
 gG
 gM
-gM
+Jz
 gR
 gM
 gT
