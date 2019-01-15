@@ -111,6 +111,8 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 					to_chat(user, "The EMH has declined your summons.")
 					return ..()
 	else
+		if(emh)
+			emh.death()
 		if(user)
 			user.say("Computer, activate emergency medical hologram")
 			to_chat(user, "Attempting to activate EMH ((This requires a ghost willing to control it...))")
@@ -202,8 +204,14 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 
 
 /obj/machinery/emh_emitter/proc/is_occupied()
-	if(emh && !QDELETED(emh))
-		if(emh.mind && emh.client)
+	var/mob/living/global_emh = null //For deactivation of AFK EMHs
+	global_emh = emh
+	if(!emh)
+		var/mob/living/carbon/human/species/holographic/S = locate(/mob/living/carbon/human/species/holographic) in GLOB.alive_mob_list
+		if(istype(S) && !QDELETED(S))
+			global_emh = S
+	if(global_emh && !QDELETED(global_emh))
+		if(global_emh.mind && global_emh.client)
 			return TRUE
 		else
 			return FALSE
@@ -222,7 +230,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	use_skintones = 1
 	skinned_type = null
 	species_traits = list(NOBLOOD)
-	inherent_traits = list(TRAIT_RADIMMUNE,TRAIT_RESISTHEAT,TRAIT_NOBREATH,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,TRAIT_NOFIRE,TRAIT_PIERCEIMMUNE,TRAIT_NOHUNGER,TRAIT_NODISMEMBER)
+	inherent_traits = list(TRAIT_RADIMMUNE,TRAIT_RESISTHEAT,TRAIT_NOBREATH,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,TRAIT_NOFIRE,TRAIT_PIERCEIMMUNE,TRAIT_NOHUNGER,TRAIT_NODISMEMBER, TRAIT_PACIFISM,TRAIT_POOR_AIM)//EMHs are not programmed to fire weapons / cause harm
 	inherent_biotypes = list(MOB_HUMANOID)
 	meat = null
 	mutantlungs = null
