@@ -16,6 +16,7 @@
 #define ROLE_REV_HEAD			"Head Revolutionary"
 #define ROLE_ALIEN				"Xenomorph"
 #define ROLE_PAI				"pAI"
+#define ROLE_EMH				"Emergency Medical Hologram" //DeepSpace 13 - EMH
 #define ROLE_CULTIST			"Cultist"
 #define ROLE_BLOB				"Blob"
 #define ROLE_NINJA				"Space Ninja"
@@ -49,7 +50,8 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_MALF,
 	ROLE_REV = /datum/game_mode/revolution,
 	ROLE_ALIEN,
-	ROLE_PAI,
+	ROLE_PAI, //DeepSpace 13 - EMH
+	ROLE_EMH,
 	ROLE_CULTIST = /datum/game_mode/cult,
 	ROLE_BLOB,
 	ROLE_NINJA,
