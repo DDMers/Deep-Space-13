@@ -90,7 +90,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		if(!A)
 			return
 		user.say("Computer, transfer emergency medical holographic program to [get_area(A)]")
-		new /obj/effect/temp_visual/dir_setting/ninja/cloak(get_turf(emh), emh.dir)
+		new /obj/effect/temp_visual/dir_setting/ninja/cloak(get_turf(user), user.dir)
 		user.forceMove(get_turf(A))
 		playsound(user.loc, 'DS13/sound/effects/holofizzle.ogg', 100, 0)
 		var/obj/machinery/emh_emitter/S = A

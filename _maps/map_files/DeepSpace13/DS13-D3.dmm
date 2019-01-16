@@ -41,6 +41,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/camera{
+	c_tag = "Detective's Office";
+	dir = 2
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hor)
 "ak" = (
@@ -1260,6 +1264,7 @@
 /area/crew_quarters/heads/captain)
 "dT" = (
 /obj/structure/closet/secure_closet/captains,
+/obj/item/reagent_containers/food/drinks/bottle/whiskey,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
 "dU" = (
@@ -1810,17 +1815,108 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/white,
 /area/crew_quarters/lounge)
-"UM" = (
+"hJ" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/obj/machinery/camera{
+	c_tag = "Xenobiology South";
+	dir = 4;
+	network = list("ss13","rd")
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"jP" = (
+/obj/machinery/camera{
+	c_tag = "Detective's Office";
+	dir = 2
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/lounge)
+"mZ" = (
+/obj/machinery/camera{
+	c_tag = "Detective's Office";
+	dir = 2
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"qf" = (
+/obj/machinery/camera{
+	c_tag = "Xenobiology South";
+	dir = 4;
+	network = list("ss13","rd")
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
+"tD" = (
 /obj/machinery/door/airlock/trek/goon/maint{
 	icon_state = "closed";
 	dir = 8
 	},
 /turf/open/floor/trek/tile,
 /area/maintenance/department/bridge)
-"VN" = (
+"xz" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/obj/machinery/camera{
+	c_tag = "Engineering Supermatter Starboard";
+	dir = 8;
+	network = list("ss13","engine")
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"AG" = (
+/obj/machinery/camera{
+	c_tag = "Detective's Office";
+	dir = 2
+	},
+/turf/open/floor/carpet/trek,
+/area/bridge/meeting_room)
+"JO" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/camera{
+	c_tag = "Engineering Supermatter Starboard";
+	dir = 8;
+	network = list("ss13","engine")
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"OY" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/camera{
+	c_tag = "Xenobiology South";
+	dir = 4;
+	network = list("ss13","rd")
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"Ui" = (
 /obj/machinery/telecomms/relay/preset/station,
 /turf/open/floor/plasteel/dark,
 /area/engine/gravity_generator)
+"XQ" = (
+/obj/machinery/camera{
+	c_tag = "Engineering Supermatter Starboard";
+	dir = 8;
+	network = list("ss13","engine")
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/fore)
 
 (1,1,1) = {"
 aa
@@ -26061,7 +26157,7 @@ cY
 cY
 cY
 aK
-da
+jP
 da
 da
 da
@@ -29404,7 +29500,7 @@ aA
 aA
 cL
 aE
-av
+qf
 av
 fi
 bX
@@ -30184,7 +30280,7 @@ bM
 bM
 bM
 bM
-bM
+OY
 bM
 bM
 bM
@@ -30202,7 +30298,7 @@ aa
 aN
 aS
 ct
-ct
+hJ
 ct
 cA
 dN
@@ -30964,7 +31060,7 @@ au
 cE
 ac
 bQ
-UM
+tD
 bQ
 bQ
 bQ
@@ -31706,7 +31802,7 @@ cM
 cM
 cM
 cM
-av
+mZ
 aE
 br
 br
@@ -34276,7 +34372,7 @@ cM
 cM
 cM
 cM
-av
+mZ
 av
 aA
 aA
@@ -35076,7 +35172,7 @@ au
 cE
 ac
 bQ
-UM
+tD
 bQ
 bQ
 bQ
@@ -35838,7 +35934,7 @@ eV
 bN
 bN
 bN
-bN
+JO
 bN
 bN
 bN
@@ -35856,7 +35952,7 @@ aa
 aY
 cg
 cn
-cn
+xz
 cn
 aY
 cC
@@ -36600,7 +36696,7 @@ br
 br
 cL
 av
-av
+XQ
 av
 fi
 bX
@@ -37883,7 +37979,7 @@ bQ
 fl
 bX
 aW
-ba
+AG
 bD
 dv
 dz
@@ -37894,7 +37990,7 @@ eU
 fm
 eD
 eH
-VN
+Ui
 eM
 eH
 eO
