@@ -141,6 +141,12 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/machinery/camera{
+	c_tag = "Xenobiology Test Chamber";
+	dir = 4;
+	icon_state = "camera";
+	network = list("xeno","rd")
+	},
 /turf/open/floor/plasteel/dark/telecomms,
 /area/science/lab)
 "at" = (
@@ -319,6 +325,12 @@
 "aO" = (
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/machinery/camera{
+	icon_state = "camera";
+	dir = 9;
+	network = list("xeno","rd");
+	c_tag = "Xenobiology Test Chamber"
 	},
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
@@ -3300,42 +3312,35 @@
 /obj/machinery/emh_emitter,
 /turf/open/floor/trek/tile,
 /area/quartermaster/storage)
-"jN" = (
-/turf/open/space/basic,
-/area/hallway/primary/central)
-"ma" = (
+"oq" = (
 /obj/machinery/camera{
-	c_tag = "Turbine Chamber";
-	dir = 4;
-	network = list("turbine")
+	c_tag = "Locker Room South";
+	dir = 8
 	},
 /turf/open/floor/trek/tile,
 /area/quartermaster/storage)
-"oH" = (
-/obj/machinery/telecomms/relay/preset/station,
-/turf/open/floor/plasteel/dark,
-/area/engine/gravity_generator)
-"tN" = (
+"qV" = (
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "4-8"
 	},
+/obj/machinery/emh_emitter,
+/turf/open/floor/carpet/trek,
+/area/science/research)
+"xR" = (
 /obj/machinery/camera{
 	c_tag = "Locker Room South";
 	dir = 8
 	},
 /turf/open/floor/carpet/trek,
-/area/science/xenobiology)
-"uV" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/area/hallway/primary/central)
+"Ar" = (
 /obj/machinery/camera{
 	c_tag = "Locker Room South";
 	dir = 8
 	},
 /turf/open/floor/carpet/trek,
-/area/medical/medbay/central)
-"wq" = (
+/area/crew_quarters/heads/cmo)
+"DT" = (
 /obj/machinery/camera{
 	c_tag = "Turbine Chamber";
 	dir = 4;
@@ -3343,7 +3348,7 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
-"EH" = (
+"ES" = (
 /obj/machinery/camera{
 	c_tag = "Xenobiology Test Chamber";
 	dir = 2;
@@ -3351,35 +3356,25 @@
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/qm)
-"Kr" = (
+"Ka" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /obj/machinery/camera{
 	c_tag = "Locker Room South";
 	dir = 8
 	},
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
-"KC" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/emh_emitter,
-/turf/open/floor/carpet/trek,
-/area/science/research)
-"Mt" = (
+"MJ" = (
 /obj/machinery/camera{
-	c_tag = "Locker Room South";
-	dir = 8
+	c_tag = "Turbine Chamber";
+	dir = 4;
+	network = list("turbine")
 	},
-/turf/open/floor/carpet/trek,
-/area/crew_quarters/heads/cmo)
-"Pj" = (
-/obj/machinery/camera{
-	c_tag = "Locker Room South";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/hallway/primary/central)
-"Rs" = (
+/turf/open/floor/trek/tile,
+/area/quartermaster/storage)
+"Oe" = (
 /obj/machinery/camera{
 	c_tag = "Xenobiology Test Chamber";
 	dir = 2;
@@ -3387,24 +3382,32 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/office)
-"Rw" = (
+"OI" = (
 /obj/machinery/camera{
 	c_tag = "Locker Room South";
 	dir = 8
 	},
-/turf/open/floor/trek/tile,
-/area/quartermaster/storage)
-"ZW" = (
+/turf/open/floor/carpet/trek,
+/area/medical/medbay/central)
+"OT" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/camera{
-	c_tag = "Xenobiology South";
+	c_tag = "Xenobiology Test Chamber";
 	dir = 4;
-	network = list("ss13","rd")
+	icon_state = "camera";
+	network = list("xeno","rd")
 	},
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
+"RP" = (
+/obj/machinery/telecomms/relay/preset/station,
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
+"VH" = (
+/turf/open/space/basic,
+/area/hallway/primary/central)
 
 (1,1,1) = {"
 aa
@@ -30988,7 +30991,7 @@ hg
 gv
 ff
 ff
-wq
+DT
 ff
 bm
 dD
@@ -32520,7 +32523,7 @@ ad
 aw
 aw
 aR
-KC
+qV
 bu
 bu
 bu
@@ -33543,7 +33546,7 @@ hL
 am
 al
 aO
-tN
+az
 az
 az
 bh
@@ -33616,7 +33619,7 @@ en
 ek
 ek
 ek
-Rw
+oq
 ek
 ek
 ek
@@ -34067,8 +34070,8 @@ al
 an
 al
 gm
-jN
-jN
+VH
+VH
 bm
 ff
 ff
@@ -34637,12 +34640,12 @@ ff
 dj
 fd
 eZ
-Rs
+Oe
 eZ
 eZ
 dv
 dH
-EH
+ES
 dX
 eC
 ek
@@ -35095,8 +35098,8 @@ al
 al
 al
 gm
-jN
-jN
+VH
+VH
 bm
 ff
 ff
@@ -35599,7 +35602,7 @@ hL
 hM
 az
 az
-ZW
+OT
 az
 az
 az
@@ -35672,7 +35675,7 @@ en
 ek
 ek
 ek
-ma
+MJ
 ek
 ek
 ek
@@ -36632,7 +36635,7 @@ aw
 aw
 ad
 aR
-KC
+qV
 bu
 bu
 bu
@@ -38184,7 +38187,7 @@ et
 bm
 ff
 ff
-Pj
+xR
 ff
 fw
 hQ
@@ -40001,11 +40004,11 @@ id
 id
 ik
 id
-Kr
+OI
 id
 ik
 id
-Kr
+OI
 id
 iv
 ie
@@ -40502,14 +40505,14 @@ et
 bq
 iB
 iF
-Mt
+Ar
 iW
 iQ
 bq
 id
 id
 iO
-uV
+Ka
 iN
 iN
 iP
@@ -42093,7 +42096,7 @@ et
 et
 gG
 gM
-oH
+RP
 gR
 gM
 gT
