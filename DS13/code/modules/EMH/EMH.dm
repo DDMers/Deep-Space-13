@@ -4,7 +4,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 
 /obj/machinery/emh_emitter
 	name = "Emergency medical hologram emitter"
-	desc = "Simply click this device and an emergency medical hologram will be summoned. Swipe it with a captain level ID to terminate the current EMH if it's misbehaving."
+	desc = "Simply click this device and an emergency medical hologram will be summoned. Swipe it with a high level ID to terminate the current EMH if it's misbehaving."
 	icon = 'DS13/icons/obj/decor/wall_decor.dmi'
 	icon_state = "emh-off"
 	anchored = TRUE
@@ -12,7 +12,12 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	pixel_y = 32 //Put on the tile below a wall etc etc modular fun time mapping mayhem
 	var/range = 10 //10 tiles? Pretty damn generous.
 	var/mob/living/carbon/human/species/holographic/emh
-	req_access = list(ACCESS_CAPTAIN)
+	req_access = list(ACCESS_HEADS)
+	var/locked = FALSE //Cooldown to prevent spam
+
+/obj/machinery/emh_emitter/Initialize()
+	. = ..()
+	START_PROCESSING(SSmachines,src)
 
 /obj/machinery/emh_emitter/proc/EMH_present()
 	var/mob/living/carbon/human/species/holographic/S = locate(/mob/living/carbon/human/species/holographic) in GLOB.alive_mob_list
@@ -29,7 +34,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		else
 			to_chat(user, "<i>The panel shows that there is an EMH on the network, but it is not responding (braindead). Click the panel to summon a new one.</i>")
 
-/mob/verb/editemhblacklist()
+/client/proc/editemhblacklist()
 	set name = "Edit EMH blacklist"
 	set desc = "Remove people from the EMH blacklist for this round."
 	set category = "Admin"
@@ -43,7 +48,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		return
 	if(A in GLOB.EMH_blacklist)
 		GLOB.EMH_blacklist -= A
-	log_admin("([worldtime2text()]):[src] / [client.ckey] removed [A] from the EMH blacklist for this round.")
+	log_admin("([worldtime2text()]):[src] / [key] removed [A] from the EMH blacklist for this round.")
 
 /obj/machinery/emh_emitter/attackby(obj/I,mob/user)
 	. = ..()
@@ -79,6 +84,9 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	STOP_PROCESSING(SSmachines,src)
 	. = ..()
 
+/obj/machinery/emh_emitter/proc/remove_cooldown()
+	locked = FALSE
+
 /obj/machinery/emh_emitter/attack_hand(mob/user)
 	if(istype(user, /mob/living/carbon/human/species/holographic)) //Allow them to jump to different locs.
 		var/list/jumplocs = list()
@@ -97,9 +105,14 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		emh = null
 		S.emh = user //transfer silently.
 		return
+	if(locked)
+		to_chat(user, "Unable to comply, interface cooldown in effect.")
+		return
 	if(is_occupied()) //If we have an EMH, or there is an EMH in the world
 		to_chat(user, "There is already an EMH active, summon it?")
 		var/question = alert("Summon an EMH?",name,"yes","no")
+		locked = TRUE
+		addtimer(CALLBACK(src, .proc/remove_cooldown), 30) //Add timer to cooldown
 		if(question == "yes")
 			var/mob/living/carbon/human/species/holographic/S = locate(/mob/living/carbon/human/species/holographic) in GLOB.alive_mob_list
 			if(S)
@@ -111,6 +124,8 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 					to_chat(user, "The EMH has declined your summons.")
 					return ..()
 	else
+		locked = TRUE
+		addtimer(CALLBACK(src, .proc/remove_cooldown), 30) //Add timer to prevent spam clicking
 		if(emh)
 			emh.death()
 		if(user)
@@ -121,22 +136,27 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 /obj/machinery/emh_emitter/process()
 	var/area/A = get_area(src) //If someone moves us, ensure we update name.
 	name = "EMH emitter ([A])"
-	if(QDELETED(emh))
+	if(!emh || !is_occupied()) //If we don't have an EMH, no need to process
+		return
+	if(QDELETED(emh)) //Same goes here
 		emh = null
 		icon_state = "emh-off"
 		return
-	if(!is_occupied()) //Do we HAVE an EMH? If not, stop processing and turn off.
-		return
-	if(emh in orange(src, range)) //Orange ignores walls, so our EMH has a tiny bit of movement freedom
-		icon_state = "emh-on"
-		return
-	else
-		var/obj/machinery/emh_emitter/S = locate(/obj/machinery/emh_emitter) in get_area(emh)
-		if(S)
-			if(emh in orange(S, S.range))
-				S.emh = emh //Transfer his program seamlessly
-				emh = null
-				icon_state = "emh-off"
+	icon_state = "emh-on" //Well we have an EMH, let's check if he's nearby
+	if(get_dist(emh, src) >= range) //Out of range, try find the EMH another emitter or tele him back to us.
+		var/obj/machinery/emh_emitter/closest = null //Find our closest distance
+		var/closest_dist = 10 //Distance of closest emitter
+		for(var/obj/machinery/emh_emitter/em in GLOB.machines)
+			if(em == src || !emh in orange(em, em.range))
+				return
+			if(get_dist(emh, em) <= closest_dist)
+				closest = em
+				closest_dist = get_dist(emh, em)
+		if(closest)
+			closest.emh = emh //Transfer his program seamlessly
+			emh = null
+			closest.icon_state = "emh-on"
+			icon_state = "emh-off"
 		else
 			to_chat(emh, "You cannot move beyond the range of your holo-emitters!")
 			emh.forceMove(get_turf(src))
@@ -147,7 +167,6 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		new /obj/effect/temp_visual/dir_setting/ninja/cloak(get_turf(emh), emh.dir)
 		transferred.forceMove(get_turf(src))
 		to_chat(transferred, "You have been transferred to [get_area(src)]")
-		START_PROCESSING(SSmachines,src)
 		emh.say("Please state the nature of the medical emergency.")
 		playsound(loc, 'DS13/sound/effects/medicalemergency.ogg', 50, 0)
 		return
@@ -183,7 +202,6 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		popup.set_title_image(emh.browse_rsc_icon(src.icon, src.icon_state))
 		popup.set_content(s)
 		popup.open()
-		START_PROCESSING(SSmachines,src)
 	else
 		qdel(emh)
 		say("Unable to comply, could not activate EMH")
@@ -238,7 +256,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	mutantstomach = null
 	brutemod = 2
 	heatmod = 2
-	breathid = "" //You don't need air, you're a hologram.
+	breathid = null //You don't need air, you're a hologram.
 	damage_overlay_type = ""//You're a hologram, you don't bleed.
 
 /datum/species/holographic/spec_death(gibbed = FALSE, mob/living/carbon/human/H)
@@ -255,9 +273,9 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	uniform = /obj/item/clothing/under/trek/medsci/ds9/emh
 	shoes = /obj/item/clothing/shoes/jackboots/emh
 	ears = /obj/item/radio/headset/headset_med/emh
-	id = /obj/item/card/id/emh
+	id = /obj/item/card/id/silver/emh
 
-/obj/item/card/id/emh
+/obj/item/card/id/silver/emh
 	name = "Holographic ID"
 	desc = "An ID designed to give an emergency medical hologram access to key areas of the ship."
 	icon_state = "silver"
@@ -268,7 +286,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	assignment = "EMH"
 	item_flags = NODROP
 
-/obj/item/card/id/emh/Initialize()
+/obj/item/card/id/silver/emh/Initialize()
 	var/datum/job/captain/J = new/datum/job/captain
 	access = J.get_access()
 	. = ..()

@@ -235,6 +235,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/client/proc/toggle_nuke,
 	/client/proc/cmd_display_del_log,
 	/client/proc/toggle_combo_hud,
+	/client/proc/editemhblacklist, //DeepSpace 13- EMH stuff
 	/client/proc/debug_huds
 	))
 
