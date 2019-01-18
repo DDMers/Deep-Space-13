@@ -18,6 +18,8 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 /obj/machinery/emh_emitter/Initialize()
 	. = ..()
 	START_PROCESSING(SSmachines,src)
+	var/area/A = get_area(src) //Unmovable
+	name = "EMH emitter ([A])"
 
 /obj/machinery/emh_emitter/proc/EMH_present()
 	var/mob/living/carbon/human/species/holographic/S = locate(/mob/living/carbon/human/species/holographic) in GLOB.alive_mob_list
@@ -134,8 +136,6 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		activate(null) //No EMH present, try to make one!
 
 /obj/machinery/emh_emitter/process()
-	var/area/A = get_area(src) //If someone moves us, ensure we update name.
-	name = "EMH emitter ([A])"
 	if(!emh || !is_occupied()) //If we don't have an EMH, no need to process
 		return
 	if(QDELETED(emh)) //Same goes here
