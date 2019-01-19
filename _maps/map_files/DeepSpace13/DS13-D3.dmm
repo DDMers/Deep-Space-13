@@ -1702,6 +1702,10 @@
 /obj/machinery/door/airlock/trek/goon/maint,
 /turf/open/floor/trek/tile,
 /area/hallway/primary/fore)
+"fj" = (
+/obj/machinery/emh_emitter,
+/turf/open/floor/carpet/trek,
+/area/bridge)
 "fk" = (
 /obj/machinery/door/airlock/trek/goon/maint,
 /turf/open/floor/trek/tile,
@@ -32988,7 +32992,7 @@ au
 au
 cG
 ab
-aq
+fj
 bc
 bl
 bl

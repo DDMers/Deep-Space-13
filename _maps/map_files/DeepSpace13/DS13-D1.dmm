@@ -3050,6 +3050,7 @@
 /area/hallway/primary/aft)
 "hI" = (
 /obj/machinery/vending/wardrobe/sec_wardrobe,
+/obj/machinery/emh_emitter,
 /turf/open/floor/plasteel/showroomfloor,
 /area/hallway/primary/aft)
 "hJ" = (
@@ -3361,6 +3362,11 @@
 	},
 /turf/open/floor/plating,
 /area/hallway/primary/aft)
+"iK" = (
+/obj/effect/landmark/start/lawyer,
+/obj/machinery/emh_emitter,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
 "iL" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
@@ -3676,10 +3682,6 @@
 /obj/effect/landmark/start/head_of_security,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hos)
-"jE" = (
-/obj/effect/landmark/start/lawyer,
-/turf/open/floor/carpet/trek,
-/area/security/brig)
 "jF" = (
 /obj/effect/landmark/start/security_officer,
 /turf/open/floor/plasteel/showroomfloor,
@@ -3688,6 +3690,10 @@
 /obj/effect/landmark/start/warden,
 /turf/open/floor/carpet/trek,
 /area/security/warden)
+"jK" = (
+/obj/machinery/emh_emitter,
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/aft)
 
 (1,1,1) = {"
 aa
@@ -34938,7 +34944,7 @@ hn
 hn
 hn
 hn
-jE
+iK
 jC
 ik
 io
@@ -39296,7 +39302,7 @@ dj
 aa
 dj
 fd
-fe
+jK
 fe
 fe
 fd

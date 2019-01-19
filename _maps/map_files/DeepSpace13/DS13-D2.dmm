@@ -277,11 +277,11 @@
 /turf/open/floor/carpet/trek,
 /area/science/lab)
 "aJ" = (
-/obj/structure/trek_decor/viewscreen{
-	icon_state = "viewscreen";
-	dir = 8
+/obj/machinery/light{
+	dir = 1
 	},
-/turf/closed/wall/trek_smooth/room,
+/obj/machinery/computer/rdconsole/core,
+/turf/open/floor/carpet/trek,
 /area/science/lab)
 "aK" = (
 /obj/machinery/door/airlock/trek/goon/research,
@@ -587,9 +587,9 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/kitchen)
 "bI" = (
-/obj/machinery/door/airlock/trek/goon/glass{
+/obj/machinery/door/airlock/trek/goon/medical{
 	icon_state = "closed";
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/bar)
@@ -1102,17 +1102,6 @@
 /obj/machinery/computer/station_alert{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek,
-/area/engine/break_room)
-"cY" = (
-/obj/structure/chair/trek{
-	icon_state = "comfy";
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/landmark/start/chief_engineer,
 /turf/open/floor/carpet/trek,
 /area/engine/break_room)
 "cZ" = (
@@ -1721,11 +1710,11 @@
 /turf/open/floor/carpet/trek,
 /area/engine/break_room)
 "eJ" = (
-/obj/structure/trek_decor/viewscreen{
-	icon_state = "viewscreen";
-	dir = 8
+/obj/machinery/light{
+	dir = 1
 	},
-/turf/closed/wall/trek_smooth/room,
+/obj/machinery/emh_emitter,
+/turf/open/floor/carpet/trek,
 /area/science/xenobiology)
 "eK" = (
 /obj/machinery/door/airlock/trek/goon/research,
@@ -2687,18 +2676,16 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
 "hG" = (
-/obj/machinery/light{
+/obj/structure/chair/trek{
+	icon_state = "comfy";
 	dir = 1
 	},
-/turf/open/floor/carpet/trek,
-/area/science/xenobiology)
-"hH" = (
-/obj/machinery/light{
-	dir = 1
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/machinery/computer/rdconsole/core,
+/obj/effect/landmark/start/chief_engineer,
 /turf/open/floor/carpet/trek,
-/area/science/lab)
+/area/engine/break_room)
 "hI" = (
 /obj/machinery/light{
 	dir = 8
@@ -2900,7 +2887,7 @@
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "ik" = (
-/obj/machinery/door/airlock/trek/goon/research,
+/obj/machinery/door/airlock/trek/goon/medical,
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "il" = (
@@ -3114,9 +3101,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/trek/goon/glass{
+/obj/machinery/door/airlock/trek/goon/medical{
 	icon_state = "closed";
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/bar)
@@ -3167,10 +3154,10 @@
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
 "iU" = (
-/obj/machinery/door/airlock/trek/goon/research,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/trek/goon/medical,
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
 "iV" = (
@@ -3244,6 +3231,29 @@
 	},
 /turf/open/floor/trek/tile,
 /area/medical/medbay/central)
+"jh" = (
+/obj/machinery/emh_emitter,
+/turf/open/floor/carpet/trek,
+/area/medical/medbay/central)
+"ji" = (
+/obj/machinery/sleeper,
+/obj/machinery/emh_emitter,
+/turf/open/floor/carpet/trek,
+/area/medical/medbay/central)
+"jj" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/emh_emitter,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/bar)
+"kM" = (
+/obj/structure/trek_decor/viewscreen{
+	icon_state = "viewscreen";
+	dir = 8
+	},
+/turf/closed/wall/trek_smooth/room,
+/area/science/lab)
 
 (1,1,1) = {"
 aa
@@ -34410,13 +34420,13 @@ af
 ai
 au
 aC
+kM
 aJ
-hH
 aN
 aU
 gf
+bj
 eJ
-hG
 gg
 gl
 bj
@@ -34427,7 +34437,7 @@ ff
 ff
 ff
 bm
-hE
+jj
 bv
 bv
 bv
@@ -34463,7 +34473,7 @@ cG
 eI
 cN
 cT
-cY
+hG
 eI
 cG
 eI
@@ -39060,7 +39070,7 @@ fw
 fw
 fw
 fw
-id
+jh
 id
 iM
 ie
@@ -39068,7 +39078,7 @@ ie
 ij
 ie
 ie
-im
+ji
 id
 id
 io
