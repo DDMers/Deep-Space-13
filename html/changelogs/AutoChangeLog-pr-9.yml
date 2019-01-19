@@ -1,0 +1,4 @@
+author: "Satan"
+delete-after: True
+changes: 
+  - rscdel: "Stops every single wall processing at double tickrate"
