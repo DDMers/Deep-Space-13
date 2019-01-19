@@ -5,21 +5,16 @@
 	To use this, just set your atom's 'smooth' var to 1. If your atom can be moved/unanchored, set its 'can_be_unanchored' var to 1.
 	If you don't want your atom's icon to smooth with anything but atoms of the same type, set the list 'canSmoothWith' to null;
 	Otherwise, put all types you want the atom icon to smooth with in 'canSmoothWith' INCLUDING THE TYPE OF THE ATOM ITSELF.
-
 	Each atom has its own icon file with all the possible corner states. See 'smooth_wall.dmi' for a template.
-
 	DIAGONAL SMOOTHING INSTRUCTIONS
 	To make your atom smooth diagonally you need all the proper icon states (see 'smooth_wall.dmi' for a template) and
 	to add the 'SMOOTH_DIAGONAL' flag to the atom's smooth var (in addition to either SMOOTH_TRUE or SMOOTH_MORE).
-
 	For turfs, what appears under the diagonal corners depends on the turf that was in the same position previously: if you make a wall on
 	a plating floor, you will see plating under the diagonal wall corner, if it was space, you will see space.
-
 	If you wish to map a diagonal wall corner with a fixed underlay, you must configure the turf's 'fixed_underlay' list var, like so:
 		fixed_underlay = list("icon"='icon_file.dmi', "icon_state"="iconstatename")
 	A non null 'fixed_underlay' list var will skip copying the previous turf appearance and always use the list. If the list is
 	not set properly, the underlay will default to regular floor plating.
-
 	To see an example of a diagonal wall, see '/turf/closed/wall/mineral/titanium' and its subtypes.
 */
 
@@ -46,6 +41,7 @@
 #define DEFAULT_UNDERLAY_ICON_STATE 	"plating"
 
 /atom/var/smooth = SMOOTH_FALSE
+/atom/var/legacy_smooth = FALSE //DeepSpace13 - Adds support for goon style walls
 /atom/var/top_left_corner
 /atom/var/top_right_corner
 /atom/var/bottom_left_corner
@@ -118,12 +114,18 @@
 	if(QDELETED(A))
 		return
 	if(A.smooth & (SMOOTH_TRUE | SMOOTH_MORE))
+		if(A.legacy_smooth) //DeepSpace13 - Adds support for legacy wall iconsmooth
+			A.legacy_smooth()
+			return
 		var/adjacencies = calculate_adjacencies(A)
 
 		if(A.smooth & SMOOTH_DIAGONAL)
 			A.diagonal_smooth(adjacencies)
 		else
 			cardinal_smooth(A, adjacencies)
+
+/atom/proc/legacy_smooth() //DeepSpace13 - Adds support for goon style walls
+	return
 
 /atom/proc/diagonal_smooth(adjacencies)
 	switch(adjacencies)
