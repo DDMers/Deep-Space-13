@@ -118,7 +118,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		if(question == "yes")
 			var/mob/living/carbon/human/species/holographic/S = locate(/mob/living/carbon/human/species/holographic) in GLOB.alive_mob_list
 			if(S)
-				var/emhconsent = alert("You have been summoned by [user] in [get_area(src)]. Transfer to their location?",name,"accept","reject")
+				var/emhconsent = alert(S, "You have been summoned by [user] in [get_area(src)]. Transfer to their location?",name,"accept","reject")
 				if(emhconsent == "accept")
 					activate(S)
 					user.say("Computer, transfer emergency medical holographic program to [get_area(src)]")
@@ -241,7 +241,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 
 /datum/species/holographic
 	name = "Hologram"
-	id = "human" //Because we need an emergency reference (for such like limbs).
+	id = "hologram" //Because we need an emergency reference (for such like limbs).
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS)
 	default_features = list("mcolor" = "FFF", "tail_human" = "None", "ears" = "None", "wings" = "None")
