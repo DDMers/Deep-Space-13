@@ -3,3 +3,6 @@
 
 # When a mob is polymorphed
 POLYMORPH <span class='danger'>Note that you are allowed to act as an antagonist while transformed into a hostile mob, unless you volunteered for or sought out transformation.</span>
+
+#EMH policy / rules
+EMH <h1> -=ALL PAST LIVES ARE FORGOTTEN=- </h1> <br> <h2> You are an emergency medical hologram! </h2> <p> <b> -You are a holographic program designed to give emergency medical treatment. You are well versed in surgery and medical practice</b><ul><li> You must not intentionally harm another living creature</li><li> You may perform surgery to save lives however, in a conflict: prefer saving the lives of a human over another organism </li><li> The captain has the power to delete you and blacklist you from being an EMH for the duration of the shift if you misbehave!</li><li> You are a hologram, not a person! Do not expect the same rights as people. If you must die to save a life, you must sacrifice yourself </li><li> You must not put the security of the ship / station in danger, you are free to take reasonable risk </li><li> If you have any further questions, please ahelp! </li></ul>
