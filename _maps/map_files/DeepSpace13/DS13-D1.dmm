@@ -1517,11 +1517,11 @@
 /turf/open/floor/engine,
 /area/engine/engineering)
 "dy" = (
-/obj/machinery/atmospherics/pipe/manifold/general/visible{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 4
+	},
 /turf/open/floor/trek/tile,
 /area/engine/engineering)
 "dz" = (
@@ -1664,14 +1664,6 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/engine,
-/area/engine/engineering)
-"dM" = (
-/obj/machinery/atmospherics/pipe/manifold/general/visible{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
-/turf/open/floor/trek/tile,
 /area/engine/engineering)
 "dN" = (
 /obj/effect/turf_decal/stripes/line{
@@ -4007,11 +3999,13 @@
 /turf/open/floor/trek/tile,
 /area/engine/engineering)
 "ko" = (
-/obj/machinery/atmospherics/pipe/manifold/general/visible,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /obj/structure/cable{
 	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 4
 	},
 /turf/open/floor/trek/tile,
 /area/engine/engineering)
@@ -5586,7 +5580,7 @@
 /obj/structure/grille,
 /turf/open/space/basic,
 /area/space/nearstation)
-"sL" = (
+"pa" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
@@ -5596,24 +5590,7 @@
 	},
 /turf/open/floor/trek,
 /area/engine/atmos)
-"DL" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
-	icon_state = "manifold-1";
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/trek/tile,
-/area/engine/engineering)
-"EK" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/trek/tile,
-/area/engine/atmos)
-"EL" = (
+"pV" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 4
 	},
@@ -5626,21 +5603,40 @@
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
-"ES" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+"su" = (
+/obj/machinery/door/airlock/trek/goon/engi/atmos{
+	icon_state = "closed";
+	dir = 8
 	},
-/turf/open/floor/trek/tile,
-/area/engine/atmos)
-"Hi" = (
-/obj/machinery/atmospherics/pipe/simple/green/visible,
-/obj/machinery/atmospherics/pipe/simple/yellow/visible/layer1,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/trek,
 /area/engine/atmos)
-"Qg" = (
+"sB" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/trek/tile,
+/area/engine/atmos)
+"LX" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/tile,
+/area/engine/atmos)
+"VR" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
+	icon_state = "manifold-1";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/trek/tile,
+/area/engine/engineering)
+"YZ" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 4
 	},
@@ -5653,11 +5649,9 @@
 	},
 /turf/open/floor/trek/tile,
 /area/engine/engineering)
-"Sy" = (
-/obj/machinery/door/airlock/trek/goon/engi/atmos{
-	icon_state = "closed";
-	dir = 8
-	},
+"Zb" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible,
+/obj/machinery/atmospherics/pipe/simple/yellow/visible/layer1,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -38673,7 +38667,7 @@ cu
 db
 cu
 jc
-EL
+pV
 dZ
 em
 ex
@@ -38930,7 +38924,7 @@ bs
 dc
 ow
 bs
-Qg
+YZ
 bs
 bL
 ey
@@ -39185,10 +39179,10 @@ bE
 kB
 kB
 dy
-dM
-dM
+kB
+kB
 ko
-DL
+VR
 bE
 kB
 mY
@@ -39442,8 +39436,8 @@ mN
 bz
 bz
 cj
-cj
-dF
+bz
+bz
 dF
 kU
 lf
@@ -39702,7 +39696,7 @@ lr
 lr
 lr
 lr
-Sy
+su
 iK
 iK
 iK
@@ -39959,7 +39953,7 @@ lR
 lR
 lR
 lR
-Hi
+Zb
 lR
 lR
 lR
@@ -40216,12 +40210,12 @@ lp
 lp
 lp
 lp
-EK
-ES
-ES
-ES
-ES
-ES
+sB
+LX
+LX
+LX
+LX
+LX
 oa
 iK
 dj
@@ -40479,7 +40473,7 @@ lp
 lp
 lp
 lp
-sL
+pa
 iK
 dj
 dj
@@ -40736,7 +40730,7 @@ lp
 lp
 lp
 lp
-sL
+pa
 iK
 dj
 dj
@@ -40993,7 +40987,7 @@ lp
 nL
 nL
 lp
-sL
+pa
 iK
 dj
 dj
@@ -41250,7 +41244,7 @@ lp
 nM
 nM
 lp
-sL
+pa
 iK
 dj
 dj
@@ -41507,7 +41501,7 @@ lp
 lp
 lp
 lp
-sL
+pa
 iK
 dj
 dj
@@ -41764,7 +41758,7 @@ ou
 lp
 lp
 lp
-sL
+pa
 iK
 dj
 dj
@@ -42021,7 +42015,7 @@ lp
 lp
 lp
 lp
-sL
+pa
 iK
 dC
 dC
@@ -42278,7 +42272,7 @@ lp
 nN
 nN
 lp
-sL
+pa
 iK
 dC
 aa
@@ -42535,7 +42529,7 @@ lp
 nO
 nO
 lp
-sL
+pa
 iK
 dC
 aa
