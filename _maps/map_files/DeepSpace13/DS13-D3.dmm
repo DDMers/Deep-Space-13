@@ -2608,19 +2608,12 @@
 /area/maintenance/department/bridge)
 "gA" = (
 /obj/structure/grille,
-/obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/closed/wall/r_wall,
 /area/maintenance/department/bridge)
 "gB" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/plating/airless,
-/area/maintenance/department/bridge)
-"gC" = (
-/obj/structure/grille,
-/obj/machinery/atmospherics/pipe/simple/yellow/visible,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/closed/wall/r_wall,
 /area/maintenance/department/bridge)
 "gD" = (
 /turf/open/floor/plating,
@@ -24299,7 +24292,7 @@ gq
 gr
 gr
 gz
-gC
+gA
 gF
 gI
 gI

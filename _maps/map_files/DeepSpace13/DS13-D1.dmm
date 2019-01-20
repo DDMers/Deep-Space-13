@@ -3908,9 +3908,8 @@
 /turf/closed/wall/r_wall,
 /area/engine/atmos)
 "kd" = (
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	icon_state = "manifoldlayer";
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
+	dir = 4
 	},
 /turf/closed/wall/trek_smooth/reinforced,
 /area/engine/atmos)
@@ -4995,8 +4994,8 @@
 /turf/open/floor/trek,
 /area/engine/atmos)
 "mQ" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	icon_state = "pipe11-1";
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	icon_state = "manifoldlayer";
 	dir = 8
 	},
 /turf/open/floor/trek,
@@ -5580,17 +5579,17 @@
 /obj/structure/grille,
 /turf/open/space/basic,
 /area/space/nearstation)
-"pa" = (
-/obj/machinery/atmospherics/pipe/simple/green/visible{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/yellow/visible/layer1{
-	icon_state = "pipe11-1";
+"zN" = (
+/obj/machinery/door/airlock/trek/goon/engi/atmos{
+	icon_state = "closed";
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/trek,
 /area/engine/atmos)
-"pV" = (
+"CT" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 4
 	},
@@ -5603,29 +5602,13 @@
 	},
 /turf/open/floor/engine,
 /area/engine/engineering)
-"su" = (
-/obj/machinery/door/airlock/trek/goon/engi/atmos{
-	icon_state = "closed";
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/trek,
-/area/engine/atmos)
-"sB" = (
+"Fz" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /turf/open/floor/trek/tile,
 /area/engine/atmos)
-"LX" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/trek/tile,
-/area/engine/atmos)
-"VR" = (
+"Hi" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
 	icon_state = "manifold-1";
@@ -5636,7 +5619,25 @@
 	},
 /turf/open/floor/trek/tile,
 /area/engine/engineering)
-"YZ" = (
+"Ht" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/yellow/visible/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/turf/open/floor/trek,
+/area/engine/atmos)
+"Lo" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible,
+/obj/machinery/atmospherics/pipe/simple/yellow/visible/layer1,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek,
+/area/engine/atmos)
+"Sq" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 4
 	},
@@ -5649,13 +5650,11 @@
 	},
 /turf/open/floor/trek/tile,
 /area/engine/engineering)
-"Zb" = (
-/obj/machinery/atmospherics/pipe/simple/green/visible,
-/obj/machinery/atmospherics/pipe/simple/yellow/visible/layer1,
+"Vw" = (
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
-/turf/open/floor/trek,
+/turf/open/floor/trek/tile,
 /area/engine/atmos)
 
 (1,1,1) = {"
@@ -38667,7 +38666,7 @@ cu
 db
 cu
 jc
-pV
+CT
 dZ
 em
 ex
@@ -38924,7 +38923,7 @@ bs
 dc
 ow
 bs
-YZ
+Sq
 bs
 bL
 ey
@@ -39182,7 +39181,7 @@ dy
 kB
 kB
 ko
-VR
+Hi
 bE
 kB
 mY
@@ -39696,7 +39695,7 @@ lr
 lr
 lr
 lr
-su
+zN
 iK
 iK
 iK
@@ -39953,7 +39952,7 @@ lR
 lR
 lR
 lR
-Zb
+Lo
 lR
 lR
 lR
@@ -40210,12 +40209,12 @@ lp
 lp
 lp
 lp
-sB
-LX
-LX
-LX
-LX
-LX
+Fz
+Vw
+Vw
+Vw
+Vw
+Vw
 oa
 iK
 dj
@@ -40473,7 +40472,7 @@ lp
 lp
 lp
 lp
-pa
+Ht
 iK
 dj
 dj
@@ -40730,7 +40729,7 @@ lp
 lp
 lp
 lp
-pa
+Ht
 iK
 dj
 dj
@@ -40987,7 +40986,7 @@ lp
 nL
 nL
 lp
-pa
+Ht
 iK
 dj
 dj
@@ -41244,7 +41243,7 @@ lp
 nM
 nM
 lp
-pa
+Ht
 iK
 dj
 dj
@@ -41501,7 +41500,7 @@ lp
 lp
 lp
 lp
-pa
+Ht
 iK
 dj
 dj
@@ -41758,7 +41757,7 @@ ou
 lp
 lp
 lp
-pa
+Ht
 iK
 dj
 dj
@@ -42015,7 +42014,7 @@ lp
 lp
 lp
 lp
-pa
+Ht
 iK
 dC
 dC
@@ -42272,7 +42271,7 @@ lp
 nN
 nN
 lp
-pa
+Ht
 iK
 dC
 aa
@@ -42529,7 +42528,7 @@ lp
 nO
 nO
 lp
-pa
+Ht
 iK
 dC
 aa
