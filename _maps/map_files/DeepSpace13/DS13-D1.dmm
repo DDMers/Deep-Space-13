@@ -1660,6 +1660,9 @@
 	dir = 4;
 	name = "Gas to Mix"
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/engine,
 /area/engine/engineering)
 "dM" = (
@@ -4007,6 +4010,9 @@
 /obj/machinery/atmospherics/pipe/manifold/general/visible,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/trek/tile,
 /area/engine/engineering)
 "kp" = (
@@ -4276,6 +4282,9 @@
 	icon_state = "scrub_map_on-1";
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/trek,
 /area/engine/engineering)
 "kV" = (
@@ -4315,10 +4324,8 @@
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/trek/tile,
 /area/engine/engineering)
 "kZ" = (
@@ -5387,6 +5394,8 @@
 	icon_state = "pipe11-1";
 	dir = 8
 	},
+/obj/machinery/power/apc/auto_name,
+/obj/structure/cable,
 /turf/open/floor/trek,
 /area/engine/atmos)
 "ob" = (
@@ -5577,6 +5586,83 @@
 /obj/structure/grille,
 /turf/open/space/basic,
 /area/space/nearstation)
+"sL" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/yellow/visible/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/turf/open/floor/trek,
+/area/engine/atmos)
+"DL" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
+	icon_state = "manifold-1";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/trek/tile,
+/area/engine/engineering)
+"EK" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/trek/tile,
+/area/engine/atmos)
+"EL" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/corner,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine,
+/area/engine/engineering)
+"ES" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/tile,
+/area/engine/atmos)
+"Hi" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible,
+/obj/machinery/atmospherics/pipe/simple/yellow/visible/layer1,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek,
+/area/engine/atmos)
+"Qg" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 4
+	},
+/obj/machinery/door/airlock/trek/goon/engi{
+	icon_state = "closed";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek/tile,
+/area/engine/engineering)
+"Sy" = (
+/obj/machinery/door/airlock/trek/goon/engi/atmos{
+	icon_state = "closed";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek,
+/area/engine/atmos)
 
 (1,1,1) = {"
 aa
@@ -38587,7 +38673,7 @@ cu
 db
 cu
 jc
-db
+EL
 dZ
 em
 ex
@@ -38844,7 +38930,7 @@ bs
 dc
 ow
 bs
-cM
+Qg
 bs
 bL
 ey
@@ -39102,7 +39188,7 @@ dy
 dM
 dM
 ko
-mR
+DL
 bE
 kB
 mY
@@ -39616,7 +39702,7 @@ lr
 lr
 lr
 lr
-ma
+Sy
 iK
 iK
 iK
@@ -39873,7 +39959,7 @@ lR
 lR
 lR
 lR
-lR
+Hi
 lR
 lR
 lR
@@ -40130,12 +40216,12 @@ lp
 lp
 lp
 lp
-lp
-lp
-lp
-lp
-lp
-lp
+EK
+ES
+ES
+ES
+ES
+ES
 oa
 iK
 dj
@@ -40393,7 +40479,7 @@ lp
 lp
 lp
 lp
-oa
+sL
 iK
 dj
 dj
@@ -40650,7 +40736,7 @@ lp
 lp
 lp
 lp
-oa
+sL
 iK
 dj
 dj
@@ -40907,7 +40993,7 @@ lp
 nL
 nL
 lp
-oa
+sL
 iK
 dj
 dj
@@ -41164,7 +41250,7 @@ lp
 nM
 nM
 lp
-oa
+sL
 iK
 dj
 dj
@@ -41421,7 +41507,7 @@ lp
 lp
 lp
 lp
-oa
+sL
 iK
 dj
 dj
@@ -41678,7 +41764,7 @@ ou
 lp
 lp
 lp
-oa
+sL
 iK
 dj
 dj
@@ -41935,7 +42021,7 @@ lp
 lp
 lp
 lp
-oa
+sL
 iK
 dC
 dC
@@ -42192,7 +42278,7 @@ lp
 nN
 nN
 lp
-oa
+sL
 iK
 dC
 aa
@@ -42449,7 +42535,7 @@ lp
 nO
 nO
 lp
-oa
+sL
 iK
 dC
 aa
