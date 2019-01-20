@@ -11,24 +11,34 @@
 	var/light_mod = null
 	var/connect_overlay = TRUE // do we have wall connection overlays, ex nornwalls?
 	var/list/connects_to = list(/turf/closed/wall/trek_smooth,/obj/machinery/door,/obj/structure/window)
+	canSmoothWith = list(/turf/closed/wall/trek_smooth,/obj/machinery/door,/obj/structure/window)
 	var/list/connects_with_overlay = list()
 	var/image/connect_image = null
 	var/d_state = 0
-	smooth = FALSE //Override /tg/ iconsmooths
+	legacy_smooth = TRUE //Override /tg/ iconsmooths
+	smooth = TRUE
 	var/connect_universally = TRUE //Connect to every subtype of the walls?
 
 	Initialize()
-		..()
-		START_PROCESSING(SSfastprocess,src)
-		src.update_icon()
+		. = ..()
+	//	START_PROCESSING(SSfastprocess,src)
+//		update_icon()
 		set_light(6)
 		if(connect_universally)
 			connects_to += typecacheof(/turf/closed/wall/trek_smooth)
-	process()
-		update_icon() ///Tg/ code change, so these beauties actually smooth
+			canSmoothWith += typecacheof(/turf/closed/wall/trek_smooth)
+			canSmoothWith += typecacheof(/obj/structure/window)
+			canSmoothWith += typecacheof(/obj/machinery/door) //tg smoothing is finnicky
+
+//	process()
+//		update_icon() ///Tg/ code change, so these beauties actually smooth
+
+//turf/closed/wall/trek_smooth/Destroy()
+//	update_icon()
+//	. = ..()
 
 	// ty to somepotato for assistance with making this proc actually work right :I
-	proc/update_icon()
+	legacy_smooth() //overwrite the smoothing to use icon smooth SS
 		var/builtdir = 0
 		var/overlaydir = 0
 		for (var/dir in GLOB.cardinals)
