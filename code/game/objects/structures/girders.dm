@@ -116,7 +116,7 @@
 					S.use(2)
 					to_chat(user, "<span class='notice'>You add the plating.</span>")
 					var/turf/T = get_turf(src)
-					T.PlaceOnTop(/turf/closed/wall)
+					T.PlaceOnTop(/turf/closed/wall/trek_smooth)//DeepSpace 13 - Changes wall building to goonwalls
 					transfer_fingerprints_to(T)
 					qdel(src)
 				return
@@ -146,7 +146,7 @@
 						S.use(1)
 						to_chat(user, "<span class='notice'>You fully reinforce the wall.</span>")
 						var/turf/T = get_turf(src)
-						T.PlaceOnTop(/turf/closed/wall/r_wall)
+						T.PlaceOnTop(/turf/closed/wall/trek_smooth/reinforced) //DeepSpace13 - Changes wallbuilding to goonwalls
 						transfer_fingerprints_to(T)
 						qdel(src)
 					return

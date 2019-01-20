@@ -100,7 +100,32 @@
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
 
-MAP_REMOVE_JOB(atmos)
+/datum/job/qm/New()
+	..()
+	MAP_JOB_CHECK
+	outfit = /datum/outfit/job/qm/DS13
+	minimal_access += ACCESS_ATMOSPHERICS
+
+
+/datum/outfit/job/qm/DS13
+	name = "Trek-Quartermaster"
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/job/cargo_tech/New()
+	..()
+	MAP_JOB_CHECK
+	outfit = /datum/outfit/job/cargo_tech/DS13
+	minimal_access += ACCESS_ATMOSPHERICS
+
+
+/datum/outfit/job/cargo_tech/DS13
+	name = "Trek-Quartermaster"
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+
 
 //--------
 //Sciences
@@ -167,7 +192,6 @@ MAP_REMOVE_JOB(atmos)
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
 
-
 //Research
 
 /datum/job/rd/New()
@@ -180,7 +204,6 @@ MAP_REMOVE_JOB(atmos)
 	uniform = /obj/item/clothing/under/trek/command/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
-
 
 /datum/job/scientist/New()
 	..()
@@ -195,4 +218,75 @@ MAP_REMOVE_JOB(atmos)
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
 
+//Civilian
+
+/datum/job/assistant/New()
+	..()
+	MAP_JOB_CHECK
+	outfit = /datum/outfit/job/assistant/DS13
+
+/datum/outfit/job/assistant/DS13
+	name = "Trek-Assistant"
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/job/chaplain/New()
+	..()
+	title = "Counselor"
+	MAP_JOB_CHECK
+	outfit = /datum/outfit/job/chaplain/DS13
+
+/datum/outfit/job/chaplain/DS13
+	name = "Trek-Chaplain"
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/job/janitor/New()
+	..()
+	MAP_JOB_CHECK
+	outfit = /datum/outfit/job/janitor/DS13
+
+/datum/outfit/job/janitor/DS13
+	name = "Trek-Janitor"
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/job/hydro/New()
+	..()
+	MAP_JOB_CHECK
+	outfit = /datum/outfit/job/hydro/DS13
+
+/datum/outfit/job/hydro/DS13
+	name = "Trek-Botanist"
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/job/cook/New()
+	..()
+	MAP_JOB_CHECK
+	outfit = /datum/outfit/job/cook/DS13
+
+/datum/outfit/job/cook/DS13
+	name = "Trek-Cook"
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/job/bartender/New()
+	..()
+	MAP_JOB_CHECK
+	outfit = /datum/outfit/job/cook/DS13
+
+/datum/outfit/job/bartender/DS13
+	name = "Trek-Bartender"
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+
 MAP_REMOVE_JOB(roboticist)
+MAP_REMOVE_JOB(AI) //Do I have to even explain why
+MAP_REMOVE_JOB(cyborg)
