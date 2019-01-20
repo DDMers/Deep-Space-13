@@ -1,0 +1,5 @@
+author: "Kmc2000"
+delete-after: True
+changes: 
+  - bugfix: "Fixed mapping errors"
+  - rscadd: "You can now smelt silver and wood + silver and metal to make trekwalls"
