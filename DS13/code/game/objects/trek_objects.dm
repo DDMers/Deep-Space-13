@@ -50,7 +50,7 @@
 	desc = "It seems to be giving off its own small source of light" //Emergency lighting
 	icon_state = "wall"
 	smooth = TRUE
-	canSmoothWith = list(/turf/closed/wall/trek,/turf/closed/wall/trek/darksteel,/turf/closed/wall/trek/room,/obj/structure/window/fulltile/trek,/obj/structure/window/fulltile/trek/viewport,/obj/structure/window/fulltile/trek/corridor,/obj/machinery/door/airlock/trek,/obj/machinery/door/airlock/trek/tng)
+	canSmoothWith = list(/turf/closed/wall/trek,/turf/closed/wall/trek/darksteel,/turf/closed/wall/trek/room,/obj/structure/window/reinforced/fulltile/trek,/obj/structure/window/reinforced/fulltile/trek/viewport,/obj/structure/window/reinforced/fulltile/trek/corridor,/obj/machinery/door/airlock/trek,/obj/machinery/door/airlock/trek/tng)
 
 /turf/closed/wall/trek/darksteel
 	name = "Starship corridor"
@@ -71,7 +71,7 @@
 	. = ..()
 	set_light(6)
 
-/obj/structure/window/fulltile/trek
+/obj/structure/window/reinforced/fulltile/trek
 	name = "Viewport"
 	icon = 'DS13/icons/obj/window.dmi'
 	desc = "It's a pane of glass through which you look. It has a small certification stamp on it that reads 'Utopia Planetia shipyards'"
@@ -79,7 +79,7 @@
 	smooth = FALSE
 	dir = 2
 
-/obj/structure/window/fulltile/trek/middle
+/obj/structure/window/reinforced/fulltile/trek/middle
 	name = "Viewport"
 	icon = 'DS13/icons/obj/window.dmi'
 	desc = "It's a pane of glass through which you look. It has a small certification stamp on it that reads 'Utopia Planetia shipyards'"
@@ -87,19 +87,19 @@
 	smooth = FALSE
 	dir = 2
 
-/obj/structure/window/fulltile/trek/corridor
+/obj/structure/window/reinforced/fulltile/trek/corridor
 	name = "Viewport"
 	icon = 'DS13/icons/obj/window.dmi'
 	desc = "It's a pane of glass through which you look. It has a small certification stamp on it that reads 'Utopia Planetia shipyards'"
 	icon_state = "trek_window"
 
-/obj/structure/window/fulltile/trek/viewport
+/obj/structure/window/reinforced/fulltile/trek/viewport
 	name = "Viewport"
 	icon = 'DS13/icons/obj/window.dmi'
 	desc = "It's a pane of glass through which you look. It has a small certification stamp on it that reads 'Utopia Planetia shipyards'"
 	icon_state = "viewport"
 
-/obj/structure/window/fulltile/trek/porthole
+/obj/structure/window/reinforced/fulltile/trek/porthole
 	name = "Viewport"
 	icon = 'DS13/icons/obj/window.dmi'
 	desc = "It's a pane of glass through which you look. It has a small certification stamp on it that reads 'Utopia Planetia shipyards'"
