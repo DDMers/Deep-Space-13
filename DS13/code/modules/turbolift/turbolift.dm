@@ -1,3 +1,17 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 												D O C U M E N T A T I O N  			K m c 2 0 0 0 -> 22/01/2019																				//
+// Turbolifts and you! How to make elevators with little to no effort.																														//
+// ENSURE that the turbolift object ITSELF lines up with the others. This is to prevent the panel jumping about wildly and looking stupid													//
+// If you want to make a multi door turbolift, place the controls at least 1 tile away from the doors. That way it switches to the more CPU intensive area based door acquisition system 	//
+// This is area based! Ensure each turbolift is in a unique area, or things will get fucky																									//
+// Ensure that turbolift doors are at least one tile away from the next lift. See DeepSpace13.dmm for examples. 																			//
+// Use the indestructible elevator turfs or it'll look terrible!				  																											//
+// Modify pixel_x and y as needed, it starts off snapped to the tile below a wall.																											//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//Areas//
+
 /area/turbolift
 	name = "Primary turbolift"
 	requires_power = FALSE //no APCS in the lifts please
@@ -14,6 +28,7 @@
 /area/turbolift/quintessential
 	name = "Quintessential turbolift"
 
+//Structures and logic//
 
 /obj/structure/turbolift
 	name = "Turbolift control console"
@@ -131,6 +146,8 @@
 					shake_camera(M, 2,2)
 			AM.z = target.z //Avoids the teleportation effect of zooming to random tiles
 
+//Door management//
+
 /obj/structure/turbolift/proc/bolt_other_doors()
 	for(var/obj/structure/turbolift/SS in destinations)
 		if(SS.bolted)
@@ -173,6 +190,8 @@
 	get_position()
 	get_turfs()
 
+//Find positions and related turfs//
+
 /obj/structure/turbolift/proc/get_turfs()
 	var/list/temp = get_area_turfs(get_area(src))
 	for(var/turf/T in temp)
@@ -211,3 +230,5 @@
 				SSS.destinations += src
 				SSS.destinations -= SSS
 			break //No more lifts, no need to loop again.
+
+//end//
