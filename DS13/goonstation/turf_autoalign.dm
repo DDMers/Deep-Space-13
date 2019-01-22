@@ -31,6 +31,7 @@
 			canSmoothWith += typecacheof(/obj/machinery/door) //tg smoothing is finnicky
 
 	// ty to somepotato for assistance with making this proc actually work right :I
+
 	legacy_smooth() //overwrite the smoothing to use icon smooth SS
 		var/builtdir = 0
 		var/overlaydir = 0
