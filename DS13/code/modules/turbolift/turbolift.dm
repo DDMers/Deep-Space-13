@@ -50,6 +50,9 @@
 	var/max_floor = 0 //Highest floor we can go to?
 	var/bolted = FALSE //Is this door bolted or unbolted? do we need to change that if a person walks into our lift?
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+	var/is_controller = FALSE //Are we controlling the other lifts?
+	var/obj/structure/turbolift/master = null //Who is the one pulling the strings
+	var/obj/machinery/door/airlock/linked_door = null //Linked elevator door
 
 /obj/machinery/door/airlock/trek/goon/turbolift
 	name = "Turbolift airlock"
@@ -78,13 +81,22 @@
 	return FALSE //No deconning them
 
 /obj/structure/turbolift/process()
-	if(in_use) //Don't constant spam bolt if we're in use
-		return
-	for(var/turf/T in turbolift_turfs)
-		if(locate(/mob/living) in T) //If there's a mob in these then bolt the other lifts so no one else can get on.
+	if(is_controller)
+		if(loc_check())
 			bolt_other_doors()
 			return
-	unbolt_other_doors() //No one's in the lift, and the lift is not moving, so allow entrance
+		for(var/obj/structure/turbolift/S in destinations)
+			if(S.loc_check()) //Someone's standing in the lift
+				S.bolt_other_doors() //So bolt the other lifts
+				return
+			S.unbolt_door() //No one's in the lift, and the lift is not moving, so allow entrance
+
+/obj/structure/turbolift/proc/loc_check() //Is there someone in the lift? if so, we need to stop other lifts from being used.
+	for(var/turf/T in turbolift_turfs)
+		if(locate(/mob/living) in T) //If there's a mob in these then bolt the other lifts so no one else can get on.
+			return TRUE
+	return FALSE
+
 
 /obj/structure/turbolift/Destroy()
 	STOP_PROCESSING(SSobj,src)
@@ -97,7 +109,6 @@
 		return FALSE
 	send_sound_lift('DS13/sound/effects/turbolift/turbolift-close.ogg')
 	bolt_door()
-	bolt_other_doors() //Close the other elevator doors
 	in_use = TRUE
 	to_chat(user, floor_directory)
 	icon_state = "lift-off"
@@ -105,7 +116,6 @@
 	if(S > max_floor || S <= 0 || S == floor)
 		in_use = FALSE
 		unbolt_door()
-		unbolt_other_doors()
 		return
 	if(S)
 		for(var/obj/structure/turbolift/TS in destinations)
@@ -129,10 +139,10 @@
 /obj/structure/turbolift/proc/lift(var/obj/structure/turbolift/target)
 	in_use = FALSE
 	icon_state = "lift-off"
-	unbolt_door()
-	unbolt_other_doors()
 	if(!target)
 		return
+	target.in_use = FALSE
+	target.unbolt_door()
 	for(var/turf/T in turbolift_turfs)
 		for(var/atom/movable/AM in T)
 			if(AM.anchored) //Don't teleport things that shouldn't go through
@@ -163,30 +173,37 @@
 		SS.in_use = FALSE
 
 /obj/structure/turbolift/proc/bolt_door()
-	var/obj/machinery/door/airlock/S = locate(/obj/machinery/door/airlock) in get_step(src, SOUTH)
-	if(!S || !istype(S, /obj/machinery/door))
-		for(var/obj/machinery/door/airlock/AS in get_area(src))  //If you have a big turbolift with multiple airlocks
-			if(AS.z == z)
-				S = AS
-	if(S)
-		S.close()
-		S.bolt()
-		bolted = TRUE//Tones down the processing use
+	if(bolted)
+		return
+	if(!in_use)
+		in_use = TRUE //so no one can ride the lift when it's locked
+	if(!linked_door)
+		linked_door = locate(/obj/machinery/door/airlock) in get_step(src, SOUTH)
+		if(!linked_door || !istype(linked_door, /obj/machinery/door))
+			for(var/obj/machinery/door/airlock/AS in get_area(src))  //If you have a big turbolift with multiple airlocks
+				if(AS.z == z)
+					linked_door = AS
+	bolted = TRUE//Tones down the processing use
+	linked_door.close()
+	linked_door.bolt()
 
 /obj/structure/turbolift/proc/unbolt_door()
-	var/obj/machinery/door/airlock/S = locate(/obj/machinery/door/airlock) in get_step(src, SOUTH)
-	if(!S || !istype(S, /obj/machinery/door))
-		for(var/obj/machinery/door/airlock/AS in get_area(src)) //If you have a big turbolift with multiple airlocks
-			if(AS.z == z)
-				S = AS
-	if(S)
-		S.close()
-		S.unbolt()
-		bolted = FALSE
+	if(!bolted)
+		return
+	if(in_use)
+		in_use = FALSE
+	if(!linked_door)
+		linked_door = locate(/obj/machinery/door/airlock) in get_step(src, SOUTH)
+		if(!linked_door || !istype(linked_door, /obj/machinery/door))
+			for(var/obj/machinery/door/airlock/AS in get_area(src))  //If you have a big turbolift with multiple airlocks
+				if(AS.z == z)
+					linked_door = AS
+	bolted = FALSE//Tones down the processing use
+	linked_door.unbolt()
+
 
 /obj/structure/turbolift/Initialize()
 	. = ..()
-	START_PROCESSING(SSobj, src)
 	get_position()
 	get_turfs()
 
@@ -202,8 +219,10 @@
 	var/obj/structure/turbolift/below = locate(/obj/structure/turbolift) in SSmapping.get_turf_below(get_turf(src))
 	if(below) //We need to be the bottom lift for this to work.
 		return
+	START_PROCESSING(SSobj, src)
 	floor = 1
 	name = "[initial(name)] (Deck [floor])"
+	is_controller = TRUE
 	var/obj/structure/turbolift/previous
 	var/obj/structure/turbolift/next
 	for(var/II = 0 to world.maxz) //AKA 1 to 6 for example
@@ -219,6 +238,7 @@
 		if(next)
 			previous = next
 			II ++
+			next.master = src
 			next.floor = II+1
 			next.name = "[initial(next.name)] (Deck [next.floor])"
 			destinations += next
