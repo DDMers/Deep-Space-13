@@ -54,8 +54,8 @@
 		icon_regular_floor = "floor"
 	else
 		icon_regular_floor = icon_state
-	if(mapload && prob(33))
-		MakeDirty()
+	//if(mapload && prob(33)) disabled for now requires a rework at dirtystation.dm
+	//	MakeDirty()
 
 /turf/open/floor/ex_act(severity, target)
 	var/shielded = is_shielded()

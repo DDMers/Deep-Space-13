@@ -94,11 +94,11 @@
 /mob/living/carbon/proc/bleed(amt)
 	if(blood_volume)
 		blood_volume = max(blood_volume - amt, 0)
-		if(isturf(src.loc)) //Blood loss still happens in locker, floor stays clean
+		/*if(isturf(src.loc)) //Blood loss still happens in locker, floor stays clean
 			if(amt >= 10)
 				add_splatter_floor(src.loc)
 			else
-				add_splatter_floor(src.loc, 1)
+				add_splatter_floor(src.loc, 1)*/
 
 /mob/living/carbon/human/bleed(amt)
 	amt *= physiology.bleed_mod
@@ -243,7 +243,7 @@
 	var/safe = bloodtypes_safe[bloodtype]
 	if(safe)
 		. = safe
-
+/*
 //to add a splatter of blood or other mob liquid.
 /mob/living/proc/add_splatter_floor(turf/T, small_drip)
 	if(get_blood_id() != "blood")
@@ -297,3 +297,4 @@
 	var/obj/effect/decal/cleanable/oil/B = locate() in T.contents
 	if(!B)
 		B = new(T)
+*/
