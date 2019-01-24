@@ -54,24 +54,25 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 
 /obj/machinery/emh_emitter/attackby(obj/I,mob/user)
 	. = ..()
-	if(user.client)
-		var/obj/item/card/id/ID = I
-		if(ID && istype(ID))
-			if(check_access(ID))
-				var/question = alert("Terminate the current EMH? (this kills the current EMH)",name,"yes","no")
-				var/blacklist = alert("Blacklist the current EMH player for the duration of this round? ",name,"yes","no")
-				if(question == "yes")
-					if(!emh)
-						emh = locate(/mob/living/carbon/human/species/holographic) in GLOB.alive_mob_list
-					if(emh.client && emh.client.key && blacklist == "yes")
-						GLOB.EMH_blacklist += emh.client.key
-						to_chat(emh, "<span_class='boldnotice'>[user] has blacklisted you from becoming an EMH for the duration of this round! If you feel this was in error, please ahelp immediately.")
-						log_game("[user] just blacklisted [emh.client.key] from becoming an EMH for the rest of the round")
-					if(emh)
-						emh.death()//Kill the emh.
-						emh = null
-					else
-						to_chat(user, "Unable to locate an EMH on the network.")
+	if(!user.client)
+		return
+	var/obj/item/card/id/ID = I
+	if(ID && istype(ID))
+		if(check_access(ID))
+			var/question = alert("Terminate the current EMH? (this kills the current EMH)",name,"yes","no")
+			var/blacklist = alert("Blacklist the current EMH player for the duration of this round? ",name,"yes","no")
+			if(question == "yes")
+				if(!emh)
+					emh = locate(/mob/living/carbon/human/species/holographic) in GLOB.alive_mob_list
+				if(emh.client && emh.client.key && blacklist == "yes")
+					GLOB.EMH_blacklist += emh.client.key
+					to_chat(emh, "<span_class='boldnotice'>[user] has blacklisted you from becoming an EMH for the duration of this round! If you feel this was in error, please ahelp immediately.")
+					log_game("[user] just blacklisted [emh.client.key] from becoming an EMH for the rest of the round")
+				if(emh)
+					emh.death()//Kill the emh.
+					emh = null
+				else
+					to_chat(user, "Unable to locate an EMH on the network.")
 
 /obj/machinery/emh_emitter/Destroy()
 	if(emh)
@@ -91,21 +92,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 
 /obj/machinery/emh_emitter/attack_hand(mob/user)
 	if(istype(user, /mob/living/carbon/human/species/holographic)) //Allow them to jump to different locs.
-		var/list/jumplocs = list()
-		for(var/obj/machinery/emh_emitter/EM in GLOB.machines)
-			if(istype(EM))
-				jumplocs += EM
-		var/A
-		A = input("Transfer program to where?", "EMH subsystem", A) as null|anything in jumplocs
-		if(!A)
-			return
-		user.say("Computer, transfer emergency medical holographic program to [get_area(A)]")
-		new /obj/effect/temp_visual/dir_setting/ninja/cloak(get_turf(user), user.dir)
-		user.forceMove(get_turf(A))
-		playsound(user.loc, 'DS13/sound/effects/holofizzle.ogg', 100, 0)
-		var/obj/machinery/emh_emitter/S = A
-		emh = null
-		S.emh = user //transfer silently.
+		emh_jumpto(user)
 		return
 	if(locked)
 		to_chat(user, "Unable to comply, interface cooldown in effect.")
@@ -134,6 +121,24 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 			user.say("Computer, activate emergency medical hologram")
 			to_chat(user, "Attempting to activate EMH ((This requires a ghost willing to control it...))")
 		activate(null) //No EMH present, try to make one!
+
+/obj/machinery/emh_emitter/proc/emh_jumpto(mob/living/user)
+	var/list/jumplocs = list()
+	for(var/obj/machinery/emh_emitter/EM in GLOB.machines)
+		if(istype(EM))
+			jumplocs += EM
+	var/A
+	A = input(user,"Transfer program to where?", "EMH subsystem", A) as null|anything in jumplocs
+	if(!A)
+		return
+	user.say("Computer, transfer emergency medical holographic program to [get_area(A)]")
+	new /obj/effect/temp_visual/dir_setting/ninja/cloak(get_turf(user), user.dir)
+	user.forceMove(get_turf(A))
+	playsound(user.loc, 'DS13/sound/effects/holofizzle.ogg', 100, 0)
+	var/obj/machinery/emh_emitter/S = A
+	emh = null
+	S.emh = user //transfer silently.
+
 
 /obj/machinery/emh_emitter/process()
 	if(!emh || !is_occupied()) //If we don't have an EMH, no need to process
