@@ -85,6 +85,8 @@
 		if(loc_check())
 			bolt_other_doors()
 			return
+		unbolt_door()
+		return
 		for(var/obj/structure/turbolift/S in destinations)
 			if(S.loc_check()) //Someone's standing in the lift
 				S.bolt_other_doors() //So bolt the other lifts
