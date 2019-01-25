@@ -2870,57 +2870,57 @@
 /obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
 /area/bridge)
-"ly" = (
+"iI" = (
+/obj/machinery/door/airlock/trek/goon/turbolift,
 /turf/open/floor/carpet/trek,
-/area/turbolift/tertiary)
-"lB" = (
+/area/turbolift)
+"mG" = (
+/turf/open/floor/carpet/trek,
+/area/turbolift)
+"qA" = (
 /turf/closed/wall/trek_smooth/indestructible,
-/area/hallway/primary/fore)
-"uY" = (
-/turf/closed/wall/trek_smooth/indestructible,
-/area/turbolift/tertiary)
-"xA" = (
+/area/turbolift)
+"rG" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/turbolift,
 /turf/open/floor/carpet/trek,
 /area/turbolift/tertiary)
-"AJ" = (
+"un" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/turbolift,
+/turf/open/floor/carpet/trek,
+/area/turbolift/secondary)
+"EE" = (
+/obj/machinery/door/airlock/trek/goon/turbolift,
+/turf/open/floor/carpet/trek,
+/area/turbolift/tertiary)
+"EZ" = (
+/turf/open/floor/carpet/trek,
+/area/turbolift/secondary)
+"GL" = (
 /turf/closed/wall/trek_smooth/indestructible,
 /area/turbolift/secondary)
-"DY" = (
+"Hn" = (
+/turf/open/floor/carpet/trek,
+/area/turbolift/tertiary)
+"JP" = (
+/obj/machinery/door/airlock/trek/goon/turbolift,
+/turf/open/floor/carpet/trek,
+/area/turbolift/secondary)
+"LS" = (
 /turf/closed/wall/trek_smooth/indestructible,
-/area/turbolift)
-"Ez" = (
+/area/hallway/primary/fore)
+"Si" = (
+/turf/closed/wall/trek_smooth/indestructible,
+/area/turbolift/tertiary)
+"UW" = (
 /obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/fore)
-"Jh" = (
-/obj/machinery/door/airlock/trek/goon/turbolift,
-/turf/open/floor/carpet/trek,
-/area/turbolift/secondary)
-"LA" = (
-/obj/machinery/door/airlock/trek/goon/turbolift,
-/turf/open/floor/carpet/trek,
-/area/turbolift)
-"Ow" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/turbolift,
-/turf/open/floor/carpet/trek,
-/area/turbolift/secondary)
-"Oy" = (
-/turf/open/floor/carpet/trek,
-/area/turbolift/secondary)
-"SD" = (
-/turf/open/floor/carpet/trek,
-/area/turbolift)
-"SS" = (
-/obj/machinery/door/airlock/trek/goon/turbolift,
-/turf/open/floor/carpet/trek,
-/area/turbolift/tertiary)
 
 (1,1,1) = {"
 aa
@@ -32302,7 +32302,7 @@ aa
 aa
 aa
 cM
-Ez
+UW
 cR
 cV
 hd
@@ -32555,9 +32555,9 @@ cM
 cM
 cM
 cM
-lB
-lB
-lB
+LS
+LS
+LS
 hm
 av
 bg
@@ -32812,9 +32812,9 @@ br
 br
 br
 hk
-DY
-SD
-DY
+qA
+mG
+qA
 av
 av
 bg
@@ -33069,9 +33069,9 @@ cW
 cW
 cW
 cW
-DY
+qA
 aw
-LA
+iI
 av
 av
 bg
@@ -33326,9 +33326,9 @@ cW
 cW
 cW
 cW
-DY
-SD
-DY
+qA
+mG
+qA
 av
 av
 bg
@@ -33583,9 +33583,9 @@ cW
 cW
 cW
 cW
-lB
-lB
-lB
+LS
+LS
+LS
 cO
 av
 bg
@@ -33840,9 +33840,9 @@ cW
 cW
 cW
 cW
-AJ
-Oy
-AJ
+GL
+EZ
+GL
 av
 av
 bg
@@ -34097,9 +34097,9 @@ cW
 cW
 cW
 cW
-AJ
-Ow
-Jh
+GL
+un
+JP
 av
 cQ
 bg
@@ -34354,9 +34354,9 @@ cW
 cW
 cW
 cW
-AJ
-Oy
-AJ
+GL
+EZ
+GL
 av
 av
 bg
@@ -34611,11 +34611,11 @@ cW
 cW
 cW
 cW
-lB
-lB
-lB
+LS
+LS
+LS
 cO
-Ez
+av
 bg
 aL
 eX
@@ -34868,9 +34868,9 @@ cW
 cW
 cW
 cW
-uY
-ly
-uY
+Si
+Hn
+Si
 av
 av
 bg
@@ -35125,9 +35125,9 @@ cW
 cW
 cW
 cW
-uY
-xA
-SS
+Si
+rG
+EE
 av
 av
 bg
@@ -35382,9 +35382,9 @@ aA
 aA
 aA
 hl
-uY
-ly
-uY
+Si
+Hn
+Si
 av
 av
 bg
@@ -35639,9 +35639,9 @@ cM
 cM
 cM
 cM
-lB
-lB
-lB
+LS
+LS
+LS
 hm
 av
 bg
@@ -35900,7 +35900,7 @@ aa
 aa
 aa
 cM
-Ez
+UW
 bg
 av
 hd

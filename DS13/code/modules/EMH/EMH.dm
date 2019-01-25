@@ -197,31 +197,14 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	emh.alpha = 0 //So that it "pops" out of nowhere with a mind in it, or else it deletes
 	emh.equipOutfit(/datum/outfit/emh)
 	offer_control_emh(emh)
-	if(emh.client && emh.mind) //Hitchiking off of this until I can make a new jobban
-		emh.say("Please state the nature of the medical emergency.")
-		emh.hair_style = random_hair_style(emh.gender)
-		playsound(loc, 'DS13/sound/effects/medicalemergency.ogg', 50, 0)
-		emh.alpha = 255
-		new /obj/effect/temp_visual/dir_setting/ninja/cloak(get_turf(emh), emh.dir)
-		var/datum/browser/popup = new(emh, "EMH rules", "EMH rules") // Pop up the rules so they can't be ignored
-		var/s = "<h1> -=ALL PAST LIVES ARE FORGOTTEN=- </h1> <br>\
-		<h2> You are an emergency medical hologram! </h2>\
-		<p> <b> -You are a holographic program designed to give emergency medical treatment. You are well versed in surgery and medical practice</b>\
-		<ul>\
-		<li> You must not intentionally harm another living creature</li>\
-		<li> You may perform surgery to save lives however, in a conflict: prefer saving the lives of a human over another organism </li>\
-		<li> The captain has the power to delete you and blacklist you from being an EMH for the duration of the shift if you misbehave!</li>\
-		<li> You are a hologram, not a person! Do not expect the same rights as people. If you must die to save a life, you must sacrifice yourself </li>\
-		<li> You must not put the security of the ship / station in danger, you are free to take reasonable risk </li>\
-		<li> If you have any further questions, please ahelp! </li>\
-		</ul>"
-		popup.set_title_image(emh.browse_rsc_icon(src.icon, src.icon_state))
-		popup.set_content(s)
-		popup.open()
-		START_PROCESSING(SSfastprocess,src)
-	else
+	if(!emh.client || !emh.mind)
 		qdel(emh)
 		say("Unable to comply, could not activate EMH")
+		return
+	emh.on_spawn()
+	emh.alpha = 255
+	START_PROCESSING(SSfastprocess,src)
+
 
 /proc/offer_control_emh(mob/M) //Specialist proc to check they've not been blacklisted by the captain from being an EMH
 	var/poll_message = "Do you want to play as an emergency medical hologram?"
@@ -275,6 +258,28 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	heatmod = 2
 	breathid = null //You don't need air, you're a hologram.
 	damage_overlay_type = ""//You're a hologram, you don't bleed.
+
+/mob/living/carbon/human/species/holographic/proc/on_spawn()
+	var/mob/living/carbon/human/C = src
+	C.say("Please state the nature of the medical emergency.")
+	C.hair_style = random_hair_style(C.gender)
+	playsound(C.loc, 'DS13/sound/effects/medicalemergency.ogg', 50, 0)
+	new /obj/effect/temp_visual/dir_setting/ninja/cloak(get_turf(C), C.dir)
+	var/datum/browser/popup = new(C, "EMH rules", "EMH rules") // Pop up the rules so they can't be ignored
+	var/s = "<h1> -=ALL PAST LIVES ARE FORGOTTEN=- </h1> <br>\
+	<h2> You are an emergency medical hologram! </h2>\
+	<p> <b> -You are a holographic program designed to give emergency medical treatment. You are well versed in surgery and medical practice</b>\
+	<ul>\
+	<li> You must not intentionally harm another living creature</li>\
+	<li> You may perform surgery to save lives however, in a conflict: prefer saving the lives of a human over another organism </li>\
+	<li> The captain has the power to delete you and blacklist you from being an EMH for the duration of the shift if you misbehave!</li>\
+	<li> You are a hologram, not a person! Do not expect the same rights as people. If you must die to save a life, you must sacrifice yourself </li>\
+	<li> You must not put the security of the ship / station in danger, you are free to take reasonable risk </li>\
+	<li> If you have any further questions, please ahelp! </li>\
+	</ul>"
+	popup.set_title_image(C.browse_rsc_icon(C.icon, C.icon_state))
+	popup.set_content(s)
+	popup.open()
 
 /datum/species/holographic/spec_death(gibbed = FALSE, mob/living/carbon/human/H)
 	H.unequip_everything() //Don't spawn in as an EMH, rush the spare, then suicide so it deletes
