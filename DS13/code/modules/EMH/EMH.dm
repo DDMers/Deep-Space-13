@@ -17,7 +17,6 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 
 /obj/machinery/emh_emitter/Initialize()
 	. = ..()
-	START_PROCESSING(SSmachines,src)
 	var/area/A = get_area(src) //Unmovable
 	name = "EMH emitter ([A])"
 
@@ -84,7 +83,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 			to_chat(emh, "The emitter you were using was destroyed! Your program could not be shunted to another emitter and will be shut down to avoid damage.")
 			qdel(emh)
 			emh = null
-	STOP_PROCESSING(SSmachines,src)
+	STOP_PROCESSING(SSfastprocess,src)
 	. = ..()
 
 /obj/machinery/emh_emitter/proc/remove_cooldown()
@@ -138,10 +137,12 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	var/obj/machinery/emh_emitter/S = A
 	emh = null
 	S.emh = user //transfer silently.
+	START_PROCESSING(SSfastprocess, S)
 
 
 /obj/machinery/emh_emitter/process()
 	if(!emh || !is_occupied()) //If we don't have an EMH, no need to process
+		STOP_PROCESSING(SSfastprocess, src)
 		return
 	if(QDELETED(emh)) //Same goes here
 		emh = null
@@ -158,10 +159,14 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 				closest = em
 				closest_dist = get_dist(emh, em)
 		if(closest)
+			if(get_dist(emh, closest) >= closest.range || emh.z != closest.z) //if he's moved since the last process cycle.
+				to_chat(emh, "You cannot move beyond the range of your holo-emitters!")
+				emh.forceMove(get_turf(closest))
 			closest.emh = emh //Transfer his program seamlessly
 			emh = null
 			closest.icon_state = "emh-on"
 			icon_state = "emh-off"
+			START_PROCESSING(SSfastprocess, closest)
 		else
 			to_chat(emh, "You cannot move beyond the range of your holo-emitters!")
 			emh.forceMove(get_turf(src))
@@ -174,6 +179,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		to_chat(transferred, "You have been transferred to [get_area(src)]")
 		emh.say("Please state the nature of the medical emergency.")
 		playsound(loc, 'DS13/sound/effects/medicalemergency.ogg', 50, 0)
+		START_PROCESSING(SSfastprocess,src)
 		return
 	if(is_occupied())
 		say("Unable to comply, there is already an EMH active on the network.")
@@ -207,6 +213,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		popup.set_title_image(emh.browse_rsc_icon(src.icon, src.icon_state))
 		popup.set_content(s)
 		popup.open()
+		START_PROCESSING(SSfastprocess,src)
 	else
 		qdel(emh)
 		say("Unable to comply, could not activate EMH")
