@@ -81,17 +81,17 @@
 	return FALSE //No deconning them
 
 /obj/structure/turbolift/process()
-	if(is_controller)
-		if(loc_check())
-			bolt_other_doors()
-			return
-		unbolt_door()
+	if(!is_controller)
 		return
-		for(var/obj/structure/turbolift/S in destinations)
-			if(S.loc_check()) //Someone's standing in the lift
-				S.bolt_other_doors() //So bolt the other lifts
-				return
-			S.unbolt_door() //No one's in the lift, and the lift is not moving, so allow entrance
+	if(loc_check())
+		bolt_other_doors()
+		return
+	unbolt_door()
+	for(var/obj/structure/turbolift/S in destinations)
+		if(S.loc_check()) //Someone's standing in the lift
+			S.bolt_other_doors() //So bolt the other lifts
+			return
+		S.unbolt_door() //No one's in the lift, and the lift is not moving, so allow entrance
 
 /obj/structure/turbolift/proc/loc_check() //Is there someone in the lift? if so, we need to stop other lifts from being used.
 	for(var/turf/T in turbolift_turfs)
@@ -119,14 +119,15 @@
 		in_use = FALSE
 		unbolt_door()
 		return
-	if(S)
-		for(var/obj/structure/turbolift/TS in destinations)
-			if(TS.floor == S)
-				user.say("Deck [S], fore.")
-				send_sound_lift('DS13/sound/effects/turbolift/turbolift.ogg', TRUE)
-				addtimer(CALLBACK(src, .proc/lift, TS), 90)
-				icon_state = "lift-on"
-				return
+	if(!S)
+		return
+	for(var/obj/structure/turbolift/TS in destinations)
+		if(TS.floor == S)
+			user.say("Deck [S], fore.")
+			send_sound_lift('DS13/sound/effects/turbolift/turbolift.ogg', TRUE)
+			addtimer(CALLBACK(src, .proc/lift, TS), 90)
+			icon_state = "lift-on"
+			return
 
 /obj/structure/turbolift/proc/send_sound_lift(var/sound,var/shake = FALSE)
 	if(!sound)
