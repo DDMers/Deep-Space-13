@@ -2747,6 +2747,7 @@
 #include "DS13\code\game\objects\railing.dm"
 #include "DS13\code\game\objects\trek_objects.dm"
 #include "DS13\code\modules\clothing\under\trek.dm"
+#include "DS13\code\modules\turbolift\turbolift.dm"
 #include "DS13\goonstation\airlocks.dm"
 #include "DS13\goonstation\turf_autoalign.dm"
 #include "interface\interface.dm"
