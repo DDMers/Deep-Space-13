@@ -154,27 +154,29 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		icon_state = "emh-off"
 		return
 	icon_state = "emh-on" //Well we have an EMH, let's check if he's nearby
-	if(get_dist(emh, src) >= range || emh.z != z) //Out of range, try find the EMH another emitter or tele him back to us.
-		var/obj/machinery/emh_emitter/closest = null //Find our closest distance
-		var/closest_dist = 10 //Distance of closest emitter
-		for(var/obj/machinery/emh_emitter/em in GLOB.machines)
-			if(em == src || !emh in orange(em, em.range))
-				return
-			if(get_dist(emh, em) <= closest_dist && em.z == emh.z)
-				closest = em
-				closest_dist = get_dist(emh, em)
-		if(closest)
-			if(get_dist(emh, closest) >= closest.range || emh.z != closest.z) //if he's moved since the last process cycle.
-				to_chat(emh, "You cannot move beyond the range of your holo-emitters!")
-				emh.forceMove(get_turf(closest))
-			closest.emh = emh //Transfer his program seamlessly
-			emh = null
-			closest.icon_state = "emh-on"
-			icon_state = "emh-off"
-			START_PROCESSING(SSfastprocess, closest)
-		else
+	if(get_dist(emh, src) <= range || emh.z == z) //In range, so return early.
+		return
+	var/obj/machinery/emh_emitter/closest = null //Out of range, try find the EMH another emitter or tele him back to us.
+	var/closest_dist = 10 //Distance of closest emitter. We'll compare this to other emitters we find near it.
+	for(var/obj/machinery/emh_emitter/em in GLOB.machines)
+		if(em == src || !emh in orange(em, em.range))
+			return
+		if(get_dist(emh, em) <= closest_dist && em.z == emh.z)
+			closest = em
+			closest_dist = get_dist(emh, em)
+	if(closest)
+		if(get_dist(emh, closest) >= closest.range || emh.z != closest.z) //if he's moved since the last process cycle.
 			to_chat(emh, "You cannot move beyond the range of your holo-emitters!")
-			emh.forceMove(get_turf(src))
+			emh.forceMove(get_turf(closest))
+			return
+		closest.emh = emh //Transfer his program seamlessly
+		emh = null
+		closest.icon_state = "emh-on"
+		icon_state = "emh-off"
+		START_PROCESSING(SSfastprocess, closest)
+	else
+		to_chat(emh, "You cannot move beyond the range of your holo-emitters!")
+		emh.forceMove(get_turf(src))
 
 /obj/machinery/emh_emitter/proc/activate(var/mob/living/carbon/human/species/holographic/transferred = null) //Activate, if we're not transferring an existing EMH over, then make a new one!
 	if(transferred)
