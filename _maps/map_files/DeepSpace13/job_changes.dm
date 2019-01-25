@@ -231,6 +231,10 @@
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
 
+/datum/outfit/job/assistant/DS13/pre_equip(mob/living/carbon/human/H)
+	..()
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+
 /datum/job/chaplain/New()
 	..()
 	title = "Counselor"
