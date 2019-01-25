@@ -56,22 +56,24 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	if(!user.client)
 		return
 	var/obj/item/card/id/ID = I
-	if(ID && istype(ID))
-		if(check_access(ID))
-			var/question = alert("Terminate the current EMH? (this kills the current EMH)",name,"yes","no")
-			var/blacklist = alert("Blacklist the current EMH player for the duration of this round? ",name,"yes","no")
-			if(question == "yes")
-				if(!emh)
-					emh = locate(/mob/living/carbon/human/species/holographic) in GLOB.alive_mob_list
-				if(emh.client && emh.client.key && blacklist == "yes")
-					GLOB.EMH_blacklist += emh.client.key
-					to_chat(emh, "<span_class='boldnotice'>[user] has blacklisted you from becoming an EMH for the duration of this round! If you feel this was in error, please ahelp immediately.")
-					log_game("[user] just blacklisted [emh.client.key] from becoming an EMH for the rest of the round")
-				if(emh)
-					emh.death()//Kill the emh.
-					emh = null
-				else
-					to_chat(user, "Unable to locate an EMH on the network.")
+	if(!istype(ID))
+		return
+	if(check_access(ID))
+		var/question = alert("Terminate the current EMH? (this kills the current EMH)",name,"yes","no")
+		if(question == "no" || !question)
+			return
+		var/blacklist = alert("Blacklist the current EMH player for the duration of this round? ",name,"yes","no")
+		if(!emh)
+			emh = locate(/mob/living/carbon/human/species/holographic) in GLOB.alive_mob_list
+		if(emh.client && emh.client.key && blacklist == "yes")
+			GLOB.EMH_blacklist += emh.client.key
+			to_chat(emh, "<span_class='boldnotice'>[user] has blacklisted you from becoming an EMH for the duration of this round! If you feel this was in error, please ahelp immediately.")
+			log_game("[user] just blacklisted [emh.client.key] from becoming an EMH for the rest of the round")
+		if(emh)
+			emh.death()//Kill the emh.
+			emh = null
+		else
+			to_chat(user, "Unable to locate an EMH on the network.")
 
 /obj/machinery/emh_emitter/Destroy()
 	if(emh)
@@ -84,7 +86,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 			qdel(emh)
 			emh = null
 	STOP_PROCESSING(SSfastprocess,src)
-	. = ..()
+	return ..()
 
 /obj/machinery/emh_emitter/proc/remove_cooldown()
 	locked = FALSE
@@ -98,28 +100,31 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		return
 	if(is_occupied()) //If we have an EMH, or there is an EMH in the world
 		to_chat(user, "There is already an EMH active, summon it?")
-		var/question = alert("Summon an EMH?",name,"yes","no")
+		var/question = alert("Summon the EMH?",name,"yes","no")
 		locked = TRUE
 		addtimer(CALLBACK(src, .proc/remove_cooldown), 30) //Add timer to cooldown
-		if(question == "yes")
-			var/mob/living/carbon/human/species/holographic/S = locate(/mob/living/carbon/human/species/holographic) in GLOB.alive_mob_list
-			if(S)
-				var/emhconsent = alert(S, "You have been summoned by [user] in [get_area(src)]. Transfer to their location?",name,"accept","reject")
-				if(emhconsent == "accept")
-					activate(S)
-					user.say("Computer, transfer emergency medical holographic program to [get_area(src)]")
-				else
-					to_chat(user, "The EMH has declined your summons.")
-					return ..()
-	else
-		locked = TRUE
-		addtimer(CALLBACK(src, .proc/remove_cooldown), 30) //Add timer to prevent spam clicking
-		if(emh)
-			emh.death()
-		if(user)
-			user.say("Computer, activate emergency medical hologram")
-			to_chat(user, "Attempting to activate EMH ((This requires a ghost willing to control it...))")
-		activate(null) //No EMH present, try to make one!
+		if(question == "no")
+			return
+		var/mob/living/carbon/human/species/holographic/S = locate(/mob/living/carbon/human/species/holographic) in GLOB.alive_mob_list
+		if(!S)
+			return
+		var/emhconsent = alert(S, "You have been summoned by [user] in [get_area(src)]. Transfer to their location?",name,"accept","reject")
+		if(emhconsent == "accept")
+			activate(S)
+			user.say("Computer, transfer emergency medical holographic program to [get_area(src)]")
+			return
+		else
+			to_chat(user, "The EMH has declined your summons.")
+			return
+		return ..()
+	locked = TRUE
+	addtimer(CALLBACK(src, .proc/remove_cooldown), 30) //Add timer to prevent spam clicking
+	if(emh)
+		emh.death()
+	if(user)
+		user.say("Computer, activate emergency medical hologram")
+		to_chat(user, "Attempting to activate EMH ((This requires a ghost willing to control it...))")
+	activate(null) //No EMH present, try to make one!
 
 /obj/machinery/emh_emitter/proc/emh_jumpto(mob/living/user)
 	var/list/jumplocs = list()
