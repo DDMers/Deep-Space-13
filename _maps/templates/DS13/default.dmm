@@ -1,0 +1,15 @@
+"a" = (/turf/closed/wall/trek_smooth/corridor,/area/space)
+"b" = (/turf/open/floor/carpet/trek,/area/space)
+
+(1,1,1) = {"
+aaaaaaaaaa
+abbbbbbbba
+abbbbbbbba
+abbbbbbbba
+abbbbbbbba
+abbbbbbbba
+abbbbbbbba
+abbbbbbbba
+abbbbbbbba
+aaaaaaaaaa
+"}

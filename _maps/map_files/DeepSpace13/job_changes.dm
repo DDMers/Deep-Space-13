@@ -18,10 +18,12 @@
 	suit = null
 	gloves = /obj/item/clothing/gloves/color/black
 	head = null
+	belt = /obj/item/gun/energy/phaser
 
 /datum/job/hop/New()
 	..()
 	MAP_JOB_CHECK
+	title = "First Officer"
 	outfit = /datum/outfit/job/hop/DS13
 
 /datum/outfit/job/hop/DS13
@@ -31,6 +33,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = null
 	gloves = /obj/item/clothing/gloves/color/black
+	belt = /obj/item/gun/energy/phaser
 
 //------
 //EngSec
@@ -48,7 +51,7 @@
 	uniform = /obj/item/clothing/under/trek/command/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
-
+	belt = /obj/item/gun/energy/phaser
 
 /datum/job/warden/New()
 	..()
@@ -60,6 +63,7 @@
 	uniform = /obj/item/clothing/under/trek/engsec/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	belt = /obj/item/gun/energy/phaser
 
 /datum/job/officer/New()
 	..()
@@ -71,6 +75,7 @@
 	uniform = /obj/item/clothing/under/trek/engsec/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	belt = /obj/item/gun/energy/phaser
 
 
 //Engineering
@@ -290,6 +295,36 @@
 	uniform = /obj/item/clothing/under/trek/engsec/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+
+/datum/job/clown/New()
+	..()
+	title = "Morale Officer"
+	MAP_JOB_CHECK
+	outfit = /datum/outfit/job/clown/DS13
+
+/datum/outfit/job/clown/DS13
+	name = "Trek-Clown"
+
+	belt = /obj/item/pda/clown
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/clown_shoes
+	mask = /obj/item/clothing/mask/gas/clown_hat
+	l_pocket = /obj/item/bikehorn
+	backpack_contents = list(
+		/obj/item/stamp/clown = 1,
+		/obj/item/reagent_containers/spray/waterflower = 1,
+		/obj/item/reagent_containers/food/snacks/grown/banana = 1,
+		/obj/item/instrument/bikehorn = 1,
+		)
+
+	implants = list(/obj/item/implant/sad_trombone)
+
+	box = /obj/item/storage/box/hug/survival
+
+	chameleon_extras = /obj/item/stamp/clown
+
+
 
 MAP_REMOVE_JOB(roboticist)
 MAP_REMOVE_JOB(AI) //Do I have to even explain why
