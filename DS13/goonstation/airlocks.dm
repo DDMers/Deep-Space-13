@@ -60,6 +60,21 @@
 	icon_state = "closed"
 	req_one_access = list(ACCESS_RESEARCH)
 
+/obj/machinery/door/airlock/trek/goon/medbay
+	name = "Medbay"
+	icon = 'DS13/goonstation/medical_airlock.dmi'
+	desc = "A sleek airlock for walking through. This one looks extra secure"
+	icon_state = "closed"
+	req_one_access = list(ACCESS_MEDICAL)
+
+/obj/machinery/door/airlock/trek/goon/medbay/chemistry
+	name = "Chemistry"
+	icon = 'DS13/goonstation/medical_airlock.dmi'
+	desc = "A sleek airlock for walking through. This one looks extra secure"
+	icon_state = "closed"
+	req_one_access = list(ACCESS_CHEMISTRY)
+
+
 /obj/machinery/door/airlock/trek/goon/glass
 	name = "Airlock"
 	icon = 'DS13/goonstation/glass_airlock.dmi'
