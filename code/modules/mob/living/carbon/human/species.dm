@@ -1348,7 +1348,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				bloody = 1
 				var/turf/location = H.loc
 				if(istype(location))
-					H.add_splatter_floor(location)
+					//H.add_splatter_floor(location)
 				if(get_dist(user, H) <= 1)	//people with TK won't get smeared with blood
 					user.add_mob_blood(H)
 					if(ishuman(user))

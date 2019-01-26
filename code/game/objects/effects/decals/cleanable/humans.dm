@@ -153,6 +153,7 @@
 	var/exited_dirs = 0
 	var/list/shoe_types = list()
 
+
 /obj/effect/decal/cleanable/blood/footprints/Crossed(atom/movable/O)
 	..()
 	if(ishuman(O))
