@@ -8,7 +8,6 @@ SUBSYSTEM_DEF(docking)
 	var/scheduled = 0 //When are we scheduling a docking event for?
 	var/list/events = list() //All the docking event datums we have.
 
-
 /datum/controller/subsystem/docking/Initialize(time, zlevel)
 	. = ..()
 	for(var/type in typesof(/datum/ship_event))
@@ -28,8 +27,11 @@ SUBSYSTEM_DEF(docking)
 		schedule()
 
 /datum/controller/subsystem/docking/proc/spawnEvent()
+	if(!events.len)
+		return
 	var/datum/ship_event/F = pick(events)
 	F.fire()
+	events -= F
 
 /datum/controller/subsystem/docking/fire(resumed = 0)
 	checkEvent()

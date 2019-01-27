@@ -44,14 +44,19 @@ HOS gets a special console
 	var/target_ship = "trading" //The name of the map template we seek to load
 	var/desc = "A trading ship is requesting permission to dock."
 
+/datum/ship_event/ling //For positive events, please use ship_event/positive and negative : ship_event/negative
+	name = "Frozen ship"
+	target_ship = "lingtransport" //The name of the map template we seek to load
+	desc = "Automated distress signal detected."
+
 //datum/ship_event/positive
 
 /datum/ship_event/proc/fire()
 	message_admins("A [name] is approaching DS13.")
-	var/obj/effect/landmark/ShipSpawner/SS = locate(/obj/effect/landmark/ShipSpawner) in GLOB.landmarks_list
-	if(SS)
-		SS.load(target_ship)
-	return
+	for(var/obj/effect/landmark/ShipSpawner/SS in GLOB.landmarks_list)
+		if(SS && !SS.loaded)
+			SS.load(target_ship)
+			return
 
 //Ships!
 
@@ -63,13 +68,21 @@ HOS gets a special console
 	name = "trading"
 	mappath = "_maps/templates/DS13/trading.dmm"
 
+/datum/map_template/ship/lingtransport
+	name = "lingtransport"
+	mappath = "_maps/templates/DS13/lingtransport.dmm"
+
 /obj/effect/landmark/ShipSpawner
 	name = "Ship spawning warp beacon"
 	desc = "Spawns new ships!"
 	var/loading = FALSE //To avoid spam
+	var/loaded = FALSE //Is there a ship?
+
+/obj/effect/landmark/ShipSpawner/proc/unload()
+	loaded = FALSE
 
 /obj/effect/landmark/ShipSpawner/proc/load(var/template)//Call load("name of the ship map template")
-	if(loading)
+	if(loading || loaded)
 		return FALSE
 	if(!template)
 		return FALSE
@@ -80,6 +93,7 @@ HOS gets a special console
 	var/datum/map_template/template_to_load = SSmapping.ship_templates[template]
 	if(template_to_load.load(T, centered = FALSE))
 		loading = FALSE
+	loaded = TRUE
 	return TRUE
 
 /obj/structure/docking_port //Click this to board a ship
@@ -117,9 +131,8 @@ HOS gets a special console
 	if(!linked)
 		if(SSdocking.ship_docking_ports.len)
 			for(var/obj/structure/docking_port/S in SSdocking.ship_docking_ports)
-				if(S.z != z)
-					linked = S
-					break
+				linked = S
+				break
 			if(!linked) //STILL nothing linked. So cancel
 				to_chat(AM, "There is no ship docked.")
 				return ..() //No docking ports so just slam into the door.
@@ -132,7 +145,7 @@ HOS gets a special console
 //Areas!
 
 /area/ship //This area will encompass all our ships
-	name = "A ship"
+	name = "Docked ship"
 	requires_power = FALSE
 	has_gravity = TRUE
 	var/list/crate_contents = list() //What crates do we have aboard? used for generating a customs report
@@ -186,3 +199,28 @@ HOS gets a special console
 	popup.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))
 	popup.set_content(info)
 	popup.open()
+
+//Items and fluff!
+/obj/effect/mob_spawn/human/alive/changeling
+	name = "frozen sleeper"
+	desc = "This stasis pod is frozen over, but contains some-thin..someone? Inside..."
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper"
+	death = FALSE
+	flavour_text = "<span class='big bold'>You are a survivor.</span><b> You killed the people who were trying to study you and have assumed a new form \
+	but now you hunger for more genomes...</b>"
+	outfit = /datum/outfit/job/doctor/DS13
+
+/obj/effect/mob_spawn/human/alive/changeling/Initialize()
+	. = ..()
+	for(var/mob/dead/observer/F in GLOB.dead_mob_list)
+		var/turf/turfy = get_turf(src)
+		var/link = TURF_LINK(F, turfy)
+		if(F)
+			to_chat(F, "<font color='#EE82EE'><i>Antagonist spawn available (just click the sleeper): [link]</i></font>")
+
+
+/obj/effect/mob_spawn/human/alive/changeling/special(mob/living/new_spawn)
+	if(new_spawn.mind)
+		new_spawn.mind.make_Changeling()
+	. = ..()

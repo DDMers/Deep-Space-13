@@ -72,3 +72,31 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode/phaserstun, /obj/item/ammo_casing/energy/laser/phaser_rifle)
 	lefthand_file = 'DS13/icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'DS13/icons/mob/inhands/weapons/guns_righthand.dmi'
+
+/obj/item/kitchen/knife/combat/klingon
+	name = "Kut'luch"
+	desc = "A long bladed dagger used by the Klingons..."
+	icon = 'DS13/icons/weapons/melee.dmi'
+	icon_state = "kutluch"
+	item_state = "kutluch"
+	embedding = list("embedded_pain_multiplier" = 4, "embed_chance" = 35, "embedded_fall_chance" = 10)
+	force = 15
+	throwforce = 15
+	lefthand_file = 'DS13/icons/mob/inhands/weapons/items_lefthand.dmi'
+	righthand_file = 'DS13/icons/mob/inhands/weapons/items_righthand.dmi'
+
+/obj/item/twohanded/required/klingon
+	name = "Bat'Leth"
+	desc = "An enormous sword which is the weapon of choice for most Klingons.. If you're reading this then perhaps today IS a good day to die!"
+	w_class = WEIGHT_CLASS_HUGE
+	sharpness = IS_SHARP
+	attack_verb = list("cleaved", "slashed", "torn", "hacked", "ripped", "diced", "carved")
+	icon = 'DS13/icons/weapons/melee.dmi'
+	icon_state = "batleth"
+	item_state = "batleth"
+	hitsound = 'sound/weapons/rapierhit.ogg'
+	block_chance = 30
+	throwforce = 15
+	force = 25
+	lefthand_file = 'DS13/icons/mob/inhands/weapons/items_lefthand.dmi'
+	righthand_file = 'DS13/icons/mob/inhands/weapons/items_righthand.dmi'

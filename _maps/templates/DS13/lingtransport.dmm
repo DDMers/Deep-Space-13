@@ -1,0 +1,37 @@
+"a" = (/turf/open/space/basic,/area/space)
+"b" = (/turf/closed/wall/trek_smooth/room,/area/ship)
+"c" = (/obj/structure/docking_port,/turf/open/space/basic,/area/ship)
+"d" = (/turf/open/floor/carpet/trek,/area/ship)
+"e" = (/obj/effect/spawner/structure/window/ice,/turf/open/floor/carpet/trek,/area/ship)
+"f" = (/obj/structure/trek_decor/viewscreen,/turf/closed/wall/trek_smooth/room,/area/ship)
+"g" = (/obj/structure/trek_decor/rack,/turf/closed/wall/trek_smooth/room,/area/ship)
+"h" = (/obj/machinery/door/airlock/trek/goon/glass,/turf/open/floor/carpet/trek,/area/ship)
+"i" = (/obj/structure/shuttle/engine/propulsion{icon_state = "propulsion"; dir = 4},/turf/open/space/basic,/area/space)
+"j" = (/turf/open/floor/grass/snow,/area/ship)
+"k" = (/obj/effect/mob_spawn/human/alive/changeling{icon_state = "sleeper"; dir = 4},/turf/open/floor/carpet/trek,/area/ship)
+"l" = (/obj/effect/mob_spawn/human/doctor/alive/lavaland{icon_state = "sleeper"; dir = 4},/turf/open/floor/grass/snow,/area/ship)
+"m" = (/obj/structure/table/reinforced,/turf/open/floor/grass/snow,/area/ship)
+"n" = (/obj/structure/table/reinforced,/turf/open/floor/carpet/trek,/area/ship)
+"o" = (/obj/machinery/door/airlock/trek/goon/glass,/obj/structure/barricade/wooden/snowed,/turf/open/floor/carpet/trek,/area/ship)
+"p" = (/obj/machinery/door/airlock/trek/goon/glass{icon_state = "closed"; dir = 8},/turf/open/floor/carpet/trek,/area/ship)
+"q" = (/obj/machinery/door/airlock/trek/goon/glass{icon_state = "closed"; dir = 8},/obj/structure/barricade/wooden/snowed,/turf/open/floor/carpet/trek,/area/ship)
+"r" = (/obj/machinery/computer{icon_state = "computer"; dir = 4},/turf/open/floor/carpet/trek,/area/ship)
+"s" = (/obj/structure/chair/trek{icon_state = "comfy"; dir = 8},/turf/open/floor/carpet/trek,/area/ship)
+"t" = (/obj/structure/chair/trek,/turf/open/floor/grass/snow,/area/ship)
+"u" = (/obj/structure/chair/trek{icon_state = "comfy"; dir = 1},/turf/open/floor/carpet/trek,/area/ship)
+"v" = (/obj/structure/chair/trek{icon_state = "comfy"; dir = 1},/turf/open/floor/grass/snow,/area/ship)
+"w" = (/obj/structure/chair/trek,/turf/open/floor/carpet/trek,/area/ship)
+
+(1,1,1) = {"
+aaaaaaaaaabcbbbcbaaa
+aaaaaaaaaabdddddbaaa
+aaaabefgggboggghbbia
+beebbjttttjdtjwdjbia
+bdddqjjjjdjjjjjjdbia
+brdsbkjjmjjjjjjdjbaa
+brdsbldjnmdjjjjjdbaa
+bdddpdjjjdjdjjjjjbia
+beebbjuvuvdjujujjbia
+aaaabefgggbggggfbbia
+aaaaaaaaaaaaaaaaaaaa
+"}
