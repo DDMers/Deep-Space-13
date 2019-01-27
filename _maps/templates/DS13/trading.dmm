@@ -26,12 +26,13 @@
 "z" = (/obj/machinery/door/airlock/trek/goon/external/public,/obj/machinery/door/poddoor/shutters{id = "trader"; name = "trader warehouse"},/turf/open/floor/carpet/trek,/area/ship)
 "A" = (/obj/structure/closet/secure_closet/personal,/obj/item/restraints/handcuffs,/obj/item/gun/energy/phaser,/turf/open/floor/carpet/trek,/area/ship)
 "B" = (/obj/machinery/computer{icon_state = "computer"; dir = 4},/turf/open/floor/carpet/trek,/area/ship)
+"C" = (/obj/effect/mob_spawn/human/alive/trek{icon_state = "sleeper"; dir = 8},/turf/open/floor/carpet/trek,/area/ship)
 
 (1,1,1) = {"
 aaaaaaaaaabgbbbgbaaa
 aaaaaaaaaablllllbaaa
 aaaabcefffbzfffzbbda
-bccbbhijklbmmmmmnbda
+bccbbhijkCbmmmmmnbda
 blllolllllpllllllbda
 bBlqbrllstulvwwvlbaa
 bBlqbrllstulwwwwlbaa

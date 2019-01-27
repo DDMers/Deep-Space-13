@@ -39,20 +39,26 @@ HOS gets a special console
 
 //Datums!
 
-/datum/ship_event //For positive events, please use ship_event/positive and negative : ship_event/negative
+/datum/ship_event
 	var/name = "Trading ship"
 	var/target_ship = "trading" //The name of the map template we seek to load
-	var/desc = "A trading ship is requesting permission to dock."
+	var/desc = "Greetings! I hope I find you well, I am a trader seeking to exchange goods...for the right price, of course!"
 
-/datum/ship_event/ling //For positive events, please use ship_event/positive and negative : ship_event/negative
+/datum/ship_event/ling
 	name = "Frozen ship"
 	target_ship = "lingtransport" //The name of the map template we seek to load
-	desc = "Automated distress signal detected."
+	desc = "Automated distress signal detected. Contents unknown"
+
+/datum/ship_event/klingon_friendly
+	name = "ISS Vor'Cha"
+	target_ship = "klingon_friendly" //The name of the map template we seek to load
+	desc = "Qap'la! My crew requires good food in their stomachs and a safe place to practice combat. We are landing now!"
 
 //datum/ship_event/positive
 
 /datum/ship_event/proc/fire()
 	message_admins("A [name] is approaching DS13.")
+	priority_announce("[desc].", "Incoming Transmission", 'sound/ai/commandreport.ogg')
 	for(var/obj/effect/landmark/ShipSpawner/SS in GLOB.landmarks_list)
 		if(SS && !SS.loaded)
 			SS.load(target_ship)
@@ -71,6 +77,10 @@ HOS gets a special console
 /datum/map_template/ship/lingtransport
 	name = "lingtransport"
 	mappath = "_maps/templates/DS13/lingtransport.dmm"
+
+/datum/map_template/ship/klingon_friendly
+	name = "klingon_friendly"
+	mappath = "_maps/templates/DS13/klingon_ship.dmm"
 
 /obj/effect/landmark/ShipSpawner
 	name = "Ship spawning warp beacon"
@@ -131,6 +141,8 @@ HOS gets a special console
 	if(!linked)
 		if(SSdocking.ship_docking_ports.len)
 			for(var/obj/structure/docking_port/S in SSdocking.ship_docking_ports)
+				if(S in get_area(src)) //Don't link with our own ports
+					continue
 				linked = S
 				break
 			if(!linked) //STILL nothing linked. So cancel
@@ -224,3 +236,37 @@ HOS gets a special console
 	if(new_spawn.mind)
 		new_spawn.mind.make_Changeling()
 	. = ..()
+/obj/effect/mob_spawn/human/alive/trek
+	name = "Assistant"
+	outfit = /datum/outfit/job/assistant/DS13
+
+
+/obj/effect/mob_spawn/human/alive/trek/Initialize()
+	. = ..()
+	for(var/mob/dead/observer/F in GLOB.dead_mob_list)
+		var/turf/turfy = get_turf(src)
+		var/link = TURF_LINK(F, turfy)
+		if(F)
+			to_chat(F, "<span class='danger'><i>Visiting crew spawn as a [name] available (just click the sleeper): [link]</i></span>")
+
+/datum/outfit/klingon
+	uniform = /obj/item/clothing/under/trek/klingon
+	accessory = null
+	shoes = /obj/item/clothing/shoes/jackboots
+	suit = null
+	gloves = /obj/item/clothing/gloves/color/black
+	head = null
+	l_pocket = /obj/item/kitchen/knife/combat/klingon
+	ears = /obj/item/radio/headset
+
+/obj/effect/mob_spawn/human/alive/trek/klingon
+	name = "Klingon Crewman"
+	roundstart = FALSE
+	death = FALSE
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper_s"
+	flavour_text = "<span class='big bold'>You are a Klingon</span><span class='big'> <span class='danger'><b>Your crew is taking some shore leave on DS13, a federation outpost.</b></span> You are agressive and short tempered and you will not accept insults to your honour!</b><br>\
+	<br>\
+	<span class='danger'><b>Klingons are bound by honour! do not murder without a good reason or fight an unarmed opponent with a weapon. You may start fights if your character has a reason to do so (being insulted, being robbed/cheated)</b></span></font>"
+	outfit = /datum/outfit/klingon
+	mob_species = /datum/species/klingon

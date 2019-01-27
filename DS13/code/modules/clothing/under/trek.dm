@@ -30,6 +30,7 @@
 
 /obj/item/clothing/under/trek/klingon
 	name = "Klingon battle uniform"
+	desc = "A heavily armour plated uniform worn by the finest Quon'os has to offer. Qap'la!"
 	icon = 'DS13/icons/obj/clothing/uniforms.dmi'
 	alternate_worn_icon = 'DS13/icons/mob/uniform.dmi'
 	icon_state = "klingon"
