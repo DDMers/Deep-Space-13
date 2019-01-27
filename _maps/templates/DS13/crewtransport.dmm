@@ -1,53 +1,532 @@
-"a" = (/turf/open/space/basic,/area/space)
-"b" = (/turf/closed/wall/trek_smooth/room,/area/ship/crewtransport)
-"c" = (/obj/machinery/door/airlock/trek/goon/external/public,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"d" = (/obj/structure/window/reinforced/fulltile/trek,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"e" = (/obj/machinery/washing_machine,/turf/open/floor/plasteel/white,/area/ship/crewtransport)
-"f" = (/turf/open/floor/plasteel/white,/area/ship/crewtransport)
-"g" = (/obj/structure/toilet,/turf/open/floor/plasteel/white,/area/ship/crewtransport)
-"h" = (/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"i" = (/obj/effect/mob_spawn/human/hotel_staff,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"j" = (/obj/structure/chair/trek{icon_state = "comfy"; dir = 1},/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"k" = (/obj/machinery/door/airlock/trek/goon{icon_state = "closed"; dir = 8},/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"l" = (/obj/structure/trek_decor/rack,/turf/closed/wall/trek_smooth/room,/area/ship/crewtransport)
-"m" = (/obj/machinery/door/airlock/trek/goon,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"n" = (/obj/item/camera,/obj/item/camera,/obj/item/camera,/obj/structure/table/glass,/obj/item/camera,/obj/item/camera_film,/obj/item/camera_film,/obj/item/camera_film,/obj/item/camera_film,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"o" = (/obj/structure/chair/trek/standard,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"p" = (/obj/structure/chair/trek{icon_state = "comfy"; dir = 8},/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"q" = (/obj/structure/chair/trek/standard{icon_state = "chair"; dir = 1},/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"r" = (/obj/structure/chair/trek,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"s" = (/obj/item/bedsheet,/obj/structure/bed,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"t" = (/obj/machinery/shower{dir = 4},/turf/open/floor/plasteel/white,/area/ship/crewtransport)
-"u" = (/obj/effect/mob_spawn/human/alive/trek/tourist{icon_state = "sleeper"; dir = 4},/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"v" = (/obj/effect/mob_spawn/human/alive/trek/tourist{icon_state = "sleeper"; dir = 8},/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"w" = (/obj/structure/bed,/obj/item/bedsheet,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"x" = (/obj/machinery/shower{icon_state = "shower"; dir = 1},/turf/open/floor/plasteel/white,/area/ship/crewtransport)
-"y" = (/obj/structure/window/reinforced/fulltile/trek/middle,/obj/structure/grille,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"z" = (/obj/structure/shuttle/engine/propulsion{icon_state = "propulsion"; dir = 4},/turf/open/space/basic,/area/space)
-"A" = (/obj/machinery/sleeper{dir = 4},/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"B" = (/obj/machinery/iv_drip,/obj/item/reagent_containers/blood/universal,/obj/item/reagent_containers/blood/AMinus,/obj/item/reagent_containers/blood/APlus,/obj/item/reagent_containers/blood/OMinus,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"C" = (/obj/structure/table/glass,/obj/item/storage/box/donkpockets,/obj/item/storage/box/donkpockets,/obj/item/reagent_containers/glass/beaker,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"D" = (/obj/structure/table/glass,/obj/machinery/microwave,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"E" = (/obj/structure/sink{dir = 4; pixel_x = 11},/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"F" = (/obj/structure/closet/secure_closet/freezer/kitchen,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"G" = (/obj/machinery/vending/autodrobe,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"H" = (/obj/item/clothing/suit/poncho/red,/obj/structure/table/glass,/obj/item/clothing/suit/poncho/green,/obj/item/clothing/suit/suspenders,/obj/item/clothing/suit/whitedress,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
-"I" = (/obj/structure/tank_dispenser/oxygen,/turf/open/floor/carpet/trek,/area/ship/crewtransport)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/open/space/basic,
+/area/space)
+"b" = (
+/turf/closed/wall/trek_smooth/room,
+/area/ship/crewtransport)
+"c" = (
+/obj/machinery/door/airlock/trek/goon/external/public,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"d" = (
+/obj/structure/window/reinforced/fulltile/trek,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"e" = (
+/obj/machinery/washing_machine,
+/turf/open/floor/plasteel/white,
+/area/ship/crewtransport)
+"f" = (
+/turf/open/floor/plasteel/white,
+/area/ship/crewtransport)
+"g" = (
+/obj/structure/toilet,
+/turf/open/floor/plasteel/white,
+/area/ship/crewtransport)
+"h" = (
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"i" = (
+/obj/effect/mob_spawn/human/hotel_staff,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"j" = (
+/obj/structure/chair/trek{
+	icon_state = "comfy";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"k" = (
+/obj/machinery/door/airlock/trek/goon{
+	icon_state = "closed";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"l" = (
+/obj/structure/trek_decor/rack,
+/turf/closed/wall/trek_smooth/room,
+/area/ship/crewtransport)
+"m" = (
+/obj/machinery/door/airlock/trek/goon,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"n" = (
+/obj/item/camera,
+/obj/item/camera,
+/obj/item/camera,
+/obj/structure/table/glass,
+/obj/item/camera,
+/obj/item/camera_film,
+/obj/item/camera_film,
+/obj/item/camera_film,
+/obj/item/camera_film,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"o" = (
+/obj/structure/chair/trek/standard,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"p" = (
+/obj/structure/chair/trek{
+	icon_state = "comfy";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"q" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"r" = (
+/obj/structure/chair/trek,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"s" = (
+/obj/item/bedsheet,
+/obj/structure/bed,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"t" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/crewtransport)
+"u" = (
+/obj/effect/mob_spawn/human/alive/trek/tourist{
+	icon_state = "sleeper";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"v" = (
+/obj/effect/mob_spawn/human/alive/trek/tourist{
+	icon_state = "sleeper";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"w" = (
+/obj/structure/bed,
+/obj/item/bedsheet,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"x" = (
+/obj/machinery/shower{
+	icon_state = "shower";
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/crewtransport)
+"y" = (
+/obj/structure/window/reinforced/fulltile/trek/middle,
+/obj/structure/grille,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"z" = (
+/obj/structure/shuttle/engine/propulsion{
+	icon_state = "propulsion";
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space)
+"A" = (
+/obj/machinery/sleeper{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"B" = (
+/obj/machinery/iv_drip,
+/obj/item/reagent_containers/blood/universal,
+/obj/item/reagent_containers/blood/AMinus,
+/obj/item/reagent_containers/blood/APlus,
+/obj/item/reagent_containers/blood/OMinus,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"C" = (
+/obj/structure/table/glass,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/obj/item/reagent_containers/glass/beaker,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"D" = (
+/obj/structure/table/glass,
+/obj/machinery/microwave,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"E" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 11
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"F" = (
+/obj/structure/closet/secure_closet/freezer/kitchen,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"G" = (
+/obj/machinery/vending/autodrobe,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"H" = (
+/obj/item/clothing/suit/poncho/red,
+/obj/structure/table/glass,
+/obj/item/clothing/suit/poncho/green,
+/obj/item/clothing/suit/suspenders,
+/obj/item/clothing/suit/whitedress,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
+"I" = (
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/carpet/trek,
+/area/ship/crewtransport)
 
 (1,1,1) = {"
-aaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaa
-aaabbbbbbcdddcbbbbbz
-bbbbefbgbhhhhhbBhhbz
-bijbefkfbclllcbAhhbz
-yhhbbmbbnhooohbbmbbz
-yphkhhhhhhhhhhhhhGba
-yphkhhhhhhqqqhhhhHba
-yhhbbmbbbmbbbmbbmbbz
-bIrbshwbuhvbtfbDhEbz
-bbbbwhwbuhvbtxbChFbz
-aaabbbbbbbbbbbbbbbbz
-aaaaaaaaaaaaaaaaaaaa
+a
+a
+a
+a
+a
+b
+b
+y
+y
+y
+y
+b
+b
+a
+a
+"}
+(2,1,1) = {"
+a
+a
+a
+a
+a
+b
+i
+h
+p
+p
+h
+I
+b
+a
+a
+"}
+(3,1,1) = {"
+a
+a
+a
+a
+a
+b
+j
+h
+h
+h
+h
+r
+b
+a
+a
+"}
+(4,1,1) = {"
+a
+a
+a
+a
+b
+b
+b
+b
+k
+k
+b
+b
+b
+b
+a
+"}
+(5,1,1) = {"
+a
+a
+a
+a
+b
+e
+e
+b
+h
+h
+b
+s
+w
+b
+a
+"}
+(6,1,1) = {"
+a
+a
+a
+a
+b
+f
+f
+m
+h
+h
+m
+h
+h
+b
+a
+"}
+(7,1,1) = {"
+a
+a
+a
+a
+b
+b
+k
+b
+h
+h
+b
+w
+w
+b
+a
+"}
+(8,1,1) = {"
+a
+a
+a
+a
+b
+g
+f
+b
+h
+h
+b
+b
+b
+b
+a
+"}
+(9,1,1) = {"
+a
+a
+a
+a
+b
+b
+b
+n
+h
+h
+b
+u
+u
+b
+a
+"}
+(10,1,1) = {"
+a
+a
+a
+a
+c
+h
+c
+h
+h
+h
+m
+h
+h
+b
+a
+"}
+(11,1,1) = {"
+a
+a
+a
+a
+d
+h
+l
+o
+h
+q
+b
+v
+v
+b
+a
+"}
+(12,1,1) = {"
+a
+a
+a
+a
+d
+h
+l
+o
+h
+q
+b
+b
+b
+b
+a
+"}
+(13,1,1) = {"
+a
+a
+a
+a
+d
+h
+l
+o
+h
+q
+b
+t
+t
+b
+a
+"}
+(14,1,1) = {"
+a
+a
+a
+a
+c
+h
+c
+h
+h
+h
+m
+f
+x
+b
+a
+"}
+(15,1,1) = {"
+a
+a
+a
+a
+b
+b
+b
+b
+h
+h
+b
+b
+b
+b
+a
+"}
+(16,1,1) = {"
+a
+a
+a
+a
+b
+B
+A
+b
+h
+h
+b
+D
+C
+b
+a
+"}
+(17,1,1) = {"
+a
+a
+a
+a
+b
+h
+h
+m
+h
+h
+m
+h
+h
+b
+a
+"}
+(18,1,1) = {"
+a
+a
+a
+a
+b
+h
+h
+b
+G
+H
+b
+E
+F
+b
+a
+"}
+(19,1,1) = {"
+a
+a
+a
+a
+b
+b
+b
+b
+b
+b
+b
+b
+b
+b
+a
+"}
+(20,1,1) = {"
+a
+a
+a
+a
+z
+z
+z
+z
+a
+a
+z
+z
+z
+z
+a
 "}

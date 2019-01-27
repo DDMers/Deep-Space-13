@@ -1,38 +1,383 @@
-"a" = (/turf/open/space/basic,/area/space)
-"b" = (/turf/closed/wall/trek_smooth/room,/area/ship/ling)
-"c" = (/obj/machinery/door/airlock/trek/goon/external/public,/turf/open/floor/carpet/trek,/area/ship/ling)
-"d" = (/turf/open/floor/carpet/trek,/area/ship/ling)
-"e" = (/obj/effect/spawner/structure/window/ice,/turf/open/floor/carpet/trek,/area/ship/ling)
-"f" = (/obj/structure/trek_decor/viewscreen,/turf/closed/wall/trek_smooth/room,/area/ship/ling)
-"g" = (/obj/structure/trek_decor/rack,/turf/closed/wall/trek_smooth/room,/area/ship/ling)
-"h" = (/obj/machinery/door/airlock/trek/goon/glass,/obj/structure/barricade/wooden/snowed,/turf/open/floor/carpet/trek,/area/ship/ling)
-"i" = (/obj/structure/shuttle/engine/propulsion{icon_state = "propulsion"; dir = 4},/turf/open/space/basic,/area/space)
-"j" = (/obj/machinery/door/airlock/trek/goon/glass,/turf/open/floor/carpet/trek,/area/ship/ling)
-"k" = (/turf/open/floor/grass/snow,/area/ship/ling)
-"l" = (/obj/structure/chair/trek,/turf/open/floor/grass/snow,/area/ship/ling)
-"m" = (/obj/structure/chair/trek,/turf/open/floor/carpet/trek,/area/ship/ling)
-"n" = (/obj/machinery/door/airlock/trek/goon/glass{icon_state = "closed"; dir = 8},/obj/structure/barricade/wooden/snowed,/turf/open/floor/carpet/trek,/area/ship/ling)
-"o" = (/obj/machinery/computer{icon_state = "computer"; dir = 4},/turf/open/floor/carpet/trek,/area/ship/ling)
-"p" = (/obj/structure/chair/trek{icon_state = "comfy"; dir = 8},/turf/open/floor/carpet/trek,/area/ship/ling)
-"q" = (/obj/effect/mob_spawn/human/alive/changeling{icon_state = "sleeper"; dir = 4},/turf/open/floor/carpet/trek,/area/ship/ling)
-"r" = (/obj/structure/table/reinforced,/turf/open/floor/grass/snow,/area/ship/ling)
-"s" = (/obj/effect/mob_spawn/human/doctor/alive/lavaland{icon_state = "sleeper"; dir = 4},/turf/open/floor/grass/snow,/area/ship/ling)
-"t" = (/obj/structure/table/reinforced,/turf/open/floor/carpet/trek,/area/ship/ling)
-"u" = (/obj/machinery/door/airlock/trek/goon/glass{icon_state = "closed"; dir = 8},/turf/open/floor/carpet/trek,/area/ship/ling)
-"v" = (/obj/structure/chair/trek{icon_state = "comfy"; dir = 1},/turf/open/floor/carpet/trek,/area/ship/ling)
-"w" = (/obj/structure/chair/trek{icon_state = "comfy"; dir = 1},/turf/open/floor/grass/snow,/area/ship/ling)
-"x" = (/obj/structure/window/reinforced/fulltile/trek,/turf/open/floor/carpet/trek,/area/ship/ling)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/open/space/basic,
+/area/space)
+"b" = (
+/turf/closed/wall/trek_smooth/room,
+/area/ship/ling)
+"c" = (
+/obj/machinery/door/airlock/trek/goon/external/public,
+/turf/open/floor/carpet/trek,
+/area/ship/ling)
+"d" = (
+/turf/open/floor/carpet/trek,
+/area/ship/ling)
+"e" = (
+/obj/effect/spawner/structure/window/ice,
+/turf/open/floor/carpet/trek,
+/area/ship/ling)
+"f" = (
+/obj/structure/trek_decor/viewscreen,
+/turf/closed/wall/trek_smooth/room,
+/area/ship/ling)
+"g" = (
+/obj/structure/trek_decor/rack,
+/turf/closed/wall/trek_smooth/room,
+/area/ship/ling)
+"h" = (
+/obj/machinery/door/airlock/trek/goon/glass,
+/obj/structure/barricade/wooden/snowed,
+/turf/open/floor/carpet/trek,
+/area/ship/ling)
+"i" = (
+/obj/structure/shuttle/engine/propulsion{
+	icon_state = "propulsion";
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space)
+"j" = (
+/obj/machinery/door/airlock/trek/goon/glass,
+/turf/open/floor/carpet/trek,
+/area/ship/ling)
+"k" = (
+/turf/open/floor/grass/snow,
+/area/ship/ling)
+"l" = (
+/obj/structure/chair/trek,
+/turf/open/floor/grass/snow,
+/area/ship/ling)
+"m" = (
+/obj/structure/chair/trek,
+/turf/open/floor/carpet/trek,
+/area/ship/ling)
+"n" = (
+/obj/machinery/door/airlock/trek/goon/glass{
+	icon_state = "closed";
+	dir = 8
+	},
+/obj/structure/barricade/wooden/snowed,
+/turf/open/floor/carpet/trek,
+/area/ship/ling)
+"o" = (
+/obj/machinery/computer{
+	icon_state = "computer";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/ling)
+"p" = (
+/obj/structure/chair/trek{
+	icon_state = "comfy";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/ling)
+"q" = (
+/obj/effect/mob_spawn/human/alive/changeling{
+	icon_state = "sleeper";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/ling)
+"r" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/grass/snow,
+/area/ship/ling)
+"s" = (
+/obj/effect/mob_spawn/human/doctor/alive/lavaland{
+	icon_state = "sleeper";
+	dir = 4
+	},
+/turf/open/floor/grass/snow,
+/area/ship/ling)
+"t" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/carpet/trek,
+/area/ship/ling)
+"u" = (
+/obj/machinery/door/airlock/trek/goon/glass{
+	icon_state = "closed";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/ling)
+"v" = (
+/obj/structure/chair/trek{
+	icon_state = "comfy";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/ling)
+"w" = (
+/obj/structure/chair/trek{
+	icon_state = "comfy";
+	dir = 1
+	},
+/turf/open/floor/grass/snow,
+/area/ship/ling)
+"x" = (
+/obj/structure/window/reinforced/fulltile/trek,
+/turf/open/floor/carpet/trek,
+/area/ship/ling)
 
 (1,1,1) = {"
-aaaaaaaaaabcxxxcbaaa
-aaaaaaaaaabdddddbaaa
-aaaabefgggbhgggjbbia
-beebbkllllkdlkmdkbia
-bdddnkkkkdkkkkkkdbia
-bodpbqkkrkkkkkkdkbaa
-bodpbsdktrdkkkkkdbaa
-bdddudkkkdkdkkkkkbia
-beebbkvwvwdkvkvkkbia
-aaaabefgggbggggfbbia
-aaaaaaaaaaaaaaaaaaaa
+a
+a
+a
+b
+b
+b
+b
+b
+b
+a
+a
+"}
+(2,1,1) = {"
+a
+a
+a
+e
+d
+o
+o
+d
+e
+a
+a
+"}
+(3,1,1) = {"
+a
+a
+a
+e
+d
+d
+d
+d
+e
+a
+a
+"}
+(4,1,1) = {"
+a
+a
+a
+b
+d
+p
+p
+d
+b
+a
+a
+"}
+(5,1,1) = {"
+a
+a
+b
+b
+n
+b
+b
+u
+b
+b
+a
+"}
+(6,1,1) = {"
+a
+a
+e
+k
+k
+q
+s
+d
+k
+e
+a
+"}
+(7,1,1) = {"
+a
+a
+f
+l
+k
+k
+d
+k
+v
+f
+a
+"}
+(8,1,1) = {"
+a
+a
+g
+l
+k
+k
+k
+k
+w
+g
+a
+"}
+(9,1,1) = {"
+a
+a
+g
+l
+k
+r
+t
+k
+v
+g
+a
+"}
+(10,1,1) = {"
+a
+a
+g
+l
+d
+k
+r
+d
+w
+g
+a
+"}
+(11,1,1) = {"
+b
+b
+b
+k
+k
+k
+d
+k
+d
+b
+a
+"}
+(12,1,1) = {"
+c
+d
+h
+d
+k
+k
+k
+d
+k
+g
+a
+"}
+(13,1,1) = {"
+x
+d
+g
+l
+k
+k
+k
+k
+v
+g
+a
+"}
+(14,1,1) = {"
+x
+d
+g
+k
+k
+k
+k
+k
+k
+g
+a
+"}
+(15,1,1) = {"
+x
+d
+g
+m
+k
+k
+k
+k
+v
+g
+a
+"}
+(16,1,1) = {"
+c
+d
+j
+d
+k
+d
+k
+k
+k
+f
+a
+"}
+(17,1,1) = {"
+b
+b
+b
+k
+d
+k
+d
+k
+k
+b
+a
+"}
+(18,1,1) = {"
+a
+a
+b
+b
+b
+b
+b
+b
+b
+b
+a
+"}
+(19,1,1) = {"
+a
+a
+i
+i
+i
+a
+a
+i
+i
+i
+a
+"}
+(20,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
 "}

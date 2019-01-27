@@ -1,57 +1,619 @@
-"a" = (/turf/open/space/basic,/area/space)
-"b" = (/turf/closed/wall/trek_smooth/reinforced,/area/ship/klingon)
-"c" = (/obj/structure/window/reinforced/fulltile/trek,/turf/open/floor/trek,/area/ship/klingon)
-"d" = (/turf/open/floor/trek,/area/ship/klingon)
-"e" = (/obj/structure/trek_decor/rack,/turf/closed/wall/trek_smooth/reinforced,/area/ship/klingon)
-"f" = (/obj/machinery/door/airlock/trek/goon/external/public,/turf/open/floor/trek,/area/ship/klingon)
-"g" = (/obj/effect/decal/cleanable/blood/gibs/up,/turf/open/floor/trek/tile,/area/ship/klingon)
-"h" = (/obj/machinery/light{bulb_colour = "#FF3232"; dir = 1},/turf/open/floor/trek/tile,/area/ship/klingon)
-"i" = (/turf/open/floor/trek/tile,/area/ship/klingon)
-"j" = (/obj/effect/decal/cleanable/blood/innards,/turf/open/floor/trek/tile,/area/ship/klingon)
-"k" = (/mob/living/simple_animal/cow,/turf/open/floor/trek/tile,/area/ship/klingon)
-"l" = (/obj/structure/lattice/catwalk,/turf/open/floor/trek/tile,/area/ship/klingon)
-"m" = (/obj/structure/lattice/catwalk,/obj/structure/chair/stool,/turf/open/floor/trek/tile,/area/ship/klingon)
-"n" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/obj/effect/decal/cleanable/blood/innards,/turf/open/floor/trek/tile,/area/ship/klingon)
-"o" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/obj/item/reagent_containers/food/snacks/meat/slab,/turf/open/floor/trek/tile,/area/ship/klingon)
-"p" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/turf/open/floor/trek/tile,/area/ship/klingon)
-"q" = (/obj/structure/lattice/catwalk,/obj/structure/rack,/obj/item/kitchen/knife/combat/klingon,/turf/open/floor/trek/tile,/area/ship/klingon)
-"r" = (/obj/structure/lattice/catwalk,/obj/structure/target_stake,/obj/item/target,/turf/open/floor/trek/tile,/area/ship/klingon)
-"s" = (/obj/effect/decal/cleanable/blood/tracks,/turf/open/floor/trek/tile,/area/ship/klingon)
-"t" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/obj/item/reagent_containers/glass/bucket,/turf/open/floor/trek/tile,/area/ship/klingon)
-"u" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/obj/item/reagent_containers/food/snacks/meat/slab,/obj/item/reagent_containers/food/snacks/meat/rawcutlet,/obj/item/reagent_containers/food/snacks/meat/rawcutlet,/turf/open/floor/trek/tile,/area/ship/klingon)
-"v" = (/obj/effect/decal/cleanable/blood/tracks,/mob/living/simple_animal/cow,/turf/open/floor/trek/tile,/area/ship/klingon)
-"w" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/obj/item/reagent_containers/food/snacks/meat/rawcutlet,/obj/item/reagent_containers/food/snacks/meat/rawcutlet,/turf/open/floor/trek/tile,/area/ship/klingon)
-"x" = (/obj/structure/lattice/catwalk,/obj/structure/rack,/obj/item/kitchen/knife/combat/klingon,/obj/item/twohanded/required/klingon,/turf/open/floor/trek/tile,/area/ship/klingon)
-"y" = (/obj/machinery/light{bulb_colour = "#FF3232"; dir = 4},/turf/open/floor/trek/tile,/area/ship/klingon)
-"z" = (/obj/structure/lattice/catwalk,/obj/structure/rack,/obj/item/twohanded/required/klingon,/turf/open/floor/trek/tile,/area/ship/klingon)
-"A" = (/obj/effect/decal/cleanable/blood/gibs/body,/turf/open/floor/trek/tile,/area/ship/klingon)
-"B" = (/obj/machinery/light{bulb_colour = "#FF3232"},/turf/open/floor/trek/tile,/area/ship/klingon)
-"C" = (/obj/structure/lattice/catwalk,/obj/machinery/door/airlock/trek/goon/external/public,/turf/open/floor/trek/tile,/area/ship/klingon)
-"D" = (/obj/effect/mob_spawn/human/alive/trek/klingon{icon_state = "sleeper_s"; dir = 4},/turf/open/floor/trek/tile,/area/ship/klingon)
-"E" = (/obj/effect/mob_spawn/human/alive/trek/klingon{icon_state = "sleeper_s"; dir = 8},/turf/open/floor/trek/tile,/area/ship/klingon)
-"F" = (/obj/machinery/shower{dir = 4},/turf/open/floor/trek/tile,/area/ship/klingon)
-"G" = (/obj/structure/lattice/catwalk,/obj/structure/bed,/turf/open/floor/trek/tile,/area/ship/klingon)
-"H" = (/obj/machinery/shower{dir = 8},/turf/open/floor/trek/tile,/area/ship/klingon)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/open/space/basic,
+/area/space)
+"b" = (
+/turf/closed/wall/trek_smooth/reinforced,
+/area/ship/klingon)
+"c" = (
+/obj/structure/window/reinforced/fulltile/trek,
+/turf/open/floor/trek,
+/area/ship/klingon)
+"d" = (
+/turf/open/floor/trek,
+/area/ship/klingon)
+"e" = (
+/obj/structure/trek_decor/rack,
+/turf/closed/wall/trek_smooth/reinforced,
+/area/ship/klingon)
+"f" = (
+/obj/machinery/door/airlock/trek/goon/external/public,
+/turf/open/floor/trek,
+/area/ship/klingon)
+"g" = (
+/obj/effect/decal/cleanable/blood/gibs/up,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"h" = (
+/obj/machinery/light{
+	bulb_colour = "#FF3232";
+	dir = 1
+	},
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"i" = (
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"j" = (
+/obj/effect/decal/cleanable/blood/innards,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"k" = (
+/mob/living/simple_animal/cow,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"l" = (
+/obj/structure/lattice/catwalk,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"m" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/chair/stool,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"n" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/blood/innards,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"o" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"p" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/table/reinforced,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"q" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/rack,
+/obj/item/kitchen/knife/combat/klingon,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"r" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/target_stake,
+/obj/item/target,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"s" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"t" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/glass/bucket,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"u" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
+/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"v" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/mob/living/simple_animal/cow,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"w" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
+/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"x" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/rack,
+/obj/item/kitchen/knife/combat/klingon,
+/obj/item/twohanded/required/klingon,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"y" = (
+/obj/machinery/light{
+	bulb_colour = "#FF3232";
+	dir = 4
+	},
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"z" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/rack,
+/obj/item/twohanded/required/klingon,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"A" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"B" = (
+/obj/machinery/light{
+	bulb_colour = "#FF3232"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"C" = (
+/obj/structure/lattice/catwalk,
+/obj/machinery/door/airlock/trek/goon/external/public,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"D" = (
+/obj/effect/mob_spawn/human/alive/trek/klingon{
+	icon_state = "sleeper_s";
+	dir = 4
+	},
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"E" = (
+/obj/effect/mob_spawn/human/alive/trek/klingon{
+	icon_state = "sleeper_s";
+	dir = 8
+	},
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"F" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"G" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/bed,
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
+"H" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/turf/open/floor/trek/tile,
+/area/ship/klingon)
 
 (1,1,1) = {"
-aaaaaaaaaabfcccfbaaa
-aaaaaaaaaabdddddbaaa
-beeeeeeeeeefeeefeeeb
-bghijiiiihiiiiiiihib
-bkllllllllllllllllib
-bimnmlolmpmlqllrllib
-bsmtmlulmpmlqlllllib
-bvmpmlwlmpmlxllrllyb
-bsmpmlolmpmlzlllllib
-bsmtmlwlmpmlzllrllib
-bkllllllllllllllllAb
-biBiiliiiBiiiiiliBib
-beeeeCeeeeeeeeeCeeeb
-aaabilibaaaaabilibaa
-aaabilibaaaaabilibaa
-abbbbCbbbbabbbbCbbbb
-abDlllllEbabFlGlGlHb
-abDlllllEbabFlGlGlHb
-abDlllllEbabFlGlGlHb
-abbbbbbbbbabbbbbbbbb
+a
+a
+b
+b
+b
+b
+b
+b
+b
+b
+b
+b
+b
+a
+a
+a
+a
+a
+a
+a
+"}
+(2,1,1) = {"
+a
+a
+e
+g
+k
+i
+s
+v
+s
+s
+k
+i
+e
+a
+a
+b
+b
+b
+b
+b
+"}
+(3,1,1) = {"
+a
+a
+e
+h
+l
+m
+m
+m
+m
+m
+l
+B
+e
+a
+a
+b
+D
+D
+D
+b
+"}
+(4,1,1) = {"
+a
+a
+e
+i
+l
+n
+t
+p
+p
+t
+l
+i
+e
+b
+b
+b
+l
+l
+l
+b
+"}
+(5,1,1) = {"
+a
+a
+e
+j
+l
+m
+m
+m
+m
+m
+l
+i
+e
+i
+i
+b
+l
+l
+l
+b
+"}
+(6,1,1) = {"
+a
+a
+e
+i
+l
+l
+l
+l
+l
+l
+l
+l
+C
+l
+l
+C
+l
+l
+l
+b
+"}
+(7,1,1) = {"
+a
+a
+e
+i
+l
+o
+u
+w
+o
+w
+l
+i
+e
+i
+i
+b
+l
+l
+l
+b
+"}
+(8,1,1) = {"
+a
+a
+e
+i
+l
+l
+l
+l
+l
+l
+l
+i
+e
+b
+b
+b
+l
+l
+l
+b
+"}
+(9,1,1) = {"
+a
+a
+e
+i
+l
+m
+m
+m
+m
+m
+l
+i
+e
+a
+a
+b
+E
+E
+E
+b
+"}
+(10,1,1) = {"
+a
+a
+e
+h
+l
+p
+p
+p
+p
+p
+l
+B
+e
+a
+a
+b
+b
+b
+b
+b
+"}
+(11,1,1) = {"
+b
+b
+e
+i
+l
+m
+m
+m
+m
+m
+l
+i
+e
+a
+a
+a
+a
+a
+a
+a
+"}
+(12,1,1) = {"
+f
+d
+f
+i
+l
+l
+l
+l
+l
+l
+l
+i
+e
+a
+a
+b
+b
+b
+b
+b
+"}
+(13,1,1) = {"
+c
+d
+e
+i
+l
+q
+q
+x
+z
+z
+l
+i
+e
+a
+a
+b
+F
+F
+F
+b
+"}
+(14,1,1) = {"
+c
+d
+e
+i
+l
+l
+l
+l
+l
+l
+l
+i
+e
+b
+b
+b
+l
+l
+l
+b
+"}
+(15,1,1) = {"
+c
+d
+e
+i
+l
+l
+l
+l
+l
+l
+l
+i
+e
+i
+i
+b
+G
+G
+G
+b
+"}
+(16,1,1) = {"
+f
+d
+f
+i
+l
+r
+l
+r
+l
+r
+l
+l
+C
+l
+l
+C
+l
+l
+l
+b
+"}
+(17,1,1) = {"
+b
+b
+e
+i
+l
+l
+l
+l
+l
+l
+l
+i
+e
+i
+i
+b
+G
+G
+G
+b
+"}
+(18,1,1) = {"
+a
+a
+e
+h
+l
+l
+l
+l
+l
+l
+l
+B
+e
+b
+b
+b
+l
+l
+l
+b
+"}
+(19,1,1) = {"
+a
+a
+e
+i
+i
+i
+i
+y
+i
+i
+A
+i
+e
+a
+a
+b
+H
+H
+H
+b
+"}
+(20,1,1) = {"
+a
+a
+b
+b
+b
+b
+b
+b
+b
+b
+b
+b
+b
+a
+a
+b
+b
+b
+b
+b
 "}

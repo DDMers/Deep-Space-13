@@ -1,15 +1,128 @@
-"a" = (/turf/closed/wall/trek_smooth/corridor,/area/space)
-"b" = (/turf/open/floor/carpet/trek,/area/space)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/wall/trek_smooth/corridor,
+/area/space)
+"b" = (
+/turf/open/floor/carpet/trek,
+/area/space)
 
 (1,1,1) = {"
-aaaaaaaaaa
-abbbbbbbba
-abbbbbbbba
-abbbbbbbba
-abbbbbbbba
-abbbbbbbba
-abbbbbbbba
-abbbbbbbba
-abbbbbbbba
-aaaaaaaaaa
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(2,1,1) = {"
+a
+b
+b
+b
+b
+b
+b
+b
+b
+a
+"}
+(3,1,1) = {"
+a
+b
+b
+b
+b
+b
+b
+b
+b
+a
+"}
+(4,1,1) = {"
+a
+b
+b
+b
+b
+b
+b
+b
+b
+a
+"}
+(5,1,1) = {"
+a
+b
+b
+b
+b
+b
+b
+b
+b
+a
+"}
+(6,1,1) = {"
+a
+b
+b
+b
+b
+b
+b
+b
+b
+a
+"}
+(7,1,1) = {"
+a
+b
+b
+b
+b
+b
+b
+b
+b
+a
+"}
+(8,1,1) = {"
+a
+b
+b
+b
+b
+b
+b
+b
+b
+a
+"}
+(9,1,1) = {"
+a
+b
+b
+b
+b
+b
+b
+b
+b
+a
+"}
+(10,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
 "}
