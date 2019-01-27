@@ -54,11 +54,17 @@ HOS gets a special console
 	target_ship = "klingon_friendly" //The name of the map template we seek to load
 	desc = "Qap'la! My crew requires good food in their stomachs and a safe place to practice combat. We are landing now!"
 
+/datum/ship_event/crewtransport
+	name = "Civilian crew transport"
+	target_ship = "crewtransport" //The name of the map template we seek to load
+	desc = "Greetings, this is the USS Ticanderoga. We are transporting several civilians and their belongings."
+
+
 //datum/ship_event/positive
 
 /datum/ship_event/proc/fire()
 	message_admins("A [name] is approaching DS13.")
-	priority_announce("[desc].", "Incoming Transmission", 'sound/ai/commandreport.ogg')
+	priority_announce("[desc]. Security should search the ship via the transporter and process its crew through customs.", "Incoming Transmission: Ship docking request", 'sound/ai/commandreport.ogg')
 	for(var/obj/effect/landmark/ShipSpawner/SS in GLOB.landmarks_list)
 		if(SS && !SS.loaded)
 			SS.load(target_ship)
@@ -81,6 +87,10 @@ HOS gets a special console
 /datum/map_template/ship/klingon_friendly
 	name = "klingon_friendly"
 	mappath = "_maps/templates/DS13/klingon_ship.dmm"
+
+/datum/map_template/ship/crewtransport
+	name = "crewtransport"
+	mappath = "_maps/templates/DS13/crewtransport.dmm"
 
 /obj/effect/landmark/ShipSpawner
 	name = "Ship spawning warp beacon"
@@ -156,11 +166,24 @@ HOS gets a special console
 
 //Areas!
 
-/area/ship //This area will encompass all our ships
+/area/ship
 	name = "Docked ship"
 	requires_power = FALSE
 	has_gravity = TRUE
 	var/list/crate_contents = list() //What crates do we have aboard? used for generating a customs report
+
+/area/ship/trader
+	name = "Trader Vessel"
+
+/area/ship/ling
+	name = "Frozen ship"
+
+/area/ship/klingon
+	name = "Klingon ship"
+
+/area/ship/crewtransport //This area will encompass all our ships
+	name = "Civilian ship"
+
 
 //Customs mechanics!
 
@@ -215,7 +238,7 @@ HOS gets a special console
 //Items and fluff!
 /obj/effect/mob_spawn/human/alive/changeling
 	name = "frozen sleeper"
-	desc = "This stasis pod is frozen over, but contains some-thin..someone? Inside..."
+	desc = "This stasis pod is frozen over, but contains someone inside..."
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 	death = FALSE
@@ -240,6 +263,10 @@ HOS gets a special console
 	name = "Assistant"
 	outfit = /datum/outfit/job/assistant/DS13
 
+/obj/effect/mob_spawn/human/alive/trek/tourist
+	name = "Tourist"
+	outfit = /datum/outfit/job/assistant/DS13
+	flavour_text = "<b>You are a tourist! You don't have any specific objective. If this station is nice, why not give it a 5 star review? Or even join their crew.<b>"
 
 /obj/effect/mob_spawn/human/alive/trek/Initialize()
 	. = ..()

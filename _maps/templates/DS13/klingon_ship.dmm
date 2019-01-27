@@ -1,43 +1,43 @@
 "a" = (/turf/open/space/basic,/area/space)
-"b" = (/turf/closed/wall/trek_smooth/reinforced,/area/ship)
-"c" = (/obj/structure/docking_port,/turf/open/floor/trek,/area/ship)
-"d" = (/turf/open/floor/trek,/area/ship)
-"e" = (/obj/effect/decal/cleanable/blood/gibs/up,/turf/open/floor/trek/tile,/area/ship)
-"f" = (/obj/machinery/door/airlock/trek/goon/external/public,/turf/open/floor/trek,/area/ship)
-"g" = (/obj/machinery/light{bulb_colour = "#FF3232"; dir = 1},/turf/open/floor/trek/tile,/area/ship)
-"h" = (/obj/structure/trek_decor/rack,/turf/closed/wall/trek_smooth/reinforced,/area/ship)
-"i" = (/turf/open/floor/trek/tile,/area/ship)
-"j" = (/obj/effect/decal/cleanable/blood/innards,/turf/open/floor/trek/tile,/area/ship)
-"k" = (/mob/living/simple_animal/cow,/turf/open/floor/trek/tile,/area/ship)
-"l" = (/obj/structure/lattice/catwalk,/turf/open/floor/trek/tile,/area/ship)
-"m" = (/obj/structure/lattice/catwalk,/obj/structure/chair/stool,/turf/open/floor/trek/tile,/area/ship)
-"n" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/obj/effect/decal/cleanable/blood/innards,/turf/open/floor/trek/tile,/area/ship)
-"o" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/obj/item/reagent_containers/food/snacks/meat/slab,/turf/open/floor/trek/tile,/area/ship)
-"p" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/turf/open/floor/trek/tile,/area/ship)
-"q" = (/obj/structure/lattice/catwalk,/obj/structure/rack,/obj/item/kitchen/knife/combat/klingon,/turf/open/floor/trek/tile,/area/ship)
-"r" = (/obj/structure/lattice/catwalk,/obj/structure/target_stake,/obj/item/target,/turf/open/floor/trek/tile,/area/ship)
-"s" = (/obj/effect/decal/cleanable/blood/tracks,/turf/open/floor/trek/tile,/area/ship)
-"t" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/obj/item/reagent_containers/glass/bucket,/turf/open/floor/trek/tile,/area/ship)
-"u" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/obj/item/reagent_containers/food/snacks/meat/slab,/obj/item/reagent_containers/food/snacks/meat/rawcutlet,/obj/item/reagent_containers/food/snacks/meat/rawcutlet,/turf/open/floor/trek/tile,/area/ship)
-"v" = (/obj/effect/decal/cleanable/blood/tracks,/mob/living/simple_animal/cow,/turf/open/floor/trek/tile,/area/ship)
-"w" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/obj/item/reagent_containers/food/snacks/meat/rawcutlet,/obj/item/reagent_containers/food/snacks/meat/rawcutlet,/turf/open/floor/trek/tile,/area/ship)
-"x" = (/obj/structure/lattice/catwalk,/obj/structure/rack,/obj/item/kitchen/knife/combat/klingon,/obj/item/twohanded/required/klingon,/turf/open/floor/trek/tile,/area/ship)
-"y" = (/obj/machinery/light{bulb_colour = "#FF3232"; dir = 4},/turf/open/floor/trek/tile,/area/ship)
-"z" = (/obj/structure/lattice/catwalk,/obj/structure/rack,/obj/item/twohanded/required/klingon,/turf/open/floor/trek/tile,/area/ship)
-"A" = (/obj/effect/decal/cleanable/blood/gibs/body,/turf/open/floor/trek/tile,/area/ship)
-"B" = (/obj/machinery/light{bulb_colour = "#FF3232"},/turf/open/floor/trek/tile,/area/ship)
-"C" = (/obj/structure/lattice/catwalk,/obj/machinery/door/airlock/trek/goon/external/public,/turf/open/floor/trek/tile,/area/ship)
-"D" = (/obj/machinery/shower{dir = 4},/turf/open/floor/trek/tile,/area/ship)
-"E" = (/obj/structure/lattice/catwalk,/obj/structure/bed,/turf/open/floor/trek/tile,/area/ship)
-"F" = (/obj/machinery/shower{dir = 8},/turf/open/floor/trek/tile,/area/ship)
-"G" = (/obj/effect/mob_spawn/human/alive/trek/klingon{icon_state = "sleeper_s"; dir = 4},/turf/open/floor/trek/tile,/area/ship)
-"H" = (/obj/effect/mob_spawn/human/alive/trek/klingon{icon_state = "sleeper_s"; dir = 8},/turf/open/floor/trek/tile,/area/ship)
+"b" = (/turf/closed/wall/trek_smooth/reinforced,/area/ship/klingon)
+"c" = (/obj/structure/window/reinforced/fulltile/trek,/turf/open/floor/trek,/area/ship/klingon)
+"d" = (/turf/open/floor/trek,/area/ship/klingon)
+"e" = (/obj/structure/trek_decor/rack,/turf/closed/wall/trek_smooth/reinforced,/area/ship/klingon)
+"f" = (/obj/machinery/door/airlock/trek/goon/external/public,/turf/open/floor/trek,/area/ship/klingon)
+"g" = (/obj/effect/decal/cleanable/blood/gibs/up,/turf/open/floor/trek/tile,/area/ship/klingon)
+"h" = (/obj/machinery/light{bulb_colour = "#FF3232"; dir = 1},/turf/open/floor/trek/tile,/area/ship/klingon)
+"i" = (/turf/open/floor/trek/tile,/area/ship/klingon)
+"j" = (/obj/effect/decal/cleanable/blood/innards,/turf/open/floor/trek/tile,/area/ship/klingon)
+"k" = (/mob/living/simple_animal/cow,/turf/open/floor/trek/tile,/area/ship/klingon)
+"l" = (/obj/structure/lattice/catwalk,/turf/open/floor/trek/tile,/area/ship/klingon)
+"m" = (/obj/structure/lattice/catwalk,/obj/structure/chair/stool,/turf/open/floor/trek/tile,/area/ship/klingon)
+"n" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/obj/effect/decal/cleanable/blood/innards,/turf/open/floor/trek/tile,/area/ship/klingon)
+"o" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/obj/item/reagent_containers/food/snacks/meat/slab,/turf/open/floor/trek/tile,/area/ship/klingon)
+"p" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/turf/open/floor/trek/tile,/area/ship/klingon)
+"q" = (/obj/structure/lattice/catwalk,/obj/structure/rack,/obj/item/kitchen/knife/combat/klingon,/turf/open/floor/trek/tile,/area/ship/klingon)
+"r" = (/obj/structure/lattice/catwalk,/obj/structure/target_stake,/obj/item/target,/turf/open/floor/trek/tile,/area/ship/klingon)
+"s" = (/obj/effect/decal/cleanable/blood/tracks,/turf/open/floor/trek/tile,/area/ship/klingon)
+"t" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/obj/item/reagent_containers/glass/bucket,/turf/open/floor/trek/tile,/area/ship/klingon)
+"u" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/obj/item/reagent_containers/food/snacks/meat/slab,/obj/item/reagent_containers/food/snacks/meat/rawcutlet,/obj/item/reagent_containers/food/snacks/meat/rawcutlet,/turf/open/floor/trek/tile,/area/ship/klingon)
+"v" = (/obj/effect/decal/cleanable/blood/tracks,/mob/living/simple_animal/cow,/turf/open/floor/trek/tile,/area/ship/klingon)
+"w" = (/obj/structure/lattice/catwalk,/obj/structure/table/reinforced,/obj/item/reagent_containers/food/snacks/meat/rawcutlet,/obj/item/reagent_containers/food/snacks/meat/rawcutlet,/turf/open/floor/trek/tile,/area/ship/klingon)
+"x" = (/obj/structure/lattice/catwalk,/obj/structure/rack,/obj/item/kitchen/knife/combat/klingon,/obj/item/twohanded/required/klingon,/turf/open/floor/trek/tile,/area/ship/klingon)
+"y" = (/obj/machinery/light{bulb_colour = "#FF3232"; dir = 4},/turf/open/floor/trek/tile,/area/ship/klingon)
+"z" = (/obj/structure/lattice/catwalk,/obj/structure/rack,/obj/item/twohanded/required/klingon,/turf/open/floor/trek/tile,/area/ship/klingon)
+"A" = (/obj/effect/decal/cleanable/blood/gibs/body,/turf/open/floor/trek/tile,/area/ship/klingon)
+"B" = (/obj/machinery/light{bulb_colour = "#FF3232"},/turf/open/floor/trek/tile,/area/ship/klingon)
+"C" = (/obj/structure/lattice/catwalk,/obj/machinery/door/airlock/trek/goon/external/public,/turf/open/floor/trek/tile,/area/ship/klingon)
+"D" = (/obj/effect/mob_spawn/human/alive/trek/klingon{icon_state = "sleeper_s"; dir = 4},/turf/open/floor/trek/tile,/area/ship/klingon)
+"E" = (/obj/effect/mob_spawn/human/alive/trek/klingon{icon_state = "sleeper_s"; dir = 8},/turf/open/floor/trek/tile,/area/ship/klingon)
+"F" = (/obj/machinery/shower{dir = 4},/turf/open/floor/trek/tile,/area/ship/klingon)
+"G" = (/obj/structure/lattice/catwalk,/obj/structure/bed,/turf/open/floor/trek/tile,/area/ship/klingon)
+"H" = (/obj/machinery/shower{dir = 8},/turf/open/floor/trek/tile,/area/ship/klingon)
 
 (1,1,1) = {"
-aaaaaaaaaabcbbbcbaaa
+aaaaaaaaaabfcccfbaaa
 aaaaaaaaaabdddddbaaa
-bhhhhhhhhhhfhhhfhhhb
-begijiiiigiiiiiiigib
+beeeeeeeeeefeeefeeeb
+bghijiiiihiiiiiiihib
 bkllllllllllllllllib
 bimnmlolmpmlqllrllib
 bsmtmlulmpmlqlllllib
@@ -46,12 +46,12 @@ bsmpmlolmpmlzlllllib
 bsmtmlwlmpmlzllrllib
 bkllllllllllllllllAb
 biBiiliiiBiiiiiliBib
-bhhhhChhhhhhhhhChhhb
+beeeeCeeeeeeeeeCeeeb
 aaabilibaaaaabilibaa
 aaabilibaaaaabilibaa
 abbbbCbbbbabbbbCbbbb
-abGlllllHbabDlElElFb
-abGlllllHbabDlElElFb
-abGlllllHbabDlElElFb
+abDlllllEbabFlGlGlHb
+abDlllllEbabFlGlGlHb
+abDlllllEbabFlGlGlHb
 abbbbbbbbbabbbbbbbbb
 "}

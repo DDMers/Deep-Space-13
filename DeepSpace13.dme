@@ -2750,6 +2750,7 @@
 #include "DS13\code\game\objects\weapons.dm"
 #include "DS13\code\modules\clothing\under\trek.dm"
 #include "DS13\code\modules\docking\docking.dm"
+#include "DS13\code\modules\docking\transporter.dm"
 #include "DS13\code\modules\mob\living\carbon\human\species_types\klingon.dm"
 #include "DS13\code\modules\turbolift\turbolift.dm"
 #include "DS13\goonstation\airlocks.dm"

@@ -1,43 +1,44 @@
 "a" = (/turf/open/space/basic,/area/space)
-"b" = (/turf/closed/wall/trek_smooth/room,/area/ship)
-"c" = (/obj/structure/window/reinforced/fulltile/trek/porthole,/turf/open/floor/carpet/trek,/area/ship)
+"b" = (/turf/closed/wall/trek_smooth/room,/area/ship/trader)
+"c" = (/obj/machinery/door/airlock/trek/goon/external/public,/turf/open/floor/carpet/trek,/area/ship/trader)
 "d" = (/obj/structure/shuttle/engine/propulsion{icon_state = "propulsion"; dir = 4},/turf/open/space/basic,/area/space)
-"e" = (/obj/structure/trek_decor/viewscreen,/turf/closed/wall/trek_smooth/room,/area/ship)
-"f" = (/obj/structure/trek_decor/rack,/turf/closed/wall/trek_smooth/room,/area/ship)
-"g" = (/obj/structure/docking_port,/turf/open/space/basic,/area/ship)
-"h" = (/obj/structure/closet/crate/freezer/blood,/turf/open/floor/carpet/trek,/area/ship)
-"i" = (/obj/structure/closet/crate/medical,/turf/open/floor/carpet/trek,/area/ship)
-"j" = (/obj/structure/closet/secure_closet/personal,/obj/item/restraints/handcuffs,/turf/open/floor/carpet/trek,/area/ship)
-"k" = (/obj/item/bedsheet/black,/obj/structure/bed,/turf/open/floor/carpet/trek,/area/ship)
-"l" = (/turf/open/floor/carpet/trek,/area/ship)
-"m" = (/obj/structure/chair/trek/standard,/turf/open/floor/carpet/trek,/area/ship)
-"n" = (/obj/structure/reagent_dispensers/water_cooler,/turf/open/floor/carpet/trek,/area/ship)
-"o" = (/obj/machinery/door/airlock/trek/goon/glass{icon_state = "closed"; dir = 8},/turf/open/floor/carpet/trek,/area/ship)
-"p" = (/obj/structure/grille,/obj/machinery/door/poddoor/shutters{id = "trader"; name = "trader warehouse"},/turf/open/floor/carpet/trek,/area/ship)
-"q" = (/obj/structure/chair/trek{icon_state = "comfy"; dir = 8},/turf/open/floor/carpet/trek,/area/ship)
-"r" = (/obj/structure/closet/crate,/obj/effect/spawner/lootdrop/organ_spawner,/obj/effect/spawner/lootdrop/maintenance,/turf/open/floor/carpet/trek,/area/ship)
-"s" = (/obj/machinery/button/door{id = "trader"},/obj/structure/table/glass,/turf/open/floor/carpet/trek,/area/ship)
-"t" = (/obj/structure/chair/trek/standard{icon_state = "chair"; dir = 4},/turf/open/floor/carpet/trek,/area/ship)
-"u" = (/obj/structure/table/reinforced,/obj/machinery/door/poddoor/shutters{id = "trader"; name = "trader warehouse"},/turf/open/floor/carpet/trek,/area/ship)
-"v" = (/obj/structure/table/glass,/obj/effect/spawner/lootdrop/three_course_meal,/turf/open/floor/carpet/trek,/area/ship)
-"w" = (/obj/structure/table/glass,/turf/open/floor/carpet/trek,/area/ship)
-"x" = (/obj/machinery/door/airlock/trek/goon/glass{icon_state = "closed"; dir = 8},/obj/machinery/door/poddoor/shutters{id = "trader"; name = "trader warehouse"},/turf/open/floor/carpet/trek,/area/ship)
-"y" = (/obj/structure/chair/trek/standard{icon_state = "chair"; dir = 1},/turf/open/floor/carpet/trek,/area/ship)
-"z" = (/obj/machinery/door/airlock/trek/goon/external/public,/obj/machinery/door/poddoor/shutters{id = "trader"; name = "trader warehouse"},/turf/open/floor/carpet/trek,/area/ship)
-"A" = (/obj/structure/closet/secure_closet/personal,/obj/item/restraints/handcuffs,/obj/item/gun/energy/phaser,/turf/open/floor/carpet/trek,/area/ship)
-"B" = (/obj/machinery/computer{icon_state = "computer"; dir = 4},/turf/open/floor/carpet/trek,/area/ship)
-"C" = (/obj/effect/mob_spawn/human/alive/trek{icon_state = "sleeper"; dir = 8},/turf/open/floor/carpet/trek,/area/ship)
+"e" = (/turf/open/floor/carpet/trek,/area/ship/trader)
+"f" = (/obj/structure/window/reinforced/fulltile/trek/porthole,/turf/open/floor/carpet/trek,/area/ship/trader)
+"g" = (/obj/structure/trek_decor/viewscreen,/turf/closed/wall/trek_smooth/room,/area/ship/trader)
+"h" = (/obj/structure/trek_decor/rack,/turf/closed/wall/trek_smooth/room,/area/ship/trader)
+"i" = (/obj/machinery/door/airlock/trek/goon/external/public,/obj/machinery/door/poddoor/shutters{id = "trader"; name = "trader warehouse"},/turf/open/floor/carpet/trek,/area/ship/trader)
+"j" = (/obj/structure/closet/crate/freezer/blood,/turf/open/floor/carpet/trek,/area/ship/trader)
+"k" = (/obj/structure/closet/crate/medical,/turf/open/floor/carpet/trek,/area/ship/trader)
+"l" = (/obj/structure/closet/secure_closet/personal,/obj/item/restraints/handcuffs,/turf/open/floor/carpet/trek,/area/ship/trader)
+"m" = (/obj/item/bedsheet/black,/obj/structure/bed,/turf/open/floor/carpet/trek,/area/ship/trader)
+"n" = (/obj/effect/mob_spawn/human/alive/trek{icon_state = "sleeper"; dir = 8},/turf/open/floor/carpet/trek,/area/ship/trader)
+"o" = (/obj/structure/chair/trek/standard,/turf/open/floor/carpet/trek,/area/ship/trader)
+"p" = (/obj/structure/reagent_dispensers/water_cooler,/turf/open/floor/carpet/trek,/area/ship/trader)
+"q" = (/obj/machinery/door/airlock/trek/goon/glass{icon_state = "closed"; dir = 8},/turf/open/floor/carpet/trek,/area/ship/trader)
+"r" = (/obj/structure/grille,/obj/machinery/door/poddoor/shutters{id = "trader"; name = "trader warehouse"},/turf/open/floor/carpet/trek,/area/ship/trader)
+"s" = (/obj/machinery/computer{icon_state = "computer"; dir = 4},/turf/open/floor/carpet/trek,/area/ship/trader)
+"t" = (/obj/structure/chair/trek{icon_state = "comfy"; dir = 8},/turf/open/floor/carpet/trek,/area/ship/trader)
+"u" = (/obj/structure/closet/crate,/obj/effect/spawner/lootdrop/organ_spawner,/obj/effect/spawner/lootdrop/maintenance,/turf/open/floor/carpet/trek,/area/ship/trader)
+"v" = (/obj/machinery/button/door{id = "trader"},/obj/structure/table/glass,/turf/open/floor/carpet/trek,/area/ship/trader)
+"w" = (/obj/structure/chair/trek/standard{icon_state = "chair"; dir = 4},/turf/open/floor/carpet/trek,/area/ship/trader)
+"x" = (/obj/structure/table/reinforced,/obj/machinery/door/poddoor/shutters{id = "trader"; name = "trader warehouse"},/turf/open/floor/carpet/trek,/area/ship/trader)
+"y" = (/obj/structure/table/glass,/obj/effect/spawner/lootdrop/three_course_meal,/turf/open/floor/carpet/trek,/area/ship/trader)
+"z" = (/obj/structure/table/glass,/turf/open/floor/carpet/trek,/area/ship/trader)
+"A" = (/obj/machinery/door/airlock/trek/goon/glass{icon_state = "closed"; dir = 8},/obj/machinery/door/poddoor/shutters{id = "trader"; name = "trader warehouse"},/turf/open/floor/carpet/trek,/area/ship/trader)
+"B" = (/obj/structure/closet/secure_closet/personal,/obj/item/restraints/handcuffs,/obj/item/gun/energy/phaser,/turf/open/floor/carpet/trek,/area/ship/trader)
+"C" = (/obj/structure/chair/trek/standard{icon_state = "chair"; dir = 1},/turf/open/floor/carpet/trek,/area/ship/trader)
+"D" = (/obj/structure/window/reinforced/fulltile/trek,/turf/open/floor/carpet/trek,/area/ship/trader)
 
 (1,1,1) = {"
-aaaaaaaaaabgbbbgbaaa
-aaaaaaaaaablllllbaaa
-aaaabcefffbzfffzbbda
-bccbbhijkCbmmmmmnbda
-blllolllllpllllllbda
-bBlqbrllstulvwwvlbaa
-bBlqbrllstulwwwwlbaa
-blllolllllxllllllbda
-bccbbhiAklbyyyyynbda
-aaaabcefffbffffebbda
+aaaaaaaaaabcDDDcbaaa
+aaaaaaaaaabeeeeebaaa
+aaaabfghhhbihhhibbda
+bffbbjklmnbooooopbda
+beeeqeeeeereeeeeebda
+bsetbueevwxeyzzyebaa
+bsetbueevwxezzzzebaa
+beeeqeeeeeAeeeeeebda
+bffbbjkBmebCCCCCpbda
+aaaabfghhhbhhhhgbbda
 aaaaaaaaaaaaaaaaaaaa
 "}
