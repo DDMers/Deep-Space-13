@@ -84,7 +84,7 @@
 	sheet_amount = 1
 
 /turf/closed/wall/trek_smooth/reinforced
-	name = "Reinforeced tritanium hull"
+	name = "Reinforced tritanium hull"
 	mod = "R"
 	icon_state = "R0"
 	sheet_type = /obj/item/stack/sheet/plasteel

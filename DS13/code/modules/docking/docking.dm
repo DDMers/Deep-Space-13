@@ -277,6 +277,7 @@ HOS gets a special console
 			to_chat(F, "<span class='danger'><i>Visiting crew spawn as a [name] available (just click the sleeper): [link]</i></span>")
 
 /datum/outfit/klingon
+	name = "Klingon Warrior"
 	uniform = /obj/item/clothing/under/trek/klingon
 	accessory = null
 	shoes = /obj/item/clothing/shoes/jackboots
