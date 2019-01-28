@@ -91,7 +91,7 @@
 			bleed(bleed_rate)
 
 //Makes a blood drop, leaking amt units of blood from the mob
-/mob/living/carbon/proc/bleed(amt)
+/mob/living/carbon/proc/bleed(amt)//DEEP SPACE 13 REWORK REQUIRED OF HOW MESS IS DONE #SHOUT AT JALLEO
 	if(blood_volume)
 		blood_volume = max(blood_volume - amt, 0)
 		/*if(isturf(src.loc)) //Blood loss still happens in locker, floor stays clean
@@ -243,7 +243,7 @@
 	var/safe = bloodtypes_safe[bloodtype]
 	if(safe)
 		. = safe
-/*
+
 //to add a splatter of blood or other mob liquid.
 /mob/living/proc/add_splatter_floor(turf/T, small_drip)
 	if(get_blood_id() != "blood")
@@ -297,4 +297,3 @@
 	var/obj/effect/decal/cleanable/oil/B = locate() in T.contents
 	if(!B)
 		B = new(T)
-*/

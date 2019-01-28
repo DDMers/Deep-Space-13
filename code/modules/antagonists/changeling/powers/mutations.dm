@@ -98,7 +98,7 @@
 		H.update_hair()
 
 		if(blood_on_castoff)
-			//H.add_splatter_floor()
+			H.add_splatter_floor()
 			playsound(H.loc, 'sound/effects/splat.ogg', 50, 1) //So real sounds
 
 		changeling.chem_recharge_slowdown -= recharge_slowdown

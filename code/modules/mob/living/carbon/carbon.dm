@@ -485,7 +485,7 @@
 	for(var/i=0 to distance)
 		if(blood)
 			if(T)
-				//add_splatter_floor(T)
+				add_splatter_floor(T)
 			if(stun)
 				adjustBruteLoss(3)
 		else
