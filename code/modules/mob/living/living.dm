@@ -562,8 +562,8 @@
 /mob/living/proc/makeTrail(turf/target_turf, turf/start, direction)
 	if(!has_gravity())
 		return
-	var/blood_exists = FALSE
-/*
+/*	var/blood_exists = FALSE
+
 	for(var/obj/effect/decal/cleanable/trail_holder/C in start) //checks for blood splatter already on the floor
 		blood_exists = TRUE
 	if(isturf(start))
