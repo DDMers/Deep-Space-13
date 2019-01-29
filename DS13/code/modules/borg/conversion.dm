@@ -109,7 +109,7 @@
 	var/list/options = list("build", "combat", "assimilate")
 	for(var/option in options)
 		options[option] = image(icon = 'DS13/icons/actions/actions_borg.dmi', icon_state = "[option]")
-	var/dowhat = show_radial_menu(user,get_turf(src),options)
+	var/dowhat = show_radial_menu(user,user,options)
 	if(!dowhat)
 		return
 	mode = dowhat
@@ -324,9 +324,6 @@
 		user.adjustBruteLoss(-3)
 		user.adjustFireLoss(-3)
 		user.adjustOxyLoss(-3)
-		if(user.nutrition <= NUTRITION_LEVEL_HUNGRY)
-			user.nutrition = NUTRITION_LEVEL_WELL_FED
-			to_chat(user, "Caloric deficiency detected! - Replenishing energy stores.")
 		if(user.stat == DEAD)
 			user.updatehealth() // Previous "adjust" procs don't update health, so we do it manually.
 			user.set_heartattack(FALSE)
@@ -345,7 +342,7 @@
 
 	if(world.time >= saved_time2 + cooldown2)
 		saved_time2 = world.time
-		playsound(src,sound,20,0)
+		playsound(src,sound,10,0)
 	else
 		return
 
