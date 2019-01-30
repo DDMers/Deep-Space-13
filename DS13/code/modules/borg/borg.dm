@@ -67,7 +67,7 @@ GLOBAL_DATUM_INIT(borg_collective, /datum/borg_collective, new)
 		if(81 to 100)//80% of the station converted is a win
 			SSticker.mode.check_finished(TRUE)
 			SSticker.force_ending = 1
-			to_chat(world, "<span_class='ratvar'The borg have assimilated the station!/span>")
+			to_chat(world, "<span_class='ratvar'>The borg have assimilated the station!</span>")
 			SEND_SOUND(world,'DS13/sound/effects/borg/progress/victory.ogg')
 
 
