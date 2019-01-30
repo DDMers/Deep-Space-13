@@ -1,0 +1,4 @@
+author: "Kmc2000"
+delete-after: True
+changes: 
+  - rscadd: "Added EMHs as a ghostrole. Call one in if you injure yourself and need a doctor."
