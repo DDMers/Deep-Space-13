@@ -158,10 +158,14 @@
 /area/hallway/secondary/command)
 "av" = (
 /turf/open/floor/carpet/trek,
-/area/turbolift)
-"aw" = (
-/turf/open/floor/carpet/trek,
 /area/hallway/primary/fore)
+"aw" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/turbolift,
+/turf/open/floor/carpet/trek,
+/area/turbolift)
 "ax" = (
 /obj/machinery/light{
 	dir = 1
@@ -752,6 +756,7 @@
 /area/crew_quarters/heads/captain)
 "ca" = (
 /obj/structure/chair/sofa/left,
+/obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
 "cb" = (
@@ -2612,12 +2617,9 @@
 /turf/open/floor/plating/airless,
 /area/maintenance/department/bridge)
 "gC" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/turbolift,
+/obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
-/area/turbolift)
+/area/crew_quarters/heads/hop)
 "gD" = (
 /turf/open/floor/plating,
 /area/maintenance/department/bridge)
@@ -2865,49 +2867,60 @@
 /turf/closed/wall/trek_smooth/room,
 /area/hallway/primary/fore)
 "hn" = (
+/obj/machinery/emh_emitter,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"iI" = (
+/obj/machinery/door/airlock/trek/goon/turbolift,
+/turf/open/floor/carpet/trek,
+/area/turbolift)
+"mG" = (
+/turf/open/floor/carpet/trek,
+/area/turbolift)
+"qA" = (
+/turf/closed/wall/trek_smooth/indestructible,
+/area/turbolift)
+"rG" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/turbolift,
 /turf/open/floor/carpet/trek,
 /area/turbolift/tertiary)
-"ho" = (
-/turf/open/floor/carpet/trek,
-/area/turbolift/secondary)
-"hp" = (
+"un" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/turbolift,
 /turf/open/floor/carpet/trek,
 /area/turbolift/secondary)
-"hq" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/turbolift,
+"EE" = (
+/obj/machinery/door/airlock/trek/goon/turbolift,
 /turf/open/floor/carpet/trek,
 /area/turbolift/tertiary)
-"hr" = (
+"EZ" = (
+/turf/open/floor/carpet/trek,
+/area/turbolift/secondary)
+"GL" = (
+/turf/closed/wall/trek_smooth/indestructible,
+/area/turbolift/secondary)
+"Hn" = (
+/turf/open/floor/carpet/trek,
+/area/turbolift/tertiary)
+"JP" = (
+/obj/machinery/door/airlock/trek/goon/turbolift,
+/turf/open/floor/carpet/trek,
+/area/turbolift/secondary)
+"LS" = (
 /turf/closed/wall/trek_smooth/indestructible,
 /area/hallway/primary/fore)
-"hs" = (
-/turf/closed/wall/trek_smooth/indestructible,
-/area/turbolift)
-"ht" = (
-/turf/closed/wall/trek_smooth/indestructible,
-/area/turbolift/secondary)
-"hu" = (
+"Si" = (
 /turf/closed/wall/trek_smooth/indestructible,
 /area/turbolift/tertiary)
-"hv" = (
-/obj/machinery/door/airlock/trek/goon/turbolift,
+"UW" = (
+/obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
-/area/turbolift)
-"hw" = (
-/obj/machinery/door/airlock/trek/goon/turbolift,
-/turf/open/floor/carpet/trek,
-/area/turbolift/secondary)
-"hx" = (
-/obj/machinery/door/airlock/trek/goon/turbolift,
-/turf/open/floor/carpet/trek,
-/area/turbolift/tertiary)
+/area/hallway/primary/fore)
 
 (1,1,1) = {"
 aa
@@ -30739,17 +30752,17 @@ bX
 cM
 at
 aC
-aw
-aw
-aw
-aw
-aw
-aw
-aw
+av
+av
+av
+av
+av
+av
+av
 hd
 aE
 aC
-aw
+av
 cM
 bX
 bX
@@ -31006,7 +31019,7 @@ bu
 cN
 dm
 aB
-aw
+av
 cM
 ac
 ac
@@ -31261,7 +31274,7 @@ cM
 cM
 cM
 cM
-aw
+av
 aG
 bM
 fZ
@@ -31518,9 +31531,9 @@ aa
 aa
 aa
 cM
-aw
+av
 bg
-aw
+av
 aO
 fT
 au
@@ -31777,7 +31790,7 @@ aa
 cM
 ax
 bg
-aw
+av
 cO
 bC
 au
@@ -32032,9 +32045,9 @@ aa
 aa
 aa
 cM
-aw
+av
 bg
-aw
+av
 cM
 bC
 au
@@ -32289,7 +32302,7 @@ aa
 aa
 aa
 cM
-aw
+UW
 cR
 cV
 hd
@@ -32542,13 +32555,13 @@ cM
 cM
 cM
 cM
-hr
-hr
-hr
+LS
+LS
+LS
 hm
-aw
+av
 bg
-aw
+av
 cM
 bC
 au
@@ -32793,17 +32806,17 @@ cM
 cM
 cM
 cM
-aw
+av
 bg
 br
 br
 br
 hk
-hs
+qA
+mG
+qA
 av
-hs
-aw
-aw
+av
 bg
 cM
 cM
@@ -33050,17 +33063,17 @@ aa
 aa
 aa
 ae
-aw
+av
 bp
 cW
 cW
 cW
 cW
-hs
-gC
-hv
+qA
 aw
-aw
+iI
+av
+av
 bg
 aL
 bB
@@ -33313,11 +33326,11 @@ cW
 cW
 cW
 cW
-hs
+qA
+mG
+qA
 av
-hs
-aw
-aw
+av
 bg
 aL
 bC
@@ -33564,17 +33577,17 @@ ah
 al
 ap
 dJ
-aw
+av
 bq
 cW
 cW
 cW
 cW
-hr
-hr
-hr
+LS
+LS
+LS
 cO
-aw
+av
 bg
 aL
 eX
@@ -33593,7 +33606,7 @@ au
 au
 cI
 ab
-aq
+hn
 aq
 be
 fV
@@ -33821,17 +33834,17 @@ ai
 ai
 dH
 ae
-aw
+av
 aF
 cW
 cW
 cW
 cW
-ht
-ho
-ht
-aw
-aw
+GL
+EZ
+GL
+av
+av
 bg
 aM
 bC
@@ -34084,10 +34097,10 @@ cW
 cW
 cW
 cW
-ht
-hp
-hw
-aw
+GL
+un
+JP
+av
 cQ
 bg
 aM
@@ -34335,17 +34348,17 @@ ai
 an
 hj
 ae
-aw
+av
 fQ
 cW
 cW
 cW
 cW
-ht
-ho
-ht
-aw
-aw
+GL
+EZ
+GL
+av
+av
 bg
 aM
 bC
@@ -34592,17 +34605,17 @@ ak
 ao
 dI
 dJ
-aw
+av
 fR
 cW
 cW
 cW
 cW
-hr
-hr
-hr
+LS
+LS
+LS
 cO
-aw
+av
 bg
 aL
 eX
@@ -34621,7 +34634,7 @@ au
 au
 gg
 ab
-aq
+hn
 aq
 bn
 fW
@@ -34855,11 +34868,11 @@ cW
 cW
 cW
 cW
-hu
-hn
-hu
-aw
-aw
+Si
+Hn
+Si
+av
+av
 bg
 aL
 bC
@@ -35106,17 +35119,17 @@ aa
 aa
 aa
 ae
-aw
+av
 gw
 cW
 cW
 cW
 cW
-hu
-hq
-hx
-aw
-aw
+Si
+rG
+EE
+av
+av
 bg
 aL
 bB
@@ -35363,17 +35376,17 @@ cM
 cM
 cM
 cM
-aw
+av
 aC
 aA
 aA
 aA
 hl
-hu
-hn
-hu
-aw
-aw
+Si
+Hn
+Si
+av
+av
 bg
 cM
 cM
@@ -35626,13 +35639,13 @@ cM
 cM
 cM
 cM
-hr
-hr
-hr
+LS
+LS
+LS
 hm
-aw
+av
 bg
-aw
+av
 cM
 bC
 au
@@ -35887,9 +35900,9 @@ aa
 aa
 aa
 cM
-aw
+UW
 bg
-aw
+av
 hd
 bC
 au
@@ -36144,9 +36157,9 @@ aa
 aa
 aa
 cM
-aw
+av
 bg
-aw
+av
 cM
 bC
 au
@@ -36170,7 +36183,7 @@ bQ
 bQ
 bQ
 aY
-cd
+gC
 gi
 cd
 cd
@@ -36403,7 +36416,7 @@ aa
 cM
 ax
 bg
-aw
+av
 cO
 bC
 au
@@ -36658,9 +36671,9 @@ aa
 aa
 aa
 cM
-aw
+av
 bg
-aw
+av
 aO
 fU
 au
@@ -36915,7 +36928,7 @@ cM
 cM
 cM
 cM
-aw
+av
 cU
 bM
 fZ
@@ -37172,9 +37185,9 @@ aA
 aA
 aA
 cL
-aw
+av
 aC
-aw
+av
 cM
 ac
 ac
@@ -37421,17 +37434,17 @@ bX
 cM
 at
 aC
-aw
-aw
-aw
-aw
-aw
-aw
-aw
+av
+av
+av
+av
+av
+av
+av
 hd
-aw
+av
 aC
-aw
+av
 cM
 bX
 bX
