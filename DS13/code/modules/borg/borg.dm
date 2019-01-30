@@ -5,6 +5,7 @@ GLOBAL_DATUM_INIT(borg_collective, /datum/borg_collective, new)
 	var/list/drones = list() //Who's a borg? You're a borg!
 	var/last_alert = 0 //At what %age completion did we last alert our drones? Do we value our drones' hearing?
 	var/borg_whisper_chance = 30 //This will need changing
+	var/adaptation = 0 //how adapted are they out of 100
 
 /datum/borg_collective/proc/message_collective(var/who, var/what) //Both as strings, please!
 	if(!who)
@@ -220,7 +221,7 @@ GLOBAL_DATUM_INIT(borg_collective, /datum/borg_collective, new)
 	body_parts_covered = FULL_BODY
 	cold_protection = FULL_BODY
 	flags_inv = HIDEGLOVES | HIDESHOES | HIDEJUMPSUIT
-	slowdown = 3
+	slowdown = 2
 	item_flags = NODROP | ABSTRACT | THICKMATERIAL | STOPSPRESSUREDAMAGE
 	armor = list(melee = 40, bullet = 5, laser = 5, energy = 0, bomb = 15, bio = 100, rad = 70) //they can't react to bombs that well, and emps will rape them
 	resistance_flags = FIRE_PROOF
@@ -233,6 +234,16 @@ GLOBAL_DATUM_INIT(borg_collective, /datum/borg_collective, new)
 	var/datum/component/mobhook
 	permeability_coefficient = 0.01
 	gas_transfer_coefficient = 0.01
+
+/obj/item/clothing/suit/space/borg/IsReflect() //Watch your lasers, they adapt quickly
+	if(prob(GLOB.borg_collective.adaptation))
+		var/sound = pick('DS13/sound/effects/borg/borg_adapt.ogg','DS13/sound/effects/borg/borg_adapt2.ogg','DS13/sound/effects/borg/borg_adapt3.ogg','DS13/sound/effects/borg/borg_adapt4.ogg')
+		playsound(loc, sound, 100, 1)
+		return 1
+	else
+		if(GLOB.borg_collective.adaptation < 100)
+			GLOB.borg_collective.adaptation += 10 //More you shoot them, the stronger they become. They are still naturally weak to bullets
+		return 0
 
 /obj/item/clothing/suit/space/borg/proc/on_mob_move()
 	var/mob/living/carbon/human/H = loc
