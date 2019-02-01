@@ -276,3 +276,47 @@ GLOBAL_DATUM_INIT(borg_collective, /datum/borg_collective, new)
 /obj/item/clothing/suit/space/borg/Initialize()
 	. = ..()
 	icon_state = "borg[pick(1,2)]"
+
+/obj/structure/borg_teleporter
+	name = "Subspace vector translocator"
+	desc = "A device which opens a transwarp conduit to rapidly translate a unimatrix across subspace through a vector. Click it with an open hand to set a target, then walk/run into it to engage translocation."
+	icon = 'DS13/icons/borg/large_machines.dmi'
+	icon_state = "teleporter-off"
+	var/turf/open/target
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+	var/teleport_sound = 'DS13/sound/effects/borg/borg_transporter.ogg'
+	anchored = TRUE
+	can_be_unanchored = FALSE
+	density = TRUE
+
+/obj/structure/borg_teleporter/examine(mob/user)
+	. = ..()
+	to_chat(user, "<I> Translocation matrix assigned: Unimatrix 325, grid 006. [get_area(target)]</I>")
+
+/obj/structure/borg_teleporter/Bumped(atom/movable/AM)
+	if(!target)
+		return ..()
+	if(isliving(AM))
+		do_sparks(1, 8, src)
+		visible_message("[AM] disappears in a shower of sparks!")
+		AM.forceMove(target)
+		playsound(AM.loc, teleport_sound, 100,1)
+
+
+/obj/structure/borg_teleporter/attack_hand(mob/user)
+	. = ..()
+	icon_state = "teleporter-off"
+	target = null
+	var/A
+	A = input(user, "Set Translocation Target", "Translocation shift matrix", A) as null|anything in GLOB.teleportlocs
+	var/area/thearea = GLOB.teleportlocs[A]
+	var/list/L = list()
+	for(var/turf/T in get_area_turfs(thearea.type))
+		if(!is_blocked_turf(T))
+			L += T
+	target = pick(L)
+	if(!target)
+		to_chat(user, "Unable to set translocation target, could not locate a suitable subspace exit point.")
+		return
+	to_chat(user, "Coordinates locked: [target.x],[target.y]. Unimatrix 325, grid 006")
+	icon_state = "teleporter-on"
