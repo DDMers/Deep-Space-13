@@ -160,12 +160,12 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/fore)
 "aw" = (
-/obj/structure/ladder,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/structure/turbolift,
 /turf/open/floor/carpet/trek,
-/area/hallway/primary/fore)
+/area/turbolift)
 "ax" = (
 /obj/machinery/light{
 	dir = 1
@@ -756,6 +756,7 @@
 /area/crew_quarters/heads/captain)
 "ca" = (
 /obj/structure/chair/sofa/left,
+/obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
 "cb" = (
@@ -2615,6 +2616,10 @@
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/plating/airless,
 /area/maintenance/department/bridge)
+"gC" = (
+/obj/machinery/emh_emitter,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
 "gD" = (
 /turf/open/floor/plating,
 /area/maintenance/department/bridge)
@@ -2861,26 +2866,60 @@
 /obj/structure/sign/directions/command,
 /turf/closed/wall/trek_smooth/room,
 /area/hallway/primary/fore)
-"ho" = (
-/obj/structure/sign/directions/evac,
-/obj/structure/sign/directions/engineering{
-	pixel_y = 6
+"hn" = (
+/obj/machinery/emh_emitter,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"iI" = (
+/obj/machinery/door/airlock/trek/goon/turbolift,
+/turf/open/floor/carpet/trek,
+/area/turbolift)
+"mG" = (
+/turf/open/floor/carpet/trek,
+/area/turbolift)
+"qA" = (
+/turf/closed/wall/trek_smooth/indestructible,
+/area/turbolift)
+"rG" = (
+/obj/machinery/light{
+	dir = 1
 	},
-/turf/closed/wall/trek_smooth/room,
+/obj/structure/turbolift,
+/turf/open/floor/carpet/trek,
+/area/turbolift/tertiary)
+"un" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/turbolift,
+/turf/open/floor/carpet/trek,
+/area/turbolift/secondary)
+"EE" = (
+/obj/machinery/door/airlock/trek/goon/turbolift,
+/turf/open/floor/carpet/trek,
+/area/turbolift/tertiary)
+"EZ" = (
+/turf/open/floor/carpet/trek,
+/area/turbolift/secondary)
+"GL" = (
+/turf/closed/wall/trek_smooth/indestructible,
+/area/turbolift/secondary)
+"Hn" = (
+/turf/open/floor/carpet/trek,
+/area/turbolift/tertiary)
+"JP" = (
+/obj/machinery/door/airlock/trek/goon/turbolift,
+/turf/open/floor/carpet/trek,
+/area/turbolift/secondary)
+"LS" = (
+/turf/closed/wall/trek_smooth/indestructible,
 /area/hallway/primary/fore)
-"hr" = (
-/obj/structure/sign/directions/science,
-/obj/structure/sign/directions/engineering{
-	pixel_y = 6
-	},
-/turf/closed/wall/trek_smooth/room,
-/area/hallway/primary/fore)
-"hs" = (
-/obj/structure/sign/directions/security,
-/obj/structure/sign/directions/engineering{
-	pixel_y = 6
-	},
-/turf/closed/wall/trek_smooth/room,
+"Si" = (
+/turf/closed/wall/trek_smooth/indestructible,
+/area/turbolift/tertiary)
+"UW" = (
+/obj/machinery/emh_emitter,
+/turf/open/floor/carpet/trek,
 /area/hallway/primary/fore)
 
 (1,1,1) = {"
@@ -30720,7 +30759,7 @@ av
 av
 av
 av
-cM
+hd
 aE
 aC
 av
@@ -32263,7 +32302,7 @@ aa
 aa
 aa
 cM
-av
+UW
 cR
 cV
 hd
@@ -32516,9 +32555,9 @@ cM
 cM
 cM
 cM
-cM
-cM
-cM
+LS
+LS
+LS
 hm
 av
 bg
@@ -32773,9 +32812,9 @@ br
 br
 br
 hk
-cM
-cM
-cM
+qA
+mG
+qA
 av
 av
 bg
@@ -33030,9 +33069,9 @@ cW
 cW
 cW
 cW
-ho
+qA
 aw
-cL
+iI
 av
 av
 bg
@@ -33287,9 +33326,9 @@ cW
 cW
 cW
 cW
-cM
-cM
-cM
+qA
+mG
+qA
 av
 av
 bg
@@ -33544,9 +33583,9 @@ cW
 cW
 cW
 cW
-cM
-cM
-cM
+LS
+LS
+LS
 cO
 av
 bg
@@ -33567,7 +33606,7 @@ au
 au
 cI
 ab
-aq
+hn
 aq
 be
 fV
@@ -33801,9 +33840,9 @@ cW
 cW
 cW
 cW
-cM
-cM
-hd
+GL
+EZ
+GL
 av
 av
 bg
@@ -34058,9 +34097,9 @@ cW
 cW
 cW
 cW
-hr
-aw
-cL
+GL
+un
+JP
 av
 cQ
 bg
@@ -34315,9 +34354,9 @@ cW
 cW
 cW
 cW
-cM
-cM
-cM
+GL
+EZ
+GL
 av
 av
 bg
@@ -34572,9 +34611,9 @@ cW
 cW
 cW
 cW
-cM
-cM
-cM
+LS
+LS
+LS
 cO
 av
 bg
@@ -34595,7 +34634,7 @@ au
 au
 gg
 ab
-aq
+hn
 aq
 bn
 fW
@@ -34829,9 +34868,9 @@ cW
 cW
 cW
 cW
-cM
-cM
-cM
+Si
+Hn
+Si
 av
 av
 bg
@@ -35086,9 +35125,9 @@ cW
 cW
 cW
 cW
-hs
-aw
-cL
+Si
+rG
+EE
 av
 av
 bg
@@ -35343,9 +35382,9 @@ aA
 aA
 aA
 hl
-cM
-cM
-cM
+Si
+Hn
+Si
 av
 av
 bg
@@ -35600,9 +35639,9 @@ cM
 cM
 cM
 cM
-cM
-cM
-cM
+LS
+LS
+LS
 hm
 av
 bg
@@ -35861,7 +35900,7 @@ aa
 aa
 aa
 cM
-av
+UW
 bg
 av
 hd
@@ -36144,7 +36183,7 @@ bQ
 bQ
 bQ
 aY
-cd
+gC
 gi
 cd
 cd
@@ -37402,7 +37441,7 @@ av
 av
 av
 av
-cM
+hd
 av
 aC
 av
