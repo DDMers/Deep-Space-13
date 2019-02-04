@@ -1,0 +1,7 @@
+author: "Jalleo"
+delete-after: True
+changes: 
+  - rscdel: "Dirt being created at startup is removed pending a rework"
+  - tweak: "blood splattering the floor is being reworked broken in current PR version"
+  - balance: "There is no blood to trip on right now working on that"
+  - code_imp: "Plan to move dirt stuff to be done another way currently disabled"
