@@ -1,10 +1,3 @@
-//Janitors!  Janitors, janitors, janitors!  -Sayu
-
-
-//Conspicuously not-recent versions of suspicious cleanables
-
-//This file was made not awful by Xhuis on September 13, 2016
-
 //Making the station dirty, one tile at a time. Called by master controller's setup_objects
 
 /turf/open/floor/proc/MakeDirty()
