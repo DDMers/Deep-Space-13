@@ -294,6 +294,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	race = /datum/species/holographic
 
 /datum/outfit/emh //This gives him some NODROP items so he doesn't spawn naked like the EMHs of yore. The ID has preset access and cannot be removed. If they're being a little shit and greytiding, then ban them / execute them.
+	name = "Emergency Medical Hologram"
 	uniform = /obj/item/clothing/under/trek/medsci/ds9/emh
 	shoes = /obj/item/clothing/shoes/jackboots/emh
 	ears = /obj/item/radio/headset/headset_med/emh
