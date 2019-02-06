@@ -128,8 +128,8 @@
 
 /obj/item/borg_tool/proc/build_on_turf(turf/open/T, mob/user)
 	if(!building)
-		var/obj/structure/CP = locate() in T
-		var/obj/machinery/CA = locate() in T
+		var/obj/structure/CP = locate(/obj/structure) in T
+		var/obj/machinery/CA = locate(/obj/machinery) in T
 		if(CP || CA)
 			to_chat(user,"<span class='danger'>[T] already has a structure on it.</span>")
 			return
