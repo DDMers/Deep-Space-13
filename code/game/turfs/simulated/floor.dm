@@ -54,8 +54,8 @@
 		icon_regular_floor = "floor"
 	else
 		icon_regular_floor = icon_state
-	/*if(mapload && prob(33)) disabled for now requires a rework at dirtystation.dm
-		MakeDirty()*///DEEP SPACE 13 REWORK REQUIRED OF HOW MESS IS DONE #SHOUT AT JALLEO
+	if(mapload && prob(33))
+		MakeDirty()
 
 /turf/open/floor/ex_act(severity, target)
 	var/shielded = is_shielded()
