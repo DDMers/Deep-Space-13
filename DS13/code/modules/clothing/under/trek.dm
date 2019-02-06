@@ -27,20 +27,18 @@
 	icon_state = "trekjacket"
 	item_color = "trekjacket"
 	item_state = "trekjacket"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/pocketprotector/trekjacket //Replaces toolbelt, which isn't very trek
 
-/datum/component/storage/concrete/pockets/pocketprotector/trekjacket
-	max_items = 5
-	max_w_class = WEIGHT_CLASS_SMALL
-	max_combined_w_class = 50
-	silent = TRUE
+/obj/item/clothing/under/trek/klingon
+	name = "Klingon battle uniform"
+	desc = "A heavily armour plated uniform worn by the finest Quon'os has to offer. Qap'la!"
+	icon = 'DS13/icons/obj/clothing/uniforms.dmi'
+	alternate_worn_icon = 'DS13/icons/mob/uniform.dmi'
+	icon_state = "klingon"
+	item_color = "klingon"
+	item_state = "bl_suit"
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 
-/datum/component/storage/concrete/pockets/pocketprotector/trekjacket/Initialize()
-	. = ..()
-	can_hold = typecacheof(list(
-		/obj/item/kitchen/knife, /obj/item/switchblade, /obj/item/pen,
-		/obj/item/scalpel, /obj/item/reagent_containers/syringe, /obj/item/dnainjector,
-		/obj/item/reagent_containers/hypospray/medipen, /obj/item/reagent_containers/dropper,
-		/obj/item/implanter, /obj/item/screwdriver,/obj/item/wrench,/obj/item/weldingtool,/obj/item/crowbar,/obj/item/wirecutters,/obj/item/analyzer,
-		/obj/item/firing_pin
-		))
+/obj/item/clothing/suit/DS13
+	name = "Placeholder"
+	icon = 'DS13/icons/obj/suits.dmi'
+	alternate_worn_icon = 'DS13/icons/mob/suit.dmi'
