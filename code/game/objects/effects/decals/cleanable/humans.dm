@@ -72,12 +72,12 @@
 
 /obj/effect/decal/cleanable/blood/gibs/ex_act(severity, target)
 	return
-
+/*
 /obj/effect/decal/cleanable/blood/gibs/Crossed(mob/living/L)
 	if(istype(L) && has_gravity(loc))
 		playsound(loc, 'sound/effects/gib_step.ogg', L.has_trait(TRAIT_LIGHT_STEP) ? 20 : 50, 1)
 	. = ..()
-
+*///DEEP SPACE 13 REWORK REQUIRED OF HOW MESS IS DONE #SHOUT AT JALLEO
 /obj/effect/decal/cleanable/blood/gibs/proc/streak(list/directions)
 	set waitfor = 0
 	var/direction = pick(directions)
@@ -152,7 +152,7 @@
 	var/entered_dirs = 0
 	var/exited_dirs = 0
 	var/list/shoe_types = list()
-
+/*
 /obj/effect/decal/cleanable/blood/footprints/Crossed(atom/movable/O)
 	..()
 	if(ishuman(O))
@@ -164,7 +164,6 @@
 			if (!(entered_dirs & H.dir))
 				entered_dirs |= H.dir
 				update_icon()
-
 /obj/effect/decal/cleanable/blood/footprints/Uncrossed(atom/movable/O)
 	..()
 	if(ishuman(O))
@@ -176,7 +175,7 @@
 			if (!(exited_dirs & H.dir))
 				exited_dirs |= H.dir
 				update_icon()
-
+*///DEEP SPACE 13 REWORK REQUIRED OF HOW MESS IS DONE #SHOUT AT JALLEO
 
 /obj/effect/decal/cleanable/blood/footprints/update_icon()
 	cut_overlays()

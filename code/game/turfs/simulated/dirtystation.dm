@@ -1,10 +1,3 @@
-//Janitors!  Janitors, janitors, janitors!  -Sayu
-
-
-//Conspicuously not-recent versions of suspicious cleanables
-
-//This file was made not awful by Xhuis on September 13, 2016
-
 //Making the station dirty, one tile at a time. Called by master controller's setup_objects
 
 /turf/open/floor/proc/MakeDirty()
@@ -119,7 +112,7 @@
 				new /obj/effect/decal/cleanable/vomit/old(src)
 		return
 
-		//Science messes. Mostly green glowy stuff -WHICH YOU SHOULD NOT INJEST-.
+		//Science messes. Mostly green glowy stuff -WHICH YOU SHOULD NOT INGEST-.
 	var/static/list/science_dirt_areas = typecacheof(list(/area/science,
 														/area/crew_quarters/heads/hor))
 	if(is_type_in_typecache(A, science_dirt_areas))
