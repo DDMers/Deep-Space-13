@@ -223,7 +223,7 @@ GLOBAL_DATUM_INIT(borg_collective, /datum/borg_collective, new)
 	flags_inv = HIDEGLOVES | HIDESHOES | HIDEJUMPSUIT
 	slowdown = 2
 	item_flags = NODROP | ABSTRACT | THICKMATERIAL | STOPSPRESSUREDAMAGE
-	armor = list(melee = 40, bullet = 5, laser = 5, energy = 0, bomb = 15, bio = 100, rad = 70) //they can't react to bombs that well, and emps will rape them
+	armor = list(melee = 40, bullet = 5, laser = 15, energy = 0, bomb = 15, bio = 100, rad = 70) //they can't react to bombs that well, and emps will rape them
 	resistance_flags = FIRE_PROOF
 	allowed = list(/obj/item/flashlight)
 	heat_protection = FULL_BODY
@@ -242,7 +242,7 @@ GLOBAL_DATUM_INIT(borg_collective, /datum/borg_collective, new)
 		return 1
 	else
 		if(GLOB.borg_collective.adaptation < 100)
-			GLOB.borg_collective.adaptation += 10 //More you shoot them, the stronger they become. They are still naturally weak to bullets
+			GLOB.borg_collective.adaptation += 20 //More you shoot them, the stronger they become. They are still naturally weak to bullets
 		return 0
 
 /obj/item/clothing/suit/space/borg/proc/on_mob_move()

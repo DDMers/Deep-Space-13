@@ -315,7 +315,7 @@
 	var/charge_time = 0
 	var/charge_amount = 10 //10 per tick, with a max charge storage of 1000
 
-/obj/structure/chair/borg/charging/New()
+/obj/structure/chair/borg/charging/Initialize()
 	. = ..()
 	START_PROCESSING(SSobj, src)
 
@@ -359,8 +359,8 @@
 		else
 			src.visible_message("<span class='warning'>[M] cannot be recharged as they are not borg.</span>")
 			unbuckle_mob(M)
-			return 0
+			return TRUE
 	else
 		src.visible_message("<span class='warning'>[M] cannot be recharged.</span>")
 		unbuckle_mob(M)
-		return 0
+		return TRUE
