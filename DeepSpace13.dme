@@ -2748,7 +2748,6 @@
 #include "DS13\code\game\objects\railing.dm"
 #include "DS13\code\game\objects\trek_objects.dm"
 #include "DS13\code\game\objects\weapons.dm"
-#include "DS13\code\modules\borg\conversion.dm"
 #include "DS13\code\modules\clothing\under\trek.dm"
 #include "DS13\code\modules\docking\docking.dm"
 #include "DS13\code\modules\docking\transporter.dm"
