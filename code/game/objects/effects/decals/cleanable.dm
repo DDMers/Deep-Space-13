@@ -68,6 +68,7 @@
 
 //Add "bloodiness" of this blood's type, to the human's shoes
 //This is on /cleanable because fuck this ancient mess
+/*
 /obj/effect/decal/cleanable/Crossed(atom/movable/O)
 	..()
 	if(ishuman(O))
@@ -87,7 +88,7 @@
 			S.blood_state = blood_state
 			update_icon()
 			H.update_inv_shoes()
-
+*///DEEP SPACE 13 REWORK REQUIRED OF HOW MESS IS DONE #SHOUT AT JALLEO
 /obj/effect/decal/cleanable/proc/can_bloodcrawl_in()
 	if((blood_state != BLOOD_STATE_OIL) && (blood_state != BLOOD_STATE_NOT_BLOODY))
 		return bloodiness

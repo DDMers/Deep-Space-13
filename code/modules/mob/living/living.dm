@@ -560,7 +560,7 @@
 		makeTrail(newloc, T, old_direction)
 
 /mob/living/proc/makeTrail(turf/target_turf, turf/start, direction)
-	if(!has_gravity())
+/*	if(!has_gravity())
 		return
 	var/blood_exists = FALSE
 
@@ -589,12 +589,12 @@
 						TH.existing_dirs += newdir
 						TH.add_overlay(image('icons/effects/blood.dmi', trail_type, dir = newdir))
 						TH.transfer_mob_blood_dna(src)
-
+DEEP SPACE 13 REWORK REQUIRED OF HOW MESS IS DONE #SHOUT AT JALLEO
 /mob/living/carbon/human/makeTrail(turf/T)
 	if((NOBLOOD in dna.species.species_traits) || !bleed_rate || bleedsuppress)
 		return
 	..()
-
+*///
 /mob/living/proc/getTrail()
 	if(getBruteLoss() < 300)
 		return pick("ltrails_1", "ltrails_2")
