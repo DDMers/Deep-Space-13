@@ -41,12 +41,12 @@
 	update_client_colour()
 	update_mouse_pointer()
 	if(client)
-		client.change_view(CONFIG_GET(string/default_view)) // Resets the client.view in case it was changed.
+		client.check_view() //Deep Space 13 - Widescreen mode // Resets the client.view in case it was changed.
 
 		if(client.player_details.player_actions.len)
 			for(var/datum/action/A in client.player_details.player_actions)
 				A.Grant(src)
-		
+
 		for(var/foo in client.player_details.post_login_callbacks)
 			var/datum/callback/CB = foo
 			CB.Invoke()
