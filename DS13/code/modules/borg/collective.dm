@@ -7,10 +7,29 @@ GLOBAL_DATUM_INIT(borg_collective, /datum/borg_collective, new)
 	var/borg_whisper_chance = 30 //Chance to hear the collective speak when a message is sent
 	var/adaptation = 0 //how adapted are they out of 100
 	var/drone_count = 0 //Increments by one every conversion. Shows which drone was assimilated first and so on. "First of three, tertiary adjunct of unimatrix 115"
+	var/teleporters_allowed = FALSE //Give the crew a bit of prep time
+	var/list/teleporters = list() //which borg teleporters are in the world currently
+
+/datum/borg_collective/proc/activate_teleporters()
+	for(var/obj/structure/borg_teleporter/BT in teleporters)
+		BT.activate()
+	teleporters_allowed = TRUE //In case admins want to force this.
 
 /datum/borg_collective/New()
 	. = ..()
 	name = "unimatrix [rand(0,999)]"
+
+/datum/borg_collective/proc/poll_drones_for_teleport() //A neat idea suggested by staff, forces borg to coordinate a bit more and not drop in random parts of the map
+	var/list/voted = list()
+	for(var/mob/living/carbon/human/S in drones)
+		var/A
+		A = input(S, "Please vote for where you want to teleport to.", "Collective Focus Matrix", A) as null|anything in GLOB.teleportlocs //Where we droppin' boys?
+		if(!A)
+			to_chat(S, "You have abstained from this vote.")
+			continue
+		var/area/B = GLOB.teleportlocs[A] //Now we get an area out of the linkedlist
+		voted += B
+	return voted
 
 /datum/borg_collective/proc/message_collective(var/who, var/what) //Input both as text. Who and What are both strings.
 	if(!who)

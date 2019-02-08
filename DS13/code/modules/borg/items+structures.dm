@@ -10,43 +10,45 @@
 	mask = /obj/item/clothing/mask/gas/borg
 
 /datum/outfit/borg/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	H.unequip_everything() //they gotta be naked first or they won't get their implants :(
 	. = ..()
+	H.unequip_everything() //they gotta be naked first or they won't get their implants :(
 
 /datum/outfit/borg/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
 	augment_organs(H)
 
-/datum/outfit/borg/proc/augment_organs(var/mob/living/carbon/human/H) //Give them the organs. Used for roundstart borg and admin borg too!
-	if(locate(/obj/item/organ/cyberimp/arm/toolset) in H.internal_organs)
-		return
-	var/obj/item/organ/cyberimp/arm/toolset/stored = new(get_turf(H))
-	stored.Insert(H)
-	if(locate(/obj/item/organ/cyberimp/chest/nutriment/plus) in H.internal_organs)
-		return
-	var/obj/item/organ/cyberimp/chest/nutriment/plus/feedmeseymour = new(get_turf(H))
-	feedmeseymour.Insert(H)
-	if(locate(/obj/item/organ/eyes/robotic/thermals) in H.internal_organs)
-		return
-	var/obj/item/organ/eyes/robotic/thermals/blinkingisfutile = new(get_turf(H))
-	var/obj/item/organ/L = H.getorganslot(ORGAN_SLOT_EYES)
-	if(L)
-		qdel(L)
-	blinkingisfutile.Insert(H)
-	if(locate(/obj/item/organ/heart/cybernetic/upgraded) in H.internal_organs)
-		return
-	var/obj/item/organ/heart/cybernetic/upgraded/faithoftheheart = new(get_turf(H))
+/datum/outfit/borg/proc/delete_organs(var/mob/living/carbon/human/H) //Remove their old organs
 	var/obj/item/organ/o = H.getorganslot(ORGAN_SLOT_HEART)
 	if(o)
 		qdel(o)
-	faithoftheheart.Insert(H)
-	if(locate(/obj/item/organ/lungs/cybernetic/borg) in H.internal_organs)
-		return
-	var/obj/item/organ/lungs/cybernetic/borg/breathingisfutile = new(get_turf(H))
+	var/obj/item/organ/L = H.getorganslot(ORGAN_SLOT_EYES)
+	if(L)
+		qdel(L)
 	var/obj/item/organ/x = H.getorganslot(ORGAN_SLOT_LUNGS)
 	if(x)
 		qdel(x)
-	breathingisfutile.Insert(H)
+	return TRUE
+
+/datum/outfit/borg/proc/augment_organs(var/mob/living/carbon/human/H) //Give them the organs. Used for roundstart borg and admin borg too!
+	delete_organs(H)
+	var/obj/item/organ/eyes/robotic/thermals/blinkingisfutile = new(get_turf(H))
+	blinkingisfutile.Insert(H)
+	var/obj/item/organ/heart/cybernetic/upgraded/faithoftheheart = new(get_turf(H))
+	faithoftheheart.Insert(H)
+	var/obj/item/organ/lungs/cybernetic/borg/breathingisfutile = new(get_turf(H))
+		breathingisfutile.Insert(H)
+	insert_upgrades(H)
+
+/datum/outfit/borg/proc/insert_upgrades(var/mob/living/carbon/human/H) //Give them feeding tube and toolset
+	if(locate(/obj/item/organ/cyberimp/arm/toolset) in H.internal_organs)
+		return
+	if(locate(/obj/item/organ/cyberimp/chest/nutriment/plus) in H.internal_organs)
+		return
+	var/obj/item/organ/cyberimp/arm/toolset/stored = new(get_turf(H))
+	stored.Insert(H)
+	var/obj/item/organ/cyberimp/chest/nutriment/plus/feedmeseymour = new(get_turf(H))
+	feedmeseymour.Insert(H)
+
 
 /obj/item/organ/lungs/cybernetic/borg
 	name = "borg cybernetic lungs"
@@ -63,7 +65,7 @@
 
 
 /datum/action/item_action/futile
-	name = "resistance is futile!"
+	name = "Resistance is futile!"
 
 /datum/action/item_action/futile/Trigger()
 	var/obj/item/clothing/mask/gas/borg/FT = target
@@ -74,7 +76,7 @@
 //Items, from top to bottom
 
 /obj/item/clothing/head/helmet/space/borg
-	name = "cranial prosthesis"
+	name = "Cranial prosthesis"
 	desc = "Starfleet medical research states that borg implants can cause severe irritation, perhaps an analgesic cream would fix the constant itching this prosthetic causes?"
 	icon_state = "hostile_env"
 	alternate_worn_icon = 'DS13/icons/mob/suit.dmi' //Hides it when worn, but gives it an icon in inv
@@ -87,7 +89,7 @@
 	permeability_coefficient = 0.01
 
 /obj/item/clothing/mask/gas/borg
-	name = "borg mask"
+	name = "Borg mask"
 	desc = "A built in respirator that covers our face, it provides everything we need."
 	icon = 'DS13/icons/obj/masks.dmi'
 	icon_state = "borg"
@@ -127,7 +129,7 @@
 		user = src.loc
 		if(!istype(user, /mob))
 			return
-	if(user.stat == DEAD || user.IsUnconscious())
+	if(user.stat == DEAD || user.IsUnconscious() || !src in user.contents)
 		return
 	var/message = stripped_input(user,"Communicate with the collective.","Send Message")
 	if(!message)
@@ -143,7 +145,7 @@
 		playsound(src.loc,sound, 100, 0, 4)
 
 /obj/item/clothing/suit/space/borg
-	name = "borg exoskeleton"
+	name = "Borg exoskeleton"
 	desc = "A heavily armoured exoskeletal system held in place via multiple attachment points which are embedded painfully into the skin."
 	icon = 'DS13/icons/obj/suits.dmi'
 	alternate_worn_icon = 'DS13/icons/mob/suit.dmi'
@@ -165,7 +167,6 @@
 	permeability_coefficient = 0.01
 	gas_transfer_coefficient = 0.01
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	var/footstep = 1
 	var/datum/component/mobhook
 
 /obj/item/clothing/suit/space/borg/IsReflect() //Watch your lasers, they adapt quickly
@@ -182,11 +183,8 @@
 	var/mob/living/carbon/human/H = loc
 	if(!istype(H) || H.wear_suit != src)
 		return
-	if(footstep > 1)
+	if(prob(50))
 		playsound(src, 'sound/effects/servostep.ogg', 100, 1)
-		footstep = 0
-	else
-		footstep++
 
 /obj/item/clothing/suit/space/borg/equipped(mob/user, slot)
 	. = ..()
@@ -223,7 +221,7 @@
 	max_integrity = 100
 
 /obj/structure/chair/borg/conversion
-	name = "assimilation bench"
+	name = "Assimilation bench"
 	desc = "Submit yourself to the collective"
 	icon_state = "borg_off"
 	icon = 'DS13/icons/borg/borg.dmi'
@@ -265,7 +263,7 @@
 
 
 /obj/structure/chair/borg/charging
-	name = "recharging alcove"
+	name = "Recharging alcove"
 	desc = "We must recharge to regain"
 	icon_state = "borgcharger"
 	icon = 'DS13/icons/borg/borg.dmi'
@@ -290,6 +288,13 @@
 		user.adjustBruteLoss(-3)
 		user.adjustFireLoss(-3)
 		user.adjustOxyLoss(-3)
+		user.restoreEars()
+		user.adjust_eye_damage(-5)
+		if(user.eye_blind || user.eye_blurry)
+			user.set_blindness(0)
+			user.set_blurriness(0)
+		if(user.blood_volume < BLOOD_VOLUME_NORMAL)
+			user.blood_volume += 5 // regenerate blood rapidly
 		if(user.stat == DEAD)
 			user.updatehealth() // Previous "adjust" procs don't update health, so we do it manually.
 			user.set_heartattack(FALSE)
@@ -298,13 +303,6 @@
 			user.adjustFireLoss(-20)
 			user.adjustOxyLoss(-20)
 			user.adjustToxLoss(-20)
-			user.restoreEars()
-			user.adjust_eye_damage(-5)
-			if(user.eye_blind || user.eye_blurry)
-				user.set_blindness(0)
-				user.set_blurriness(0)
-			if(user.blood_volume < BLOOD_VOLUME_NORMAL)
-				user.blood_volume += 5 // regenerate blood rapidly
 
 	if(world.time >= saved_time2 + cooldown2)
 		saved_time2 = world.time
@@ -335,7 +333,7 @@
 
 /obj/structure/borg_teleporter
 	name = "Subspace vector translocator"
-	desc = "A device which opens a transwarp conduit to rapidly translate a unimatrix across subspace through a vector. Click it with an open hand to set a target, then walk/run into it to engage translocation (run right into the middle of it)."
+	desc = "A device which opens a transwarp conduit to rapidly translate a unimatrix across subspace through a transwarp conduit. Walk/run into it to engage translocation (run right into the middle of it) after it has activated."
 	icon = 'DS13/icons/borg/large_machines.dmi'
 	icon_state = "teleporter-off"
 	var/turf/open/target
@@ -346,12 +344,20 @@
 	density = TRUE
 	pixel_x = -32
 
+/obj/structure/borg_teleporter/Initialize()
+	. = ..()
+	GLOB.borg_collective.teleporters += src
+
 /obj/structure/borg_teleporter/examine(mob/user)
 	. = ..()
-	to_chat(user, "<I> Translocation matrix assigned: Unimatrix 325, grid 006. [get_area(target)]</I>")
+	if(!GLOB.borg_collective.teleporters_allowed)
+		to_chat(user, "No unimatrix in range of teleporter. This component will activate automatically upon arrival at a compatible spatial matrix.")
+		return
+	if(target)
+		to_chat(user, "<I> Translocation matrix assigned: Unimatrix 325, grid 006. [get_area(target)]</I>")
 
 /obj/structure/borg_teleporter/Bumped(atom/movable/AM)
-	if(!target)
+	if(!target || !GLOB.borg_collective.teleporters_allowed)
 		return ..()
 	if(isliving(AM))
 		new /obj/effect/temp_visual/dir_setting/ninja/cloak(get_turf(AM), AM.dir)
@@ -361,13 +367,18 @@
 		playsound(AM.loc, teleport_sound, 100,1)
 		new /obj/effect/temp_visual/dir_setting/ninja/cloak(get_turf(AM), AM.dir)
 
+/*
 /obj/structure/borg_teleporter/attack_hand(mob/user)
 	. = ..()
 	icon_state = "teleporter-off"
 	target = null
-	var/A
-	A = input(user, "Set Translocation Target", "Translocation shift matrix", A) as null|anything in GLOB.teleportlocs
-	var/area/thearea = GLOB.teleportlocs[A]
+	var/list/A
+//	A = input(user, "Set Translocation Target", "Translocation shift matrix", A) as null|anything in GLOB.teleportlocs
+	A = borg_collective.poll_drones_for_area()
+//	var/area/thearea = GLOB.teleportlocs[A]
+	var/area/thearea = pick(A)
+	if(!A.len || ISNULL(thearea)
+		thearea = pick(GLOB.teleportlocs)
 	var/list/L = list()
 	for(var/turf/T in get_area_turfs(thearea.type))
 		if(!is_blocked_turf(T))
@@ -377,6 +388,28 @@
 		to_chat(user, "Unable to set translocation target, could not locate a suitable subspace exit point.")
 		return
 	to_chat(user, "Coordinates locked: [target.x],[target.y]. Unimatrix 325, grid 006")
+	icon_state = "teleporter-on"
+*/
+/obj/structure/borg_teleporter/proc/activate()
+	icon_state = "teleporter-off"
+	target = null
+	var/list/A = list()
+	A = GLOB.borg_collective.poll_drones_for_teleport()
+	var/area/thearea
+	if(A.len)
+		thearea = pick(A)
+	if(!A.len || !thearea || QDELETED(thearea))
+		var/xd = pick(GLOB.teleportlocs)
+		thearea = GLOB.teleportlocs[xd]
+	var/list/L = list()
+	for(var/turf/T in get_area_turfs(thearea.type))
+		if(!is_blocked_turf(T) && !istype(T, /turf/open/openspace))
+			L += T
+	target = pick(L)
+	if(!target) //Aaaand it still couldn't find an exit turf....somehow...
+		visible_message("Unable to set translocation target, could not locate a suitable subspace exit point. Contact an admin immediately.")
+		return
+	GLOB.borg_collective.message_collective("The collective", "Translocation matrix coordinates locked: [target.x],[target.y] in [get_area(target)]. Unimatrix 325, grid 006. Step through the teleporter to beam down.")
 	icon_state = "teleporter-on"
 
 //Borg tool
@@ -464,9 +497,8 @@
 	if(isBorgDrone(M))
 		to_chat(user, "<span class='warning'>They are already in the collective.</span>")
 		return
-	if(!M.mind)
+	if(!M.mind && M.stat != DEAD)
 		to_chat(user, "[M] does not have a consciousness, they would add nothing to the collective. Nanites programmed for disposal of waste life-form.")
-		M.visible_message("[M] lets out a scream as they begin to convulse violently!")
 		M.death()
 		return
 	to_chat(M, "<span class='warning'>[user] pierces you with their assimilation tubules!</span>")
@@ -492,10 +524,12 @@
 				to_chat(user, "<span class='danger'>We are assimilating [I].</span>")
 				busy = TRUE
 				if(do_after(user, convert_time, target = A))
-					for(var/turf/open/TA in orange(user,1))
+					if(A.TerraformTurf(/turf/open/floor/plating/borg, /turf/open/floor/plating/borg))
+						resource_amount += 5
+					for(var/turf/open/TA in orange(A,1))
 						if(!istype(TA, /turf/open/floor/plating/borg) && !istype(TA, /turf/open/openspace))
-							TA.TerraformTurf(/turf/open/floor/plating/borg, /turf/open/floor/plating/borg)
-							resource_amount += 5
+							if(TA.TerraformTurf(/turf/open/floor/plating/borg, /turf/open/floor/plating/borg))
+								resource_amount += 5
 				busy = FALSE
 			if(istype(I, /turf/closed/wall) && !istype(I, /turf/closed/wall/trek_smooth/borg))
 				if(busy)
@@ -505,10 +539,13 @@
 				var/turf/closed/wall/A = I
 				if(do_after(user, convert_time, target = A))
 					if(A.TerraformTurf(/turf/closed/wall/trek_smooth/borg, /turf/closed/wall/trek_smooth/borg)) //if it's indestructible, this will fail
-						resource_amount += 5
+						for(var/turf/closed/TA in orange(A,1))
+							if(!istype(TA, /turf/open) && !istype(TA, /turf/closed/wall/trek_smooth/borg))
+								if(TA.TerraformTurf(/turf/closed/wall/trek_smooth/borg, /turf/closed/wall/trek_smooth/borg))
+									resource_amount += 5
 						return TRUE
 					else
-						to_chat(user, "Conversion failed. This structure is resistant to nanoprobes. Do not waste time trying to assimilate it again.")
+						to_chat(user, "Conversion failed. This structure is resistant to nanoprobes.")
 						return FALSE
 				busy = FALSE
 		if(mode == "combat")
