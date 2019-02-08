@@ -311,6 +311,9 @@
 		return
 
 /obj/structure/chair/borg/charging/user_buckle_mob(mob/living/M, mob/User)
+	if(!M.client)
+		to_chat(User, "Unable to locate neural link in [M]. Aborting. (Perhaps they're AFK?")
+		return FALSE
 	if(ishuman(M) && M.loc == loc)
 		var/mob/living/carbon/human/H = M
 		if(isBorgDrone(H))
