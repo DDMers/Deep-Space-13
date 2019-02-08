@@ -9,7 +9,7 @@
 	check_view()
 
 /client/proc/check_view()//Set our default view back to normal if we're not a widescreen user, or set it to widescreen if we are. As an ultrawide user I advocate this :) ~Kmc
-	if(prefs.toggles & WIDESCREEN)
+	if(prefs.toggles & WIDESCREEN && CONFIG_GET(flag/widescreen))
 		change_view("21x15") //If you're not a widescreen user then I don't recommend doing this!
 	else
 		change_view(CONFIG_GET(string/default_view))
