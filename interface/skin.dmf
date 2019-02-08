@@ -72,7 +72,7 @@ window "mainwindow"
 		is-vert = true
 	elem "input"
 		type = INPUT
-		pos = 5,420
+		pos = 3,420
 		size = 595x20
 		anchor1 = 0,100
 		anchor2 = 100,100
