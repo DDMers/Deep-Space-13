@@ -118,7 +118,7 @@ Dirs! (nicked from byond forum)
 /datum/shield_controller/proc/generate_overlays()
 	if(!holder)
 		return
-	holder.cut_overlays() //Change this if I ever add damage overlays!
+	holder.shield_overlay.cut_overlays()
 	var/progress = 0 //How damaged is this shield? We examine the position of index "I" in the for loop to check which directional we want to check
 	var/goal = max_health //How much is the max hp of the shield? This is constant through all of them
 	for(var/I = 0, I < 11, I++) //Time to run through our dirs!
@@ -133,11 +133,16 @@ Dirs! (nicked from byond forum)
 			if(8) progress = west
 			if(9) progress = northwest
 			if(10) progress = northeast
+		var/stored = 0
+		if(progress > max_health)
+			stored = progress //To apply the double shield visual FX for when you overcharge one specific shield.
 		progress = CLAMP(progress, 0, goal)
 		progress = round(((progress / goal) * 100), 20)//Round it down to 20%. We now change colours accordingly
 		var/image/shield = new
 		shield.icon = holder.icon
 		shield.icon_state = "[I]"
+		if(stored >= 1)
+			shield.icon_state = "[I]-d" //Double shield! Shows you've boosted this specific shield
 		switch(progress) //Colour in our shields based on damage
 			if(0 to 19) shield.color = "#696969"//dim grey
 			if(20 to 39) shield.color = "FF0000"//Red
@@ -145,5 +150,6 @@ Dirs! (nicked from byond forum)
 			if(60 to 79)	shield.color = "#FF9300"//Light orange
 			if(80 to 99)	shield.color = "#4EC3D3" //Light ish green
 			if(100) shield.color = "#00E0FF"//Very light blue
-			else shield.color = "#696969"//dim grey
-		holder.add_overlay(shield)
+			else shield.color = "#696969"//dim gre
+		holder.shield_overlay.add_overlay(shield)
+
