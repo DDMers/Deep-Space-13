@@ -2752,6 +2752,8 @@
 #include "DS13\code\modules\clothing\under\trek.dm"
 #include "DS13\code\modules\EMH\EMH.dm"
 #include "DS13\code\modules\mob\living\carbon\human\species_types\klingon.dm"
+#include "DS13\code\modules\overmap\overmap.dm"
+#include "DS13\code\modules\overmap\shields.dm"
 #include "DS13\code\modules\turbolift\turbolift.dm"
 #include "DS13\goonstation\airlocks.dm"
 #include "DS13\goonstation\turf_autoalign.dm"
