@@ -140,11 +140,8 @@
 		shake_camera(science, 1, 1)
 	if(istype(source, /obj/item/projectile))
 		send_sound_crew('DS13/sound/effects/damage/torpedo_hit.ogg')
-	var/datum/position/pos1 = new /datum/position(src)
-	var/datum/position/pos2 = new /datum/position(source)
-	var/turf/us = pos1.return_turf()
-	var/turf/them = pos2.return_turf()
-	var/damage_dir = get_dir(us, them)
+	var/target_angle = Get_Angle(src, source) //Fire a beam from them to us X --->>>> us. This should line up nicely with the phaser beam effect
+	var/damage_dir = angle2dir(target_angle) //Now we have our simulated beam, turn its angle into a dir.
 	if(shields.absorb_damage(amount, damage_dir))
 		show_damage(amount, TRUE)
 		special_fx(TRUE)
