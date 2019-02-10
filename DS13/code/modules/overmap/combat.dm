@@ -127,8 +127,8 @@
 				return
 			fire_mode = dowhat
 			return
-	if(!user.overmap_ship)
-		enter(user)
+//	if(!user.overmap_ship) Replaced by consoles...for now!
+//		enter(user)
 
 /obj/structure/overmap/take_damage(var/atom/source, var/amount = 10)
 	. = ..()
