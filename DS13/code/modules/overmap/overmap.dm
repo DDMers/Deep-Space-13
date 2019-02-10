@@ -16,9 +16,21 @@ When making a new ship, please include its directional shields in the SAME ICON 
 /obj/structure/overmap/miranda
 	name = "Miranda class light cruiser"
 	desc = "An all purpose, reliable starship. It has a modest armament."
+	icon = 'DS13/icons/overmap/miranda.dmi'
+	icon_state = "miranda"
+	main_overmap = TRUE
+	damage = 10 //Will turn into 20 assuming weapons powered
+
+/obj/structure/overmap/shuttle
+	name = "Shuttlepod"
+	desc = "A small, self contained starship. It has minimal shields and weapons"
+	icon = 'DS13/icons/overmap/shuttle.dmi'
+	icon_state = "shuttle"
+	damage = 0 //Will turn into 10 assuming weapons powered
+	max_shield_health = 50
 
 /obj/shield_overlay
-	name = "Shield effect"
+	name = ""
 	animate_movement = 0
 
 //Combat variables
@@ -27,17 +39,29 @@ When making a new ship, please include its directional shields in the SAME ICON 
 	var/ammo_type = /obj/item/ammo_casing/energy/laser
 	var/datum/shield_controller/shields
 	var/max_shield_health = 100 //Change this if you want STRONG shields
-	var/health
-	var/max_health
+	var/health = 0
+	var/max_health = 200
+	var/area/override_linked_ship //If we're not the main overmap, we'd best link to an area! If you place an overmap in /area/ship it will NOT be the main overmap, so use station areas instead!
+	var/main_overmap = FALSE //Is this the main overmap? Is it gonna be linked to all station areas?
 
 /obj/structure/overmap/proc/OvermapInitialize() //Called before the while loop which allows movement
 	shield_overlay = new(get_turf(src))
 	shields = new(src)
 	shields.holder = src
 	shields.max_health = max_shield_health
-	apply_shield_boost()
 	shields.generate_overlays()
 	health = max_health
+	check_power()
+//	var/area/A = get_area(src)
+//	if(istype(A, /area/ship))		UNCOMMENT THIS WHEN DOCKING IS DONE!
+	//	override_linked_ship = A
+	//	return
+
+/obj/structure/overmap/Destroy()
+	qdel(shield_overlay)
+	qdel(shields)
+	. = ..()
+
 
 /obj/structure/overmap/proc/apply_shield_boost() //If you want to start out with some shields that are stronger than others
 	return

@@ -28,6 +28,7 @@ Dirs! (nicked from byond forum)
 	var/health //Un-used for now
 	var/max_health = 100	//Max health for each individual shield. Keep in mind a laser does about 20 damage
 	var/obj/structure/overmap/holder //Whose shield am I?
+	var/chargerate = 2.5 //How quickly do shields charge (per tick)
 
 //Directional shield vars
 /datum/shield_controller
@@ -42,7 +43,27 @@ Dirs! (nicked from byond forum)
 
 /datum/shield_controller/New()
 	. = ..()
+	START_PROCESSING(SSobj,src)
+	addtimer(CALLBACK(src, .proc/replenish_shields), 20)//Allow time to pick up the max shields HP stat from our holder
+
+/datum/shield_controller/proc/replenish_shields()
 	adjust_all_shields(max_health) //Let's heal
+	holder.apply_shield_boost()
+
+/datum/shield_controller/proc/depower()
+	north = 0
+	south = 0
+	east = 0
+	west = 0
+	northeast = 0
+	northwest = 0
+	southeast = 0
+	southwest = 0
+	generate_overlays()
+
+
+/datum/shield_controller/process()
+	adjust_all_shields(chargerate)
 
 //Damage logic. This is a looot of finite state machines :b1:
 
@@ -105,14 +126,15 @@ Dirs! (nicked from byond forum)
 			return FALSE
 
 /datum/shield_controller/proc/adjust_all_shields(var/num)
-	north = num 		//Set all the directionals to a desired num. Useful when spawning a ship or if you want to fully disable all shields
-	south = num
-	east = num
-	west = num
-	northeast = num
-	northwest = num
-	southeast = num
-	southwest = num
+	if(north < max_health)north += num 		//Set all the directionals to a desired num. Useful when spawning a ship or if you want to fully disable all shields
+	if(south < max_health)south += num
+	if(east < max_health)east += num
+	if(west < max_health)west += num
+	if(northeast < max_health)northeast += num
+	if(northwest < max_health)northwest += num
+	if(southeast < max_health)southeast += num
+	if(southwest < max_health)southwest += num
+	generate_overlays()
 	return TRUE
 
 /datum/shield_controller/proc/generate_overlays()
@@ -134,7 +156,8 @@ Dirs! (nicked from byond forum)
 			if(9) progress = northwest
 			if(10) progress = northeast
 		var/stored = 0
-		if(progress > max_health)
+		var/test = max_health*2
+		if(progress >= test)
 			stored = progress //To apply the double shield visual FX for when you overcharge one specific shield.
 		progress = CLAMP(progress, 0, goal)
 		progress = round(((progress / goal) * 100), 20)//Round it down to 20%. We now change colours accordingly
@@ -143,13 +166,13 @@ Dirs! (nicked from byond forum)
 		shield.icon_state = "[I]"
 		if(stored >= 1)
 			shield.icon_state = "[I]-d" //Double shield! Shows you've boosted this specific shield
+		shield.color = "#CE8D34" //orange, just in case the number falls out of range
 		switch(progress) //Colour in our shields based on damage
-			if(0 to 19) shield.color = "#696969"//dim grey
-			if(20 to 39) shield.color = "FF0000"//Red
+			if(0 to 10) shield.color = "#000000"//black
+			if(11 to 39) shield.color = "#FF0000"//Red
 			if(40 to 59)	shield.color = "#CE8D34" //orange
 			if(60 to 79)	shield.color = "#FF9300"//Light orange
-			if(80 to 99)	shield.color = "#4EC3D3" //Light ish green
-			if(100) shield.color = "#00E0FF"//Very light blue
-			else shield.color = "#696969"//dim gre
+			if(80 to 90)	shield.color = "#4EC3D3" //Light ish green
+			if(91 to 100) shield.color = "#00E0FF"//Very light blue
 		holder.shield_overlay.add_overlay(shield)
 

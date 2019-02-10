@@ -13,6 +13,7 @@
 	var/mob/living/pilot
 	var/mob/living/tactical
 	var/mob/living/science
+	var/list/operators = list()
 
 //Movement variables
 /obj/structure/overmap
@@ -22,13 +23,22 @@
 	var/max_speed = 4 //Maximum velocity
 	var/acceleration = 0.5 //How quickly do you put on speed?
 	var/obj/structure/overmap/nav_target
+	var/process = FALSE
 
 /obj/structure/overmap/Initialize()
 	. = ..()
 	OvermapInitialize()
-	while(!QDELETED(src)) // This is the highest possible process speed we can get in ss13, and boy do we need it.
+
+/obj/structure/overmap/proc/start_process()
+	while(process)
+		if(QDELETED(src))
+			process = FALSE
+			return
 		stoplag()
 		ProcessMove()
+		if(nav_target)
+			TurnTo(nav_target)
+
 //Procs
 /obj/structure/overmap/proc/EditAngle() //Visibly rotate the sprite
 	var/matrix/M = matrix() //create matrix
@@ -43,6 +53,10 @@
 	parallax_update()
 	if(pilot && pilot.client)
 		pilot.client.AdjustView()
+	if(tactical && tactical.client)
+		tactical.client.AdjustView()
+	if(science && science.client)
+		science.client.AdjustView()
 	if(nav_target)
 		if(nav_target in orange(src, 1)) //if we're near our navigational target, slam on the brakes
 			if(vel > 0)
@@ -116,11 +130,20 @@
 						exit(tactical)
 				tactical = user
 			if("science")
-				return
+				if(science)
+					if(alert("Kick [science] off of the ship controls?","[name]","Yes","No") == "Yes")
+						to_chat(user, "you kick [science] off the ship controls!")
+						exit(science)
+				science = user
+	operators += user
 	user.overmap_ship = src
 	user.client.AdjustView()
 	user.update_sight()
+	process = TRUE
 	CreateEye(user) //Your body stays there but your mind stays with me - 6 (Battlestar galactica)
+	after_enter(user)
+	spawn(0) //Allow the proc to finish, also run our while loop
+		start_process() //This needs to come LAST as it's a while loop!
 
 /obj/structure/overmap/proc/CreateEye(mob/user)
 	var/mob/camera/aiEye/remote/overmap_observer/eyeobj = new
@@ -141,6 +164,7 @@
 /obj/structure/overmap/proc/exit(mob/user) //You don't get to leave
 	if(user.client)
 		user.client.AdjustView()
+	after_exit(user)
 	user.sight = initial(user.sight)
 	user.update_sight()
 	qdel(user.remote_control)
@@ -149,15 +173,13 @@
 	if(user.client)
 		user.client.AdjustView()
 		user.reset_perspective(null)
+	operators -= user
 	if(user == pilot)
 		pilot = null
-		return
 	if(user == tactical)
 		tactical = null
-		return
 	if(user == science)
 		science = null
-		return
 	return
 
 /mob
@@ -217,6 +239,8 @@ atom/movable
 				O.shield_overlay.forceMove(get_turf(src))
 
 /obj/structure/overmap/relaymove(mob/mob,dir)
+	if(!pilot || mob != pilot)
+		return //Only pilot can steer :)
 	if(mob.client)
 		switch(dir)
 			if(NORTH)
@@ -242,6 +266,7 @@ atom/movable
 				if(mob.overmap_ship)
 					mob.overmap_ship.angle = mob.overmap_ship.angle - turnspeed
 					mob.overmap_ship.EditAngle()
+					nav_target = null
 				else
 					..()
 			if(NORTHEAST)
@@ -258,6 +283,7 @@ atom/movable
 				if(mob.overmap_ship)
 					mob.overmap_ship.angle = mob.overmap_ship.angle + turnspeed
 					mob.overmap_ship.EditAngle()
+					nav_target = null
 			if(NORTHWEST)
 				if(mob.overmap_ship)
 					if(mob.overmap_ship.vel < max_speed) //burn to speed up
