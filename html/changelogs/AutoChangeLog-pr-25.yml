@@ -1,0 +1,4 @@
+author: "alexkar598"
+delete-after: True
+changes: 
+  - bugfix: "Fixes set view range verb not working for widescreen users"
