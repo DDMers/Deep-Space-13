@@ -70,8 +70,6 @@
 	return
 
 /obj/screen/alert/power_manager/proc/remove_power()
-	if(theship.power_slots >= initial(theship.power_slots))
-		return
 	theship.power_slots ++ //Add power to the main bank from which we can draw.
 	return
 
@@ -87,10 +85,10 @@
 	system = "shields"
 
 /obj/screen/alert/power_manager/shields/remove_power()
-	if(theship.shield_power >= 1)
+	if(theship.shield_power > 0)
 		theship.shield_power --
-	update_icon()
-	. = ..()
+		update_icon()
+		. = ..()
 
 /obj/screen/alert/power_manager/shields/add_power()
 	if(theship.power_slots <= 0)
@@ -114,10 +112,10 @@
 	system = "weapons"
 
 /obj/screen/alert/power_manager/weapons/remove_power()
-	if(theship.weapon_power >= 1)
+	if(theship.weapon_power > 0)
 		theship.weapon_power --
-	update_icon()
-	. = ..()
+		update_icon()
+		. = ..()
 
 /obj/screen/alert/power_manager/weapons/add_power()
 	if(theship.power_slots <= 0)
@@ -141,10 +139,10 @@
 	system = "engines"
 
 /obj/screen/alert/power_manager/engines/remove_power()
-	if(theship.engine_power >= 1)
+	if(theship.engine_power > 0)
 		theship.engine_power --
-	update_icon()
-	. = ..()
+		update_icon()
+		. = ..()
 
 /obj/screen/alert/power_manager/engines/add_power()
 	if(theship.power_slots <= 0)
