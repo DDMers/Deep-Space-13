@@ -174,6 +174,7 @@
 
 /obj/screen/alert/power_manager/power_slot/Destroy()
 	STOP_PROCESSING(SSfastprocess,src)
+	. = ..()
 
 /obj/screen/alert/power_manager/power_slot/remove_power()
 	return
@@ -183,8 +184,8 @@
 
 /obj/screen/alert/power_manager/power_slot/update_icon()
 	cut_overlays()
-	var/mob/living/L = mob_viewer
 	if(!theship)
+		var/mob/living/L = mob_viewer
 		theship = L.overmap_ship
 	var/num = theship.power_slots
 	if(num > 4) //Only 4 states supported thus far!

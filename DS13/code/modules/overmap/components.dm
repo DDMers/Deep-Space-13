@@ -10,7 +10,7 @@
 /obj/structure/overmap_component/attack_hand(mob/user)
 	if(!position)
 		return ..()
-	if(!linked)
+	if(!linked || QDELETED(linked))
 		find_overmap()
 	linked.enter(user, position)
 
