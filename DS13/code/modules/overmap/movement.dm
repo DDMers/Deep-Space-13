@@ -24,6 +24,7 @@
 	var/acceleration = 0.5 //How quickly do you put on speed?
 	var/obj/structure/overmap/nav_target
 	var/process = FALSE
+	var/movement_block = FALSE //If you make a planet, station etc. Set this to TRUE or it'll be movable!
 
 /obj/structure/overmap/Initialize()
 	. = ..()
@@ -46,6 +47,8 @@
 	src.transform = M //set matrix
 
 /obj/structure/overmap/proc/ProcessMove()
+	if(movement_block)
+		return
 	EditAngle() //we need to edit the transform just incase
 	var/x_speed = vel * cos(angle)
 	var/y_speed = vel * sin(angle)
@@ -115,7 +118,8 @@
 
 /obj/structure/overmap/proc/enter(mob/living/carbon/human/user, var/what = "pilot")
 	if(user.client)
-		what = alert("What role would you like to pick?","[name]","pilot","tactical","science")
+		if(!what)
+			what = alert("What role would you like to pick?","[name]","pilot","tactical","science")
 		switch(what)
 			if("pilot")
 				if(pilot)

@@ -15,6 +15,16 @@
 	var/fire_mode = "phaser"
 	var/photons = 4 //How many torpedoes do we have?
 
+/obj/structure/overmap/proc/send_sound_crew(var/sound/S)
+	if(pilot)
+		SEND_SOUND(pilot, S)
+		if(pilot == tactical || pilot == science)
+			return //Don't earspam admins testing stuff
+	if(tactical)
+		SEND_SOUND(tactical, S)
+	if(science)
+		SEND_SOUND(science, S)
+
 /obj/effect/temp_visual/ship_explosion
 	icon = 'DS13/icons/overmap/effects.dmi'
 	icon_state = "ship_explode"
@@ -59,21 +69,27 @@
 	addtimer(CALLBACK(src, .proc/recharge_weapons), weapons_cooldown)
 	weapons_ready = FALSE
 	check_power()
+	if(pilot)
+		shake_camera(pilot, 1, 3)
+	if(tactical)
+		shake_camera(tactical, 1, 3)
+	if(science)
+		shake_camera(science, 1, 3)
 	if(fire_mode == "phaser")
-		target.take_damage(src, damage)
 		charging = TRUE
 		var/source = src
 		var/datum/beam/S = new /datum/beam(source,target,time=10,beam_icon_state="solar_beam",maxdistance=5000,btype=/obj/effect/ebeam)
 		spawn(0)
 			S.Start()
-		playsound(src.loc, 'DS13/sound/effects/weapons/phaser.ogg', 70,1)
+		send_sound_crew('DS13/sound/effects/weapons/phaser.ogg')
+		target.take_damage(src, damage)
 	else
 		if(photons > 0)
 			photons --
 			addtimer(CALLBACK(src, .proc/recharge_weapons), weapons_cooldown)
 			weapons_ready = FALSE
 			charging = TRUE
-			playsound(src.loc, 'DS13/sound/effects/weapons/torpedo.ogg', 70,1)
+			send_sound_crew('DS13/sound/effects/weapons/torpedo.ogg')
 			var/obj/item/projectile/beam/laser/photon_torpedo/A = new /obj/item/projectile/beam/laser/photon_torpedo(loc)
 			A.starting = loc
 			A.preparePixelProjectile(target,src)
@@ -84,12 +100,6 @@
 			if(tactical)
 				to_chat(tactical, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>photon torpedo supply is depleted.</span>")
 			return
-	if(pilot)
-		shake_camera(pilot, 1, 3)
-	if(tactical)
-		shake_camera(tactical, 1, 3)
-	if(science)
-		shake_camera(science, 1, 3)
 
 /obj/item/ammo_casing/energy/photon
 	select_name = "photon torpedo"
@@ -129,7 +139,7 @@
 	if(science)
 		shake_camera(science, 1, 1)
 	if(istype(source, /obj/item/projectile))
-		playsound(src.loc, 'DS13/sound/effects/damage/torpedo_hit.ogg', 70,1)
+		send_sound_crew('DS13/sound/effects/damage/torpedo_hit.ogg')
 	var/datum/position/pos1 = new /datum/position(src)
 	var/datum/position/pos2 = new /datum/position(source)
 	var/turf/us = pos1.return_turf()
@@ -149,7 +159,6 @@
 /obj/machinery
 	var/list/zaps = list('DS13/sound/effects/damage/consolehit.ogg','DS13/sound/effects/damage/consolehit2.ogg','DS13/sound/effects/damage/consolehit3.ogg','DS13/sound/effects/damage/consolehit4.ogg')
 	var/list/bleeps = list('DS13/sound/effects/computer/bleep1.ogg','DS13/sound/effects/computer/bleep2.ogg')
-
 
 /obj/machinery/proc/explode_effect()
 	var/sound = pick(zaps)

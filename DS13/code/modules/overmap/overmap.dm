@@ -5,6 +5,8 @@ Stuff you need to know:
 When making a new ship, please include its directional shields in the SAME ICON AS THE SHIP so you can ensure they fit!
 
 */
+GLOBAL_LIST_INIT(overmap_ships, list())
+
 /obj/structure/overmap
 	name = "Ship"
 	desc = "Since Zephram cochrane's first flight, humanity has always had its head in the stars."
@@ -12,6 +14,7 @@ When making a new ship, please include its directional shields in the SAME ICON 
 	icon_state = "pancake"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 	var/obj/shield_overlay/shield_overlay
+	var/class = "nothing" //This is a nothing class heavy cruiser
 
 /obj/structure/overmap/miranda
 	name = "Miranda class light cruiser"
@@ -20,6 +23,7 @@ When making a new ship, please include its directional shields in the SAME ICON 
 	icon_state = "miranda"
 	main_overmap = TRUE
 	damage = 10 //Will turn into 20 assuming weapons powered
+	class = "miranda"
 
 /obj/structure/overmap/shuttle
 	name = "Shuttlepod"
@@ -27,7 +31,8 @@ When making a new ship, please include its directional shields in the SAME ICON 
 	icon = 'DS13/icons/overmap/shuttle.dmi'
 	icon_state = "shuttle"
 	damage = 0 //Will turn into 10 assuming weapons powered
-	max_shield_health = 50
+	max_shield_health = 75
+	class = "shuttlepod"
 
 /obj/shield_overlay
 	name = ""
@@ -52,6 +57,7 @@ When making a new ship, please include its directional shields in the SAME ICON 
 	shields.generate_overlays()
 	health = max_health
 	check_power()
+	GLOB.overmap_ships += src
 //	var/area/A = get_area(src)
 //	if(istype(A, /area/ship))		UNCOMMENT THIS WHEN DOCKING IS DONE!
 	//	override_linked_ship = A

@@ -9,7 +9,8 @@
 	shield_power = 1
 	weapon_power = 1
 	engine_power = 1
-	power_slots = 1
+	power_slots -= 3
+	check_power()
 
 /obj/structure/overmap/proc/check_power()
 	if(power_slots < 0)
@@ -69,6 +70,8 @@
 	return
 
 /obj/screen/alert/power_manager/proc/remove_power()
+	if(theship.power_slots >= initial(theship.power_slots))
+		return
 	theship.power_slots ++ //Add power to the main bank from which we can draw.
 	return
 

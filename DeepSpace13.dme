@@ -2753,6 +2753,7 @@
 #include "DS13\code\modules\EMH\EMH.dm"
 #include "DS13\code\modules\mob\living\carbon\human\species_types\klingon.dm"
 #include "DS13\code\modules\overmap\combat.dm"
+#include "DS13\code\modules\overmap\components.dm"
 #include "DS13\code\modules\overmap\movement.dm"
 #include "DS13\code\modules\overmap\overmap.dm"
 #include "DS13\code\modules\overmap\power_management.dm"

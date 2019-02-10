@@ -168,8 +168,7 @@ Dirs! (nicked from byond forum)
 			shield.icon_state = "[I]-d" //Double shield! Shows you've boosted this specific shield
 		shield.color = "#CE8D34" //orange, just in case the number falls out of range
 		switch(progress) //Colour in our shields based on damage
-			if(0 to 10) shield.color = "#000000"//black
-			if(11 to 39) shield.color = "#FF0000"//Red
+			if(0 to 39) shield.color = "#FF0000"//Red
 			if(40 to 59)	shield.color = "#CE8D34" //orange
 			if(60 to 79)	shield.color = "#FF9300"//Light orange
 			if(80 to 90)	shield.color = "#4EC3D3" //Light ish green
