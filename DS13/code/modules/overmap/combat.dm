@@ -50,6 +50,8 @@
 	pixel_y = rand(0,10)
 
 /obj/structure/overmap/proc/onMouseDown(object, location, params, mob/mob)
+	var/sound/thesound = pick('DS13/sound/effects/computer/beep.ogg','DS13/sound/effects/computer/beep2.ogg','DS13/sound/effects/computer/beep3.ogg')
+	SEND_SOUND(mob, thesound)
 	if(object == src)
 		return attack_hand(mob)
 	if(istype(object, /obj/screen) && !istype(object, /obj/screen/click_catcher))
@@ -57,7 +59,7 @@
 	if(!admin_override) //Allows me to fly and shoot for testing
 		if(mob != tactical)
 			if(science)
-				if(mob == science)
+				if(mob == science && istype(object, /obj/structure/overmap))
 					var/list/options = list("tractor", "hail","tractor-cancel")
 					for(var/option in options)
 						options[option] = image(icon = 'DS13/icons/actions/weaponselect.dmi', icon_state = "[option]")
@@ -170,6 +172,7 @@
 			target.take_damage(src, damage)
 		else
 			if(tactical)
+				voice_alert('DS13/sound/effects/voice/OutOfTorpedoes.ogg')
 				to_chat(tactical, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>photon torpedo supply is depleted.</span>")
 			return
 
@@ -214,6 +217,9 @@
 			if(!dowhat)
 				return
 			fire_mode = dowhat
+			if(dowhat == "torpedo")
+				var/sound/S = pick('DS13/sound/effects/voice/LoadingPhoton.ogg','DS13/sound/effects/voice/LoadingPhoton2.ogg')
+				voice_alert(S)
 			return
 
 
@@ -238,6 +244,7 @@
 		send_sound_crew(shieldhit)
 		show_damage(amount, TRUE)
 		special_fx(TRUE)
+		shield_alert()
 	else
 		health -= amount
 		new /obj/effect/temp_visual/ship_explosion(get_turf(src))

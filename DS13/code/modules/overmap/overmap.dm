@@ -34,6 +34,8 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	damage = 0 //Will turn into 10 assuming weapons powered
 	max_shield_health = 75
 	class = "shuttlepod"
+	max_speed = 6
+	turnspeed = 2
 
 /obj/shield_overlay
 	name = ""

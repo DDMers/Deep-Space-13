@@ -27,11 +27,14 @@
 	if(shield_power <= 0)
 		shields.depower()
 		shields.chargerate = 0
+		voice_alert('DS13/sound/effects/voice/ShieldsDisabled.ogg')
 	if(weapon_power <= 0)
 		damage = 0
+		voice_alert('DS13/sound/effects/voice/PhasersDisabled.ogg')
 	if(engine_power <= 0)
 		max_speed = 0
 		turnspeed = 0
+		voice_alert('DS13/sound/effects/voice/ImpulseDisabled.ogg')
 
 /obj/structure/overmap/proc/after_enter(mob/user)
 	if(user == science)
