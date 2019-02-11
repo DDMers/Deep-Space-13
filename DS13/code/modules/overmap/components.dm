@@ -67,3 +67,24 @@
 	icon_state = "tactical"
 	position = "tactical"
 	id = "miranda"
+
+/obj/structure/overmap_component/helm/warbird
+	name = "Piloting station"
+	desc = "This console gives you the power to control a starship."
+	icon_state = "pilot"
+	position = "pilot"
+	id = "warbird"
+
+/obj/structure/overmap_component/science/warbird
+	name = "Science station"
+	desc = "This console gives you the power to control a starship."
+	icon_state = "science"
+	position = "science"
+	id = "warbird"
+
+/obj/structure/overmap_component/tactical/warbird
+	name = "Weapons station"
+	desc = "This console gives you the power to control a starship."
+	icon_state = "tactical"
+	position = "tactical"
+	id = "warbird"

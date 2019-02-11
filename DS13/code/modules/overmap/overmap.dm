@@ -16,27 +16,6 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	var/obj/shield_overlay/shield_overlay
 	var/class = "nothing" //This is a nothing class heavy cruiser
 
-/obj/structure/overmap/miranda
-	name = "Miranda class light cruiser"
-	desc = "An all purpose, reliable starship. It has a modest armament."
-	icon = 'DS13/icons/overmap/miranda.dmi'
-	icon_state = "miranda"
-	main_overmap = TRUE
-	damage = 10 //Will turn into 20 assuming weapons powered
-	class = "miranda"
-	damage_states = TRUE //Damage FX
-
-/obj/structure/overmap/shuttle
-	name = "Shuttlepod"
-	desc = "A small, self contained starship. It has minimal shields and weapons"
-	icon = 'DS13/icons/overmap/shuttle.dmi'
-	icon_state = "shuttle"
-	damage = 0 //Will turn into 10 assuming weapons powered
-	max_shield_health = 75
-	class = "shuttlepod"
-	max_speed = 6
-	turnspeed = 2
-
 /obj/shield_overlay
 	name = ""
 	animate_movement = 0
@@ -75,7 +54,3 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 
 /obj/structure/overmap/proc/apply_shield_boost() //If you want to start out with some shields that are stronger than others
 	return
-
-/obj/structure/overmap/miranda/apply_shield_boost() //Miranda starts with some boosted shields
-	shields.north += max_shield_health
-	shields.south += max_shield_health
