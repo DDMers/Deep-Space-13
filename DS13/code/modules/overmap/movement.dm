@@ -39,6 +39,8 @@
 		ProcessMove()
 		if(nav_target)
 			TurnTo(nav_target)
+		if(tractor_target)
+			tractor_pull()
 
 //Procs
 /obj/structure/overmap/proc/EditAngle() //Visibly rotate the sprite

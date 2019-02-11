@@ -28,7 +28,7 @@ Dirs! (nicked from byond forum)
 	var/health //Un-used for now
 	var/max_health = 100	//Max health for each individual shield. Keep in mind a laser does about 20 damage
 	var/obj/structure/overmap/holder //Whose shield am I?
-	var/chargerate = 2.5 //How quickly do shields charge (per tick)
+	var/chargerate = 0.5 //How quickly do shields charge (per tick)
 
 //Directional shield vars
 /datum/shield_controller
@@ -137,6 +137,31 @@ Dirs! (nicked from byond forum)
 	generate_overlays()
 	return TRUE
 
+/datum/shield_controller/proc/get_total_health()
+	var/num = 0
+	num += north 		//Set all the directionals to a desired num. Useful when spawning a ship or if you want to fully disable all shields
+	num += south
+	num += east
+	num += west
+	num += northeast
+	num += northwest
+	num += southeast
+	num += southwest
+	return num
+
+/datum/shield_controller/proc/check_vulnerability()
+	var/num = get_total_health()
+	if(num <= 0)
+		return TRUE
+	var/total = (max_health * 8) //8 directional shields, each with a max of maxhealth.
+	to_chat(world, total)
+	var/required = total/2 //Shields must be at least 50% healthy to resist transports and tractor beams
+	to_chat(world, required)
+	if(num <= required)
+		return TRUE //AKA it IS vulnerable
+	else
+		return FALSE //Above 50% health, so NOT vulnerable
+
 /datum/shield_controller/proc/generate_overlays()
 	if(!holder)
 		return
@@ -168,7 +193,8 @@ Dirs! (nicked from byond forum)
 			shield.icon_state = "[I]-d" //Double shield! Shows you've boosted this specific shield
 		shield.color = "#CE8D34" //orange, just in case the number falls out of range
 		switch(progress) //Colour in our shields based on damage
-			if(0 to 39) shield.color = "#FF0000"//Red
+			if(0 to 19) shield.alpha = 0 //Blacked out
+			if(20 to 39) shield.color = "#FF0000"//Red
 			if(40 to 59)	shield.color = "#CE8D34" //orange
 			if(60 to 79)	shield.color = "#FF9300"//Light orange
 			if(80 to 90)	shield.color = "#4EC3D3" //Light ish green

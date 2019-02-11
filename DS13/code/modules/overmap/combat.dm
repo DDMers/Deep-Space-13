@@ -14,6 +14,10 @@
 	var/admin_override = FALSE //Need to test? set this on and you can fire and move yourself
 	var/fire_mode = "phaser"
 	var/photons = 4 //How many torpedoes do we have?
+	var/list/weapon_sounds = list('DS13/sound/effects/weapons/phaser.ogg','DS13/sound/effects/weapons/phaser2.ogg','DS13/sound/effects/weapons/phaser3.ogg','DS13/sound/effects/weapons/phaser4.ogg')
+	var/obj/structure/overmap/tractor_target = null //Are we tractoring a target? This forces it to move towards us.
+	var/datum/beam/tractor_beam = null
+	var/hail_ready = TRUE //Hailing cooldown
 
 /obj/structure/overmap/proc/send_sound_crew(var/sound/S)
 	if(pilot)
@@ -24,6 +28,16 @@
 		SEND_SOUND(tactical, S)
 	if(science)
 		SEND_SOUND(science, S)
+
+/obj/structure/overmap/proc/send_text_crew(var/S)
+	if(pilot)
+		to_chat(pilot, S)
+		if(pilot == tactical || pilot == science)
+			return //Don't earspam admins testing stuff
+	if(tactical)
+		to_chat(tactical, S)
+	if(science)
+		to_chat(science, S)
 
 /obj/effect/temp_visual/ship_explosion
 	icon = 'DS13/icons/overmap/effects.dmi'
@@ -42,6 +56,21 @@
 		return
 	if(!admin_override) //Allows me to fly and shoot for testing
 		if(mob != tactical)
+			if(science)
+				if(mob == science)
+					var/list/options = list("tractor", "hail","tractor-cancel")
+					for(var/option in options)
+						options[option] = image(icon = 'DS13/icons/actions/weaponselect.dmi', icon_state = "[option]")
+					var/dowhat = show_radial_menu(mob,object,options)
+					if(!dowhat)
+						return
+					switch(dowhat)
+						if("tractor")
+							fire_tractor(object)
+						if("hail")
+							hail(object)
+						if("tractor-cancel")
+							release_tractor()
 			return ..() //Only tactical can fire.
 	var/list/modifiers = params2list(params)
 	if(modifiers["middle"])
@@ -63,6 +92,48 @@
 /obj/structure/overmap/proc/onMouseUp(object, location, params, mob/M)
 	return ..()
 
+/obj/structure/overmap/proc/fire_tractor(var/obj/structure/overmap/target) //Fire a tractor beam, not a literal tractor!
+	if(charging || !weapons_ready) //So you can't spam it infinitely
+		return
+	if(!target.process)
+		target.process = TRUE
+		target.start_process() //In case it's an inactive ship. We still need to tow it!
+	addtimer(CALLBACK(src, .proc/recharge_weapons), weapons_cooldown)
+	weapons_ready = FALSE
+	if(target.shields.check_vulnerability()) //Are their shields above 50% strength?
+		tractor_target = target
+		send_sound_crew('DS13/sound/effects/weapons/tractor.ogg')
+		target.send_sound_crew('DS13/sound/effects/weapons/tractor.ogg')
+		var/source = src
+		if(tractor_beam)
+			qdel(tractor_beam)
+		tractor_beam = new /datum/beam(source,target,time=2000,beam_icon_state="medbeam",maxdistance=5000,btype=/obj/effect/ebeam)
+		spawn(0)
+			tractor_beam.Start()
+	else
+		release_tractor()
+		to_chat(science, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>target shield strength is above 50%.</span>")
+
+/obj/structure/overmap/proc/release_tractor()
+	if(!tractor_target)
+		return
+	tractor_target.nav_target = null
+	tractor_target.vel = 0
+	tractor_target = null
+	if(tractor_beam)
+		qdel(tractor_beam)
+
+/obj/structure/overmap/proc/tractor_pull() //Force the target to turn to us and move towards us.
+	if(!tractor_target)
+		return
+	if(tractor_target.shields.check_vulnerability())
+		tractor_target.nav_target = src
+		if(tractor_target.vel <= 0)
+			tractor_target.vel = 1
+	else
+		release_tractor() //Target shields are back, stop tractoring.
+
+
 /obj/structure/overmap/proc/fire(var/obj/structure/overmap/target)
 	if(charging || !weapons_ready)
 		return
@@ -81,7 +152,8 @@
 		var/datum/beam/S = new /datum/beam(source,target,time=10,beam_icon_state="solar_beam",maxdistance=5000,btype=/obj/effect/ebeam)
 		spawn(0)
 			S.Start()
-		send_sound_crew('DS13/sound/effects/weapons/phaser.ogg')
+		var/sound/SS = pick(weapon_sounds)
+		send_sound_crew(SS)
 		target.take_damage(src, damage)
 	else
 		if(photons > 0)
@@ -116,8 +188,24 @@
 	weapons_ready = TRUE
 	charging = FALSE
 
-/obj/structure/overmap/attack_hand(mob/user) //I will need this later to show radial menus
-	if(user.remote_control in crew) //This means theyre one of our officers, so show them the appropriate radial TODO!
+/obj/structure/overmap/proc/hail(var/obj/structure/overmap/target)
+	if(!science || !hail_ready)
+		return
+	var/message = stripped_input(science,"Send a message to [target].","Transmit message on narrow band frequency.")
+	if(!message)
+		return
+	hail_ready = FALSE
+	var/new_message = "<span class='boldnotice'>Narrow band transmission:[src] ([science])</span> - <span class='warning'>[message]</span>"
+	target.send_sound_crew('sound/ai/commandreport.ogg')
+	target.send_text_crew(new_message)
+	send_text_crew(new_message)
+	addtimer(CALLBACK(src, .proc/ready_hail), 25)
+
+/obj/structure/overmap/proc/ready_hail()
+	hail_ready = TRUE
+
+/obj/structure/overmap/attack_hand(mob/user, proximity) //I will need this later to show radial menus
+	if(user.remote_control in crew) //This means theyre one of our officers, so show them the appropriate radial!
 		if(user == tactical) //The user is our tactical operator, show him the options
 			var/list/options = list("phaser", "torpedo")
 			for(var/option in options)
@@ -127,11 +215,14 @@
 				return
 			fire_mode = dowhat
 			return
+
+
 //	if(!user.overmap_ship) Replaced by consoles...for now!
 //		enter(user)
 
 /obj/structure/overmap/take_damage(var/atom/source, var/amount = 10)
 	. = ..()
+	visual_damage()
 	if(pilot)
 		shake_camera(pilot, 1, 1)
 	if(tactical)
@@ -143,6 +234,8 @@
 	var/target_angle = Get_Angle(src, source) //Fire a beam from them to us X --->>>> us. This should line up nicely with the phaser beam effect
 	var/damage_dir = angle2dir(target_angle) //Now we have our simulated beam, turn its angle into a dir.
 	if(shields.absorb_damage(amount, damage_dir))
+		var/sound/shieldhit = pick('DS13/sound/effects/damage/shield_hit.ogg','DS13/sound/effects/damage/shield_hit2.ogg')
+		send_sound_crew(shieldhit)
 		show_damage(amount, TRUE)
 		special_fx(TRUE)
 	else
@@ -171,9 +264,16 @@
 	var/area/target = GLOB.teleportlocs[area] //Pick a station area and yeet it.
 	for(var/mob/player in GLOB.player_list)
 		if(is_station_level(player.z))
+			if(pilot)
+				if(player == pilot) continue
+			if(tactical)
+				if(player == tactical) continue
+			if(science)
+				if(player == science) continue
 			if(shields_absorbed)
 				if(prob(50))
-					SEND_SOUND(player, 'DS13/sound/effects/damage/shield_hit.ogg')
+					var/sound/shieldhit = pick('DS13/sound/effects/damage/shield_hit.ogg','DS13/sound/effects/damage/shield_hit2.ogg')
+					SEND_SOUND(player, shieldhit)
 				continue
 			var/sound/S = pick('DS13/sound/effects/damage/shiphit.ogg','DS13/sound/effects/damage/shiphit2.ogg','DS13/sound/effects/damage/shiphit3.ogg','DS13/sound/effects/damage/creak1.ogg','DS13/sound/effects/damage/creak2.ogg')
 			SEND_SOUND(player, S)

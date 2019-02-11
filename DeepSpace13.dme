@@ -2758,6 +2758,7 @@
 #include "DS13\code\modules\overmap\overmap.dm"
 #include "DS13\code\modules\overmap\power_management.dm"
 #include "DS13\code\modules\overmap\shields.dm"
+#include "DS13\code\modules\overmap\visual_fx.dm"
 #include "DS13\code\modules\turbolift\turbolift.dm"
 #include "DS13\goonstation\airlocks.dm"
 #include "DS13\goonstation\turf_autoalign.dm"

@@ -24,6 +24,7 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	main_overmap = TRUE
 	damage = 10 //Will turn into 20 assuming weapons powered
 	class = "miranda"
+	damage_states = TRUE //Damage FX
 
 /obj/structure/overmap/shuttle
 	name = "Shuttlepod"
@@ -66,6 +67,7 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 /obj/structure/overmap/Destroy()
 	qdel(shield_overlay)
 	qdel(shields)
+	send_sound_crew('DS13/sound/effects/damage/ship_explode.ogg')
 	. = ..()
 
 
