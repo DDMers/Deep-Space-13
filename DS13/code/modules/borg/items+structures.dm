@@ -1,6 +1,6 @@
 
 /datum/outfit/borg
-	name = "borg drone"
+	name = "Borg drone"
 	id = /obj/item/card/id/silver
 	uniform =  /obj/item/clothing/under/abductor
 	suit = /obj/item/clothing/suit/space/borg
@@ -176,7 +176,7 @@
 		return 1
 	else
 		if(GLOB.borg_collective.adaptation < 100)
-			GLOB.borg_collective.adaptation += 20 //More you shoot them, the stronger they become. They are still naturally weak to bullets
+			GLOB.borg_collective.adaptation += 10 //More you shoot them, the stronger they become. They are still naturally weak to bullets
 		return 0
 
 /obj/item/clothing/suit/space/borg/proc/on_mob_move()
@@ -370,29 +370,6 @@
 		playsound(AM.loc, teleport_sound, 100,1)
 		new /obj/effect/temp_visual/dir_setting/ninja/cloak(get_turf(AM), AM.dir)
 
-/*
-/obj/structure/borg_teleporter/attack_hand(mob/user)
-	. = ..()
-	icon_state = "teleporter-off"
-	target = null
-	var/list/A
-//	A = input(user, "Set Translocation Target", "Translocation shift matrix", A) as null|anything in GLOB.teleportlocs
-	A = borg_collective.poll_drones_for_area()
-//	var/area/thearea = GLOB.teleportlocs[A]
-	var/area/thearea = pick(A)
-	if(!A.len || ISNULL(thearea)
-		thearea = pick(GLOB.teleportlocs)
-	var/list/L = list()
-	for(var/turf/T in get_area_turfs(thearea.type))
-		if(!is_blocked_turf(T))
-			L += T
-	target = pick(L)
-	if(!target)
-		to_chat(user, "Unable to set translocation target, could not locate a suitable subspace exit point.")
-		return
-	to_chat(user, "Coordinates locked: [target.x],[target.y]. Unimatrix 325, grid 006")
-	icon_state = "teleporter-on"
-*/
 /obj/structure/borg_teleporter/proc/activate()
 	icon_state = "teleporter-off"
 	target = null
@@ -430,8 +407,6 @@
 	var/convert_time = 30 //3 seconds
 	item_flags = NODROP
 	force = 18 //hella strong
-	var/dismantling_machine = 0
-	var/blacklistedmachines = list(/obj/machinery/computer/communications, /obj/machinery/computer/card)
 	var/saved_time
 	var/cooldown = 10
 	var/resource_amount = 10 //Starts with a bit so you can build a structure from the get-go
@@ -466,16 +441,16 @@
 		if(CP || CA)
 			to_chat(user,"<span class='danger'>[T] already has a structure on it.</span>")
 			return
-		var/mode = input("Borg construction.", "Build what?")in list("conversion suite", "borg alcove","wall","cancel")
+		var/mode = input("Borg construction.", "Build what?")in list("Conversion suite", "Borg alcove","Wall","Cancel")
 		var/obj/structure/chair/borg/suite
 		switch(mode)
-			if("conversion suite")
+			if("Conversion suite")
 				suite = /obj/structure/chair/borg/conversion
-			if("borg alcove")
+			if("Borg alcove")
 				suite = /obj/structure/chair/borg/charging
-			if("wall")
+			if("Wall")
 				suite = /turf/closed/wall/trek_smooth/borg
-			if("cancel")
+			if("Cancel")
 				return
 		if(resource_amount >= resource_cost)
 			busy = TRUE //stop spamming
@@ -509,7 +484,7 @@
 	M.visible_message("<span class='warning'>[user] pierces [M] with their assimilation tubules!</span>")
 	playsound(M.loc, 'sound/weapons/pierce.ogg', 100,1)
 	if(do_after(user, 50, target = M)) //5 seconds
-		M.make_borg()
+		M.mind.make_borg()
 		return
 
 /obj/item/borg_tool/afterattack(atom/I, mob/living/user, proximity)

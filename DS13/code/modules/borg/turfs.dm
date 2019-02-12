@@ -4,7 +4,7 @@
 	mod = null
 	icon = 'DS13/icons/turf/trek_wall_borg.dmi'
 	icon_state = "0"
-	sheet_type = /obj/item/stack/sheet/metal
+	sheet_type = /obj/item/stack/sheet/metal //So it doesnt drop duotanium
 	light_color = LIGHT_COLOR_GREEN
 
 /turf/closed/wall/trek_smooth/borg/Initialize()

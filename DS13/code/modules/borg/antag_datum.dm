@@ -19,6 +19,7 @@
 	borgify(owner.current)
 
 /datum/antagonist/borg_drone/on_removal()
+	to_chat(owner.current,  "We are no longer a <font color='red'><B>borg drone</B></font>")
 	unborgify(owner.current)
 	GLOB.borg_collective.drones -= owner.current //They're in the collective, but need the conversion table for all their upgrades like the tool etc.
 	. = ..()
@@ -84,15 +85,15 @@
 
 /datum/antagonist/borg_drone/proc/unborgify(mob/living/carbon/human/H = owner.current)
 	H.real_name = initial(H.name)
-	H.name = H.real_name
-	H.underwear = random_underwear(H.gender)
-	H.skin_tone = random_skin_tone()
-	H.hair_style = random_hair_style(H.gender)
-	H.facial_hair_style = random_facial_hair_style(H.gender)
-	H.hair_color = random_short_color()
-	H.facial_hair_color = H.hair_color
-	H.eye_color = random_eye_color()
-	H.dna.blood_type = random_blood_type()
+	H.name = initial(H.real_name)
+	H.underwear = initial(H.underwear)
+	H.skin_tone = initial(H.skin_tone)
+	H.hair_style = initial(H.hair_style)
+	H.facial_hair_style = initial(H.facial_hair_style)
+	H.hair_color = initial(H.hair_color)
+	H.facial_hair_color = initial(H.facial_hair_color)
+	H.eye_color = initial(H.eye_color)
+	H.dna.blood_type = initial(H.dna.blood_type)
 	H.hygiene = HYGIENE_LEVEL_NORMAL
 	H.remove_trait(TRAIT_CLUMSY, "borg")
 	H.remove_trait(TRAIT_NOGUNS, "borg")
@@ -113,5 +114,5 @@
 	message_admins("[key_name_admin(admin)] has assimilated [key_name_admin(new_owner)] into the borg collective.")
 	log_admin("[key_name(admin)] has assimilated [key_name(new_owner)] into the borg collective.")
 
-/client/proc/make_borg()
+/datum/mind/proc/make_borg()
 	add_antag_datum(/datum/antagonist/borg_drone)

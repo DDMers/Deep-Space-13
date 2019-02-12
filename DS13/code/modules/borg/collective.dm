@@ -10,10 +10,10 @@ GLOBAL_DATUM_INIT(borg_collective, /datum/borg_collective, new)
 	var/teleporters_allowed = FALSE //Give the crew a bit of prep time
 	var/list/teleporters = list() //which borg teleporters are in the world currently
 
-/datum/borg_collective/proc/activate_teleporters()
+/datum/borg_collective/proc/activate_teleporters()//In case admins want to force this.
 	for(var/obj/structure/borg_teleporter/BT in teleporters)
 		BT.activate()
-	teleporters_allowed = TRUE //In case admins want to force this.
+	teleporters_allowed = TRUE
 
 /datum/borg_collective/New()
 	. = ..()
@@ -61,7 +61,7 @@ GLOBAL_DATUM_INIT(borg_collective, /datum/borg_collective, new)
 /datum/borg_collective/proc/check_completion()
 	if(world.time <= 100 || GLOB.player_list.len <= 1) //Round literally just started or it's a lone person testing, so don't instantly end the round!
 		return
-	var/converted = drones.len //%age of people on the station who are borg'd
+	var/converted = drones.len //How many people are borg?
 	var/targets = 0
 	for(var/mob/living/player in GLOB.player_list)
 		if(player.stat != DEAD)

@@ -17,8 +17,7 @@ GLOBAL_LIST_EMPTY(borg_drone_spawns)
 	var/announce_sound = 'DS13/sound/effects/borg/announce.ogg'
 
 /datum/game_mode/borg_assimilation/pre_setup()
-//	var/n_agents = min(round(num_players() / 10), antag_candidates.len, borg_possible)
-	var/n_agents = 1 //Change this back when done testing
+	var/n_agents = min(round(num_players() / 10), antag_candidates.len, borg_possible)
 	if(n_agents >= required_enemies)
 		for(var/i = 0, i < n_agents, ++i)
 			var/datum/mind/locutus_wannabee = pick_n_take(antag_candidates)
@@ -41,7 +40,7 @@ GLOBAL_LIST_EMPTY(borg_drone_spawns)
 	GLOB.borg_collective.send_sound_collective(announce_sound)
 	GLOB.borg_collective.message_collective("The collective", "A borg proximity signal has been detected. Origin: Unimatrix 325, grid 006. Alter course to intercept.")
 	GLOB.borg_collective.message_collective("The collective", "ETA: 2 minutes. Teleporter will activate when in-range of Unimatrix 325 : Deep Space 13.")
-	addtimer(CALLBACK(src, .proc/activate_teleporters), 1200) //2 minutes prep time before they're announced.
+	addtimer(CALLBACK(src, .proc/activate_teleporters), 2 MINUTES) //2 minutes prep time before they're announced.
 	return ..()
 
 /datum/game_mode/borg_assimilation/proc/activate_teleporters()
