@@ -36,7 +36,7 @@
 	var/obj/item/organ/heart/cybernetic/upgraded/faithoftheheart = new(get_turf(H))
 	faithoftheheart.Insert(H)
 	var/obj/item/organ/lungs/cybernetic/borg/breathingisfutile = new(get_turf(H))
-		breathingisfutile.Insert(H)
+	breathingisfutile.Insert(H)
 	insert_upgrades(H)
 
 /datum/outfit/borg/proc/insert_upgrades(var/mob/living/carbon/human/H) //Give them feeding tube and toolset
@@ -228,7 +228,7 @@
 	anchored = TRUE
 	can_buckle = TRUE
 	can_be_unanchored = FALSE
-	max_buckled_mobs = TRUE
+	max_buckled_mobs = 1
 	buildstacktype = null
 	item_chair = null // if null it can't be picked up
 	var/restrained = FALSE //can they unbuckle easily?
@@ -430,7 +430,6 @@
 	var/convert_time = 30 //3 seconds
 	item_flags = NODROP
 	force = 18 //hella strong
-	var/removing_airlock = FALSE
 	var/dismantling_machine = 0
 	var/blacklistedmachines = list(/obj/machinery/computer/communications, /obj/machinery/computer/card)
 	var/saved_time
@@ -552,7 +551,7 @@
 						return FALSE
 				busy = FALSE
 		if(mode == "combat")
-			if(istype(I, /obj/machinery/door/airlock) && !removing_airlock)
+			if(istype(I, /obj/machinery/door/airlock) && !busy)
 				tear_airlock(I, user)
 				return
 			if(istype(I, /mob/living/carbon/human))
@@ -584,7 +583,7 @@
 		. = ..()
 
 /obj/item/borg_tool/proc/tear_airlock(obj/machinery/door/airlock/A, mob/user)
-	removing_airlock = TRUE
+	busy = TRUE
 	to_chat(user,"<span class='notice'>You start tearing apart the airlock...\
 		</span>")
 	playsound(src.loc, 'DS13/sound/effects/borg/machines/borgforcedoor.ogg', 100, 4)
@@ -594,4 +593,4 @@
 		A.audible_message("<span class='danger'>[A] is ripped \
 			apart by [user]!</span>")
 		qdel(A)
-	removing_airlock = FALSE
+	busy = FALSE

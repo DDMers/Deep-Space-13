@@ -83,7 +83,7 @@
 	return "(auxiliary subprocessor of [GLOB.borg_collective.name])"
 
 /datum/antagonist/borg_drone/proc/unborgify(mob/living/carbon/human/H = owner.current)
-	H.real_name = random_unique_name(H.gender)
+	H.real_name = initial(H.name)
 	H.name = H.real_name
 	H.underwear = random_underwear(H.gender)
 	H.skin_tone = random_skin_tone()
@@ -113,6 +113,5 @@
 	message_admins("[key_name_admin(admin)] has assimilated [key_name_admin(new_owner)] into the borg collective.")
 	log_admin("[key_name(admin)] has assimilated [key_name(new_owner)] into the borg collective.")
 
-/mob/living/carbon/human/proc/make_borg()
-	if(mind)
-		mind.add_antag_datum(/datum/antagonist/borg_drone)
+/client/proc/make_borg()
+	add_antag_datum(/datum/antagonist/borg_drone)
