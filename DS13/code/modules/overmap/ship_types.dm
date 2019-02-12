@@ -32,6 +32,7 @@
 	class = "warbird"
 	damage_states = FALSE //Damage FX
 	damage = 10 //Will turn into 20 assuming weapons powered
+	faction = "romulan"
 
 /obj/structure/overmap/miranda/apply_shield_boost() //Miranda starts with some boosted shields
 	shields.north += max_shield_health

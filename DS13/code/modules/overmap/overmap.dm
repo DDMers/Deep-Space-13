@@ -40,6 +40,8 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	health = max_health
 	check_power()
 	GLOB.overmap_ships += src
+
+
 //	var/area/A = get_area(src)
 //	if(istype(A, /area/ship))		UNCOMMENT THIS WHEN DOCKING IS DONE!
 	//	override_linked_ship = A

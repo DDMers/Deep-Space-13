@@ -80,6 +80,21 @@
 			var/y_speed = 5 * sin(angle)
 			P.PixelMove(x_speed,y_speed) //Cause the parallax to move as the ship does
 			pilot.hud_used.update_parallax()
+	if(tactical && tactical.client)
+		for(var/PP in tactical.client.parallax_layers)
+			var/obj/screen/parallax_layer/P = PP
+			var/x_speed = 5 * cos(angle)
+			var/y_speed = 5 * sin(angle)
+			P.PixelMove(x_speed,y_speed) //Cause the parallax to move as the ship does
+			tactical.hud_used.update_parallax()
+	if(science && science.client)
+		for(var/PP in science.client.parallax_layers)
+			var/obj/screen/parallax_layer/P = PP
+			var/x_speed = 5 * cos(angle)
+			var/y_speed = 5 * sin(angle)
+			P.PixelMove(x_speed,y_speed) //Cause the parallax to move as the ship does
+			science.hud_used.update_parallax()
+
 
 //Now it's time to handle people observing the ship.
 /mob/camera/aiEye/remote/overmap_observer
@@ -205,44 +220,43 @@
 		eye = mob
 
 
-atom/movable
-	var
-		real_pixel_x = 0 //variables for the real pixel_x
-		real_pixel_y = 0 //variables for shit
-		pixel_collision_size_x = 0
-		pixel_collision_size_y = 0
-	proc
-		PixelMove(var/x_to_move,var/y_to_move) //Don't ask. It just works
-			var/obj/structure/overmap/O = src
-			for(var/turf/e in obounds(src, real_pixel_x + x_to_move + pixel_collision_size_x/4, real_pixel_y + y_to_move + pixel_collision_size_y/4, real_pixel_x + x_to_move + -pixel_collision_size_x/4, real_pixel_y + y_to_move + -pixel_collision_size_x/4) )//Basic block collision
-				if(e.density == 1) //We can change this so the ship takes damage later
-					if(istype(src, /obj/structure/overmap))
-						O.angle -= 180
-						O.EditAngle()
-						O.vel = 1
-						sleep(10)
-						O.vel = 0
-					return 0
-			real_pixel_x = real_pixel_x + x_to_move
-			real_pixel_y = real_pixel_y + y_to_move
-			while(real_pixel_x > 32) //Modulo doesn't work with this kind of stuff, don't know if there's a better method.
-				real_pixel_x = real_pixel_x - 32
-				x = x + 1
-			while(real_pixel_x < -32)
-				real_pixel_x = real_pixel_x + 32
-				x = x - 1
-			while(real_pixel_y > 32) //Modulo doesn't work with this kind of stuff, don't know if there's a better method.
-				real_pixel_y = real_pixel_y - 32
-				y = y + 1
-			while(real_pixel_y < -32)
-				real_pixel_y = real_pixel_y + 32
-				y = y - 1
-			pixel_x = real_pixel_x
-			pixel_y = real_pixel_y
+/atom/movable
+	var/real_pixel_x = 0 //variables for the real pixel_x
+	var/real_pixel_y = 0 //variables for shit
+	var/pixel_collision_size_x = 0
+	var/pixel_collision_size_y = 0
+
+/atom/movable/proc/PixelMove(var/x_to_move,var/y_to_move) //Don't ask. It just works
+	var/obj/structure/overmap/O = src
+	for(var/turf/e in obounds(src, real_pixel_x + x_to_move + pixel_collision_size_x/4, real_pixel_y + y_to_move + pixel_collision_size_y/4, real_pixel_x + x_to_move + -pixel_collision_size_x/4, real_pixel_y + y_to_move + -pixel_collision_size_x/4) )//Basic block collision
+		if(e.density == 1) //We can change this so the ship takes damage later
 			if(istype(src, /obj/structure/overmap))
-				O.shield_overlay.pixel_x = pixel_x
-				O.shield_overlay.pixel_y = pixel_y
-				O.shield_overlay.forceMove(get_turf(src))
+				O.angle -= 180
+				O.EditAngle()
+				O.vel = 1
+				sleep(10)
+				O.vel = 0
+			return FALSE
+	real_pixel_x = real_pixel_x + x_to_move
+	real_pixel_y = real_pixel_y + y_to_move
+	while(real_pixel_x > 32) //Modulo doesn't work with this kind of stuff, don't know if there's a better method.
+		real_pixel_x = real_pixel_x - 32
+		x = x + 1
+	while(real_pixel_x < -32)
+		real_pixel_x = real_pixel_x + 32
+		x = x - 1
+	while(real_pixel_y > 32) //Modulo doesn't work with this kind of stuff, don't know if there's a better method.
+		real_pixel_y = real_pixel_y - 32
+		y = y + 1
+	while(real_pixel_y < -32)
+		real_pixel_y = real_pixel_y + 32
+		y = y - 1
+	pixel_x = real_pixel_x
+	pixel_y = real_pixel_y
+	if(istype(src, /obj/structure/overmap))
+		O.shield_overlay.pixel_x = pixel_x
+		O.shield_overlay.pixel_y = pixel_y
+		O.shield_overlay.forceMove(get_turf(src))
 
 /obj/structure/overmap/relaymove(mob/mob,dir)
 	if(!pilot || mob != pilot)

@@ -11,6 +11,8 @@
 	engine_power = 1
 	power_slots -= 3
 	check_power()
+	if(AI_enabled)
+		take_control()
 
 /obj/structure/overmap/proc/check_power()
 	if(power_slots < 0)
@@ -236,3 +238,6 @@
 	science = pilot
 	tactical = pilot
 	after_enter(pilot)
+
+/obj/structure/overmap/proc/cheat() //I am supremely lazy -Kmc
+	route_controls()

@@ -130,7 +130,7 @@
 		return
 	if(tractor_target.shields.check_vulnerability())
 		tractor_target.nav_target = src
-		if(get_dist(nav_target, src) > 1) //To stop it glitching out when it reaches us
+		if(get_dist(src, tractor_target) > 1) //To stop it glitching out when it reaches us
 			if(tractor_target.vel <= 0)
 				tractor_target.vel = 1
 		else
@@ -253,6 +253,7 @@
 		new /obj/effect/temp_visual/ship_explosion(get_turf(src))
 		show_damage(amount)
 		special_fx(FALSE)
+	GLOB.music_controller.play() //Try play some battle music, if there's already battle music then don't bother :)
 	if(health <= 0)
 		qdel(src)
 

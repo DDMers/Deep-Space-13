@@ -53,7 +53,7 @@
 			sound = 'DS13/sound/effects/voice/Hull05.ogg'
 			last_hull_warned = 5
 	if(!hull_warn_countdown)
-		addtimer(CALLBACK(src, .proc/reset_hull_warning), 60)
+		addtimer(CALLBACK(src, .proc/reset_hull_warning), 600)
 		hull_warn_countdown = TRUE
 	if(sound)
 		voice_alert(sound, override)
