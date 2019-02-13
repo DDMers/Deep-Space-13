@@ -14,7 +14,7 @@
 	if(AI_enabled)
 		take_control()
 
-/obj/structure/overmap/proc/check_power()
+/obj/structure/overmap/proc/check_power(var/play_voice = FALSE)
 	if(power_slots < 0)
 		power_slots = 0
 		return
@@ -26,6 +26,8 @@
 	damage = new_damage
 	max_speed = new_speed
 	turnspeed = new_turnspeed
+	if(!play_voice)
+		return //Stop spamming voice whenever you fire
 	if(shield_power <= 0)
 		shields.depower()
 		shields.chargerate = 0
@@ -39,6 +41,7 @@
 		voice_alert('DS13/sound/effects/voice/ImpulseDisabled.ogg')
 
 /obj/structure/overmap/proc/after_enter(mob/user)
+	user.throw_alert("Radar",/obj/screen/alert/radar)
 	if(user == science)
 		user.throw_alert("Shield Management", /obj/screen/alert/power_manager/shields)
 		user.throw_alert("Weapon Management", /obj/screen/alert/power_manager/weapons)
@@ -49,6 +52,7 @@
 			C.update_icon() //Show what power level we are currently at
 
 /obj/structure/overmap/proc/after_exit(mob/user)
+	user.clear_alert("Radar",/obj/screen/alert/radar)
 	if(user == science)
 		user.clear_alert("Shield Management", /obj/screen/alert/power_manager/shields)
 		user.clear_alert("Weapon Management", /obj/screen/alert/power_manager/weapons)
@@ -214,18 +218,18 @@
 	L.changeNext_move(CLICK_CD_RESIST)
 	if(paramslist["ctrl"]) // screen objects don't do the normal Click() stuff so we'll cheat
 		remove_power()
-		theship.check_power()
+		theship.check_power(TRUE)
 		return
 	if(paramslist["alt"]) // screen objects don't do the normal Click() stuff so we'll cheat
 		remove_power()
-		theship.check_power()
+		theship.check_power(TRUE)
 		return
 	theship.check_power()//Ok first off, do we have any power to transfer?
 	if(theship.power_slots > 0) //Looks like we do!
 		add_power()
 	else
 		to_chat(usr, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>power transfer failed! divert power from another system first.</span>")
-	theship.check_power() //Now check the power after we're done modifying
+	theship.check_power(TRUE) //Now check the power after we're done modifying
 
 /obj/structure/overmap/proc/route_controls() //Demo purposes. This means you can shoot, move, and manage all at the same time!
 	if(!pilot)
