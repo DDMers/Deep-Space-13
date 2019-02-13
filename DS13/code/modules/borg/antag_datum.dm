@@ -115,4 +115,5 @@
 	log_admin("[key_name(admin)] has assimilated [key_name(new_owner)] into the borg collective.")
 
 /datum/mind/proc/make_borg()
-	add_antag_datum(/datum/antagonist/borg_drone)
+	if(!(has_antag_datum(/datum/antagonist/borg_drone)))
+		add_antag_datum(/datum/antagonist/borg_drone)
