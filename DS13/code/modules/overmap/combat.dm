@@ -18,6 +18,7 @@
 	var/obj/structure/overmap/tractor_target = null //Are we tractoring a target? This forces it to move towards us.
 	var/datum/beam/tractor_beam = null
 	var/hail_ready = TRUE //Hailing cooldown
+	var/torpedo_damage = 30 //30 damage for free
 
 /obj/structure/overmap/proc/send_sound_crew(var/sound/S)
 	if(pilot)
@@ -172,7 +173,7 @@
 			A.preparePixelProjectile(target,src)
 			A.pixel_x = rand(0, 5)
 			A.fire()
-			target.take_damage(src, damage)
+			target.take_damage(src, torpedo_damage)
 		else
 			if(tactical)
 				voice_alert('DS13/sound/effects/voice/OutOfTorpedoes.ogg')
@@ -225,12 +226,10 @@
 				voice_alert(S)
 			return
 
-
-//	if(!user.overmap_ship) Replaced by consoles...for now!
-//		enter(user)
-
 /obj/structure/overmap/take_damage(var/atom/source, var/amount = 10)
 	. = ..()
+	if(!isnum(amount))
+		return//Catch: The amount was inputted as something it's not supposed to. This is often caused by torpedoes because projectile code HATES him (click to find out more)
 	visual_damage()
 	if(pilot)
 		shake_camera(pilot, 1, 1)

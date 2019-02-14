@@ -158,8 +158,6 @@
 				science = user
 	operators += user
 	user.overmap_ship = src
-	user.client.AdjustView()
-	user.update_sight()
 	process = TRUE
 	CreateEye(user) //Your body stays there but your mind stays with me - 6 (Battlestar galactica)
 	after_enter(user)
@@ -167,6 +165,10 @@
 		start_process() //This needs to come LAST as it's a while loop!
 
 /obj/structure/overmap/proc/CreateEye(mob/user)
+	if(!user.client)
+		return
+	user.client.AdjustView()
+	user.update_sight()
 	var/mob/camera/aiEye/remote/overmap_observer/eyeobj = new
 	eyeobj.origin = src
 	crew += eyeobj

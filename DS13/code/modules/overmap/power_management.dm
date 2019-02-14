@@ -18,7 +18,7 @@
 	if(power_slots < 0)
 		power_slots = 0
 		return
-	var/new_chargerate = initial(shields.chargerate) + shield_power
+	var/new_chargerate = initial(shields.chargerate) + (shield_power/2) //Nerfed this so that shields become more of an issue when they go down
 	var/new_damage = initial(damage)+(weapon_power*10)
 	var/new_speed = initial(max_speed)+engine_power
 	var/new_turnspeed = initial(turnspeed)+(engine_power/5) //Slight buff to turnspeed, maximum of 0.6 which does make a decent difference

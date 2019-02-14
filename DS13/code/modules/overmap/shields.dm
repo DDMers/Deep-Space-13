@@ -68,6 +68,8 @@ Dirs! (nicked from byond forum)
 //Damage logic. This is a looot of finite state machines :b1:
 
 /datum/shield_controller/proc/absorb_damage(num, dir) //Damage the directional shields. If it returns TRUE then it blocked the attack successfully
+	if(!isnum(dir) || !isnum(num))
+		return
 	switch(dir)
 		if(1)
 			if(north >= num)
@@ -197,7 +199,7 @@ Dirs! (nicked from byond forum)
 			if(20 to 39) shield.color = "#FF0000"//Red
 			if(40 to 59)	shield.color = "#CE8D34" //orange
 			if(60 to 79)	shield.color = "#FF9300"//Light orange
-			if(80 to 90)	shield.color = "#4EC3D3" //Light ish green
-			if(91 to 100) shield.color = "#00E0FF"//Very light blue
+			if(80 to 90)	shield.color = "#008000" //Light ish green
+			if(91 to 100) shield.color = "#4EC3D3"//Very light blue
 		holder.shield_overlay.add_overlay(shield)
 
