@@ -781,13 +781,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/bridge)
-"cf" = (
-/obj/structure/chair/trek{
-	icon_state = "comfy";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/bridge)
 "cg" = (
 /obj/item/twohanded/required/kirbyplants{
 	icon_state = "plant-21"
@@ -795,13 +788,9 @@
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
 "ch" = (
-/obj/structure/chair/trek,
-/turf/open/floor/carpet/trek,
-/area/bridge)
-"ci" = (
 /obj/structure/chair/trek{
 	icon_state = "comfy";
-	dir = 4
+	dir = 1
 	},
 /turf/open/floor/carpet/trek,
 /area/bridge)
@@ -839,11 +828,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
-"co" = (
-/obj/structure/table/reinforced,
-/obj/machinery/recharger,
-/turf/open/floor/carpet/trek,
-/area/bridge)
 "cp" = (
 /obj/machinery/computer/atmos_alert{
 	dir = 8
@@ -2907,6 +2891,14 @@
 "Hn" = (
 /turf/open/floor/carpet/trek,
 /area/turbolift/tertiary)
+"Ii" = (
+/obj/structure/overmap_component/viewscreen,
+/turf/closed/wall/trek_smooth/room,
+/area/bridge)
+"IQ" = (
+/obj/structure/overmap_component/helm/miranda,
+/turf/open/floor/carpet/trek,
+/area/bridge)
 "JP" = (
 /obj/machinery/door/airlock/trek/goon/turbolift,
 /turf/open/floor/carpet/trek,
@@ -2921,6 +2913,14 @@
 /obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/fore)
+"WH" = (
+/obj/structure/overmap_component/tactical/miranda,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"YL" = (
+/obj/structure/overmap_component/science/miranda,
+/turf/open/floor/carpet/trek,
+/area/bridge)
 
 (1,1,1) = {"
 aa
@@ -33360,7 +33360,7 @@ ge
 bT
 aq
 aq
-cf
+aq
 aq
 aq
 aq
@@ -33617,8 +33617,8 @@ aq
 en
 aq
 aq
-aq
-cl
+WH
+ch
 aq
 aq
 cq
@@ -33874,10 +33874,10 @@ aq
 ek
 bU
 aq
-bU
-bU
 aq
 aq
+aq
+ch
 cq
 aa
 aa
@@ -34126,15 +34126,15 @@ bl
 bl
 bw
 by
-bA
+Ii
 aq
 gl
-aq
 eA
+IQ
 ch
+aq
+aq
 cm
-aq
-aq
 cq
 aa
 aa
@@ -34388,10 +34388,10 @@ aq
 gm
 bU
 aq
-bU
-co
 aq
 aq
+aq
+ch
 cq
 aa
 aa
@@ -34645,8 +34645,8 @@ aq
 en
 aq
 aq
-aq
-aq
+YL
+ch
 aq
 aq
 cq
@@ -34902,9 +34902,9 @@ gf
 fH
 aq
 aq
-ci
 aq
 aq
+cl
 aq
 cq
 aa
