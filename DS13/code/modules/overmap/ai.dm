@@ -43,7 +43,7 @@
 		vel += acceleration
 	if(!process)
 		process = TRUE
-		start_process() //We need to process from the beginning
+		start_process()
 	if(target)
 		if(get_dist(src, target) > range) //Target ran away. Move on.
 			target = null

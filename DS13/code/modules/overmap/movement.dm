@@ -29,8 +29,11 @@
 /obj/structure/overmap/Initialize()
 	. = ..()
 	OvermapInitialize()
+	spawn(0) //Branch off here so we can run our while loop.
+		start_process()
 
 /obj/structure/overmap/proc/start_process()
+	process = TRUE
 	while(process)
 		if(QDELETED(src))
 			process = FALSE
@@ -44,8 +47,8 @@
 
 //Procs
 /obj/structure/overmap/proc/EditAngle() //Visibly rotate the sprite
-	var/matrix/M = matrix() //create matrix
-	M.Turn(-angle) //reverse angle
+	var/matrix/M = matrix() //create matrix for transformation
+	M.Turn(-angle) //reverse angle due to weird logic
 	src.transform = M //set matrix
 
 /obj/structure/overmap/proc/ProcessMove()
@@ -136,7 +139,7 @@
 /obj/structure/overmap/proc/enter(mob/living/carbon/human/user, var/what = "pilot")
 	if(user.client)
 		if(!what)
-			what = alert("What role would you like to pick?","[name]","pilot","tactical","science")
+			what = alert(user,"What role would you like to pick?","[name]","pilot","tactical","science")
 		switch(what)
 			if("pilot")
 				if(pilot)
@@ -161,9 +164,8 @@
 	CreateEye(user) //Your body stays there but your mind stays with me - 6 (Battlestar galactica)
 	after_enter(user)
 	if(!process)
-		process = TRUE
-		spawn(0) //Allow the proc to finish, also run our while loop
-			start_process() //This needs to come LAST as it's a while loop!
+		spawn(0) //We need to process to move. We spawn() here so we don't hold up the proc based on the while loop, same as initialize.
+			start_process()
 
 /obj/structure/overmap/proc/CreateEye(mob/user)
 	if(!user.client)
@@ -184,9 +186,6 @@
 	eyeobj.forceMove(get_turf(src))
 	user.remote_control = eyeobj
 	user.reset_perspective(eyeobj)
-	if(!process)
-		process = TRUE
-		start_process() //This needs to come LAST as it's a while loop!
 
 /obj/structure/overmap/proc/exit(mob/user) //You don't get to leave
 	if(user.client)
@@ -324,11 +323,19 @@
 /obj/structure/overmap/proc/TurnTo(atom/target)
 	if(target)
 		var/obj/structure/overmap/self = src //I'm a reel cumputer syentist :)
-		EditAngle()
 		var/target_angle = 450 - SIMPLIFY_DEGREES(ATAN2((32*target.y+target.pixel_y) - (32*self.y+self.pixel_y), (32*target.x+target.pixel_x) - (32*self.x+self.pixel_x)))
-		if(angle > target_angle)
-			angle -= turnspeed
-		if(angle < target_angle)
-			angle += turnspeed
+		EditAngle()
 		if(angle == target_angle)
 			return
+		if(angle > target_angle) //This one works
+			var/goal = angle - target_angle
+			if(goal < turnspeed)
+				angle -= goal
+				return
+			angle -= turnspeed
+		if(angle < target_angle)
+			var/goal = target_angle - angle
+			if(goal < turnspeed)
+				angle += goal
+				return
+			angle += turnspeed
