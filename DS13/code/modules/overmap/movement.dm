@@ -56,12 +56,9 @@
 	var/y_speed = vel * sin(angle)
 	PixelMove(x_speed,y_speed)
 	parallax_update()
-	if(pilot && pilot.client)
-		pilot.client.AdjustView()
-	if(tactical && tactical.client)
-		tactical.client.AdjustView()
-	if(science && science.client)
-		science.client.AdjustView()
+	for(var/mob/M in operators)
+		if(M.client)
+			M.client.AdjustView()
 	if(nav_target)
 		if(nav_target in orange(src, 1)) //if we're near our navigational target, slam on the brakes
 			if(vel > 0)
@@ -117,6 +114,7 @@
 	qdel(remote_eye)
 	target = null
 	user.remote_control = null
+	user.overmap_ship = null
 	if(user.client)
 		user.reset_perspective(null)
 	user = null
@@ -132,6 +130,8 @@
 	. = ..()
 	while(!QDELETED(src) && origin)
 		forceMove(get_turf(origin))
+		if(eye_user && eye_user.client)
+			eye_user.client.AdjustView()
 
 /obj/structure/overmap/proc/enter(mob/living/carbon/human/user, var/what = "pilot")
 	if(user.client)
@@ -158,11 +158,12 @@
 				science = user
 	operators += user
 	user.overmap_ship = src
-	process = TRUE
 	CreateEye(user) //Your body stays there but your mind stays with me - 6 (Battlestar galactica)
 	after_enter(user)
-	spawn(0) //Allow the proc to finish, also run our while loop
-		start_process() //This needs to come LAST as it's a while loop!
+	if(!process)
+		process = TRUE
+		spawn(0) //Allow the proc to finish, also run our while loop
+			start_process() //This needs to come LAST as it's a while loop!
 
 /obj/structure/overmap/proc/CreateEye(mob/user)
 	if(!user.client)
@@ -183,6 +184,9 @@
 	eyeobj.forceMove(get_turf(src))
 	user.remote_control = eyeobj
 	user.reset_perspective(eyeobj)
+	if(!process)
+		process = TRUE
+		start_process() //This needs to come LAST as it's a while loop!
 
 /obj/structure/overmap/proc/exit(mob/user) //You don't get to leave
 	if(user.client)

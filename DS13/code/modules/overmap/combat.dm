@@ -21,24 +21,12 @@
 	var/torpedo_damage = 30 //30 damage for free
 
 /obj/structure/overmap/proc/send_sound_crew(var/sound/S)
-	if(pilot)
-		SEND_SOUND(pilot, S)
-		if(pilot == tactical || pilot == science)
-			return //Don't earspam admins testing stuff
-	if(tactical)
-		SEND_SOUND(tactical, S)
-	if(science)
-		SEND_SOUND(science, S)
+	for(var/mob/M in operators)
+		SEND_SOUND(M, S)
 
 /obj/structure/overmap/proc/send_text_crew(var/S)
-	if(pilot)
-		to_chat(pilot, S)
-		if(pilot == tactical || pilot == science)
-			return //Don't earspam admins testing stuff
-	if(tactical)
-		to_chat(tactical, S)
-	if(science)
-		to_chat(science, S)
+	for(var/mob/M in operators)
+		to_chat(M, S)
 
 /obj/effect/temp_visual/ship_explosion
 	icon = 'DS13/icons/overmap/effects.dmi'
@@ -146,12 +134,8 @@
 	addtimer(CALLBACK(src, .proc/recharge_weapons), weapons_cooldown)
 	weapons_ready = FALSE
 	check_power()
-	if(pilot)
-		shake_camera(pilot, 1, 3)
-	if(tactical)
-		shake_camera(tactical, 1, 3)
-	if(science)
-		shake_camera(science, 1, 3)
+	for(var/mob/M in operators)
+		shake_camera(M, 1, 3)
 	if(fire_mode == "phaser")
 		charging = TRUE
 		var/source = src
@@ -231,12 +215,8 @@
 	if(!isnum(amount))
 		return//Catch: The amount was inputted as something it's not supposed to. This is often caused by torpedoes because projectile code HATES him (click to find out more)
 	visual_damage()
-	if(pilot)
-		shake_camera(pilot, 1, 1)
-	if(tactical)
-		shake_camera(tactical, 1, 1)
-	if(science)
-		shake_camera(science, 1, 1)
+	for(var/mob/M in operators)
+		shake_camera(M, 1, 3)
 	if(istype(source, /obj/item/projectile))
 		send_sound_crew('DS13/sound/effects/damage/torpedo_hit.ogg')
 	var/target_angle = Get_Angle(src, source) //Fire a beam from them to us X --->>>> us. This should line up nicely with the phaser beam effect

@@ -1,6 +1,7 @@
 /obj/structure/overmap_component
 	name = "thing"
 	icon = 'DS13/icons/overmap/components.dmi'
+	density = TRUE
 	anchored = TRUE
 	can_be_unanchored = TRUE
 	var/obj/structure/overmap/linked
@@ -22,9 +23,8 @@
 				to_chat(L, "You require a high level access card to use this console!.")
 				return
 			linked.enter(L, position)
-		else
-			to_chat(L, "You require a high level access card to use this console!.")
-			return
+	to_chat(L, "You require a high level access card to use this console!.")
+	return
 
 
 /obj/structure/overmap_component/Initialize()
@@ -47,14 +47,6 @@
 	desc = "Allows you to see your ship."
 	icon_state = "viewscreen"
 	icon = 'DS13/icons/obj/decor/viewscreen.dmi'
-	id = "nope"
-
-
-/obj/structure/overmap_component/viewscreen
-	name = "Viewscreen"
-	desc = "Allows you to see your ship."
-	icon_state = "viewscreen"
-	icon = 'DS13/icons/obj/decor/viewscreen.dmi'
 	id = "miranda"
 
 /obj/structure/overmap_component/viewscreen/examine(mob/user)
@@ -63,7 +55,7 @@
 	if(isobserver(user) && linked)
 		user.forceMove(get_turf(linked))
 		return
-	linked.CreateEye(user)
+	linked.enter(user, "observer",TRUE) //Enter them as an observer
 	. = ..()
 
 /obj/structure/overmap_component/helm
