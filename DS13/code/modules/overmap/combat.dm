@@ -19,6 +19,7 @@
 	var/datum/beam/tractor_beam = null
 	var/hail_ready = TRUE //Hailing cooldown
 	var/torpedo_damage = 30 //30 damage for free
+	var/area/linked_area = null
 
 /obj/structure/overmap/proc/send_sound_crew(var/sound/S)
 	for(var/mob/M in operators)
@@ -248,8 +249,9 @@
 	do_sparks(5, 8, src)
 
 /obj/structure/overmap/proc/special_fx(var/shields_absorbed)
-	if(override_linked_ship || !main_overmap)
-		return //Not just yet sweetie :)
+	if(!main_overmap)
+		special_fx_targeted(shields_absorbed)
+		return
 	var/area = pick(GLOB.teleportlocs)
 	var/area/target = GLOB.teleportlocs[area] //Pick a station area and yeet it.
 	for(var/mob/player in GLOB.player_list)
@@ -277,6 +279,28 @@
 		var/turf/T = pick(get_area_turfs(target))
 		explosion(T,3,4,3)
 
+/obj/structure/overmap/proc/find_area()
+	for(var/area/AR in GLOB.sortedAreas)
+		if(istype(AR, /area/ship))
+			var/area/ship/S = AR
+			if(S.class == class)
+				linked_area = AR
+				return TRUE
+
+/obj/structure/overmap/proc/special_fx_targeted(var/shields_absorbed) //This ship isn't the main overmap, so find the area we want and apply damage to it
+	if(!linked_area)
+		find_area()
+	for(var/mob/player in linked_area)
+		if(shields_absorbed)
+			if(prob(50))
+				var/sound/shieldhit = pick('DS13/sound/effects/damage/shield_hit.ogg','DS13/sound/effects/damage/shield_hit2.ogg')
+				SEND_SOUND(player, shieldhit)
+			continue
+		var/sound/S = pick('DS13/sound/effects/damage/shiphit.ogg','DS13/sound/effects/damage/shiphit2.ogg','DS13/sound/effects/damage/shiphit3.ogg','DS13/sound/effects/damage/creak1.ogg','DS13/sound/effects/damage/creak2.ogg')
+		SEND_SOUND(player, S)
+		if(prob(10))
+			var/turf/T = pick(get_area_turfs(linked_area))
+			explosion(T,3,4,3)
 
 /obj/structure/overmap/proc/show_damage(var/amount, var/shields_absorbed) //Flash up numbers showing how much damage we just took
 	if(amount > 100)

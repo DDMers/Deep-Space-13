@@ -40,7 +40,7 @@
 			return
 		stoplag()
 		ProcessMove()
-		if(nav_target)
+		if(nav_target && !movement_block)
 			TurnTo(nav_target)
 		if(tractor_target)
 			tractor_pull()
@@ -264,7 +264,7 @@
 		O.shield_overlay.forceMove(get_turf(src))
 
 /obj/structure/overmap/relaymove(mob/mob,dir)
-	if(!pilot || mob != pilot)
+	if(!pilot || mob != pilot || movement_block)
 		return //Only pilot can steer :)
 	if(mob.client)
 		switch(dir)

@@ -40,11 +40,27 @@ Dirs! (nicked from byond forum)
 	var/northwest = 0
 	var/southeast = 0
 	var/southwest = 0
+	var/north_max = 0 //The following refer to the individual HPS of the directional shields. These will all get set accordingly based on get_dir
+	var/south_max = 0
+	var/east_max = 0
+	var/west_max = 0
+	var/northeast_max = 0
+	var/northwest_max = 0
+	var/southeast_max = 0
+	var/southwest_max = 0
 
 /datum/shield_controller/New()
 	. = ..()
 	START_PROCESSING(SSobj,src)
 	addtimer(CALLBACK(src, .proc/replenish_shields), 20)//Allow time to pick up the max shields HP stat from our holder
+	north_max = max_health
+	south_max = max_health
+	east_max = max_health
+	west_max = max_health
+	northeast_max = max_health
+	northwest_max = max_health
+	southeast_max = max_health
+	southwest_max = max_health
 
 /datum/shield_controller/proc/replenish_shields()
 	adjust_all_shields(max_health) //Let's heal
@@ -128,14 +144,14 @@ Dirs! (nicked from byond forum)
 			return FALSE
 
 /datum/shield_controller/proc/adjust_all_shields(var/num)
-	if(north < max_health)north += num 		//Set all the directionals to a desired num. Useful when spawning a ship or if you want to fully disable all shields
-	if(south < max_health)south += num
-	if(east < max_health)east += num
-	if(west < max_health)west += num
-	if(northeast < max_health)northeast += num
-	if(northwest < max_health)northwest += num
-	if(southeast < max_health)southeast += num
-	if(southwest < max_health)southwest += num
+	if(north < north_max)north += num 		//Set all the directionals to a desired num. Useful when spawning a ship or if you want to fully disable all shields
+	if(south < south_max)south += num
+	if(east < east_max)east += num
+	if(west < west_max)west += num
+	if(northeast < northeast_max)northeast += num
+	if(northwest < northwest_max)northwest += num
+	if(southeast < southeast_max)southeast += num
+	if(southwest < southwest_max)southwest += num
 	generate_overlays()
 	return TRUE
 
@@ -171,17 +187,37 @@ Dirs! (nicked from byond forum)
 	var/progress = 0 //How damaged is this shield? We examine the position of index "I" in the for loop to check which directional we want to check
 	var/goal = max_health //How much is the max hp of the shield? This is constant through all of them
 	for(var/I = 0, I < 11, I++) //Time to run through our dirs!
+		var/boosted_pixel_x = 0
+		var/boosted_pixel_y = 0 //Offset pixel X for having doubleshields
 		switch(I)
-			if(1) progress = north //So what HP are we looking at here?
-			if(2) progress = south
-			if(3) continue //Not a cardinal
-			if(4) progress = east
-			if(5) progress = southwest
-			if(6) progress = southeast //Remember, max health is the max health any directional shield can have at any given time.
-			if(7) continue //Not a cardinal
-			if(8) progress = west
-			if(9) progress = northwest
-			if(10) progress = northeast
+			if(1)
+				progress = north //So what HP are we looking at here?
+				boosted_pixel_y = 4
+			if(2)
+				progress = south
+				boosted_pixel_y = -4
+			if(3)
+				continue //Not a cardinal
+			if(4)
+				progress = east
+				boosted_pixel_x = 4
+			if(5)
+				progress = southwest
+				boosted_pixel_y = 4
+			if(6)
+				progress = southeast //Remember, max health is the max health any directional shield can have at any given time.
+				boosted_pixel_y = -4
+			if(7)
+				continue //Not a cardinal
+			if(8)
+				progress = west
+				boosted_pixel_x = -4
+			if(9)
+				progress = northwest
+				boosted_pixel_y = 4
+			if(10)
+				progress = northeast
+				boosted_pixel_y = -4
 		var/stored = 0
 		var/test = max_health*2
 		if(progress >= test)
@@ -191,15 +227,20 @@ Dirs! (nicked from byond forum)
 		var/image/shield = new
 		shield.icon = holder.icon
 		shield.icon_state = "[I]"
-		if(stored >= 1)
-			shield.icon_state = "[I]-d" //Double shield! Shows you've boosted this specific shield
-		shield.color = "#CE8D34" //orange, just in case the number falls out of range
 		switch(progress) //Colour in our shields based on damage
 			if(0 to 19) shield.alpha = 0 //Blacked out
 			if(20 to 39) shield.color = "#FF0000"//Red
 			if(40 to 59)	shield.color = "#CE8D34" //orange
 			if(60 to 79)	shield.color = "#FF9300"//Light orange
-			if(80 to 90)	shield.color = "#008000" //Light ish green
+			if(80 to 90)	shield.color = "#FFFF00" //Yellow
 			if(91 to 100) shield.color = "#4EC3D3"//Very light blue
+		if(stored >= 1)
+			var/image/double = new
+			double.icon = holder.icon
+			double.icon_state = "[I]" //Double shield! Shows you've boosted this specific shield
+			double.pixel_x = boosted_pixel_x
+			double.pixel_y = boosted_pixel_y
+			double.color = shield.color
+			holder.shield_overlay.add_overlay(double)
 		holder.shield_overlay.add_overlay(shield)
 

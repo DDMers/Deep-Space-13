@@ -5,7 +5,7 @@
 	anchored = TRUE
 	can_be_unanchored = TRUE
 	var/obj/structure/overmap/linked
-	var/id = "nothing"
+	var/id = "ds13"
 	var/position = null //Set this to either "pilot", "tactical" or "science"
 
 /obj/structure/overmap_component/attack_hand(mob/user) //this doesnt work!!
@@ -43,6 +43,12 @@
 			linked = OM
 
 /obj/structure/overmap_component/viewscreen
+	name = "Viewscreen"
+	desc = "Allows you to see your ship."
+	icon_state = "viewscreen"
+	icon = 'DS13/icons/obj/decor/viewscreen.dmi'
+
+/obj/structure/overmap_component/viewscreen/miranda
 	name = "Viewscreen"
 	desc = "Allows you to see your ship."
 	icon_state = "viewscreen"

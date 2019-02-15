@@ -19,6 +19,10 @@
 /obj/structure/overmap/warbird,
 /turf/open/space/basic,
 /area/space)
+"f" = (
+/obj/structure/overmap/ds13,
+/turf/open/space/basic,
+/area/space)
 
 (1,1,1) = {"
 b
@@ -7970,10 +7974,10 @@ a
 a
 a
 a
+d
 a
 a
-a
-a
+e
 a
 a
 a
@@ -28420,7 +28424,7 @@ a
 a
 a
 a
-e
+a
 a
 a
 a
@@ -29186,7 +29190,7 @@ a
 a
 a
 a
-a
+f
 a
 a
 a
@@ -30730,7 +30734,7 @@ a
 a
 a
 a
-d
+a
 a
 a
 a
