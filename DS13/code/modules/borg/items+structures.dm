@@ -281,10 +281,9 @@
 
 /obj/structure/chair/borg/charging/Initialize()
 	. = ..()
-	START_PROCESSING(SSobj, src)
 
 /obj/structure/chair/borg/charging/process()
-	if(user)
+	if(user && user in get_turf(src))
 		user.adjustBruteLoss(-3)
 		user.adjustFireLoss(-3)
 		user.adjustOxyLoss(-3)
@@ -303,6 +302,10 @@
 			user.adjustFireLoss(-20)
 			user.adjustOxyLoss(-20)
 			user.adjustToxLoss(-20)
+	else
+		STOP_PROCESSING(SSobj, src)
+		user = null
+		return
 
 	if(world.time >= saved_time2 + cooldown2)
 		saved_time2 = world.time
@@ -323,6 +326,7 @@
 			to_chat(H, "<span class='warning'>Connection established with [src]</span>")
 			. = ..()
 			user = H
+			START_PROCESSING(SSobj, src)
 		else
 			src.visible_message("<span class='warning'>[M] cannot be recharged as they are not borg.</span>")
 			unbuckle_mob(M)

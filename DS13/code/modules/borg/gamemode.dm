@@ -8,7 +8,7 @@ GLOBAL_LIST_EMPTY(borg_drone_spawns)
 	announce_text = "A borg proximity signal has been detected. Origin: Unimatrix 325, grid 006. Alter course to intercept.\n\
 	<span class='danger'>Borg</span>: Assimilate over 70% of the crew to win!\n\
 	<span class='notice'>Crew</span>: Defend the station and eliminate the borg. Dereliction of duty will cause a borg victory."
-	required_players = 15 // 15 players - 3 players to be the borg = 12 players remaining. Yeah we're a lowpop server >:(
+	required_players = 10 // 10 players - 3 players to be the borg = 7 players remaining. Yeah we're a very lowpop server >:(
 	required_enemies = 2 //2
 	recommended_enemies = 3
 	var/antag_datum_type = /datum/antagonist/borg_drone
