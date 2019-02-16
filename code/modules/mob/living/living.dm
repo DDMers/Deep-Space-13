@@ -563,7 +563,6 @@
 /*	if(!has_gravity())
 		return
 	var/blood_exists = FALSE
-
 	for(var/obj/effect/decal/cleanable/trail_holder/C in start) //checks for blood splatter already on the floor
 		blood_exists = TRUE
 	if(isturf(start))
@@ -583,7 +582,6 @@
 					newdir = turn(get_dir(target_turf, start), 180)
 				if(!blood_exists)
 					new /obj/effect/decal/cleanable/trail_holder(start, get_static_viruses())
-
 				for(var/obj/effect/decal/cleanable/trail_holder/TH in start)
 					if((!(newdir in TH.existing_dirs) || trail_type == "trails_1" || trail_type == "trails_2") && TH.existing_dirs.len <= 16) //maximum amount of overlays is 16 (all light & heavy directions filled)
 						TH.existing_dirs += newdir
@@ -595,6 +593,7 @@ DEEP SPACE 13 REWORK REQUIRED OF HOW MESS IS DONE #SHOUT AT JALLEO
 		return
 	..()
 *///
+
 /mob/living/proc/getTrail()
 	if(getBruteLoss() < 300)
 		return pick("ltrails_1", "ltrails_2")
