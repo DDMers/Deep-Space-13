@@ -255,7 +255,8 @@
 	var/area = pick(GLOB.teleportlocs)
 	var/area/target = GLOB.teleportlocs[area] //Pick a station area and yeet it.
 	for(var/mob/player in GLOB.player_list)
-		if(is_station_level(player.z))
+		var/area/player_area = get_area(player)
+		if(is_station_level(player.z) && !istype(player_area,/area/ship))
 			if(pilot)
 				if(player == pilot) continue
 			if(tactical)

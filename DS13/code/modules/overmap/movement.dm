@@ -264,7 +264,7 @@
 		O.shield_overlay.forceMove(get_turf(src))
 
 /obj/structure/overmap/relaymove(mob/mob,dir)
-	if(!pilot || mob != pilot || movement_block)
+	if(!pilot || mob != pilot || movement_block || engine_power <= 0)
 		return //Only pilot can steer :)
 	if(mob.client)
 		switch(dir)

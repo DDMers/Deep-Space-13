@@ -173,12 +173,12 @@ Dirs! (nicked from byond forum)
 		return TRUE
 	var/total = (max_health * 8) //8 directional shields, each with a max of maxhealth.
 	to_chat(world, total)
-	var/required = total/2 //Shields must be at least 50% healthy to resist transports and tractor beams
+	var/required = total/1.3 //Shields must be at least 70% healthy to resist transports and tractor beams
 	to_chat(world, required)
 	if(num <= required)
 		return TRUE //AKA it IS vulnerable
 	else
-		return FALSE //Above 50% health, so NOT vulnerable
+		return FALSE //Above 70% health, so NOT vulnerable
 
 /datum/shield_controller/proc/generate_overlays()
 	if(!holder)
