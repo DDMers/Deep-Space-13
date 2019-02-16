@@ -27,7 +27,7 @@
 /datum/antagonist/borg_drone/greet()
 	SEND_SOUND(owner.current, 'DS13/sound/effects/borg/collectivewhisper.ogg')
 	to_chat(owner.current, "<span_class='bigbold'>We are borg.</span>")
-	to_chat(owner.current, "<span_class='danger'>We require additional parts. We must seek out an assimilation bench to improve ourselves.</span>")
+	to_chat(owner.current, "<span_class='danger'>We require additional parts, seek out an assimilation bench to improve ourselves.</span>")
 	owner.announce_objectives()
 
 /datum/antagonist/borg_drone/proc/borgify(mob/living/carbon/human/H = owner.current)
