@@ -107,15 +107,15 @@ Dirs! (nicked from byond forum)
 			return FALSE
 
 		if(RIGHT)
-			if(east >= num)
-				east -= num
+			if(west >= num)
+				west -= num
 				generate_overlays() //Took a hit, so visually update the shields :)
 				return TRUE //Took the hit successfully
 			return FALSE
 
 		if(LEFT)
-			if(west >= num)
-				west -= num
+			if(east >= num)
+				east -= num
 				generate_overlays() //Took a hit, so visually update the shields :)
 				return TRUE //Took the hit successfully
 			return FALSE
@@ -228,13 +228,13 @@ Dirs! (nicked from byond forum)
 	switch(hit_angle)
 		if(135 to 225)
 		//	to_chat(world, "rear")
-			return REAR
+			return FRONT
 		if(45 to 134)
 		//	to_chat(world, "right")
 			return RIGHT
-		if(315 to 360, 0 to 45)
+		if(315 to 360, 0 to 44)
 	//		to_chat(world, "front")
-			return FRONT
+			return REAR
 		if(225 to 314)
 		//	to_chat(world, "left")
 			return LEFT
@@ -258,7 +258,8 @@ Dirs! (nicked from byond forum)
 /proc/find_hit_angle(atom/firer, atom/target)
 	var/datum/position/point1 = RETURN_PRECISE_POSITION(target)
 	var/datum/position/point2 = RETURN_PRECISE_POSITION(firer)
-	var/target_angle = Get_Angle(point1, point2) //Fire a beam from them to us X --->>>> us. This should line up nicely with the phaser beam effect
+//	var/target_angle = Get_Angle(point1, point2) //Fire a beam from them to us X --->>>> us. This should line up nicely with the phaser beam effect
+	var/target_angle = Get_Angle(point2, point1)
 	return(target_angle)
 /*
 	// positive is right, negative is left

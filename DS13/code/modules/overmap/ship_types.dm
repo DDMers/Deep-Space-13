@@ -39,7 +39,8 @@
 	max_speed = 0
 	turnspeed = 0
 	movement_block = TRUE //You can't turn a station :)
-
+	pixel_x = -32
+	pixel_y = -32
 
 /obj/structure/overmap/ds13/apply_shield_boost() //Miranda starts with some boosted shields
 	shields.north_max += max_shield_health //Start with some double shields
@@ -47,12 +48,6 @@
 	shields.south_max += max_shield_health
 	shields.east_max += max_shield_health
 	shields.west_max += max_shield_health
-	shields.northeast_max += max_shield_health
-	shields.northwest_max += max_shield_health
-	shields.southeast_max += max_shield_health
-	shields.southwest_max += max_shield_health
-
-
 
 /obj/structure/overmap/shuttle
 	name = "Shuttlepod"
