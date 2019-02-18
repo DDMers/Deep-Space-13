@@ -211,31 +211,7 @@
 				voice_alert(S)
 			return
 
-/obj/structure/overmap/take_damage(var/atom/source, var/amount = 10)
-	. = ..()
-	if(!isnum(amount))
-		return//Catch: The amount was inputted as something it's not supposed to. This is often caused by torpedoes because projectile code HATES him (click to find out more)
-	visual_damage()
-	for(var/mob/M in operators)
-		shake_camera(M, 1, 3)
-	if(istype(source, /obj/item/projectile))
-		send_sound_crew('DS13/sound/effects/damage/torpedo_hit.ogg')
-	var/target_angle = Get_Angle(src, source) //Fire a beam from them to us X --->>>> us. This should line up nicely with the phaser beam effect
-	var/damage_dir = angle2dir(target_angle) //Now we have our simulated beam, turn its angle into a dir.
-	if(shields.absorb_damage(amount, damage_dir))
-		var/sound/shieldhit = pick('DS13/sound/effects/damage/shield_hit.ogg','DS13/sound/effects/damage/shield_hit2.ogg')
-		send_sound_crew(shieldhit)
-		show_damage(amount, TRUE)
-		special_fx(TRUE)
-		shield_alert()
-	else
-		health -= amount
-		new /obj/effect/temp_visual/ship_explosion(get_turf(src))
-		show_damage(amount)
-		special_fx(FALSE)
-	GLOB.music_controller.play() //Try play some battle music, if there's already battle music then don't bother :)
-	if(health <= 0)
-		qdel(src)
+
 
 /obj/machinery
 	var/list/zaps = list('DS13/sound/effects/damage/consolehit.ogg','DS13/sound/effects/damage/consolehit2.ogg','DS13/sound/effects/damage/consolehit3.ogg','DS13/sound/effects/damage/consolehit4.ogg')

@@ -23,6 +23,11 @@ Dirs! (nicked from byond forum)
 
 */
 
+#define FRONT 0
+#define RIGHT 1
+#define REAR 2
+#define LEFT 3
+
 /datum/shield_controller
 	var/name = "Shield subsystem"
 	var/health //Un-used for now
@@ -87,61 +92,34 @@ Dirs! (nicked from byond forum)
 	if(!isnum(dir) || !isnum(num))
 		return
 	switch(dir)
-		if(1)
+		if(FRONT)
 			if(north >= num)
 				north -= num
 				generate_overlays() //Took a hit, so visually update the shields :)
 				return TRUE //Took the hit successfully
 			return FALSE //Captain, our shields are down!. This means the ship takes the damage instead of the shields :(
 
-		if(2)
+		if(REAR)
 			if(south >= num)
 				south -= num
 				generate_overlays() //Took a hit, so visually update the shields :)
 				return TRUE //Took the hit successfully
 			return FALSE
 
-		if(4)
+		if(RIGHT)
 			if(east >= num)
 				east -= num
 				generate_overlays() //Took a hit, so visually update the shields :)
 				return TRUE //Took the hit successfully
 			return FALSE
 
-		if(5)
-			if(southwest >= num)
-				southwest -= num
-				generate_overlays() //Took a hit, so visually update the shields :)
-				return TRUE //Took the hit successfully
-			return FALSE
-
-		if(6)
-			if(southeast >= num)
-				southeast -= num
-				generate_overlays() //Took a hit, so visually update the shields :)
-				return TRUE //Took the hit successfully
-			return FALSE
-
-		if(8)
+		if(LEFT)
 			if(west >= num)
 				west -= num
 				generate_overlays() //Took a hit, so visually update the shields :)
 				return TRUE //Took the hit successfully
 			return FALSE
 
-		if(9)
-			if(northwest >= num)
-				northwest -= num
-				generate_overlays() //Took a hit, so visually update the shields :)
-				return TRUE //Took the hit successfully
-			return FALSE
-
-		if(10)
-			if(northeast >= num)
-				northeast -= num
-				generate_overlays() //Took a hit, so visually update the shields :)
-				return TRUE //Took the hit successfully
-			return FALSE
 
 /datum/shield_controller/proc/adjust_all_shields(var/num)
 	if(north < north_max)north += num 		//Set all the directionals to a desired num. Useful when spawning a ship or if you want to fully disable all shields
@@ -171,9 +149,9 @@ Dirs! (nicked from byond forum)
 	var/num = get_total_health()
 	if(num <= 0)
 		return TRUE
-	var/total = (max_health * 8) //8 directional shields, each with a max of maxhealth.
+	var/total = (max_health * 4) //4 directional shields, each with a max of maxhealth.
 	to_chat(world, total)
-	var/required = total/1.3 //Shields must be at least 70% healthy to resist transports and tractor beams
+	var/required = total/1.4 //Shields must be at least 60% healthy to resist transports and tractor beams
 	to_chat(world, required)
 	if(num <= required)
 		return TRUE //AKA it IS vulnerable
@@ -183,7 +161,7 @@ Dirs! (nicked from byond forum)
 /datum/shield_controller/proc/generate_overlays()
 	if(!holder)
 		return
-	holder.shield_overlay.cut_overlays()
+	holder.cut_overlays()
 	var/progress = 0 //How damaged is this shield? We examine the position of index "I" in the for loop to check which directional we want to check
 	var/goal = max_health //How much is the max hp of the shield? This is constant through all of them
 	for(var/I = 0, I < 11, I++) //Time to run through our dirs!
@@ -202,22 +180,18 @@ Dirs! (nicked from byond forum)
 				progress = east
 				boosted_pixel_x = 4
 			if(5)
-				progress = southwest
-				boosted_pixel_y = 4
+				continue
 			if(6)
-				progress = southeast //Remember, max health is the max health any directional shield can have at any given time.
-				boosted_pixel_y = -4
+				continue
 			if(7)
 				continue //Not a cardinal
 			if(8)
 				progress = west
 				boosted_pixel_x = -4
 			if(9)
-				progress = northwest
-				boosted_pixel_y = 4
+				continue
 			if(10)
-				progress = northeast
-				boosted_pixel_y = -4
+				continue
 		var/stored = 0
 		var/test = max_health*2
 		if(progress >= test)
@@ -241,6 +215,111 @@ Dirs! (nicked from byond forum)
 			double.pixel_x = boosted_pixel_x
 			double.pixel_y = boosted_pixel_y
 			double.color = shield.color
-			holder.shield_overlay.add_overlay(double)
-		holder.shield_overlay.add_overlay(shield)
+			holder.add_overlay(double)
+		holder.add_overlay(shield)
 
+
+/obj/structure/overmap/take_damage(var/atom/source, var/amount = 10)
+	. = ..()
+	if(!isnum(amount))
+		return//Catch: The amount was inputted as something it's not supposed to. This is often caused by torpedoes because projectile code HATES him (click to find out more)
+	visual_damage()
+	for(var/mob/M in operators)
+		shake_camera(M, 1, 3)
+	if(istype(source, /obj/item/projectile))
+		send_sound_crew('DS13/sound/effects/damage/torpedo_hit.ogg')
+//	var/target_angle = Get_Angle(src, source) //Fire a beam from them to us X --->>>> us. This should line up nicely with the phaser beam effect
+//	var/damage_dir = angle2dir(target_angle) //Now we have our simulated beam, turn its angle into a dir.
+	var/obj/structure/overmap/OM = source
+	var/sector = get_quadrant_hit(OM,src)
+	if(shields.absorb_damage(amount, sector))
+		var/sound/shieldhit = pick('DS13/sound/effects/damage/shield_hit.ogg','DS13/sound/effects/damage/shield_hit2.ogg')
+		send_sound_crew(shieldhit)
+		show_damage(amount, TRUE)
+		special_fx(TRUE)
+		shield_alert()
+	else
+		health -= amount
+		new /obj/effect/temp_visual/ship_explosion(get_turf(src))
+		show_damage(amount)
+		special_fx(FALSE)
+	GLOB.music_controller.play() //Try play some battle music, if there's already battle music then don't bother :)
+	if(health <= 0)
+		qdel(src)
+
+/obj/structure/overmap
+	var/heading = 0 // up is 0, down 180, right 90, left 270
+
+/proc/get_quadrant_hit(var/obj/structure/overmap/firer, var/obj/structure/overmap/target)
+	var/hit_angle = find_hit_angle(firer, target)
+	if(!target.heading)
+		target.heading = target.angle
+
+	if(target.heading < 0)
+		target.heading = 360 + target.heading
+
+	hit_angle += (360 - target.heading)
+
+	hit_angle = MODULUS(hit_angle, 360)
+	to_chat(world, "ha [hit_angle], f x[firer.x]y[firer.y], t x[target.x]y[target.y] T heading:[target.angle] F heading: [firer.angle]")
+	switch(hit_angle)
+		if(135 to 225)
+			to_chat(world, "rear")
+			return REAR
+		if(45 to 134)
+			to_chat(world, "right")
+			return RIGHT
+		if(315 to 360, 0 to 45)
+			to_chat(world, "front")
+			return FRONT
+		if(225 to 314)
+			to_chat(world, "left")
+			return LEFT
+			/* ORIGINAL
+		if(315 to 360, 0 to 45)
+			to_chat(world, "left")
+			return LEFT
+		if(45 to 135)
+			to_chat(world, "front")
+			return FRONT
+		if(135 to 225)
+			to_chat(world, "right")
+			return RIGHT
+		if(225 to 315)
+			to_chat(world, "rear")
+			return REAR
+	*/
+
+	stack_trace("error with quadrant calc")
+
+/proc/find_hit_angle(atom/firer, atom/target)
+	var/target_angle = Get_Angle(target, firer) //Fire a beam from them to us X --->>>> us. This should line up nicely with the phaser beam effect
+	return(target_angle)
+/*
+	// positive is right, negative is left
+	var/x_diff = round(firer.x - target.x)
+
+	// positive is up, negative is down
+	var/y_diff = round(firer.y - target.y)
+
+    // deal with div by zero
+	if(y_diff == 0)
+		if(x_diff > 0)
+			return 90
+		else if(x_diff < 0)
+			return 270
+		else
+			stack_trace("somehow firing from its own location")
+
+	if(y_diff > 0)
+		. = COT(x_diff / y_diff)
+		if(x_diff < 0)
+			. += 360
+		return .
+	return 180 + COT(x_diff / y_diff)
+*/
+
+#undef FRONT
+#undef RIGHT
+#undef REAR
+#undef LEFT

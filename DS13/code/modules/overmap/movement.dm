@@ -48,6 +48,7 @@
 //Procs
 /obj/structure/overmap/proc/EditAngle() //Visibly rotate the sprite
 	var/matrix/M = matrix() //create matrix for transformation
+	heading = angle
 	M.Turn(-angle) //reverse angle due to weird logic
 	src.transform = M //set matrix
 
