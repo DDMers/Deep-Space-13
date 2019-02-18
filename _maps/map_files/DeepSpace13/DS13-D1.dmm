@@ -73,6 +73,7 @@
 /turf/open/space/basic,
 /area/space)
 "ao" = (
+/obj/machinery/rnd/production/techfab/department/engineering,
 /turf/open/floor/plasteel/dark,
 /area/engine/engine_smes)
 "ap" = (
@@ -705,6 +706,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/table,
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/trek,
 /area/engine/engineering)
 "bE" = (
@@ -5591,6 +5594,16 @@
 /obj/structure/turbolift,
 /turf/open/floor/carpet/trek,
 /area/turbolift/tertiary)
+"vL" = (
+/obj/structure/table,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/tile/carpet/trek/fifty,
+/obj/item/stack/sheet/duotanium/fifty,
+/obj/item/stack/sheet/duranium/fifty,
+/turf/open/floor/trek,
+/area/engine/engineering)
 "yz" = (
 /turf/closed/wall/trek_smooth/indestructible,
 /area/turbolift/quanery)
@@ -5658,6 +5671,10 @@
 	},
 /turf/open/floor/trek/tile,
 /area/engine/engineering)
+"Hp" = (
+/obj/machinery/rnd/production/protolathe/department/security,
+/turf/open/floor/plasteel/showroomfloor,
+/area/hallway/primary/aft)
 "Ht" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
@@ -5701,6 +5718,15 @@
 "Ng" = (
 /turf/closed/wall/trek_smooth/indestructible,
 /area/turbolift/quintessential)
+"Oi" = (
+/obj/machinery/rnd/production/techfab/department/security,
+/turf/open/floor/plasteel/showroomfloor,
+/area/hallway/primary/aft)
+"Rp" = (
+/obj/structure/table,
+/obj/item/storage/toolbox/electrical,
+/turf/open/floor/trek,
+/area/engine/engineering)
 "Sj" = (
 /obj/machinery/door/airlock/trek/goon/turbolift{
 	icon_state = "closed";
@@ -5741,6 +5767,14 @@
 	},
 /turf/open/floor/trek/tile,
 /area/engine/atmos)
+"Ya" = (
+/obj/machinery/vending/tool,
+/turf/open/floor/trek,
+/area/engine/engineering)
+"YV" = (
+/obj/machinery/rnd/production/protolathe/department/engineering,
+/turf/open/floor/plasteel/dark,
+/area/engine/engine_smes)
 "ZG" = (
 /turf/closed/wall/trek_smooth/indestructible,
 /area/turbolift/secondary)
@@ -34674,7 +34708,7 @@ fd
 kL
 fe
 fd
-hA
+Hp
 jF
 hA
 hn
@@ -34931,7 +34965,7 @@ fd
 kL
 iv
 fd
-hA
+Oi
 jF
 hA
 hn
@@ -36431,7 +36465,7 @@ aW
 bd
 bl
 bs
-bz
+vL
 bI
 bP
 bY
@@ -36688,7 +36722,7 @@ ab
 ab
 ab
 bs
-bz
+Rp
 bI
 bP
 bZ
@@ -36945,7 +36979,7 @@ aa
 aa
 aa
 oi
-bz
+Ya
 fl
 bP
 ca
@@ -37202,7 +37236,7 @@ ab
 ab
 ab
 bs
-bz
+Rp
 bI
 bP
 cb
@@ -38478,7 +38512,7 @@ fR
 ju
 fX
 ab
-ao
+YV
 am
 jw
 aA
