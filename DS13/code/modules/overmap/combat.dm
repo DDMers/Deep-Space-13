@@ -302,7 +302,7 @@
 		new /obj/effect/temp_visual/ship_explosion(get_turf(src))
 		show_damage(amount)
 	GLOB.music_controller.play() //Try play some battle music, if there's already battle music then don't bother :)
-	if(health <= 0 && destroyed)
+	if(health <= 0 && !destroyed)
 		destroyed = TRUE
 		explode()
 
