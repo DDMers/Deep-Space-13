@@ -19,7 +19,7 @@
 /obj/structure/overmap
 	var/angle = 0 //This replaces DIR with pixel move
 	var/vel = 0 //How fast are we travelling? This behaves like a vector.
-	var/turnspeed = 2.2 //Rate of turning. This can be a decimal
+	var/turnspeed = 1.8 //Rate of turning. This can be a decimal
 	var/max_speed = 4 //Maximum velocity
 	var/acceleration = 0.5 //How quickly do you put on speed?
 	var/obj/structure/overmap/nav_target
@@ -48,7 +48,11 @@
 //Procs
 /obj/structure/overmap/proc/EditAngle() //Visibly rotate the sprite
 	var/matrix/M = matrix() //create matrix for transformation
-	heading = angle
+	if(angle <= -360)
+		angle = 0
+	if(angle >= 360)
+		angle = 0
+//	heading = -angle
 	M.Turn(-angle) //reverse angle due to weird logic
 	src.transform = M //set matrix
 

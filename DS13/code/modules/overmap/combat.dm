@@ -315,6 +315,7 @@
 	engine_power = 0
 	power_slots = 0
 	movement_block = TRUE
+	remove_control()
 	send_sound_crew('DS13/sound/effects/damage/ship_explode.ogg')
 	addtimer(CALLBACK(src, .proc/core_breach_finish), 450)
 	for(var/mob/A in operators)
