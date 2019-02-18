@@ -48,9 +48,6 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	//	return
 
 /obj/structure/overmap/Destroy()
-	qdel(shield_overlay)
-	qdel(shields)
-	send_sound_crew('DS13/sound/effects/damage/ship_explode.ogg')
 	. = ..()
 
 

@@ -20,6 +20,7 @@
 	var/hail_ready = TRUE //Hailing cooldown
 	var/torpedo_damage = 30 //30 damage for free
 	var/area/linked_area = null
+	var/destroyed = FALSE
 
 /obj/structure/overmap/proc/send_sound_crew(var/sound/S)
 	for(var/mob/M in operators)
@@ -139,7 +140,8 @@
 		shake_camera(M, 1, 3)
 	if(fire_mode == "phaser")
 		charging = TRUE
-		var/source = src
+		var/datum/position/pos = RETURN_PRECISE_POSITION(src)
+		var/turf/source = pos.return_turf()
 		var/datum/beam/S = new /datum/beam(source,target,time=10,beam_icon_state="solar_beam",maxdistance=5000,btype=/obj/effect/ebeam)
 		spawn(0)
 			S.Start()
@@ -239,6 +241,7 @@
 				if(player == tactical) continue
 			if(science)
 				if(player == science) continue
+			shake_camera(player, 1,3)
 			if(shields_absorbed)
 				if(prob(50))
 					var/sound/shieldhit = pick('DS13/sound/effects/damage/shield_hit.ogg','DS13/sound/effects/damage/shield_hit2.ogg')
@@ -254,7 +257,97 @@
 		return
 	if(prob(10))
 		var/turf/T = pick(get_area_turfs(target))
+		T.atmos_spawn_air("plasma=15;TEMP=2000")
+	if(prob(10))
+		var/turf/T = pick(get_area_turfs(target))
 		explosion(T,3,4,3)
+
+
+/obj/structure/overmap/take_damage(var/atom/source, var/amount = 10)
+	. = ..()
+	var/fluff = rand(1,6)
+	switch(fluff)
+		if(1)
+			visible_message("<span class='warning'>Bits of [name] fly off into space!</span>")
+		if(2)
+			visible_message("<span class='warning'>[name]'s hull ruptures!</span>")
+		if(3)
+			visible_message("<span class='warning'>[name]'s hull buckles!</span>")
+		if(4)
+			visible_message("<span class='warning'>Warp plasma spews from [name]!</span>")
+		if(5)
+			visible_message("<spanR class='warning'>A beam tears across [name]'s hull!</span>")
+		if(6)
+			visible_message("<span class='warning'>[name]'s hull is scorched!</span>")
+	if(!isnum(amount))
+		return//Catch: The amount was inputted as something it's not supposed to. This is often caused by torpedoes because projectile code HATES him (click to find out more)
+	visual_damage()
+	for(var/mob/M in operators)
+		shake_camera(M, 1, 3)
+	if(istype(source, /obj/item/projectile))
+		send_sound_crew('DS13/sound/effects/damage/torpedo_hit.ogg')
+//	var/target_angle = Get_Angle(src, source) //Fire a beam from them to us X --->>>> us. This should line up nicely with the phaser beam effect
+//	var/damage_dir = angle2dir(target_angle) //Now we have our simulated beam, turn its angle into a dir.
+	var/obj/structure/overmap/OM = source
+	var/sector = get_quadrant_hit(OM,src)
+	if(shields.absorb_damage(amount, sector))
+		special_fx(TRUE)
+		var/sound/shieldhit = pick('DS13/sound/effects/damage/shield_hit.ogg','DS13/sound/effects/damage/shield_hit2.ogg')
+		send_sound_crew(shieldhit)
+		show_damage(amount, TRUE)
+		shield_alert()
+	else
+		special_fx(FALSE)
+		health -= amount
+		new /obj/effect/temp_visual/ship_explosion(get_turf(src))
+		show_damage(amount)
+	GLOB.music_controller.play() //Try play some battle music, if there's already battle music then don't bother :)
+	if(health <= 0 && destroyed)
+		destroyed = TRUE
+		explode()
+
+/obj/structure/overmap/proc/explode()
+	qdel(shield_overlay)
+	qdel(shields)
+	SpinAnimation(1000,1000)
+	weapon_power = 0
+	shield_power = 0
+	engine_power = 0
+	power_slots = 0
+	movement_block = TRUE
+	send_sound_crew('DS13/sound/effects/damage/ship_explode.ogg')
+	addtimer(CALLBACK(src, .proc/core_breach_finish), 450)
+	for(var/mob/A in operators)
+		to_chat(A, "<span class='cult'><font size=3>Your ship has been destroyed!")
+		if(A.remote_control)
+			A.remote_control.forceMove(get_turf(A))
+	core_breach()
+
+
+/obj/structure/overmap/proc/core_breach()
+	if(!main_overmap)
+		if(!linked_area)
+			find_area()
+		for(var/mob/player in linked_area)
+			SEND_SOUND(player, 'DS13/sound/effects/damage/corebreach.ogg')
+		return
+	for(var/mob/player in GLOB.player_list)
+		var/area/player_area = get_area(player)
+		if(is_station_level(player.z) && !istype(player_area,/area/ship))
+			SEND_SOUND(player, 'DS13/sound/effects/damage/corebreach.ogg')
+
+
+/obj/structure/overmap/proc/core_breach_finish()
+	if(main_overmap)
+		Cinematic(CINEMATIC_NUKE_WIN,world)
+		SSticker.mode.check_finished(TRUE)
+		SSticker.force_ending = 1
+		qdel(src)
+		return
+	for(var/I = 0, I <= 11, I++) //If it's not a game-ender. Blow the shit out of the ship map
+		var/turf/T = pick(get_area_turfs(linked_area))
+		explosion(T,10,10,10)
+	qdel(src)
 
 /obj/structure/overmap/proc/find_area()
 	for(var/area/AR in GLOB.sortedAreas)
@@ -268,6 +361,7 @@
 	if(!linked_area)
 		find_area()
 	for(var/mob/player in linked_area)
+		shake_camera(player, 1,3)
 		if(shields_absorbed)
 			if(prob(50))
 				var/sound/shieldhit = pick('DS13/sound/effects/damage/shield_hit.ogg','DS13/sound/effects/damage/shield_hit2.ogg')
@@ -278,6 +372,9 @@
 		if(prob(10))
 			var/turf/T = pick(get_area_turfs(linked_area))
 			explosion(T,3,4,3)
+		if(prob(10))
+			var/turf/T = pick(get_area_turfs(linked_area))
+			T.atmos_spawn_air("plasma=15;TEMP=2000")
 
 /obj/structure/overmap/proc/show_damage(var/amount, var/shields_absorbed) //Flash up numbers showing how much damage we just took
 	if(amount > 100)

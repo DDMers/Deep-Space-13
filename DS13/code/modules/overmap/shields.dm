@@ -165,20 +165,20 @@ Dirs! (nicked from byond forum)
 	var/progress = 0 //How damaged is this shield? We examine the position of index "I" in the for loop to check which directional we want to check
 	var/goal = max_health //How much is the max hp of the shield? This is constant through all of them
 	for(var/I = 0, I < 11, I++) //Time to run through our dirs!
-		var/boosted_pixel_x = 0
-		var/boosted_pixel_y = 0 //Offset pixel X for having doubleshields
+//		var/boosted_pixel_x = 0
+	//	var/boosted_pixel_y = 0 //Offset pixel X for having doubleshields
 		switch(I)
 			if(1)
 				progress = north //So what HP are we looking at here?
-				boosted_pixel_y = 4
+	//			boosted_pixel_y = 4
 			if(2)
 				progress = south
-				boosted_pixel_y = -4
+	//			boosted_pixel_y = -4
 			if(3)
 				continue //Not a cardinal
 			if(4)
 				progress = east
-				boosted_pixel_x = 4
+	//			boosted_pixel_x = 4
 			if(5)
 				continue
 			if(6)
@@ -187,15 +187,15 @@ Dirs! (nicked from byond forum)
 				continue //Not a cardinal
 			if(8)
 				progress = west
-				boosted_pixel_x = -4
+		//		boosted_pixel_x = -4
 			if(9)
 				continue
 			if(10)
 				continue
-		var/stored = 0
-		var/test = max_health*2
-		if(progress >= test)
-			stored = progress //To apply the double shield visual FX for when you overcharge one specific shield.
+	//	var/stored = 0
+	//	var/test = max_health*2
+	//	if(progress >= test)
+		//	stored = progress //To apply the double shield visual FX for when you overcharge one specific shield.
 		progress = CLAMP(progress, 0, goal)
 		progress = round(((progress / goal) * 100), 20)//Round it down to 20%. We now change colours accordingly
 		var/image/shield = new
@@ -208,44 +208,7 @@ Dirs! (nicked from byond forum)
 			if(60 to 79)	shield.color = "#FF9300"//Light orange
 			if(80 to 90)	shield.color = "#FFFF00" //Yellow
 			if(91 to 100) shield.color = "#4EC3D3"//Very light blue
-		if(stored >= 1)
-			var/image/double = new
-			double.icon = holder.icon
-			double.icon_state = "[I]" //Double shield! Shows you've boosted this specific shield
-			double.pixel_x = boosted_pixel_x
-			double.pixel_y = boosted_pixel_y
-			double.color = shield.color
-			holder.add_overlay(double)
 		holder.add_overlay(shield)
-
-
-/obj/structure/overmap/take_damage(var/atom/source, var/amount = 10)
-	. = ..()
-	if(!isnum(amount))
-		return//Catch: The amount was inputted as something it's not supposed to. This is often caused by torpedoes because projectile code HATES him (click to find out more)
-	visual_damage()
-	for(var/mob/M in operators)
-		shake_camera(M, 1, 3)
-	if(istype(source, /obj/item/projectile))
-		send_sound_crew('DS13/sound/effects/damage/torpedo_hit.ogg')
-//	var/target_angle = Get_Angle(src, source) //Fire a beam from them to us X --->>>> us. This should line up nicely with the phaser beam effect
-//	var/damage_dir = angle2dir(target_angle) //Now we have our simulated beam, turn its angle into a dir.
-	var/obj/structure/overmap/OM = source
-	var/sector = get_quadrant_hit(OM,src)
-	if(shields.absorb_damage(amount, sector))
-		var/sound/shieldhit = pick('DS13/sound/effects/damage/shield_hit.ogg','DS13/sound/effects/damage/shield_hit2.ogg')
-		send_sound_crew(shieldhit)
-		show_damage(amount, TRUE)
-		special_fx(TRUE)
-		shield_alert()
-	else
-		health -= amount
-		new /obj/effect/temp_visual/ship_explosion(get_turf(src))
-		show_damage(amount)
-		special_fx(FALSE)
-	GLOB.music_controller.play() //Try play some battle music, if there's already battle music then don't bother :)
-	if(health <= 0)
-		qdel(src)
 
 /obj/structure/overmap
 	var/heading = 0 // up is 0, down 180, right 90, left 270
@@ -261,19 +224,19 @@ Dirs! (nicked from byond forum)
 	hit_angle += (360 - target.heading)
 
 	hit_angle = MODULUS(hit_angle, 360)
-	to_chat(world, "ha [hit_angle], f x[firer.x]y[firer.y], t x[target.x]y[target.y] T heading:[target.angle] F heading: [firer.angle]")
+//	to_chat(world, "ha [hit_angle], f x[firer.x]y[firer.y], t x[target.x]y[target.y] T heading:[target.angle] F heading: [firer.angle]")
 	switch(hit_angle)
 		if(135 to 225)
-			to_chat(world, "rear")
+		//	to_chat(world, "rear")
 			return REAR
 		if(45 to 134)
-			to_chat(world, "right")
+		//	to_chat(world, "right")
 			return RIGHT
 		if(315 to 360, 0 to 45)
-			to_chat(world, "front")
+	//		to_chat(world, "front")
 			return FRONT
 		if(225 to 314)
-			to_chat(world, "left")
+		//	to_chat(world, "left")
 			return LEFT
 			/* ORIGINAL
 		if(315 to 360, 0 to 45)
@@ -293,7 +256,9 @@ Dirs! (nicked from byond forum)
 	stack_trace("error with quadrant calc")
 
 /proc/find_hit_angle(atom/firer, atom/target)
-	var/target_angle = Get_Angle(target, firer) //Fire a beam from them to us X --->>>> us. This should line up nicely with the phaser beam effect
+	var/datum/position/point1 = RETURN_PRECISE_POSITION(target)
+	var/datum/position/point2 = RETURN_PRECISE_POSITION(firer)
+	var/target_angle = Get_Angle(point1, point2) //Fire a beam from them to us X --->>>> us. This should line up nicely with the phaser beam effect
 	return(target_angle)
 /*
 	// positive is right, negative is left

@@ -132,7 +132,7 @@
 
 /mob/camera/aiEye/remote/overmap_observer/Initialize()
 	. = ..()
-	while(!QDELETED(src) && origin)
+	while(!QDELETED(src) && origin && !QDELETED(origin))
 		forceMove(get_turf(origin))
 		if(eye_user && eye_user.client)
 			eye_user.client.AdjustView()
