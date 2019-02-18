@@ -9,6 +9,11 @@
 	icon_state = "miranda"
 	class = "miranda"
 
+/area/ship/warbird
+	name = "Romulan warbird class light cruiser"
+	icon_state = "warbird"
+	class = "warbird"
+
 /obj/structure/overmap/miranda
 	name = "Miranda class light cruiser"
 	desc = "An all purpose, reliable starship. It's a tried and tested design that has served the federation for hundreds of years. Despite its aging design, it has a modest armament."

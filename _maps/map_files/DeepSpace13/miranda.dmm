@@ -645,6 +645,80 @@
 /obj/structure/bed,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/miranda)
+"jj" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"kH" = (
+/obj/item/twohanded/required/klingon,
+/obj/structure/table,
+/obj/item/clothing/under/trek/klingon,
+/obj/item/kitchen/knife/combat/klingon,
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"on" = (
+/obj/structure/overmap_component/tactical/warbird,
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"pK" = (
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"pY" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"we" = (
+/turf/closed/wall/trek_smooth,
+/area/ship/warbird)
+"Kr" = (
+/obj/structure/overmap_component/science/warbird,
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"LF" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"Sf" = (
+/obj/structure/overmap_component/helm/warbird,
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"Zp" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
 
 (1,1,1) = {"
 aa
@@ -51244,22 +51318,22 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+we
+we
+we
+we
+we
+we
+we
+we
+we
+we
+we
+we
+we
+we
+we
+we
 aa
 aa
 aa
@@ -51501,22 +51575,22 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+we
+pK
+pK
+on
+pK
+pK
+pK
+pK
+pK
+pK
+pK
+pK
+pK
+pK
+pK
+we
 aa
 aa
 aa
@@ -51758,22 +51832,22 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+we
+pK
+pK
+pK
+pK
+pK
+pK
+pK
+we
+pK
+pK
+pK
+pK
+pK
+pK
+we
 aa
 aa
 aa
@@ -52015,22 +52089,22 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+we
+pK
+pK
+pK
+pK
+pK
+pK
+kH
+we
+pK
+pY
+pY
+Zp
+jj
+pK
+we
 aa
 aa
 aa
@@ -52272,22 +52346,22 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+we
+pK
+Sf
+pK
+pK
+pK
+pK
+kH
+we
+pK
+jj
+LF
+pY
+jj
+pK
+we
 aa
 aa
 aa
@@ -52529,22 +52603,22 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+we
+pK
+pK
+pK
+pK
+pK
+pK
+kH
+we
+pK
+jj
+jj
+pY
+jj
+pK
+we
 aa
 aa
 aa
@@ -52786,22 +52860,22 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+we
+pK
+pK
+pK
+pK
+pK
+pK
+pK
+we
+pK
+pK
+pK
+pK
+pK
+pK
+we
 aa
 aa
 aa
@@ -53043,22 +53117,22 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+we
+pK
+pK
+Kr
+pK
+pK
+pK
+pK
+pK
+pK
+pK
+pK
+pK
+pK
+pK
+we
 aa
 aa
 aa
@@ -53300,22 +53374,22 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+we
+we
+we
+we
+we
+we
+we
+we
+we
+we
+we
+we
+we
+we
+we
+we
 aa
 aa
 aa
