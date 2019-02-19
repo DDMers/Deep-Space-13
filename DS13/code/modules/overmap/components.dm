@@ -23,9 +23,15 @@
 				to_chat(L, "You require a high level access card to use this console!.")
 				return
 			linked.enter(L, position)
+			return
 	to_chat(L, "You require a high level access card to use this console!.")
 	return
 
+/obj/structure/overmap_component/take_damage(amount)
+	if(obj_integrity <= amount)
+		obj_integrity = 10 //Don't want them to actually be destroyed until we make them buildable. But you can bash the shit out of them for now
+		return
+	. = ..()
 
 /obj/structure/overmap_component/Initialize()
 	. = ..()
@@ -38,6 +44,10 @@
 	to_chat(user, "-it seems to be connected to [linked]")
 
 /obj/structure/overmap_component/proc/find_overmap()
+	var/area/AR = get_area(src)
+	if(AR.linked_overmap)
+		linked = AR.linked_overmap //Saves me a bit of a headache with all these damn subtypes :)
+		return
 	for(var/obj/structure/overmap/OM in GLOB.overmap_ships)
 		if(OM.class == id)
 			linked = OM
@@ -126,3 +136,488 @@
 	icon_state = "tactical"
 	position = "tactical"
 	id = "warbird"
+
+///INJECTORS, RELAYS, AND INTEGRITY FIELD GEN!///
+// Each relay gives +2 max power per system
+
+
+/obj/structure/overmap_component/plasma_injector
+	name = "Plasma injector"
+	desc = "This sturdy device will inject supplied plasma into the ship's ODN relays, allowing for massive power transference. Simply load it with a plasma canister, or click it with an empty hand to remove a canister"
+	icon_state = "injector"
+	req_access = list(ACCESS_ENGINE_EQUIP)
+	var/obj/item/tank/internals/plasma/loaded_tank = null //Nicked from rad collector code, see there for documentation (collector.dm)
+	max_integrity = 350
+	integrity_failure = 50
+	var/powerproduction_drain = 0.015 //Relatively high drain on the plasma tanks.
+	var/drainratio = 1
+	var/supplying = FALSE //Are we supplying plasma to another object?
+	var/obj/structure/overmap_component/plasma_relay/supply_to
+	var/obj/structure/overmap_component/integrity_field_generator/generator
+	var/locked = FALSE
+
+/obj/structure/overmap_component/plasma_injector/attack_hand(mob/user)
+	var/mob/living/carbon/human/L = user
+	var/obj/item/card/id/ID = L.wear_id
+	if(ID && istype(ID))
+		if(!check_access(ID))
+			to_chat(user, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>you are not authorized to execute this command.</span>")
+			return
+	else
+		to_chat(user, "You need to be wearing an ID to use this machine.")
+		return
+	eject()
+
+/obj/structure/overmap_component/plasma_injector/examine(mob/user)
+	. = ..()
+	if(!supply_to)
+		return
+	to_chat(user, "it's injecting plasma towards [supply_to] in [get_area(supply_to)].")
+
+/obj/structure/overmap_component/plasma_injector/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/tank/internals/plasma))
+		if(!anchored)
+			to_chat(user, "<span class='warning'>[src] needs to be secured to the floor first!</span>")
+			return TRUE
+		if(loaded_tank)
+			to_chat(user, "<span class='warning'>There's already a plasma tank loaded!</span>")
+			return TRUE
+		if(!user.transferItemToLoc(W, src))
+			return
+		loaded_tank = W
+		START_PROCESSING(SSobj,src)
+	else if(W.GetID())
+		if(allowed(user))
+			locked = !locked
+			to_chat(user, "<span class='notice'>You [locked ? "lock" : "unlock"] the controls.</span>")
+		else
+			to_chat(user, "<span class='danger'>Access denied.</span>")
+			return TRUE
+	else
+		return ..()
+
+/obj/structure/overmap_component/plasma_injector/Destroy()
+	STOP_PROCESSING(SSobj,src)
+	. = ..()
+
+/obj/structure/overmap_component/plasma_injector/process()
+	if(!loaded_tank || !linked || !linked.powered_components.len)
+		icon_state = "injector"
+		return
+	if(!supply_to || QDELETED(supply_to))
+		supplying = FALSE
+		find_supply_to()
+		return
+	if(!loaded_tank.air_contents.gases[/datum/gas/plasma])
+		playsound(src, 'DS13/sound/effects/computer/alert2.ogg', 100, 1)
+		playsound(src, 'DS13/sound/effects/computer/power_down.ogg', 100, 1)
+		eject()
+		icon_state = "injector"
+		return
+	icon_state = "injector-on"
+	var/gasdrained = min(powerproduction_drain*drainratio,loaded_tank.air_contents.gases[/datum/gas/plasma][MOLES])
+	loaded_tank.air_contents.gases[/datum/gas/plasma][MOLES] -= gasdrained
+	loaded_tank.air_contents.garbage_collect()
+	if(supply_to)
+		supply_to.plasma_volume += powerproduction_drain
+	if(generator)
+		generator.plasma_volume += powerproduction_drain
+
+/obj/structure/overmap_component/plasma_injector/proc/find_supply_to()
+	for(var/obj/structure/overmap_component/integrity_field_generator/IFS in linked.powered_components)
+		if(!IFS.supplier)
+			generator = IFS
+			generator.supplier = src
+			supplying = TRUE
+	for(var/obj/structure/overmap_component/plasma_relay/X in linked.powered_components)
+		if(!X.supplier)
+			supply_to = X
+			X.supplier = src
+			supplying = TRUE
+			return TRUE
+
+/obj/structure/overmap_component/plasma_injector/proc/eject()
+	locked = FALSE
+	var/obj/item/tank/internals/plasma/Z = loaded_tank
+	if (!Z)
+		return
+	Z.forceMove(drop_location())
+	Z.layer = initial(Z.layer)
+	Z.plane = initial(Z.plane)
+	loaded_tank = null
+	icon_state = "injector"
+
+/obj/structure/overmap_component/plasma_relay //Annnd these supply power to your systems
+	name = "ODN relay"
+	desc = "This sturdy fuses warp plasma into power via the power grid. This power is then supplied to a subsystem of choice"
+	icon_state = "relay-closed"
+	req_access = list(ACCESS_ENGINE_EQUIP)
+	var/obj/structure/overmap_component/plasma_injector/supplier
+	var/supplying = null //can be engines, shields, weapons
+	var/panel_open = FALSE //You gotta take the panel off first if you want to mess with it.
+	var/plasma_volume = 0 //How much plasma we got? If you store loads in it and this takes a hit it'll rupture and spill some of it all over the place.
+	var/plasma_drain = 0.005 //Allows a tiny bit of plasma buildup in normal usage cases.
+	var/active = FALSE //Have we got enough plasma to power a system?
+	var/activated = FALSE //Have we powered a system? If so, no need to spam its max_power stat endlessly
+	var/list/zaps = list('DS13/sound/effects/damage/consolehit.ogg','DS13/sound/effects/damage/consolehit2.ogg','DS13/sound/effects/damage/consolehit3.ogg','DS13/sound/effects/damage/consolehit4.ogg')
+	var/list/bleeps = list('DS13/sound/effects/computer/bleep1.ogg','DS13/sound/effects/computer/bleep2.ogg')
+	var/repair_step = "wrench" //Wrench, screwdriver, wirecutters, screwdriver, wrench
+	max_integrity = 150
+	var/benefit = 2 //2 of these per subsystem, or build more thru RnD
+	var/force_shutdown = FALSE //Are we being forced to turn off?
+
+/obj/structure/overmap_component/plasma_relay/attack_hand(mob/user)
+	. = ..()
+	var/Q = alert(user,"Redirect power to what system?","[src]","shields","weapons", "engines")
+	if(!Q || Q == "cancel")
+		playsound(loc, 'DS13/sound/effects/computer/bleep2.ogg',100)
+		return
+	playsound(loc, 'DS13/sound/effects/computer/beep3.ogg',100)
+	set_active(FALSE) //Remove us from our benefactor
+	supplying = Q
+	set_active(TRUE)
+	to_chat(user, "<span class='notice'>[src] will now supply the [supplying] subsystem with power</span>")
+
+/obj/structure/overmap_component/plasma_relay/attackby(obj/item/I, mob/user, params)
+	if(I.tool_behaviour == TOOL_CROWBAR && panel_open)
+		playsound(loc,I.usesound,100,1)
+		to_chat(user, "<span class='notice'>You start to replace [src]'s cover.</span>")
+		if(do_after(user, 30, target = src))
+			panel_open = FALSE
+			set_active(TRUE)
+			to_chat(user, "<span class='notice'>You replace [src]'s cover.</span>")
+		return update_icon()
+	if(!panel_open)
+		if(I.tool_behaviour == TOOL_CROWBAR && !panel_open)
+			playsound(loc,I.usesound,100,1)
+			to_chat(user, "<span class='notice'>You start to prize off [src]'s cover.</span>")
+			if(do_after(user, 30, target = src))
+				panel_open = TRUE
+				to_chat(user, "<span class='notice'>You remove [src]'s cover.</span>")
+			return update_icon()
+	else
+		if(I.tool_behaviour == TOOL_WRENCH && repair_step == "wrench")
+			playsound(loc,I.usesound,100,1)
+			to_chat(user, "<span class='notice'>You start to unfasten [src]'s couplings.</span>")
+			if(do_after(user, 30, target = src))
+				repair_step = "screwdriver"
+			return update_icon()
+		if(I.tool_behaviour == TOOL_SCREWDRIVER && repair_step == "screwdriver")
+			playsound(loc,I.usesound,100,1)
+			to_chat(user, "<span class='notice'>You start to mend [src]'s isolinear circuitry.</span>")
+			if(do_after(user, 30, target = src))
+				repair_step = "wirecutters"
+			return update_icon()
+		if(I.tool_behaviour == TOOL_WIRECUTTER && repair_step == "wirecutters")
+			playsound(loc,I.usesound,100,1)
+			to_chat(user, "<span class='notice'>You start cutting out [src]'s fused relays.</span>")
+			if(do_after(user, 30, target = src))
+				repair_step = "screwdriver2"
+				to_chat(user, "<span class='notice'>You have successfully repaired [src]! re-assembly is the reverse of removal.</span>")
+				obj_integrity = max_integrity
+			return update_icon()
+		if(I.tool_behaviour == TOOL_SCREWDRIVER && repair_step == "screwdriver2")
+			playsound(loc,I.usesound,100,1)
+			to_chat(user, "<span class='notice'>You start fasten [src]'s screws.</span>")
+			if(do_after(user, 30, target = src))
+				repair_step = "wrench2"
+			return update_icon()
+		if(I.tool_behaviour == TOOL_WRENCH && repair_step == "wrench2")
+			playsound(loc,I.usesound,100,1)
+			to_chat(user, "<span class='notice'>You start to re-fasten [src]'s couplings.</span>")
+			if(do_after(user, 30, target = src))
+				repair_step = "wrench"
+				to_chat(user, "<span class='notice'>You have successfully re-assembled [src]! replace its cover to complete repairs.</span>")
+			return update_icon()
+	. = ..()
+	update_icon()
+
+/obj/structure/overmap_component/plasma_relay/examine(mob/user)
+	. = ..()
+	if(supplier && supplying)
+		to_chat(user, "it receiving plasma from [supplier] and is supplying the <b>[supplying]</b> system for [linked]")
+
+/obj/structure/overmap_component/plasma_relay/take_damage(damage_amount)
+	. = ..()
+	var/sound = pick(zaps)
+	playsound(src.loc, sound, 70,1)
+	var/bleep = pick(bleeps)
+	playsound(src.loc, bleep, 70,1)
+	do_sparks(5, 8, src)
+	if(plasma_volume >= 2)
+		var/turf/T = get_step(src, SOUTH)
+		T.atmos_spawn_air("plasma=10;TEMP=2000") //Anything less than this barely even matters
+		plasma_volume -= 2
+
+/obj/structure/overmap_component/plasma_relay/update_icon()
+	if(panel_open)
+		icon_state = "relay-open"
+		return
+	else
+		icon_state = "relay-closed"
+		if(obj_integrity < 40)
+			icon_state = "relay-closed-alert"
+			set_active(FALSE)
+		return
+	icon_state = "relay-closed"
+
+/obj/structure/overmap_component/plasma_relay/process()
+	update_icon()
+	if(obj_integrity < 40 || plasma_volume < plasma_drain)
+		set_active(FALSE)
+		return
+	if(!supplying)
+		find_supplying()
+		return
+	if(!active && !panel_open)
+		set_active(TRUE)
+		return
+	if(plasma_volume >= plasma_drain)
+		plasma_volume -= plasma_drain
+		set_active(TRUE)
+	else
+		set_active(FALSE)
+
+/obj/structure/overmap_component/plasma_relay/proc/set_active(var/bool, var/forced = FALSE)
+	if(bool && forced)
+		force_shutdown = FALSE
+	if(panel_open || force_shutdown)
+		active = FALSE
+		return
+	if(bool)
+		if(activated)
+			return
+		activated = TRUE
+		active = TRUE
+		playsound(loc, 'DS13/sound/effects/computer/power_up.ogg', 100, 1)
+		switch(supplying)
+			if("shields")
+				linked.max_shield_power += benefit
+			if("weapons")
+				linked.max_weapon_power += benefit
+			if("engines")
+				linked.max_engine_power += benefit
+		linked.check_power()
+	else
+		if(!activated) //Has to have been active, and thus benefitting a system, in order to remove said benefit.
+			return
+		activated = FALSE
+		active = FALSE
+		playsound(loc, 'DS13/sound/effects/computer/power_down.ogg', 100, 1)
+		if(forced)
+			force_shutdown = TRUE //Can't repower. We've been forcibly shut down
+		switch(supplying)
+			if("shields")
+				linked.max_shield_power -= benefit
+			if("weapons")
+				linked.max_weapon_power -= benefit
+			if("engines")
+				linked.max_engine_power -= benefit
+		linked.check_power()
+
+
+/obj/structure/overmap_component/plasma_relay/proc/find_supplying()
+	if(linked.max_shield_power < 4) //Fill up shields first :)
+		supplying = "shields"
+	if(linked.max_weapon_power < 4)
+		supplying = "weapons"
+	if(linked.max_engine_power < 4)
+		supplying = "engines"
+	if(!supplying)
+		supplying = pick("shields","weapons","engines")
+	set_active(TRUE) //Set it to be activated. It'll then shut off due to lack of plasma.
+
+/obj/structure/overmap_component/plasma_relay/Initialize()
+	. = ..()
+	if(!linked)
+		find_overmap()
+	if(linked)
+		linked.powered_components += src
+	find_supplying()
+	START_PROCESSING(SSobj,src)
+
+/obj/structure/overmap_component/plasma_relay/Destroy()
+	STOP_PROCESSING(SSobj,src)
+	. = ..()
+
+/obj/structure/overmap_component/system_control //These let you manually shut off power to a system for sabotage purposes.
+	name = "System control panel"
+	desc = "This ultra-sturdy box can toggle ODN relays connected to its current system."
+	icon_state = "control-closed"
+	var/controlling = null
+	var/panel_open = FALSE
+	var/active = TRUE //They always start active
+	var/hacked = FALSE
+	req_access = list(ACCESS_ENGINE_EQUIP)
+	var/step = "start"
+	max_integrity = 1000 //Ultra robust
+
+/obj/structure/overmap_component/system_control/examine(mob/user)
+	. = ..()
+	if(!controlling)
+		find_system()
+		return
+	to_chat(user, "-it is controlling the [controlling] subsystem.")
+
+/obj/structure/overmap_component/system_control/Initialize()
+	. = ..()
+	if(!linked)
+		find_overmap()
+	linked.subsystem_controllers += src
+	find_system()
+
+/obj/structure/overmap_component/system_control/proc/find_system()
+	var/can_shields = TRUE
+	var/can_weapons = TRUE
+	var/can_engines = TRUE
+	for(var/obj/structure/overmap_component/system_control/X in linked.subsystem_controllers)
+		if(X && istype(X))
+			if(!X.controlling)
+				continue
+			if(X.controlling == "shields")
+				can_shields = FALSE
+			if(X.controlling == "weapons")
+				can_weapons = FALSE
+			if(X.controlling == "engines")
+				can_engines = FALSE
+	if(can_shields)
+		controlling = "shields"
+		return
+	if(can_weapons)
+		controlling = "weapons"
+		return
+	if(can_engines)
+		controlling = "engines"
+		return
+
+/obj/structure/overmap_component/system_control/attackby(obj/item/I, mob/user, params)
+	if(I.tool_behaviour == TOOL_CROWBAR && panel_open)
+		playsound(loc,I.usesound,100,1)
+		to_chat(user, "<span class='notice'>You start to replace [src]'s cover.</span>")
+		if(do_after(user, 30, target = src))
+			panel_open = FALSE
+			to_chat(user, "<span class='notice'>You replace [src]'s cover.</span>")
+		return update_icon()
+	if(!panel_open)
+		if(I.tool_behaviour == TOOL_CROWBAR && !panel_open)
+			playsound(loc,I.usesound,100,1)
+			to_chat(user, "<span class='notice'>You start to prize off [src]'s cover.</span>")
+			if(do_after(user, 30, target = src))
+				panel_open = TRUE
+				to_chat(user, "<span class='notice'>You remove [src]'s cover.</span>")
+			return update_icon()
+	if(panel_open && !hacked)
+		if(I.tool_behaviour == TOOL_SCREWDRIVER && step == "start")
+			playsound(loc,I.usesound,100,1)
+			to_chat(user, "<span class='notice'>You start to undo [src]'s screws.</span>")
+			if(do_after(user, 100, target = src))
+				step = "wrench"
+			return update_icon()
+		if(I.tool_behaviour == TOOL_WRENCH && step == "wrench")
+			playsound(loc,I.usesound,100,1)
+			to_chat(user, "<span class='notice'>You force your way through [src]'s protective casings.</span>")
+			if(do_after(user, 100, target = src))
+				step = "end"
+			return update_icon()
+		if(I.tool_behaviour == TOOL_WELDER && step == "end")
+			playsound(loc,I.usesound,100,1)
+			to_chat(user, "<span class='notice'>You begin to cut through [src]'s authorization circuitry</span>")
+			if(do_after(user, 100, target = src))
+				hacked = TRUE
+				playsound(loc, 'DS13/sound/effects/computer/alert1.ogg',100)
+				say("Authori~@A@DA~D~A~D%%0-110- no longer required.")
+				step = "finished"
+			return update_icon()
+
+/obj/structure/overmap_component/system_control/attack_hand(mob/user)
+	if(!controlling)
+		find_system()
+		return
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/L = user
+	if(!hacked)
+		var/obj/item/card/id/ID = L.wear_id
+		if(ID && istype(ID))
+			if(!check_access(ID))
+				to_chat(user, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>you are not authorized to execute this command.</span>")
+				return
+		else
+			to_chat(user, "You need to be wearing an ID to use this machine.")
+			return
+	var/Q = alert(user,"[active ? "deactivate" : "activate"] [controlling] subsystem?","[src]","yes","no")
+	if(Q == "yes")
+		to_chat(user, "You [active ? "deactivate" : "activate"] all ODN relays connected to the [controlling] subsystem.")
+		if(active)
+			active = FALSE
+		else
+			active = TRUE
+		for(var/obj/structure/overmap_component/plasma_relay/XX in linked.powered_components)
+			if(XX.supplying == controlling)
+				XX.set_active(active, TRUE)
+	update_icon()
+
+/obj/structure/overmap_component/system_control/update_icon()
+	if(panel_open)
+		icon_state = "control-open"
+		return
+	if(active)
+		icon_state = "control-closed"
+	else
+		icon_state = "control-closed-alert"
+
+
+/obj/structure/overmap_component/integrity_field_generator
+	name = "Structural integrity field generator"
+	desc = "A sturdy device which, when supplied with warp plasma, generates a structural integrity field around the ship, allowing it to withstand even the harshest envioronments! A warning label on it reads: WARNING. Loss of structural integrity field will result in a catastrophic warp containment breach."
+	icon_state = "fieldgen"
+	icon = 'DS13/icons/overmap/integrity_field_gen.dmi'
+	req_access = list(ACCESS_ENGINE_EQUIP)
+	max_integrity = 350
+	integrity_failure = 50
+	var/plasma_volume = 0
+	var/drainrate = 0.015 //How quickly we drain plasma
+	var/healrate = 0.15 //Equates to how quickly the ship heals. Keep in mind that this is SLOW! Otherwise missions would be too easy ;)
+	var/locked = FALSE
+	var/obj/structure/overmap_component/plasma_injector/supplier
+	var/active = FALSE
+	var/activated = FALSE
+	var/panel_open = FALSE
+	var/force_shutdown = FALSE //Has someone deliberately turned us off?
+	pixel_x = -9 //Deal with shitty offset
+
+/obj/structure/overmap_component/integrity_field_generator/proc/set_active(var/bool)
+	if(panel_open || force_shutdown)
+		active = FALSE
+		return
+	if(bool)
+		if(activated)
+			return
+		activated = TRUE
+		active = TRUE
+		playsound(loc, 'DS13/sound/effects/computer/power_up.ogg', 100, 1)
+	else
+		if(!activated) //Has to have been active, and thus benefitting a system, in order to remove said benefit.
+			return
+		activated = FALSE
+		active = FALSE
+		playsound(loc, 'DS13/sound/effects/computer/power_down.ogg', 100, 1)
+
+/obj/structure/overmap_component/integrity_field_generator/Initialize()
+	. = ..()
+	linked.powered_components += src
+	START_PROCESSING(SSobj,src)
+	set_active(TRUE) //Start 'er up Jim!
+
+/obj/structure/overmap_component/integrity_field_generator/Destroy()
+	STOP_PROCESSING(SSobj,src)
+	. = ..()
+
+/obj/structure/overmap_component/integrity_field_generator/process()
+	if(!linked || plasma_volume <= 0 || linked.health >= linked.max_health)
+		set_active(FALSE)
+		return
+	set_active(TRUE)
+	if(linked.health < linked.max_health && plasma_volume >= drainrate)
+		plasma_volume -= drainrate
+		linked.health += healrate

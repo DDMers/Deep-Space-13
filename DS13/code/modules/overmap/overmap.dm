@@ -7,6 +7,10 @@ When making a new ship, please include its directional shields in the SAME ICON 
 */
 GLOBAL_LIST_INIT(overmap_ships, list())
 
+/area
+	var/obj/structure/overmap/linked_overmap
+	var/class = "none" //Make sure this matches the "class" of an overmap if you want them to autolink.
+
 /obj/structure/overmap
 	name = "Ship"
 	desc = "Since Zephram cochrane's first flight, humanity has always had its head in the stars."
@@ -30,6 +34,8 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	var/max_health = 200
 	var/area/override_linked_ship //If we're not the main overmap, we'd best link to an area! If you place an overmap in /area/ship it will NOT be the main overmap, so use station areas instead!
 	var/main_overmap = FALSE //Is this the main overmap? Is it gonna be linked to all station areas?
+	var/list/powered_components = list() //Used in components.dm, do we have any system components that require power?
+	var/list/subsystem_controllers = list() //What subsystem controllers do we have? (components.dm, bottom of page)
 
 /obj/structure/overmap/proc/OvermapInitialize() //Called before the while loop which allows movement
 	shield_overlay = new(get_turf(src))
@@ -40,6 +46,7 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	health = max_health
 	check_power()
 	GLOB.overmap_ships += src
+	find_area()
 
 
 //	var/area/A = get_area(src)
@@ -53,3 +60,17 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 
 /obj/structure/overmap/proc/apply_shield_boost() //If you want to start out with some shields that are stronger than others
 	return
+
+
+/obj/structure/overmap/proc/find_area()
+	if(main_overmap)
+		for(var/X in GLOB.teleportlocs) //Apply us to all the station areas then
+			var/area/area = GLOB.teleportlocs[X] //Pick a station area and yeet it.
+			if(!istype(area, /area/ship))
+				area.linked_overmap = src
+		return
+	for(var/area/AR in GLOB.sortedAreas)
+		if(AR.class == class)
+			linked_area = AR
+			AR.linked_overmap = src
+			return TRUE

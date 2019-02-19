@@ -21,6 +21,7 @@
 	var/torpedo_damage = 30 //30 damage for free
 	var/area/linked_area = null
 	var/destroyed = FALSE
+	var/damage_sector = "shields" //Tactical can change this! What system are we targeting?
 
 /obj/structure/overmap/proc/send_sound_crew(var/sound/S)
 	for(var/mob/M in operators)
@@ -201,19 +202,26 @@
 /obj/structure/overmap/attack_hand(mob/user, proximity) //I will need this later to show radial menus
 	if(user.remote_control in crew) //This means theyre one of our officers, so show them the appropriate radial!
 		if(user == tactical) //The user is our tactical operator, show him the options
-			var/list/options = list("phaser", "torpedo")
+			var/list/options = list("phaser", "torpedo", "target_system")
 			for(var/option in options)
 				options[option] = image(icon = 'DS13/icons/actions/weaponselect.dmi', icon_state = "[option]")
 			var/dowhat = show_radial_menu(user,src,options)
 			if(!dowhat)
+				return
+			if(dowhat == "target_system")
+				var/list/zones = list("shields", "engines", "weapons")
+				for(var/option in zones)
+					zones[option] = image(icon = 'DS13/icons/actions/weaponselect.dmi', icon_state = "[option]")
+				var/zone = show_radial_menu(user,src,zones)
+				if(zone)
+					damage_sector = zone
+					to_chat(user, "<b>[src] will now target enemy [zone] subsystems in combat.")
 				return
 			fire_mode = dowhat
 			if(dowhat == "torpedo")
 				var/sound/S = pick('DS13/sound/effects/voice/LoadingPhoton.ogg','DS13/sound/effects/voice/LoadingPhoton2.ogg')
 				voice_alert(S)
 			return
-
-
 
 /obj/machinery
 	var/list/zaps = list('DS13/sound/effects/damage/consolehit.ogg','DS13/sound/effects/damage/consolehit2.ogg','DS13/sound/effects/damage/consolehit3.ogg','DS13/sound/effects/damage/consolehit4.ogg')
@@ -290,21 +298,28 @@
 //	var/damage_dir = angle2dir(target_angle) //Now we have our simulated beam, turn its angle into a dir.
 	var/obj/structure/overmap/OM = source
 	var/sector = get_quadrant_hit(OM,src)
+	GLOB.music_controller.play() //Try play some battle music, if there's already battle music then don't bother :)
 	if(shields.absorb_damage(amount, sector))
 		special_fx(TRUE)
 		var/sound/shieldhit = pick('DS13/sound/effects/damage/shield_hit.ogg','DS13/sound/effects/damage/shield_hit2.ogg')
 		send_sound_crew(shieldhit)
 		show_damage(amount, TRUE)
 		shield_alert()
+		return
 	else
 		special_fx(FALSE)
 		health -= amount
 		new /obj/effect/temp_visual/ship_explosion(get_turf(src))
 		show_damage(amount)
-	GLOB.music_controller.play() //Try play some battle music, if there's already battle music then don't bother :)
 	if(health <= 0 && !destroyed)
 		destroyed = TRUE
 		explode()
+	var/mod = (damage/2) //So you don't blow out the relays too frequently.
+	for(var/obj/structure/overmap_component/XX in powered_components)
+		if(istype(XX, /obj/structure/overmap_component/plasma_relay))
+			var/obj/structure/overmap_component/plasma_relay/PS = XX
+			if(PS.supplying == OM.damage_sector && PS.obj_integrity >= 40)
+				PS.take_damage(mod)
 
 /obj/structure/overmap/proc/explode()
 	qdel(shield_overlay)
@@ -350,14 +365,6 @@
 		explosion(T,10,10,10)
 	qdel(src)
 
-/obj/structure/overmap/proc/find_area()
-	for(var/area/AR in GLOB.sortedAreas)
-		if(istype(AR, /area/ship))
-			var/area/ship/S = AR
-			if(S.class == class)
-				linked_area = AR
-				return TRUE
-
 /obj/structure/overmap/proc/special_fx_targeted(var/shields_absorbed) //This ship isn't the main overmap, so find the area we want and apply damage to it
 	if(!linked_area)
 		find_area()
@@ -376,6 +383,7 @@
 		if(prob(10))
 			var/turf/T = pick(get_area_turfs(linked_area))
 			T.atmos_spawn_air("plasma=15;TEMP=2000")
+
 
 /obj/structure/overmap/proc/show_damage(var/amount, var/shields_absorbed) //Flash up numbers showing how much damage we just took
 	if(amount > 100)

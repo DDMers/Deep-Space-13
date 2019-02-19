@@ -2,6 +2,9 @@
 	var/shield_power = 0
 	var/weapon_power = 0
 	var/engine_power = 0
+	var/max_shield_power = 0
+	var/max_weapon_power = 0
+	var/max_engine_power = 0
 	var/power_slots = 4 //Power all systems, and one bonus piece for playing around
 
 /obj/structure/overmap/OvermapInitialize()
@@ -17,7 +20,18 @@
 /obj/structure/overmap/proc/check_power(var/play_voice = FALSE)
 	if(power_slots < 0)
 		power_slots = 0
-		return
+	if(max_shield_power < shield_power) //EG. power = 4, max = 2
+		var/diff = shield_power - max_shield_power //4 - 2 = 2
+		shield_power = max_shield_power //2
+		power_slots += diff //+= 2
+	if(max_weapon_power < weapon_power)
+		var/diff = weapon_power - max_weapon_power
+		weapon_power = max_weapon_power
+		power_slots += diff
+	if(max_engine_power < engine_power)
+		var/diff = engine_power - max_engine_power
+		engine_power = max_engine_power
+		power_slots += diff
 	var/new_chargerate = initial(shields.chargerate) + (shield_power/2) //Nerfed this so that shields become more of an issue when they go down
 	var/new_damage = initial(damage)+(weapon_power*10)
 	var/new_speed = initial(max_speed)+engine_power
@@ -26,19 +40,17 @@
 	damage = new_damage
 	max_speed = new_speed
 	turnspeed = new_turnspeed
-	if(!play_voice)
-		return //Stop spamming voice whenever you fire
 	if(shield_power <= 0)
 		shields.depower()
 		shields.chargerate = 0
-		voice_alert('DS13/sound/effects/voice/ShieldsDisabled.ogg')
+		if(play_voice)voice_alert('DS13/sound/effects/voice/ShieldsDisabled.ogg')
 	if(weapon_power <= 0)
 		damage = 0
-		voice_alert('DS13/sound/effects/voice/PhasersDisabled.ogg')
+		if(play_voice)voice_alert('DS13/sound/effects/voice/PhasersDisabled.ogg')
 	if(engine_power <= 0)
 		max_speed = 0
 		turnspeed = 0
-		voice_alert('DS13/sound/effects/voice/ImpulseDisabled.ogg')
+		if(play_voice)voice_alert('DS13/sound/effects/voice/ImpulseDisabled.ogg')
 
 /obj/structure/overmap/proc/after_enter(mob/user)
 	user.throw_alert("Radar",/obj/screen/alert/radar)
@@ -102,8 +114,10 @@
 /obj/screen/alert/power_manager/shields/add_power()
 	if(theship.power_slots <= 0)
 		return
-	if(theship.shield_power < 4)
+	if(theship.shield_power < theship.max_shield_power)
 		theship.shield_power ++
+	else
+		return
 	update_icon()
 	. = ..()
 
@@ -129,8 +143,10 @@
 /obj/screen/alert/power_manager/weapons/add_power()
 	if(theship.power_slots <= 0)
 		return
-	if(theship.weapon_power < 4)
+	if(theship.weapon_power < theship.max_weapon_power)
 		theship.weapon_power ++
+	else
+		return
 	update_icon()
 	. = ..()
 
@@ -156,8 +172,10 @@
 /obj/screen/alert/power_manager/engines/add_power()
 	if(theship.power_slots <= 0)
 		return
-	if(theship.engine_power < 4)
+	if(theship.engine_power < theship.max_engine_power)
 		theship.engine_power ++
+	else
+		return
 	update_icon()
 	. = ..()
 
@@ -174,14 +192,14 @@
 	desc = "The total power slots your ship has"
 	icon_state = "power_slot"
 
-/obj/screen/alert/power_manager/power_slot/Initialize()
+/obj/screen/alert/power_manager/Initialize()
 	. = ..()
 	START_PROCESSING(SSfastprocess,src)
 
-/obj/screen/alert/power_manager/power_slot/process()
+/obj/screen/alert/power_manager/process()
 	update_icon()
 
-/obj/screen/alert/power_manager/power_slot/Destroy()
+/obj/screen/alert/power_manager/Destroy()
 	STOP_PROCESSING(SSfastprocess,src)
 	. = ..()
 

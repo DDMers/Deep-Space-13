@@ -25,6 +25,9 @@
 	shield_power = 2 //So theyre not ultra squishy
 	weapon_power = 1
 	engine_power = 1
+	max_shield_power = 4
+	max_weapon_power = 4
+	max_engine_power = 4
 	power_slots -= 4
 	AI_enabled = TRUE //Let the computer take the wheel
 	check_power()
