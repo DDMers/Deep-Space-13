@@ -164,7 +164,6 @@
 			if (!(entered_dirs & H.dir))
 				entered_dirs |= H.dir
 				update_icon()
-
 /obj/effect/decal/cleanable/blood/footprints/Uncrossed(atom/movable/O)
 	..()
 	if(ishuman(O))
