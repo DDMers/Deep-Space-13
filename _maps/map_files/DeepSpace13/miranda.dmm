@@ -295,6 +295,13 @@
 	},
 /turf/open/floor/trek/tile,
 /area/ship/miranda)
+"aW" = (
+/obj/item/twohanded/required/klingon,
+/obj/structure/table,
+/obj/item/clothing/under/trek/klingon,
+/obj/item/kitchen/knife/combat/klingon,
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
 "aX" = (
 /turf/closed/wall/trek_smooth/corridor,
 /area/ship/miranda)
@@ -628,123 +635,142 @@
 /obj/structure/bed,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/miranda)
-"cL" = (
-/turf/closed/wall/trek_smooth,
-/area/ship/warbird)
-"dX" = (
+"cx" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
 /turf/open/floor/trek/tile,
 /area/ship/warbird)
-"eb" = (
+"ek" = (
+/obj/structure/overmap_component/system_control,
+/turf/closed/wall/trek_smooth/corridor,
+/area/ship/miranda)
+"gB" = (
+/turf/closed/wall/trek_smooth,
+/area/ship/warbird)
+"gZ" = (
+/obj/machinery/telecomms/relay/preset/station,
+/turf/open/floor/plasteel/dark,
+/area/ship/miranda)
+"hW" = (
+/obj/structure/overmap_component/integrity_field_generator{
+	pixel_x = -9
+	},
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"iU" = (
+/obj/structure/overmap_component/plasma_injector,
+/turf/closed/wall/trek_smooth,
+/area/ship/warbird)
+"ol" = (
+/obj/structure/overmap_component/integrity_field_generator{
+	pixel_x = -9
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"pb" = (
+/obj/structure/overmap_component/science/warbird,
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"pq" = (
+/obj/structure/overmap_component/helm/warbird,
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"ps" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"rt" = (
+/obj/structure/overmap_component/viewscreen,
+/turf/closed/wall/trek_smooth,
+/area/ship/warbird)
+"rH" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"rO" = (
+/obj/structure/overmap_component/plasma_relay,
+/turf/closed/wall/trek_smooth/room,
+/area/ship/miranda)
+"xT" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"yN" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"zW" = (
+/obj/structure/overmap_component/plasma_relay,
+/turf/closed/wall/trek_smooth/corridor,
+/area/ship/miranda)
+"EE" = (
 /obj/machinery/light/broken{
 	icon_state = "tube-broken";
 	dir = 4
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"fR" = (
-/obj/structure/overmap_component/plasma_relay,
-/turf/closed/wall/trek_smooth/room,
-/area/ship/miranda)
-"jL" = (
-/obj/item/twohanded/required/klingon,
-/obj/structure/table,
-/obj/item/clothing/under/trek/klingon,
-/obj/item/kitchen/knife/combat/klingon,
+"Fo" = (
+/obj/structure/overmap_component/tactical/warbird,
 /turf/open/floor/trek/tile,
 /area/ship/warbird)
-"nZ" = (
-/obj/structure/overmap_component/integrity_field_generator{
-	pixel_x = -9
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"of" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/turf/open/floor/trek/tile,
-/area/ship/warbird)
-"or" = (
-/obj/machinery/telecomms/relay/preset/station,
-/turf/open/floor/plasteel/dark,
-/area/ship/miranda)
-"oI" = (
+"FS" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"qB" = (
-/obj/structure/overmap_component/science/warbird,
-/turf/open/floor/trek/tile,
+"Oi" = (
+/obj/structure/overmap_component/system_control,
+/turf/closed/wall/trek_smooth,
 /area/ship/warbird)
-"xB" = (
-/obj/structure/overmap_component/tactical/warbird,
-/turf/open/floor/trek/tile,
-/area/ship/warbird)
-"BX" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/turf/open/floor/trek/tile,
-/area/ship/warbird)
-"Cr" = (
+"RP" = (
 /obj/structure/overmap_component/plasma_injector,
 /turf/closed/wall/trek_smooth/corridor,
 /area/ship/miranda)
-"Fq" = (
+"SY" = (
 /obj/structure/overmap_component/plasma_relay,
-/turf/closed/wall/trek_smooth/corridor,
-/area/ship/miranda)
-"FP" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
+/turf/closed/wall/trek_smooth,
+/area/ship/warbird)
+"Tg" = (
 /turf/open/floor/trek/tile,
 /area/ship/warbird)
-"LN" = (
-/obj/structure/overmap_component/helm/warbird,
-/turf/open/floor/trek/tile,
-/area/ship/warbird)
-"Op" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"Um" = (
-/obj/structure/overmap_component/system_control,
-/turf/closed/wall/trek_smooth/corridor,
-/area/ship/miranda)
-"Yb" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
+"Zq" = (
+/obj/item/tank/internals/plasma/full,
 /turf/open/floor/trek/tile,
 /area/ship/warbird)
 
@@ -29403,7 +29429,7 @@ ak
 aq
 ap
 ao
-or
+gZ
 aM
 ar
 aY
@@ -29426,8 +29452,8 @@ as
 as
 as
 bs
-Op
-oI
+ps
+FS
 cg
 as
 as
@@ -29940,7 +29966,7 @@ as
 bR
 as
 bW
-oI
+FS
 cf
 ci
 as
@@ -30194,11 +30220,11 @@ as
 aX
 as
 bh
-Cr
+RP
 as
 ch
 as
-Cr
+RP
 as
 as
 aX
@@ -30439,7 +30465,7 @@ as
 as
 aX
 bk
-eb
+EE
 as
 by
 al
@@ -30448,10 +30474,10 @@ as
 as
 as
 as
-Fq
+zW
 as
 as
-Cr
+RP
 as
 ch
 as
@@ -30956,7 +30982,7 @@ bn
 br
 as
 bA
-fR
+rO
 as
 aD
 aD
@@ -31198,7 +31224,7 @@ ag
 as
 as
 ai
-fR
+rO
 av
 aB
 aB
@@ -31219,17 +31245,17 @@ as
 as
 as
 as
-Um
+ek
 as
 as
-Um
+ek
 bU
 ch
-nZ
-Fq
+ol
+zW
 as
 as
-Um
+ek
 cm
 ba
 ax
@@ -31470,7 +31496,7 @@ bn
 bs
 as
 bA
-fR
+rO
 as
 az
 az
@@ -31990,10 +32016,10 @@ bJ
 bI
 aP
 as
-Fq
+zW
 as
 as
-Cr
+RP
 as
 as
 as
@@ -32250,11 +32276,11 @@ as
 aX
 as
 bh
-Cr
+RP
 as
 as
 as
-Cr
+RP
 as
 as
 aX
@@ -49041,14 +49067,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+gB
+gB
+gB
+gB
+gB
+gB
+gB
+gB
 aa
 aa
 aa
@@ -49298,14 +49324,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+gB
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -49555,14 +49581,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iU
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -49812,14 +49838,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iU
+Tg
+Zq
+Zq
+Zq
+Zq
+Tg
+gB
 aa
 aa
 aa
@@ -50069,14 +50095,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iU
+Tg
+Zq
+Zq
+Zq
+Zq
+hW
+gB
 aa
 aa
 aa
@@ -50326,14 +50352,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iU
+Tg
+Zq
+Zq
+Zq
+Zq
+Tg
+gB
 aa
 aa
 aa
@@ -50583,14 +50609,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iU
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -50840,14 +50866,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+iU
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -51097,14 +51123,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+gB
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -51346,22 +51372,22 @@ aa
 aa
 aa
 aa
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
+gB
+gB
+gB
+gB
+gB
+gB
+gB
+gB
+gB
+gB
+gB
+Tg
+Tg
+gB
+gB
+gB
 aa
 aa
 aa
@@ -51603,22 +51629,22 @@ aa
 aa
 aa
 aa
-cL
-dX
-dX
-xB
-dX
-dX
-dX
-dX
-dX
-dX
-dX
-dX
-dX
-dX
-dX
-cL
+gB
+Tg
+Tg
+Fo
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -51860,22 +51886,22 @@ aa
 aa
 aa
 aa
-cL
-dX
-dX
-dX
-dX
-dX
-dX
-dX
-cL
-dX
-dX
-dX
-dX
-dX
-dX
-cL
+Oi
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+SY
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -52117,22 +52143,22 @@ aa
 aa
 aa
 aa
-cL
-dX
-dX
-dX
-dX
-dX
-dX
-jL
-cL
-dX
-FP
-FP
-of
-Yb
-dX
-cL
+Oi
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+aW
+SY
+Tg
+cx
+cx
+xT
+rH
+Tg
+gB
 aa
 aa
 aa
@@ -52374,22 +52400,22 @@ aa
 aa
 aa
 aa
-cL
-dX
-LN
-dX
-dX
-dX
-dX
-jL
-cL
-dX
-Yb
-BX
-FP
-Yb
-dX
-cL
+SY
+Tg
+pq
+Tg
+Tg
+Tg
+Tg
+aW
+SY
+Tg
+rH
+yN
+cx
+rH
+Tg
+gB
 aa
 aa
 aa
@@ -52631,22 +52657,22 @@ aa
 aa
 aa
 aa
-cL
-dX
-dX
-dX
-dX
-dX
-dX
-jL
-cL
-dX
-Yb
-Yb
-FP
-Yb
-dX
-cL
+Oi
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+aW
+SY
+Tg
+rH
+rH
+cx
+rH
+Tg
+gB
 aa
 aa
 aa
@@ -52888,22 +52914,22 @@ aa
 aa
 aa
 aa
-cL
-dX
-dX
-dX
-dX
-dX
-dX
-dX
-cL
-dX
-dX
-dX
-dX
-dX
-dX
-cL
+rt
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+SY
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -53145,22 +53171,22 @@ aa
 aa
 aa
 aa
-cL
-dX
-dX
-qB
-dX
-dX
-dX
-dX
-dX
-dX
-dX
-dX
-dX
-dX
-dX
-cL
+gB
+Tg
+Tg
+pb
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -53402,22 +53428,22 @@ aa
 aa
 aa
 aa
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
-cL
+gB
+gB
+gB
+gB
+gB
+gB
+gB
+gB
+gB
+gB
+gB
+Tg
+Tg
+gB
+gB
+gB
 aa
 aa
 aa
@@ -53667,14 +53693,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+gB
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -53924,14 +53950,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+gB
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -54181,14 +54207,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+gB
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -54438,14 +54464,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+gB
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -54695,14 +54721,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+gB
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -54952,14 +54978,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+gB
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -55209,14 +55235,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+gB
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -55466,14 +55492,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+gB
+Tg
+Tg
+Tg
+Tg
+Tg
+Tg
+gB
 aa
 aa
 aa
@@ -55723,14 +55749,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+gB
+gB
+gB
+gB
+gB
+gB
+gB
+gB
 aa
 aa
 aa
