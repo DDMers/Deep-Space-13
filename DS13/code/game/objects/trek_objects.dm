@@ -5,6 +5,19 @@
 	icon_state = "beige"
 	smooth = TRUE
 	canSmoothWith = list(/turf/open/floor/carpet/trek)
+	floor_tile = /obj/item/stack/tile/carpet/trek
+
+/obj/item/stack/tile/carpet/trek
+	name = "carpet"
+	singular_name = "carpet"
+	icon_state = "tile-carpet"
+	turf_type = /turf/open/floor/carpet/trek
+	resistance_flags = FLAMMABLE
+	icon = 'DS13/icons/obj/stack_objects.dmi'
+	icon_state = "carpet"
+
+/obj/item/stack/tile/carpet/trek/fifty
+	amount = 50
 
 /turf/open/floor/trek
 	name = "Hull plating"
