@@ -5,7 +5,7 @@
 	var/obj/structure/overmap/target = null //Used for AIs, lets us track a target.
 	var/behaviour = "retaliate" //By default. Ais will only shoot back.
 	var/list/possible_behaviours = list("aggressive", "retaliate", "peaceful") //This will be admin selectable when I add an overmap panel
-	var/range = 10 //Firing range.
+	var/range = 15 //Firing range.
 
 /obj/structure/overmap/AI
 	name = "Romulan warbird class light cruiser"
@@ -40,14 +40,14 @@
 	target = null
 
 /obj/structure/overmap/process()
-	if(!AI_enabled)
+	if(!AI_enabled) //Process is ONLY called for ai ships. We don't want a non ai ship doing this or consequences
 		return
 	if(vel < max_speed)
 		vel += acceleration
-	if(!process)
+	if(!process) //Start process allows the ship to move. It is called at init but if for some reason it stops, we need to reboot it.
 		process = TRUE
 		start_process()
-	if(target)
+	if(target) //We have a target locked in
 		if(get_dist(src, target) > range) //Target ran away. Move on.
 			target = null
 			nav_target = null
@@ -55,8 +55,8 @@
 		if(behaviour == "peaceful") //Peaceful means never retaliate, so return
 			return
 		nav_target = target
-		fire(target, damage)//If we've gotten this far, we've probably been attacked, if not that then we're aggressive and are looking for a fight.
-		return //No need to pick another if we have one and theyre in range
+		fire(target, damage)//Shoot the target. This can either be us shooting on aggressive mode, or us being hit by the attacker.
+		return //No need to pick another target if we have one and theyre in range
 	else
 		pick_target()
 

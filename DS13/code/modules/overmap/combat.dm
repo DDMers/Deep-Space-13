@@ -7,7 +7,7 @@
 
 /obj/structure/overmap
 	var/weapons_ready = TRUE //Are we ready to fire? This is a straight cooldown
-	var/weapons_cooldown = 25 //Fire every second second. Addtimer is slow so watch out
+	var/weapons_cooldown = 25 //This prevents spam. Allows a shot once every 2 seconds
 	var/datum/beam/current_beam = null //Our phaser beam, wow!
 	var/damage = 0 //How much damage do we do? This is +10'd assuming weapons are powered!
 	var/charging = FALSE //charging weapons? if so, we can't fire
@@ -18,7 +18,7 @@
 	var/obj/structure/overmap/tractor_target = null //Are we tractoring a target? This forces it to move towards us.
 	var/datum/beam/tractor_beam = null
 	var/hail_ready = TRUE //Hailing cooldown
-	var/torpedo_damage = 30 //30 damage for free
+	var/torpedo_damage = 30
 	var/area/linked_area = null
 	var/destroyed = FALSE
 	var/damage_sector = "shields" //Tactical can change this! What system are we targeting?
@@ -222,17 +222,6 @@
 				var/sound/S = pick('DS13/sound/effects/voice/LoadingPhoton.ogg','DS13/sound/effects/voice/LoadingPhoton2.ogg')
 				voice_alert(S)
 			return
-
-/obj/machinery
-	var/list/zaps = list('DS13/sound/effects/damage/consolehit.ogg','DS13/sound/effects/damage/consolehit2.ogg','DS13/sound/effects/damage/consolehit3.ogg','DS13/sound/effects/damage/consolehit4.ogg')
-	var/list/bleeps = list('DS13/sound/effects/computer/bleep1.ogg','DS13/sound/effects/computer/bleep2.ogg')
-
-/obj/machinery/proc/explode_effect()
-	var/sound = pick(zaps)
-	playsound(src.loc, sound, 70,1)
-	var/bleep = pick(bleeps)
-	playsound(src.loc, bleep, 70,1)
-	do_sparks(5, 8, src)
 
 /obj/structure/overmap/proc/special_fx(var/shields_absorbed)
 	if(!main_overmap)

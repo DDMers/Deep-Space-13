@@ -48,12 +48,6 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	GLOB.overmap_ships += src
 	find_area()
 
-
-//	var/area/A = get_area(src)
-//	if(istype(A, /area/ship))		UNCOMMENT THIS WHEN DOCKING IS DONE!
-	//	override_linked_ship = A
-	//	return
-
 /obj/structure/overmap/Destroy()
 	. = ..()
 
