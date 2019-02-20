@@ -781,10 +781,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/bridge)
-"cf" = (
-/obj/structure/overmap_component/helm,
-/turf/open/floor/carpet/trek,
-/area/bridge)
 "cg" = (
 /obj/item/twohanded/required/kirbyplants{
 	icon_state = "plant-21"
@@ -796,10 +792,6 @@
 	icon_state = "comfy";
 	dir = 1
 	},
-/turf/open/floor/carpet/trek,
-/area/bridge)
-"ci" = (
-/obj/structure/overmap_component/tactical,
 /turf/open/floor/carpet/trek,
 /area/bridge)
 "cj" = (
@@ -836,10 +828,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
-"co" = (
-/obj/structure/overmap_component/science,
-/turf/open/floor/carpet/trek,
-/area/bridge)
 "cp" = (
 /obj/machinery/computer/atmos_alert{
 	dir = 8
@@ -1734,6 +1722,9 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/engine/gravity_generator)
 "eJ" = (
@@ -1747,12 +1738,14 @@
 /obj/machinery/power/terminal{
 	dir = 4
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/engine/gravity_generator)
 "eL" = (
 /obj/machinery/power/smes{
 	charge = 5e+006
 	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/engine/gravity_generator)
 "eM" = (
@@ -2870,6 +2863,18 @@
 /obj/machinery/door/airlock/trek/goon/turbolift,
 /turf/open/floor/carpet/trek,
 /area/turbolift)
+"kP" = (
+/obj/structure/overmap_component/tactical,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"kR" = (
+/obj/structure/overmap_component/science,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"lg" = (
+/obj/structure/overmap_component/system_control,
+/turf/closed/wall/trek_smooth/room,
+/area/crew_quarters/heads/captain)
 "mG" = (
 /turf/open/floor/carpet/trek,
 /area/turbolift)
@@ -2890,6 +2895,10 @@
 /obj/structure/turbolift,
 /turf/open/floor/carpet/trek,
 /area/turbolift/secondary)
+"xF" = (
+/obj/structure/overmap_component/viewscreen,
+/turf/closed/wall/trek_smooth/room,
+/area/bridge)
 "EE" = (
 /obj/machinery/door/airlock/trek/goon/turbolift,
 /turf/open/floor/carpet/trek,
@@ -2903,10 +2912,6 @@
 "Hn" = (
 /turf/open/floor/carpet/trek,
 /area/turbolift/tertiary)
-"Ii" = (
-/obj/structure/overmap_component/viewscreen,
-/turf/closed/wall/trek_smooth/room,
-/area/bridge)
 "JP" = (
 /obj/machinery/door/airlock/trek/goon/turbolift,
 /turf/open/floor/carpet/trek,
@@ -2914,13 +2919,25 @@
 "LS" = (
 /turf/closed/wall/trek_smooth/indestructible,
 /area/hallway/primary/fore)
+"OU" = (
+/obj/structure/overmap_component/plasma_relay,
+/turf/closed/wall/trek_smooth/room,
+/area/crew_quarters/heads/hop)
 "Si" = (
 /turf/closed/wall/trek_smooth/indestructible,
 /area/turbolift/tertiary)
+"SD" = (
+/obj/structure/overmap_component/plasma_relay,
+/turf/closed/wall/trek_smooth/room,
+/area/crew_quarters/heads/captain)
 "UW" = (
 /obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/fore)
+"Xi" = (
+/obj/structure/overmap_component/helm,
+/turf/open/floor/carpet/trek,
+/area/bridge)
 
 (1,1,1) = {"
 aa
@@ -31556,7 +31573,7 @@ aa
 aa
 aa
 aa
-aN
+SD
 fX
 fI
 cB
@@ -32327,7 +32344,7 @@ bR
 bR
 bV
 bX
-aN
+lg
 bY
 ei
 bY
@@ -33617,7 +33634,7 @@ aq
 en
 aq
 aq
-ci
+kP
 ch
 aq
 aq
@@ -34126,11 +34143,11 @@ bl
 bl
 bw
 by
-Ii
+xF
 aq
 gl
 eA
-cf
+Xi
 ch
 aq
 aq
@@ -34645,7 +34662,7 @@ aq
 en
 aq
 aq
-co
+kR
 ch
 aq
 aq
@@ -36696,7 +36713,7 @@ aa
 aa
 aa
 aa
-aY
+OU
 fY
 cw
 es

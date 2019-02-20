@@ -186,9 +186,10 @@
 			for(var/obj/machinery/door/airlock/AS in get_area(src))  //If you have a big turbolift with multiple airlocks
 				if(AS.z == z)
 					linked_door = AS
-	bolted = TRUE//Tones down the processing use
-	linked_door.close()
-	linked_door.bolt()
+	if(linked_door)
+		bolted = TRUE//Tones down the processing use
+		linked_door.close()
+		linked_door.bolt()
 
 /obj/structure/turbolift/proc/unbolt_door()
 	if(!bolted)
@@ -201,8 +202,9 @@
 			for(var/obj/machinery/door/airlock/AS in get_area(src))  //If you have a big turbolift with multiple airlocks
 				if(AS.z == z)
 					linked_door = AS
-	bolted = FALSE//Tones down the processing use
-	linked_door.unbolt()
+	if(linked_door)
+		bolted = FALSE//Tones down the processing use
+		linked_door.unbolt()
 
 
 /obj/structure/turbolift/Initialize()
@@ -253,5 +255,90 @@
 				SSS.destinations += src
 				SSS.destinations -= SSS
 			break //No more lifts, no need to loop again.
+
+/area/turbolift/ship //These areas MUST be unique if youre using manuals lifts!
+	name = "Ship turbolift"
+
+/area/turbolift/ship/secondary
+	name = "Ship secondary turbolift"
+
+//////////////////////////////////
+// These lifts work differently!//
+// Put all lift objects in the same area//
+// Set height manually//
+// These ones ignore multiZ and are used for ships only!//
+
+/obj/structure/turbolift/manual //These are manually set and used for ships, as the maps themselves aren't actually multiZ enabled
+	var/height = 1
+	floor_directory = "<font color=blue>Deck 1: Bridge | Officers' Quarters<br>\
+		Deck 2: General quarters | Bar | Brig<br>\
+		Deck 3: Engineering | Transporter Room 1<br></font>" //Change this if you intend to make a new map. Helps players know where they're going.
+
+/obj/structure/turbolift/manual/height1
+	height = 2
+
+/obj/structure/turbolift/manual/height2
+	height = 3
+
+/obj/structure/turbolift/manual/height3
+	height = 4
+
+/obj/structure/turbolift/manual/get_position()
+	if(height > 1) //We need to be the bottom lift for this to work.
+		return
+	START_PROCESSING(SSobj, src)
+	floor = 1
+	name = "[initial(name)] (Deck [floor])"
+	is_controller = TRUE
+	var/last_height = 1 //Store this one
+	for(var/obj/structure/turbolift/manual/X in get_area(src))
+		if(X && X != src && X.height == last_height + 1)
+			X.master = src
+			last_height ++
+			X.floor = height+1
+			X.name = "[initial(X.name)] (Deck [X.floor])"
+			destinations += X
+			if(max_floor < 2)
+				max_floor = height+1
+		if(X && X != src && X.height == last_height + 2)
+			X.master = src
+			X.floor = height+2
+			X.name = "[initial(X.name)] (Deck [X.floor])"
+			destinations += X
+			max_floor = X.height
+
+	for(var/obj/structure/turbolift/SSS in destinations)
+		SSS.max_floor = max_floor
+		SSS.destinations = destinations.Copy()
+		SSS.destinations += src
+		SSS.destinations -= SSS
+
+/obj/structure/turbolift/manual/get_turfs()
+	for(var/turf/T in orange(src, 3))
+		if(!istype(T,/turf/open/space/basic))
+			var/area/A = get_area(T)
+			var/area/AA = get_area(src)
+			if(A == AA)
+				turbolift_turfs += T
+
+/obj/structure/turbolift/manual/lift(var/obj/structure/turbolift/target)
+	in_use = FALSE
+	icon_state = "lift-off"
+	if(!target)
+		return
+	target.in_use = FALSE
+	target.unbolt_door()
+	for(var/turf/T in turbolift_turfs)
+		for(var/atom/movable/AM in T)
+			if(AM.anchored) //Don't teleport things that shouldn't go through
+				if(istype(AM, /obj/structure/turbolift) || istype(AM, /obj/machinery/light) || istype(AM, /obj/machinery/door/airlock)) //Allow things that aren't part of the lift up
+					continue
+			if(isobserver(AM)) //Don't teleport ghosts
+				continue
+			if(isliving(AM))
+				var/mob/living/M = AM
+				if(M.client)
+					shake_camera(M, 2,2)
+			AM.forceMove(safepick(target.turbolift_turfs)) //Avoids the teleportation effect of zooming to random tiles
 
 //end//

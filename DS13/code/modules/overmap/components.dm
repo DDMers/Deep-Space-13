@@ -39,7 +39,7 @@
 
 /obj/structure/overmap_component/examine(mob/user)
 	. = ..()
-	if(!linked)
+	if(!linked || QDELETED(linked))
 		return
 	to_chat(user, "-it seems to be connected to [linked]")
 
@@ -268,6 +268,8 @@
 
 /obj/structure/overmap_component/plasma_relay/attack_hand(mob/user)
 	. = ..()
+	if(!linked || QDELETED(linked))
+		find_overmap()
 	var/Q = alert(user,"Redirect power to what system?","[src]","shields","weapons", "engines")
 	if(!Q || Q == "cancel")
 		playsound(loc, 'DS13/sound/effects/computer/bleep2.ogg',100)
@@ -454,6 +456,8 @@
 
 /obj/structure/overmap_component/system_control/examine(mob/user)
 	. = ..()
+	if(!linked || QDELETED(linked))
+		find_overmap()
 	if(!controlling)
 		find_system()
 		return
@@ -461,12 +465,14 @@
 
 /obj/structure/overmap_component/system_control/Initialize()
 	. = ..()
-	if(!linked)
+	if(!linked || QDELETED(linked))
 		find_overmap()
 	linked.subsystem_controllers += src
 	find_system()
 
 /obj/structure/overmap_component/system_control/proc/find_system()
+	if(!linked || QDELETED(linked))
+		find_overmap()
 	var/can_shields = TRUE
 	var/can_weapons = TRUE
 	var/can_engines = TRUE
@@ -530,6 +536,8 @@
 			return update_icon()
 
 /obj/structure/overmap_component/system_control/attack_hand(mob/user)
+	if(!linked || QDELETED(linked))
+		find_overmap()
 	if(!controlling)
 		find_system()
 		return

@@ -73,6 +73,7 @@
 /turf/open/space/basic,
 /area/space)
 "ao" = (
+/obj/machinery/rnd/production/techfab/department/engineering,
 /turf/open/floor/plasteel/dark,
 /area/engine/engine_smes)
 "ap" = (
@@ -705,6 +706,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/table,
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/trek,
 /area/engine/engineering)
 "bE" = (
@@ -5577,6 +5580,10 @@
 "qR" = (
 /turf/open/floor/carpet/trek,
 /area/turbolift/tertiary)
+"rN" = (
+/obj/machinery/vending/tool,
+/turf/open/floor/trek,
+/area/engine/engineering)
 "rQ" = (
 /turf/closed/wall/trek_smooth/indestructible,
 /area/turbolift)
@@ -5591,6 +5598,10 @@
 /obj/structure/turbolift,
 /turf/open/floor/carpet/trek,
 /area/turbolift/tertiary)
+"yy" = (
+/obj/structure/overmap_component/system_control,
+/turf/closed/wall/trek_smooth/room,
+/area/engine/break_room)
 "yz" = (
 /turf/closed/wall/trek_smooth/indestructible,
 /area/turbolift/quanery)
@@ -5615,6 +5626,10 @@
 /obj/machinery/door/airlock/trek/goon/turbolift,
 /turf/open/floor/carpet/trek,
 /area/turbolift/secondary)
+"CH" = (
+/obj/structure/overmap_component/plasma_injector,
+/turf/closed/wall/trek_smooth/reinforced,
+/area/engine/engineering)
 "CT" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 4
@@ -5627,6 +5642,16 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/engine,
+/area/engine/engineering)
+"CY" = (
+/obj/structure/table,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/tile/carpet/trek/fifty,
+/obj/item/stack/sheet/duotanium/fifty,
+/obj/item/stack/sheet/duranium/fifty,
+/turf/open/floor/trek,
 /area/engine/engineering)
 "Du" = (
 /obj/machinery/light{
@@ -5658,6 +5683,10 @@
 	},
 /turf/open/floor/trek/tile,
 /area/engine/engineering)
+"Hs" = (
+/obj/machinery/rnd/production/protolathe/department/engineering,
+/turf/open/floor/plasteel/dark,
+/area/engine/engine_smes)
 "Ht" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
@@ -5674,6 +5703,10 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/turbolift/quintessential)
+"Iq" = (
+/obj/machinery/rnd/production/protolathe/department/security,
+/turf/open/floor/plasteel/showroomfloor,
+/area/hallway/primary/aft)
 "JA" = (
 /turf/open/floor/carpet/trek,
 /area/turbolift/quanery)
@@ -5701,6 +5734,15 @@
 "Ng" = (
 /turf/closed/wall/trek_smooth/indestructible,
 /area/turbolift/quintessential)
+"QU" = (
+/obj/structure/table,
+/obj/item/storage/toolbox/electrical,
+/turf/open/floor/trek,
+/area/engine/engineering)
+"Rl" = (
+/obj/structure/overmap_component/plasma_relay,
+/turf/closed/wall/trek_smooth/corridor,
+/area/hallway/primary/aft)
 "Sj" = (
 /obj/machinery/door/airlock/trek/goon/turbolift{
 	icon_state = "closed";
@@ -5721,6 +5763,10 @@
 	},
 /turf/open/floor/trek/tile,
 /area/engine/engineering)
+"SD" = (
+/obj/structure/overmap_component/plasma_relay,
+/turf/closed/wall/trek_smooth/room,
+/area/engine/break_room)
 "SE" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5741,9 +5787,22 @@
 	},
 /turf/open/floor/trek/tile,
 /area/engine/atmos)
+"Vz" = (
+/obj/machinery/rnd/production/techfab/department/security,
+/turf/open/floor/plasteel/showroomfloor,
+/area/hallway/primary/aft)
 "ZG" = (
 /turf/closed/wall/trek_smooth/indestructible,
 /area/turbolift/secondary)
+"ZX" = (
+/obj/structure/table,
+/obj/item/storage/toolbox/electrical,
+/obj/item/tank/internals/plasma,
+/obj/item/tank/internals/plasma,
+/obj/item/tank/internals/plasma,
+/obj/item/tank/internals/plasma,
+/turf/open/floor/trek,
+/area/engine/engineering)
 
 (1,1,1) = {"
 aa
@@ -32878,7 +32937,7 @@ on
 gO
 fe
 gO
-fd
+Rl
 aa
 aa
 aa
@@ -34674,7 +34733,7 @@ fd
 kL
 fe
 fd
-hA
+Iq
 jF
 hA
 hn
@@ -34931,7 +34990,7 @@ fd
 kL
 iv
 fd
-hA
+Vz
 jF
 hA
 hn
@@ -35383,7 +35442,7 @@ rQ
 rQ
 ah
 gs
-af
+yy
 fb
 fb
 fb
@@ -35640,7 +35699,7 @@ Kw
 rQ
 jr
 gs
-af
+SD
 fo
 fy
 fS
@@ -36180,11 +36239,11 @@ bP
 bX
 cm
 cv
-bs
+CH
 cR
 cX
 cX
-bs
+CH
 dQ
 ee
 eq
@@ -36431,7 +36490,7 @@ aW
 bd
 bl
 bs
-bz
+CY
 bI
 bP
 bY
@@ -36441,7 +36500,7 @@ cD
 cS
 cS
 du
-bs
+CH
 dR
 ef
 eq
@@ -36688,7 +36747,7 @@ ab
 ab
 ab
 bs
-bz
+ZX
 bI
 bP
 bZ
@@ -36945,7 +37004,7 @@ aa
 aa
 aa
 oi
-bz
+rN
 fl
 bP
 ca
@@ -37202,7 +37261,7 @@ ab
 ab
 ab
 bs
-bz
+QU
 bI
 bP
 cb
@@ -37469,7 +37528,7 @@ cH
 cW
 cW
 dB
-bs
+CH
 dR
 ef
 eq
@@ -37722,11 +37781,11 @@ bP
 cd
 cr
 cA
-bs
+CH
 cX
 cX
 cX
-bs
+CH
 dV
 ej
 eq
@@ -38478,7 +38537,7 @@ fR
 ju
 fX
 ab
-ao
+Hs
 am
 jw
 aA

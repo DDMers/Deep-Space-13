@@ -127,7 +127,9 @@
 	if(num > 4) //Only 4 states supported thus far!
 		num = 4 //So the bars don't go all fucky
 	var/image/I = image('DS13/icons/actions/power_management.dmi',icon_state = "[num]")
+	var/image/II = image('DS13/icons/actions/power_management.dmi',icon_state = "c[theship.max_shield_power]")
 	add_overlay(I)
+	add_overlay(II)
 
 /obj/screen/alert/power_manager/weapons
 	name = "Weapons system power"
@@ -156,7 +158,9 @@
 	if(num > 4) //Only 4 states supported thus far!
 		num = 4 //So the bars don't go all fucky
 	var/image/I = image('DS13/icons/actions/power_management.dmi',icon_state = "[num]")
+	var/image/II = image('DS13/icons/actions/power_management.dmi',icon_state = "c[theship.max_weapon_power]")
 	add_overlay(I)
+	add_overlay(II)
 
 /obj/screen/alert/power_manager/engines
 	name = "Engine system power"
@@ -185,7 +189,9 @@
 	if(num > 4) //Only 4 states supported thus far!
 		num = 4 //So the bars don't go all fucky
 	var/image/I = image('DS13/icons/actions/power_management.dmi',icon_state = "[num]")
+	var/image/II = image('DS13/icons/actions/power_management.dmi',icon_state = "c[theship.max_engine_power]")
 	add_overlay(I)
+	add_overlay(II)
 
 /obj/screen/alert/power_manager/power_slot
 	name = "Reactor core"

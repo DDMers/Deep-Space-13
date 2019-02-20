@@ -14,6 +14,7 @@
 	name = "Trek-Captain"
 	uniform = /obj/item/clothing/under/trek/command/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
+	belt = /obj/item/pda
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = null
 	gloves = /obj/item/clothing/gloves/color/black
@@ -31,6 +32,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = null
 	gloves = /obj/item/clothing/gloves/color/black
+	l_pocket = /obj/item/pda
 
 //------
 //EngSec
@@ -46,9 +48,10 @@
 /datum/outfit/job/hos/DS13
 	name = "Trek-Head of Security"
 	uniform = /obj/item/clothing/under/trek/command/ds9
+	suit = null
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
-
+	l_pocket = /obj/item/pda
 
 /datum/job/warden/New()
 	..()
@@ -60,6 +63,7 @@
 	uniform = /obj/item/clothing/under/trek/engsec/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	belt = /obj/item/pda
 
 /datum/job/officer/New()
 	..()
@@ -71,6 +75,7 @@
 	uniform = /obj/item/clothing/under/trek/engsec/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
 
 
 //Engineering
@@ -85,6 +90,7 @@
 	uniform = /obj/item/clothing/under/trek/command/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
 
 
 /datum/job/engineer/New()
@@ -99,6 +105,7 @@
 	uniform = /obj/item/clothing/under/trek/engsec/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
 
 /datum/job/qm/New()
 	..()
@@ -112,6 +119,7 @@
 	uniform = /obj/item/clothing/under/trek/engsec/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
 
 /datum/job/cargo_tech/New()
 	..()
@@ -125,6 +133,7 @@
 	uniform = /obj/item/clothing/under/trek/engsec/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
 
 
 //--------
@@ -143,6 +152,7 @@
 	uniform = /obj/item/clothing/under/trek/command/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
 
 
 /datum/job/doctor/New()
@@ -155,7 +165,7 @@
 	uniform = /obj/item/clothing/under/trek/medsci/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
-
+	l_pocket = /obj/item/pda
 
 /datum/job/chemist/New()
 	..()
@@ -167,6 +177,7 @@
 	uniform = /obj/item/clothing/under/trek/medsci/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
 
 
 /datum/job/geneticist/New()
@@ -179,7 +190,7 @@
 	uniform = /obj/item/clothing/under/trek/medsci/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
-
+	l_pocket = /obj/item/pda
 
 /datum/job/virologist/New()
 	..()
@@ -191,6 +202,7 @@
 	uniform = /obj/item/clothing/under/trek/medsci/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
 
 //Research
 
@@ -204,6 +216,7 @@
 	uniform = /obj/item/clothing/under/trek/command/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
 
 /datum/job/scientist/New()
 	..()
@@ -217,6 +230,7 @@
 	uniform = /obj/item/clothing/under/trek/medsci/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
 
 //Civilian
 
@@ -230,6 +244,7 @@
 	uniform = /obj/item/clothing/under/trek/engsec/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
 
 /datum/outfit/job/assistant/DS13/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -246,6 +261,7 @@
 	uniform = /obj/item/clothing/under/trek/medsci/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
 
 /datum/job/janitor/New()
 	..()
@@ -257,6 +273,7 @@
 	uniform = /obj/item/clothing/under/trek/medsci/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
 
 /datum/job/hydro/New()
 	..()
@@ -268,6 +285,7 @@
 	uniform = /obj/item/clothing/under/trek/medsci/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
 
 /datum/job/cook/New()
 	..()
@@ -279,6 +297,7 @@
 	uniform = /obj/item/clothing/under/trek/medsci/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
 
 /datum/job/bartender/New()
 	..()
@@ -290,6 +309,7 @@
 	uniform = /obj/item/clothing/under/trek/engsec/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
 
 MAP_REMOVE_JOB(roboticist)
 MAP_REMOVE_JOB(AI) //Do I have to even explain why
