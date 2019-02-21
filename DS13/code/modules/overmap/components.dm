@@ -464,7 +464,6 @@
 	if(!linked || QDELETED(linked))
 		find_overmap()
 	if(!controlling)
-		find_system()
 		return
 	to_chat(user, "-it is controlling the [controlling] subsystem.")
 
@@ -472,19 +471,18 @@
 	. = ..()
 	if(!linked || QDELETED(linked))
 		find_overmap()
-	find_system()
+	addtimer(CALLBACK(src, .proc/find_system), 40)
 
 /obj/structure/overmap_component/system_control/proc/find_system()
 	if(!linked || QDELETED(linked))
 		find_overmap()
 		return
-	if(!src in linked.subsystem_controllers)
-		linked.subsystem_controllers += src
+	linked.subsystem_controllers += src
 	var/can_shields = TRUE
 	var/can_weapons = TRUE
 	var/can_engines = TRUE
 	for(var/obj/structure/overmap_component/system_control/X in linked.subsystem_controllers)
-		if(X && istype(X))
+		if(X && istype(X) && X != src)
 			if(!X.controlling)
 				continue
 			if(X.controlling == "shields")

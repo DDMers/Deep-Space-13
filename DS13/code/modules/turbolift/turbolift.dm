@@ -262,6 +262,12 @@
 /area/turbolift/ship/secondary
 	name = "Ship secondary turbolift"
 
+/area/turbolift/ship/romulan //These areas MUST be unique if youre using manuals lifts!
+	name = "Romulan ascendior"
+
+/area/turbolift/ship/romulan/secondary
+	name = "Romulan secondary ascendior"
+
 //////////////////////////////////
 // These lifts work differently!//
 // Put all lift objects in the same area//
@@ -282,6 +288,18 @@
 
 /obj/structure/turbolift/manual/height3
 	height = 4
+
+/obj/structure/turbolift/manual/romulan //These are manually set and used for ships, as the maps themselves aren't actually multiZ enabled
+	height = 1
+	floor_directory = "<font color=blue>Deck 1: Bridge | Officers' Quarters.<br>\
+		Deck 2: Engineering | Brig | Transporter<br>\
+		Deck 3: Mess hall | Crew Quarters<br></font>" //Change this if you intend to make a new map. Helps players know where they're going.
+
+/obj/structure/turbolift/manual/romulan/height1
+	height = 2
+
+/obj/structure/turbolift/manual/romulan/height2
+	height = 3
 
 /obj/structure/turbolift/manual/get_position()
 	if(height > 1) //We need to be the bottom lift for this to work.

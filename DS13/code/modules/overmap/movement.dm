@@ -330,6 +330,7 @@
 		var/obj/structure/overmap/self = src //I'm a reel cumputer syentist :)
 		var/target_angle = 450 - SIMPLIFY_DEGREES(ATAN2((32*target.y+target.pixel_y) - (32*self.y+self.pixel_y), (32*target.x+target.pixel_x) - (32*self.x+self.pixel_x)))
 		EditAngle()
+		target_angle = MODULUS(target_angle, 360)
 		if(angle == target_angle)
 			return
 		if(angle > target_angle) //This one works

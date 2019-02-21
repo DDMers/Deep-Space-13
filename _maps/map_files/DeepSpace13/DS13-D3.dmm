@@ -779,6 +779,9 @@
 /obj/machinery/computer/shuttle/labor{
 	dir = 4
 	},
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/carpet/trek,
 /area/bridge)
 "cg" = (
@@ -798,6 +801,9 @@
 /obj/machinery/computer/shuttle/mining{
 	dir = 8
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/carpet/trek,
 /area/bridge)
 "ck" = (
@@ -811,13 +817,6 @@
 /obj/machinery/keycard_auth{
 	pixel_x = 29;
 	pixel_y = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/bridge)
-"cm" = (
-/obj/machinery/computer/communications{
-	icon_state = "computer";
-	dir = 1
 	},
 /turf/open/floor/carpet/trek,
 /area/bridge)
@@ -1423,6 +1422,7 @@
 "dU" = (
 /obj/item/bedsheet/captain,
 /obj/structure/bed,
+/obj/machinery/light,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
 "dV" = (
@@ -1458,6 +1458,7 @@
 "eb" = (
 /obj/structure/bed,
 /obj/item/bedsheet/hop,
+/obj/machinery/light,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
 "ec" = (
@@ -2863,18 +2864,6 @@
 /obj/machinery/door/airlock/trek/goon/turbolift,
 /turf/open/floor/carpet/trek,
 /area/turbolift)
-"kP" = (
-/obj/structure/overmap_component/tactical,
-/turf/open/floor/carpet/trek,
-/area/bridge)
-"kR" = (
-/obj/structure/overmap_component/science,
-/turf/open/floor/carpet/trek,
-/area/bridge)
-"lg" = (
-/obj/structure/overmap_component/system_control,
-/turf/closed/wall/trek_smooth/room,
-/area/crew_quarters/heads/captain)
 "mG" = (
 /turf/open/floor/carpet/trek,
 /area/turbolift)
@@ -2888,6 +2877,29 @@
 /obj/structure/turbolift,
 /turf/open/floor/carpet/trek,
 /area/turbolift/tertiary)
+"sq" = (
+/obj/machinery/computer/communications{
+	icon_state = "computer";
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"tV" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
 "un" = (
 /obj/machinery/light{
 	dir = 1
@@ -2895,9 +2907,15 @@
 /obj/structure/turbolift,
 /turf/open/floor/carpet/trek,
 /area/turbolift/secondary)
-"xF" = (
-/obj/structure/overmap_component/viewscreen,
+"uW" = (
+/obj/structure/overmap_component/plasma_relay,
 /turf/closed/wall/trek_smooth/room,
+/area/crew_quarters/heads/hop)
+"Al" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
 /area/bridge)
 "EE" = (
 /obj/machinery/door/airlock/trek/goon/turbolift,
@@ -2906,12 +2924,38 @@
 "EZ" = (
 /turf/open/floor/carpet/trek,
 /area/turbolift/secondary)
+"Gu" = (
+/obj/structure/overmap_component/plasma_relay,
+/turf/closed/wall/trek_smooth/room,
+/area/crew_quarters/heads/captain)
 "GL" = (
 /turf/closed/wall/trek_smooth/indestructible,
 /area/turbolift/secondary)
 "Hn" = (
 /turf/open/floor/carpet/trek,
 /area/turbolift/tertiary)
+"Is" = (
+/obj/structure/overmap_component/system_control,
+/turf/closed/wall/trek_smooth/room,
+/area/crew_quarters/heads/captain)
+"Jc" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"JC" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/open/floor/carpet/trek,
+/area/bridge)
 "JP" = (
 /obj/machinery/door/airlock/trek/goon/turbolift,
 /turf/open/floor/carpet/trek,
@@ -2919,24 +2963,59 @@
 "LS" = (
 /turf/closed/wall/trek_smooth/indestructible,
 /area/hallway/primary/fore)
-"OU" = (
-/obj/structure/overmap_component/plasma_relay,
-/turf/closed/wall/trek_smooth/room,
-/area/crew_quarters/heads/hop)
+"OS" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"QK" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"RW" = (
+/obj/structure/overmap_component/science,
+/turf/open/floor/carpet/trek,
+/area/bridge)
 "Si" = (
 /turf/closed/wall/trek_smooth/indestructible,
 /area/turbolift/tertiary)
-"SD" = (
-/obj/structure/overmap_component/plasma_relay,
-/turf/closed/wall/trek_smooth/room,
-/area/crew_quarters/heads/captain)
+"Ue" = (
+/obj/structure/overmap_component/tactical,
+/turf/open/floor/carpet/trek,
+/area/bridge)
+"UR" = (
+/obj/structure/overmap_component/helm,
+/turf/open/floor/carpet/trek,
+/area/bridge)
 "UW" = (
 /obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/fore)
-"Xi" = (
-/obj/structure/overmap_component/helm,
+"VT" = (
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/carpet/trek,
+/area/bridge)
+"ZD" = (
+/obj/structure/overmap_component/viewscreen,
+/turf/closed/wall/trek_smooth/room,
 /area/bridge)
 
 (1,1,1) = {"
@@ -31301,7 +31380,7 @@ ga
 ga
 ga
 ga
-ga
+OS
 ga
 ga
 ga
@@ -31319,7 +31398,7 @@ aa
 aN
 aS
 ct
-ct
+QK
 ct
 cA
 dN
@@ -31573,7 +31652,7 @@ aa
 aa
 aa
 aa
-SD
+Gu
 fX
 fI
 cB
@@ -32344,7 +32423,7 @@ bR
 bR
 bV
 bX
-lg
+Is
 bY
 ei
 bY
@@ -33112,7 +33191,7 @@ ab
 af
 aq
 aq
-aq
+Al
 aq
 af
 bz
@@ -33634,7 +33713,7 @@ aq
 en
 aq
 aq
-kP
+Ue
 ch
 aq
 aq
@@ -34142,16 +34221,16 @@ bc
 bl
 bl
 bw
-by
-xF
+JC
+ZD
 aq
 gl
 eA
-Xi
+UR
 ch
 aq
 aq
-cm
+sq
 cq
 aa
 aa
@@ -34662,7 +34741,7 @@ aq
 en
 aq
 aq
-kR
+RW
 ch
 aq
 aq
@@ -35168,7 +35247,7 @@ ab
 af
 aq
 aq
-aq
+VT
 aq
 af
 bz
@@ -36713,7 +36792,7 @@ aa
 aa
 aa
 aa
-OU
+uW
 fY
 cw
 es
@@ -36955,7 +37034,7 @@ eV
 bN
 bN
 bN
-bN
+tV
 bN
 bN
 bN
@@ -36973,7 +37052,7 @@ aa
 aY
 cg
 cn
-cn
+Jc
 cn
 aY
 cC

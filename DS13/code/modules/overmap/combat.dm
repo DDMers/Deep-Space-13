@@ -257,7 +257,7 @@
 		T.atmos_spawn_air("plasma=15;TEMP=2000")
 	if(prob(10))
 		var/turf/T = pick(get_area_turfs(target))
-		explosion(T,3,4,3)
+		explosion(T,0,4,3)
 
 
 /obj/structure/overmap/take_damage(var/atom/source, var/amount = 10)

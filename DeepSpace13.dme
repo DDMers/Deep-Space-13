@@ -2758,6 +2758,8 @@
 #include "DS13\code\modules\client\preferences_toggles.dm"
 #include "DS13\code\modules\clothing\under\trek.dm"
 #include "DS13\code\modules\EMH\EMH.dm"
+#include "DS13\code\modules\missions\mission_logic.dm"
+#include "DS13\code\modules\missions\subsystem.dm"
 #include "DS13\code\modules\mob\living\carbon\human\species_types\klingon.dm"
 #include "DS13\code\modules\overmap\ai.dm"
 #include "DS13\code\modules\overmap\combat.dm"

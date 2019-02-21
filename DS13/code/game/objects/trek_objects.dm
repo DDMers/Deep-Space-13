@@ -19,6 +19,27 @@
 /obj/item/stack/tile/carpet/trek/fifty
 	amount = 50
 
+/turf/open/floor/carpet/trek/romulan
+	name = "dark carpet"
+	desc = "Jolan Tru!"
+	icon = 'DS13/icons/turf/romulan_carpet.dmi'
+	icon_state = "romulan"
+	smooth = TRUE
+	canSmoothWith = list(/turf/open/floor/carpet/trek,/turf/open/floor/carpet/trek/romulan)
+	floor_tile = /obj/item/stack/tile/carpet/trek
+
+/obj/item/stack/tile/carpet/trek/romulan
+	name = "carpet"
+	singular_name = "carpet"
+	icon_state = "tile-carpet"
+	turf_type = /turf/open/floor/carpet/trek/romulan
+	resistance_flags = FLAMMABLE
+	icon = 'DS13/icons/obj/stack_objects.dmi'
+	icon_state = "carpet-rom"
+
+/obj/item/stack/tile/carpet/trek/romulan/fifty
+	amount = 50
+
 /turf/open/floor/trek
 	name = "Hull plating"
 	desc = "Dark and to the point, very atypical of the federation"
@@ -146,6 +167,11 @@
 	name = "Rack"
 	desc = "Imagine what you could store here!."
 	icon_state = "rack"
+
+/obj/structure/trek_decor/romulan
+	name = "Romulan wall covering"
+	desc = "A panel which is glued over a wall, giving it a more neutral feel."
+	icon_state = "rom-room"
 
 /obj/structure/trek_decor/viewscreen
 	name = "Viewscreen"

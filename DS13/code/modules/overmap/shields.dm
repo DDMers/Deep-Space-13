@@ -222,7 +222,7 @@ Dirs! (nicked from byond forum)
 	hit_angle += (360 - target.heading)
 
 	hit_angle = MODULUS(hit_angle, 360)
-	to_chat(world, "ha [hit_angle], f x[firer.x]y[firer.y], t x[target.x]y[target.y] T heading:[target.angle] F heading: [firer.angle]")
+//	to_chat(world, "ha [hit_angle], f x[firer.x]y[firer.y], t x[target.x]y[target.y] T heading:[target.angle] F heading: [firer.angle]")
 	switch(hit_angle)
 		if(135 to 224)
 		//	to_chat(world, "rear")
