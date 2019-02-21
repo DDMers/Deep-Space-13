@@ -249,7 +249,7 @@
 
 /obj/structure/overmap_component/plasma_relay //Annnd these supply power to your systems
 	name = "ODN relay"
-	desc = "This sturdy fuses warp plasma into power via the power grid. This power is then supplied to a subsystem of choice"
+	desc = "This sturdy component fuses warp plasma into power via the power grid. This power is then supplied to a subsystem of choice"
 	icon_state = "relay-closed"
 	req_access = list(ACCESS_ENGINE_EQUIP)
 	var/obj/structure/overmap_component/plasma_injector/supplier
@@ -338,6 +338,8 @@
 	. = ..()
 	if(supplier && supplying)
 		to_chat(user, "it receiving plasma from [supplier] and is supplying the <b>[supplying]</b> system for [linked]")
+	else
+		to_chat(user, "-it's currently <b>unpowered</b>")
 
 /obj/structure/overmap_component/plasma_relay/take_damage(damage_amount)
 	. = ..()
@@ -419,6 +421,9 @@
 
 
 /obj/structure/overmap_component/plasma_relay/proc/find_supplying()
+	if(!linked)
+		find_overmap()
+		return
 	if(linked.max_shield_power < 4) //Fill up shields first :)
 		supplying = "shields"
 	if(linked.max_weapon_power < 4)
@@ -467,12 +472,14 @@
 	. = ..()
 	if(!linked || QDELETED(linked))
 		find_overmap()
-	linked.subsystem_controllers += src
 	find_system()
 
 /obj/structure/overmap_component/system_control/proc/find_system()
 	if(!linked || QDELETED(linked))
 		find_overmap()
+		return
+	if(!src in linked.subsystem_controllers)
+		linked.subsystem_controllers += src
 	var/can_shields = TRUE
 	var/can_weapons = TRUE
 	var/can_engines = TRUE

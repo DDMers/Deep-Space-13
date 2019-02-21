@@ -270,9 +270,9 @@
 
 /obj/structure/turbolift/manual //These are manually set and used for ships, as the maps themselves aren't actually multiZ enabled
 	var/height = 1
-	floor_directory = "<font color=blue>Deck 1: Bridge | Officers' Quarters<br>\
-		Deck 2: General quarters | Bar | Brig<br>\
-		Deck 3: Engineering | Transporter Room 1<br></font>" //Change this if you intend to make a new map. Helps players know where they're going.
+	floor_directory = "<font color=blue>Deck 1: Bridge | Officers' Quarters.<br>\
+		Deck 2: Bar | Brig | Transporter Room 1.<br>\
+		Deck 3: Engineering.<br></font>" //Change this if you intend to make a new map. Helps players know where they're going.
 
 /obj/structure/turbolift/manual/height1
 	height = 2

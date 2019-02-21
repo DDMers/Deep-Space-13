@@ -147,12 +147,11 @@ Dirs! (nicked from byond forum)
 
 /datum/shield_controller/proc/check_vulnerability()
 	var/num = get_total_health()
+	holder.check_power()
 	if(num <= 0)
 		return TRUE
 	var/total = (max_health * 4) //4 directional shields, each with a max of maxhealth.
-	to_chat(world, total)
 	var/required = total/1.4 //Shields must be at least 60% healthy to resist transports and tractor beams
-	to_chat(world, required)
 	if(num <= required)
 		return TRUE //AKA it IS vulnerable
 	else

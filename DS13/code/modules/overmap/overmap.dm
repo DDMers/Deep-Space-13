@@ -19,6 +19,7 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 	var/obj/shield_overlay/shield_overlay
 	var/class = "nothing" //This is a nothing class heavy cruiser
+	var/transporter_range = 8 //N Tile transporter range
 
 /obj/shield_overlay
 	name = ""

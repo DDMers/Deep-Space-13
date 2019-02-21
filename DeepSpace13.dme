@@ -2769,6 +2769,7 @@
 #include "DS13\code\modules\overmap\radar.dm"
 #include "DS13\code\modules\overmap\shields.dm"
 #include "DS13\code\modules\overmap\ship_types.dm"
+#include "DS13\code\modules\overmap\transporter.dm"
 #include "DS13\code\modules\overmap\visual_fx.dm"
 #include "DS13\code\modules\turbolift\turbolift.dm"
 #include "DS13\goonstation\airlocks.dm"

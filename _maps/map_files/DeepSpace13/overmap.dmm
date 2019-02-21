@@ -7,10 +7,6 @@
 	alpha = 0
 	},
 /area/space)
-"c" = (
-/obj/structure/overmap/miranda,
-/turf/open/space/basic,
-/area/space)
 "d" = (
 /obj/structure/overmap/AI,
 /turf/open/space/basic,
@@ -21,6 +17,10 @@
 /area/space)
 "f" = (
 /obj/structure/overmap/ds13,
+/turf/open/space/basic,
+/area/space)
+"G" = (
+/obj/structure/overmap/miranda/starter,
 /turf/open/space/basic,
 /area/space)
 
@@ -28419,9 +28419,9 @@ a
 a
 a
 a
-c
 a
 a
+G
 a
 a
 a

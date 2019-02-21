@@ -271,10 +271,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"bq" = (
-/obj/structure/barricade/wooden,
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
 "br" = (
 /obj/machinery/light{
 	dir = 8
@@ -388,6 +384,15 @@
 /obj/structure/window/reinforced/fulltile/trek/viewport,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/miranda)
+"cq" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
 "cs" = (
 /obj/machinery/shower{
 	dir = 4
@@ -401,315 +406,204 @@
 /obj/structure/bed,
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/miranda)
-"cG" = (
-/obj/structure/turbolift/manual/height1,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/turbolift/ship/secondary)
-"dj" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/turf/open/floor/trek/tile,
-/area/ship/warbird)
-"eC" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/turf/open/floor/trek/tile,
-/area/ship/warbird)
-"eP" = (
-/obj/structure/table/glass,
-/obj/machinery/light/broken{
-	icon_state = "tube-broken";
-	dir = 1
-	},
-/obj/item/storage/firstaid,
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"fb" = (
-/obj/structure/frame,
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"fi" = (
-/obj/structure/overmap_component/integrity_field_generator{
-	pixel_x = -9
-	},
-/turf/open/floor/trek/tile,
-/area/ship/warbird)
-"fY" = (
-/obj/structure/closet/secure_closet/freezer/kitchen,
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"gu" = (
-/obj/structure/turbolift/manual,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/turbolift/ship)
-"gv" = (
-/obj/structure/bed,
-/obj/item/bedsheet/red,
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"hH" = (
-/obj/machinery/shower,
-/obj/structure/curtain,
-/turf/open/floor/plasteel/white,
-/area/ship/miranda)
-"hR" = (
-/obj/machinery/shower{
-	icon_state = "shower";
-	dir = 1
-	},
-/obj/structure/curtain,
-/turf/open/floor/plasteel/white,
-/area/ship/miranda)
-"ie" = (
-/obj/structure/holosign/barrier/atmos,
-/turf/open/floor/plating/snowed,
-/area/ship/miranda)
-"ju" = (
-/obj/machinery/door/airlock/trek/goon/engi,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/trek/tile,
-/area/ship/miranda)
-"jz" = (
-/obj/item/twohanded/required/klingon,
-/obj/structure/table,
-/obj/item/clothing/under/trek/klingon,
-/obj/item/kitchen/knife/combat/klingon,
-/turf/open/floor/trek/tile,
-/area/ship/warbird)
-"kY" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/port_gen/pacman,
-/turf/open/floor/plating,
-/area/ship/miranda)
-"li" = (
-/obj/structure/lattice,
-/obj/structure/bed,
-/turf/open/space/basic,
-/area/ship/miranda)
-"ls" = (
-/obj/structure/overmap_component/integrity_field_generator{
-	pixel_x = -9
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"lH" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/trek/tile,
-/area/ship/miranda)
-"lO" = (
-/obj/structure/barricade/wooden/snowed,
-/obj/structure/holosign/barrier/atmos,
-/turf/open/space/basic,
-/area/ship/miranda)
-"ma" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/closed/wall/trek_smooth,
-/area/ship/miranda)
-"mu" = (
-/obj/structure/lattice,
-/obj/structure/bed,
-/obj/item/bedsheet/captain,
-/turf/open/space/basic,
-/area/ship/miranda)
-"mS" = (
-/obj/structure/table_frame,
-/turf/open/floor/plating,
-/area/ship/miranda)
-"nk" = (
-/obj/machinery/door/airlock/trek/goon/maint{
-	icon_state = "closed";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"nq" = (
-/obj/machinery/shieldgen,
-/turf/open/floor/plating/snowed,
-/area/ship/miranda)
-"nw" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/miranda)
-"nx" = (
-/obj/machinery/door/airlock/trek/goon/maint,
-/obj/structure/barricade/wooden/crude/snow,
-/turf/open/floor/trek/tile,
-/area/ship/miranda)
-"ob" = (
-/obj/structure/sign/warning/vacuum,
-/turf/closed/wall/trek_smooth/corridor,
-/area/ship/miranda)
-"os" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/turf/open/floor/trek/tile,
-/area/ship/warbird)
-"oP" = (
-/obj/structure/lattice,
-/turf/open/space/basic,
-/area/ship/miranda)
-"oS" = (
+"cD" = (
 /obj/structure/turbolift/manual/height2,
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/carpet/trek,
 /area/turbolift/ship/secondary)
-"oV" = (
-/obj/structure/overmap_component/science/warbird,
-/turf/open/floor/trek/tile,
-/area/ship/warbird)
-"pB" = (
-/obj/structure/table_frame,
-/obj/item/tank/internals/plasma,
-/obj/item/tank/internals/plasma,
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"pG" = (
+"cM" = (
 /obj/structure/overmap_component/plasma_injector,
+/turf/closed/wall/trek_smooth,
+/area/ship/warbird)
+"cP" = (
+/obj/structure/lattice,
+/obj/structure/barricade/wooden/snowed,
+/turf/open/space/basic,
+/area/ship/miranda)
+"cR" = (
+/obj/structure/overmap_component/plasma_relay,
 /turf/closed/wall/trek_smooth/corridor,
 /area/ship/miranda)
-"qi" = (
-/obj/structure/rack,
-/obj/item/wirecutters,
-/obj/item/wrench,
-/turf/open/floor/plating,
-/area/ship/miranda)
-"qr" = (
-/obj/structure/table/glass,
-/obj/item/storage/firstaid,
+"dq" = (
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/light,
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"rx" = (
+"dr" = (
+/obj/machinery/transporter_pad{
+	icon_state = "4,2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"dK" = (
+/obj/structure/frame,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"ep" = (
+/obj/machinery/door/window/westleft,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"eK" = (
+/obj/machinery/transporter_pad{
+	icon_state = "0,2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"eM" = (
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"fH" = (
+/obj/machinery/door/airlock/trek/goon/maint,
+/obj/structure/barricade/wooden/crude/snow,
+/turf/open/floor/trek/tile,
+/area/ship/miranda)
+"ga" = (
+/obj/item/wrench,
+/obj/structure/table_frame,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"gy" = (
+/obj/structure/bed,
+/obj/item/bedsheet/red,
+/turf/open/floor/plating,
+/area/ship/miranda)
+"hW" = (
+/turf/open/floor/carpet/trek,
+/area/turbolift/ship/secondary)
+"ie" = (
+/obj/structure/table/glass,
+/obj/item/tank/internals/plasma,
+/obj/item/tank/internals/plasma,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"il" = (
+/obj/machinery/computer/camera_advanced/transporter_control{
+	icon_state = "control";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"io" = (
+/obj/structure/overmap_component/integrity_field_generator{
+	pixel_x = -9
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"iI" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"rH" = (
+"iQ" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"je" = (
+/obj/structure/girder,
+/turf/open/space/basic,
+/area/ship/miranda)
+"lm" = (
+/obj/machinery/shower,
+/obj/structure/curtain,
+/turf/open/floor/plasteel/white,
+/area/ship/miranda)
+"lM" = (
+/obj/structure/turbolift/manual,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/turbolift/ship/secondary)
+"mh" = (
+/obj/machinery/transporter_pad{
+	icon_state = "3,4"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"mG" = (
+/obj/structure/overmap_component/tactical/warbird,
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"nK" = (
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/plasteel/white,
 /area/ship/miranda)
-"sy" = (
+"nY" = (
+/obj/structure/trek_decor/plaque,
+/turf/closed/wall/trek_smooth/room,
+/area/ship/miranda)
+"of" = (
 /turf/open/space/basic,
 /area/ship/miranda)
-"sO" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"sY" = (
-/obj/structure/overmap_component/system_control,
-/turf/closed/wall/trek_smooth/corridor,
-/area/ship/miranda)
-"tb" = (
-/obj/structure/bed,
-/obj/item/bedsheet/red,
-/turf/open/floor/plating,
-/area/ship/miranda)
-"tM" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/trek/tile,
-/area/ship/miranda)
-"ui" = (
-/obj/machinery/light,
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name/south,
-/turf/open/floor/trek/tile,
-/area/ship/miranda)
-"uv" = (
-/obj/structure/table/glass,
-/obj/item/reagent_containers/spray/cleaner,
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"uy" = (
-/turf/open/floor/plating/snowed,
-/area/ship/miranda)
-"uA" = (
-/obj/effect/decal/cleanable/glass,
-/obj/machinery/light,
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"uB" = (
-/obj/item/wrench,
-/obj/structure/table_frame,
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"vg" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/trek/tile,
-/area/ship/miranda)
-"vR" = (
-/obj/structure/window/reinforced/fulltile/trek/middle,
-/obj/structure/grille,
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"wk" = (
-/obj/structure/closet/secure_closet/personal,
-/turf/open/floor/plating,
-/area/ship/miranda)
-"wo" = (
-/obj/structure/trek_decor/viewscreen,
-/turf/closed/wall/trek_smooth/corridor,
-/area/ship/miranda)
-"wB" = (
-/obj/structure/bed,
-/turf/open/floor/plating/snowed,
-/area/ship/miranda)
-"xk" = (
-/obj/machinery/door/airlock/trek/goon/command,
+"ox" = (
+/obj/structure/barricade/wooden/snowed,
 /obj/structure/holosign/barrier/atmos,
+/turf/open/space/basic,
+/area/ship/miranda)
+"oU" = (
+/obj/machinery/transporter_pad{
+	icon_state = "1,2"
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"xs" = (
+"py" = (
+/obj/structure/lattice/catwalk,
+/turf/open/space/basic,
+/area/ship/miranda)
+"pB" = (
+/turf/open/floor/plating/snowed,
+/area/ship/miranda)
+"pQ" = (
+/obj/machinery/shieldgen,
+/turf/open/floor/plating/snowed,
+/area/ship/miranda)
+"qa" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"qx" = (
+/obj/machinery/transporter_pad{
+	icon_state = "1,1"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"qM" = (
+/obj/machinery/transporter_pad{
+	icon_state = "4,3"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"rb" = (
+/obj/machinery/transporter_pad{
+	icon_state = "0,4"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"rg" = (
 /obj/machinery/power/smes{
 	charge = 5e+006
 	},
@@ -718,49 +612,42 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/miranda)
-"xt" = (
-/obj/structure/overmap_component/tactical/warbird,
+"rs" = (
+/obj/item/tank/internals/plasma/full,
 /turf/open/floor/trek/tile,
 /area/ship/warbird)
-"xv" = (
-/obj/structure/girder,
-/turf/open/space/basic,
-/area/ship/miranda)
-"xW" = (
-/obj/structure/turbolift/manual/height2,
-/obj/machinery/light{
-	dir = 1
+"rL" = (
+/obj/structure/table/optable/trek{
+	icon_state = "biobed";
+	dir = 4
 	},
 /turf/open/floor/carpet/trek,
-/area/turbolift/ship)
-"yg" = (
+/area/ship/miranda)
+"rW" = (
 /obj/structure/holosign/barrier/atmos,
 /obj/machinery/door/airlock/trek/goon/sec,
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"yq" = (
-/obj/machinery/door/airlock/trek/goon/maint,
-/obj/structure/barricade/wooden/crude,
+"sj" = (
+/obj/structure/overmap_component/science/warbird,
 /turf/open/floor/trek/tile,
-/area/ship/miranda)
-"yJ" = (
+/area/ship/warbird)
+"ti" = (
+/obj/structure/overmap_component/plasma_relay,
 /turf/closed/wall/trek_smooth,
 /area/ship/warbird)
-"zr" = (
-/obj/structure/overmap_component/system_control,
-/turf/closed/wall/trek_smooth/room,
+"tk" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 11
+	},
+/turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"Ab" = (
-/obj/structure/rack,
-/obj/item/clothing/gloves/color/fyellow,
-/turf/open/floor/plating,
+"tz" = (
+/obj/structure/holosign/barrier/atmos,
+/turf/open/floor/plating/snowed,
 /area/ship/miranda)
-"BX" = (
-/obj/structure/lattice,
-/obj/machinery/light,
-/turf/open/space/basic,
-/area/ship/miranda)
-"Cs" = (
+"tD" = (
 /obj/machinery/light{
 	dir = 4
 	},
@@ -769,7 +656,82 @@
 	},
 /turf/open/floor/plating,
 /area/ship/miranda)
-"Cy" = (
+"tM" = (
+/obj/machinery/transporter_pad{
+	icon_state = "3,0"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"tO" = (
+/obj/machinery/light,
+/turf/open/floor/trek/tile,
+/area/ship/miranda)
+"uF" = (
+/obj/machinery/door/airlock/trek/goon/turbolift,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"va" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/port_gen/pacman,
+/turf/open/floor/plating,
+/area/ship/miranda)
+"vc" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/turf/open/floor/plating/snowed,
+/area/ship/miranda)
+"vn" = (
+/obj/structure/bed,
+/obj/item/bedsheet/red,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"vE" = (
+/obj/machinery/door/airlock/trek/goon/sec,
+/obj/structure/holosign/barrier/atmos,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"vT" = (
+/obj/structure/table/glass,
+/obj/machinery/light/broken{
+	icon_state = "tube-broken";
+	dir = 1
+	},
+/obj/item/storage/firstaid/regular,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"wi" = (
+/obj/machinery/door/airlock/trek/goon/maint,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/trek/tile,
+/area/ship/miranda)
+"wj" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/electrical,
+/turf/open/floor/plating,
+/area/ship/miranda)
+"xP" = (
+/obj/machinery/transporter_pad{
+	icon_state = "2,4"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"yq" = (
+/obj/structure/table/glass,
+/obj/item/storage/firstaid/regular,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"ys" = (
+/obj/machinery/power/floodlight,
+/turf/open/floor/plating,
+/area/ship/miranda)
+"yU" = (
+/obj/structure/overmap_component/plasma_relay,
+/turf/closed/wall/trek_smooth/room,
+/area/ship/miranda)
+"zb" = (
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -778,62 +740,207 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"CE" = (
-/obj/structure/trek_decor/trophies,
+"zg" = (
+/obj/structure/table/glass,
+/obj/item/reagent_containers/spray/cleaner,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"zl" = (
+/obj/structure/girder,
+/obj/structure/barricade/wooden/crude,
+/turf/open/space/basic,
+/area/ship/miranda)
+"zr" = (
+/obj/structure/trek_decor/rack,
 /turf/closed/wall/trek_smooth/corridor,
 /area/ship/miranda)
-"CG" = (
-/obj/machinery/door/window/westleft,
+"zx" = (
+/obj/machinery/transporter_pad{
+	icon_state = "2,3"
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"Df" = (
-/obj/structure/overmap_component/system_control,
-/turf/closed/wall/trek_smooth,
-/area/ship/warbird)
-"DL" = (
+"zW" = (
+/obj/structure/closet/secure_closet/personal,
+/turf/open/floor/plating,
+/area/ship/miranda)
+"AA" = (
+/obj/structure/lattice,
+/obj/structure/bed,
+/turf/open/space/basic,
+/area/ship/miranda)
+"AF" = (
+/obj/machinery/light,
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/south,
+/turf/open/floor/trek/tile,
+/area/ship/miranda)
+"AP" = (
+/obj/structure/overmap_component/plasma_injector,
+/turf/closed/wall/trek_smooth/corridor,
+/area/ship/miranda)
+"BD" = (
+/obj/machinery/transporter_pad{
+	icon_state = "3,1"
+	},
 /turf/open/floor/carpet/trek,
-/area/turbolift/ship/secondary)
-"Eb" = (
+/area/ship/miranda)
+"Cg" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"Co" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/trek/tile,
+/area/ship/miranda)
+"CN" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/miranda)
+"Dl" = (
 /obj/machinery/door/airlock/trek/goon/maint{
 	icon_state = "closed";
 	dir = 8
 	},
-/obj/structure/barricade/wooden/crude/snow,
-/obj/structure/holosign/barrier/atmos,
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"Es" = (
-/obj/structure/lattice/catwalk,
+"Dn" = (
+/obj/structure/lattice,
+/obj/item/bedsheet/red,
 /turf/open/space/basic,
 /area/ship/miranda)
-"Fy" = (
+"Du" = (
+/obj/structure/table_frame,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"DL" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/miranda)
+"DN" = (
+/turf/closed/wall/trek_smooth,
+/area/ship/warbird)
+"Et" = (
+/obj/machinery/transporter_pad{
+	icon_state = "1,3"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"Ev" = (
+/obj/item/twohanded/required/klingon,
+/obj/structure/table,
+/obj/item/clothing/under/trek/klingon,
+/obj/item/kitchen/knife/combat/klingon,
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"EJ" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/trek/tile,
+/area/ship/miranda)
+"Fd" = (
+/obj/machinery/door/airlock/trek/goon/medical,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"Fj" = (
+/obj/structure/table_frame,
+/turf/open/floor/plating,
+/area/ship/miranda)
+"Fq" = (
+/obj/machinery/transporter_pad{
+	icon_state = "1,4"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"FQ" = (
+/obj/structure/overmap_component/system_control,
+/turf/closed/wall/trek_smooth/corridor,
+/area/ship/miranda)
+"FV" = (
+/obj/machinery/transporter_pad{
+	icon_state = "2,0"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"Gh" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/obj/item/reagent_containers/food/snacks/customizable/pizza{
+	name = "romulan pizza"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"GP" = (
+/obj/structure/overmap_component/viewscreen,
+/turf/closed/wall/trek_smooth,
+/area/ship/warbird)
+"GZ" = (
+/turf/open/floor/carpet/trek,
+/area/turbolift/ship)
+"Hf" = (
+/obj/structure/rack,
+/obj/item/clothing/gloves/color/fyellow,
+/turf/open/floor/plating,
+/area/ship/miranda)
+"Hk" = (
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
 /obj/machinery/power/port_gen/pacman,
 /turf/open/floor/plating,
 /area/ship/miranda)
-"FD" = (
-/obj/structure/lattice,
-/obj/structure/barricade/wooden/snowed,
-/turf/open/space/basic,
-/area/ship/miranda)
-"FV" = (
-/obj/structure/overmap_component/plasma_injector,
-/turf/closed/wall/trek_smooth,
-/area/ship/warbird)
-"Gw" = (
-/obj/structure/overmap_component/plasma_relay,
-/turf/closed/wall/trek_smooth/corridor,
-/area/ship/miranda)
-"Gz" = (
+"Ie" = (
 /obj/structure/frame,
 /turf/open/floor/plating,
 /area/ship/miranda)
-"Hz" = (
-/turf/open/floor/plasteel/white,
+"Ih" = (
+/obj/structure/overmap_component/integrity_field_generator{
+	pixel_x = -9
+	},
+/turf/open/floor/trek/tile,
+/area/ship/warbird)
+"Iu" = (
+/obj/structure/turbolift/manual,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/turbolift/ship)
+"IF" = (
+/obj/structure/trek_decor/rack,
+/turf/closed/wall/trek_smooth/room,
 /area/ship/miranda)
-"Ju" = (
+"IV" = (
+/obj/structure/table/glass,
+/obj/machinery/light,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"JJ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"JW" = (
+/obj/structure/overmap_component/system_control,
+/turf/closed/wall/trek_smooth/room,
+/area/ship/miranda)
+"Km" = (
 /obj/machinery/power/terminal{
 	icon_state = "term";
 	dir = 8
@@ -843,67 +950,134 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/miranda)
-"JH" = (
-/obj/structure/lattice,
-/obj/item/bedsheet/red,
-/turf/open/space/basic,
-/area/ship/miranda)
-"JP" = (
-/obj/structure/table/glass,
-/obj/item/tank/internals/plasma,
-/obj/item/tank/internals/plasma,
+"KC" = (
+/obj/structure/closet/secure_closet/freezer/kitchen,
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"Kd" = (
+"KZ" = (
+/obj/machinery/door/airlock/trek/goon/engi,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/miranda)
+"Lo" = (
+/obj/structure/closet/secure_closet/brig,
+/turf/open/floor/plating/snowed,
+/area/ship/miranda)
+"LT" = (
+/obj/machinery/transporter_pad{
+	icon_state = "2,2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"Mk" = (
+/obj/machinery/transporter_pad{
+	icon_state = "0,3"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"Mr" = (
+/obj/structure/turbolift/manual/height1,
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/plating/snowed,
+/turf/open/floor/carpet/trek,
+/area/turbolift/ship/secondary)
+"Mu" = (
+/obj/machinery/shower{
+	icon_state = "shower";
+	dir = 1
+	},
+/obj/structure/curtain,
+/turf/open/floor/plasteel/white,
 /area/ship/miranda)
-"Kg" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 11
+"My" = (
+/obj/machinery/transporter_pad{
+	icon_state = "0,1"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"Kx" = (
-/obj/machinery/door/airlock/trek/goon/medical,
+"Mz" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/miranda)
+"Np" = (
+/turf/closed/wall/trek_smooth/indestructible,
+/area/ship/miranda)
+"NT" = (
+/obj/machinery/transporter_pad{
+	icon_state = "3,3"
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"KD" = (
-/obj/structure/rack,
-/obj/item/storage/toolbox/electrical,
-/turf/open/floor/plating,
+"NY" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/wall/trek_smooth,
 /area/ship/miranda)
-"Lp" = (
+"Oc" = (
+/obj/machinery/transporter_pad{
+	icon_state = "0,0"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"Or" = (
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"LP" = (
-/obj/machinery/shower{
-	dir = 4
+"Ot" = (
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
-/turf/open/floor/plating/snowed,
-/area/ship/miranda)
-"Mg" = (
-/obj/structure/overmap_component/viewscreen,
-/turf/closed/wall/trek_smooth,
-/area/ship/warbird)
-"Mj" = (
-/obj/structure/table/glass,
-/obj/machinery/light,
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"Nq" = (
-/obj/item/tank/internals/plasma/full,
+"PD" = (
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/trek/tile,
-/area/ship/warbird)
-"Ob" = (
-/obj/structure/trek_decor/rack,
-/turf/closed/wall/trek_smooth/corridor,
 /area/ship/miranda)
-"Om" = (
+"PH" = (
+/obj/structure/window/reinforced/fulltile/trek/middle,
+/obj/structure/grille,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"Qa" = (
+/obj/machinery/transporter_pad{
+	icon_state = "4,1"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"Qb" = (
+/obj/structure/chair/trek/standard,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"Qi" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"Qr" = (
+/turf/open/floor/plasteel/white,
+/area/ship/miranda)
+"QQ" = (
+/obj/machinery/door/airlock/trek/goon/maint{
+	icon_state = "closed";
+	dir = 8
+	},
+/obj/structure/barricade/wooden/crude/snow,
+/obj/structure/holosign/barrier/atmos,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"Rl" = (
 /obj/machinery/door/airlock/trek/goon/glass{
 	icon_state = "closed";
 	dir = 8
@@ -912,15 +1086,124 @@
 /obj/structure/holosign/barrier/atmos,
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"Ow" = (
+"Rz" = (
+/obj/structure/lattice,
+/obj/machinery/light,
+/turf/open/space/basic,
+/area/ship/miranda)
+"RN" = (
+/obj/structure/trek_decor/viewscreen,
+/turf/closed/wall/trek_smooth/corridor,
+/area/ship/miranda)
+"RS" = (
+/obj/machinery/transporter_pad{
+	icon_state = "4,4"
+	},
 /turf/open/floor/carpet/trek,
-/area/turbolift/ship)
-"OM" = (
-/obj/machinery/door/airlock/trek/goon/sec,
+/area/ship/miranda)
+"Sv" = (
+/obj/machinery/transporter_pad{
+	icon_state = "4,0"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"Tp" = (
+/obj/structure/table_frame,
+/obj/item/tank/internals/plasma,
+/obj/item/tank/internals/plasma,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"Ue" = (
+/obj/structure/barricade/wooden/snowed,
+/obj/machinery/door/airlock/trek/goon/maint,
+/turf/open/floor/trek/tile,
+/area/ship/miranda)
+"Uh" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/ship/miranda)
+"UJ" = (
+/obj/structure/trek_decor/viewscreen{
+	icon_state = "viewscreen";
+	dir = 8
+	},
+/turf/closed/wall/trek_smooth/room,
+/area/ship/miranda)
+"UX" = (
+/obj/machinery/transporter_pad{
+	icon_state = "3,2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"Vm" = (
+/obj/machinery/transporter_pad{
+	icon_state = "1,0"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"WR" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/miranda)
+"Xf" = (
+/obj/structure/barricade/wooden/snowed,
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"Xl" = (
+/obj/machinery/door/airlock/trek/goon/command,
 /obj/structure/holosign/barrier/atmos,
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"OS" = (
+"Xx" = (
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/structure/table/glass,
+/obj/item/mop,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"Xz" = (
+/obj/structure/bed,
+/turf/open/floor/plating/snowed,
+/area/ship/miranda)
+"XA" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plating/snowed,
+/area/ship/miranda)
+"XM" = (
+/obj/machinery/telecomms/relay/preset/station,
+/turf/open/floor/plasteel/dark,
+/area/ship/miranda)
+"XR" = (
+/obj/machinery/transporter_pad{
+	icon_state = "2,1"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/miranda)
+"XT" = (
+/obj/structure/rack,
+/obj/item/wirecutters,
+/obj/item/wrench,
+/turf/open/floor/plating,
+/area/ship/miranda)
+"YK" = (
+/obj/structure/overmap_component/system_control,
+/turf/closed/wall/trek_smooth,
+/area/ship/warbird)
+"YM" = (
+/obj/structure/trek_decor/trophies,
+/turf/closed/wall/trek_smooth/corridor,
+/area/ship/miranda)
+"YW" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/item/kitchen/rollingpin,
 /obj/machinery/light{
@@ -931,156 +1214,34 @@
 /obj/item/reagent_containers/food/snacks/tofu,
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
-"Pu" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"PP" = (
-/obj/item/reagent_containers/spray/cleaner,
-/obj/item/reagent_containers/spray/cleaner,
-/obj/structure/table/glass,
-/obj/item/mop,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"Qo" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/trek/tile,
-/area/ship/miranda)
-"Rz" = (
-/obj/structure/trek_decor/viewscreen{
-	icon_state = "viewscreen";
-	dir = 8
-	},
-/turf/closed/wall/trek_smooth/room,
-/area/ship/miranda)
-"Sn" = (
-/turf/open/floor/trek/tile,
-/area/ship/warbird)
-"Th" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/obj/item/reagent_containers/food/snacks/customizable/pizza{
-	name = "romulan pizza"
-	},
-/turf/open/floor/trek/tile,
-/area/ship/warbird)
-"Tv" = (
-/obj/structure/turbolift/manual,
+"Za" = (
+/obj/structure/turbolift/manual/height2,
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/carpet/trek,
-/area/turbolift/ship/secondary)
-"TF" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/area/turbolift/ship)
+"Zk" = (
+/obj/structure/overmap_component/helm/warbird,
 /turf/open/floor/trek/tile,
-/area/ship/miranda)
-"Uj" = (
-/obj/machinery/telecomms/relay/preset/station,
-/turf/open/floor/plasteel/dark,
-/area/ship/miranda)
-"VA" = (
-/obj/structure/barricade/wooden/snowed,
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"Wv" = (
-/obj/structure/table_frame,
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"WZ" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"Xi" = (
-/obj/structure/overmap_component/plasma_relay,
-/turf/closed/wall/trek_smooth/room,
-/area/ship/miranda)
-"Xk" = (
-/turf/closed/wall/trek_smooth/indestructible,
-/area/ship/miranda)
-"Xl" = (
-/obj/structure/overmap_component/plasma_relay,
-/turf/closed/wall/trek_smooth,
 /area/ship/warbird)
-"Xt" = (
-/obj/structure/closet/secure_closet/brig,
-/turf/open/floor/plating/snowed,
+"Zr" = (
+/obj/structure/sign/warning/vacuum,
+/turf/closed/wall/trek_smooth/corridor,
 /area/ship/miranda)
-"XG" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"Yq" = (
-/obj/structure/table/optable/trek{
-	icon_state = "biobed";
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"Yw" = (
-/obj/structure/barricade/wooden/snowed,
-/obj/machinery/door/airlock/trek/goon/maint,
-/turf/open/floor/trek/tile,
-/area/ship/miranda)
-"Yy" = (
+"Zt" = (
 /obj/structure/turbolift/manual/height1,
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/carpet/trek,
 /area/turbolift/ship)
-"YB" = (
-/obj/machinery/power/floodlight,
-/turf/open/floor/plating,
-/area/ship/miranda)
-"YS" = (
-/obj/structure/chair/trek/standard,
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"YU" = (
-/obj/structure/girder,
-/obj/structure/barricade/wooden/crude,
+"ZH" = (
+/obj/structure/lattice,
+/obj/structure/bed,
+/obj/item/bedsheet/captain,
 /turf/open/space/basic,
 /area/ship/miranda)
-"YZ" = (
-/obj/machinery/light,
-/turf/open/floor/trek/tile,
-/area/ship/miranda)
-"Zh" = (
-/obj/machinery/door/airlock/trek/goon/turbolift,
-/turf/open/floor/carpet/trek,
-/area/ship/miranda)
-"Zl" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/trek/tile,
-/area/ship/miranda)
-"ZN" = (
-/obj/structure/overmap_component/helm/warbird,
-/turf/open/floor/trek/tile,
-/area/ship/warbird)
 
 (1,1,1) = {"
 aa
@@ -27908,19 +28069,19 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ak
+ak
+ak
+ak
+ak
+ak
+ak
+ak
+ak
+ak
+ak
+ak
+ak
 aa
 aa
 aa
@@ -28165,19 +28326,19 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ak
+ar
+ar
+ar
+ar
+ar
+Co
+ar
+ar
+ar
+ar
+ar
+ak
 aa
 aa
 aa
@@ -28423,17 +28584,17 @@ aa
 aa
 aa
 ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
+ar
+al
+al
+al
+al
+al
+py
+py
+py
+py
+ar
 ak
 aa
 aa
@@ -28681,15 +28842,15 @@ aa
 aa
 ak
 ar
-ar
-ar
-ar
-ar
-Qo
-ar
-ar
-ar
-ar
+al
+Xf
+as
+gy
+ba
+Dn
+Uh
+cP
+py
 ar
 ak
 aa
@@ -28939,14 +29100,14 @@ aa
 ak
 ar
 al
-al
-al
-al
-al
-Es
-Es
-Es
-Es
+Hf
+as
+ba
+Uh
+Uh
+Uh
+Uh
+py
 ar
 ak
 aa
@@ -29196,14 +29357,14 @@ aa
 ak
 ar
 al
-VA
+XT
 as
-tb
 ba
-JH
-oP
-FD
-Es
+Uh
+Uh
+AA
+Uh
+py
 ar
 ak
 aa
@@ -29453,14 +29614,14 @@ aa
 ak
 ar
 al
-as
-as
+iI
 ba
-oP
-oP
-oP
-oP
-Es
+as
+ys
+Uh
+Uh
+Uh
+py
 ar
 ak
 aa
@@ -29710,14 +29871,14 @@ aa
 ak
 ar
 al
-as
-as
 ba
-oP
-oP
-li
-oP
-Es
+ba
+ba
+ba
+ba
+as
+as
+al
 ar
 ak
 aa
@@ -29967,14 +30128,14 @@ aa
 ak
 ar
 al
-rx
+ba
+ba
+ba
 as
 as
 ba
-oP
-oP
-oP
-Es
+as
+al
 ar
 ak
 aa
@@ -30225,13 +30386,13 @@ ak
 ar
 al
 as
+ba
+vn
 as
-gv
-as
 ba
 ba
 ba
-Es
+al
 ar
 ak
 aa
@@ -30473,20 +30634,20 @@ aa
 aa
 aa
 ak
-Qo
+Co
 ar
 ar
 ar
 ar
-Qo
+Co
 ar
 al
 as
 as
 as
+ba
 as
-as
-as
+ba
 as
 al
 ar
@@ -30521,7 +30682,7 @@ ar
 ar
 ar
 ar
-Qo
+Co
 ar
 ar
 ar
@@ -30731,22 +30892,22 @@ aa
 aa
 ak
 ar
-Xk
-Xk
+Np
+Np
 aX
 aX
-Eb
+QQ
 aX
 aX
 aX
-Om
-ob
-vR
-ob
-Om
+Rl
+Zr
+PH
+Zr
+Rl
 aX
 aX
-Eb
+QQ
 aX
 aX
 aX
@@ -30770,15 +30931,15 @@ aa
 aa
 ak
 ar
-Xk
-Xk
+Np
+Np
 aX
 aX
 aX
 aX
 aX
 aX
-nk
+Dl
 aX
 aX
 aX
@@ -30967,9 +31128,9 @@ aa
 aa
 ak
 ar
-Xk
-Xk
-Xk
+Np
+Np
+Np
 aX
 aX
 aX
@@ -30988,8 +31149,8 @@ aa
 aa
 ak
 ar
-Xk
-Ow
+Np
+GZ
 aX
 as
 as
@@ -31027,8 +31188,8 @@ aa
 aa
 ak
 ar
-Xk
-Ow
+Np
+GZ
 aX
 as
 as
@@ -31224,17 +31385,17 @@ ak
 aa
 ak
 ar
-Xk
-Ow
-Xk
+Np
+GZ
+Np
 as
 as
-Gw
-gv
+cR
+vn
 as
-gv
+vn
 as
-gv
+vn
 al
 ar
 ar
@@ -31245,9 +31406,9 @@ aa
 aa
 ak
 ar
-Xk
-Yy
-Zh
+Np
+Zt
+uF
 as
 as
 as
@@ -31283,10 +31444,10 @@ aa
 aa
 aa
 ak
-YZ
-Xk
-xW
-Zh
+tO
+Np
+Za
+uF
 as
 as
 as
@@ -31481,9 +31642,9 @@ ak
 ak
 ak
 ar
-Xk
-gu
-Zh
+Np
+Iu
+uF
 as
 as
 aZ
@@ -31502,8 +31663,8 @@ aa
 aa
 ak
 ar
-Xk
-Ow
+Np
+GZ
 aX
 as
 as
@@ -31520,14 +31681,14 @@ aX
 aX
 as
 as
-ob
+Zr
 aX
-oP
-oP
+Uh
+Uh
 al
 al
 al
-oP
+Uh
 aa
 aa
 aa
@@ -31541,8 +31702,8 @@ aa
 aa
 ak
 ar
-Xk
-Ow
+Np
+GZ
 aX
 as
 as
@@ -31738,17 +31899,17 @@ ar
 ar
 ar
 ar
-Xk
-Ow
-Xk
+Np
+GZ
+Np
 as
 as
 an
 as
 bA
-Wv
-uB
-uA
+Du
+ga
+dq
 al
 ar
 ar
@@ -31759,15 +31920,15 @@ ak
 ak
 ak
 ar
-Xk
-Xk
+Np
+Np
 aX
 as
 as
 aX
-hH
-nw
-hR
+lm
+CN
+Mu
 al
 as
 bH
@@ -31777,14 +31938,14 @@ as
 bi
 as
 as
-OM
+vE
 as
-Es
-Es
+py
+py
 cp
-LP
-Xt
-oP
+vc
+Lo
+Uh
 aa
 aa
 aa
@@ -31798,25 +31959,25 @@ aa
 aa
 ak
 ar
-Xk
-Xk
+Np
+Np
 aX
-sO
-Pu
+Ot
+JJ
 cf
-Pu
-Pu
-XG
+JJ
+JJ
+cq
 as
 as
 cf
 as
 as
-yg
+rW
 as
 as
 as
-uy
+pB
 ba
 aX
 ar
@@ -31997,35 +32158,35 @@ al
 al
 al
 al
-Xk
+Np
 as
 as
 aZ
 ba
 as
-mS
+Fj
 bA
 as
 al
 ar
 ar
 ak
-lH
+EJ
 ar
 ar
 ar
-Yw
+Ue
 ar
-Xk
-sy
+Np
+of
 aX
 as
 as
 aX
-hH
-Hz
-hR
-Rz
+lm
+Qr
+Mu
+UJ
 as
 bA
 bA
@@ -32036,12 +32197,12 @@ as
 as
 aZ
 as
-Es
+py
 as
-OM
+vE
 ct
-uy
-oP
+pB
+Uh
 aa
 aa
 aa
@@ -32060,7 +32221,7 @@ aa
 aX
 ch
 as
-pG
+AP
 as
 as
 ch
@@ -32071,10 +32232,10 @@ as
 as
 aX
 as
-Es
-Es
+py
+py
 ba
-uy
+pB
 aX
 ar
 ak
@@ -32240,7 +32401,7 @@ aa
 aa
 aa
 aa
-al
+nY
 as
 as
 as
@@ -32257,8 +32418,8 @@ as
 aZ
 as
 as
-wo
-wk
+RN
+zW
 ba
 bk
 as
@@ -32279,9 +32440,9 @@ aX
 as
 as
 aX
-rH
-Hz
-rH
+nK
+Qr
+nK
 ab
 as
 as
@@ -32291,14 +32452,14 @@ as
 aX
 as
 as
-ob
+Zr
 ck
-Es
+py
 as
 cp
 ct
 cv
-oP
+Uh
 aa
 aa
 aa
@@ -32317,10 +32478,10 @@ aa
 aX
 ch
 as
-pG
+AP
 as
 as
-Fy
+Hk
 ba
 cl
 aX
@@ -32328,9 +32489,9 @@ as
 as
 aX
 as
-uy
-uy
-uy
+pB
+pB
+pB
 ba
 aX
 ar
@@ -32527,10 +32688,10 @@ ak
 ar
 ak
 aa
-Xi
+yU
 as
 as
-Gz
+Ie
 ba
 aX
 as
@@ -32550,7 +32711,7 @@ as
 as
 aX
 cl
-Es
+py
 as
 al
 al
@@ -32574,20 +32735,20 @@ ak
 aX
 ch
 as
-pG
+AP
 as
 as
 ba
 ba
-KD
+wj
 aX
 as
 as
 aX
 as
 as
-uy
-uy
+pB
+pB
 ba
 aX
 ar
@@ -32771,7 +32932,7 @@ as
 aZ
 as
 as
-nx
+fH
 ar
 ar
 ar
@@ -32785,7 +32946,7 @@ ar
 ak
 aa
 aZ
-qr
+yq
 as
 as
 ba
@@ -32795,8 +32956,8 @@ as
 aX
 bn
 as
-Mj
-Xi
+IV
+yU
 as
 aD
 aD
@@ -32805,13 +32966,13 @@ as
 aX
 as
 as
-Ob
+zr
 ba
-uy
+pB
 as
 cp
 ba
-uy
+pB
 al
 aa
 aa
@@ -32823,29 +32984,29 @@ ak
 ao
 ap
 aq
-xs
-ma
-vg
+rg
+NY
+DL
 aS
-ui
+AF
 aX
 ch
 as
-sY
+FQ
 as
 as
 as
 ba
-JP
+ie
 aX
 as
 as
 aX
 as
 ba
-uy
-uy
-uy
+pB
+pB
+pB
 aX
 ar
 ar
@@ -33018,17 +33179,17 @@ ag
 as
 as
 ai
-Xi
+yU
 av
 aB
 aB
 aK
 aP
 bh
-sY
+FQ
 as
 bh
-ob
+Zr
 ar
 ar
 ar
@@ -33042,11 +33203,11 @@ ar
 ak
 aa
 ab
-eP
+vT
 as
 as
 as
-Kx
+Fd
 as
 as
 bi
@@ -33060,16 +33221,16 @@ as
 as
 bh
 aX
-rx
+iI
 as
-Gw
-Kd
-uy
+cR
+XA
+pB
 as
-OM
-uy
-Es
-oP
+vE
+pB
+py
+Uh
 aa
 aa
 aa
@@ -33080,32 +33241,32 @@ ak
 ap
 ay
 aE
-Ju
-ju
-TF
-tM
+Km
+KZ
+Mz
+WR
 aV
-ju
-Cy
+KZ
+zb
 bh
 ab
 as
-Lp
-ls
+Or
+io
 as
-JP
+ie
 aX
 as
 bh
 ab
-rx
-uy
-uy
+iI
+pB
+pB
 ba
-oP
-oP
-oP
-sy
+Uh
+Uh
+Uh
+of
 aa
 aa
 aa
@@ -33285,7 +33446,7 @@ as
 aZ
 as
 as
-yq
+wi
 ar
 ar
 ar
@@ -33299,9 +33460,9 @@ ar
 ak
 aa
 aZ
-uv
+zg
 as
-Yq
+rL
 as
 aX
 as
@@ -33309,8 +33470,8 @@ as
 aX
 bn
 as
-Mj
-zr
+IV
+JW
 as
 az
 az
@@ -33319,14 +33480,14 @@ as
 aX
 as
 as
-Ob
+zr
 ba
-uy
-uy
+pB
+pB
 cp
 ba
-oP
-sy
+Uh
+of
 aa
 aa
 aa
@@ -33337,20 +33498,20 @@ ak
 aq
 ap
 ao
-Uj
+XM
 ak
 ar
 ar
-YZ
+tO
 aX
 ch
 as
-Gw
+cR
 as
 as
 as
 ba
-pB
+Tp
 aX
 as
 as
@@ -33358,11 +33519,11 @@ aX
 ba
 ba
 ba
-Es
-sy
-sy
-oP
-sy
+py
+of
+of
+Uh
+of
 aa
 aa
 aa
@@ -33549,8 +33710,8 @@ al
 al
 al
 al
-lO
-ie
+ox
+tz
 ak
 ar
 ak
@@ -33568,7 +33729,7 @@ al
 bu
 al
 al
-CG
+ep
 bI
 bO
 aP
@@ -33582,8 +33743,8 @@ ba
 as
 al
 al
-oP
-oP
+Uh
+Uh
 aa
 aa
 aa
@@ -33602,7 +33763,7 @@ ak
 aX
 ch
 as
-pG
+AP
 as
 as
 ba
@@ -33614,12 +33775,12 @@ as
 aX
 as
 ba
-uy
-oP
-oP
-oP
-oP
-sy
+pB
+Uh
+Uh
+Uh
+Uh
+of
 aa
 aa
 aa
@@ -33799,15 +33960,15 @@ as
 aZ
 as
 as
-wo
+RN
 bk
 as
 as
 as
-uy
+pB
 al
-sy
-YU
+of
+zl
 ak
 ar
 ak
@@ -33833,13 +33994,13 @@ as
 aX
 as
 as
-ob
+Zr
 cn
-oP
-Es
+Uh
+py
 cp
 cs
-Xt
+Lo
 al
 aa
 aa
@@ -33859,10 +34020,10 @@ aa
 aX
 ch
 as
-pG
+AP
 as
 as
-kY
+va
 ba
 cn
 aX
@@ -33871,12 +34032,12 @@ as
 aX
 as
 as
-uy
-oP
-sy
-oP
-sy
-sy
+pB
+Uh
+of
+Uh
+of
+of
 aa
 aa
 aa
@@ -34053,7 +34214,7 @@ al
 al
 al
 al
-Xk
+Np
 as
 as
 aZ
@@ -34063,17 +34224,17 @@ as
 ba
 ba
 al
-xv
+je
 ar
 ak
-lH
+EJ
 ar
 ar
 ar
 aY
 ar
-Xk
-sy
+Np
+of
 aX
 as
 as
@@ -34081,9 +34242,9 @@ aX
 as
 as
 as
-Rz
-fb
-YS
+UJ
+dK
+Qb
 bI
 aP
 as
@@ -34092,9 +34253,9 @@ as
 as
 aZ
 ba
-uy
+pB
 as
-OM
+vE
 ct
 ct
 al
@@ -34116,7 +34277,7 @@ aa
 aX
 ch
 as
-pG
+AP
 as
 ba
 bX
@@ -34127,13 +34288,13 @@ as
 as
 aX
 as
-uy
+pB
 ba
-oP
-sy
-oP
-sy
-sy
+Uh
+of
+Uh
+of
+of
 aa
 aa
 aa
@@ -34308,19 +34469,19 @@ ar
 ar
 ar
 ar
-Xk
-DL
-Xk
+Np
+hW
+Np
 as
 as
-xk
+Xl
 as
-nq
-mu
-oP
-BX
-xv
-uy
+pQ
+ZH
+Uh
+Rz
+je
+pB
 ar
 ak
 ak
@@ -34329,31 +34490,31 @@ ak
 ak
 ak
 ar
-Xk
-Xk
+Np
+Np
 aX
 as
 as
 aX
 bY
-PP
-Kg
+Xx
+tk
 al
-fY
-OS
+KC
+YW
 bI
 aP
 as
 bi
 as
 as
-OM
+vE
 as
 as
 as
 cp
-uy
-wB
+pB
+Xz
 al
 aa
 aa
@@ -34368,29 +34529,29 @@ aa
 aa
 ak
 ar
-Xk
-Xk
+Np
+Np
 aX
-WZ
-Pu
+Qi
+JJ
 cf
-Pu
-Pu
-Cs
+JJ
+JJ
+tD
 ba
 ba
 bR
 as
 as
-yg
+rW
 as
 ba
 ba
-Es
-Es
-oP
-sy
-sy
+py
+py
+Uh
+of
+of
 aa
 aa
 aa
@@ -34565,29 +34726,29 @@ ak
 ak
 ak
 ar
-Xk
-Tv
-Zh
+Np
+lM
+uF
 as
 as
 aZ
 as
 ba
-oP
-oP
-uy
-sy
+Uh
+Uh
+pB
+of
 ar
 ar
-sy
+of
 aa
 aa
 aa
 aa
 ak
 ar
-Xk
-DL
+Np
+hW
 aX
 as
 as
@@ -34604,14 +34765,14 @@ aX
 aX
 as
 as
-ob
-Es
-Es
+Zr
+py
+py
 aX
 al
 al
-Es
-oP
+py
+Uh
 aa
 aa
 aa
@@ -34625,8 +34786,8 @@ aa
 aa
 ak
 ar
-Xk
-DL
+Np
+hW
 aX
 as
 as
@@ -34643,11 +34804,11 @@ aX
 aX
 aX
 aX
-Es
-sy
-sy
-sy
-sy
+py
+of
+of
+of
+of
 aa
 aa
 aa
@@ -34822,30 +34983,30 @@ ak
 aa
 ak
 ar
-Xk
-DL
-Xk
+Np
+hW
+Np
 as
 as
-CE
+YM
 ba
-uy
-oP
-sy
-oP
-sy
-sy
-sy
-sy
+pB
+Uh
+of
+Uh
+of
+of
+of
+of
 aa
 aa
 aa
 aa
 ak
 ar
-Xk
-cG
-Zh
+Np
+Mr
+uF
 as
 as
 as
@@ -34881,10 +35042,10 @@ aa
 aa
 aa
 ak
-YZ
-Xk
-oS
-Zh
+tO
+Np
+cD
+uF
 as
 as
 as
@@ -34900,11 +35061,11 @@ aX
 ar
 bT
 ar
-sy
-sy
-sy
-sy
-sy
+of
+of
+of
+of
+of
 aa
 aa
 aa
@@ -35079,29 +35240,29 @@ aa
 aa
 ak
 ar
-Xk
-Xk
-Xk
+Np
+Np
+Np
 aX
 aX
 aX
 al
 al
-xv
-sy
-sy
-uy
-xv
-sy
-sy
+je
+of
+of
+pB
+je
+of
+of
 aa
 aa
 aa
 aa
 ak
 ar
-Xk
-DL
+Np
+hW
 aX
 as
 as
@@ -35139,8 +35300,8 @@ aa
 aa
 ak
 ar
-Xk
-DL
+Np
+hW
 aX
 as
 as
@@ -35157,11 +35318,11 @@ aX
 ar
 ak
 ak
-sy
-sy
-sy
-sy
-sy
+of
+of
+of
+of
+of
 aa
 aa
 aa
@@ -35350,29 +35511,29 @@ ba
 ba
 ba
 ba
-sy
+of
 aa
 aa
 aa
 aa
 ak
 ar
-Xk
-Xk
+Np
+Np
 aX
 aX
-nk
+Dl
 aX
 aX
-aX
-bw
-aX
-vR
 aX
 bw
 aX
+PH
 aX
-nk
+bw
+aX
+aX
+Dl
 aX
 aX
 aX
@@ -35396,15 +35557,15 @@ aa
 aa
 ak
 ar
-Xk
-Xk
+Np
+Np
 aX
 aX
 aX
 aX
 aX
 aX
-nk
+Dl
 aX
 aX
 aX
@@ -35601,34 +35762,34 @@ ak
 ak
 ak
 ak
-sy
-sy
-uy
-xv
-sy
-sy
-sy
+of
+of
+pB
+je
+of
+of
+of
 aa
 aa
 aa
 aa
 ak
-Zl
+PD
 ar
 ar
 ar
 ar
-Zl
+PD
 ar
-al
-bq
-as
-ba
-ba
-ba
+IF
 as
 as
-al
+as
+az
+as
+as
+as
+IF
 ar
 ak
 aa
@@ -35661,7 +35822,7 @@ ar
 ar
 ar
 ar
-Zl
+PD
 ar
 ar
 ar
@@ -35877,15 +36038,15 @@ ak
 ak
 ak
 ar
-al
+IF
 as
 as
-cn
-qi
-Ab
-ba
 as
-al
+il
+as
+as
+as
+IF
 ar
 ak
 aa
@@ -36134,15 +36295,15 @@ aa
 aa
 ak
 ar
-al
+IF
 as
+rb
+Mk
+eK
+My
+Oc
 as
-as
-ba
-ba
-ba
-ba
-al
+IF
 ar
 ak
 aa
@@ -36391,15 +36552,15 @@ aa
 aa
 ak
 ar
-al
-ba
-ba
+IF
 as
-YB
-ba
-ba
+Fq
+Et
+oU
+qx
+Vm
 as
-al
+IF
 ar
 ak
 aa
@@ -36648,15 +36809,15 @@ aa
 aa
 ak
 ar
-al
+IF
 as
+xP
+zx
+LT
+XR
+FV
 as
-ba
-ba
-ba
-ba
-as
-al
+IF
 ar
 ak
 aa
@@ -36905,15 +37066,15 @@ aa
 aa
 ak
 ar
-al
+IF
 as
-bq
+mh
+NT
+UX
+BD
+tM
 as
-as
-as
-as
-bq
-al
+IF
 ar
 ak
 aa
@@ -37162,15 +37323,15 @@ aa
 aa
 ak
 ar
-al
-al
-al
-al
-al
-al
-al
-al
-al
+IF
+as
+RS
+qM
+dr
+Qa
+Sv
+as
+IF
 ar
 ak
 aa
@@ -37418,17 +37579,17 @@ aa
 aa
 aa
 ak
-ar
-ar
-ar
-ar
-ar
-Zl
-ar
-ar
-ar
-ar
-ar
+of
+IF
+as
+as
+as
+as
+as
+as
+as
+IF
+of
 ak
 aa
 aa
@@ -37675,17 +37836,17 @@ aa
 aa
 aa
 ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
-ak
+ar
+al
+al
+al
+al
+al
+al
+al
+al
+al
+ar
 ak
 aa
 aa
@@ -37931,19 +38092,19 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ak
+ar
+ar
+ar
+ar
+ar
+PD
+ar
+ar
+ar
+ar
+ar
+ak
 aa
 aa
 aa
@@ -38188,19 +38349,19 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ak
+ak
+ak
+ak
+ak
+ak
+ak
+ak
+ak
+ak
+ak
+ak
+ak
 aa
 aa
 aa
@@ -45753,14 +45914,14 @@ aa
 aa
 aa
 aa
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
+DN
+DN
+DN
+DN
+DN
+DN
+DN
+DN
 aa
 aa
 aa
@@ -46010,14 +46171,14 @@ aa
 aa
 aa
 aa
-yJ
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+DN
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -46267,14 +46428,14 @@ aa
 aa
 aa
 aa
-FV
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+cM
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -46524,14 +46685,14 @@ aa
 aa
 aa
 aa
-FV
-Sn
-Nq
-Nq
-Nq
-Nq
-Sn
-yJ
+cM
+eM
+rs
+rs
+rs
+rs
+eM
+DN
 aa
 aa
 aa
@@ -46781,14 +46942,14 @@ aa
 aa
 aa
 aa
-FV
-Sn
-Nq
-Nq
-Nq
-Nq
-fi
-yJ
+cM
+eM
+rs
+rs
+rs
+rs
+Ih
+DN
 aa
 aa
 aa
@@ -47038,14 +47199,14 @@ aa
 aa
 aa
 aa
-FV
-Sn
-Nq
-Nq
-Nq
-Nq
-Sn
-yJ
+cM
+eM
+rs
+rs
+rs
+rs
+eM
+DN
 aa
 aa
 aa
@@ -47295,14 +47456,14 @@ aa
 aa
 aa
 aa
-FV
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+cM
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -47552,14 +47713,14 @@ aa
 aa
 aa
 aa
-FV
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+cM
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -47809,14 +47970,14 @@ aa
 aa
 aa
 aa
-yJ
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+DN
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -48058,22 +48219,22 @@ aa
 aa
 aa
 aa
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
-Sn
-Sn
-yJ
-yJ
-yJ
+DN
+DN
+DN
+DN
+DN
+DN
+DN
+DN
+DN
+DN
+DN
+eM
+eM
+DN
+DN
+DN
 aa
 aa
 aa
@@ -48315,22 +48476,22 @@ aa
 aa
 aa
 aa
-yJ
-Sn
-Sn
-xt
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+DN
+eM
+eM
+mG
+eM
+eM
+eM
+eM
+eM
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -48572,22 +48733,22 @@ aa
 aa
 aa
 aa
-Df
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-Xl
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+YK
+eM
+eM
+eM
+eM
+eM
+eM
+eM
+ti
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -48829,22 +48990,22 @@ aa
 aa
 aa
 aa
-Df
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-jz
-Xl
-Sn
-Th
-Th
-os
-eC
-Sn
-yJ
+YK
+eM
+eM
+eM
+eM
+eM
+eM
+Ev
+ti
+eM
+qa
+qa
+Gh
+Cg
+eM
+DN
 aa
 aa
 aa
@@ -49086,22 +49247,22 @@ aa
 aa
 aa
 aa
-Xl
-Sn
-ZN
-Sn
-Sn
-Sn
-Sn
-jz
-Xl
-Sn
-eC
-dj
-Th
-eC
-Sn
-yJ
+ti
+eM
+Zk
+eM
+eM
+eM
+eM
+Ev
+ti
+eM
+Cg
+iQ
+qa
+Cg
+eM
+DN
 aa
 aa
 aa
@@ -49343,22 +49504,22 @@ aa
 aa
 aa
 aa
-Df
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-jz
-Xl
-Sn
-eC
-eC
-Th
-eC
-Sn
-yJ
+YK
+eM
+eM
+eM
+eM
+eM
+eM
+Ev
+ti
+eM
+Cg
+Cg
+qa
+Cg
+eM
+DN
 aa
 aa
 aa
@@ -49600,22 +49761,22 @@ aa
 aa
 aa
 aa
-Mg
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-Xl
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+GP
+eM
+eM
+eM
+eM
+eM
+eM
+eM
+ti
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -49857,22 +50018,22 @@ aa
 aa
 aa
 aa
-yJ
-Sn
-Sn
-oV
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+DN
+eM
+eM
+sj
+eM
+eM
+eM
+eM
+eM
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -50114,22 +50275,22 @@ aa
 aa
 aa
 aa
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
-Sn
-Sn
-yJ
-yJ
-yJ
+DN
+DN
+DN
+DN
+DN
+DN
+DN
+DN
+DN
+DN
+DN
+eM
+eM
+DN
+DN
+DN
 aa
 aa
 aa
@@ -50379,14 +50540,14 @@ aa
 aa
 aa
 aa
-yJ
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+DN
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -50636,14 +50797,14 @@ aa
 aa
 aa
 aa
-yJ
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+DN
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -50893,14 +51054,14 @@ aa
 aa
 aa
 aa
-yJ
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+DN
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -51150,14 +51311,14 @@ aa
 aa
 aa
 aa
-yJ
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+DN
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -51407,14 +51568,14 @@ aa
 aa
 aa
 aa
-yJ
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+DN
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -51664,14 +51825,14 @@ aa
 aa
 aa
 aa
-yJ
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+DN
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -51921,14 +52082,14 @@ aa
 aa
 aa
 aa
-yJ
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+DN
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -52178,14 +52339,14 @@ aa
 aa
 aa
 aa
-yJ
-Sn
-Sn
-Sn
-Sn
-Sn
-Sn
-yJ
+DN
+eM
+eM
+eM
+eM
+eM
+eM
+DN
 aa
 aa
 aa
@@ -52435,14 +52596,14 @@ aa
 aa
 aa
 aa
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
-yJ
+DN
+DN
+DN
+DN
+DN
+DN
+DN
+DN
 aa
 aa
 aa

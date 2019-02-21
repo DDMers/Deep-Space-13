@@ -23,6 +23,34 @@
 	class = "miranda"
 	damage_states = TRUE //Damage FX
 
+/obj/structure/overmap/miranda/starter
+	name = "USS Sisko"
+	desc = "A starship that's been to hell and back but is still somehow in one piece and is the veteran of countless battles. \n This ship is a testament to the crews that have staffed her over the years and despite her state, she'll get you where you need to go. Despite its aging design, it has a modest armament."
+
+/obj/structure/trek_decor/plaque
+	name = "Dedication plaque"
+	desc = "A large, bronze plaque with a dedication: \n <b>USS Sisko. <b>Miranda-class <> Starfleet registry: NCC-2503 <>\n  Launched stardate: 0000.00 <> Utopia Planetia ShipYards <> United Federation Of Planets. \n</b>" //This ship has not yet been christened.
+	icon_state = "plaque"
+	var/list/supervisors = list("Admiral Nigel Schneider, Captain Declan Reade") //Put all the names of those who attended the launch here :)
+
+/obj/structure/trek_decor/plaque/proc/list2text(var/list/the_list, separator)
+	var/total = the_list.len
+	if (total == 0)														// Nothing to work with.
+		return
+
+	var/newText = "[the_list[1]]"										// Treats any object/number as text also.
+	var/count
+	for (count = 2, count <= total, count++)
+		if (separator)
+			newText += separator
+		newText += "[the_list[count]]"
+	return newText
+
+/obj/structure/trek_decor/plaque/examine(mob/user)
+	. = ..()
+	to_chat(user, "<span_class='notice'><b>Launch supervised by: [list2text(supervisors)]</b></span>")
+	to_chat(user, "<i>There is a small inscription underneath it: 'Illegitimi non carborundum'</i>")
+
 /obj/structure/overmap/miranda/apply_shield_boost() //Miranda starts with some boosted shields
 	shields.north_max += max_shield_health //Start with some double shields
 	shields.south_max += max_shield_health
