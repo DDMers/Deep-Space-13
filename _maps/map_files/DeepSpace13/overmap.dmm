@@ -19,7 +19,15 @@
 /obj/structure/overmap/ds13,
 /turf/open/space/basic,
 /area/space)
-"G" = (
+"p" = (
+/obj/structure/overmap/saladin,
+/turf/open/space/basic,
+/area/space)
+"V" = (
+/obj/item/projectile/meteor,
+/turf/open/space/basic,
+/area/space)
+"Y" = (
 /obj/structure/overmap/miranda/starter,
 /turf/open/space/basic,
 /area/space)
@@ -28421,7 +28429,7 @@ a
 a
 a
 a
-G
+Y
 a
 a
 a
@@ -60628,7 +60636,7 @@ a
 a
 a
 a
-a
+V
 a
 a
 a
@@ -61394,7 +61402,7 @@ a
 a
 a
 a
-a
+V
 a
 a
 a
@@ -61658,7 +61666,7 @@ a
 a
 a
 a
-a
+V
 a
 a
 a
@@ -61912,7 +61920,7 @@ a
 a
 a
 a
-a
+p
 a
 a
 a
@@ -62680,7 +62688,7 @@ a
 a
 a
 a
-a
+V
 a
 a
 a
@@ -62942,7 +62950,7 @@ a
 a
 a
 a
-a
+V
 a
 a
 a
@@ -63198,7 +63206,7 @@ a
 a
 a
 a
-a
+V
 a
 a
 a

@@ -122,11 +122,13 @@
 		return
 	if(tractor_target.shields.check_vulnerability())
 		tractor_target.nav_target = src
+		tractor_target.vel = 1
 		if(get_dist(src, tractor_target) > 1) //To stop it glitching out when it reaches us
-			if(tractor_target.vel <= 0)
-				tractor_target.vel = 1
+			tractor_target.vel += (max_speed / 1.3)
+			tractor_target.turnspeed = 2
 		else
 			tractor_target.vel = 0
+			tractor_target.check_power()
 	else
 		release_tractor() //Target shields are back, stop tractoring.
 

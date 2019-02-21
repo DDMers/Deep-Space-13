@@ -268,6 +268,12 @@
 /area/turbolift/ship/romulan/secondary
 	name = "Romulan secondary ascendior"
 
+/area/turbolift/ship/saladin //These areas MUST be unique if youre using manuals lifts!
+	name = "Saladin class elevator"
+
+/area/turbolift/ship/saladin/secondary
+	name = "Saladin class elevator (2)"
+
 //////////////////////////////////
 // These lifts work differently!//
 // Put all lift objects in the same area//
