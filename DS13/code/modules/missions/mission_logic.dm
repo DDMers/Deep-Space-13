@@ -51,3 +51,22 @@
 //		loading = FALSE
 //	loaded = TRUE
 	return TRUE
+
+/obj/effect/mob_spawn/human/alive/trek/Initialize()
+	. = ..()
+	for(var/mob/dead/observer/F in GLOB.dead_mob_list)
+		var/turf/turfy = get_turf(src)
+		var/link = TURF_LINK(F, turfy)
+		if(F)
+			to_chat(F, "<font color='#EE82EE'><i>Spawn available! (just click the sleeper): [link]</i></font>")
+
+/obj/effect/mob_spawn/human/alive/trek/saladin_crew
+	name = "Independant crewman"
+	assignedrole = "saladin crew"
+	outfit = /datum/outfit/job/engineer/DS13
+	flavour_text = "<span class='big bold'>You are an independant crewman!</span><b> Your party bought the ship you're currently on off of a dodgy ferengi merchant, your ship: the USS Sherman has taken heavy damage due to an asteroid belt. \n</b> <i>You own the USS Sherman along with your fellow crew, you are free to behave as you see fit. But you must <b>only</b> kill in self-defense.</i> \n If you require further guidance, please ahelp."
+
+/obj/effect/mob_spawn/human/alive/trek/saladin_crew/captain
+	name = "Independant captain"
+	assignedrole = "saladin captain"
+	outfit = /datum/outfit/job/captain/DS13

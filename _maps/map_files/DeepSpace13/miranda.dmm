@@ -1327,7 +1327,10 @@
 /turf/open/floor/carpet/trek,
 /area/ship/saladin)
 "uA" = (
-/obj/machinery/door/airlock/trek/goon/medical,
+/obj/machinery/door/airlock/trek/goon/medical{
+	icon_state = "closed";
+	dir = 4
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/saladin)
 "uD" = (
@@ -1449,13 +1452,6 @@
 /obj/structure/window/reinforced/fulltile/trek/middle,
 /obj/structure/grille,
 /turf/open/floor/trek/tile,
-/area/ship/saladin)
-"wu" = (
-/obj/item/crowbar,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
 /area/ship/saladin)
 "wC" = (
 /obj/structure/table_frame,
@@ -1749,6 +1745,13 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/saladin)
+"Co" = (
+/obj/machinery/door/airlock/trek/goon/command{
+	icon_state = "closed";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/saladin)
 "Ct" = (
 /obj/structure/lattice,
 /turf/open/floor/trek/tile,
@@ -1808,6 +1811,9 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/warbird)
+"DJ" = (
+/turf/closed/wall/trek_smooth/reinforced,
+/area/ship/saladin)
 "DQ" = (
 /obj/machinery/transporter_pad{
 	icon_state = "1,0"
@@ -1947,7 +1953,7 @@
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
 "Gl" = (
-/turf/closed/wall/trek/darksteel,
+/turf/closed/wall/trek_smooth,
 /area/ship/saladin)
 "Go" = (
 /obj/machinery/light{
@@ -2054,6 +2060,13 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/warbird)
+"Ii" = (
+/obj/effect/mob_spawn/human/alive/trek/saladin_crew/captain{
+	icon_state = "sleeper";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/saladin)
 "Il" = (
 /obj/machinery/door/airlock/trek/goon/sec,
 /obj/structure/holosign/barrier/atmos,
@@ -2227,6 +2240,13 @@
 	},
 /turf/open/floor/trek/tile,
 /area/ship/warbird)
+"LC" = (
+/obj/effect/mob_spawn/human/alive/trek/saladin_crew{
+	icon_state = "sleeper";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/saladin)
 "LD" = (
 /obj/machinery/door/airlock/trek/goon/maint{
 	icon_state = "closed";
@@ -2630,6 +2650,7 @@
 /obj/machinery/shower{
 	dir = 4
 	},
+/obj/structure/curtain,
 /turf/open/floor/carpet/trek,
 /area/ship/saladin)
 "Tx" = (
@@ -2640,7 +2661,7 @@
 /area/ship/warbird)
 "TH" = (
 /obj/structure/overmap_component/plasma_injector,
-/turf/closed/wall/trek/darksteel,
+/turf/closed/wall/trek_smooth,
 /area/ship/saladin)
 "TS" = (
 /obj/machinery/portable_atmospherics/canister/toxins,
@@ -2875,6 +2896,14 @@
 "Yq" = (
 /obj/item/book,
 /obj/structure/table/glass,
+/obj/item/crowbar,
+/turf/open/floor/carpet/trek,
+/area/ship/saladin)
+"Yz" = (
+/obj/effect/mob_spawn/human/alive/trek/saladin_crew{
+	icon_state = "sleeper";
+	dir = 8
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/saladin)
 "YG" = (
@@ -7771,7 +7800,7 @@ gW
 Tl
 Fc
 Fc
-aa
+Fc
 aa
 aa
 aa
@@ -8025,9 +8054,9 @@ iL
 iL
 iL
 gW
-NJ
-gW
-Fc
+iL
+LC
+LC
 Fc
 aa
 aa
@@ -8512,7 +8541,7 @@ iL
 iL
 Fc
 CO
-iL
+Ii
 iL
 Fc
 qr
@@ -8540,8 +8569,8 @@ os
 nd
 gW
 gZ
-Rl
-Rl
+Yz
+Yz
 sn
 Fc
 aa
@@ -8764,9 +8793,9 @@ iL
 iL
 Fc
 Fc
-dT
+Co
 Fc
-dT
+Co
 Fc
 Fc
 se
@@ -8820,21 +8849,21 @@ UZ
 MU
 XC
 UC
-Gl
-Gl
-Gl
-Gl
-Gl
-Gl
-Gl
-Gl
-Gl
-Gl
-Gl
-Gl
-Gl
-Gl
-Gl
+DJ
+DJ
+DJ
+DJ
+DJ
+DJ
+DJ
+DJ
+DJ
+DJ
+DJ
+DJ
+DJ
+DJ
+DJ
 aa
 aa
 sO
@@ -9027,7 +9056,7 @@ iL
 Fc
 Fc
 lI
-dT
+Co
 Fc
 iT
 qr
@@ -9091,7 +9120,7 @@ xA
 xA
 xA
 xA
-Gl
+DJ
 aa
 aa
 sO
@@ -9334,8 +9363,8 @@ wt
 wt
 wt
 wt
-Gl
-Gl
+DJ
+DJ
 xA
 xA
 TH
@@ -9348,7 +9377,7 @@ TH
 xA
 xA
 xA
-Gl
+DJ
 aa
 aa
 sO
@@ -9592,8 +9621,8 @@ YG
 YG
 YG
 YG
-Gl
-Gl
+DJ
+DJ
 wt
 wt
 wt
@@ -9605,7 +9634,7 @@ wt
 Gl
 Gl
 xA
-Gl
+DJ
 aa
 aa
 sO
@@ -10054,7 +10083,7 @@ iL
 NZ
 iL
 cE
-wu
+us
 iL
 dT
 iL
@@ -10106,8 +10135,8 @@ YG
 YG
 YG
 YG
-Gl
-Gl
+DJ
+DJ
 wt
 wt
 wt
@@ -10362,8 +10391,8 @@ wt
 wt
 wt
 wt
-Gl
-Gl
+DJ
+DJ
 xA
 xA
 TH
@@ -10876,16 +10905,16 @@ CB
 CB
 CB
 gC
-Gl
-Gl
-Gl
-Gl
-Gl
-Gl
-Gl
-Gl
-Gl
-Gl
+DJ
+DJ
+DJ
+DJ
+DJ
+DJ
+DJ
+DJ
+DJ
+DJ
 iT
 Ua
 Ua

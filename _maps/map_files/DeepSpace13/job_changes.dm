@@ -14,7 +14,8 @@
 	name = "Trek-Captain"
 	uniform = /obj/item/clothing/under/trek/command/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
-	belt = /obj/item/pda
+	l_pocket = /obj/item/pda
+	belt = /obj/item/gun/energy/phaser
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = null
 	gloves = /obj/item/clothing/gloves/color/black
@@ -24,6 +25,7 @@
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/hop/DS13
+	title = "First Officer"
 
 /datum/outfit/job/hop/DS13
 	name = "Trek-Head of Personnel"
@@ -33,6 +35,7 @@
 	head = null
 	gloves = /obj/item/clothing/gloves/color/black
 	l_pocket = /obj/item/pda
+	belt = /obj/item/gun/energy/phaser
 
 //------
 //EngSec
@@ -44,6 +47,7 @@
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/hos/DS13
+	title = "Security Chief"
 
 /datum/outfit/job/hos/DS13
 	name = "Trek-Head of Security"
@@ -52,6 +56,8 @@
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
+	head = /obj/item/clothing/head/beret/sec/navyofficer
+	belt = /obj/item/gun/energy/phaser
 
 /datum/job/warden/New()
 	..()
@@ -63,7 +69,8 @@
 	uniform = /obj/item/clothing/under/trek/engsec/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
-	belt = /obj/item/pda
+	l_pocket = /obj/item/pda
+	belt = /obj/item/gun/energy/phaser
 
 /datum/job/officer/New()
 	..()
@@ -76,6 +83,8 @@
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
+	head = /obj/item/clothing/head/beret/sec/navyofficer
+	belt = /obj/item/gun/energy/phaser
 
 
 //Engineering
@@ -210,6 +219,7 @@
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/rd/DS13
+	title = "Chief Science Officer"
 
 /datum/outfit/job/rd/DS13
 	name = "Trek-Research Director"
@@ -224,6 +234,7 @@
 	outfit = /datum/outfit/job/scientist/DS13
 	access += ACCESS_MORGUE
 	minimal_access += list(ACCESS_ROBOTICS, ACCESS_TECH_STORAGE)
+	title = "Science Officer"
 
 /datum/outfit/job/scientist/DS13
 	name = "Trek-Scientist"
@@ -238,6 +249,7 @@
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/assistant/DS13
+	title = "Ensign"
 
 /datum/outfit/job/assistant/DS13
 	name = "Trek-Assistant"
