@@ -86,12 +86,16 @@
 	if(loc_check())
 		bolt_other_doors()
 		return
-	unbolt_door()
+	if(!in_use)
+		unbolt_door()
 	for(var/obj/structure/turbolift/S in destinations)
 		if(S.loc_check()) //Someone's standing in the lift
 			S.bolt_other_doors() //So bolt the other lifts
 			return
-		S.unbolt_door() //No one's in the lift, and the lift is not moving, so allow entrance
+		if(!S.in_use)
+			S.unbolt_door() //No one's in the lift, and the lift is not moving, so allow entrance
+	if(!loc_check())
+		unbolt_other_doors()
 
 /obj/structure/turbolift/proc/loc_check() //Is there someone in the lift? if so, we need to stop other lifts from being used.
 	for(var/turf/T in turbolift_turfs)
@@ -163,49 +167,43 @@
 
 /obj/structure/turbolift/proc/bolt_other_doors()
 	for(var/obj/structure/turbolift/SS in destinations)
-		if(SS.bolted)
-			continue
-		SS.bolt_door()
 		SS.in_use = TRUE
+		SS.bolt_door()
 
 /obj/structure/turbolift/proc/unbolt_other_doors()
 	for(var/obj/structure/turbolift/SS in destinations)
-		if(!SS.bolted)
-			continue
-		SS.unbolt_door()
 		SS.in_use = FALSE
+		SS.unbolt_door()
 
 /obj/structure/turbolift/proc/bolt_door()
 	if(bolted)
 		return
+	bolted = TRUE//Tones down the processing use
 	if(!in_use)
 		in_use = TRUE //so no one can ride the lift when it's locked
 	if(!linked_door)
-		linked_door = locate(/obj/machinery/door/airlock) in get_step(src, SOUTH)
-		if(!linked_door || !istype(linked_door, /obj/machinery/door))
-			for(var/obj/machinery/door/airlock/AS in get_area(src))  //If you have a big turbolift with multiple airlocks
-				if(AS.z == z)
-					linked_door = AS
+		find_door()
 	if(linked_door)
-		bolted = TRUE//Tones down the processing use
 		linked_door.close()
 		linked_door.bolt()
 
 /obj/structure/turbolift/proc/unbolt_door()
 	if(!bolted)
 		return
+	bolted = FALSE//Tones down the processing use
 	if(in_use)
 		in_use = FALSE
 	if(!linked_door)
-		linked_door = locate(/obj/machinery/door/airlock) in get_step(src, SOUTH)
-		if(!linked_door || !istype(linked_door, /obj/machinery/door))
-			for(var/obj/machinery/door/airlock/AS in get_area(src))  //If you have a big turbolift with multiple airlocks
-				if(AS.z == z)
-					linked_door = AS
+		find_door()
 	if(linked_door)
-		bolted = FALSE//Tones down the processing use
 		linked_door.unbolt()
 
+/obj/structure/turbolift/proc/find_door()
+	linked_door = locate(/obj/machinery/door/airlock) in get_step(src, SOUTH)
+	if(!linked_door || !istype(linked_door, /obj/machinery/door))
+		for(var/obj/machinery/door/airlock/AS in get_area(src))  //If you have a big turbolift with multiple airlocks
+			if(AS.z == z)
+				linked_door = AS
 
 /obj/structure/turbolift/Initialize()
 	. = ..()
