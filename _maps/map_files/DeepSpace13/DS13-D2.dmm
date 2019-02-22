@@ -2039,6 +2039,7 @@
 /area/crew_quarters/kitchen)
 "fA" = (
 /obj/machinery/vending/dinnerware,
+/obj/machinery/light,
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/kitchen)
 "fB" = (
@@ -2777,6 +2778,9 @@
 /area/maintenance/central)
 "hB" = (
 /obj/machinery/computer/card/minor/cmo,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/cmo)
 "hC" = (
@@ -3068,7 +3072,6 @@
 /area/medical/medbay/central)
 "ip" = (
 /obj/structure/table,
-/obj/machinery/light,
 /obj/item/book/manual/wiki/medicine,
 /obj/item/clothing/glasses/hud/health,
 /obj/item/clothing/glasses/hud/health,
@@ -3105,6 +3108,9 @@
 /area/medical/medbay/central)
 "ir" = (
 /obj/machinery/rnd/production/techfab/department/medical,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "is" = (
@@ -4716,7 +4722,6 @@
 /obj/item/wrench,
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/wirecutters,
-/obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
 /area/hydroponics)
 "mx" = (
@@ -4933,6 +4938,9 @@
 "nf" = (
 /obj/machinery/sleeper,
 /obj/machinery/emh_emitter,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "ng" = (
@@ -5000,6 +5008,10 @@
 /obj/structure/overmap_component/system_control,
 /turf/closed/wall/trek_smooth/room,
 /area/engine/break_room)
+"qo" = (
+/obj/machinery/light,
+/turf/open/floor/trek/tile,
+/area/maintenance/central)
 "qx" = (
 /obj/machinery/emh_emitter,
 /turf/open/floor/plasteel/dark,
@@ -5052,6 +5064,18 @@
 	},
 /turf/open/floor/trek,
 /area/quartermaster/storage)
+"tc" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/medical/medbay/central)
+"te" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/medical/chemistry)
 "uk" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/white,
@@ -5146,6 +5170,9 @@
 "AX" = (
 /obj/machinery/light,
 /turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"Bk" = (
+/turf/open/floor/plasteel/white,
 /area/crew_quarters/dorms)
 "Bm" = (
 /obj/machinery/camera{
@@ -29953,8 +29980,8 @@ aa
 ap
 et
 et
-et
-et
+gp
+gp
 dD
 dD
 dD
@@ -30211,7 +30238,7 @@ ap
 et
 et
 dD
-dD
+Bk
 dD
 fK
 aM
@@ -30225,7 +30252,7 @@ fM
 aM
 fK
 dD
-dD
+Bk
 dD
 et
 kg
@@ -30725,7 +30752,7 @@ ap
 et
 et
 dD
-dD
+Bk
 dD
 fL
 fL
@@ -30739,7 +30766,7 @@ fN
 fL
 fL
 dD
-dD
+Bk
 dD
 et
 kg
@@ -31239,7 +31266,7 @@ ap
 et
 et
 dD
-dD
+Bk
 dD
 fK
 aM
@@ -31253,7 +31280,7 @@ fM
 aM
 fK
 dD
-dD
+Bk
 dD
 et
 kg
@@ -31753,7 +31780,7 @@ ap
 et
 et
 dD
-dD
+Bk
 dD
 fL
 fL
@@ -31767,7 +31794,7 @@ fN
 fL
 fL
 dD
-dD
+Bk
 dD
 et
 kg
@@ -32267,7 +32294,7 @@ ld
 et
 et
 dD
-dD
+Bk
 dD
 fK
 aM
@@ -32281,7 +32308,7 @@ fM
 aM
 fK
 dD
-dD
+Bk
 dD
 et
 kg
@@ -32795,7 +32822,7 @@ fN
 fL
 fL
 dD
-dD
+Bk
 dD
 et
 kg
@@ -35111,7 +35138,7 @@ hC
 oH
 go
 et
-et
+qo
 bT
 bY
 cd
@@ -35881,7 +35908,7 @@ bv
 bv
 bv
 bU
-bW
+hr
 bW
 bU
 bZ
@@ -36395,7 +36422,7 @@ bv
 bv
 bv
 bT
-bW
+hr
 bW
 pU
 bY
@@ -36634,7 +36661,7 @@ QV
 XN
 ff
 ff
-ff
+hn
 lv
 hE
 bv
@@ -36909,7 +36936,7 @@ fG
 bv
 bv
 bT
-bW
+cQ
 bW
 bT
 bY
@@ -37423,7 +37450,7 @@ bJ
 bv
 bv
 bU
-bW
+hr
 bW
 bU
 bZ
@@ -38195,7 +38222,7 @@ hC
 oH
 dL
 et
-et
+qo
 bT
 bY
 cd
@@ -39524,7 +39551,7 @@ mX
 eg
 eg
 eg
-mX
+eo
 aa
 aa
 aa
@@ -39781,7 +39808,7 @@ mX
 gt
 ma
 gt
-mX
+eo
 aa
 aa
 aa
@@ -40492,7 +40519,7 @@ je
 bm
 bm
 ls
-hR
+te
 hR
 hR
 iR
@@ -41012,7 +41039,7 @@ hW
 hY
 hZ
 fw
-id
+tc
 id
 iM
 id
@@ -41526,7 +41553,7 @@ iC
 iC
 iC
 bq
-id
+tc
 id
 iM
 id

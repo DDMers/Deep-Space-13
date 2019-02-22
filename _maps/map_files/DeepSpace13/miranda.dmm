@@ -9,29 +9,29 @@
 "ad" = (
 /obj/structure/overmap_component/helm/miranda,
 /turf/open/floor/carpet/trek,
-/area/ship/miranda)
+/area/ship/bridge/miranda)
 "af" = (
 /obj/structure/overmap_component/tactical/miranda,
 /turf/open/floor/carpet/trek,
-/area/ship/miranda)
+/area/ship/bridge/miranda)
 "ag" = (
 /obj/structure/chair/trek{
 	icon_state = "comfy";
 	dir = 1
 	},
 /turf/open/floor/carpet/trek,
-/area/ship/miranda)
+/area/ship/bridge/miranda)
 "ah" = (
 /obj/structure/overmap_component/science/miranda,
 /turf/open/floor/carpet/trek,
-/area/ship/miranda)
+/area/ship/bridge/miranda)
 "ai" = (
 /obj/machinery/computer/communications{
 	icon_state = "computer";
 	dir = 1
 	},
 /turf/open/floor/carpet/trek,
-/area/ship/miranda)
+/area/ship/bridge/miranda)
 "aj" = (
 /obj/structure/girder,
 /turf/open/space/basic,
@@ -226,7 +226,7 @@
 /obj/structure/table_frame,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/carpet/trek,
-/area/ship/miranda)
+/area/ship/bridge/miranda)
 "aS" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -258,6 +258,9 @@
 "ba" = (
 /turf/open/floor/plating,
 /area/ship/miranda)
+"bd" = (
+/turf/closed/wall/trek_smooth/romulan,
+/area/ship/bridge/warbird)
 "be" = (
 /turf/open/floor/trek/tile,
 /area/ship/warbird)
@@ -313,6 +316,9 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
+"bF" = (
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/saladin)
 "bH" = (
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
@@ -349,24 +355,28 @@
 "bR" = (
 /obj/machinery/door/airlock/trek/goon/engi,
 /turf/open/floor/carpet/trek,
-/area/ship/miranda)
+/area/ship/engineering/miranda)
 "bX" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
-/area/ship/miranda)
+/area/ship/engineering/miranda)
 "bY" = (
 /obj/structure/janitorialcart,
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
+"ca" = (
+/obj/structure/overmap_component/viewscreen/miranda,
+/turf/closed/wall/trek_smooth/room,
+/area/ship/engineering/miranda)
 "cf" = (
 /obj/machinery/door/airlock/trek/goon/engi,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/carpet/trek,
-/area/ship/miranda)
+/area/ship/engineering/miranda)
 "ch" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -413,6 +423,12 @@
 /obj/structure/trek_decor/trophies,
 /turf/closed/wall/trek_smooth/room,
 /area/ship/saladin)
+"cH" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering/warbird)
 "cV" = (
 /obj/structure/table/glass,
 /obj/item/storage/firstaid/regular,
@@ -442,6 +458,10 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/warbird)
+"dk" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/space/basic,
+/area/ship/engineering/saladin)
 "dl" = (
 /obj/machinery/door/airlock/trek/goon/command{
 	icon_state = "closed";
@@ -476,7 +496,7 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/trek/romulan,
-/area/ship/warbird)
+/area/ship/bridge/warbird)
 "ej" = (
 /obj/machinery/light,
 /obj/structure/cable,
@@ -488,7 +508,7 @@
 	pixel_x = -9
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/warbird)
+/area/ship/engineering/warbird)
 "ez" = (
 /obj/structure/girder,
 /obj/structure/barricade/wooden/crude,
@@ -497,7 +517,7 @@
 "eI" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/dark,
-/area/ship/warbird)
+/area/ship/engineering/warbird)
 "eJ" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/warbird)
@@ -537,6 +557,10 @@
 /obj/structure/curtain,
 /turf/open/floor/plasteel/white,
 /area/ship/miranda)
+"fx" = (
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/saladin)
 "fQ" = (
 /obj/machinery/telecomms/relay/preset/station,
 /turf/open/floor/plasteel/dark,
@@ -549,11 +573,11 @@
 /obj/machinery/door/airlock/trek/goon/command,
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/carpet/trek,
-/area/ship/saladin)
+/area/ship/bridge/saladin)
 "gg" = (
 /obj/structure/overmap_component/tactical/warbird,
 /turf/open/floor/carpet/trek/romulan,
-/area/ship/warbird)
+/area/ship/bridge/warbird)
 "gl" = (
 /obj/structure/barricade/wooden/crude,
 /turf/open/space/basic,
@@ -577,7 +601,7 @@
 /obj/machinery/power/apc/auto_name/south,
 /obj/structure/cable,
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "gW" = (
 /turf/closed/wall/trek_smooth/corridor,
 /area/ship/saladin)
@@ -628,6 +652,9 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/saladin)
+"hH" = (
+/turf/open/floor/plating/snowed,
+/area/ship/engineering/saladin)
 "hQ" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,1"
@@ -653,7 +680,7 @@
 "ig" = (
 /obj/structure/overmap_component/viewscreen,
 /turf/closed/wall/trek_smooth/romulan,
-/area/ship/warbird)
+/area/ship/bridge/warbird)
 "iq" = (
 /obj/machinery/transporter_pad{
 	icon_state = "3,1"
@@ -703,6 +730,9 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
+"jv" = (
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/saladin)
 "jC" = (
 /obj/machinery/door/airlock/trek/goon/command,
 /obj/structure/holosign/barrier/atmos,
@@ -756,7 +786,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "kw" = (
 /obj/effect/turf_decal/bot_white/left,
 /obj/effect/turf_decal/tile/neutral{
@@ -787,7 +817,7 @@
 /obj/item/tank/internals/plasma,
 /obj/item/tank/internals/plasma,
 /turf/open/floor/carpet/trek,
-/area/ship/miranda)
+/area/ship/engineering/miranda)
 "kS" = (
 /obj/item/soap,
 /turf/open/space/basic,
@@ -800,7 +830,7 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/plating,
-/area/ship/miranda)
+/area/ship/engineering/miranda)
 "lp" = (
 /obj/machinery/shower{
 	dir = 8
@@ -817,10 +847,16 @@
 /obj/structure/table,
 /turf/open/floor/carpet/trek,
 /area/ship/saladin)
+"lx" = (
+/obj/item/twohanded/required/kirbyplants{
+	icon_state = "plant-21"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/miranda)
 "lD" = (
 /obj/structure/overmap_component/integrity_field_generator,
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "lE" = (
 /obj/structure/girder,
 /turf/open/space/basic,
@@ -830,7 +866,7 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "lG" = (
 /turf/open/floor/carpet/trek/romulan,
 /area/turbolift/ship/romulan/secondary)
@@ -911,7 +947,7 @@
 "mJ" = (
 /obj/machinery/light,
 /turf/open/floor/carpet/trek,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "mP" = (
 /obj/structure/holosign/barrier/atmos,
 /obj/machinery/door/airlock/trek/goon/sec,
@@ -978,6 +1014,9 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/warbird)
+"oC" = (
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/miranda)
 "oK" = (
 /obj/structure/table/glass,
 /obj/machinery/light,
@@ -1036,7 +1075,7 @@
 /obj/item/stack/sheet/mineral/plasma,
 /obj/item/stack/sheet/mineral/plasma,
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "pM" = (
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
@@ -1047,7 +1086,7 @@
 "pX" = (
 /obj/structure/overmap_component/plasma_relay,
 /turf/closed/wall/trek/darksteel,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "qb" = (
 /obj/machinery/door/airlock/trek/goon/maint,
 /obj/structure/barricade/wooden/crude/snow,
@@ -1099,7 +1138,7 @@
 "qM" = (
 /obj/structure/tank_dispenser/plasma,
 /turf/open/floor/plasteel/dark,
-/area/ship/warbird)
+/area/ship/engineering/warbird)
 "rc" = (
 /obj/machinery/light{
 	dir = 8
@@ -1159,7 +1198,7 @@
 "sb" = (
 /obj/machinery/door/airlock/trek/goon/engi,
 /turf/open/floor/carpet/trek/romulan,
-/area/ship/warbird)
+/area/ship/engineering/warbird)
 "se" = (
 /obj/item/soap,
 /obj/structure/displaycase,
@@ -1187,7 +1226,7 @@
 	dir = 4
 	},
 /turf/open/floor/trek/tile,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "sL" = (
 /obj/effect/turf_decal/bot_white,
 /obj/effect/turf_decal/tile/neutral{
@@ -1242,17 +1281,17 @@
 /obj/machinery/door/airlock/trek/goon/engi,
 /obj/structure/barricade/wooden/crude/snow,
 /turf/open/floor/carpet/black,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "tt" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/warbird)
+/area/ship/engineering/warbird)
 "ty" = (
 /obj/machinery/door/airlock/trek/goon/command,
 /turf/open/floor/carpet/trek/romulan,
-/area/ship/warbird)
+/area/ship/bridge/warbird)
 "tA" = (
 /obj/structure/turbolift/manual,
 /obj/machinery/light{
@@ -1278,6 +1317,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/warbird)
+"tJ" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/plating,
+/area/ship/engineering/miranda)
 "tN" = (
 /obj/structure/turbolift/manual/height2,
 /obj/machinery/light{
@@ -1308,7 +1352,7 @@
 "uc" = (
 /obj/structure/girder,
 /turf/open/space/basic,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "uj" = (
 /obj/machinery/light{
 	dir = 4
@@ -1336,7 +1380,7 @@
 "uD" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/plasteel/dark,
-/area/ship/warbird)
+/area/ship/engineering/warbird)
 "uE" = (
 /obj/machinery/transporter_pad{
 	icon_state = "1,4"
@@ -1362,7 +1406,7 @@
 /obj/structure/rack,
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plasteel/dark,
-/area/ship/warbird)
+/area/ship/engineering/warbird)
 "va" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,0"
@@ -1380,6 +1424,13 @@
 /obj/item/paper_bin,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/warbird)
+"vi" = (
+/obj/machinery/door/airlock/trek/goon/command{
+	icon_state = "closed";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/saladin)
 "vj" = (
 /obj/structure/sign/warning/vacuum,
 /turf/closed/wall/trek_smooth/corridor,
@@ -1387,7 +1438,7 @@
 "vk" = (
 /obj/structure/overmap_component/plasma_injector,
 /turf/closed/wall/trek_smooth/romulan,
-/area/ship/warbird)
+/area/ship/engineering/warbird)
 "vn" = (
 /obj/machinery/transporter_pad{
 	icon_state = "4,1"
@@ -1413,7 +1464,14 @@
 /obj/structure/rack,
 /obj/item/storage/toolbox/electrical,
 /turf/open/floor/trek/tile,
-/area/ship/warbird)
+/area/ship/engineering/warbird)
+"vG" = (
+/obj/machinery/door/airlock/trek/goon/command{
+	icon_state = "closed";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/saladin)
 "vI" = (
 /obj/structure/turbolift/manual/romulan/height1,
 /obj/machinery/light{
@@ -1452,23 +1510,27 @@
 /obj/structure/window/reinforced/fulltile/trek/middle,
 /obj/structure/grille,
 /turf/open/floor/trek/tile,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "wC" = (
 /obj/structure/table_frame,
 /obj/item/tank/internals/plasma,
 /obj/item/tank/internals/plasma,
 /turf/open/floor/carpet/trek,
-/area/ship/miranda)
+/area/ship/engineering/miranda)
 "wG" = (
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/trek/tile,
-/area/ship/warbird)
+/area/ship/engineering/warbird)
 "wN" = (
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/open/floor/trek/tile,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
+"wP" = (
+/obj/item/twohanded/required/kirbyplants/photosynthetic,
+/turf/open/floor/carpet/trek/romulan,
+/area/ship/bridge/warbird)
 "wR" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1479,13 +1541,16 @@
 /obj/structure/rack,
 /obj/item/wrench,
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "xa" = (
 /obj/machinery/transporter_pad{
 	icon_state = "2,2"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
+"xb" = (
+/turf/open/floor/carpet/trek/romulan,
+/area/ship/bridge/warbird)
 "xg" = (
 /obj/machinery/transporter_pad{
 	icon_state = "4,0"
@@ -1558,7 +1623,7 @@
 	},
 /obj/machinery/power/port_gen/pacman,
 /turf/open/floor/plating,
-/area/ship/miranda)
+/area/ship/engineering/miranda)
 "ym" = (
 /obj/machinery/door/airlock/trek/goon/command{
 	icon_state = "closed";
@@ -1586,6 +1651,10 @@
 	},
 /turf/open/floor/trek/tile,
 /area/ship/miranda)
+"yA" = (
+/obj/structure/overmap_component/plasma_relay,
+/turf/closed/wall/trek_smooth/romulan,
+/area/ship/engineering/warbird)
 "yE" = (
 /obj/structure/overmap_component/viewscreen,
 /turf/closed/wall/trek_smooth/room,
@@ -1594,7 +1663,7 @@
 /obj/machinery/gravity_generator/main,
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "yK" = (
 /obj/structure/chair/trek/standard,
 /obj/machinery/light{
@@ -1614,6 +1683,15 @@
 /obj/structure/table/optable,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/warbird)
+"zj" = (
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering/warbird)
+"zw" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/miranda)
 "zC" = (
 /obj/structure/trek_decor/plaque/saladin,
 /turf/closed/wall/trek_smooth/room,
@@ -1621,6 +1699,9 @@
 "zE" = (
 /turf/open/space/basic,
 /area/ship/warbird)
+"zM" = (
+/turf/open/space/basic,
+/area/ship/engineering/saladin)
 "zS" = (
 /turf/closed/wall/trek_smooth/indestructible,
 /area/ship/miranda)
@@ -1630,7 +1711,7 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/trek,
-/area/ship/saladin)
+/area/ship/bridge/saladin)
 "Ah" = (
 /obj/item/crowbar,
 /turf/open/floor/carpet/trek,
@@ -1644,7 +1725,7 @@
 /obj/structure/rack,
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/trek/tile,
-/area/ship/warbird)
+/area/ship/engineering/warbird)
 "Am" = (
 /obj/machinery/light{
 	dir = 4
@@ -1668,7 +1749,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "Aq" = (
 /obj/structure/table,
 /obj/machinery/microwave,
@@ -1724,7 +1805,11 @@
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable,
 /turf/open/floor/trek/tile,
-/area/ship/warbird)
+/area/ship/engineering/warbird)
+"BQ" = (
+/obj/structure/rack,
+/turf/open/floor/plating,
+/area/ship/engineering/miranda)
 "BS" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /obj/machinery/light{
@@ -1745,13 +1830,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/saladin)
-"Co" = (
-/obj/machinery/door/airlock/trek/goon/command{
-	icon_state = "closed";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/saladin)
 "Ct" = (
 /obj/structure/lattice,
 /turf/open/floor/trek/tile,
@@ -1763,13 +1841,13 @@
 "Cx" = (
 /obj/machinery/door/airlock/trek/goon/engi,
 /turf/open/floor/carpet/trek,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "CB" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "CF" = (
 /turf/closed/wall/trek_smooth/reinforced,
 /area/ship/warbird)
@@ -1777,6 +1855,10 @@
 /obj/structure/bookcase,
 /turf/open/floor/carpet/trek,
 /area/ship/saladin)
+"CP" = (
+/obj/structure/trek_decor/romulan,
+/turf/closed/wall/trek_smooth/romulan,
+/area/ship/bridge/warbird)
 "CW" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,4"
@@ -1811,9 +1893,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/warbird)
-"DJ" = (
-/turf/closed/wall/trek_smooth/reinforced,
-/area/ship/saladin)
 "DQ" = (
 /obj/machinery/transporter_pad{
 	icon_state = "1,0"
@@ -1855,6 +1934,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/warbird)
+"EP" = (
+/turf/closed/wall/trek_smooth/reinforced,
+/area/ship/engineering/saladin)
 "ES" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/lattice,
@@ -1863,11 +1945,11 @@
 "ET" = (
 /obj/structure/overmap_component/science/warbird,
 /turf/open/floor/carpet/trek/romulan,
-/area/ship/warbird)
+/area/ship/bridge/warbird)
 "EU" = (
 /obj/effect/turf_decal/bot_white/left,
 /turf/open/floor/plating/snowed,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "EY" = (
 /obj/machinery/light{
 	dir = 8
@@ -1914,7 +1996,7 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/carpet/trek,
-/area/ship/miranda)
+/area/ship/engineering/miranda)
 "FL" = (
 /obj/structure/table/glass,
 /obj/machinery/light,
@@ -1954,22 +2036,28 @@
 /area/ship/miranda)
 "Gl" = (
 /turf/closed/wall/trek_smooth,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "Go" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
+"Gp" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/miranda)
 "Gw" = (
 /obj/machinery/shieldgen,
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "GI" = (
 /obj/machinery/door/airlock/trek/goon/engi,
 /obj/structure/barricade/wooden/crude/snow,
 /turf/open/floor/trek/tile,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "GR" = (
 /obj/machinery/transporter_pad{
 	icon_state = "3,1"
@@ -1989,7 +2077,7 @@
 "Ha" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/snowed,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "Hf" = (
 /obj/structure/overmap_component/plasma_relay,
 /turf/closed/wall/trek_smooth/room,
@@ -1997,7 +2085,7 @@
 "Hi" = (
 /obj/machinery/portable_atmospherics/pump,
 /turf/open/floor/plasteel/dark,
-/area/ship/warbird)
+/area/ship/engineering/warbird)
 "Hs" = (
 /obj/structure/turbolift/manual/romulan/height1,
 /obj/machinery/light{
@@ -2041,18 +2129,25 @@
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/warbird)
+"HU" = (
+/turf/closed/wall/trek_smooth/corridor,
+/area/ship/engineering/miranda)
 "HV" = (
 /obj/machinery/computer/communications{
 	icon_state = "computer";
 	dir = 1
 	},
 /turf/open/floor/carpet/trek,
-/area/ship/saladin)
+/area/ship/bridge/saladin)
 "HW" = (
 /obj/structure/barricade/wooden/snowed,
 /obj/structure/holosign/barrier/atmos,
 /turf/open/space/basic,
 /area/ship/miranda)
+"HX" = (
+/obj/structure/table/glass,
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/miranda)
 "HZ" = (
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
@@ -2060,13 +2155,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/warbird)
-"Ii" = (
-/obj/effect/mob_spawn/human/alive/trek/saladin_crew/captain{
-	icon_state = "sleeper";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/saladin)
 "Il" = (
 /obj/machinery/door/airlock/trek/goon/sec,
 /obj/structure/holosign/barrier/atmos,
@@ -2108,7 +2196,7 @@
 "IQ" = (
 /obj/structure/rack,
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "IU" = (
 /obj/structure/overmap_component/system_control,
 /turf/closed/wall/trek_smooth/room,
@@ -2170,6 +2258,12 @@
 /obj/effect/decal/cleanable/chem_pile,
 /turf/open/space/basic,
 /area/space)
+"JT" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/tile,
+/area/ship/engineering/warbird)
 "JY" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2180,7 +2274,7 @@
 "Kj" = (
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/carpet/trek,
-/area/ship/miranda)
+/area/ship/engineering/miranda)
 "Kk" = (
 /obj/machinery/door/airlock/trek/goon/engi,
 /obj/structure/cable{
@@ -2226,6 +2320,9 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/miranda)
+"Lb" = (
+/turf/open/floor/plating,
+/area/ship/engineering/miranda)
 "Lc" = (
 /obj/structure/overmap_component/plasma_relay,
 /turf/closed/wall/trek_smooth/romulan,
@@ -2240,13 +2337,6 @@
 	},
 /turf/open/floor/trek/tile,
 /area/ship/warbird)
-"LC" = (
-/obj/effect/mob_spawn/human/alive/trek/saladin_crew{
-	icon_state = "sleeper";
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/saladin)
 "LD" = (
 /obj/machinery/door/airlock/trek/goon/maint{
 	icon_state = "closed";
@@ -2254,6 +2344,9 @@
 	},
 /turf/open/floor/trek/tile,
 /area/ship/warbird)
+"LH" = (
+/turf/open/floor/trek/tile,
+/area/ship/engineering/saladin)
 "LI" = (
 /obj/machinery/door/airlock/trek/goon/maint{
 	icon_state = "closed";
@@ -2282,6 +2375,12 @@
 /obj/machinery/door/airlock/trek/goon/sec,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/warbird)
+"Mn" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/miranda)
 "Mq" = (
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/reagent_containers/spray/cleaner,
@@ -2320,7 +2419,13 @@
 "MM" = (
 /obj/machinery/portable_atmospherics/scrubber/huge/movable,
 /turf/open/floor/plasteel/dark,
-/area/ship/warbird)
+/area/ship/engineering/warbird)
+"MN" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/miranda)
 "MQ" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -2330,7 +2435,7 @@
 "MU" = (
 /obj/effect/turf_decal/bot_white/left,
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "MV" = (
 /obj/machinery/transporter_pad{
 	icon_state = "3,3"
@@ -2359,7 +2464,7 @@
 "Nm" = (
 /obj/machinery/telecomms/relay/preset/station,
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "Nn" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/open/floor/carpet/trek/romulan,
@@ -2367,6 +2472,13 @@
 "Np" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/saladin)
+"Ny" = (
+/obj/effect/mob_spawn/human/alive/trek/saladin_crew{
+	icon_state = "sleeper";
+	dir = 4
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/saladin)
@@ -2397,18 +2509,25 @@
 /obj/item/twohanded/required/kirbyplants,
 /turf/open/floor/carpet/trek,
 /area/ship/saladin)
+"NX" = (
+/obj/effect/mob_spawn/human/alive/trek/saladin_crew{
+	icon_state = "sleeper";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/saladin)
 "NZ" = (
 /obj/structure/chair/trek{
 	icon_state = "comfy";
 	dir = 1
 	},
 /turf/open/floor/carpet/trek,
-/area/ship/saladin)
+/area/ship/bridge/saladin)
 "Oc" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/electrical,
 /turf/open/floor/plating,
-/area/ship/miranda)
+/area/ship/engineering/miranda)
 "Og" = (
 /obj/structure/lattice,
 /obj/effect/decal/cleanable/glass,
@@ -2488,7 +2607,7 @@
 "Pw" = (
 /obj/structure/overmap_component/plasma_injector,
 /turf/closed/wall/trek_smooth/corridor,
-/area/ship/miranda)
+/area/ship/engineering/miranda)
 "PI" = (
 /obj/machinery/transporter_pad{
 	icon_state = "2,3"
@@ -2508,6 +2627,10 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/warbird)
+"Qe" = (
+/obj/machinery/door/airlock/trek/goon/command,
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/miranda)
 "Qh" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,1"
@@ -2539,6 +2662,10 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/saladin)
+"QD" = (
+/obj/structure/trek_decor/romulan,
+/turf/closed/wall/trek_smooth/romulan,
+/area/ship/engineering/warbird)
 "QG" = (
 /obj/machinery/light{
 	dir = 1
@@ -2548,11 +2675,11 @@
 "QM" = (
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/plating/snowed,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "QR" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "QT" = (
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/chem_pile,
@@ -2562,7 +2689,7 @@
 "Rg" = (
 /obj/effect/turf_decal/bot_white/right,
 /turf/open/floor/plating/snowed,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "Rj" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,3"
@@ -2582,6 +2709,10 @@
 /obj/structure/barricade/wooden/snowed,
 /turf/open/space/basic,
 /area/ship/miranda)
+"Ro" = (
+/obj/structure/overmap_component/system_control,
+/turf/closed/wall/trek_smooth/romulan,
+/area/ship/engineering/warbird)
 "Rt" = (
 /obj/machinery/iv_drip,
 /turf/open/floor/carpet/trek/romulan,
@@ -2590,11 +2721,11 @@
 /obj/item/pipe_dispenser,
 /obj/structure/rack,
 /turf/open/floor/plasteel/dark,
-/area/ship/warbird)
+/area/ship/engineering/warbird)
 "RA" = (
 /obj/structure/overmap_component/tactical,
 /turf/open/floor/carpet/trek,
-/area/ship/saladin)
+/area/ship/bridge/saladin)
 "RE" = (
 /obj/machinery/computer/operating{
 	dir = 8
@@ -2630,7 +2761,7 @@
 /obj/item/clothing/mask/breath,
 /obj/structure/closet/emcloset/anchored,
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "SF" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,0"
@@ -2662,15 +2793,19 @@
 "TH" = (
 /obj/structure/overmap_component/plasma_injector,
 /turf/closed/wall/trek_smooth,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "TS" = (
 /obj/machinery/portable_atmospherics/canister/toxins,
 /turf/open/floor/plasteel/dark,
-/area/ship/warbird)
+/area/ship/engineering/warbird)
 "TT" = (
 /obj/machinery/atmospherics/components/binary/valve,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/warbird)
+"TU" = (
+/obj/structure/overmap_component/plasma_relay,
+/turf/closed/wall/trek_smooth/corridor,
+/area/ship/engineering/miranda)
 "TV" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -2680,13 +2815,16 @@
 	},
 /turf/open/floor/trek/tile,
 /area/ship/warbird)
+"TY" = (
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/miranda)
 "Ua" = (
 /turf/open/space/basic,
 /area/ship/saladin)
 "Uf" = (
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "Un" = (
 /obj/structure/turbolift/manual/height2,
 /obj/machinery/light{
@@ -2716,7 +2854,7 @@
 /obj/effect/turf_decal/bot_white/right,
 /obj/machinery/light,
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "UJ" = (
 /obj/machinery/door/airlock/trek/goon,
 /turf/open/floor/carpet/trek/romulan,
@@ -2731,7 +2869,7 @@
 /area/ship/warbird)
 "UZ" = (
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "Vc" = (
 /obj/machinery/transporter_pad{
 	icon_state = "1,3"
@@ -2750,7 +2888,7 @@
 /obj/item/crowbar,
 /obj/item/flashlight,
 /turf/open/floor/carpet/trek,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "Vx" = (
 /obj/structure/table/reinforced,
 /obj/structure/showcase/machinery/microwave,
@@ -2776,10 +2914,17 @@
 /obj/machinery/shieldgen,
 /turf/open/floor/plating/snowed,
 /area/ship/miranda)
+"VP" = (
+/obj/machinery/door/airlock/trek/goon/command{
+	icon_state = "closed";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek/romulan,
+/area/ship/bridge/warbird)
 "VW" = (
 /obj/structure/overmap_component/science,
 /turf/open/floor/carpet/trek,
-/area/ship/saladin)
+/area/ship/bridge/saladin)
 "Wd" = (
 /obj/structure/trek_decor/rack,
 /turf/closed/wall/trek_smooth/corridor,
@@ -2794,6 +2939,10 @@
 /obj/structure/barricade/wooden/crude,
 /turf/closed/wall/trek_smooth/room,
 /area/ship/saladin)
+"Wi" = (
+/obj/machinery/light,
+/turf/open/floor/carpet/trek/romulan,
+/area/ship/bridge/warbird)
 "Wj" = (
 /obj/item/restraints/handcuffs,
 /obj/structure/table/reinforced,
@@ -2810,7 +2959,7 @@
 	pixel_x = -9
 	},
 /turf/open/floor/carpet/trek,
-/area/ship/miranda)
+/area/ship/engineering/miranda)
 "WG" = (
 /obj/machinery/transporter_pad{
 	icon_state = "1,0"
@@ -2844,6 +2993,16 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/turbolift/ship)
+"Xq" = (
+/obj/effect/mob_spawn/human/alive/trek/saladin_crew/captain{
+	icon_state = "sleeper";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/saladin)
+"Xz" = (
+/turf/open/floor/trek/tile,
+/area/ship/engineering/warbird)
 "XA" = (
 /obj/machinery/computer/camera_advanced/transporter_control{
 	icon_state = "control";
@@ -2854,7 +3013,7 @@
 "XC" = (
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/noslip,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "XI" = (
 /obj/machinery/computer/camera_advanced/transporter_control{
 	icon_state = "control";
@@ -2877,7 +3036,11 @@
 "Yd" = (
 /obj/structure/overmap_component/helm/warbird,
 /turf/open/floor/carpet/trek/romulan,
-/area/ship/warbird)
+/area/ship/bridge/warbird)
+"Yi" = (
+/obj/structure/overmap_component/system_control,
+/turf/closed/wall/trek_smooth/corridor,
+/area/ship/engineering/miranda)
 "Yj" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /turf/open/floor/carpet/trek,
@@ -2888,7 +3051,7 @@
 	},
 /obj/machinery/power/port_gen/pacman,
 /turf/open/floor/plating,
-/area/ship/miranda)
+/area/ship/engineering/miranda)
 "Yp" = (
 /obj/machinery/door/airlock/trek/goon/turbolift,
 /turf/open/floor/carpet/trek,
@@ -2899,16 +3062,9 @@
 /obj/item/crowbar,
 /turf/open/floor/carpet/trek,
 /area/ship/saladin)
-"Yz" = (
-/obj/effect/mob_spawn/human/alive/trek/saladin_crew{
-	icon_state = "sleeper";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/saladin)
 "YG" = (
 /turf/open/lava/plasma,
-/area/ship/saladin)
+/area/ship/engineering/saladin)
 "YO" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2921,6 +3077,9 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/saladin)
+"YR" = (
+/turf/closed/wall/trek_smooth/romulan,
+/area/ship/engineering/warbird)
 "YU" = (
 /obj/machinery/light{
 	dir = 8
@@ -7815,12 +7974,12 @@ aa
 aa
 aa
 aa
-Ua
-Ua
-yU
-Ua
-Ua
-yU
+zM
+zM
+dk
+zM
+zM
+dk
 uc
 aa
 aa
@@ -8055,8 +8214,8 @@ iL
 iL
 gW
 iL
-LC
-LC
+Ny
+Ny
 Fc
 aa
 aa
@@ -8072,13 +8231,13 @@ aa
 aa
 aa
 aa
-Ua
+zM
 UZ
 Ha
-yU
-Ua
-yU
-yU
+dk
+zM
+dk
+dk
 aa
 aa
 aa
@@ -8335,7 +8494,7 @@ UZ
 Rg
 QM
 EU
-yU
+dk
 aj
 aa
 aa
@@ -8541,7 +8700,7 @@ iL
 iL
 Fc
 CO
-Ii
+Xq
 iL
 Fc
 qr
@@ -8569,8 +8728,8 @@ os
 nd
 gW
 gZ
-Yz
-Yz
+NX
+NX
 sn
 Fc
 aa
@@ -8592,7 +8751,7 @@ UZ
 XC
 UZ
 yF
-iT
+hH
 aa
 aa
 aa
@@ -8793,9 +8952,9 @@ iL
 iL
 Fc
 Fc
-Co
+vG
 Fc
-Co
+vG
 Fc
 Fc
 se
@@ -8849,21 +9008,21 @@ UZ
 MU
 XC
 UC
-DJ
-DJ
-DJ
-DJ
-DJ
-DJ
-DJ
-DJ
-DJ
-DJ
-DJ
-DJ
-DJ
-DJ
-DJ
+EP
+EP
+EP
+EP
+EP
+EP
+EP
+EP
+EP
+EP
+EP
+EP
+EP
+EP
+EP
 aa
 aa
 sO
@@ -9049,14 +9208,14 @@ iL
 iL
 Fc
 Fc
-iL
-iL
-iL
-iL
+bF
+bF
+bF
+bF
 Fc
 Fc
 lI
-Co
+vi
 Fc
 iT
 qr
@@ -9096,10 +9255,10 @@ aa
 Fc
 it
 Fc
-iL
+jv
 mJ
 Gl
-iL
+jv
 Cx
 UZ
 UZ
@@ -9107,20 +9266,20 @@ Gw
 UZ
 UZ
 tg
-xA
-xA
-xA
-xA
-xA
+LH
+LH
+LH
+LH
+LH
 sq
-xA
+LH
 sq
-xA
-xA
-xA
-xA
-xA
-DJ
+LH
+LH
+LH
+LH
+LH
+EP
 aa
 aa
 sO
@@ -9305,12 +9464,12 @@ Yp
 iL
 iL
 zC
-nf
+fx
 RA
 NZ
-iL
-iL
-iL
+bF
+bF
+bF
 Ko
 nf
 iL
@@ -9353,31 +9512,31 @@ aa
 Fc
 pr
 Yp
-iL
+jv
 Vl
 Gl
-iL
+jv
 Gl
 Gl
 wt
 wt
 wt
 wt
-DJ
-DJ
-xA
-xA
+EP
+EP
+LH
+LH
 TH
-xA
+LH
 Gl
-xA
+LH
 Gl
-xA
+LH
 TH
-xA
-xA
-xA
-DJ
+LH
+LH
+LH
+EP
 aa
 aa
 sO
@@ -9562,12 +9721,12 @@ Fc
 iL
 iL
 nD
-iL
-iL
-iL
-iL
+bF
+bF
+bF
+bF
 NZ
-iL
+bF
 Fc
 us
 iL
@@ -9610,10 +9769,10 @@ aa
 Fc
 it
 Fc
-iL
-iL
+jv
+jv
 Cx
-iL
+jv
 Gl
 YG
 YG
@@ -9621,8 +9780,8 @@ YG
 YG
 YG
 YG
-DJ
-DJ
+EP
+EP
 wt
 wt
 wt
@@ -9633,8 +9792,8 @@ wt
 wt
 Gl
 Gl
-xA
-DJ
+LH
+EP
 aa
 aa
 sO
@@ -9821,10 +9980,10 @@ iL
 yE
 Af
 NZ
-iL
-iL
+bF
+bF
 HV
-iL
+bF
 gd
 iL
 iL
@@ -9867,10 +10026,10 @@ aa
 Fc
 Fc
 cE
-iL
-iL
+jv
+jv
 pX
-iL
+jv
 Gl
 YG
 YG
@@ -9890,8 +10049,8 @@ YG
 YG
 YG
 Gl
-xA
-iT
+LH
+hH
 aa
 aa
 sO
@@ -10076,12 +10235,12 @@ Fc
 iL
 iL
 nD
-iL
-iL
-iL
-iL
+bF
+bF
+bF
+bF
 NZ
-iL
+bF
 cE
 us
 iL
@@ -10124,10 +10283,10 @@ aa
 Fc
 uT
 Fc
-iL
-iL
+jv
+jv
 Cx
-iL
+jv
 Gl
 YG
 YG
@@ -10135,8 +10294,8 @@ YG
 YG
 YG
 YG
-DJ
-DJ
+EP
+EP
 wt
 wt
 wt
@@ -10147,8 +10306,8 @@ wt
 wt
 Gl
 Gl
-iT
-iT
+hH
+hH
 aa
 aa
 sO
@@ -10333,12 +10492,12 @@ Yp
 iL
 iL
 Fc
-iL
+bF
 VW
 NZ
-iL
-iL
-iL
+bF
+bF
+bF
 Fc
 iL
 iL
@@ -10381,31 +10540,31 @@ aa
 Fc
 xS
 Yp
-iL
-iL
+jv
+jv
 Gl
-iL
+jv
 Gl
 Gl
 wt
 wt
 wt
 wt
-DJ
-DJ
-xA
-xA
+EP
+EP
+LH
+LH
 TH
-xA
+LH
 Gl
-xA
+LH
 Gl
-xA
+LH
 TH
-iT
-iT
-Ua
-Ua
+hH
+hH
+zM
+zM
 aa
 aj
 sO
@@ -10499,13 +10658,13 @@ Vh
 aX
 as
 as
-aX
-aX
-aX
-aX
-aX
-aX
-aX
+HU
+HU
+HU
+HU
+HU
+HU
+HU
 as
 as
 aX
@@ -10591,10 +10750,10 @@ iL
 iL
 Fc
 Fc
-iL
-iL
-iL
-iL
+bF
+bF
+bF
+bF
 Fc
 Fc
 Fc
@@ -10638,10 +10797,10 @@ aa
 Fc
 uT
 Fc
-iL
+jv
 mJ
 Gl
-iL
+jv
 Cx
 UZ
 UZ
@@ -10649,19 +10808,19 @@ UZ
 QR
 UZ
 GI
-xA
-xA
-xA
-xA
-xA
+LH
+LH
+LH
+LH
+LH
 wN
-xA
+LH
 wN
-xA
-iT
-iT
-Ua
-Ua
+LH
+hH
+hH
+zM
+zM
 uc
 aa
 aa
@@ -10757,11 +10916,11 @@ aX
 sZ
 YO
 cf
-YO
-YO
+Mn
+Mn
 FI
-as
-as
+oC
+oC
 cf
 as
 as
@@ -10905,21 +11064,21 @@ CB
 CB
 CB
 gC
-DJ
-DJ
-DJ
-DJ
-DJ
-DJ
-DJ
-DJ
-DJ
-DJ
-iT
-Ua
-Ua
+EP
+EP
+EP
+EP
+EP
+EP
+EP
+EP
+EP
+EP
+hH
+zM
+zM
 uc
-Ua
+zM
 aa
 aj
 sO
@@ -10938,10 +11097,10 @@ aa
 aa
 al
 al
-bn
-as
-br
-bA
+lx
+TY
+Gp
+HX
 al
 al
 al
@@ -11014,12 +11173,12 @@ aX
 ch
 as
 Pw
-as
-as
-ch
-as
-as
-aX
+oC
+oC
+zw
+oC
+oC
+HU
 as
 as
 aX
@@ -11194,12 +11353,12 @@ aa
 aa
 aa
 Xg
-as
-as
-as
-as
-as
-as
+TY
+TY
+TY
+TY
+TY
+TY
 am
 as
 as
@@ -11271,12 +11430,12 @@ aX
 ch
 as
 Pw
-as
-as
+oC
+oC
 yl
-ba
-cl
-aX
+Lb
+tJ
+HU
 as
 as
 aX
@@ -11451,13 +11610,13 @@ aa
 aa
 aa
 al
-as
-as
+TY
+TY
 af
 ag
-as
-as
-an
+TY
+TY
+Qe
 as
 az
 az
@@ -11528,12 +11687,12 @@ aX
 ch
 as
 Pw
-as
-as
-ba
-ba
+oC
+oC
+Lb
+Lb
 Oc
-aX
+HU
 as
 as
 aX
@@ -11708,11 +11867,11 @@ aa
 aa
 aa
 aZ
-as
-as
-as
-as
-as
+TY
+TY
+TY
+TY
+TY
 ag
 al
 at
@@ -11784,13 +11943,13 @@ mE
 aX
 ch
 as
-Ld
-as
-as
-as
-ba
+Yi
+oC
+oC
+oC
+Lb
 kI
-aX
+HU
 as
 as
 aX
@@ -11965,11 +12124,11 @@ aa
 aa
 aa
 ab
-as
+TY
 ad
 ag
-as
-as
+TY
+TY
 ai
 Hf
 av
@@ -12041,13 +12200,13 @@ aV
 Kk
 Hu
 bh
-ab
-as
+ca
+oC
 Kj
 Wx
-as
+oC
 kI
-aX
+HU
 as
 bh
 ab
@@ -12222,11 +12381,11 @@ aa
 aa
 aa
 aZ
-as
-as
-as
-as
-as
+TY
+TY
+TY
+TY
+TY
 ag
 al
 aw
@@ -12298,13 +12457,13 @@ Qi
 aX
 ch
 as
-Qt
-as
-as
-as
-ba
+TU
+oC
+oC
+oC
+Lb
 wC
-aX
+HU
 as
 as
 aX
@@ -12479,13 +12638,13 @@ aa
 aa
 aa
 al
-as
-as
+TY
+TY
 ah
 ag
-as
-as
-an
+TY
+TY
+Qe
 as
 aD
 aD
@@ -12556,12 +12715,12 @@ aX
 ch
 as
 Pw
-as
-as
-ba
-ba
-cl
-aX
+oC
+oC
+Lb
+Lb
+tJ
+HU
 as
 as
 aX
@@ -12736,12 +12895,12 @@ aa
 aa
 aa
 al
-as
-as
-as
-as
-as
-as
+TY
+TY
+TY
+TY
+TY
+TY
 am
 as
 as
@@ -12813,12 +12972,12 @@ aX
 ch
 as
 Pw
-as
-as
+oC
+oC
 Ym
-ba
-cn
-aX
+Lb
+BQ
+HU
 as
 as
 aX
@@ -12994,9 +13153,9 @@ aa
 aa
 al
 al
-bn
-as
-bs
+lx
+TY
+MN
 aR
 al
 al
@@ -13070,12 +13229,12 @@ aX
 ch
 as
 Pw
-as
-ba
+oC
+Lb
 bX
-ba
-ba
-aX
+Lb
+Lb
+HU
 as
 as
 aX
@@ -13327,11 +13486,11 @@ aX
 Bs
 YO
 cf
-YO
-YO
+Mn
+Mn
 kX
-ba
-ba
+Lb
+Lb
 bR
 as
 as
@@ -13583,13 +13742,13 @@ Hz
 aX
 as
 as
-aX
-aX
-aX
-aX
-aX
-aX
-aX
+HU
+HU
+HU
+HU
+HU
+HU
+HU
 as
 as
 aX
@@ -56460,15 +56619,15 @@ OU
 OU
 Su
 VM
-OU
-OU
-OU
-OU
-OU
-OU
-OU
-OU
-OU
+YR
+YR
+YR
+YR
+YR
+YR
+YR
+YR
+YR
 VM
 VM
 hS
@@ -56717,15 +56876,15 @@ FA
 OU
 VM
 VM
-hS
+QD
 uD
 uD
-eJ
-eJ
-eJ
+zj
+zj
+zj
 TS
 TS
-hS
+QD
 VM
 VM
 hS
@@ -56975,13 +57134,13 @@ iF
 VM
 VM
 sb
-eJ
-be
-be
-be
-be
-be
-eJ
+zj
+Xz
+Xz
+Xz
+Xz
+Xz
+zj
 sb
 VM
 Jt
@@ -57231,15 +57390,15 @@ FA
 OU
 VM
 VM
-hS
-eJ
-be
-be
-be
-be
-be
-eJ
-hS
+QD
+zj
+Xz
+Xz
+Xz
+Xz
+Xz
+zj
+QD
 VM
 VM
 hS
@@ -57451,11 +57610,11 @@ aa
 aa
 CF
 be
-OU
-OU
-OU
-OU
-OU
+bd
+bd
+bd
+bd
+bd
 VM
 VM
 hS
@@ -57488,15 +57647,15 @@ OU
 OU
 VM
 VM
-rL
-eJ
-be
-be
-be
-be
-be
-eJ
-Lc
+Ro
+zj
+Xz
+Xz
+Xz
+Xz
+Xz
+zj
+yA
 VM
 VM
 hS
@@ -57708,14 +57867,14 @@ aa
 aa
 CF
 be
-hS
-Pu
-VM
-VM
-OU
-OU
-dl
-OU
+CP
+wP
+xb
+xb
+bd
+bd
+VP
+bd
 dl
 OU
 OU
@@ -57745,15 +57904,15 @@ zE
 OU
 VM
 VM
-OU
-OU
-np
-be
-eJ
-be
+YR
+YR
+cH
+Xz
+zj
+Xz
 eI
-OU
-OU
+YR
+YR
 VM
 VM
 OU
@@ -57965,14 +58124,14 @@ aa
 aa
 CF
 be
-hS
-VM
+CP
+xb
 gg
 ea
-VM
-VM
-VM
-hS
+xb
+xb
+xb
+CP
 Pu
 VM
 VM
@@ -58004,12 +58163,12 @@ wR
 Zd
 sb
 tt
-uM
+JT
 tt
 BO
-eJ
-be
-eJ
+zj
+Xz
+zj
 sb
 VM
 VM
@@ -58222,14 +58381,14 @@ aa
 aa
 CF
 be
-hS
-VM
-VM
-VM
-VM
-VM
-Jt
-hS
+CP
+xb
+xb
+xb
+xb
+xb
+Wi
+CP
 VM
 rX
 rX
@@ -58260,13 +58419,13 @@ OU
 DE
 VM
 vk
-eJ
+zj
 wG
-be
-be
-be
+Xz
+Xz
+Xz
 vD
-eJ
+zj
 vk
 VM
 VM
@@ -58482,10 +58641,10 @@ Tx
 ig
 Yd
 ea
-VM
+xb
 ea
-VM
-VM
+xb
+xb
 ty
 VM
 lZ
@@ -58517,13 +58676,13 @@ JY
 Im
 Jt
 vk
-eJ
+zj
 qM
-eJ
+zj
 eu
-eJ
+zj
 uZ
-eJ
+zj
 vk
 VM
 Jt
@@ -58736,14 +58895,14 @@ aa
 aa
 CF
 be
-hS
-VM
-VM
-VM
-VM
-VM
-Jt
-hS
+CP
+xb
+xb
+xb
+xb
+xb
+Wi
+CP
 VM
 nt
 nt
@@ -58774,13 +58933,13 @@ OU
 DE
 VM
 vk
-eJ
+zj
 wG
-be
-be
-be
+Xz
+Xz
+Xz
 Al
-eJ
+zj
 vk
 VM
 VM
@@ -58993,14 +59152,14 @@ aa
 aa
 CF
 be
-hS
-VM
+CP
+xb
 ET
 ea
-VM
-VM
-VM
-hS
+xb
+xb
+xb
+CP
 Pu
 VM
 VM
@@ -59032,12 +59191,12 @@ Dj
 Zd
 sb
 tt
-uM
+JT
 tt
 BO
-eJ
-be
-eJ
+zj
+Xz
+zj
 sb
 VM
 VM
@@ -59250,14 +59409,14 @@ aa
 aa
 CF
 be
-hS
-Pu
-VM
-VM
-OU
-OU
-dl
-OU
+CP
+wP
+xb
+xb
+bd
+bd
+VP
+bd
 ym
 OU
 OU
@@ -59287,15 +59446,15 @@ zE
 OU
 VM
 VM
-OU
-OU
-np
-be
-eJ
-be
+YR
+YR
+cH
+Xz
+zj
+Xz
 eI
-OU
-OU
+YR
+YR
 VM
 VM
 OU
@@ -59507,11 +59666,11 @@ aa
 aa
 CF
 be
-OU
-OU
-OU
-OU
-OU
+bd
+bd
+bd
+bd
+bd
 VM
 VM
 hS
@@ -59544,15 +59703,15 @@ OU
 OU
 VM
 VM
-rL
-eJ
-be
-be
-be
-be
-be
-eJ
-Lc
+Ro
+zj
+Xz
+Xz
+Xz
+Xz
+Xz
+zj
+yA
 VM
 VM
 hS
@@ -59801,15 +59960,15 @@ lG
 OU
 VM
 VM
-hS
-eJ
-be
-be
-be
-be
-be
-eJ
-hS
+QD
+zj
+Xz
+Xz
+Xz
+Xz
+Xz
+zj
+QD
 VM
 VM
 hS
@@ -60059,13 +60218,13 @@ iF
 VM
 VM
 sb
-eJ
-be
-be
-be
-be
-be
-eJ
+zj
+Xz
+Xz
+Xz
+Xz
+Xz
+zj
 sb
 VM
 Jt
@@ -60315,15 +60474,15 @@ lG
 OU
 VM
 VM
-hS
+QD
 MM
-eJ
+zj
 Hi
 Rv
 Hi
-eJ
+zj
 MM
-hS
+QD
 VM
 VM
 hS

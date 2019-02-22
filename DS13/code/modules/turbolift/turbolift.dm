@@ -94,8 +94,10 @@
 			return
 		if(!S.in_use)
 			S.unbolt_door() //No one's in the lift, and the lift is not moving, so allow entrance
-	if(!loc_check())
+	if(!loc_check()) //If we've gotten this far, there's no one in the lift. We're not moving, so let's unbolt.
 		unbolt_other_doors()
+		in_use = FALSE
+		unbolt_door()
 
 /obj/structure/turbolift/proc/loc_check() //Is there someone in the lift? if so, we need to stop other lifts from being used.
 	for(var/turf/T in turbolift_turfs)

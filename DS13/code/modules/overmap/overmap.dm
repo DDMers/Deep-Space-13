@@ -20,6 +20,7 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	var/obj/shield_overlay/shield_overlay
 	var/class = "nothing" //This is a nothing class heavy cruiser
 	var/transporter_range = 8 //N Tile transporter range
+	var/list/linked_areas = list()
 
 /obj/shield_overlay
 	name = ""
@@ -66,6 +67,6 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 		return
 	for(var/area/AR in GLOB.sortedAreas)
 		if(AR.class == class)
-			linked_area = AR
 			AR.linked_overmap = src
-			return TRUE
+			if(!istype(AR, /area/ship/bridge) && !istype(AR, /area/ship/engineering)) //Don't link to bridge or engi as theyre just used for ambience.
+				linked_area = AR
