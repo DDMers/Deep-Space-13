@@ -2,6 +2,7 @@
 	name = "generic"
 	icon = 'DS13/icons/turf/areas.dmi'
 	icon_state = "ship"
+	noteleport = TRUE //Scrub it from teleportlocs
 
 /area/ship/miranda
 	name = "Miranda class light cruiser"
