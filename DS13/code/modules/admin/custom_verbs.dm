@@ -24,3 +24,4 @@
 						continue
 					SEND_SOUND(player, 'DS13/sound/effects/qflash.ogg')
 					player.forceMove(target)
+	message_admins("[ADMIN_LOOKUPFLW(mob)] teleported all players to their location.")

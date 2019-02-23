@@ -15,6 +15,7 @@
 /area/turbolift
 	name = "Primary turbolift"
 	requires_power = FALSE //no APCS in the lifts please
+	noteleport = TRUE
 
 /area/turbolift/secondary
 	name = "Secondary turbolift"
