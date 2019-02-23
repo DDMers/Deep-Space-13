@@ -26,7 +26,7 @@
 	icon_state = "romulan"
 	smooth = TRUE
 	canSmoothWith = list(/turf/open/floor/carpet/trek,/turf/open/floor/carpet/trek/romulan)
-	floor_tile = /obj/item/stack/tile/carpet/trek
+	floor_tile = /obj/item/stack/tile/carpet/trek/romulan
 
 /obj/item/stack/tile/carpet/trek/romulan
 	name = "carpet"
