@@ -5048,8 +5048,7 @@
 /area/science/xenobiology)
 "sF" = (
 /obj/structure/turbolift{
-	pixel_x = -32;
-	pixel_y = 0
+	pixel_x = -32
 	},
 /turf/open/floor/carpet/trek,
 /area/turbolift/quintessential)
@@ -5448,8 +5447,7 @@
 /area/turbolift/quintessential)
 "XX" = (
 /obj/structure/turbolift{
-	pixel_x = 32;
-	pixel_y = 0
+	pixel_x = 32
 	},
 /turf/open/floor/carpet/trek,
 /area/turbolift/quanery)

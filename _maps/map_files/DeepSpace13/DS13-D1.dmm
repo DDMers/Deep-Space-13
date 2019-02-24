@@ -5570,8 +5570,7 @@
 /area/engine/break_room)
 "zx" = (
 /obj/structure/turbolift{
-	pixel_x = -32;
-	pixel_y = 0
+	pixel_x = -32
 	},
 /turf/open/floor/carpet/trek,
 /area/turbolift/quintessential)
@@ -5752,8 +5751,7 @@
 /area/security/brig)
 "MG" = (
 /obj/structure/turbolift{
-	pixel_x = 32;
-	pixel_y = 0
+	pixel_x = 32
 	},
 /turf/open/floor/carpet/trek,
 /area/turbolift/quanery)
