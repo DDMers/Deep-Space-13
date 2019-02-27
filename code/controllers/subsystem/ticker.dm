@@ -273,14 +273,14 @@ SUBSYSTEM_DEF(ticker)
 	round_start_time = world.time
 	SSdbcore.SetRoundStart()
 
-	to_chat(world, "<FONT color='blue'><B>Welcome to [station_name()], enjoy your stay!</B></FONT>")
+	to_chat(world, "<FONT color='#3d5bc3'><B>Welcome to [station_name()], enjoy your stay!</B></FONT>")
 	SEND_SOUND(world, sound('sound/ai/welcome.ogg'))
 
 	current_state = GAME_STATE_PLAYING
 	Master.SetRunLevel(RUNLEVEL_GAME)
 
 	if(SSevents.holidays)
-		to_chat(world, "<font color='blue'>and...</font>")
+		to_chat(world, "<FONT color='#3d5bc3'>and...</font>")
 		for(var/holidayname in SSevents.holidays)
 			var/datum/holiday/holiday = SSevents.holidays[holidayname]
 			to_chat(world, "<h4>[holiday.greet()]</h4>")
