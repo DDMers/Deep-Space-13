@@ -65,6 +65,7 @@
 	desc = "Just looking at this thing makes you feel comfy."
 	icon = 'DS13/icons/obj/chairs.dmi'
 	icon_state = "comfy"
+	item_chair = null
 
 /obj/structure/chair/trek/standard
 	name = "Chair"
@@ -210,3 +211,10 @@
 	desc = "A bed with surgical facilities built in."
 	icon = 'DS13/icons/obj/decor/biobed.dmi'
 	icon_state = "biobed"
+
+/obj/effect/baseturf_helper/open_space //Put this on any deck that isn't the lowest deck so that explosions cause holes to open up and stuff to fall down from above!
+	name = "open space baseturf editor"
+	icon = 'DS13/icons/effects/mapping_helpers.dmi'
+	icon_state = "baseturf"
+	baseturf = /turf/open/openspace
+	baseturf_to_replace = list(/turf/open/space/basic)

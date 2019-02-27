@@ -232,14 +232,7 @@
 	var/area = pick(GLOB.teleportlocs)
 	var/area/target = GLOB.teleportlocs[area] //Pick a station area and yeet it.
 	for(var/mob/player in GLOB.player_list)
-		var/area/player_area = get_area(player)
-		if(is_station_level(player.z) && !istype(player_area,/area/ship))
-			if(pilot)
-				if(player == pilot) continue
-			if(tactical)
-				if(player == tactical) continue
-			if(science)
-				if(player == science) continue
+		if(is_station_level(player.z))
 			shake_camera(player, 1,3)
 			if(shields_absorbed)
 				if(prob(50))
@@ -254,13 +247,42 @@
 		X.explode_effect()
 	if(shields_absorbed)
 		return
-	if(prob(10))
+	if(prob(40))
 		var/turf/T = pick(get_area_turfs(target))
-		T.atmos_spawn_air("plasma=15;TEMP=2000")
-	if(prob(10))
-		var/turf/T = pick(get_area_turfs(target))
-		explosion(T,0,4,3)
+		new /obj/effect/temp_visual/explosion_telegraph(T)
+		var/turf/TT = pick(get_area_turfs(target))
+		TT.atmos_spawn_air("plasma=20;TEMP=1000")
 
+/obj/effect/temp_visual/explosion_telegraph
+	name = "Explosion imminent!"
+	icon = 'DS13/icons/effects/effects.dmi'
+	icon_state = "explosion_telegraph"
+	duration = 30
+	randomdir = 0
+	alpha = 0
+	layer = ABOVE_MOB_LAYER
+
+/obj/effect/temp_visual/explosion_telegraph_non_explosive
+	name = "RUN"
+	icon = 'DS13/icons/effects/effects.dmi'
+	icon_state = "explosion_telegraph"
+	duration = 30
+	randomdir = 0
+	layer = ABOVE_MOB_LAYER
+
+/obj/effect/temp_visual/explosion_telegraph/Initialize()
+	. = ..()
+	for(var/turf/T in orange(src, 3))
+		new /obj/effect/temp_visual/explosion_telegraph_non_explosive(T)
+	for(var/mob/F in orange(src, 3))
+		if(isliving(F))
+			to_chat(F, "<span class='userdanger'>Something comes crashing down from the ceiling above you! GET OUT OF THE WAY!</span>")
+			SEND_SOUND(F, 'sound/effects/seedling_chargeup.ogg')
+
+/obj/effect/temp_visual/explosion_telegraph/Destroy()
+	var/turf/T = get_turf(src)
+	explosion(T,3,4,4)
+	. = ..()
 
 /obj/structure/overmap/take_damage(var/atom/source, var/amount = 10)
 	. = ..()
@@ -330,7 +352,6 @@
 			A.remote_control.forceMove(get_turf(A))
 	core_breach()
 
-
 /obj/structure/overmap/proc/core_breach()
 	if(!main_overmap)
 		if(!linked_area)
@@ -339,10 +360,8 @@
 			SEND_SOUND(player, 'DS13/sound/effects/damage/corebreach.ogg')
 		return
 	for(var/mob/player in GLOB.player_list)
-		var/area/player_area = get_area(player)
-		if(is_station_level(player.z) && !istype(player_area,/area/ship))
+		if(is_station_level(player.z))
 			SEND_SOUND(player, 'DS13/sound/effects/damage/corebreach.ogg')
-
 
 /obj/structure/overmap/proc/core_breach_finish()
 	if(main_overmap)
@@ -368,12 +387,12 @@
 			continue
 		var/sound/S = pick('DS13/sound/effects/damage/shiphit.ogg','DS13/sound/effects/damage/shiphit2.ogg','DS13/sound/effects/damage/shiphit3.ogg','DS13/sound/effects/damage/creak1.ogg','DS13/sound/effects/damage/creak2.ogg')
 		SEND_SOUND(player, S)
+		if(prob(40))
+			var/turf/T = pick(get_area_turfs(target))
+			new /obj/effect/temp_visual/explosion_telegraph(T)
 		if(prob(10))
 			var/turf/T = pick(get_area_turfs(linked_area))
-			explosion(T,3,4,3)
-		if(prob(10))
-			var/turf/T = pick(get_area_turfs(linked_area))
-			T.atmos_spawn_air("plasma=15;TEMP=2000")
+			T.atmos_spawn_air("plasma=20;TEMP=1000")
 
 
 /obj/structure/overmap/proc/show_damage(var/amount, var/shields_absorbed) //Flash up numbers showing how much damage we just took

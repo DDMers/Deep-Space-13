@@ -9,6 +9,11 @@
 	name = "Bridge (warbird)"
 	class = "warbird"
 
+/area/ship/bridge/akira
+	name = "Bridge"
+	class = "akira"
+	noteleport = FALSE
+
 /area/ship/bridge/saladin
 	name = "Bridge (saladin)"
 	class = "saladin"
@@ -27,6 +32,11 @@
 /area/ship/engineering/saladin
 	name = "Engineering (saladin)"
 	class = "saladin"
+
+/area/ship/engineering/akira
+	name = "Engineering"
+	class = "akira"
+	noteleport = FALSE
 
 /area/ship/bridge/Entered(atom/movable/M)
 	// Ambience goes down here -- make sure to list each area separately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch

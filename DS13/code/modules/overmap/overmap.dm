@@ -53,20 +53,15 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 /obj/structure/overmap/Destroy()
 	. = ..()
 
-
 /obj/structure/overmap/proc/apply_shield_boost() //If you want to start out with some shields that are stronger than others
 	return
-
 
 /obj/structure/overmap/proc/find_area()
 	if(main_overmap)
 		for(var/X in GLOB.teleportlocs) //Apply us to all the station areas then
 			var/area/area = GLOB.teleportlocs[X] //Pick a station area and yeet it.
-			if(!istype(area, /area/ship))
-				area.linked_overmap = src
-		return
+			area.linked_overmap = src
 	for(var/area/AR in GLOB.sortedAreas)
 		if(AR.class == class)
 			AR.linked_overmap = src
-			if(!istype(AR, /area/ship/bridge) && !istype(AR, /area/ship/engineering)) //Don't link to bridge or engi as theyre just used for ambience.
-				linked_area = AR
+			linked_area = AR

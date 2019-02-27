@@ -32,8 +32,8 @@
 	name = "Dedication plaque" //Right where it belongs
 	desc = "A large, bronze plaque with a dedication: \n <b>USS Sisko. <b>Miranda-class <> Starfleet registry: NCC-2503 <>\n  Launched stardate: 0000.00 <> Utopia Planetia ShipYards <> United Federation Of Planets. \n</b>" //This ship has not yet been christened.
 	icon_state = "plaque"
-	var/list/supervisors = list("Captain Declan Reade, Admiral Nigel Schneider") //Put all the names of those who attended the launch here :)
-	var/list/engineers = list("Captain Declan Reade, Ian Cooper")
+	var/list/supervisors = list("Declan Reade, Alexandria Smirnoff, Kerena Fuchs, Lancelot Moon, Barry Mudd, Marvin Smith, Zeke Palmer, Chance Batten, Randolph P. Checkers Esq, Kaelyn Brooks, Ian Cooper, Dell Milton, Grandpa Merryman, Danielle Mortland, Jacquetta Matthews, Samuel Albert, Caitlyn Sidower, Lilas Greene, Captain Art Cox commanding.") //Put all the names of those who attended the launch here :)
+	var/list/engineers = list("Declan Reade, Ian Cooper")
 	var/inscription = "Illegitimi non carborundum" //Don't let the bastards grind you down
 
 /obj/structure/trek_decor/plaque/attack_hand(mob/user)
@@ -57,6 +57,7 @@
 	to_chat(user, "<span_class='notice'><b>Launch supervised by: [list2text(supervisors)]</b></span>")
 	to_chat(user, "<span_class='notice'><b>Retrofit conducted by: [list2text(supervisors)]</b></span>")
 	to_chat(user, "<i>There is a small inscription underneath it: '[inscription]'</i>")
+	to_chat(user, "<i>Somebody seems to have drawn an odd symbol on it. It says: 'Kilroy was here'</i>")
 
 /obj/structure/overmap/miranda/apply_shield_boost() //Miranda starts with some boosted shields
 	shields.north_max += max_shield_health //Start with some double shields
@@ -135,3 +136,34 @@
 	name = "Saladin class patrol craft"
 	icon_state = "saladin"
 	class = "saladin"
+
+/obj/structure/turbolift/akira
+	floor_directory = "<font color=blue>Deck 1: Bridge, Cargo, Offices, Escapes<br>\
+		Deck 2: Civilian Sector, Transporter, Brig, Science<br>\
+		Deck 3: Engineering, Hangar Bay, Atmospherics, Telecomms<br></font>" //Change this if you intend to make a new map. Helps players know where they're going.
+
+/obj/structure/trek_decor/plaque/akira
+	name = "Dedication plaque"
+	desc = "A large, bronze plaque with a dedication: \n <b>USS NULL. <b>Akira-class <> Starfleet registry: NCC-65326 <>\n  Launched stardate: NULL <> Utopia Planetia ShipYards <> United Federation Of Planets. \n</b>"
+	icon_state = "plaque"
+	supervisors = list("Declan Reade")
+	engineers = list("Declan Reade, Art Cox")
+	inscription = "The supreme art of war is to subdue the enemy without fighting."
+
+/obj/structure/overmap/akira
+	name = "Akira class heavy cruiser"
+	desc = "Built to combat threats such as the Dominion and Borg, the Akira class saw widespread use as a heavy escort ship. This ship is extremely tough and is fitted with advanced weapon systems."
+	icon = 'DS13/icons/overmap/akira.dmi'
+	icon_state = "akira"
+	main_overmap = FALSE
+	class = "akira"
+	damage_states = TRUE //Damage FX
+	damage = 15 //Will turn into 25 assuming weapons powered
+	max_shield_health = 200 //It's tough so it can take on multiple enemies at once
+	turnspeed = 2 //Rate of turning. This can be a decimal
+	max_speed = 6 //Maximum velocity before engine power
+	acceleration = 0.7 //How quickly do you put on speed?
+
+/obj/structure/overmap/akira/starter
+	name = "USS something"
+	main_overmap = TRUE

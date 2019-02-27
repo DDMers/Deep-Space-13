@@ -1,0 +1,6 @@
+{
+    "map_name": "Akira Class Heavy Cruiser",
+    "map_path": "map_files/Akira",
+    "map_file": ["Akira-D1.dmm", "Akira-D2.dmm", "Akira-D3.dmm", "overmap.dmm"], 
+	"traits": [{"Up": 1}, {"Up": 1, "Down": -1}, {"Down": -1}, {"Down": -1}]
+	}

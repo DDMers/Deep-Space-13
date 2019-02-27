@@ -35,7 +35,7 @@
 
 /obj/structure/overmap_component/Initialize()
 	. = ..()
-	find_overmap()
+	addtimer(CALLBACK(src, .proc/find_overmap), 40)
 
 /obj/structure/overmap_component/examine(mob/user)
 	. = ..()
@@ -224,6 +224,8 @@
 		generator.plasma_volume += powerproduction_drain
 
 /obj/structure/overmap_component/plasma_injector/proc/find_supply_to()
+	if(!linked)
+		find_overmap()
 	for(var/obj/structure/overmap_component/integrity_field_generator/IFS in linked.powered_components)
 		if(!IFS.supplier)
 			generator = IFS
@@ -436,8 +438,9 @@
 
 /obj/structure/overmap_component/plasma_relay/Initialize()
 	. = ..()
-	if(!linked)
-		find_overmap()
+
+/obj/structure/overmap_component/plasma_relay/find_overmap()
+	. = ..()
 	if(linked)
 		linked.powered_components += src
 	find_supplying()
@@ -618,7 +621,11 @@
 
 /obj/structure/overmap_component/integrity_field_generator/Initialize()
 	. = ..()
-	linked.powered_components += src
+
+/obj/structure/overmap_component/integrity_field_generator/find_overmap()
+	. = ..()
+	if(linked)
+		linked.powered_components += src
 	START_PROCESSING(SSobj,src)
 	set_active(TRUE) //Start 'er up Jim!
 

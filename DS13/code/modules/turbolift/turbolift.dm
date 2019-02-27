@@ -40,9 +40,9 @@
 	can_be_unanchored = FALSE
 	mouse_over_pointer = MOUSE_HAND_POINTER
 	desc = "Starfleet's decision to replace the iconic turboladder was not met with unanimous praise, experts citing increased obesity figures from crewmen no longer needing to climb vertically through several miles of deck to reach their target. However this is undoubtedly much faster."
-	var/floor_directory = "<font color=blue>Deck 1: Engineering <br>\
+	var/floor_directory = "<font color=blue>Deck 1: Bridge <br>\
 		Deck 2: Promenade<br>\
-		Deck 3: Bridge<br></font>" //Change this if you intend to make a new map. Helps players know where they're going.
+		Deck 3: Engineering<br></font>" //Change this if you intend to make a new map. Helps players know where they're going.
 	var/list/turbolift_turfs = list()
 	var/floor = 0 //This gets assigned on init(). Allows us to calculate where the lift needs to go next.
 	var/list/destinations = list() //Any elevator that's on our path.
@@ -222,8 +222,8 @@
 			turbolift_turfs += T
 
 /obj/structure/turbolift/proc/get_position() //Let's see where I am in this world...
-	var/obj/structure/turbolift/below = locate(/obj/structure/turbolift) in SSmapping.get_turf_below(get_turf(src))
-	if(below) //We need to be the bottom lift for this to work.
+	var/obj/structure/turbolift/above = locate(/obj/structure/turbolift) in SSmapping.get_turf_above(get_turf(src))
+	if(above) //We need to be the top lift for this to work.
 		return
 	START_PROCESSING(SSobj, src)
 	floor = 1
@@ -233,12 +233,12 @@
 	var/obj/structure/turbolift/next
 	for(var/II = 0 to world.maxz) //AKA 1 to 6 for example
 		if(!previous)
-			var/turf/T = SSmapping.get_turf_above(get_turf(src))
+			var/turf/T = SSmapping.get_turf_below(get_turf(src))
 			var/obj/structure/turbolift/target = locate(/obj/structure/turbolift) in T
 			next = target
 
 		else
-			var/turf/T = SSmapping.get_turf_above(get_turf(previous))
+			var/turf/T = SSmapping.get_turf_below(get_turf(previous))
 			var/obj/structure/turbolift/target = locate(/obj/structure/turbolift) in T
 			next = target
 		if(next)

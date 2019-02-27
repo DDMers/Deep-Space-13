@@ -192,7 +192,9 @@
 	if(!thearea.linked_overmap)
 		return
 	var/list/ships = list()
-	for(var/obj/structure/overmap/S in orange(thearea.linked_overmap, thearea.linked_overmap.transporter_range))
+	for(var/obj/structure/overmap/S in GLOB.overmap_ships)
+		if(get_dist(S, thearea.linked_overmap) > thearea.linked_overmap.transporter_range) //Is it in range for transport?
+			continue
 		if(S.shields.check_vulnerability() && S != src)
 			ships += S
 	if(!ships.len)
