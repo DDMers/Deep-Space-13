@@ -2382,6 +2382,14 @@
 /obj/structure/window/reinforced/fulltile/trek/middle,
 /turf/open/floor/plating,
 /area/hallway/secondary/command)
+"gS" = (
+/mob/living/simple_animal/pet/dog/corgi/Ian,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
+"gT" = (
+/obj/structure/bed/dogbed,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hop)
 "gU" = (
 /obj/structure/trek_catwalk,
 /obj/structure/cable{
@@ -32864,7 +32872,7 @@ af
 af
 aG
 at
-bg
+gT
 bI
 cx
 de
@@ -34150,7 +34158,7 @@ aJ
 bh
 bj
 bg
-bg
+gS
 bg
 dh
 dm

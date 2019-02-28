@@ -88,6 +88,9 @@
 	SSblackbox.record_feedback("text", "station_renames", 1, "[station_name()]")
 	if(!unlimited_uses)
 		used = TRUE
+	var/area/AR = get_area(src)
+	if(AR && AR.linked_overmap)
+		AR.linked_overmap.name = designation
 
 /obj/item/station_charter/admin
 	unlimited_uses = TRUE

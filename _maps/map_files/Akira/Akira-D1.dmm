@@ -1438,6 +1438,9 @@
 "ek" = (
 /obj/structure/table/glass,
 /obj/item/storage/toolbox/electrical,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/color/yellow,
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "el" = (
@@ -2921,6 +2924,10 @@
 /obj/structure/ladder,
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"jX" = (
+/obj/machinery/vending/engivend,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 
 (1,1,1) = {"
 aa
@@ -31330,7 +31337,7 @@ dx
 cl
 fj
 aM
-aM
+jX
 ac
 aM
 cB
