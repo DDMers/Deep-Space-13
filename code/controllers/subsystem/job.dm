@@ -33,8 +33,9 @@ SUBSYSTEM_DEF(job)
 
 	if(new_overflow_role != overflow_role)
 		var/datum/job/old_overflow = GetJob(overflow_role)
-		old_overflow.spawn_positions = initial(old_overflow.spawn_positions)
-		old_overflow.total_positions = initial(old_overflow.total_positions)
+		if(old_overflow)	//DeepSpace13 - Stop ensign breaking this for travis
+			old_overflow.spawn_positions = initial(old_overflow.spawn_positions)
+			old_overflow.total_positions = initial(old_overflow.total_positions)
 		overflow_role = new_overflow_role
 		JobDebug("Overflow role set to : [new_overflow_role]")
 
