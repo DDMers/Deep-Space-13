@@ -21,6 +21,7 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	var/class = "nothing" //This is a nothing class heavy cruiser
 	var/transporter_range = 8 //N Tile transporter range
 	var/list/linked_areas = list()
+	var/list/attackers = list() //Which ships have attacked us? for AI mode.
 
 /obj/shield_overlay
 	name = ""
@@ -38,6 +39,7 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	var/main_overmap = FALSE //Is this the main overmap? Is it gonna be linked to all station areas?
 	var/list/powered_components = list() //Used in components.dm, do we have any system components that require power?
 	var/list/subsystem_controllers = list() //What subsystem controllers do we have? (components.dm, bottom of page)
+	var/obj/structure/overmap/force_target //Used in AI / event code
 
 /obj/structure/overmap/proc/OvermapInitialize() //Called before the while loop which allows movement
 	shield_overlay = new(get_turf(src))

@@ -9,16 +9,14 @@
 		return
 	switch(teleportall)
 		if("everyone")
-			var/list/mobs = GLOB.player_list.Copy()
-			for(var/X in mobs)
-				if(X && ismob(X) && !istype(X, /mob/dead/new_player))
+			for(var/X in GLOB.player_list)
+				if(X && isliving(X))
 					var/mob/player = X
 					SEND_SOUND(player, 'DS13/sound/effects/qflash.ogg')
 					player.forceMove(target)
 		else
-			var/list/mobs = GLOB.player_list.Copy()
-			for(var/X in mobs)
-				if(X && ismob(X) && !istype(X, /mob/dead/new_player))
+			for(var/X in GLOB.player_list)
+				if(X && isliving(X))
 					var/mob/player = X
 					if(player.z != mob.z)
 						continue

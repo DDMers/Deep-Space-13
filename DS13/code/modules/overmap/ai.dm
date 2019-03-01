@@ -18,13 +18,33 @@
 	damage = 10 //Will turn into 20 assuming weapons powered
 	AI_enabled = TRUE //Start with an AI by default
 	faction = "romulan" //Placeholder
+	var/datum/overmap_event/linked_event
+	turnspeed = 3
+
+/obj/structure/overmap/AI/explode()
+	if(linked_event)
+		linked_event.check_completion(src)
+	. = ..()
+
+/obj/structure/overmap/AI/freighter
+	name = "Federation Frigate"
+	desc = "A minimally armoured tug with strong shields. It has next to no offensive power."
+	icon = 'DS13/icons/overmap/freighter.dmi'
+	icon_state = "freighter"
+	main_overmap = FALSE
+	class = "starfleet-freighter" //Feel free to add overmap controls for AIs later, future me.
+	damage_states = FALSE
+	damage = 0
+	faction = "starfleet"
+	max_shield_health = 300
+
 
 /obj/structure/overmap/proc/take_control() //Take control of our ship, make it into an AI
 	START_PROCESSING(SSobj, src) //Need to process to check for targets and so on.
 	name = "[name] ([rand(0,1000)])"
 	shield_power = 2 //So theyre not ultra squishy
 	weapon_power = 1
-	engine_power = 1
+	engine_power = 4
 	max_shield_power = 4
 	max_weapon_power = 4
 	max_engine_power = 4
@@ -49,8 +69,11 @@
 		start_process()
 	if(target) //We have a target locked in
 		if(get_dist(src, target) > range) //Target ran away. Move on.
-			target = null
-			nav_target = null
+			if(force_target)
+				target = force_target
+				nav_target = force_target //If we have a force target, we're an actor in a mission and NEED to return to hunt down our quarray after shooting at the players.
+				return
+			target = null //Don't shoot them, but keep chasing them UNLESS we're being forced to chase another.
 			pick_target()
 		if(behaviour == "peaceful") //Peaceful means never retaliate, so return
 			return
@@ -61,10 +84,14 @@
 		pick_target()
 
 /obj/structure/overmap/proc/pick_target()
-	if(behaviour == "aggressive")
-		for(var/obj/structure/overmap/OM in orange(src, range))
-			if(istype(OM))
-				if(OM.faction != faction)
+	for(var/obj/structure/overmap/OM in orange(src, range))
+		if(istype(OM) && OM.z == z)
+			if(OM in attackers)
+				target = OM
+				nav_target = OM
+				return
+			else
+				if(behaviour == "aggressive" && OM.faction != faction)
 					target = OM
 					nav_target = OM
 					return
@@ -77,6 +104,7 @@
 			if(source == target)
 				return //Already our target. Ignore
 			target = source
+			attackers += target
 			process() //Instant retaliate. Don't delay!
 
 

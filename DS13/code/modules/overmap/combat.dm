@@ -28,8 +28,7 @@
 		SEND_SOUND(M, S)
 
 /obj/structure/overmap/proc/send_text_crew(var/S)
-	for(var/mob/M in operators)
-		to_chat(M, S)
+	to_chat(operators, S)
 
 /obj/effect/temp_visual/ship_explosion
 	icon = 'DS13/icons/overmap/effects.dmi'
@@ -42,7 +41,7 @@
 	pixel_y = rand(0,10)
 
 /obj/structure/overmap/proc/onMouseDown(object, location, params, mob/mob)
-	var/sound/thesound = pick('DS13/sound/effects/computer/beep.ogg','DS13/sound/effects/computer/beep2.ogg','DS13/sound/effects/computer/beep3.ogg')
+	var/sound/thesound = pick(GLOB.bleeps)
 	SEND_SOUND(mob, thesound)
 	if(object == src)
 		return attack_hand(mob)

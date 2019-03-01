@@ -6,7 +6,7 @@
 
 /datum/dispatch_mission/proc/fire()
 	var/list/targets = target_ships.Copy()
-	for(var/obj/effect/landmark/ShipSpawner/SS in GLOB.landmarks_list)
+	for(var/obj/effect/landmark/ship_spawner/SS in GLOB.landmarks_list)
 		if(SS && !SS.loaded)
 			var/target_ship = pick_n_take(targets)
 			SS.load(target_ship)
@@ -28,16 +28,16 @@
 	name = "freighter"
 	mappath = "_maps/templates/DS13/freighter.dmm"
 
-/obj/effect/landmark/ShipSpawner
+/obj/effect/landmark/ship_spawner
 	name = "Ship spawning warp beacon"
 	desc = "Spawns new ships!"
 	var/loading = FALSE //To avoid spam
 	var/loaded = FALSE //Is there a ship?
 
-/obj/effect/landmark/ShipSpawner/proc/unload()
+/obj/effect/landmark/ship_spawner/proc/unload()
 	loaded = FALSE
 
-/obj/effect/landmark/ShipSpawner/proc/load(var/template)//Call load("name of the ship map template")
+/obj/effect/landmark/ship_spawner/proc/load(var/template)//Call load("name of the ship map template")
 	if(loading || loaded)
 		return FALSE
 	if(!template)
@@ -46,10 +46,10 @@
 	if(!T)
 		return FALSE
 	loading = TRUE
-//	var/datum/map_template/template_to_load = SSmapping.ship_templates[template]
-//	if(template_to_load.load(T, centered = FALSE))
-//		loading = FALSE
-//	loaded = TRUE
+	var/datum/map_template/template_to_load = SSmapping.ship_templates[template]
+	if(template_to_load.load(T, centered = FALSE))
+		loading = FALSE
+	loaded = TRUE
 	return TRUE
 
 /obj/effect/mob_spawn/human/alive/trek/Initialize()
@@ -64,7 +64,7 @@
 	name = "Independant crewman"
 	assignedrole = "saladin crew"
 	outfit = /datum/outfit/job/engineer/DS13
-	flavour_text = "<span class='big bold'>You are an independant crewman!</span><b> Your party bought the ship you're currently on off of a dodgy ferengi merchant, your ship: the USS Sherman has taken heavy damage due to an asteroid belt. \n</b> <i>You own the USS Sherman along with your fellow crew, you are free to behave as you see fit. But you must <b>only</b> kill in self-defense.</i> \n If you require further guidance, please ahelp."
+	flavour_text = "<span class='big bold'>You are an independant crewman!</span><b> Your party bought the ship you're currently on off of a dodgy ferengi merchant. Your ship: the USS Sherman has taken heavy damage due to an asteroid belt. \n</b> <i>You own the USS Sherman along with your fellow crew, you are free to behave as you see fit. But you must <b>only</b> kill in self-defense.</i> \n If you require further guidance, please ahelp."
 
 /obj/effect/mob_spawn/human/alive/trek/saladin_crew/captain
 	name = "Independant captain"

@@ -11,12 +11,8 @@
 /obj/structure/overmap/akira/starter,
 /turf/open/space/basic,
 /area/space)
-"d" = (
-/obj/structure/overmap/AI,
-/turf/open/space/basic,
-/area/space)
-"e" = (
-/obj/structure/overmap/warbird,
+"B" = (
+/obj/effect/landmark/overmap_event_spawn,
 /turf/open/space/basic,
 /area/space)
 
@@ -7970,10 +7966,10 @@ a
 a
 a
 a
-d
 a
 a
-e
+a
+a
 a
 a
 a
@@ -21113,6 +21109,7 @@ a
 a
 a
 a
+B
 a
 a
 a
@@ -21139,6 +21136,7 @@ a
 a
 a
 a
+B
 a
 a
 a
@@ -21166,6 +21164,7 @@ a
 a
 a
 a
+B
 a
 a
 a
@@ -21198,6 +21197,7 @@ a
 a
 a
 a
+B
 a
 a
 a
@@ -21261,6 +21261,7 @@ a
 a
 a
 a
+B
 a
 a
 a
@@ -21294,6 +21295,7 @@ a
 a
 a
 a
+B
 a
 a
 a
@@ -21324,13 +21326,7 @@ a
 a
 a
 a
-a
-a
-a
-a
-a
-a
-a
+B
 a
 a
 a

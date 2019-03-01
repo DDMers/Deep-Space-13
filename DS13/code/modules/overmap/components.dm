@@ -222,6 +222,8 @@
 		supply_to.plasma_volume += powerproduction_drain
 	if(generator)
 		generator.plasma_volume += powerproduction_drain
+		loaded_tank.air_contents.gases[/datum/gas/plasma][MOLES] -= gasdrained
+		loaded_tank.air_contents.garbage_collect()
 
 /obj/structure/overmap_component/plasma_injector/proc/find_supply_to()
 	if(!linked)
@@ -339,9 +341,9 @@
 /obj/structure/overmap_component/plasma_relay/examine(mob/user)
 	. = ..()
 	if(supplier && supplying)
-		to_chat(user, "it receiving plasma from [supplier] and is supplying the <b>[supplying]</b> system for [linked]")
+		to_chat(user, "it's receiving plasma from [supplier] and is supplying the <b>[supplying]</b> system for [linked]")
 	else
-		to_chat(user, "-it's currently <b>unpowered</b>")
+		to_chat(user, "it's currently <b>unpowered</b>")
 
 /obj/structure/overmap_component/plasma_relay/take_damage(damage_amount)
 	. = ..()
@@ -384,13 +386,13 @@
 	else
 		set_active(FALSE)
 
-/obj/structure/overmap_component/plasma_relay/proc/set_active(var/bool, var/forced = FALSE)
-	if(bool && forced)
+/obj/structure/overmap_component/plasma_relay/proc/set_active(var/set_to_what, var/forced = FALSE)
+	if(set_to_what && forced)
 		force_shutdown = FALSE
 	if(panel_open || force_shutdown)
 		active = FALSE
 		return
-	if(bool)
+	if(set_to_what)
 		if(activated)
 			return
 		activated = TRUE
@@ -602,11 +604,11 @@
 	var/force_shutdown = FALSE //Has someone deliberately turned us off?
 	pixel_x = -9 //Deal with shitty offset
 
-/obj/structure/overmap_component/integrity_field_generator/proc/set_active(var/bool)
+/obj/structure/overmap_component/integrity_field_generator/proc/set_active(var/set_to_what)
 	if(panel_open || force_shutdown)
 		active = FALSE
 		return
-	if(bool)
+	if(set_to_what)
 		if(activated)
 			return
 		activated = TRUE
