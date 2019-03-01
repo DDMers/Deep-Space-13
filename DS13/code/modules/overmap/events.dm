@@ -26,8 +26,14 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	if(D)
 		D.adjust_money(reward)
 	spawner.used = FALSE
-	target = null
-	qdel(target)
+	target.vel = 10 //Make them warp away
+	addtimer(CALLBACK(src, .proc/clear_elements), 60) //Clear up everything after 6 seconds
+
+/datum/overmap_event/proc/clear_elements()
+	if(target)
+		var/obj/structure/overmap/saved = target
+		target = null //So that QDEL'ing it doesn't cause the mission to fail after it's already complete
+		qdel(saved)
 
 /datum/overmap_event/proc/fail()
 	to_chat(world, "<span_class='warning'>Starfleet command has issued an official reprimand on [station_name()]'s permanent record.</span>")
