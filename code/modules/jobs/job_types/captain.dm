@@ -9,12 +9,17 @@ Captain
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Nanotrasen officials and Space law"
+	supervisors = "Starfleet Admirals and the prime directive."
 	selection_color = "#ccccff"
 	req_admin_notify = 1
 	minimal_player_age = 14
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
+	description = "These are the voyages.<br>The captain of a vessel takes total responsibility for upholding the values of the federation and is responsible for the entire crew, so this decision should not be taken lightly.<br>\
+	The captain has total authority over the crew and decides how the ship will deal with any challenge she faces. Should you sacrifice a crewman to save thousands? Respect barbaric alien custom aboard your ship? All of these decisions are yours to make.<br>\
+	Primary roles: Command the bridge crew, delegate tasks to the first officer, uphold the principals of the Federation and handle any situations you encounter.\
+	"
+
 
 	outfit = /datum/outfit/job/captain
 
