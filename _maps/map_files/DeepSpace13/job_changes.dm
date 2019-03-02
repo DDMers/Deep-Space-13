@@ -9,6 +9,7 @@
 	..()
 	MAP_JOB_CHECK
 	outfit = /datum/outfit/job/captain/DS13
+	description = "The captain of a vessel takes total responsibility for upholding the values of the federation."
 
 /datum/outfit/job/captain/DS13
 	name = "Trek-Captain"

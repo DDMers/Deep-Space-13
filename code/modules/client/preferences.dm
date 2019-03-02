@@ -633,6 +633,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		HTML += "<center><a href='?_src_=prefs;preference=job;task=close'>Done</a></center><br>" // Easier to press up here.
 
 	else
+		HTML += create_job_description(user)
 		HTML += "<b>Choose occupation chances</b><br>"
 		HTML += "<div align='center'>Left-click to raise an occupation preference, right-click to lower it.<br></div>"
 		HTML += "<center><a href='?_src_=prefs;preference=job;task=close'>Done</a></center><br>" // Easier to press up here.
@@ -741,6 +742,78 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	popup.set_window_options("can_close=0")
 	popup.set_content(HTML)
 	popup.open(FALSE)
+
+/datum/preferences/proc/create_job_description(var/mob/user) //Adapted from CEV-Eris
+	var/datum/job/previewJob //For what job will we show a description?
+	var/highRankFlag = job_civilian_high | job_medsci_high | job_engsec_high
+
+	if(job_civilian_low & ASSISTANT)
+		previewJob = SSjob.GetJob("Assistant")
+	else if(highRankFlag)
+		var/highDeptFlag
+		if(job_civilian_high)
+			highDeptFlag = CIVILIAN
+		else if(job_medsci_high)
+			highDeptFlag = MEDSCI
+		else if(job_engsec_high)
+			highDeptFlag = ENGSEC
+
+		for(var/datum/job/job in SSjob.occupations)
+			if(job.flag == highRankFlag && job.department_flag == highDeptFlag)
+				previewJob = job
+				break
+
+	var/string = "<h1>[previewJob.title]</h1>"
+	if(previewJob.supervisors)
+		string += "<p>You answer to <b>[previewJob.supervisors]</b></p>"
+
+	string += "<p>[previewJob.description]</p>"
+	var/job_desc = "<!DOCTYPE html>\
+	<html>\
+	<head>\
+	<style>\
+	div.transbox {\
+		margin: 30px;\
+		opacity: 1;\
+		width:90%;\
+		filter: alpha(opacity=100);\
+		padding: 12px 20px;\
+		box-sizing: border-box;\
+		border: 2px solid [previewJob.selection_color];\
+		border-radius: 4px;\
+		border-style: outset;\
+		background-color: #383838;\
+		max-height:170px;\
+		overflow-y: auto;\
+		align-content: left;\
+		scrollbar-face-color:[previewJob.selection_color];\
+		scrollbar-arrow-color:[previewJob.selection_color];\
+		scrollbar-track-color:[previewJob.selection_color];\
+		scrollbar-highlight-color:[previewJob.selection_color];\
+		scrollbar-darkshadow-Color:[previewJob.selection_color];\
+	}\
+	</style>\
+	</head>\
+	<body>\
+	<div class='transbox'>\
+		<p><FONT color='#98b0c3'>[string]</font></p>\
+	</div>\
+	</body>\
+	</html>"
+	return job_desc
+	/*
+	"<span_class='jobdesc'><h1 style='text-align: center; padding-top: 5px;padding-bottom: 0px;'>[previewJob.title]</h1>"
+	job_desc += "<br>"
+	if(previewJob.supervisors)
+		job_desc += "You answer to <b>[previewJob.supervisors]</b>. <br>"
+
+	var/description = previewJob.description
+
+	if(description)
+		job_desc += description
+	job_desc = "</span>"
+	return job_desc
+	*/
 
 /datum/preferences/proc/SetJobPreferenceLevel(datum/job/job, level)
 	if (!job)

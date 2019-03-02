@@ -56,6 +56,10 @@
 	var/paycheck_department = ACCOUNT_CIV
 
 	var/list/mind_traits // Traits added to the mind of the mob assigned this job
+	var/description = "A crewman aboard a starship, your duties are nonexistant.\
+	<br>\
+	fuck you\
+	"
 
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
