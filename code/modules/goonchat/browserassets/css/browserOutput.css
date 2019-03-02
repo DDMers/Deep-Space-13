@@ -17,7 +17,10 @@ body {
     line-height: 1.2;
 	overflow-x: hidden;
 	overflow-y: scroll;
-	word-wrap: break-word;
+	word-wrap: break-word;		
+	scrollbar-face-color:#1A1A1A;
+	scrollbar-track-color:#2c2f33;
+	scrollbar-highlight-color:#2c2f33;
 }
 
 em {
@@ -38,7 +41,6 @@ img.icon {
 	width: auto;
 	vertical-align: bottom;
 }
-
 
 .r:before { /* "repeated" badge class for combined messages */
 	content: 'x';
