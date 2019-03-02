@@ -192,6 +192,8 @@
 	//Set news report and mode result
 	mode.set_round_result()
 
+	roll_credits() //DeepSpace13 - End credits
+
 	send2irc("Server", "Round just ended.")
 
 	if(length(CONFIG_GET(keyed_list/cross_server)))
@@ -414,7 +416,7 @@
 		if(!A.members)
 			continue
 		all_teams |= A
-	
+
 	for(var/datum/antagonist/A in GLOB.antagonists)
 		if(!A.owner)
 			continue

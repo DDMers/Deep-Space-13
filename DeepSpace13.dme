@@ -2744,6 +2744,7 @@
 #include "code\modules\zombie\items.dm"
 #include "code\modules\zombie\organs.dm"
 #include "DS13\code\controllers\configuration\entries\game_options.dm"
+#include "DS13\code\game\movietitles.dm"
 #include "DS13\code\game\objects\item_changes.dm"
 #include "DS13\code\game\objects\multi-deck-relay.dm"
 #include "DS13\code\game\objects\railing.dm"
