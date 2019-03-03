@@ -20,6 +20,7 @@
 	faction = "romulan" //Placeholder
 	var/datum/overmap_event/linked_event
 	turnspeed = 3
+	max_health = 130
 
 /obj/structure/overmap/ai/explode()
 	if(linked_event)
@@ -34,9 +35,10 @@
 	main_overmap = FALSE
 	class = "starfleet-freighter" //Feel free to add overmap controls for AIs later, future me.
 	damage_states = FALSE
-	damage = 0
+	damage = 10
 	faction = "starfleet"
 	max_shield_health = 300
+	max_health = 300
 
 
 /obj/structure/overmap/proc/take_control() //Take control of our ship, make it into an AI
@@ -70,6 +72,9 @@
 	if(target) //We have a target locked in
 		if(get_dist(src, target) > range) //Target ran away. Move on.
 			if(force_target)
+				if(QDELETED(force_target))
+					force_target = null
+					return
 				target = force_target
 				nav_target = force_target //If we have a force target, we're an actor in a mission and NEED to return to hunt down our quarray after shooting at the players.
 				return

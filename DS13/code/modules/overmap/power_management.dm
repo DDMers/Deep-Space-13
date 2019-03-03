@@ -7,6 +7,15 @@
 	var/max_engine_power = 0
 	var/power_slots = 4 //Power all systems, and one bonus piece for playing around
 
+/obj/structure/overmap/proc/power_ship() //Admin only! This gets you to full power for testing
+	max_shield_power = 4
+	max_weapon_power = 4
+	max_engine_power = 4
+	shield_power = 4
+	weapon_power = 4
+	engine_power = 4
+	check_power()
+
 /obj/structure/overmap/OvermapInitialize()
 	. = ..()
 	shield_power = 1
@@ -35,7 +44,7 @@
 	var/new_chargerate = initial(shields.chargerate) + (shield_power/2) //Nerfed this so that shields become more of an issue when they go down
 	var/new_damage = initial(damage)+(weapon_power*10)
 	var/new_speed = initial(max_speed)+engine_power
-	var/new_turnspeed = initial(turnspeed)+(engine_power/5) //Slight buff to turnspeed, maximum of 0.6 which does make a decent difference
+	var/new_turnspeed = initial(turnspeed)+(engine_power/4) //Slight buff to turnspeed, maximum of 0.6 which does make a decent difference
 	shields.chargerate = new_chargerate //A slight buff to shields can really help
 	damage = new_damage
 	max_speed = new_speed

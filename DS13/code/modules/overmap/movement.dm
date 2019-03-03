@@ -19,8 +19,8 @@
 /obj/structure/overmap
 	var/angle = 0 //This replaces DIR with pixel move
 	var/vel = 0 //How fast are we travelling? This behaves like a vector.
-	var/turnspeed = 1.8 //Rate of turning. This can be a decimal
-	var/max_speed = 4 //Maximum velocity
+	var/turnspeed = 2 //Rate of turning. This can be a decimal
+	var/max_speed = 6 //Maximum velocity
 	var/acceleration = 0.5 //How quickly do you put on speed?
 	var/obj/structure/overmap/nav_target
 	var/process = FALSE

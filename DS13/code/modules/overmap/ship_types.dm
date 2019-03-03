@@ -163,6 +163,7 @@
 	turnspeed = 2 //Rate of turning. This can be a decimal
 	max_speed = 6 //Maximum velocity before engine power
 	acceleration = 0.7 //How quickly do you put on speed?
+	power_slots = 5 //She's a strong ship
 
 /obj/structure/overmap/akira/starter
 	name = "USS something"

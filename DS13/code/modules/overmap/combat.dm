@@ -140,9 +140,9 @@
 		shake_camera(M, 1, 3)
 	if(fire_mode == "phaser")
 		charging = TRUE
-		var/datum/position/pos = RETURN_PRECISE_POSITION(src)
-		var/turf/source = pos.return_turf()
-		var/datum/beam/S = new /datum/beam(source,target,time=10,beam_icon_state="solar_beam",maxdistance=5000,btype=/obj/effect/ebeam)
+		var/obj/effect/temp_visual/phaserfire/F = new /obj/effect/temp_visual/phaserfire(src) //If we have a firing state, light em up!
+		add_overlay(F)
+		var/datum/beam/S = new /datum/beam(src,target,time=10,beam_icon_state="phaser",maxdistance=5000,btype=/obj/effect/ebeam)
 		spawn(0)
 			S.Start()
 		var/sound/SS = pick(weapon_sounds)
@@ -236,7 +236,7 @@
 					var/sound/shieldhit = pick('DS13/sound/effects/damage/shield_hit.ogg','DS13/sound/effects/damage/shield_hit2.ogg')
 					SEND_SOUND(player, shieldhit)
 				continue
-			var/sound/S = pick('DS13/sound/effects/damage/shiphit.ogg','DS13/sound/effects/damage/shiphit2.ogg','DS13/sound/effects/damage/shiphit3.ogg','DS13/sound/effects/damage/creak1.ogg','DS13/sound/effects/damage/creak2.ogg')
+			var/sound/S = pick('DS13/sound/effects/damage/shiphit.ogg','DS13/sound/effects/damage/shiphit2.ogg','DS13/sound/effects/damage/shiphit3.ogg','DS13/sound/effects/damage/shiphit4.ogg','DS13/sound/effects/damage/creak1.ogg','DS13/sound/effects/damage/creak2.ogg')
 			SEND_SOUND(player, S)
 	for(0 to rand(1,5))
 		var/obj/machinery/X = pick(GLOB.machines)
@@ -257,6 +257,20 @@
 	randomdir = 0
 	alpha = 0
 	layer = ABOVE_MOB_LAYER
+
+/obj/effect/temp_visual/phaserfire
+	name = "Explosion imminent!"
+	icon = 'DS13/icons/effects/effects.dmi'
+	icon_state = "firing"
+	duration = 20
+	randomdir = 0
+	alpha = 255
+
+/obj/effect/temp_visual/phaserfire/New()
+	var/obj/structure/overmap/OM = locate(/obj/structure/overmap) in get_turf(src)
+	if(OM)
+		icon = OM.icon
+	. = ..()
 
 /obj/effect/temp_visual/explosion_telegraph_non_explosive
 	name = "RUN"
