@@ -284,59 +284,68 @@
 	set_active(TRUE)
 	to_chat(user, "<span class='notice'>[src] will now supply the [supplying] subsystem with power</span>")
 
-/obj/structure/overmap_component/plasma_relay/attackby(obj/item/I, mob/user, params)
-	if(I.tool_behaviour == TOOL_CROWBAR && panel_open)
+/obj/structure/overmap_component/plasma_relay/crowbar_act(mob/user, obj/item/I)
+	if(panel_open)
 		playsound(loc,I.usesound,100,1)
 		to_chat(user, "<span class='notice'>You start to replace [src]'s cover.</span>")
 		if(do_after(user, 30, target = src))
 			panel_open = FALSE
 			set_active(TRUE)
 			to_chat(user, "<span class='notice'>You replace [src]'s cover.</span>")
-		return update_icon()
+		update_icon()
+		return TRUE
 	if(!panel_open)
-		if(I.tool_behaviour == TOOL_CROWBAR && !panel_open)
-			playsound(loc,I.usesound,100,1)
-			to_chat(user, "<span class='notice'>You start to prize off [src]'s cover.</span>")
-			if(do_after(user, 30, target = src))
-				panel_open = TRUE
-				to_chat(user, "<span class='notice'>You remove [src]'s cover.</span>")
-			return update_icon()
-	else
-		if(I.tool_behaviour == TOOL_WRENCH && repair_step == "wrench")
-			playsound(loc,I.usesound,100,1)
-			to_chat(user, "<span class='notice'>You start to unfasten [src]'s couplings.</span>")
-			if(do_after(user, 30, target = src))
-				repair_step = "screwdriver"
-			return update_icon()
-		if(I.tool_behaviour == TOOL_SCREWDRIVER && repair_step == "screwdriver")
-			playsound(loc,I.usesound,100,1)
-			to_chat(user, "<span class='notice'>You start to mend [src]'s isolinear circuitry.</span>")
-			if(do_after(user, 30, target = src))
-				repair_step = "wirecutters"
-			return update_icon()
-		if(I.tool_behaviour == TOOL_WIRECUTTER && repair_step == "wirecutters")
-			playsound(loc,I.usesound,100,1)
-			to_chat(user, "<span class='notice'>You start cutting out [src]'s fused relays.</span>")
-			if(do_after(user, 30, target = src))
-				repair_step = "screwdriver2"
-				to_chat(user, "<span class='notice'>You have successfully repaired [src]! re-assembly is the reverse of removal.</span>")
-				obj_integrity = max_integrity
-			return update_icon()
-		if(I.tool_behaviour == TOOL_SCREWDRIVER && repair_step == "screwdriver2")
-			playsound(loc,I.usesound,100,1)
-			to_chat(user, "<span class='notice'>You start fasten [src]'s screws.</span>")
-			if(do_after(user, 30, target = src))
-				repair_step = "wrench2"
-			return update_icon()
-		if(I.tool_behaviour == TOOL_WRENCH && repair_step == "wrench2")
-			playsound(loc,I.usesound,100,1)
-			to_chat(user, "<span class='notice'>You start to re-fasten [src]'s couplings.</span>")
-			if(do_after(user, 30, target = src))
-				repair_step = "wrench"
-				to_chat(user, "<span class='notice'>You have successfully re-assembled [src]! replace its cover to complete repairs.</span>")
-			return update_icon()
-	. = ..()
-	update_icon()
+		playsound(loc,I.usesound,100,1)
+		to_chat(user, "<span class='notice'>You start to prize off [src]'s cover.</span>")
+		if(do_after(user, 30, target = src))
+			panel_open = TRUE
+			to_chat(user, "<span class='notice'>You remove [src]'s cover.</span>")
+		update_icon()
+		return TRUE
+
+/obj/structure/overmap_component/plasma_relay/wrench_act(mob/user, obj/item/I)
+	if(repair_step == "wrench")
+		playsound(loc,I.usesound,100,1)
+		to_chat(user, "<span class='notice'>You start to unfasten [src]'s couplings.</span>")
+		if(do_after(user, 30, target = src))
+			repair_step = "screwdriver"
+		update_icon()
+		return TRUE
+	if(repair_step == "wrench2")
+		playsound(loc,I.usesound,100,1)
+		to_chat(user, "<span class='notice'>You start to re-fasten [src]'s couplings.</span>")
+		if(do_after(user, 30, target = src))
+			repair_step = "wrench"
+			to_chat(user, "<span class='notice'>You have successfully re-assembled [src]! replace its cover to complete repairs.</span>")
+		update_icon()
+		return TRUE
+
+/obj/structure/overmap_component/plasma_relay/screwdriver_act(mob/user, obj/item/I)
+	if(repair_step == "screwdriver")
+		playsound(loc,I.usesound,100,1)
+		to_chat(user, "<span class='notice'>You start to mend [src]'s isolinear circuitry.</span>")
+		if(do_after(user, 30, target = src))
+			repair_step = "wirecutters"
+		update_icon()
+		return TRUE
+	if(repair_step == "screwdriver2")
+		playsound(loc,I.usesound,100,1)
+		to_chat(user, "<span class='notice'>You start fasten [src]'s screws.</span>")
+		if(do_after(user, 30, target = src))
+			repair_step = "wrench2"
+		update_icon()
+		return TRUE
+
+/obj/structure/overmap_component/plasma_relay/wirecutter_act(mob/user, obj/item/I)
+	if(repair_step == "wirecutters")
+		playsound(loc,I.usesound,100,1)
+		to_chat(user, "<span class='notice'>You start cutting out [src]'s fused relays.</span>")
+		if(do_after(user, 30, target = src))
+			repair_step = "screwdriver2"
+			to_chat(user, "<span class='notice'>You have successfully repaired [src]! re-assembly is the reverse of removal.</span>")
+			obj_integrity = max_integrity
+		update_icon()
+		return TRUE
 
 /obj/structure/overmap_component/plasma_relay/examine(mob/user)
 	. = ..()
@@ -506,44 +515,65 @@
 		controlling = "engines"
 		return
 
-/obj/structure/overmap_component/system_control/attackby(obj/item/I, mob/user, params)
-	if(I.tool_behaviour == TOOL_CROWBAR && panel_open)
+/obj/structure/overmap_component/system_control/crowbar_act(mob/user, obj/item/I)
+	if(panel_open)
 		playsound(loc,I.usesound,100,1)
 		to_chat(user, "<span class='notice'>You start to replace [src]'s cover.</span>")
-		if(do_after(user, 30, target = src))
+		if(do_after(user, 50, target = src))
 			panel_open = FALSE
 			to_chat(user, "<span class='notice'>You replace [src]'s cover.</span>")
-		return update_icon()
+		update_icon()
+		return TRUE
 	if(!panel_open)
-		if(I.tool_behaviour == TOOL_CROWBAR && !panel_open)
-			playsound(loc,I.usesound,100,1)
-			to_chat(user, "<span class='notice'>You start to prize off [src]'s cover.</span>")
-			if(do_after(user, 30, target = src))
-				panel_open = TRUE
-				to_chat(user, "<span class='notice'>You remove [src]'s cover.</span>")
-			return update_icon()
+		playsound(loc,I.usesound,100,1)
+		to_chat(user, "<span class='notice'>You start to prize off [src]'s cover.</span>")
+		if(do_after(user, 50, target = src))
+			panel_open = TRUE
+			to_chat(user, "<span class='notice'>You remove [src]'s cover.</span>")
+		update_icon()
+		return TRUE
+
+/obj/structure/overmap_component/system_control/screwdriver_act(mob/user, obj/item/I)
 	if(panel_open && !hacked)
-		if(I.tool_behaviour == TOOL_SCREWDRIVER && step == "start")
+		if(step == "start")
 			playsound(loc,I.usesound,100,1)
 			to_chat(user, "<span class='notice'>You start to undo [src]'s screws.</span>")
 			if(do_after(user, 100, target = src))
 				step = "wrench"
-			return update_icon()
-		if(I.tool_behaviour == TOOL_WRENCH && step == "wrench")
-			playsound(loc,I.usesound,100,1)
-			to_chat(user, "<span class='notice'>You force your way through [src]'s protective casings.</span>")
-			if(do_after(user, 100, target = src))
-				step = "end"
-			return update_icon()
-		if(I.tool_behaviour == TOOL_WELDER && step == "end")
-			playsound(loc,I.usesound,100,1)
-			to_chat(user, "<span class='notice'>You begin to cut through [src]'s authorization circuitry</span>")
-			if(do_after(user, 100, target = src))
-				hacked = TRUE
-				playsound(loc, 'DS13/sound/effects/computer/alert1.ogg',100)
-				say("Authori~@A@DA~D~A~D%%0-110- no longer required.")
-				step = "finished"
-			return update_icon()
+			update_icon()
+			return TRUE
+
+/obj/structure/overmap_component/system_control/wrench_act(mob/user, obj/item/I)
+	if(step == "wrench")
+		playsound(loc,I.usesound,100,1)
+		to_chat(user, "<span class='notice'>You force your way through [src]'s protective casings.</span>")
+		if(do_after(user, 100, target = src))
+			step = "end"
+		update_icon()
+		return TRUE
+
+/obj/structure/overmap_component/system_control/welder_act(mob/user, obj/item/I)
+	if(step == "end")
+		playsound(loc,I.usesound,100,1)
+		to_chat(user, "<span class='notice'>You begin to cut through [src]'s authorization circuitry</span>")
+		if(do_after(user, 100, target = src))
+			hacked = TRUE
+			playsound(loc, 'DS13/sound/effects/computer/alert1.ogg',100)
+			say("Authori~@A@DA~D~A~D%%0-110- no longer required.")
+			step = "finished"
+		update_icon()
+		return TRUE
+	if(step == "finished")
+		playsound(loc,I.usesound,100,1)
+		to_chat(user, "<span class='notice'>You begin to mend [src]'s authorization circuitry</span>")
+		if(do_after(user, 100, target = src))
+			hacked = FALSE
+			playsound(loc, 'DS13/sound/effects/computer/alert1.ogg',100)
+			say("Authorization protocols re-enstated.")
+			step = "start"
+		update_icon()
+		return TRUE
+
 
 /obj/structure/overmap_component/system_control/attack_hand(mob/user)
 	if(!linked || QDELETED(linked))

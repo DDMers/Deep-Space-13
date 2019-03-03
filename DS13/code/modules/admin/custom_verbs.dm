@@ -2,7 +2,7 @@
 	set category = "Special Verbs"
 	set desc="Teleport people to you en masse."
 	set name="Get all players"
-	var/turf/target = mob.loc
+	var/turf/target = get_turf(mob)
 	var/teleportall = null
 	teleportall = alert("Teleport who?","teleportation panel","everyone","this z level only")
 	if(!teleportall)

@@ -11,7 +11,6 @@
 	var/datum/beam/current_beam = null //Our phaser beam, wow!
 	var/damage = 0 //How much damage do we do? This is +10'd assuming weapons are powered!
 	var/charging = FALSE //charging weapons? if so, we can't fire
-	var/admin_override = FALSE //Need to test? set this on and you can fire and move yourself
 	var/fire_mode = "phaser"
 	var/photons = 4 //How many torpedoes do we have?
 	var/list/weapon_sounds = list('DS13/sound/effects/weapons/phaser.ogg','DS13/sound/effects/weapons/phaser2.ogg','DS13/sound/effects/weapons/phaser3.ogg','DS13/sound/effects/weapons/phaser4.ogg')
@@ -47,24 +46,23 @@
 		return attack_hand(mob)
 	if(istype(object, /obj/screen) && !istype(object, /obj/screen/click_catcher))
 		return
-	if(!admin_override) //Allows me to fly and shoot for testing
-		if(mob != tactical)
-			if(science)
-				if(mob == science && istype(object, /obj/structure/overmap))
-					var/list/options = list("tractor", "hail","tractor-cancel")
-					for(var/option in options)
-						options[option] = image(icon = 'DS13/icons/actions/weaponselect.dmi', icon_state = "[option]")
-					var/dowhat = show_radial_menu(mob,object,options)
-					if(!dowhat)
-						return
-					switch(dowhat)
-						if("tractor")
-							fire_tractor(object)
-						if("hail")
-							hail(object)
-						if("tractor-cancel")
-							release_tractor()
-			return ..() //Only tactical can fire.
+	if(mob != tactical)
+		if(science)
+			if(mob == science && istype(object, /obj/structure/overmap))
+				var/list/options = list("tractor", "hail","tractor-cancel")
+				for(var/option in options)
+					options[option] = image(icon = 'DS13/icons/actions/weaponselect.dmi', icon_state = "[option]")
+				var/dowhat = show_radial_menu(mob,object,options)
+				if(!dowhat)
+					return
+				switch(dowhat)
+					if("tractor")
+						fire_tractor(object)
+					if("hail")
+						hail(object)
+					if("tractor-cancel")
+						release_tractor()
+		return ..() //Only tactical can fire.
 	var/list/modifiers = params2list(params)
 	if(modifiers["middle"])
 		if(istype(object, /obj/structure/overmap))
@@ -240,8 +238,7 @@
 				continue
 			var/sound/S = pick('DS13/sound/effects/damage/shiphit.ogg','DS13/sound/effects/damage/shiphit2.ogg','DS13/sound/effects/damage/shiphit3.ogg','DS13/sound/effects/damage/creak1.ogg','DS13/sound/effects/damage/creak2.ogg')
 			SEND_SOUND(player, S)
-	var/max = rand(1,5)
-	for(var/I = 0, I < max, I ++)
+	for(0 to rand(1,5))
 		var/obj/machinery/X = pick(GLOB.machines)
 		X.explode_effect()
 	if(shields_absorbed)
@@ -300,14 +297,13 @@
 		if(6)
 			visible_message("<span class='warning'>[name]'s hull is scorched!</span>")
 	if(!isnum(amount))
+		stack_trace("an overmap just took damage from [source] but the amount specific wasn't a number ([amount])")
 		return//Catch: The amount was inputted as something it's not supposed to. This is often caused by torpedoes because projectile code HATES him (click to find out more)
 	visual_damage()
 	for(var/mob/M in operators)
 		shake_camera(M, 1, 3)
 	if(istype(source, /obj/item/projectile))
 		send_sound_crew('DS13/sound/effects/damage/torpedo_hit.ogg')
-//	var/target_angle = Get_Angle(src, source) //Fire a beam from them to us X --->>>> us. This should line up nicely with the phaser beam effect
-//	var/damage_dir = angle2dir(target_angle) //Now we have our simulated beam, turn its angle into a dir.
 	var/obj/structure/overmap/OM = source
 	var/sector = get_quadrant_hit(OM,src)
 	GLOB.music_controller.play() //Try play some battle music, if there's already battle music then don't bother :)
@@ -401,30 +397,30 @@
 	if(shields_absorbed)
 		switch(amount)
 			if(0 to 9) new /obj/effect/temp_visual/damage_indicator/shield/zero (src.loc) //Shields took the hit, show a blue number
-			if(10 to 19) new /obj/effect/temp_visual/damage_indicator/shield (src.loc) //Shields took the hit, show a blue number
-			if(20 to 29) new /obj/effect/temp_visual/damage_indicator/shield/twenty (src.loc) //Shields took the hit, show a blue number
-			if(30 to 39) new /obj/effect/temp_visual/damage_indicator/shield/thirty (src.loc) //Shields took the hit, show a blue number
-			if(40 to 49) new /obj/effect/temp_visual/damage_indicator/shield/forty (src.loc) //Shields took the hit, show a blue number
-			if(50 to 59) new /obj/effect/temp_visual/damage_indicator/shield/fifty (src.loc) //Shields took the hit, show a blue number
-			if(60 to 69) new /obj/effect/temp_visual/damage_indicator/shield/sixty (src.loc) //Shields took the hit, show a blue number
-			if(70 to 79) new /obj/effect/temp_visual/damage_indicator/shield/seventy (src.loc) //Shields took the hit, show a blue number
-			if(80 to 89) new /obj/effect/temp_visual/damage_indicator/shield/eighty (src.loc) //Shields took the hit, show a blue number
-			if(90 to 99) new /obj/effect/temp_visual/damage_indicator/shield/ninety (src.loc) //Shields took the hit, show a blue number
-			if(100) new /obj/effect/temp_visual/damage_indicator/shield/hundred (src.loc) //Shields took the hit, show a blue number
+			if(10 to 19) new /obj/effect/temp_visual/damage_indicator/shield (src.loc)
+			if(20 to 29) new /obj/effect/temp_visual/damage_indicator/shield/twenty (src.loc)
+			if(30 to 39) new /obj/effect/temp_visual/damage_indicator/shield/thirty (src.loc)
+			if(40 to 49) new /obj/effect/temp_visual/damage_indicator/shield/forty (src.loc)
+			if(50 to 59) new /obj/effect/temp_visual/damage_indicator/shield/fifty (src.loc)
+			if(60 to 69) new /obj/effect/temp_visual/damage_indicator/shield/sixty (src.loc)
+			if(70 to 79) new /obj/effect/temp_visual/damage_indicator/shield/seventy (src.loc)
+			if(80 to 89) new /obj/effect/temp_visual/damage_indicator/shield/eighty (src.loc)
+			if(90 to 99) new /obj/effect/temp_visual/damage_indicator/shield/ninety (src.loc)
+			if(100) new /obj/effect/temp_visual/damage_indicator/shield/hundred (src.loc)
 		return TRUE
 	else
 		switch(amount)
-			if(0 to 9) new /obj/effect/temp_visual/damage_indicator/zero (src.loc) //Shields took the hit, show a blue number
-			if(10 to 19) new /obj/effect/temp_visual/damage_indicator (src.loc) //Shields took the hit, show a blue number
-			if(20 to 29) new /obj/effect/temp_visual/damage_indicator/twenty (src.loc) //Shields took the hit, show a blue number
-			if(30 to 39) new /obj/effect/temp_visual/damage_indicator/thirty (src.loc) //Shields took the hit, show a blue number
-			if(40 to 49) new /obj/effect/temp_visual/damage_indicator/forty (src.loc) //Shields took the hit, show a blue number
-			if(50 to 59) new /obj/effect/temp_visual/damage_indicator/fifty (src.loc) //Shields took the hit, show a blue number
-			if(60 to 69) new /obj/effect/temp_visual/damage_indicator/sixty (src.loc) //Shields took the hit, show a blue number
-			if(70 to 79) new /obj/effect/temp_visual/damage_indicator/seventy (src.loc) //Shields took the hit, show a blue number
-			if(80 to 89) new /obj/effect/temp_visual/damage_indicator/eighty (src.loc) //Shields took the hit, show a blue number
-			if(90 to 99) new /obj/effect/temp_visual/damage_indicator/ninety (src.loc) //Shields took the hit, show a blue number
-			if(100) new /obj/effect/temp_visual/damage_indicator/hundred (src.loc) //Shields took the hit, show a blue number
+			if(0 to 9) new /obj/effect/temp_visual/damage_indicator/zero (src.loc) //Shields couldn't take the hit, show a red number
+			if(10 to 19) new /obj/effect/temp_visual/damage_indicator (src.loc)
+			if(20 to 29) new /obj/effect/temp_visual/damage_indicator/twenty (src.loc)
+			if(30 to 39) new /obj/effect/temp_visual/damage_indicator/thirty (src.loc)
+			if(40 to 49) new /obj/effect/temp_visual/damage_indicator/forty (src.loc)
+			if(50 to 59) new /obj/effect/temp_visual/damage_indicator/fifty (src.loc)
+			if(60 to 69) new /obj/effect/temp_visual/damage_indicator/sixty (src.loc)
+			if(70 to 79) new /obj/effect/temp_visual/damage_indicator/seventy (src.loc)
+			if(80 to 89) new /obj/effect/temp_visual/damage_indicator/eighty (src.loc)
+			if(90 to 99) new /obj/effect/temp_visual/damage_indicator/ninety (src.loc)
+			if(100) new /obj/effect/temp_visual/damage_indicator/hundred (src.loc)
 		return TRUE
 
 /obj/effect/temp_visual/damage_indicator/zero

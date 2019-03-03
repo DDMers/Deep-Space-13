@@ -7,7 +7,7 @@
 	var/list/possible_behaviours = list("aggressive", "retaliate", "peaceful") //This will be admin selectable when I add an overmap panel
 	var/range = 15 //Firing range.
 
-/obj/structure/overmap/AI
+/obj/structure/overmap/ai
 	name = "Romulan warbird class light cruiser"
 	desc = "A dangerous ship which resembles a bird. It has a modest armament and is highly maneuverable."
 	icon = 'DS13/icons/overmap/warbird.dmi'
@@ -21,12 +21,12 @@
 	var/datum/overmap_event/linked_event
 	turnspeed = 3
 
-/obj/structure/overmap/AI/explode()
+/obj/structure/overmap/ai/explode()
 	if(linked_event)
 		linked_event.check_completion(src)
 	. = ..()
 
-/obj/structure/overmap/AI/freighter
+/obj/structure/overmap/ai/freighter
 	name = "Federation Frigate"
 	desc = "A minimally armoured tug with strong shields. It has next to no offensive power."
 	icon = 'DS13/icons/overmap/freighter.dmi'
@@ -84,8 +84,8 @@
 		pick_target()
 
 /obj/structure/overmap/proc/pick_target()
-	for(var/obj/structure/overmap/OM in orange(src, range))
-		if(istype(OM) && OM.z == z)
+	for(var/obj/structure/overmap/OM in GLOB.overmap_ships)
+		if(istype(OM) && OM.z == z && get_dist(src, OM) <= range)
 			if(OM in attackers)
 				target = OM
 				nav_target = OM

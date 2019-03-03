@@ -7,7 +7,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	var/succeed_text = "Incoming hail. You turned up at just the right time, we owe you one!."
 	var/obj/effect/landmark/overmap_event_spawn/spawner
 	var/list/elements = list() //All the shit we're gonna spawn, yeah.
-	var/obj/structure/overmap/AI/target //In this case, the freighter. If this dies then fail the mission!
+	var/obj/structure/overmap/ai/target //In this case, the freighter. If this dies then fail the mission!
 	var/reward = 10000 //10 K Credits? Sheesh what a rip off!
 
 /datum/overmap_event/proc/check_completion(var/obj/structure/overmap/what)
@@ -58,11 +58,11 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 
 /datum/overmap_event/proc/start() //Now we have a spawn. Let's do whatever this mission is supposed to. Override this when you make new missions
 	var/I = rand(1,2)
-	target = new /obj/structure/overmap/AI/freighter(get_turf(spawner))
+	target = new /obj/structure/overmap/ai/freighter(get_turf(spawner))
 	target.linked_event = src
 	priority_announce("DISTRESS CALL: A fortunate class freighter ([target]) is under attack by a Romulan battle group! Requesting immediate assistance!")
 	for(var/num = 0 to I)
-		var/obj/structure/overmap/AI/warbird = new /obj/structure/overmap/AI(get_turf(pick(orange(spawner, 6))))
+		var/obj/structure/overmap/ai/warbird = new /obj/structure/overmap/ai(get_turf(pick(orange(spawner, 6))))
 		warbird.force_target = target //That freighter ain't no fortunate oneeeee n'aw lord IT AINT HEEEE IT AINT HEEEE
 		warbird.nav_target = target
 		warbird.target = target
