@@ -7,10 +7,6 @@
 	alpha = 0
 	},
 /area/space)
-"d" = (
-/obj/structure/overmap/AI,
-/turf/open/space/basic,
-/area/space)
 "e" = (
 /obj/structure/overmap/warbird,
 /turf/open/space/basic,
@@ -7982,7 +7978,7 @@ a
 a
 a
 a
-d
+a
 a
 a
 e
