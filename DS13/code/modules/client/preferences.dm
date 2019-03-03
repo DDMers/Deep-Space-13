@@ -58,9 +58,9 @@
 		if("First assignment")
 			backstory_experience = "I just got assigned to this department, I'm pretty nervous but can't wait to prove myself<br>"
 		if("Experienced")
-			backstory_experience = "I'm an experienced officer, I've been on multiple starship tours and am pretty competant.<br>"
+			backstory_experience = "I'm an experienced officer and have been on multiple starship tours.<br>"
 		if("Veteran")
-			backstory_experience = "I've served on countless starships, I practically live in space. I can keep my cool in a crisis and am often right<br>"
+			backstory_experience = "I've served on countless starships, I practically live in space. I can keep my cool in a crisis and am often right.<br>"
 	var/list/ancestors = list("Military", "Neutral", "Failures")
 	choice = input(user,"What's your family history?", "Backstory", null) in ancestors
 	if(!choice)
@@ -96,7 +96,7 @@
 		if("I accepted my upbringing")
 			backstory_accepted = "I loved my parents and have many fond memories of them.<br>"
 		if("I rebelled against my parents")
-			backstory_accepted = "I'm an experienced officer, I've been on multiple starship tours and am pretty competant.<br>"
+			backstory_accepted = "I didn't accept my upbringing and got into a lot of trouble as a kid.<br>"
 		if("My parents were completely terrible")
 			backstory_accepted = "I never forgave my parents for what they put me through.<br>"
 	var/ambition = stripped_input(user,"Backstory.","What, if any, are your ambitions?")
@@ -104,7 +104,7 @@
 		return
 	backstory_ambition = "My ambitions are: [ambition]<br>"
 	var/output = compile_backstory()
-	to_chat(user, "<b>Your backstorystory:</b> <br> [output]")
+	to_chat(user, "<b>Your backstory:</b> <br><br> [output]")
 	SetChoices(user)
 
 /mob/living/verb/looc(message as text)

@@ -56,8 +56,8 @@
 	var/paycheck_department = ACCOUNT_CIV
 
 	var/list/mind_traits // Traits added to the mind of the mob assigned this job
-	var/description = "You are a minor crewman aboard a starship, your duties are minimal. <br>After graduating from the academy, all recruits are sent on a 1 year tour in space, are you a fresh academy graduate? or perhaps, you never got the chance for promotion.\
-	If you're inexperienced this is the perfect starter role for you, but there is no restriction on who can play minor roles. Your story is your own, for whatever reason you've arrived aboard a Federation starship with your crewmates. What you do now is up to you."
+	var/description = "You are a minor crewman aboard a starship, your duties are minimal. <br>After graduating from the academy, all recruits are sent on a 1 year tour in space, are you a fresh academy graduate? or perhaps, you never got the chance for promotion. \
+	If you're inexperienced this is the perfect starter role for you. Your story is your own, for whatever reason you've arrived aboard a Federation starship with your crewmates. What you do now is up to you."
 
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
