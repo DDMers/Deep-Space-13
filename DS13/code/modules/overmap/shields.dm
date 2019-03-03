@@ -222,66 +222,33 @@ Dirs! (nicked from byond forum)
 	hit_angle += (360 - target.heading)
 
 	hit_angle = MODULUS(hit_angle, 360)
-//	to_chat(world, "ha [hit_angle], f x[firer.x]y[firer.y], t x[target.x]y[target.y] T heading:[target.angle] F heading: [firer.angle]")
+	to_chat(world, "ha [hit_angle], f x[firer.x]y[firer.y], t x[target.x]y[target.y] T heading:[target.angle] F heading: [firer.angle]")
+	if(hit_angle == target.angle) //facing the ship.
+		return LEFT
+	if(hit_angle == -target.angle) //facing away from the ship.
+		return RIGHT
+
 	switch(hit_angle)
 		if(135 to 224)
-		//	to_chat(world, "rear")
 			return FRONT
 		if(45 to 134)
-		//	to_chat(world, "right")
 			return RIGHT
 		if(315 to 360, 0 to 44)
-	//		to_chat(world, "front")
 			return REAR
 		if(225 to 314)
-		//	to_chat(world, "left")
 			return LEFT
-			/* ORIGINAL
-		if(315 to 360, 0 to 45)
-			to_chat(world, "left")
-			return LEFT
-		if(45 to 135)
-			to_chat(world, "front")
-			return FRONT
-		if(135 to 225)
-			to_chat(world, "right")
-			return RIGHT
-		if(225 to 315)
-			to_chat(world, "rear")
-			return REAR
-	*/
-
 	stack_trace("error with quadrant calc")
 
+
+/proc/Get_Angle_Overmap(atom/movable/self,atom/movable/target)//For beams.
+	if(!self || !target)
+		return 0
+	return 450 - SIMPLIFY_DEGREES(ATAN2((32*target.y+target.real_pixel_y) - (32*self.y+self.real_pixel_y), (32*target.x+target.real_pixel_x) - (32*self.x+self.real_pixel_x)))
+
+
 /proc/find_hit_angle(atom/firer, atom/target)
-	var/datum/position/point1 = RETURN_PRECISE_POSITION(target)
-	var/datum/position/point2 = RETURN_PRECISE_POSITION(firer)
-//	var/target_angle = Get_Angle(point1, point2) //Fire a beam from them to us X --->>>> us. This should line up nicely with the phaser beam effect
-	var/target_angle = Get_Angle(point2, point1)
+	var/target_angle = Get_Angle_Overmap(firer, target)
 	return(target_angle)
-/*
-	// positive is right, negative is left
-	var/x_diff = round(firer.x - target.x)
-
-	// positive is up, negative is down
-	var/y_diff = round(firer.y - target.y)
-
-    // deal with div by zero
-	if(y_diff == 0)
-		if(x_diff > 0)
-			return 90
-		else if(x_diff < 0)
-			return 270
-		else
-			stack_trace("somehow firing from its own location")
-
-	if(y_diff > 0)
-		. = COT(x_diff / y_diff)
-		if(x_diff < 0)
-			. += 360
-		return .
-	return 180 + COT(x_diff / y_diff)
-*/
 
 #undef FRONT
 #undef RIGHT

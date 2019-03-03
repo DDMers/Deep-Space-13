@@ -61,7 +61,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	target = new /obj/structure/overmap/ai/freighter(get_turf(spawner))
 	target.linked_event = src
 	priority_announce("DISTRESS CALL: A fortunate class freighter ([target]) is under attack by a Romulan battle group! Requesting immediate assistance!")
-	for(0 to I)
+	for(var/num = 0 to I)
 		var/obj/structure/overmap/ai/warbird = new /obj/structure/overmap/ai(get_turf(pick(orange(spawner, 6))))
 		warbird.force_target = target //That freighter ain't no fortunate oneeeee n'aw lord IT AINT HEEEE IT AINT HEEEE
 		warbird.nav_target = target
