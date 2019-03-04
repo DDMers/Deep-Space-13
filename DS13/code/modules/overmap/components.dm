@@ -553,6 +553,8 @@
 		return TRUE
 
 /obj/structure/overmap_component/system_control/welder_act(mob/user, obj/item/I)
+	if(!I.tool_start_check(user, amount=3))
+		return
 	if(step == "end")
 		playsound(loc,I.usesound,100,1)
 		to_chat(user, "<span class='notice'>You begin to cut through [src]'s authorization circuitry</span>")

@@ -153,24 +153,10 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
-"aD" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/bridge/akira)
 "aE" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/carpet/trek,
-/area/ship/bridge/akira)
-"aF" = (
-/obj/item/twohanded/required/kirbyplants{
-	icon_state = "plant-21"
-	},
-/obj/machinery/power/apc/auto_name,
-/obj/structure/cable,
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "aG" = (
@@ -206,10 +192,6 @@
 /obj/structure/window/reinforced/fulltile/trek/porthole,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
-"aM" = (
-/obj/structure/trek_decor/trophies,
-/turf/closed/wall/trek_smooth/room,
-/area/crew_quarters/heads/hor)
 "aN" = (
 /turf/closed/wall/trek_smooth/room,
 /area/crew_quarters/heads/hos)
@@ -282,10 +264,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hor)
-"ba" = (
-/obj/structure/trek_decor/trophies,
-/turf/closed/wall/trek_smooth/room,
-/area/crew_quarters/heads/hos)
 "bb" = (
 /obj/structure/trek_catwalk,
 /obj/machinery/door/airlock/trek/goon/external,
@@ -423,16 +401,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
-"bA" = (
-/obj/machinery/door/window/survival_pod{
-	icon_state = "windoor";
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/bridge/akira)
 "bB" = (
 /turf/closed/wall/trek_smooth/corridor,
 /area/hallway/secondary/command)
@@ -478,31 +446,15 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
-"bH" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/carpet/trek,
-/area/hallway/secondary/command)
 "bI" = (
 /obj/machinery/computer/cargo{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
-"bJ" = (
-/obj/structure/railing{
-	icon_state = "railing0";
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/hallway/secondary/command)
 "bK" = (
 /obj/structure/railing{
 	icon_state = "railing0";
@@ -517,12 +469,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/trek,
-/area/hallway/secondary/command)
-"bM" = (
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name,
-/obj/machinery/light,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
 "bN" = (
@@ -618,9 +564,6 @@
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
 	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
@@ -718,9 +661,6 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "cr" = (
@@ -739,7 +679,7 @@
 	dir = 8
 	},
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "4-8"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
@@ -754,6 +694,9 @@
 /obj/structure/table/trek/continued{
 	icon_state = "table1-contd";
 	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
@@ -770,7 +713,7 @@
 /area/crew_quarters/heads/hor)
 "cx" = (
 /obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "1-4"
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
@@ -819,8 +762,6 @@
 	icon_state = "chair";
 	dir = 1
 	},
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name,
 /obj/machinery/light,
 /obj/effect/landmark/start/captain,
 /turf/open/floor/carpet/trek,
@@ -828,7 +769,7 @@
 "cG" = (
 /obj/structure/overmap_component/system_control,
 /turf/closed/wall/trek_smooth/room,
-/area/engine/gravity_generator)
+/area/ship/bridge/akira)
 "cH" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -875,6 +816,9 @@
 /obj/machinery/computer/card{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
 "cR" = (
@@ -896,7 +840,7 @@
 /area/crew_quarters/heads/captain)
 "cU" = (
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "1-8"
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
@@ -927,7 +871,6 @@
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name,
-/obj/structure/cable,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
 "da" = (
@@ -971,8 +914,6 @@
 	icon_state = "sofaend_right";
 	dir = 1
 	},
-/obj/machinery/power/apc/auto_name,
-/obj/structure/cable,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
 "df" = (
@@ -1443,9 +1384,6 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/trek/tile,
 /area/quartermaster/storage)
 "eo" = (
@@ -1554,11 +1492,6 @@
 	name = "supply dock loading door"
 	},
 /turf/open/floor/plating,
-/area/quartermaster/storage)
-"eD" = (
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name,
-/turf/open/floor/trek,
 /area/quartermaster/storage)
 "eE" = (
 /turf/closed/wall/trek_smooth/room,
@@ -1877,8 +1810,6 @@
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hor)
 "fy" = (
-/obj/machinery/power/apc/auto_name,
-/obj/structure/cable,
 /obj/machinery/light,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hos)
@@ -1896,7 +1827,7 @@
 /area/crew_quarters/heads/hor)
 "fB" = (
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "1-8"
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hor)
@@ -1927,8 +1858,6 @@
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hor)
 "fG" = (
-/obj/machinery/power/apc/auto_name,
-/obj/structure/cable,
 /obj/machinery/light,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hor)
@@ -2167,13 +2096,7 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/trek,
-/area/engine/gravity_generator)
-"gl" = (
-/turf/closed/wall/trek_smooth/room,
-/area/engine/gravity_generator)
-"gm" = (
-/turf/open/floor/carpet/trek,
-/area/engine/gravity_generator)
+/area/ship/bridge/akira)
 "gn" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2184,7 +2107,7 @@
 "go" = (
 /obj/machinery/door/airlock/trek/goon/engi,
 /turf/open/floor/plasteel/dark,
-/area/engine/gravity_generator)
+/area/ship/bridge/akira)
 "gp" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2197,7 +2120,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/engine/gravity_generator)
+/area/ship/bridge/akira)
 "gr" = (
 /obj/structure/trek_catwalk,
 /obj/effect/landmark/start/ai,
@@ -2207,9 +2130,6 @@
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
 	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
 	},
 /obj/effect/landmark/start/chief_engineer,
 /turf/open/floor/carpet/trek,
@@ -2304,7 +2224,7 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/carpet/trek,
-/area/engine/gravity_generator)
+/area/ship/bridge/akira)
 "gI" = (
 /obj/structure/trek_catwalk,
 /obj/structure/railing{
@@ -2317,12 +2237,6 @@
 /obj/structure/ladder,
 /turf/open/floor/plating,
 /area/maintenance/department/bridge)
-"gJ" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/engine/gravity_generator)
 "gK" = (
 /obj/structure/window/reinforced/survival_pod{
 	icon_state = "pwindow";
@@ -2357,7 +2271,7 @@
 /area/maintenance/department/bridge)
 "gO" = (
 /obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "1-4"
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hos)
@@ -2388,6 +2302,10 @@
 /area/crew_quarters/heads/hop)
 "gT" = (
 /obj/structure/bed/dogbed,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/ds13,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
 "gU" = (
@@ -2437,6 +2355,88 @@
 /obj/structure/window/reinforced/fulltile/trek/middle,
 /turf/open/floor/plating,
 /area/maintenance/department/bridge)
+"hN" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/ds13,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hos)
+"lM" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/ds13,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/hor)
+"nO" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/akira)
+"Hr" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/ds13,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"MZ" = (
+/obj/machinery/power/apc/auto_name/ds13,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/akira)
+"Sm" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/ds13,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/trek,
+/area/quartermaster/storage)
+"Wo" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/ds13,
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"XZ" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/akira)
+"Yr" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/akira)
 
 (1,1,1) = {"
 aa
@@ -26964,11 +26964,11 @@ aa
 aa
 aW
 bc
-ba
-fC
-aS
-gO
+aN
+hN
 fz
+gO
+aS
 fy
 aN
 bc
@@ -28520,8 +28520,8 @@ bC
 bC
 eW
 bB
-bC
-bH
+Wo
+bQ
 bD
 bD
 bD
@@ -28785,8 +28785,8 @@ ae
 ae
 ae
 ae
-bJ
-bM
+bK
+eW
 bB
 do
 bo
@@ -30302,7 +30302,7 @@ af
 af
 bf
 ag
-cA
+Hr
 cQ
 cU
 cZ
@@ -30335,13 +30335,13 @@ dY
 dY
 dY
 en
-dY
-dY
-dY
-dY
-dY
-dY
-eD
+dX
+dX
+dX
+dX
+dX
+dX
+dO
 eE
 eH
 eN
@@ -30546,16 +30546,16 @@ gb
 gb
 gb
 gb
-gl
-gl
+af
+af
 af
 am
 an
 an
 aw
 an
-aC
-aF
+an
+am
 af
 af
 af
@@ -30803,15 +30803,15 @@ gb
 gd
 gh
 gd
-gl
-gm
+af
+an
 bx
 an
 an
 an
 an
 an
-aD
+an
 an
 bt
 by
@@ -31061,18 +31061,18 @@ gd
 gd
 gd
 go
-gm
+an
 gF
 an
 ap
 aq
 an
 an
-aE
-bn
-bn
-bA
-bn
+an
+an
+an
+bY
+an
 cc
 gs
 cq
@@ -31317,8 +31317,8 @@ gb
 ge
 gf
 gg
-gl
-gm
+af
+an
 af
 an
 an
@@ -31362,7 +31362,7 @@ dT
 dX
 ef
 dF
-ga
+Sm
 dX
 eu
 dX
@@ -31831,8 +31831,8 @@ gb
 gg
 gf
 ge
-gl
-gm
+af
+an
 af
 an
 an
@@ -32091,7 +32091,7 @@ gp
 gq
 gH
 af
-an
+MZ
 ar
 aq
 an
@@ -32103,7 +32103,7 @@ bY
 an
 ch
 gt
-ch
+XZ
 aC
 fi
 bL
@@ -32345,10 +32345,10 @@ gb
 fj
 gz
 gC
-gl
-gJ
+af
+aE
 gn
-bn
+Yr
 bn
 bn
 bn
@@ -32360,7 +32360,7 @@ gK
 bn
 bn
 gL
-bn
+nO
 gM
 cK
 bC
@@ -32602,8 +32602,8 @@ gb
 gb
 gb
 gb
-gl
-gl
+af
+af
 af
 am
 an
@@ -36216,11 +36216,11 @@ aa
 aa
 aW
 bc
-aM
-fD
-ax
-fB
+ad
+lM
 fA
+fB
+ax
 fG
 ad
 bc

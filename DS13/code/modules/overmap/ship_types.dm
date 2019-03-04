@@ -144,7 +144,7 @@
 
 /obj/structure/trek_decor/plaque/akira
 	name = "Dedication plaque"
-	desc = "A large, bronze plaque with a dedication: \n <b>USS NULL. <b>Akira-class <> Starfleet registry: NCC-65326 <>\n  Launched stardate: NULL <> Utopia Planetia ShipYards <> United Federation Of Planets. \n</b>"
+	desc = "A large, bronze plaque with a dedication: \n <b>USS Inquisitor. <b>Akira-class <> Starfleet registry: NCC-65326 <>\n  Launched stardate: NULL <> Utopia Planetia ShipYards <> United Federation Of Planets. \n</b>"
 	icon_state = "plaque"
 	supervisors = list("Declan Reade")
 	engineers = list("Declan Reade, Art Cox")
@@ -166,5 +166,5 @@
 	power_slots = 5 //She's a strong ship
 
 /obj/structure/overmap/akira/starter
-	name = "USS something"
+	name = "USS Inquisitor"
 	main_overmap = TRUE
