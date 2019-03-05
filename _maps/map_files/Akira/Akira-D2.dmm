@@ -3171,29 +3171,16 @@
 /obj/effect/baseturf_helper/open_space,
 /turf/open/floor/carpet/trek,
 /area/security/warden)
-"ll" = (
-/obj/machinery/power/apc/auto_name/ds13,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/carpet/trek,
-/area/crew_quarters/bar)
-"ly" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/carpet/trek,
-/area/crew_quarters/kitchen)
-"nv" = (
+"lG" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "2-8"
 	},
 /turf/open/floor/carpet/trek,
-/area/medical/medbay/central)
-"nZ" = (
+/area/crew_quarters/bar)
+"lM" = (
 /obj/structure/curtain,
 /obj/machinery/shower,
 /obj/machinery/power/apc/auto_name/ds13,
@@ -3202,13 +3189,7 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/crew_quarters/locker)
-"uB" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/science/xenobiology)
-"wR" = (
+"qt" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3217,51 +3198,63 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
-"AO" = (
+"tZ" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/white,
+/area/crew_quarters/locker)
+"wS" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/medical/medbay/central)
+"DE" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/kitchen)
+"LA" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/science/xenobiology)
+"LP" = (
+/obj/structure/extinguisher_cabinet,
+/turf/closed/wall/trek_smooth/room,
+/area/science/research)
+"OZ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "2-4"
 	},
 /turf/open/floor/carpet/trek,
-/area/crew_quarters/bar)
-"BN" = (
+/area/medical/medbay/central)
+"Sn" = (
 /obj/machinery/power/apc/auto_name/ds13,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
-"Ep" = (
-/obj/machinery/light{
-	dir = 1
+"WA" = (
+/obj/machinery/power/apc/auto_name/ds13,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
-/obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
-/area/security/brig)
-"SD" = (
+/area/crew_quarters/bar)
+"WV" = (
 /obj/structure/cable{
 	icon_state = "1-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/medical/medbay/central)
-"WK" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plasteel/white,
-/area/crew_quarters/locker)
-"XQ" = (
-/obj/structure/extinguisher_cabinet,
-/turf/closed/wall/trek_smooth/room,
-/area/science/research)
-"Zs" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
 	},
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
@@ -24710,7 +24703,7 @@ dT
 dT
 ii
 dc
-Ep
+ij
 dT
 ii
 dc
@@ -29864,7 +29857,7 @@ hd
 he
 bH
 aH
-nv
+OZ
 bQ
 bQ
 iY
@@ -30359,8 +30352,8 @@ fP
 fP
 fP
 aB
-nZ
-WK
+lM
+tZ
 hA
 fl
 hv
@@ -30900,7 +30893,7 @@ eM
 gc
 bQ
 aA
-SD
+wS
 cM
 cM
 hF
@@ -32152,10 +32145,10 @@ ji
 av
 aS
 gC
-ly
+DE
 bc
 av
-ll
+WA
 eo
 eo
 eo
@@ -32669,7 +32662,7 @@ bc
 gB
 gC
 gD
-AO
+lG
 gE
 gE
 gE
@@ -33189,9 +33182,9 @@ ez
 bC
 bC
 bE
-BN
+Sn
 bH
-wR
+qt
 cz
 eK
 im
@@ -38845,7 +38838,7 @@ cY
 ir
 dt
 dt
-Zs
+LA
 iS
 hp
 hq
@@ -39359,12 +39352,12 @@ ck
 aw
 if
 hp
-uB
+WV
 jb
 dt
 dt
 dt
-XQ
+LP
 cX
 ej
 eE

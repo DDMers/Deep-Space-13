@@ -212,29 +212,24 @@ Dirs! (nicked from byond forum)
 /obj/structure/overmap
 	var/heading = 0 // up is 0, down 180, right 90, left 270
 
-/proc/get_quadrant_hit(var/obj/structure/overmap/firer, var/obj/structure/overmap/target)
+/proc/get_quadrant_hit(var/obj/structure/overmap/firer, var/obj/structure/overmap/target) //The problem is sprite offsets! the sprites sit at the bottom left corner of ships. This will cause fuckery with shield hits
 	var/hit_angle = find_hit_angle(firer, target)
 	if(!target.heading)
 		target.heading = target.angle
 	if(target.heading < 0)
-		target.heading = 360 + target.heading
+		target.heading = 450 + target.heading
 
-	hit_angle += (360 - target.heading)
-
-	hit_angle = MODULUS(hit_angle, 360)
-//	to_chat(world, "ha [hit_angle], f x[firer.x]y[firer.y], t x[target.x]y[target.y] T heading:[target.angle] F heading: [firer.angle]") Uncomment me for debug!
-	if(hit_angle == target.angle) //facing the ship.
-		return LEFT
-	if(hit_angle == -target.angle) //facing away from the ship.
-		return RIGHT
+	hit_angle += (450 - target.heading)
+	hit_angle = SIMPLIFY_DEGREES(hit_angle)
+//	to_chat(world, "ha [hit_angle], f x[firer.x]y[firer.y], t x[target.x]y[target.y] T heading:[target.angle] F heading: [firer.angle]") // Uncomment me for debug!
 
 	switch(hit_angle)
-		if(135 to 224)
+		if(135 to 224, 0 to 44)
 			return FRONT
 		if(45 to 134)
 			return RIGHT
-		if(315 to 360, 0 to 44)
-			return REAR
+		if(315 to 360)
+			return REAR //rear
 		if(225 to 314)
 			return LEFT
 	stack_trace("error with quadrant calc")
@@ -242,9 +237,19 @@ Dirs! (nicked from byond forum)
 
 /proc/Get_Angle_Overmap(atom/movable/self,atom/movable/target)//For beams.
 	if(!self || !target)
-		return 0
-	return 450 - SIMPLIFY_DEGREES(ATAN2((32*target.y+target.real_pixel_y) - (32*self.y+self.real_pixel_y), (32*target.x+target.real_pixel_x) - (32*self.x+self.real_pixel_x)))
+		return FALSE
+	var/turf/us = get_center(self)
+	var/turf/them = get_center(target)
+	return 450 - SIMPLIFY_DEGREES(ATAN2((32*them.y+target.real_pixel_y) - (32*us.y+self.real_pixel_y), (32*them.x+target.real_pixel_x) - (32*us.x+self.real_pixel_x)))
 
+/obj/structure/overmap/proc/center()
+	get_center(src)
+
+/proc/get_center(var/obj/structure/overmap/ship)
+	var/xx = ship.x + 1
+	var/yy = ship.y + 1
+	var/turf/T = locate(xx,yy,ship.z)
+	return T
 
 /proc/find_hit_angle(atom/firer, atom/target)
 	var/target_angle = Get_Angle_Overmap(firer, target)

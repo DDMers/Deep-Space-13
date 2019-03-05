@@ -21,12 +21,11 @@
 
 //Ambience types
 
-#define GENERIC list('sound/ambience/ambigen1.ogg','sound/ambience/ambigen3.ogg',\
-								'sound/ambience/ambigen4.ogg','sound/ambience/ambigen5.ogg',\
-								'sound/ambience/ambigen6.ogg','sound/ambience/ambigen7.ogg',\
-								'sound/ambience/ambigen8.ogg','sound/ambience/ambigen9.ogg',\
-								'sound/ambience/ambigen10.ogg','sound/ambience/ambigen11.ogg',\
-								'sound/ambience/ambigen12.ogg','sound/ambience/ambigen14.ogg','sound/ambience/ambigen15.ogg')
+//DeepSpace13 - Adjusting ambience to be less..spooky
+//Previously ambigen 1 - 15 excluding ambigen2
+#define GENERIC list('DS13/sound/ambience/generic/bridge.ogg','DS13/sound/ambience/generic/cargobay.ogg',\
+								'DS13/sound/ambience/generic/core.ogg','DS13/sound/ambience/generic/core2.ogg',\
+								'DS13/sound/ambience/generic/corridor.ogg', 'DS13/sound/ambience/generic/sickbay.ogg')
 
 #define HOLY list('sound/ambience/ambicha1.ogg','sound/ambience/ambicha2.ogg','sound/ambience/ambicha3.ogg',\
 										'sound/ambience/ambicha4.ogg', 'sound/ambience/ambiholy.ogg', 'sound/ambience/ambiholy2.ogg',\
@@ -48,7 +47,7 @@
 											'sound/ambience/ambiruin5.ogg',  'sound/ambience/ambiruin6.ogg',  'sound/ambience/ambiruin7.ogg',\
 											'sound/ambience/ambidanger.ogg', 'sound/ambience/ambidanger2.ogg', 'sound/ambience/ambimaint1.ogg', 'sound/ambience/ambilava.ogg')
 
-#define MEDICAL list('sound/ambience/ambinice.ogg')
+#define MEDICAL list('DS13/sound/ambience/generic/sickbay.ogg')
 
 #define SPOOKY list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg','sound/ambience/ambiruin7.ogg','sound/ambience/ambiruin6.ogg',\
 										'sound/ambience/ambiodd.ogg', 'sound/ambience/ambimystery.ogg')
