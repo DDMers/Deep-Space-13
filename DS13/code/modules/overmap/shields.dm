@@ -58,6 +58,8 @@ Dirs! (nicked from byond forum)
 	. = ..()
 	START_PROCESSING(SSobj,src)
 	addtimer(CALLBACK(src, .proc/replenish_shields), 20)//Allow time to pick up the max shields HP stat from our holder
+	if(holder)
+		max_health = holder.max_shield_health
 	north_max = max_health
 	south_max = max_health
 	east_max = max_health
@@ -139,16 +141,12 @@ Dirs! (nicked from byond forum)
 	num += south
 	num += east
 	num += west
-	num += northeast
-	num += northwest
-	num += southeast
-	num += southwest
 	return num
 
 /datum/shield_controller/proc/check_vulnerability()
 	var/num = get_total_health()
 	holder.check_power()
-	if(num <= 0)
+	if(num <= 0 || max_health <= 10)
 		return TRUE
 	var/total = (max_health * 4) //4 directional shields, each with a max of maxhealth.
 	var/required = total/1.4 //Shields must be at least 60% healthy to resist transports and tractor beams

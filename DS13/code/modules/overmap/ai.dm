@@ -40,6 +40,26 @@
 	max_shield_health = 300
 	max_health = 300
 
+/obj/structure/overmap/ai/miranda
+	name = "Miranda Class Light Cruiser"
+	desc = "An all purpose, reliable starship. It's a tried and tested design that has served the federation for hundreds of years. Despite its aging design, it has a modest armament."
+	icon = 'DS13/icons/overmap/miranda.dmi'
+	icon_state = "miranda"
+	main_overmap = FALSE
+	class = "starfleet-miranda" //Feel free to add overmap controls for AIs later, future me.
+	damage_states = TRUE
+	damage = 10
+	faction = "starfleet"
+	max_shield_health = 0
+	max_health = 400
+
+/obj/structure/overmap/ai/miranda/take_control()
+	. = ..()
+	engine_power = 0
+	angle = rand(0,360)
+	EditAngle() //Set a random spin so it looks damaged
+	check_power()
+
 
 /obj/structure/overmap/proc/take_control() //Take control of our ship, make it into an AI
 	START_PROCESSING(SSobj, src) //Need to process to check for targets and so on.

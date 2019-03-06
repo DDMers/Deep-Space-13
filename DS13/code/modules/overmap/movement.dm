@@ -239,15 +239,19 @@
 
 /atom/movable/proc/PixelMove(var/x_to_move,var/y_to_move) //Don't ask. It just works
 	var/obj/structure/overmap/O = src
-	for(var/turf/e in obounds(src, real_pixel_x + x_to_move + pixel_collision_size_x/4, real_pixel_y + y_to_move + pixel_collision_size_y/4, real_pixel_x + x_to_move + -pixel_collision_size_x/4, real_pixel_y + y_to_move + -pixel_collision_size_x/4) )//Basic block collision
+	for(var/atom/e in obounds(src, real_pixel_x + x_to_move + pixel_collision_size_x/4, real_pixel_y + y_to_move + pixel_collision_size_y/4, real_pixel_x + x_to_move + -pixel_collision_size_x/4, real_pixel_y + y_to_move + -pixel_collision_size_x/4) )//Basic block collision
 		if(e.density == 1) //We can change this so the ship takes damage later
-			if(istype(src, /obj/structure/overmap))
-				O.angle -= 180
-				O.EditAngle()
-				O.vel = 1
-				sleep(10)
-				O.vel = 0
-			return FALSE
+			if(istype(e, /obj/structure/meteor))
+				var/obj/structure/meteor/S = e
+				S.crash(src)
+			else
+				if(istype(src, /obj/structure/overmap))
+					O.angle -= 180
+					O.EditAngle()
+					O.vel = 1
+					sleep(10)
+					O.vel = 0
+				return FALSE
 	real_pixel_x = real_pixel_x + x_to_move
 	real_pixel_y = real_pixel_y + y_to_move
 	while(real_pixel_x > 32) //Modulo doesn't work with this kind of stuff, don't know if there's a better method.

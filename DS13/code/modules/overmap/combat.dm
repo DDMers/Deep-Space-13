@@ -121,7 +121,8 @@
 		tractor_target.nav_target = src
 		tractor_target.vel = 1
 		if(get_dist(src, tractor_target) > 1) //To stop it glitching out when it reaches us
-			tractor_target.vel += (max_speed / 1.3)
+			var/num = 1.7 //Tractors are slooow
+			tractor_target.vel = (num)
 			tractor_target.turnspeed = 2
 		else
 			tractor_target.vel = 0
@@ -318,8 +319,13 @@
 		shake_camera(M, 1, 3)
 	if(istype(source, /obj/item/projectile))
 		send_sound_crew('DS13/sound/effects/damage/torpedo_hit.ogg')
-	var/obj/structure/overmap/OM = source
-	var/sector = get_quadrant_hit(OM,src)
+	var/sector
+	var/obj/structure/overmap/OM
+	if(source)
+		OM = source
+		sector = get_quadrant_hit(OM,src)
+	else if(!source || !istype(source, /obj/structure/overmap)) //Generic damage not being caused by another ship, so pick a shield. Could be things like nebulae, meteorites etc.
+		sector = rand(0,3) //Pick a quad, any quad
 	GLOB.music_controller.play() //Try play some battle music, if there's already battle music then don't bother :)
 	if(shields.absorb_damage(amount, sector))
 		special_fx(TRUE)
