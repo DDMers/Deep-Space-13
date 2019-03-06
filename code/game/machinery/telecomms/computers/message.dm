@@ -116,7 +116,7 @@
 					dat += "<dd><A href='?src=[REF(src)];msg=1'>&#09;[++i]. Send Admin Message</a><br></dd>"
 			else
 				for(var/n = ++i; n <= optioncount; n++)
-					dat += "<dd><FONT color='#3d5bc3'>&#09;[n]. ---------------</font><br></dd>"
+					dat += "<dd><FONT color='blue'>&#09;[n]. ---------------</font><br></dd>"
 			var/mob/living/silicon/S = usr
 			if(istype(S) && S.hack_software)
 				//Malf/Traitor AIs can bruteforce into the system to gain the Key.

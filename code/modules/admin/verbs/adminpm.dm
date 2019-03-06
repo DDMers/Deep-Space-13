@@ -70,7 +70,7 @@
 
 	if(!holder && !current_ticket)	//no ticket? https://www.youtube.com/watch?v=iHSPf6x1Fdo
 		to_chat(src, "<font color='red'>You can no longer reply to this ticket, please open another one by using the Adminhelp verb if need be.</font>")
-		to_chat(src, "<FONT color='#3d5bc3'>Message: [msg]</font>")
+		to_chat(src, "<span_class='notice'>Message: [msg]</span>")
 		return
 
 	var/client/recipient
