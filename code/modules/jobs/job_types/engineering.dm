@@ -17,6 +17,7 @@ Chief Engineer
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_ENGINEERING
+	description = "'Mr Scott, full power to the engines!' The chief engineer is responsible for the management of the ship's engineering department. You'll coordinate your staff to keep systems online and at peak performance.<br> Primary roles: Ensure repairs are carried out."
 
 	outfit = /datum/outfit/job/ce
 
@@ -80,6 +81,7 @@ Station Engineer
 	selection_color = "#fff5cc"
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
+	description = "'You canney break the laws of physics Jim!' As a station engineer you will form the backbone of a ship. It is incapable of running and surviving without you, so your responsibility is immense.<br> Primary roles: Maintain power supply, repair subsystem damage, repair hull breaches."
 
 	outfit = /datum/outfit/job/engineer
 
@@ -138,6 +140,7 @@ Atmospheric Technician
 	selection_color = "#fff5cc"
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
+	description = "'A crew can't function if they can't breathe.' Atmospheric technicians are often the unsung heroes of starships in the same way that people don't think about breathing. You carry the burden of ensuring the crew has breathable air and replacing it when the hull breaches. <br> Primary roles: Maintain the ship's air supply, fight fires caused by combat."
 
 	outfit = /datum/outfit/job/atmos
 
