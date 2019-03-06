@@ -16,14 +16,13 @@
 	var/mob/living/carbon/human/L = user
 	if(!position)
 		return ..()
-	if(L.wear_id)
-		var/obj/item/card/id/ID = L.wear_id
-		if(ID && istype(ID))
-			if(!check_access(ID))
-				to_chat(L, "You require a high level access card to use this console!.")
-				return
-			linked.enter(L, position)
+	var/obj/item/card/id/ID = L.get_idcard(FALSE)
+	if(ID && istype(ID))
+		if(!check_access(ID))
+			to_chat(L, "You require a high level access card to use this console!.")
 			return
+		linked.enter(L, position)
+		return
 	to_chat(L, "You require a high level access card to use this console!.")
 	return
 
@@ -76,10 +75,100 @@
 
 /obj/structure/overmap_component/helm
 	name = "Piloting station"
-	desc = "This console gives you the power to control a starship."
+	desc = "This console gives you the power to control a starship. Screwdriver it to change its command codes."
 	icon_state = "pilot"
 	position = "pilot"
 	req_access = list(ACCESS_HEADS)
+	flags_1 = HEAR_1
+	var/redalert_activator = "red alert" //the activation message
+	var/redalert_deactivator = "stand down red alert" //the de-activation message
+	var/redalert = FALSE //Reduce processing usage.
+
+/obj/structure/overmap_component/helm/examine(mob/user)
+	. = ..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/L = user
+		var/obj/item/card/id/ID = L.get_idcard(FALSE)
+		if(ID && istype(ID))
+			if(check_access(ID))
+				to_chat(user, "<span_class='notice'>You can say <i>[redalert_activator]</i> to engage red alert, or say <b>[redalert_deactivator]</b> to disengage red alert.</span>")
+
+/obj/structure/overmap_component/helm/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode)
+	. = ..()
+	if(speaker == src)
+		return
+	else
+		if(check_deactivation(speaker, raw_message))
+			redalert_end()
+			return TRUE //Red alert appears in both, so check deactivator FIRST
+		else
+			if(check_activation(speaker, raw_message))
+				redalert_start()
+				return TRUE
+
+/obj/structure/overmap_component/helm/proc/check_activation(atom/movable/speaker, raw_message)
+	if(ishuman(speaker))
+		var/mob/living/carbon/human/L = speaker
+		var/obj/item/card/id/ID = L.get_idcard(FALSE)
+		if(ID && istype(ID))
+			if(!check_access(ID))
+				return FALSE
+		else
+			return FALSE
+	if(findtext(raw_message, "?"))
+		return
+	if(findtext(raw_message, redalert_activator))
+		return TRUE
+	else
+		return FALSE
+
+/obj/structure/overmap_component/helm/proc/check_deactivation(atom/movable/speaker, raw_message)
+	if(ishuman(speaker))
+		var/mob/living/carbon/human/L = speaker
+		var/obj/item/card/id/ID = L.get_idcard(FALSE)
+		if(ID && istype(ID))
+			if(!check_access(ID))
+				return FALSE
+		else
+			return FALSE
+	if(findtext(raw_message, "?"))
+		return
+	if(findtext(raw_message, redalert_deactivator))
+		return TRUE
+	else
+		return FALSE
+
+/obj/structure/overmap_component/helm/proc/redalert_start()
+	if(redalert)
+		return
+	redalert = TRUE
+	if(linked.main_overmap)
+		for(var/X in GLOB.teleportlocs) //Strip out shit that shouldn't be there
+			var/area/AR = GLOB.teleportlocs[X]
+			AR.fire = TRUE
+			for(var/obj/machinery/light/L in AR)
+				L.update()
+		for(var/mob/player in GLOB.player_list)
+			var/area/AR = get_area(player)
+			if(is_station_level(player.z) && !AR.noteleport) //Player on station and not on another random ship.
+				SEND_SOUND(player, sound('DS13/sound/effects/redalert-mid.ogg', repeat = 1, wait = 0, volume = 100, channel = CHANNEL_REDALERT)) //Send them the redalert sound
+
+/obj/structure/overmap_component/helm/proc/redalert_end()
+	if(!redalert)
+		return
+	redalert = FALSE
+	if(linked.main_overmap)
+		for(var/X in GLOB.teleportlocs) //Strip out shit that shouldn't be there
+			var/area/AR = GLOB.teleportlocs[X]
+			AR.unset_fire_alarm_effects()
+		for(var/mob/player in GLOB.player_list)
+			var/area/AR = get_area(player)
+			if(is_station_level(player.z) && !AR.noteleport) //Player on station and not on another random ship.
+				if(player.client)
+					SEND_SOUND(player, sound(null))
+					var/client/C = player.client
+					if(C && C.chatOutput && !C.chatOutput.broken && C.chatOutput.loaded)
+						C.chatOutput.stopMusic()
 
 /obj/structure/overmap_component/science
 	name = "Science station"
@@ -158,7 +247,7 @@
 
 /obj/structure/overmap_component/plasma_injector/attack_hand(mob/user)
 	var/mob/living/carbon/human/L = user
-	var/obj/item/card/id/ID = L.wear_id
+	var/obj/item/card/id/ID = L.get_idcard(FALSE)
 	if(ID && istype(ID))
 		if(!check_access(ID))
 			to_chat(user, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>you are not authorized to execute this command.</span>")
@@ -587,7 +676,7 @@
 		return
 	var/mob/living/carbon/human/L = user
 	if(!hacked)
-		var/obj/item/card/id/ID = L.wear_id
+		var/obj/item/card/id/ID = L.get_idcard(FALSE)
 		if(ID && istype(ID))
 			if(!check_access(ID))
 				to_chat(user, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>you are not authorized to execute this command.</span>")

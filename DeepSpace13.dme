@@ -2767,7 +2767,6 @@
 #include "DS13\code\modules\overmap\combat.dm"
 #include "DS13\code\modules\overmap\components.dm"
 #include "DS13\code\modules\overmap\events.dm"
-#include "DS13\code\modules\overmap\gamemodes.dm"
 #include "DS13\code\modules\overmap\movement.dm"
 #include "DS13\code\modules\overmap\music.dm"
 #include "DS13\code\modules\overmap\overmap.dm"

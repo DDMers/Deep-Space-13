@@ -23,9 +23,6 @@
 	var/operative_antag_datum_type = /datum/antagonist/nukeop
 	var/leader_antag_datum_type = /datum/antagonist/nukeop/leader
 
-make romulans into one of many factions who work against the main ship by making them fail missions and eventually blowing them up
-antag ship is weaker than station so must be tactical
-
 /datum/game_mode/nuclear/pre_setup()
 	var/n_agents = min(round(num_players() / 10), antag_candidates.len, agents_possible)
 	if(n_agents >= required_enemies)
