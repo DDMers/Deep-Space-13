@@ -20,7 +20,6 @@
 	name = "Communicator"
 	desc = "A communications hologram. This person is somewhere else, but they're being projected here via a communications device."
 	var/mob/original_ghost
-	anchored = 1
 	density = FALSE
 	status_flags = GODMODE  // You can't damage it.
 
