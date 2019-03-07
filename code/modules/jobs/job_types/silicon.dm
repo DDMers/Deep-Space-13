@@ -16,6 +16,7 @@ AI
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SILICON
 	var/do_special_check = TRUE
+	description = "'Does not compute!' As a ship computer you are responsible for managing the ship's internal systems and keeping a watchful eye out for intruders."
 
 /datum/job/ai/equip(mob/living/carbon/human/H, visualsOnly, announce, latejoin, datum/outfit/outfit_override, client/preference_source = null)
 	. = H.AIize(latejoin,preference_source)
