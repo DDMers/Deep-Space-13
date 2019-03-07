@@ -10,3 +10,6 @@
 	terminal = new/obj/machinery/power/terminal(loc)
 	terminal.setDir(1) //To avoid fuckines. Trust me, it just works
 	terminal.master = src
+
+/obj/machinery/power/apc/auto_name/ds13/highcap
+	cell_type = /obj/item/stock_parts/cell/upgraded/plus

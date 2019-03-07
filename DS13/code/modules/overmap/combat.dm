@@ -237,7 +237,7 @@
 					var/sound/shieldhit = pick('DS13/sound/effects/damage/shield_hit.ogg','DS13/sound/effects/damage/shield_hit2.ogg')
 					SEND_SOUND(player, shieldhit)
 				continue
-			var/sound/S = pick('DS13/sound/effects/damage/shiphit.ogg','DS13/sound/effects/damage/shiphit2.ogg','DS13/sound/effects/damage/shiphit3.ogg','DS13/sound/effects/damage/shiphit4.ogg','DS13/sound/effects/damage/creak1.ogg','DS13/sound/effects/damage/creak2.ogg')
+			var/sound/S = pick('DS13/sound/effects/damage/shiphit.ogg','DS13/sound/effects/damage/shiphit2.ogg','DS13/sound/effects/damage/shiphit3.ogg','DS13/sound/effects/damage/shiphit4.ogg','DS13/sound/effects/damage/FTL/explosionfar_2.ogg','DS13/sound/effects/damage/FTL/explosionfar_3.ogg','DS13/sound/effects/damage/FTL/explosionfar_4.ogg','DS13/sound/effects/damage/FTL/explosionfar_5.ogg','DS13/sound/effects/damage/FTL/explosionfar_6.ogg')
 			SEND_SOUND(player, S)
 	for(0 to rand(1,5))
 		var/obj/machinery/X = pick(GLOB.machines)

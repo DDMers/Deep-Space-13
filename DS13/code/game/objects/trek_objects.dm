@@ -61,20 +61,21 @@
 	icon_state = "trek_edge3"
 
 /obj/structure/chair/trek
-	name = "Padded leather chair"
+	name = "padded leather chair"
 	desc = "Just looking at this thing makes you feel comfy."
 	icon = 'DS13/icons/obj/chairs.dmi'
 	icon_state = "comfy"
 	item_chair = null
+	anchored = FALSE
 
 /obj/structure/chair/trek/standard
-	name = "Chair"
+	name = "chair"
 	desc = "This chair looks comfortable, but not the best starfleet has to offer.."
 	icon = 'DS13/icons/obj/chairs.dmi'
 	icon_state = "chair"
 
 /obj/structure/chair/trek/dark
-	name = "Tactical chair"
+	name = "tactical chair"
 	desc = "A sleek, dark chair with lumbar support."
 	icon = 'DS13/icons/obj/chairs.dmi'
 	icon_state = "dark"

@@ -181,6 +181,9 @@
 /area/maintenance/department/bridge)
 "aJ" = (
 /obj/structure/window/reinforced/fulltile/trek/porthole,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "firstofficeroffice"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
 "aK" = (
@@ -190,6 +193,9 @@
 /area/crew_quarters/heads/hor)
 "aL" = (
 /obj/structure/window/reinforced/fulltile/trek/porthole,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "capoffice"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
 "aN" = (
@@ -511,6 +517,10 @@
 /area/hallway/secondary/command)
 "bT" = (
 /obj/structure/table/glass,
+/obj/machinery/button/door{
+	id = "firstofficeroffice";
+	name = "privacy shutters"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
 "bU" = (
@@ -786,6 +796,7 @@
 /area/crew_quarters/heads/hop)
 "cK" = (
 /obj/structure/window/reinforced/fulltile/trek/viewport,
+/obj/structure/grille,
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "cL" = (
@@ -804,6 +815,10 @@
 /area/crew_quarters/heads/captain)
 "cO" = (
 /obj/structure/table/glass,
+/obj/machinery/button/door{
+	id = "capoffice";
+	name = "privacy shutters"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
 "cP" = (
@@ -896,10 +911,17 @@
 	pixel_y = 7
 	},
 /obj/item/pen,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "capoffice"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
 "dc" = (
 /obj/structure/window/reinforced/fulltile/trek/viewport,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "capoffice"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
 "dd" = (
@@ -944,6 +966,10 @@
 /area/crew_quarters/heads/hop)
 "dk" = (
 /obj/structure/window/reinforced/fulltile/trek/viewport,
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "firstofficeroffice"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
 "dl" = (
@@ -974,6 +1000,9 @@
 	pixel_y = 7
 	},
 /obj/item/pen,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "firstofficeroffice"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
 "dn" = (
@@ -2355,7 +2384,7 @@
 /obj/structure/window/reinforced/fulltile/trek/middle,
 /turf/open/floor/plating,
 /area/maintenance/department/bridge)
-"hN" = (
+"ob" = (
 /obj/machinery/light{
 	dir = 1
 	},
@@ -2365,7 +2394,33 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hos)
-"lM" = (
+"ox" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/akira)
+"qA" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/akira)
+"yX" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/ds13,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"zx" = (
 /obj/machinery/light{
 	dir = 1
 	},
@@ -2375,7 +2430,11 @@
 /obj/machinery/power/apc/auto_name/ds13,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hor)
-"nO" = (
+"Ad" = (
+/obj/machinery/holopad,
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/akira)
+"Al" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2384,21 +2443,7 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
-"Hr" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/auto_name/ds13,
-/turf/open/floor/carpet/trek,
-/area/crew_quarters/heads/captain)
-"MZ" = (
-/obj/machinery/power/apc/auto_name/ds13,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/bridge/akira)
-"Sm" = (
+"NU" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2411,29 +2456,17 @@
 	},
 /turf/open/floor/trek,
 /area/quartermaster/storage)
-"Wo" = (
+"Ok" = (
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/ds13,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
-"XZ" = (
-/obj/structure/chair/trek/standard{
-	icon_state = "chair";
-	dir = 8
-	},
+"Us" = (
+/obj/machinery/power/apc/auto_name/ds13,
 /obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/bridge/akira)
-"Yr" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "0-4"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
@@ -26965,7 +26998,7 @@ aa
 aW
 bc
 aN
-hN
+ob
 fz
 gO
 aS
@@ -28520,7 +28553,7 @@ bC
 bC
 eW
 bB
-Wo
+Ok
 bQ
 bD
 bD
@@ -30302,7 +30335,7 @@ af
 af
 bf
 ag
-Hr
+yX
 cQ
 cU
 cZ
@@ -31362,7 +31395,7 @@ dT
 dX
 ef
 dF
-Sm
+NU
 dX
 eu
 dX
@@ -31582,7 +31615,7 @@ aq
 an
 gA
 aA
-an
+Ad
 bs
 bv
 by
@@ -32091,7 +32124,7 @@ gp
 gq
 gH
 af
-MZ
+Us
 ar
 aq
 an
@@ -32103,7 +32136,7 @@ bY
 an
 ch
 gt
-XZ
+ox
 aC
 fi
 bL
@@ -32348,7 +32381,7 @@ gC
 af
 aE
 gn
-Yr
+qA
 bn
 bn
 bn
@@ -32360,7 +32393,7 @@ gK
 bn
 bn
 gL
-nO
+Al
 gM
 cK
 bC
@@ -36217,7 +36250,7 @@ aa
 aW
 bc
 ad
-lM
+zx
 fA
 fB
 ax

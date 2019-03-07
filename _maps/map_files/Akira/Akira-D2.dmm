@@ -1093,7 +1093,7 @@
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "dw" = (
-/obj/machinery/vending/medical,
+/obj/structure/table/glass,
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "dx" = (
@@ -1248,7 +1248,7 @@
 /turf/open/floor/carpet/trek,
 /area/security/brig)
 "dU" = (
-/obj/structure/closet/l3closet/security,
+/obj/machinery/suit_storage_unit/trek,
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/brig)
 "dV" = (
@@ -2520,8 +2520,8 @@
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "hF" = (
-/obj/structure/closet/secure_closet/medical_trek,
 /obj/machinery/light,
+/obj/machinery/vending/medical,
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "hG" = (
@@ -3171,16 +3171,7 @@
 /obj/effect/baseturf_helper/open_space,
 /turf/open/floor/carpet/trek,
 /area/security/warden)
-"lG" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/crew_quarters/bar)
-"lM" = (
+"kL" = (
 /obj/structure/curtain,
 /obj/machinery/shower,
 /obj/machinery/power/apc/auto_name/ds13,
@@ -3189,47 +3180,27 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/crew_quarters/locker)
-"qt" = (
+"om" = (
+/obj/machinery/power/apc/auto_name/ds13,
 /obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
+	icon_state = "0-4"
 	},
 /turf/open/floor/carpet/trek,
-/area/hallway/primary/central)
-"tZ" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plasteel/white,
-/area/crew_quarters/locker)
-"wS" = (
+/area/crew_quarters/bar)
+"pt" = (
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
 /turf/open/floor/carpet/trek,
-/area/medical/medbay/central)
-"DE" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/carpet/trek,
-/area/crew_quarters/kitchen)
-"LA" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/carpet/trek,
 /area/science/xenobiology)
-"LP" = (
-/obj/structure/extinguisher_cabinet,
-/turf/closed/wall/trek_smooth/room,
-/area/science/research)
-"OZ" = (
+"rz" = (
+/obj/machinery/power/apc/auto_name/ds13,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/central)
+"zP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -3238,26 +3209,60 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
-"Sn" = (
-/obj/machinery/power/apc/auto_name/ds13,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/carpet/trek,
-/area/hallway/primary/central)
-"WA" = (
-/obj/machinery/power/apc/auto_name/ds13,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/carpet/trek,
-/area/crew_quarters/bar)
-"WV" = (
+"AY" = (
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
 /turf/open/floor/carpet/trek,
+/area/medical/medbay/central)
+"BS" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/central)
+"DT" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/item/storage/belt/utility/full,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/dorms)
+"FU" = (
+/obj/structure/extinguisher_cabinet,
+/turf/closed/wall/trek_smooth/room,
+/area/science/research)
+"PL" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/kitchen)
+"Rb" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
 /area/science/xenobiology)
+"UA" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/white,
+/area/crew_quarters/locker)
+"Yd" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/bar)
 
 (1,1,1) = {"
 aa
@@ -27269,7 +27274,7 @@ fW
 fP
 bd
 bg
-es
+DT
 bg
 es
 eK
@@ -27278,7 +27283,7 @@ gN
 cz
 eK
 bg
-es
+DT
 bg
 es
 bd
@@ -28556,7 +28561,7 @@ bd
 bg
 es
 bg
-es
+DT
 eK
 cz
 gn
@@ -28565,7 +28570,7 @@ eK
 bg
 es
 bg
-es
+DT
 bd
 hc
 hX
@@ -29857,7 +29862,7 @@ hd
 he
 bH
 aH
-OZ
+zP
 bQ
 bQ
 iY
@@ -30352,8 +30357,8 @@ fP
 fP
 fP
 aB
-lM
-tZ
+kL
+UA
 hA
 fl
 hv
@@ -30893,7 +30898,7 @@ eM
 gc
 bQ
 aA
-wS
+AY
 cM
 cM
 hF
@@ -31152,7 +31157,7 @@ cJ
 af
 cL
 cQ
-cM
+cQ
 dw
 do
 ax
@@ -32145,10 +32150,10 @@ ji
 av
 aS
 gC
-DE
+PL
 bc
 av
-WA
+om
 eo
 eo
 eo
@@ -32662,7 +32667,7 @@ bc
 gB
 gC
 gD
-lG
+Yd
 gE
 gE
 gE
@@ -33182,9 +33187,9 @@ ez
 bC
 bC
 bE
-Sn
+rz
 bH
-qt
+BS
 cz
 eK
 im
@@ -35493,7 +35498,7 @@ fW
 fP
 bd
 bg
-es
+DT
 bg
 es
 eK
@@ -35502,7 +35507,7 @@ cz
 cz
 eK
 bg
-es
+DT
 bg
 es
 bd
@@ -36780,7 +36785,7 @@ bd
 bg
 es
 bg
-es
+DT
 eK
 gn
 cz
@@ -36789,7 +36794,7 @@ eK
 bg
 es
 bg
-es
+DT
 bd
 fP
 fR
@@ -38838,7 +38843,7 @@ cY
 ir
 dt
 dt
-LA
+Rb
 iS
 hp
 hq
@@ -39352,12 +39357,12 @@ ck
 aw
 if
 hp
-WV
+pt
 jb
 dt
 dt
 dt
-LP
+FU
 cX
 ej
 eE

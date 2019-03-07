@@ -218,7 +218,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/auto_name/ds13,
+/obj/machinery/power/apc/auto_name/ds13/highcap,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
 "aT" = (
@@ -359,6 +359,10 @@
 /area/tcommsat/computer)
 "bn" = (
 /obj/structure/rack,
+/obj/item/circuitboard/machine/telecomms/relay,
+/obj/item/circuitboard/machine/telecomms/relay,
+/obj/effect/spawner/lootdrop/techstorage/tcomms,
+/obj/effect/spawner/lootdrop/techstorage/tcomms,
 /turf/open/floor/carpet/trek,
 /area/tcommsat/computer)
 "bo" = (
@@ -421,7 +425,7 @@
 /area/tcommsat/server)
 "bx" = (
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "2-8"
 	},
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
@@ -483,12 +487,6 @@
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
-"bE" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/dark/telecomms,
-/area/tcommsat/server)
 "bF" = (
 /obj/machinery/computer/telecomms/monitor{
 	dir = 4;
@@ -517,7 +515,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/turf/open/floor/circuit/telecomms/mainframe,
+/turf/open/floor/plasteel/dark/telecomms,
 /area/tcommsat/server)
 "bJ" = (
 /obj/machinery/power/smes{
@@ -526,7 +524,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/circuit/telecomms/mainframe,
+/turf/open/floor/plasteel/dark/telecomms,
 /area/tcommsat/server)
 "bK" = (
 /obj/structure/cable{
@@ -561,12 +559,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/tcommsat/computer)
-"bP" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plasteel/dark/telecomms,
-/area/tcommsat/server)
 "bQ" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -590,12 +582,6 @@
 	c_tag = "Telecomms Server Room";
 	dir = 4;
 	network = list("tcomms")
-	},
-/turf/open/floor/plasteel/dark/telecomms,
-/area/tcommsat/server)
-"bU" = (
-/obj/machinery/power/terminal{
-	dir = 1
 	},
 /turf/open/floor/plasteel/dark/telecomms,
 /area/tcommsat/server)
@@ -1124,7 +1110,6 @@
 /turf/open/floor/plasteel/dark,
 /area/engine/engine_smes)
 "dp" = (
-/obj/machinery/computer/atmos_alert,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -1135,6 +1120,19 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/techstorage/rnd,
+/obj/effect/spawner/lootdrop/techstorage/rnd,
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/techstorage/service,
+/obj/effect/spawner/lootdrop/techstorage/tcomms,
+/obj/item/analyzer,
+/obj/item/stock_parts/micro_laser,
+/obj/item/stock_parts/micro_laser,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/micro_laser/high,
+/obj/item/stock_parts/micro_laser/high,
+/obj/item/electronics/apc,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/akira)
 "dq" = (
@@ -1171,17 +1169,28 @@
 	},
 /obj/item/radio/off,
 /obj/machinery/light,
+/obj/item/stock_parts/subspace/transmitter,
+/obj/item/stock_parts/subspace/transmitter,
 /turf/open/floor/carpet/trek,
 /area/tcommsat/computer)
 "dx" = (
 /obj/structure/table/glass,
 /obj/item/stack/sheet/duotanium/fifty,
 /obj/item/stack/sheet/duranium/fifty,
+/obj/item/stack/sheet/duotanium/fifty,
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "dy" = (
 /obj/structure/rack,
 /obj/item/radio/off,
+/obj/item/stock_parts/subspace/amplifier,
+/obj/item/stock_parts/subspace/amplifier,
+/obj/item/stock_parts/subspace/treatment,
+/obj/item/stock_parts/subspace/treatment,
+/obj/item/stock_parts/subspace/crystal,
+/obj/item/stock_parts/subspace/crystal,
+/obj/item/stock_parts/subspace/ansible,
+/obj/item/stock_parts/subspace/ansible,
 /turf/open/floor/carpet/trek,
 /area/tcommsat/computer)
 "dz" = (
@@ -1420,6 +1429,13 @@
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/glasses/meson,
+/obj/item/clothing/glasses/meson,
+/obj/item/stock_parts/cell/high/plus,
+/obj/item/stock_parts/cell/high/plus,
+/obj/item/stack/cable_coil{
+	amount = 50
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "el" = (
@@ -1795,6 +1811,8 @@
 /area/ship/engineering/akira)
 "fj" = (
 /obj/structure/table/glass,
+/obj/item/stack/tile/carpet/trek/fifty,
+/obj/item/stack/tile/carpet/trek/fifty,
 /obj/item/stack/tile/carpet/trek/fifty,
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
@@ -2855,32 +2873,39 @@
 /obj/structure/ladder,
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
-"iA" = (
-/obj/machinery/power/apc/auto_name/ds13,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/gravity_generator)
-"ln" = (
-/obj/structure/overmap_component/plasma_relay,
-/turf/closed/wall/trek_smooth/corridor,
-/area/ship/engineering/akira)
-"qH" = (
+"mf" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/power/apc/auto_name/ds13,
-/obj/structure/cable{
-	icon_state = "0-4"
+/obj/machinery/door/airlock/trek/goon/external/public{
+	icon_state = "closed";
+	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"JV" = (
+/turf/open/floor/carpet/trek,
+/area/tcommsat/computer)
+"na" = (
 /obj/machinery/vending/engivend,
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"Lq" = (
+"ql" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/dark/telecomms,
+/area/tcommsat/server)
+"rE" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/tcommsat/computer)
+"vi" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2890,7 +2915,27 @@
 /obj/machinery/power/apc/auto_name/ds13,
 /turf/open/floor/carpet/trek,
 /area/tcommsat/computer)
-"XC" = (
+"xt" = (
+/obj/structure/fireaxecabinet,
+/turf/closed/wall/trek_smooth/room,
+/area/engine/atmos)
+"yV" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/tcommsat/server)
+"DF" = (
+/obj/machinery/power/apc/auto_name/ds13,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
+"Ln" = (
 /obj/structure/trek_catwalk,
 /obj/machinery/power/apc/auto_name/ds13,
 /obj/structure/cable/yellow{
@@ -2898,6 +2943,27 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/akira)
+"MM" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/apc/auto_name/ds13,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/dark,
+/area/engine/engine_smes)
+"Sv" = (
+/obj/structure/overmap_component/plasma_relay,
+/turf/closed/wall/trek_smooth/corridor,
+/area/ship/engineering/akira)
+"Xa" = (
+/obj/machinery/door/airlock/trek/goon/external/public{
+	icon_state = "closed";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/tcommsat/computer)
 
 (1,1,1) = {"
 aa
@@ -26143,7 +26209,7 @@ aP
 aP
 aP
 bI
-bN
+aP
 bT
 aP
 aP
@@ -26400,8 +26466,8 @@ bb
 bo
 aP
 bJ
-bN
-bU
+ql
+aP
 bW
 ds
 dA
@@ -26656,8 +26722,8 @@ aR
 bc
 bp
 bv
+yV
 bK
-bN
 bN
 bX
 dt
@@ -27170,7 +27236,7 @@ aT
 bg
 bt
 bx
-bN
+gC
 bN
 bN
 bZ
@@ -27426,10 +27492,10 @@ aO
 aZ
 bh
 aP
-bE
-bN
-bN
-aP
+ba
+mf
+Xa
+ba
 aP
 dv
 dP
@@ -27683,10 +27749,10 @@ aO
 aP
 aP
 aP
-bP
-gC
-bN
-aP
+ba
+rE
+bi
+ba
 aP
 aP
 aP
@@ -29483,7 +29549,7 @@ eR
 eR
 eR
 ba
-Lq
+vi
 gz
 ba
 fH
@@ -29760,7 +29826,7 @@ aM
 cD
 hD
 cn
-qH
+MM
 db
 dm
 db
@@ -31307,7 +31373,7 @@ dx
 cl
 fj
 aM
-JV
+na
 ac
 aM
 cB
@@ -31578,7 +31644,7 @@ eA
 eA
 hK
 eC
-iA
+DF
 gI
 fl
 eC
@@ -31827,7 +31893,7 @@ cs
 hm
 aM
 eb
-XC
+Ln
 ev
 eF
 gM
@@ -32068,7 +32134,7 @@ eV
 eV
 eV
 ai
-ln
+Sv
 aM
 cD
 cT
@@ -34622,7 +34688,7 @@ cJ
 eR
 eR
 eR
-af
+xt
 fX
 gG
 af

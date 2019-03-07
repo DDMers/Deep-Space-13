@@ -125,10 +125,10 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 		for(var/obj/structure/overmap/OM in GLOB.overmap_ships)
 			if(!OM || OM == src)
 				continue
-			if(istype(OM) && OM.z == z && get_dist(src, OM) <= range)
+			if(istype(OM) && OM.z == z && get_dist(src, OM) <= 5)
 				OM.take_damage(null, meteor_damage)
 	if(linked_event && freighter)
-		if(get_dist(src, freighter) >= 6) //Hooray! They towed the ship away.
+		if(get_dist(src, freighter) >= 5) //Hooray! They towed the ship away.
 			linked_event.succeed()
 
 /datum/overmap_event/freighter_stuck/start() //Really simple. You just need to tow the freighter out of the asteroid belt :b1:
