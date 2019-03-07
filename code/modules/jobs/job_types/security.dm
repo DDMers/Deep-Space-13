@@ -23,6 +23,7 @@ Head of Security
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SECURITY
+	description = "The toughest man on the ship. As a Chief Of Security, you will oversee away missions and coordinate your team in repelling boarders as you shoot and stun your way through anything space throws at you. <br><b>A Security Chief is expected to be proficient in combat and generally tough.</b>"
 
 	outfit = /datum/outfit/job/hos
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
@@ -88,6 +89,7 @@ Warden
 	minimal_player_age = 7
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
+	description = "'Strip him and put him in the orange, this one will be here for some time...' dealing with prisoners is your vocation, by accident or choice you are now the new warden of this ship. You'll distribute weapons among security, manage the prisoner population and help repel boarders.<br> Primary roles: Manage the prisoner population, prevent breakouts."
 
 	outfit = /datum/outfit/job/warden
 
@@ -144,6 +146,7 @@ Detective
 	minimal_player_age = 7
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
+	description = "'There's something fishy in the air, these marks are clearly not from a phaser....' Officers have the skill but you have the wits, you were choosen for your years of experience uncovering mysteries and crimes.<br> Primary roles: Solve internal crimes, Accompany away teams."
 
 	outfit = /datum/outfit/job/detective
 
@@ -200,6 +203,7 @@ Security Officer
 	minimal_player_age = 7
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
+	description = "'They're breaching the hull captain!, we cant hold the- AURGH!' You were choosen becuse of your skills and training to protect the ship, to enforce peace and harmony between the departaments at best of your skill. Serve proudly and with distinction.<br> Primary roles: Participate in away missions, repel boarders, keep the peace."
 
 	outfit = /datum/outfit/job/security
 
