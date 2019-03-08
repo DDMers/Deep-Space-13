@@ -73,7 +73,7 @@ window "mainwindow"
 	elem "input"
 		type = INPUT
 		pos = 3,420
-		size = 595x20
+		size = 517x20
 		anchor1 = 0,100
 		anchor2 = 100,100
 		background-color = #272727
@@ -186,7 +186,7 @@ window "infowindow"
 	elem "changelog"
 		type = BUTTON
 		pos = 16,5
-		size = 80x20
+		size = 104x20
 		anchor1 = 3,0
 		anchor2 = 19,0
 		text-color = #99aab5
@@ -197,7 +197,7 @@ window "infowindow"
 	elem "rules"
 		type = BUTTON
 		pos = 100,5
-		size = 80x20
+		size = 104x20
 		anchor1 = 19,0
 		anchor2 = 34,0
 		text-color = #99aab5
@@ -208,7 +208,7 @@ window "infowindow"
 	elem "wiki"
 		type = BUTTON
 		pos = 180,5
-		size = 80x20
+		size = 104x20
 		anchor1 = 34,0
 		anchor2 = 50,0
 		text-color = #99aab5
@@ -219,7 +219,7 @@ window "infowindow"
 	elem "forum"
 		type = BUTTON
 		pos = 260,5
-		size = 80x20
+		size = 104x20
 		anchor1 = 50,0
 		anchor2 = 66,0
 		text-color = #99aab5
@@ -230,7 +230,7 @@ window "infowindow"
 	elem "github"
 		type = BUTTON
 		pos = 340,5
-		size = 80x20
+		size = 104x20
 		anchor1 = 66,0
 		anchor2 = 81,0
 		text-color = #99aab5
@@ -241,7 +241,7 @@ window "infowindow"
 	elem "report-issue"
 		type = BUTTON
 		pos = 420,5
-		size = 80x20
+		size = 104x20
 		anchor1 = 81,0
 		anchor2 = 97,0
 		text-color = #99aab5
