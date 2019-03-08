@@ -43,31 +43,23 @@
 	color: #ADD8E6;\
 	font-family: 'Arial Black'\
 	/* Starting position */\
-	-moz-transform:translateY(100%);\
 	-webkit-transform:translateY(100%);	\
 	transform:translateY(100%);\
 	/* Apply animation to this element */	\
-	-moz-animation: scroll-left 40s linear infinite;\
 	-webkit-animation: scroll-left 40s linear infinite;\
 	animation: scroll-left 40s linear infinite;\
 	}\
 	/* Move it (define the animation) */\
-	@-moz-keyframes scroll-left {\
-	0%   { -moz-transform: translateY(100%); }\
-	100% { -moz-transform: translateY(-100%); }\
-	}\
 	@-webkit-keyframes scroll-left {\
 	0%   { -webkit-transform: translateY(100%); }\
 	100% { -webkit-transform: translateY(-100%); }\
 	}\
 	@keyframes scroll-left {\
 	0%   { \
-	-moz-transform: translateY(100%); /* Browser bug fix */\
 	-webkit-transform: translateY(100%); /* Browser bug fix */\
 	transform: translateY(100%); 		\
 	}\
 	100% { \
-	-moz-transform: translateY(-100%); /* Browser bug fix */\
 	-webkit-transform: translateY(-100%); /* Browser bug fix */\
 	transform: translateY(-100%); \
 	}\
@@ -77,6 +69,6 @@
 	<p><font-family: 'Arial Black', sans-serif;color='blue'><b><i>Star Trek Episode [pick(1,50)]: The [pick("Phantom of", "Scar of", "Chalice of", "Deception of", "Planet of", "Downfall of", "Rise of", "Search for", "Trial of", "Discovery of", "First contact with")] [pick("Spock", "Vulcan", "Romulus", "Qu'on os", "The borg", "Space", "the USS Kobayashi Maru", "Rixx", "Orion Slave Girls", "the warp 10 barrier", "Captain Jean Luc Picard", "Cargonia", "a bunch of spiders in a swat suit", "the destroyer of worlds", "Captain Proton", "Lieutenant Barclay", "crippling holodeck addiction", "the fully functional android")] </b><br>[thing]</p></i></font>\
 	\
 	</div>"
-	var/datum/browser/popup = new(user, "Credits", "Credits", 600, 325)
+	var/datum/browser/popup = new(user, "Credits", "Credits", 600, 320)
 	popup.set_content(credits)
 	popup.open()
