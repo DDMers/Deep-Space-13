@@ -488,10 +488,6 @@
 /obj/machinery/door/airlock/trek/goon/maint,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
-"bP" = (
-/obj/structure/railing,
-/turf/open/floor/carpet/trek,
-/area/hallway/secondary/command)
 "bQ" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -885,7 +881,6 @@
 	icon_state = "sofaend_left";
 	dir = 1
 	},
-/obj/machinery/power/apc/auto_name,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
 "da" = (
@@ -1959,12 +1954,18 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
 "fP" = (
 /obj/structure/railing,
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
@@ -2384,43 +2385,7 @@
 /obj/structure/window/reinforced/fulltile/trek/middle,
 /turf/open/floor/plating,
 /area/maintenance/department/bridge)
-"ob" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/power/apc/auto_name/ds13,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/carpet/trek,
-/area/crew_quarters/heads/hos)
-"ox" = (
-/obj/structure/chair/trek/standard{
-	icon_state = "chair";
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/bridge/akira)
-"qA" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/bridge/akira)
-"yX" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/auto_name/ds13,
-/turf/open/floor/carpet/trek,
-/area/crew_quarters/heads/captain)
-"zx" = (
+"hX" = (
 /obj/machinery/light{
 	dir = 1
 	},
@@ -2430,20 +2395,24 @@
 /obj/machinery/power/apc/auto_name/ds13,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hor)
-"Ad" = (
-/obj/machinery/holopad,
-/turf/open/floor/carpet/trek,
-/area/ship/bridge/akira)
-"Al" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+"rm" = (
+/obj/machinery/light{
+	dir = 1
 	},
+/obj/machinery/power/apc/auto_name/ds13,
 /obj/structure/cable{
-	icon_state = "1-8"
+	icon_state = "0-2"
 	},
 /turf/open/floor/carpet/trek,
-/area/ship/bridge/akira)
-"NU" = (
+/area/crew_quarters/heads/hos)
+"uI" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/auto_name/ds13,
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"GW" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -2456,14 +2425,46 @@
 	},
 /turf/open/floor/trek,
 /area/quartermaster/storage)
-"Ok" = (
+"Hb" = (
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/ds13,
 /turf/open/floor/carpet/trek,
-/area/hallway/secondary/command)
-"Us" = (
+/area/crew_quarters/heads/captain)
+"It" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/akira)
+"JK" = (
+/obj/machinery/holopad,
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/akira)
+"Oc" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/akira)
+"Xh" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/akira)
+"Yf" = (
 /obj/machinery/power/apc/auto_name/ds13,
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -26998,7 +26999,7 @@ aa
 aW
 bc
 aN
-ob
+rm
 fz
 gO
 aS
@@ -28553,7 +28554,7 @@ bC
 bC
 eW
 bB
-Ok
+uI
 bQ
 bD
 bD
@@ -30335,7 +30336,7 @@ af
 af
 bf
 ag
-yX
+Hb
 cQ
 cU
 cZ
@@ -30353,7 +30354,7 @@ aI
 bq
 bB
 bC
-bP
+fQ
 ae
 ae
 ae
@@ -30610,7 +30611,7 @@ aI
 bq
 bB
 bC
-bP
+fQ
 ae
 ae
 ae
@@ -30867,7 +30868,7 @@ bo
 dn
 bB
 bC
-bP
+fQ
 ae
 ae
 ae
@@ -31124,7 +31125,7 @@ bB
 bB
 gB
 eX
-bP
+fQ
 ae
 ae
 ae
@@ -31381,7 +31382,7 @@ bC
 bC
 aU
 bC
-bP
+fQ
 ae
 ae
 ae
@@ -31395,7 +31396,7 @@ dT
 dX
 ef
 dF
-NU
+GW
 dX
 eu
 dX
@@ -31615,7 +31616,7 @@ aq
 an
 gA
 aA
-Ad
+JK
 bs
 bv
 by
@@ -31638,7 +31639,7 @@ bC
 eW
 gx
 bC
-bP
+fQ
 ae
 ae
 ae
@@ -31895,7 +31896,7 @@ bC
 bC
 aU
 bC
-bP
+fQ
 ae
 ae
 ae
@@ -32124,7 +32125,7 @@ gp
 gq
 gH
 af
-Us
+Yf
 ar
 aq
 an
@@ -32136,7 +32137,7 @@ bY
 an
 ch
 gt
-ox
+It
 aC
 fi
 bL
@@ -32152,7 +32153,7 @@ bB
 bB
 gB
 eX
-bP
+fQ
 ae
 ae
 ae
@@ -32381,7 +32382,7 @@ gC
 af
 aE
 gn
-qA
+Oc
 bn
 bn
 bn
@@ -32393,7 +32394,7 @@ gK
 bn
 bn
 gL
-Al
+Xh
 gM
 cK
 bC
@@ -32409,7 +32410,7 @@ bo
 bp
 bB
 bC
-bP
+fQ
 ae
 ae
 ae
@@ -32666,7 +32667,7 @@ aI
 bq
 bB
 bC
-bP
+fQ
 ae
 ae
 ae
@@ -32923,7 +32924,7 @@ aI
 bq
 bB
 bC
-bP
+fQ
 ae
 ae
 ae
@@ -36250,7 +36251,7 @@ aa
 aW
 bc
 ad
-zx
+hX
 fA
 fB
 ax
