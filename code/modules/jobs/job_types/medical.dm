@@ -17,6 +17,7 @@ Chief Medical Officer
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_MEDICAL
+	description = "'Damnit Jim I'm a doctor not a physicist!' As the CMO you are responsible for overseeing the triage of patients and being critical oversight for diagnoses. Your expertise may also be called upon if the ship is faced with a medical threat or problem."
 
 	outfit = /datum/outfit/job/cmo
 
@@ -71,6 +72,7 @@ Medical Doctor
 	spawn_positions = 3
 	supervisors = "the chief medical officer"
 	selection_color = "#ffeef0"
+	description = "Typical doctors on stations spend most of their time stuck in medbay however starfleet doctors take a much more active role. You'll accompany away teams as they beam down to explore strange new worlds as you cortically stimulate and hypospray people into good health."
 
 	outfit = /datum/outfit/job/doctor
 
@@ -111,6 +113,7 @@ Chemist
 	selection_color = "#ffeef0"
 	exp_type = EXP_TYPE_CREW
 	exp_requirements = 60
+	description = "The doctors can't heal people with empty hyposprays. As a chemist you're responsible for creating all sorts of mixtures to heal, rebuild or even destroy. You will often be called upon for producing specialist chems when patients come to you with advanced trauma."
 
 	outfit = /datum/outfit/job/chemist
 

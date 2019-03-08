@@ -17,6 +17,7 @@ Research Director
 	exp_type_department = EXP_TYPE_SCIENCE
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
+	description = "'It's life Jim, but not as we know it.' As the Chief Science Officer, you will provide scientific solutions to problems the ship encounters. You'll oversee your research staff to a point but your main duty is providing insight into difficult problems."
 
 	outfit = /datum/outfit/job/rd
 
@@ -76,6 +77,7 @@ Scientist
 	selection_color = "#ffeeff"
 	exp_requirements = 60
 	exp_type = EXP_TYPE_CREW
+	description = "A science officer researches upgrades for the ship to increase her effectiveness. You are also responsible for building new machines and rearing slimes for research purposes. You'll spend most of your time cloistered away in the research wing but scientists are invaluable to a ship when paired with miners."
 
 
 	outfit = /datum/outfit/job/scientist
