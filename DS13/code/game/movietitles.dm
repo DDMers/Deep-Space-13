@@ -17,11 +17,10 @@
 	var/text = names2credits()
 	SEND_SOUND(world, 'DS13/sound/effects/endcredits.ogg')
 	for(var/client/C in GLOB.clients)
-		if(C.mob)
-			C.mob.roll_credits(text)
+		C.roll_credits(text)
 
-/mob/proc/roll_credits(var/credits_list)
-	var/client/user = client
+/client/proc/roll_credits(var/credits_list)
+	var/client/user = src
 	var/datum/asset/assets = get_asset_datum(/datum/asset/simple/credits)
 	assets.send(user)
 	var/thing = credits_list
@@ -80,5 +79,4 @@
 	</div>"
 	var/datum/browser/popup = new(user, "Credits", "Credits", 600, 325)
 	popup.set_content(credits)
-	popup.set_title_image(browse_rsc_icon(src.icon, src.icon_state))
 	popup.open()
