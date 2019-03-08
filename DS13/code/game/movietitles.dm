@@ -13,14 +13,15 @@
 	credits += "Directed by: Kmc2000 <br> Executive producer: Francinum <br> Technical supervisor: Bass-ic <br>"
 	return credits
 
-/proc/roll_credits()
+/proc/start_credits_global()
 	var/text = names2credits()
 	SEND_SOUND(world, 'DS13/sound/effects/endcredits.ogg')
-	for(var/mob/M in GLOB.player_list)
-		M.roll_credits(text)
+	for(var/client/C in GLOB.clients)
+		if(C.mob)
+			C.mob.roll_credits(text)
 
 /mob/proc/roll_credits(var/credits_list)
-	var/mob/user = src
+	var/client/user = client
 	var/datum/asset/assets = get_asset_datum(/datum/asset/simple/credits)
 	assets.send(user)
 	var/thing = credits_list
@@ -77,7 +78,7 @@
 	<p><font-family: 'Arial Black', sans-serif;color='blue'><b><i>Star Trek Episode [pick(1,50)]: The [pick("Phantom of", "Scar of", "Chalice of", "Deception of", "Planet of", "Downfall of", "Rise of", "Search for", "Trial of", "Discovery of", "First contact with")] [pick("Spock", "Vulcan", "Romulus", "Qu'on os", "The borg", "Space", "the USS Kobayashi Maru", "Rixx", "Orion Slave Girls", "the warp 10 barrier", "Captain Jean Luc Picard", "Cargonia", "a bunch of spiders in a swat suit", "the destroyer of worlds", "Captain Proton", "Lieutenant Barclay", "crippling holodeck addiction", "the fully functional android")] </b><br>[thing]</p></i></font>\
 	\
 	</div>"
-	var/datum/browser/popup = new(user, "Credits", "Credits", 600, 290)
+	var/datum/browser/popup = new(user, "Credits", "Credits", 600, 325)
 	popup.set_content(credits)
-	popup.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))
+	popup.set_title_image(browse_rsc_icon(src.icon, src.icon_state))
 	popup.open()
