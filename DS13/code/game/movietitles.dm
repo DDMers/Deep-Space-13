@@ -31,7 +31,7 @@
 	<body bgcolor='#000000'>\
 	<body background='credits.gif'>\
 	<div class='scroll-left'>\
-	<p><font-family: 'Arial Black', sans-serif;color='blue'><b><i>Star Trek Episode [pick(1,50)]: The [pick("Phantom of", "Scar of", "Chalice of", "Deception of", "Planet of", "Downfall of", "Rise of", "Search for", "Trial of", "Discovery of", "First contact with")] [pick("Spock", "Vulcan", "Romulus", "Qu'on os", "The borg", "Space", "the USS Kobayashi Maru", "Rixx", "Orion Slave Girls", "the warp 10 barrier", "Captain Jean Luc Picard", "Cargonia", "a bunch of spiders in a swat suit", "the destroyer of worlds", "Captain Proton", "Lieutenant Barclay", "crippling holodeck addiction", "the fully functional android")] </b><br>[thing]</p></i></font>\
+	<p><b><i>Star Trek Episode [pick(1,50)]: The [pick("Phantom of", "Scar of", "Chalice of", "Deception of", "Planet of", "Downfall of", "Rise of", "Search for", "Trial of", "Discovery of", "First contact with")] [pick("Spock", "Vulcan", "Romulus", "Qu'on os", "The borg", "Space", "the USS Kobayashi Maru", "Rixx", "Orion Slave Girls", "the warp 10 barrier", "Captain Jean Luc Picard", "Cargonia", "a bunch of spiders in a swat suit", "the destroyer of worlds", "Captain Proton", "Lieutenant Barclay", "crippling holodeck addiction", "the fully functional android")] </b><br>[thing]</p></i></font>\
 	\
 	</div>"
 	var/datum/browser/popup = new(src, "Credits", "Credits", 600, 320)

@@ -11,6 +11,7 @@ margin: 0;
 line-height: 50px;
 text-align: center;
 color: #ADD8E6;
+font: 15px Arial Black, sans-serif;
 font-family: 'Arial Black'
 /* Starting position */
 -webkit-transform:translateY(100%);	
