@@ -174,7 +174,7 @@
 	for(var/client/C in GLOB.clients)
 		if(!C.credits)
 			C.RollCredits()
-		C.playtitlemusic(40)
+	//	C.playtitlemusic(40) DeepSpace13 - Credits. Prevent music overlap
 
 	var/popcount = gather_roundend_feedback()
 	display_report(popcount)
@@ -191,6 +191,8 @@
 
 	//Set news report and mode result
 	mode.set_round_result()
+
+	start_credits_global() //DeepSpace13 - End credits
 
 	send2irc("Server", "Round just ended.")
 
@@ -414,7 +416,7 @@
 		if(!A.members)
 			continue
 		all_teams |= A
-	
+
 	for(var/datum/antagonist/A in GLOB.antagonists)
 		if(!A.owner)
 			continue
