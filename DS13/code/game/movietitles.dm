@@ -16,14 +16,16 @@
 /proc/start_credits_global()
 	var/text = names2credits()
 	SEND_SOUND(world, 'DS13/sound/effects/endcredits.ogg')
-	for(var/client/C in GLOB.clients)
+	for(var/X in GLOB.clients)
+		var/client/C = X
 		if(C.mob)
 			C.mob.roll_credits(text)
 
 /mob/proc/roll_credits(var/credits_list)
-	var/client/user = src
+	if(!client)
+		return
 	var/datum/asset/assets = get_asset_datum(/datum/asset/simple/credits)
-	assets.send(user)
+	assets.send(client)
 	var/thing = credits_list
 	var/credits = "\
 	<body bgcolor='#000000'>\
