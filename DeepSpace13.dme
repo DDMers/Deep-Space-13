@@ -2759,6 +2759,7 @@
 #include "DS13\code\modules\client\preferences_toggles.dm"
 #include "DS13\code\modules\clothing\under\trek.dm"
 #include "DS13\code\modules\EMH\EMH.dm"
+#include "DS13\code\modules\goonchat\darkmode-pref.dm"
 #include "DS13\code\modules\mob\living\carbon\human\species_types\klingon.dm"
 #include "DS13\code\modules\turbolift\turbolift.dm"
 #include "DS13\goonstation\airlocks.dm"
