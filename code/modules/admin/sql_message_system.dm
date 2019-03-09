@@ -87,7 +87,7 @@
 	if(logged)
 		log_admin_private(pm)
 		message_admins("[header]:<br>[text]")
-		admin_ticket_log(target_ckey, "<font color='blue'>[header]</font>")
+		admin_ticket_log(target_ckey, "<span_class='notice'>[header]</span>")
 		admin_ticket_log(target_ckey, text)
 		if(browse)
 			browse_messages("[type]")
@@ -541,7 +541,7 @@
 					return
 				qdel(query_message_read)
 			if("watchlist entry")
-				message_admins("<font color='red'><B>Notice: </B></font><font color='blue'>[key_name_admin(target_ckey)] has been on the watchlist since [timestamp] and has just connected - Reason: [text]</font>")
+				message_admins("<font color='red'><B>Notice: </B></font><span_class='notice'>[key_name_admin(target_ckey)] has been on the watchlist since [timestamp] and has just connected - Reason: [text]</span>")
 				send2irc_adminless_only("Watchlist", "[key_name(target_ckey)] is on the watchlist and has just connected - Reason: [text]")
 			if("memo")
 				output += "<span class='memo'>Memo by <span class='prefix'>[admin_key]</span> on [timestamp]"
