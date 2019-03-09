@@ -14,6 +14,7 @@
 
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
+#include "_maps\DeepSpace13.dm"
 #include "code\_compile_options.dm"
 #include "code\world.dm"
 #include "code\__DEFINES\_globals.dm"
@@ -242,7 +243,6 @@
 #include "code\controllers\subsystem\nightshift.dm"
 #include "code\controllers\subsystem\npcpool.dm"
 #include "code\controllers\subsystem\overlays.dm"
-#include "code\controllers\subsystem\overmap.dm"
 #include "code\controllers\subsystem\pai.dm"
 #include "code\controllers\subsystem\parallax.dm"
 #include "code\controllers\subsystem\pathfinder.dm"
@@ -2745,6 +2745,7 @@
 #include "code\modules\zombie\organs.dm"
 #include "DS13\code\controllers\configuration\entries\game_options.dm"
 #include "DS13\code\game\areas.dm"
+#include "DS13\code\game\movietitles.dm"
 #include "DS13\code\game\machinery\hologram.dm"
 #include "DS13\code\game\machinery\machine_changes.dm"
 #include "DS13\code\game\objects\catwalk.dm"
@@ -2764,6 +2765,7 @@
 #include "DS13\code\modules\clothing\suits\trek.dm"
 #include "DS13\code\modules\clothing\under\trek.dm"
 #include "DS13\code\modules\EMH\EMH.dm"
+#include "DS13\code\modules\goonchat\darkmode-pref.dm"
 #include "DS13\code\modules\mob\living\carbon\human\species_types\klingon.dm"
 #include "DS13\code\modules\overmap\ai.dm"
 #include "DS13\code\modules\overmap\combat.dm"
