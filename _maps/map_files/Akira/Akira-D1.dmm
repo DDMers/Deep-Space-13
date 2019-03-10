@@ -2060,6 +2060,12 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/aft)
 "fT" = (
@@ -2089,6 +2095,9 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/auto_name/ds13,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/aft)
 "fX" = (
@@ -2288,6 +2297,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/aft)
@@ -2876,136 +2891,14 @@
 /obj/structure/ladder,
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
-"jl" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"mi" = (
+"jg" = (
 /obj/machinery/power/apc/auto_name/ds13,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/engine/gravity_generator)
-"mN" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/door/airlock/trek/goon/command,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"ov" = (
-/obj/machinery/door/airlock/trek/goon/external/public{
-	icon_state = "closed";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/tcommsat/computer)
-"to" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/computer/monitor{
-	icon_state = "computer";
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"ut" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/techstorage/service,
-/obj/item/twohanded/rcl/pre_loaded,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"xo" = (
-/obj/machinery/holopad,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/tcommsat/server)
-"yF" = (
-/obj/machinery/computer/card/minor/ce{
-	icon_state = "computer";
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"As" = (
-/obj/structure/closet/secure_closet/engineering_welding,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"CJ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"CY" = (
-/obj/structure/overmap_component/plasma_relay,
-/turf/closed/wall/trek_smooth/corridor,
-/area/ship/engineering/akira)
-"Ek" = (
-/obj/machinery/portable_atmospherics/scrubber,
-/turf/open/floor/plating,
-/area/engine/atmos)
-"EL" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plasteel/dark/telecomms,
-/area/tcommsat/server)
-"Fi" = (
-/obj/structure/closet/secure_closet/engineering_electrical,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"Gk" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/airlock/trek/goon/external/public{
-	icon_state = "closed";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/tcommsat/computer)
-"Ho" = (
-/obj/machinery/computer/station_alert{
-	icon_state = "computer";
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"Ip" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/apc/auto_name/ds13,
-/turf/open/floor/carpet/trek,
-/area/tcommsat/computer)
-"Kb" = (
-/obj/effect/landmark/start/atmospheric_technician,
-/obj/machinery/holopad,
-/turf/open/floor/carpet/trek,
-/area/engine/atmos)
-"Ko" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/tcommsat/computer)
-"LG" = (
+"lJ" = (
 /obj/item/lighter,
 /obj/structure/rack,
 /obj/item/reagent_containers/pill/patch/silver_sulf,
@@ -3014,25 +2907,7 @@
 /obj/effect/spawner/lootdrop/techstorage/rnd,
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"PZ" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/power/apc/auto_name/ds13,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"RV" = (
-/obj/machinery/vending/engivend,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"TL" = (
-/obj/structure/fireaxecabinet,
-/turf/closed/wall/trek_smooth/room,
-/area/engine/atmos)
-"VN" = (
+"lK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	icon_state = "pipe11-2";
 	dir = 8
@@ -3043,7 +2918,107 @@
 /obj/machinery/holopad,
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"Xy" = (
+"nG" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/door/airlock/trek/goon/command,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"oC" = (
+/obj/structure/closet/secure_closet/engineering_personal,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"pt" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"rj" = (
+/obj/machinery/vending/engivend,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"sS" = (
+/obj/machinery/door/airlock/trek/goon/external/public{
+	icon_state = "closed";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/tcommsat/computer)
+"tT" = (
+/obj/effect/landmark/start/atmospheric_technician,
+/obj/machinery/holopad,
+/turf/open/floor/carpet/trek,
+/area/engine/atmos)
+"uB" = (
+/obj/structure/fireaxecabinet,
+/turf/closed/wall/trek_smooth/room,
+/area/engine/atmos)
+"uW" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/power/apc/auto_name/ds13,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/akira)
+"yF" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/dark/telecomms,
+/area/tcommsat/server)
+"Ca" = (
+/obj/structure/closet/secure_closet/engineering_electrical,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"CN" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/computer/monitor{
+	icon_state = "computer";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"FK" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/apc/auto_name/ds13,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/dark,
+/area/engine/engine_smes)
+"Gw" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/ds13,
+/turf/open/floor/carpet/trek,
+/area/tcommsat/computer)
+"GN" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/techstorage/service,
+/obj/item/twohanded/rcl/pre_loaded,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Hi" = (
+/obj/machinery/holopad,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/tcommsat/server)
+"Jr" = (
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -3052,17 +3027,57 @@
 	},
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
-"XG" = (
-/obj/structure/closet/secure_closet/engineering_personal,
+"KI" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/trek/goon/external/public{
+	icon_state = "closed";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/tcommsat/computer)
+"LZ" = (
+/obj/machinery/computer/station_alert{
+	icon_state = "computer";
+	dir = 1
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"ZN" = (
-/obj/structure/trek_catwalk,
-/obj/machinery/power/apc/auto_name/ds13,
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
+"MT" = (
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/tcommsat/computer)
+"PN" = (
+/obj/structure/overmap_component/plasma_relay,
+/turf/closed/wall/trek_smooth/corridor,
+/area/ship/engineering/akira)
+"SH" = (
+/obj/structure/closet/secure_closet/engineering_welding,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"XZ" = (
+/obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plating,
+/area/engine/atmos)
+"YI" = (
+/obj/machinery/computer/card/minor/ce{
+	icon_state = "computer";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Zb" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 
 (1,1,1) = {"
@@ -26566,7 +26581,7 @@ bb
 bo
 aP
 bJ
-EL
+yF
 aP
 bW
 ds
@@ -26822,7 +26837,7 @@ aR
 bc
 bp
 bv
-Xy
+Jr
 bK
 bN
 bX
@@ -27080,7 +27095,7 @@ bd
 bd
 bw
 bM
-xo
+Hi
 bN
 bN
 bN
@@ -27593,8 +27608,8 @@ aZ
 bh
 aP
 ba
-Gk
-ov
+KI
+sS
 ba
 aP
 dv
@@ -27850,7 +27865,7 @@ aP
 aP
 aP
 ba
-Ko
+MT
 bi
 ba
 aP
@@ -29649,7 +29664,7 @@ eR
 eR
 eR
 ba
-Ip
+Gw
 gz
 ba
 fH
@@ -29926,7 +29941,7 @@ aM
 cD
 hD
 cn
-PZ
+FK
 db
 dm
 db
@@ -31468,12 +31483,12 @@ aM
 cD
 cS
 ac
-As
+SH
 dx
 cl
 fj
-XG
-RV
+oC
+rj
 ac
 aM
 cB
@@ -31744,7 +31759,7 @@ eA
 eA
 hK
 eC
-mi
+jg
 gI
 fl
 eC
@@ -31993,7 +32008,7 @@ cs
 hm
 aM
 eb
-ZN
+uW
 ev
 eF
 gM
@@ -32234,9 +32249,9 @@ eV
 eV
 eV
 ai
-CY
+PN
 aM
-VN
+lK
 cT
 cU
 de
@@ -33010,12 +33025,12 @@ aM
 cD
 cS
 ac
-XG
+oC
 dF
 dF
 ek
-Fi
-Fi
+Ca
+Ca
 ac
 aM
 cB
@@ -34543,9 +34558,9 @@ fw
 fw
 fw
 ac
-LG
+lJ
 aM
-Ho
+LZ
 aM
 hO
 aM
@@ -34788,7 +34803,7 @@ cJ
 eR
 eR
 eR
-TL
+uB
 fX
 gG
 af
@@ -34802,10 +34817,10 @@ fI
 ae
 ca
 cd
-to
-jl
-mN
-CJ
+CN
+Zb
+nG
+pt
 cG
 hF
 dd
@@ -35057,9 +35072,9 @@ ha
 hb
 hd
 ac
-ut
+GN
 aM
-yF
+YI
 aM
 ao
 aM
@@ -36842,7 +36857,7 @@ fF
 fE
 hl
 ar
-Kb
+tT
 at
 aF
 bA
@@ -37615,7 +37630,7 @@ af
 af
 af
 af
-Ek
+XZ
 aW
 bf
 aE
