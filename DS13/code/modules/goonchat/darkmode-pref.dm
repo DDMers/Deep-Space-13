@@ -64,12 +64,14 @@
 	if(owner.prefs.toggles & DARKMODE) //They want dark theme, so no need to change the CSS
 		var/datum/asset/stuff = get_asset_datum(/datum/asset/group/goonchat)
 		stuff.send(owner)
-	else //They're a white theme user so change the CSS and winset them back to whitetheme.
-		var/datum/asset/stuff = get_asset_datum(/datum/asset/group/goonchat/white)
-		stuff.send(owner)
-		owner.force_white_theme() //force update their window via winset autism
-
+		owner << browse(file('code/modules/goonchat/browserassets/html/browserOutput.html'), "window=browseroutput")
+		return
+	var/datum/asset/stuff = get_asset_datum(/datum/asset/group/goonchat/white)//They're a white theme user so change the CSS and winset them back to whitetheme.
+	stuff.send(owner)
+	owner.force_white_theme() //force update their window via winset autism
 	owner << browse(file('code/modules/goonchat/browserassets/html/browserOutput.html'), "window=browseroutput")
+
+
 
 /datum/asset/group/goonchat/white
 	children = list(
