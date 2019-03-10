@@ -117,7 +117,11 @@
 		to_chat(user, "The turbolift is already moving!")
 		return FALSE
 	send_sound_lift('DS13/sound/effects/turbolift/turbolift-close.ogg')
-	bolt_door()
+	if(!bolt_door())
+		to_chat(user, "<span_class='notice'> The door cannot close when someone is standing in it.</span>")
+		bolted = FALSE
+		in_use = FALSE
+		return
 	in_use = TRUE
 	to_chat(user, floor_directory)
 	icon_state = "lift-off"
@@ -171,24 +175,34 @@
 /obj/structure/turbolift/proc/bolt_other_doors()
 	for(var/obj/structure/turbolift/SS in destinations)
 		SS.in_use = TRUE
-		SS.bolt_door()
+		SS.bolt_door(TRUE)
 
 /obj/structure/turbolift/proc/unbolt_other_doors()
 	for(var/obj/structure/turbolift/SS in destinations)
 		SS.in_use = FALSE
 		SS.unbolt_door()
 
-/obj/structure/turbolift/proc/bolt_door()
+/obj/structure/turbolift/proc/bolt_door(var/forced = FALSE) //if we really need some people to get out the FUCKING WAY
 	if(bolted)
-		return
+		return FALSE
 	bolted = TRUE//Tones down the processing use
 	if(!in_use)
 		in_use = TRUE //so no one can ride the lift when it's locked
 	if(!linked_door)
 		find_door()
 	if(linked_door)
-		linked_door.close()
-		linked_door.bolt()
+		if(forced) //Forced means get out the FUCKING WAY.
+			for(var/atom/movable/M in get_turf(linked_door))
+				if(M.density && M != linked_door) //something is blocking the door
+					to_chat(M, "<span_class='warning'>You step away from [linked_door] to avoid getting crushed.</span>")
+					M.forceMove(get_step(M, NORTH)) //get them out of my way, REEE
+		if(linked_door.close())
+			linked_door.bolt()
+			return TRUE
+		else
+			bolted = FALSE
+			in_use = FALSE
+			return FALSE
 
 /obj/structure/turbolift/proc/unbolt_door()
 	if(!bolted)
@@ -366,4 +380,54 @@
 					shake_camera(M, 2,2)
 			AM.forceMove(safepick(target.turbolift_turfs)) //Avoids the teleportation effect of zooming to random tiles
 
+
+/obj/machinery/door/airlock/close(forced=0)
+	if(operating || welded || locked)
+		return
+	if(density)
+		return TRUE
+	if(!forced)
+		if(!hasPower() || wires.is_cut(WIRE_BOLTS))
+			return FALSE
+	if(safe)
+		for(var/atom/movable/M in get_turf(src))
+			if(M.density && M != src) //something is blocking the door
+				autoclose_in(60)
+				return FALSE //So elevator code can refuse to start the lift.
+
+	if(forced < 2)
+		if(obj_flags & EMAGGED)
+			return
+		use_power(50)
+		playsound(src, doorClose, 30, TRUE)
+	else
+		playsound(src, 'sound/machines/airlockforced.ogg', 30, TRUE)
+
+	var/obj/structure/window/killthis = (locate(/obj/structure/window) in get_turf(src))
+	if(killthis)
+		killthis.ex_act(EXPLODE_HEAVY)//Smashin windows
+
+	operating = TRUE
+	update_icon(2, 1)
+	layer = CLOSED_DOOR_LAYER
+	if(air_tight)
+		density = TRUE
+		air_update_turf(1)
+	sleep(1)
+	if(!air_tight)
+		density = TRUE
+		air_update_turf(1)
+	sleep(4)
+	if(!safe)
+		crush()
+	if(visible && !glass)
+		set_opacity(1)
+	update_freelook_sight()
+	sleep(1)
+	update_icon(1, 1)
+	operating = FALSE
+	delayed_close_requested = FALSE
+	if(safe)
+		CheckForMobs()
+	return TRUE
 //end//

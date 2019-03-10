@@ -38,8 +38,8 @@
 /mob/living/communicator/proc/update_hologram_to_outfit(datum/outfit/O)
 	if(!O)
 		return
-	var/mob/living/carbon/human/dummy/mannequin = new()
-	O.equip(mannequin, 1)
+	var/mob/living/carbon/human/dummy/mannequin = new(get_turf(pick(GLOB.prisonwarp)))
+	mannequin.equipOutfit(O)
 	CHECK_TICK
 	var/icon/mob_icon = icon('icons/effects/effects.dmi', "nothing")
 	CHECK_TICK
@@ -90,4 +90,4 @@
 		dresscode = custom_names[selected_name]
 		if(isnull(dresscode))
 			return
-	update_hologram_to_outfit(new dresscode)
+	update_hologram_to_outfit(dresscode)
