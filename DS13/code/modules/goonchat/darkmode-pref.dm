@@ -6,7 +6,7 @@
 	set desc = "Change your chat theme"
 	prefs.toggles ^= DARKMODE
 	prefs.save_preferences()
-	to_chat(usr, "Dark theme (YOU MUST RECONNECT TO SEE THIS CHANGE) [(usr.client.prefs.toggles & DARKMODE) ? "Enabled" : "Disabled"]")
+	to_chat(usr, "Dark theme (YOU MUST CLOSE THE GAME AND LOG BACK IN TO SEE THIS CHANGE) [(usr.client.prefs.toggles & DARKMODE) ? "Enabled" : "Disabled"]")
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Dark theme", "[prefs.toggles & DARKMODE ? "Enabled" : "Disabled"]"))
 
 /client/proc/force_white_theme() //There's no way round it. We're essentially changing the skin by hand. It's painful but it works, and is the way Lummox suggested.
@@ -42,7 +42,7 @@
 	winset(src, "statwindow", "background-color = #272727;background-color = none")
 	winset(src, "statwindow", "text-color = #eaeaea;text-color = #000000")
 	winset(src, "stat", "background-color = #2c2f33;background-color = #FFFFFF")
-	winset(src, "stat", "tab-background-color = #272727;tab-background-color = #FFFFFF")
+	winset(src, "stat", "tab-background-color = #272727;tab-background-color = none")
 	winset(src, "stat", "text-color = #99aab5;text-color = #000000")
 	winset(src, "stat", "tab-text-color = #99aab5;tab-text-color = #000000")
 	//Say, OOC, me Buttons etc.
