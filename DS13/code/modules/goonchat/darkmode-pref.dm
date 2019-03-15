@@ -6,8 +6,14 @@
 	set desc = "Change your chat theme"
 	prefs.toggles ^= DARKMODE
 	prefs.save_preferences()
-	to_chat(usr, "Dark theme (YOU MUST CLOSE THE GAME AND LOG BACK IN TO SEE THIS CHANGE) [(usr.client.prefs.toggles & DARKMODE) ? "Enabled" : "Disabled"]")
+	to_chat(usr, "Dark theme [(usr.client.prefs.toggles & DARKMODE) ? "Enabled" : "Disabled"]")
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Dark theme", "[prefs.toggles & DARKMODE ? "Enabled" : "Disabled"]"))
+	if(prefs.toggles & DARKMODE)
+		force_dark_theme() //Let's repaint some happy lil windows
+	else
+		force_white_theme()
+	to_chat(src, "<span class='danger'>Theme settings updated. Please rejoin to see this change! (Automatically logged out)</span>")
+	qdel(src)
 
 /client/proc/force_white_theme() //There's no way round it. We're essentially changing the skin by hand. It's painful but it works, and is the way Lummox suggested.
 	//Main windows
@@ -57,21 +63,67 @@
 	winset(src, "tooltip", "background-color = #272727;background-color = none")
 	winset(src, "tooltip", "text-color = #99aab5;text-color = #000000")
 
+/client/proc/force_dark_theme() //There's no way round it. We're essentially changing the skin by hand. It's painful but it works, and is the way Lummox suggested.
+	//Main windows
+	winset(src, "infowindow", "background-color = none;background-color = #2c2f33")
+	winset(src, "infowindow", "text-color = #000000;text-color = #99aab5")
+	winset(src, "info", "background-color = none;background-color = #272727")
+	winset(src, "info", "text-color = #000000;text-color = #99aab5")
+	winset(src, "browseroutput", "background-color = none;background-color = #272727")
+	winset(src, "browseroutput", "text-color = #000000;text-color = #99aab5")
+	winset(src, "outputwindow", "background-color = none;background-color = #272727")
+	winset(src, "outputwindow", "text-color = #000000;text-color = #99aab5")
+	winset(src, "mainwindow", "background-color = none;background-color = #2c2f33")
+	winset(src, "split", "background-color = none;background-color = #272727")
+	//Buttons
+	winset(src, "changelog", "background-color = none;background-color = #494949")
+	winset(src, "changelog", "text-color = #000000;text-color = #99aab5")
+	winset(src, "rules", "background-color = none;background-color = #494949")
+	winset(src, "rules", "text-color = #000000;text-color = #99aab5")
+	winset(src, "wiki", "background-color = none;background-color = #494949")
+	winset(src, "wiki", "text-color = #000000;text-color = #99aab5")
+	winset(src, "forum", "background-color = none;background-color = #494949")
+	winset(src, "forum", "text-color = #000000;text-color = #99aab5")
+	winset(src, "github", "background-color = none;background-color = #3a3a3a")
+	winset(src, "github", "text-color = #000000;text-color = #99aab5")
+	winset(src, "report-issue", "background-color = none;background-color = #492020")
+	winset(src, "report-issue", "text-color = #000000;text-color = #99aab5")
+	//Status and verb tabs
+	winset(src, "output", "background-color = none;background-color = #272727")
+	winset(src, "output", "text-color = #000000;text-color = #99aab5")
+	winset(src, "outputwindow", "background-color = none;background-color = #272727")
+	winset(src, "outputwindow", "text-color = #000000;text-color = #99aab5")
+	winset(src, "statwindow", "background-color = none;background-color = #272727")
+	winset(src, "statwindow", "text-color = #000000;text-color = #eaeaea")
+	winset(src, "stat", "background-color = #FFFFFF;background-color = #2c2f33")
+	winset(src, "stat", "tab-background-color = none;tab-background-color = #272727")
+	winset(src, "stat", "text-color = #000000;text-color = #99aab5")
+	winset(src, "stat", "tab-text-color = #000000;tab-text-color = #99aab5")
+	//Say, OOC, me Buttons etc.
+	winset(src, "saybutton", "background-color = none;background-color = #272727")
+	winset(src, "saybutton", "text-color = #000000;text-color = #99aab5")
+	winset(src, "oocbutton", "background-color = none;background-color = #272727")
+	winset(src, "oocbutton", "text-color = #000000;text-color = #99aab5")
+	winset(src, "mebutton", "background-color = none;background-color = #272727")
+	winset(src, "mebutton", "text-color = #000000;text-color = #99aab5")
+	winset(src, "asset_cache_browser", "background-color = none;background-color = #272727")
+	winset(src, "asset_cache_browser", "text-color = #000000;text-color = #99aab5")
+	winset(src, "tooltip", "background-color = none;background-color = #272727")
+	winset(src, "tooltip", "text-color = #000000;text-color = #99aab5")
+
 /datum/chatOutput/load()
 	set waitfor = FALSE
 	if(!owner)
 		return
+	var/datum/asset/group/stuff
 	if(owner.prefs.toggles & DARKMODE) //They want dark theme, so no need to change the CSS
-		var/datum/asset/stuff = get_asset_datum(/datum/asset/group/goonchat)
-		stuff.send(owner)
-		owner << browse(file('code/modules/goonchat/browserassets/html/browserOutput.html'), "window=browseroutput")
-		return
-	var/datum/asset/stuff = get_asset_datum(/datum/asset/group/goonchat/white)//They're a white theme user so change the CSS and winset them back to whitetheme.
+		owner.force_dark_theme() //Let's repaint some happy lil windows
+		stuff = get_asset_datum(/datum/asset/group/goonchat)
+	else
+		owner.force_white_theme() //Let's repaint some happy lil windows
+		stuff = get_asset_datum(/datum/asset/group/goonchat/white)
 	stuff.send(owner)
-	owner.force_white_theme() //force update their window via winset autism
 	owner << browse(file('code/modules/goonchat/browserassets/html/browserOutput.html'), "window=browseroutput")
-
-
 
 /datum/asset/group/goonchat/white
 	children = list(
