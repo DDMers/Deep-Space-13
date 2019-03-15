@@ -159,11 +159,67 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	MS.freighter = null
 	MS.linked_event = null
 
+/datum/overmap_event/comet //A harmless comet
+	name = "Comet flyby"
+	desc = "A harmless comet rich in minerals is entering your system."
+	fail_text = "The comet has been destroyed."
+	succeed_text = "Good work. That should allow for some nice upgrades."
+	reward = 5000
+
+/datum/overmap_event/comet/start() //Now we have a spawn. Let's do whatever this mission is supposed to. Override this when you make new missions
+	target = new /obj/structure/overmap/comet(get_turf(spawner))
+	priority_announce("Attention [station_name()], an extremely mineral rich comet is due to pass through your current system. We recommend directing your miners to begin drilling.","Incoming hail:",'sound/ai/commandreport.ogg')
+	elements += target
+
+/obj/structure/overmap/comet
+	name = "Ice comet"
+	icon = 'DS13/icons/obj/meteor_storm.dmi'
+	icon_state = "comet"
+	class = "comet"
+	max_shield_health = 0
+
+/obj/structure/overmap/comet/Initialize()
+	. = ..()
+	SpinAnimation(1000,1000)
+	shields.max_health = 0
+
+/area/ship/comet
+	name = "Comet"
+	class = "comet"
+	noteleport = FALSE
+
+/*
+
 /datum/overmap_event/defend_colony
 	name = "Colony Assimilation"
-	desc = "A mining colony faces assimilation! Help evacuate all their crew before they get assimilated!"
-	fail_text = "The freighter has been destroyed. All hands lost."
-	succeed_text = "Excellent work, the cruiser will now resume escort duty."
-	reward = 5000
-	var/obj/structure/overmap/meteor_storm/MS
-	var/stage = 1 // 1 / 3 attack stages.
+	desc = "A mining colony faces assimilation! Protect the colony until help can arrive!"
+	fail_text = "The colony has been assimilated...."
+	succeed_text = "Fantastic work, the remaining civilians were evacuated before the borg cube could arrive!"
+	reward = 15000
+	var/wave = 1 // 1 / 3 attack stages.
+
+/obj/structure/overmap/planet
+	name = "Endaru"
+	icon = 'DS13/icons/obj/meteor_storm.dmi'
+	icon_state = "comet"
+	class = "comet"
+	max_shield_health = 0
+
+
+/datum/overmap_event/defend_colony/start()
+	START_PROCESSING(SSobj,src)
+	var/I = rand(1,2)
+	target = new /obj/structure/overmap/planet(get_turf(spawner))
+	target.linked_event = src
+	priority_announce("DISTRESS CALL: The civilian colony of [target.name] just finished developing experimental farming techniques. We're detecting multiple borg signatures converging on the colony. Protect [target.name] while we raise a fleet to deal with the borg!","Incoming hail:",'sound/ai/commandreport.ogg')
+
+
+
+	for(var/num = 0 to I)
+		var/obj/structure/overmap/ai/warbird = new /obj/structure/overmap/ai(get_turf(pick(orange(spawner, 6))))
+		warbird.force_target = target //That freighter ain't no fortunate oneeeee n'aw lord IT AINT HEEEE IT AINT HEEEE
+		warbird.nav_target = target
+		warbird.target = target
+		warbird.linked_event = src
+		elements += warbird
+*/

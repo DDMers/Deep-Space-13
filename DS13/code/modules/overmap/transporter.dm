@@ -195,7 +195,7 @@
 	for(var/obj/structure/overmap/S in GLOB.overmap_ships)
 		if(get_dist(S, thearea.linked_overmap) > thearea.linked_overmap.transporter_range) //Is it in range for transport?
 			continue
-		if(S.shields.check_vulnerability() && S != src)
+		if(S.shields.check_vulnerability() && S != thearea.linked_overmap)
 			ships += S
 	if(!ships.len)
 		to_chat(user, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>there are no suitable ships nearby. Target shields must be weakened to initiate transport</span>")

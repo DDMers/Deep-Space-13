@@ -156,7 +156,7 @@ Dirs! (nicked from byond forum)
 		return FALSE //Above 70% health, so NOT vulnerable
 
 /datum/shield_controller/proc/generate_overlays()
-	if(!holder)
+	if(!holder || max_health <= 0)
 		return
 	holder.cut_overlays()
 	var/progress = 0 //How damaged is this shield? We examine the position of index "I" in the for loop to check which directional we want to check
@@ -194,7 +194,8 @@ Dirs! (nicked from byond forum)
 	//	if(progress >= test)
 		//	stored = progress //To apply the double shield visual FX for when you overcharge one specific shield.
 		progress = CLAMP(progress, 0, goal)
-		progress = round(((progress / goal) * 100), 20)//Round it down to 20%. We now change colours accordingly
+		if(progress > 0)
+			progress = round(((progress / goal) * 100), 20)//Round it down to 20%. We now change colours accordingly
 		var/image/shield = new
 		shield.icon = holder.icon
 		shield.icon_state = "[I]"

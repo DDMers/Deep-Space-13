@@ -4,8 +4,8 @@ SUBSYSTEM_DEF(overmap)
 	runlevels = RUNLEVEL_GAME
 	var/list/events = list() //All the docking event datums we have.
 	var/list/used = list() //events we've already used
-	var/frequency_lower = 1800	//3 minutes lower bound.
-	var/frequency_upper = 6000	//10 minutes upper bound. Basically an event will happen every 3 to 10 minutes.
+	var/frequency_lower = 6000	//10 minutes lower bound.
+	var/frequency_upper = 12000	//20 minutes upper bound. Basically an event will happen every 10 to 20 minutes.
 	var/scheduled = 0 //When are we scheduling a event for?
 
 /datum/controller/subsystem/overmap/Initialize(time, zlevel)
