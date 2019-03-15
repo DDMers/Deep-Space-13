@@ -6,7 +6,7 @@
 	set desc = "Change your chat theme"
 	prefs.toggles ^= DARKMODE
 	prefs.save_preferences()
-	to_chat(usr, "Dark theme (YOU MUST RECONNECT TO SEE THIS CHANGE) [(usr.client.prefs.toggles & DARKMODE) ? "Enabled" : "Disabled"]")
+	to_chat(usr, "Dark theme (YOU MUST CLOSE THE GAME AND LOG BACK IN TO SEE THIS CHANGE) [(usr.client.prefs.toggles & DARKMODE) ? "Enabled" : "Disabled"]")
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Dark theme", "[prefs.toggles & DARKMODE ? "Enabled" : "Disabled"]"))
 
 /client/proc/force_white_theme() //There's no way round it. We're essentially changing the skin by hand. It's painful but it works, and is the way Lummox suggested.
@@ -42,7 +42,7 @@
 	winset(src, "statwindow", "background-color = #272727;background-color = none")
 	winset(src, "statwindow", "text-color = #eaeaea;text-color = #000000")
 	winset(src, "stat", "background-color = #2c2f33;background-color = #FFFFFF")
-	winset(src, "stat", "tab-background-color = #272727;tab-background-color = #FFFFFF")
+	winset(src, "stat", "tab-background-color = #272727;tab-background-color = none")
 	winset(src, "stat", "text-color = #99aab5;text-color = #000000")
 	winset(src, "stat", "tab-text-color = #99aab5;tab-text-color = #000000")
 	//Say, OOC, me Buttons etc.
@@ -64,12 +64,14 @@
 	if(owner.prefs.toggles & DARKMODE) //They want dark theme, so no need to change the CSS
 		var/datum/asset/stuff = get_asset_datum(/datum/asset/group/goonchat)
 		stuff.send(owner)
-	else //They're a white theme user so change the CSS and winset them back to whitetheme.
-		var/datum/asset/stuff = get_asset_datum(/datum/asset/group/goonchat/white)
-		stuff.send(owner)
-		owner.force_white_theme() //force update their window via winset autism
-
+		owner << browse(file('code/modules/goonchat/browserassets/html/browserOutput.html'), "window=browseroutput")
+		return
+	var/datum/asset/stuff = get_asset_datum(/datum/asset/group/goonchat/white)//They're a white theme user so change the CSS and winset them back to whitetheme.
+	stuff.send(owner)
+	owner.force_white_theme() //force update their window via winset autism
 	owner << browse(file('code/modules/goonchat/browserassets/html/browserOutput.html'), "window=browseroutput")
+
+
 
 /datum/asset/group/goonchat/white
 	children = list(
