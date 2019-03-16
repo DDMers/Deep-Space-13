@@ -1,6 +1,9 @@
+#define READY 1
+#define REPLICATING 2
+
 /obj/machinery/replicator //Coded by "AbsurdlyLudicrous", tweaked to use voice + cleaned up by Kmc.
-	name = "replicator"
-	desc = "An advanced energy -> matter synthesizer which is charged by <i>biomatter</i> and power. Click it to see the menu and simply say what you want to it."
+	name = "Replicator"
+	desc = "An advanced energy to matter synthesizer which is charged by <i>biomatter</i> and power. Click it to see the menu and simply say what you want to it."
 	icon = 'DS13/icons/obj/replicator.dmi'
 	icon_state = "replicator"
 	use_power = IDLE_POWER_USE
@@ -17,7 +20,7 @@
 	var/list/menualtnames = list("nutrients", "donk pizza", "veggie pizza", "surprise me", "you choose", "something", "i dont care","slab of meat","nutritional supplement")
 	var/list/temps = list("cold", "warm", "hot", "extra hot")
 	var/activator = "computer"
-	var/menutype = "ready" //Tracks what stage the machine's at. If it's replicating the UI pops up with "please wait!"
+	var/menutype = READY //Tracks what stage the machine's at. If it's replicating the UI pops up with "please wait!"
 	var/fuel = 50 //Starts with a bit of fuel for lazy chefs.
 	var/capacity_multiplier = 1
 	var/failure_grade = 1
@@ -35,13 +38,13 @@
 	all_menus += menualtnames.Copy()
 
 /obj/machinery/replicator/ui_interact(mob/user) // The microwave Menu //I am reasonably certain that this is not a microwave
-	if(stat & (BROKEN|NOPOWER))
+	if(!is_operational())
 		return
 	if(panel_open)
 		return
 	. = ..()
 	var/dat
-	if(menutype == "replicate")
+	if(menutype == REPLICATING)
 		dat += "REPLICATING FOOD, PLEASE WAIT.<br>"
 	dat += "<br><h1>MENU:</h1> "
 	dat += "<br><b>This machine is voice activated. To order food, say <i>computer</i> and then the food item you want. (Eg. Computer, Tea earl grey. Hot)</b><br> <hr><h2>Nutritional supplements:</h2>"
@@ -68,14 +71,13 @@
 	popup.open()
 
 /obj/machinery/replicator/emag_act(mob/user)
-	if(emagged == FALSE)
+	if(!emagged)
 		to_chat(user, "<span class='warning'>You corrupt the chemical processors.</span>")
 		emagged = TRUE
 
 /obj/machinery/replicator/power_change()
 	if(powered())
 		stat &= ~NOPOWER
-		START_PROCESSING(SSmachines, src)
 	else
 		stat |= NOPOWER
 		idle_power_usage = 40
@@ -116,7 +118,7 @@
 		return
 	if(!findtext(raw_message, activator))
 		return FALSE //They have to say computer, like a discord bot prefix.
-	if(menutype == "ready")
+	if(menutype == READY)
 		if(findtext(raw_message, "?")) //Burger? no be SPECIFIC. REEE
 			return
 		var/target
@@ -130,7 +132,7 @@
 			if(findtext(raw_message, hotorcold))
 				temp = hotorcold //If they specifically request a temperature, we'll oblige. Else it doesn't rename.
 		if(target && powered())
-			menutype = "replicate"
+			menutype = REPLICATING
 			idle_power_usage = 400
 			icon_state = "replicator-on"
 			playsound(src, 'DS13/sound/effects/replicator.ogg', 100, 1)
@@ -143,7 +145,7 @@
 /obj/machinery/replicator/proc/set_ready()
 	icon_state = "replicator"
 	idle_power_usage = 40
-	menutype = "ready"
+	menutype = READY
 	ready = TRUE
 
 /obj/machinery/replicator/proc/grind(obj/item/reagent_containers/food/snacks/grown/G)
@@ -325,3 +327,6 @@
 		M.adjust_nutrition(-3)
 		M.overeatduration = 0
 	return ..()
+
+#undef READY
+#undef REPLICATING
