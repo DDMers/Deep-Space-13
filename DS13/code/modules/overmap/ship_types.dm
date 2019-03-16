@@ -146,9 +146,10 @@
 	name = "Dedication plaque"
 	desc = "A large, bronze plaque with a dedication: \n <b>USS Inquisitor. <b>Akira-class <> Starfleet registry: NCC-65326 <>\n  Launched stardate: NULL <> Utopia Planetia ShipYards <> United Federation Of Planets. \n</b>"
 	icon_state = "plaque"
-	supervisors = list("Declan Reade")
+	supervisors = list("Declan Reade, Caitlyn Sidower, Alden Stevens, Ana Anlyatov, Bernard Moon, Carlos Danger, CAsh King, Chance Batten, Crystal Endsley, Dell Milton, Digs La Forge, Douglas Stroble, Evan Hawkins, Fry Jeager, Ian Cooper, Jake Merovan, James Fenth, Josephi Krakowski, Kaleb Kent, Kaydence Mcloskey, Kenzie Burkett, Leale Gardner, Lias Greene, Ottavio Vaz, Randolph P. Checkers Esq, Remmington Snitchler,  Steve Cook, Zeke Houston, Artuhur McStarling, Andrew Walker, Sukul Ardren, Ivan Young")
 	engineers = list("Declan Reade, Art Cox")
 	inscription = "The supreme art of war is to subdue the enemy without fighting."
+
 
 /obj/structure/overmap/akira
 	name = "Akira class heavy cruiser"
