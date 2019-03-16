@@ -2744,6 +2744,7 @@
 #include "code\modules\VR\vr_sleeper.dm"
 #include "code\modules\zombie\items.dm"
 #include "code\modules\zombie\organs.dm"
+#include "DS13\code\__HELPERS\names.dm"
 #include "DS13\code\controllers\configuration\entries\game_options.dm"
 #include "DS13\code\game\areas.dm"
 #include "DS13\code\game\movietitles.dm"

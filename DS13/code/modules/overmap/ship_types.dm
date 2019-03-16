@@ -170,3 +170,7 @@
 /obj/structure/overmap/akira/starter
 	name = "USS Inquisitor"
 	main_overmap = TRUE
+
+/obj/structure/overmap/akira/starter/Initialize()
+	. = ..()
+	name = station_name()

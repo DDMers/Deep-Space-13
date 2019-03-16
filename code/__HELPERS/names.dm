@@ -83,7 +83,7 @@ GLOBAL_VAR(command_name)
 	else
 		world.name = GLOB.station_name
 
-
+/* DeepSpace 13 - Makes station names into ship names
 /proc/new_station_name()
 	var/random = rand(1,5)
 	var/name = ""
@@ -126,6 +126,7 @@ GLOBAL_VAR(command_name)
 		if(13)
 			new_station_name += pick("13","XIII","Thirteen")
 	return new_station_name
+*/
 
 /proc/syndicate_name()
 	var/name = ""
