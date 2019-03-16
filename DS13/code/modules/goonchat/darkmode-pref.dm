@@ -1,20 +1,5 @@
 //Lets you change your theme because some people are weird and like white theme//
 
-/client/verb/toggle_darkmode()
-	set name = "Toggle darkmode"
-	set category = "Preferences"
-	set desc = "Change your chat theme"
-	prefs.toggles ^= DARKMODE
-	prefs.save_preferences()
-	to_chat(usr, "Dark theme [(usr.client.prefs.toggles & DARKMODE) ? "Enabled" : "Disabled"]")
-	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Dark theme", "[prefs.toggles & DARKMODE ? "Enabled" : "Disabled"]"))
-	if(prefs.toggles & DARKMODE)
-		force_dark_theme() //Let's repaint some happy lil windows
-	else
-		force_white_theme()
-	to_chat(src, "<span class='danger'>Theme settings updated. Please rejoin to see this change! (Automatically logged out)</span>")
-	qdel(src)
-
 /client/proc/force_white_theme() //There's no way round it. We're essentially changing the skin by hand. It's painful but it works, and is the way Lummox suggested.
 	//Main windows
 	winset(src, "infowindow", "background-color = #2c2f33;background-color = none")
@@ -111,28 +96,22 @@
 	winset(src, "tooltip", "background-color = none;background-color = #272727")
 	winset(src, "tooltip", "text-color = #000000;text-color = #99aab5")
 
+
+/datum/chatOutput/proc/swaptolightmode()
+	owner.force_white_theme()
+
+/datum/chatOutput/proc/swaptodarkmode()
+	owner.force_dark_theme()
+
 /datum/chatOutput/load()
 	set waitfor = FALSE
 	if(!owner)
 		return
-	var/datum/asset/group/stuff
-	if(owner.prefs.toggles & DARKMODE) //They want dark theme, so no need to change the CSS
-		owner.force_dark_theme() //Let's repaint some happy lil windows
-		stuff = get_asset_datum(/datum/asset/group/goonchat)
-	else
-		owner.force_white_theme() //Let's repaint some happy lil windows
-		stuff = get_asset_datum(/datum/asset/group/goonchat/white)
+	var/datum/asset/group/stuff = get_asset_datum(/datum/asset/group/goonchat)
 	stuff.send(owner)
 	owner << browse(file('code/modules/goonchat/browserassets/html/browserOutput.html'), "window=browseroutput")
 
-/datum/asset/group/goonchat/white
-	children = list(
-		/datum/asset/simple/jquery,
-		/datum/asset/simple/goonchat/white,
-		/datum/asset/spritesheet/goonchat
-	)
-
-/datum/asset/simple/goonchat/white
+/datum/asset/simple/goonchat
 	verify = FALSE
 	assets = list(
 		"json2.min.js"             = 'code/modules/goonchat/browserassets/js/json2.min.js',
@@ -143,5 +122,6 @@
 		"fontawesome-webfont.ttf"  = 'tgui/assets/fonts/fontawesome-webfont.ttf',
 		"fontawesome-webfont.woff" = 'tgui/assets/fonts/fontawesome-webfont.woff',
 		"font-awesome.css"	       = 'code/modules/goonchat/browserassets/css/font-awesome.css',
-		"browserOutput.css"	       = 'code/modules/goonchat/browserassets/css/browserOutput_white.css',
+		"browserOutput.css"	       = 'code/modules/goonchat/browserassets/css/browserOutput.css',
+		"browserOutput_white.css"	       = 'code/modules/goonchat/browserassets/css/browserOutput_white.css',
 	)
