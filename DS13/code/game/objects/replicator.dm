@@ -16,12 +16,13 @@
 	var/list/all_menus = list() //All the menu items. Built on init(). We scan for menu items that've been ordered here.
 	var/list/menualtnames = list("nutrients", "donk pizza", "veggie pizza", "surprise me", "you choose", "something", "i dont care","slab of meat","nutritional supplement")
 	var/list/temps = list("cold", "warm", "hot", "extra hot")
+	var/activator = "computer"
 	var/menutype = "ready" //Tracks what stage the machine's at. If it's replicating the UI pops up with "please wait!"
 	var/fuel = 50 //Starts with a bit of fuel for lazy chefs.
-	var/bingrade = 1
-	var/lasergrade = 1
-	var/manipulatorgrade = 1
-	var/scannergrade = 1
+	var/capacity_multiplier = 1
+	var/failure_grade = 1
+	var/speed_grade = 1
+	var/menu_grade = 1
 	var/emagged = FALSE
 	var/ready = TRUE //Are we ready to make some food?
 
@@ -43,19 +44,19 @@
 	if(menutype == "replicate")
 		dat += "REPLICATING FOOD, PLEASE WAIT.<br>"
 	dat += "<br><h1>MENU:</h1> "
-	dat += "<br><b>This machine is voice activated. Please speak clearly and without hesitation.</b><br> <hr><h2>Nutritional supplements:</h2>"
+	dat += "<br><b>This machine is voice activated. To order food, say <i>computer</i> and then the food item you want. (Eg. Computer, Tea earl grey. Hot)</b><br> <hr><h2>Nutritional supplements:</h2>"
 
 	for(var/foodname in menutier1)
 		dat += "<br>[foodname]"
-	if(scannergrade >= 2)
+	if(menu_grade >= 2)
 		dat += "<h2>Basic dishes:</h2><br>"
 		for(var/foodname in menutier2)
 			dat += "<br>[foodname] "
-	if(scannergrade >= 3)
+	if(menu_grade >= 3)
 		dat += "<h2>Complex dishes:</h2><br>"
 		for(var/foodname in menutier3)
 			dat += "<br>[foodname] "
-	if(scannergrade >= 4)
+	if(menu_grade >= 4)
 		dat += "<h2>Ingredients:</h2><br>"
 		for(var/foodname in menutier4)
 			dat += "<br>[foodname] "
@@ -90,17 +91,17 @@
 
 /obj/machinery/replicator/RefreshParts()
 	for(var/obj/item/stock_parts/matter_bin/B in component_parts)
-		bingrade = B.rating
+		capacity_multiplier = B.rating
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
-		manipulatorgrade = M.rating
+		speed_grade = M.rating
 	for(var/obj/item/stock_parts/scanning_module/S in component_parts)
-		scannergrade = S.rating
+		menu_grade = S.rating
 	for(var/obj/item/stock_parts/micro_laser/L in component_parts)
-		lasergrade = L.rating
+		failure_grade = L.rating
 
 /obj/machinery/replicator/examine(mob/user)
 	. = ..()
-	to_chat(user, "<span class='notice'>fuel reserves: <b>[fuel]/[bingrade*600]</b>. Click it with any biomatter to recharge [src].</span>")
+	to_chat(user, "<span class='notice'>fuel reserves: <b>[fuel]/[capacity_multiplier*600]</b>. Click it with any biomatter to recharge [src].</span>")
 	ui_interact(user)
 
 /obj/machinery/replicator/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode)
@@ -113,6 +114,8 @@
 /obj/machinery/replicator/proc/check_activation(atom/movable/speaker, raw_message)
 	if(!powered() || !ready || panel_open)//Shut down.
 		return
+	if(!findtext(raw_message, activator))
+		return FALSE //They have to say computer, like a discord bot prefix.
 	if(menutype == "ready")
 		if(findtext(raw_message, "?")) //Burger? no be SPECIFIC. REEE
 			return
@@ -131,9 +134,11 @@
 			idle_power_usage = 400
 			icon_state = "replicator-on"
 			playsound(src, 'DS13/sound/effects/replicator.ogg', 100, 1)
-			replicate(target, temp, speaker)
 			ready = FALSE
-			addtimer(CALLBACK(src, .proc/set_ready, TRUE), 50)
+			var/speed_mult = 60 //Starts off hella slow.
+			speed_mult -= (speed_grade*10) //Upgrade with manipulators to make this faster!
+			addtimer(CALLBACK(src, .proc/replicate, target,temp,speaker), speed_mult)
+			addtimer(CALLBACK(src, .proc/set_ready, TRUE), speed_mult)
 
 /obj/machinery/replicator/proc/set_ready()
 	icon_state = "replicator"
@@ -144,8 +149,8 @@
 /obj/machinery/replicator/proc/grind(obj/item/reagent_containers/food/snacks/grown/G)
 	var/nutrimentgain = G.reagents.get_reagent_amount("nutriment")
 	fuel += nutrimentgain
-	if(fuel >= bingrade*600)
-		fuel = bingrade*600
+	if(fuel >= capacity_multiplier*600)
+		fuel = capacity_multiplier*600
 	qdel(G)
 
 /obj/machinery/replicator/attackby(obj/item/O, mob/user, params)
@@ -159,14 +164,14 @@
 		playsound(src, 'DS13/sound/effects/replicator-vaporize.ogg', 100, 1)
 		qdel(O)
 		return FALSE
-	if(fuel < bingrade*600)
+	if(fuel < capacity_multiplier*600)
 		if(istype(O, /obj/item/reagent_containers/food/snacks/grown))
 			grind(O)
 			success = TRUE
 		else if(istype(O, /obj/item/storage/bag/plants))
 			var/obj/item/storage/bag/plants/P = O
 			for(var/obj/item/reagent_containers/food/snacks/grown/G in P.contents)
-				if(fuel < bingrade*600)
+				if(fuel < capacity_multiplier*600)
 					grind(G)
 				success = TRUE
 	else
@@ -214,7 +219,7 @@
 				return
 			else
 				food = new /obj/item/reagent_containers/food/snacks/soup/mystery(get_turf(src))
-	if(scannergrade >= 2) //SCANNER GRADE 2 (or above)!
+	if(menu_grade >= 2) //SCANNER GRADE 2 (or above)!
 		switch(what)
 			if("burger")
 				food = new /obj/item/reagent_containers/food/snacks/burger/plain(get_turf(src))
@@ -242,7 +247,7 @@
 					var/coffee = food.reagents.get_reagent_amount("coffee")
 					food.reagents.add_reagent("ethanol", coffee)
 					food.reagents.remove_reagent("coffee",coffee)
-	if(scannergrade >= 3) //SCANNER GRADE 3 (or above)!
+	if(menu_grade >= 3) //SCANNER GRADE 3 (or above)!
 		switch(what)
 			if("cheese pizza")
 				food = new /obj/item/reagent_containers/food/snacks/pizzaslice/margherita(get_turf(src))
@@ -256,7 +261,7 @@
 				food = new /obj/item/reagent_containers/food/snacks/pizzaslice/pineapple(get_turf(src))
 			if("donk pizza","donkpocket pizza")
 				food = new /obj/item/reagent_containers/food/snacks/pizzaslice/donkpocket(get_turf(src))
-	if(scannergrade >= 4)
+	if(menu_grade >= 4)
 		switch(what)
 			if("cake batter")
 				food = new /obj/item/reagent_containers/food/snacks/cakebatter(get_turf(src))
@@ -279,7 +284,7 @@
 		var/nutriment = food.reagents.get_reagent_amount("nutriment")
 		if(fuel >= nutriment && fuel >= 5)
 			//time to check laser power.
-			if(prob(6-lasergrade)) //Chance to make a burned mess so the chef is still useful.
+			if(prob(6-failure_grade)) //Chance to make a burned mess so the chef is still useful.
 				var/obj/item/reagent_containers/food/snacks/badrecipe/neelixcooking = new /obj/item/reagent_containers/food/snacks/badrecipe(get_turf(src))
 				neelixcooking.name = "replicator mess"
 				neelixcooking.desc = "perhaps you should invest in some higher quality parts."
