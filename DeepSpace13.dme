@@ -2750,6 +2750,7 @@
 #include "DS13\code\game\movietitles.dm"
 #include "DS13\code\game\machinery\hologram.dm"
 #include "DS13\code\game\machinery\machine_changes.dm"
+#include "DS13\code\game\machinery\camera\camera.dm"
 #include "DS13\code\game\objects\catwalk.dm"
 #include "DS13\code\game\objects\item_changes.dm"
 #include "DS13\code\game\objects\multi-deck-relay.dm"

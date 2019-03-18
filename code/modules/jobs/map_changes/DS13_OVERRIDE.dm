@@ -5,6 +5,10 @@
 //Command
 //-------
 
+/datum/job/ai/New()
+	..()
+	title = "Ship computer"
+
 /datum/job/captain/New()
 	..()
 	outfit = /datum/outfit/job/captain/DS13

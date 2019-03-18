@@ -184,6 +184,18 @@
 	desc = "You've broken your little spaceships captain Ahab."
 	icon_state = "trophies"
 
+/obj/structure/trek_decor/ai_wall
+	name = "Optronic data core"
+	desc = "A huge databank which is part of the ship's computer"
+	icon_state = "aibits"
+
+/obj/structure/trek_decor/ai_wall/grille
+	icon_state = "aibits-grille"
+
+/obj/structure/trek_decor/ai_wall/optronic
+	name = "Optronic data relay"
+	icon_state = "ai_panel"
+
 /obj/structure/table/trek
 	name = "Epic sci fi space table"
 	desc = "In the 24th century, people still need tables."

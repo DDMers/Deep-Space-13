@@ -184,6 +184,37 @@
 	var/mob/living/silicon/ai/AI = usr
 	AI.drop_new_multicam()
 
+/obj/screen/ai/zup
+	name = "Move up a deck"
+	icon_state = "zup"
+
+/obj/screen/ai/zup/Click()
+	if(..())
+		return
+	var/mob/living/silicon/ai/AI = usr
+	if(AI.eyeobj)
+		var/turf/T = SSmapping.get_turf_above(get_turf(AI.eyeobj))
+		var/area/X = get_area(T) //Check theyre ON THE STATION and not trying to move down into the overmap
+		if(T && !istype(X, /area/space) && !istype(T, /turf/open/space/basic))
+			AI.eyeobj.forceMove(T)
+		else
+			to_chat(AI, "<span_class='warning'>You cannot move here</span>")
+
+/obj/screen/ai/zdown
+	name = "Move down a deck"
+	icon_state = "zdown"
+
+/obj/screen/ai/zdown/Click()
+	if(..())
+		return
+	var/mob/living/silicon/ai/AI = usr
+	if(AI.eyeobj)
+		var/turf/T = SSmapping.get_turf_below(get_turf(AI.eyeobj))
+		var/area/X = get_area(T) //Check theyre ON THE STATION and not trying to move down into the overmap
+		if(T && !istype(X, /area/space) && !istype(T, /turf/open/space/basic))
+			AI.eyeobj.forceMove(T)
+		else
+			to_chat(AI, "<span_class='warning'>You cannot move here</span>")
 
 /datum/hud/ai
 	ui_style = 'icons/mob/screen_ai.dmi'
@@ -280,4 +311,14 @@
 //Add multicamera camera
 	using = new /obj/screen/ai/add_multicam()
 	using.screen_loc = ui_ai_add_multicam
+	static_inventory += using
+
+//Add Z up action
+	using = new /obj/screen/ai/zup()
+	using.screen_loc = ui_ai_zup
+	static_inventory += using
+
+//Add Z down action
+	using = new /obj/screen/ai/zdown()
+	using.screen_loc = ui_ai_zdown
 	static_inventory += using
