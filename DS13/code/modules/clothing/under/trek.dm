@@ -28,6 +28,15 @@
 	item_color = "trekjacket"
 	item_state = "trekjacket"
 
+/obj/item/clothing/under/trek/neelix
+	name = "Civilian clothes"
+	desc = "An odd assortment of colours fashioned together into something only a morale officer would wear."
+	icon = 'DS13/icons/obj/clothing/uniforms.dmi' //Modularity, nich would be proud
+	alternate_worn_icon = 'DS13/icons/mob/uniform.dmi'
+	icon_state = "neelix"
+	item_color = "neelix"
+	item_state = "bl_suit"
+
 /obj/item/clothing/under/trek/klingon
 	name = "Klingon battle uniform"
 	desc = "A heavily armour plated uniform worn by the finest Quon'os has to offer. Qap'la!"
