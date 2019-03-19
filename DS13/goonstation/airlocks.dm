@@ -19,7 +19,7 @@
 	req_one_access = list(ACCESS_SEC_DOORS)
 
 /obj/machinery/door/airlock/trek/goon/engi
-	name = "Engineering"
+	name = "Main Engineering"
 	icon = 'DS13/goonstation/engineering_airlock.dmi'
 	desc = "A sleek airlock for walking through. This one looks extra secure"
 	icon_state = "closed"

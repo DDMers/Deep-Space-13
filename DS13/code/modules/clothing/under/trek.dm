@@ -37,6 +37,15 @@
 	item_color = "neelix"
 	item_state = "bl_suit"
 
+/obj/item/clothing/under/trek/cadet
+	name = "Cadet jumpsuit"
+	desc = "A comfortable and practical jumpsuit worn by starfleet officer candidates undergoing training."
+	icon = 'DS13/icons/obj/clothing/uniforms.dmi' //Modularity, nich would be proud
+	alternate_worn_icon = 'DS13/icons/mob/uniform.dmi'
+	icon_state = "cadet"
+	item_color = "cadet"
+	item_state = "bl_suit"
+
 /obj/item/clothing/under/trek/klingon
 	name = "Klingon battle uniform"
 	desc = "A heavily armour plated uniform worn by the finest Quon'os has to offer. Qap'la!"
