@@ -568,12 +568,11 @@
 /turf/open/floor/plating,
 /area/engine/atmos)
 "cd" = (
+/obj/machinery/atmospherics/pipe/simple/yellow/visible{
+	dir = 6
+	},
 /obj/effect/turf_decal/bot{
 	dir = 2
-	},
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 1;
-	name = "Pure to Mix"
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
@@ -584,7 +583,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/yellow/visible,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /turf/open/floor/plating,
 /area/engine/atmos)
 "cf" = (
@@ -981,16 +980,19 @@
 /turf/open/floor/plating,
 /area/engine/atmos)
 "dd" = (
-/obj/machinery/atmospherics/pipe/simple/yellow/visible{
-	dir = 6
+/obj/effect/turf_decal/bot{
+	dir = 2
+	},
+/obj/machinery/computer/atmos_control/tank/oxygen_tank{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
 "de" = (
-/obj/machinery/atmospherics/pipe/manifold/yellow/visible{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/closed/wall/trek_smooth/room,
 /area/engine/atmos)
 "df" = (
 /obj/machinery/atmospherics/pipe/manifold/yellow/visible,
@@ -1010,6 +1012,7 @@
 /area/engine/atmos)
 "di" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
+/obj/machinery/meter,
 /turf/open/floor/plating,
 /area/engine/atmos)
 "dj" = (
@@ -1101,8 +1104,9 @@
 /turf/open/floor/plating,
 /area/engine/atmos)
 "dy" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
@@ -1149,11 +1153,9 @@
 /turf/open/floor/plating,
 /area/engine/atmos)
 "dE" = (
-/obj/machinery/computer/atmos_control/tank/oxygen_tank{
-	dir = 1
-	},
-/obj/effect/turf_decal/bot{
-	dir = 2
+/obj/machinery/atmospherics/components/binary/pump/on{
+	dir = 4;
+	name = "External to Filter"
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
@@ -1223,8 +1225,8 @@
 /turf/open/floor/carpet/trek,
 /area/turbolift/secondary)
 "dQ" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible,
-/obj/machinery/atmospherics/pipe/simple/yellow/visible{
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -1395,9 +1397,8 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/aft)
 "er" = (
-/obj/machinery/atmospherics/pipe/simple/yellow/visible{
-	dir = 9
-	},
+/obj/machinery/atmospherics/pipe/simple/yellow/visible,
+/obj/machinery/meter,
 /turf/open/floor/plating,
 /area/engine/atmos)
 "es" = (
@@ -9368,10 +9369,9 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/aft)
 "yO" = (
-/obj/machinery/atmospherics/pipe/simple/yellow/visible{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/green/visible,
 /turf/open/floor/plating,
 /area/engine/atmos)
 "yP" = (
@@ -9386,15 +9386,19 @@
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "yR" = (
+/obj/machinery/atmospherics/pipe/simple/yellow/visible{
+	dir = 6
+	},
 /obj/machinery/atmospherics/pipe/simple/green/visible{
-	dir = 5
+	dir = 9
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
 "yS" = (
-/obj/machinery/atmospherics/pipe/simple/green/visible{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	icon_state = "pipe11-2";
-	dir = 10
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
@@ -9430,8 +9434,9 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
 "yX" = (
-/obj/machinery/atmospherics/pipe/simple/green/visible{
-	dir = 6
+/obj/machinery/atmospherics/components/trinary/filter/atmos/o2{
+	icon_state = "filter_on";
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
@@ -9443,30 +9448,29 @@
 /turf/open/floor/engine/co2,
 /area/engine/atmos)
 "yZ" = (
-/obj/machinery/atmospherics/pipe/simple/yellow/visible,
-/obj/machinery/atmospherics/pipe/simple/green/visible{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
 "za" = (
-/obj/machinery/atmospherics/pipe/simple/green/visible{
-	dir = 9
+/obj/machinery/atmospherics/pipe/simple/green/visible,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zb" = (
-/obj/machinery/atmospherics/components/trinary/filter/atmos/n2{
-	icon_state = "filter_on";
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 10
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zc" = (
-/obj/machinery/atmospherics/components/trinary/filter/atmos/plasma{
-	icon_state = "filter_on";
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden,
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zd" = (
@@ -9581,20 +9585,23 @@
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zr" = (
-/obj/machinery/atmospherics/pipe/simple/green/visible{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/yellow/visible,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zs" = (
-/obj/machinery/atmospherics/pipe/manifold/green/visible{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 9
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zt" = (
-/obj/machinery/atmospherics/pipe/manifold/green/visible{
-	dir = 4
+/obj/machinery/atmospherics/components/binary/pump/on{
+	name = "mix to waste"
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
@@ -9606,8 +9613,7 @@
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zv" = (
-/obj/machinery/atmospherics/pipe/simple/green/visible,
-/obj/machinery/atmospherics/pipe/simple/yellow/visible{
+/obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -9624,8 +9630,8 @@
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zy" = (
-/obj/machinery/atmospherics/pipe/simple/yellow/visible,
-/obj/machinery/atmospherics/pipe/simple/yellow/visible{
+/obj/machinery/atmospherics/components/trinary/filter/atmos/n2{
+	icon_state = "filter_on";
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -9641,6 +9647,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
+/obj/machinery/meter/atmos/distro_loop,
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zB" = (
@@ -9675,7 +9682,7 @@
 "zG" = (
 /obj/structure/window/reinforced/fulltile/trek/viewport,
 /obj/structure/grille,
-/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zH" = (
@@ -9703,19 +9710,15 @@
 /turf/closed/wall/trek_smooth/room,
 /area/engine/atmos)
 "zK" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/visible,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zL" = (
-/obj/machinery/atmospherics/pipe/manifold/cyan/visible,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zM" = (
 /obj/structure/fireaxecabinet,
-/obj/machinery/atmospherics/pipe/simple/orange/hidden{
-	icon_state = "pipe11-2";
-	dir = 4
-	},
 /turf/closed/wall/trek_smooth/room,
 /area/engine/atmos)
 "zN" = (
@@ -9752,28 +9755,30 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/aft)
 "zR" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/obj/machinery/portable_atmospherics/scrubber,
-/turf/open/floor/plating,
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	icon_state = "pipe11-2";
+	dir = 10
+	},
+/turf/closed/wall/trek_smooth/room,
 /area/engine/atmos)
 "zS" = (
-/obj/machinery/atmospherics/components/trinary/filter/atmos/o2{
-	icon_state = "filter_on";
-	dir = 8
-	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/machinery/meter,
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zT" = (
-/obj/machinery/atmospherics/pipe/simple/yellow/visible{
-	dir = 6
+/obj/machinery/atmospherics/pipe/manifold/green/visible{
+	dir = 4
 	},
 /obj/machinery/computer/atmos_control/tank/mix_tank,
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zU" = (
-/obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/trek/viewport,
-/obj/machinery/atmospherics/pipe/simple/yellow/visible,
+/obj/structure/grille,
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 6
+	},
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zV" = (
@@ -9907,23 +9912,6 @@
 /obj/machinery/airalarm,
 /turf/closed/wall/trek_smooth/corridor,
 /area/ship/engineering/akira)
-"Ao" = (
-/obj/machinery/atmospherics/pipe/simple/green/visible,
-/obj/machinery/airalarm{
-	dir = 4;
-	pixel_x = -23
-	},
-/turf/open/floor/plating,
-/area/engine/atmos)
-"Ap" = (
-/obj/machinery/atmospherics/pipe/simple/green/visible{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 9
-	},
-/turf/open/floor/plating,
-/area/engine/atmos)
 "Aq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -9932,23 +9920,13 @@
 /turf/closed/wall/trek_smooth/room,
 /area/engine/atmos)
 "Ar" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
 	dir = 4
 	},
-/turf/closed/wall/trek_smooth/room,
-/area/engine/atmos)
-"As" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 4
-	},
+/obj/structure/window/reinforced/fulltile/trek/viewport,
+/obj/structure/grille,
 /turf/open/floor/plating,
-/area/engine/atmos)
-"At" = (
-/obj/machinery/atmospherics/components/binary/pump/on{
-	dir = 4;
-	name = "External to Filter"
-	},
-/turf/closed/wall/trek_smooth/room,
 /area/engine/atmos)
 "Au" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
@@ -11600,6 +11578,86 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
+"Eq" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/engine/atmos)
+"Er" = (
+/obj/machinery/atmospherics/components/trinary/filter/atmos/plasma{
+	icon_state = "filter_on";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/engine/atmos)
+"Es" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/yellow/visible,
+/turf/open/floor/plating,
+/area/engine/atmos)
+"Et" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/engine/atmos)
+"Eu" = (
+/obj/machinery/atmospherics/pipe/simple/green/visible,
+/obj/machinery/atmospherics/pipe/simple/yellow/visible{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/engine/atmos)
+"Ev" = (
+/obj/machinery/atmospherics/pipe/manifold/yellow/visible{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/engine/atmos)
+"Ew" = (
+/obj/effect/turf_decal/bot{
+	dir = 2
+	},
+/turf/open/floor/plating,
+/area/engine/atmos)
+"Ex" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 1;
+	name = "Pure to Mix"
+	},
+/turf/open/floor/plating,
+/area/engine/atmos)
+"Ey" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/trek/viewport,
+/obj/machinery/atmospherics/pipe/simple/yellow/visible,
+/obj/machinery/atmospherics/pipe/simple/green/visible{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/engine/atmos)
+"Ez" = (
+/obj/machinery/atmospherics/pipe/simple/green/hidden,
+/turf/closed/wall/trek_smooth/room,
+/area/engine/atmos)
+"EA" = (
+/obj/machinery/atmospherics/pipe/simple/green/hidden{
+	icon_state = "pipe11-2";
+	dir = 9
+	},
+/turf/closed/wall/trek_smooth/room,
+/area/engine/atmos)
+"EB" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/window/reinforced/fulltile/trek/viewport,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/engine/atmos)
 
 (1,1,1) = {"
 aa
@@ -43324,10 +43382,10 @@ zX
 aN
 be
 be
-zM
+Ar
 zB
 zx
-Ar
+EB
 be
 be
 aN
@@ -43841,7 +43899,7 @@ zH
 zO
 zz
 zx
-At
+de
 aN
 aN
 aN
@@ -44094,12 +44152,12 @@ bZ
 zV
 bH
 bY
-dg
+dQ
 dD
 zA
-Ap
-As
-Ao
+zL
+dE
+yO
 dw
 eb
 yY
@@ -44351,12 +44409,12 @@ bZ
 zw
 zG
 zI
-dQ
+yS
 zK
 zL
+Eq
 zq
-dd
-da
+yR
 dx
 bL
 ec
@@ -44607,14 +44665,14 @@ aN
 bZ
 bZ
 bH
+Ew
+dQ
 dD
+zx
+dD
+zv
 dg
-dD
-dg
-zr
-dg
-dD
-dD
+Ew
 dR
 zY
 zY
@@ -44864,14 +44922,14 @@ aN
 aN
 aN
 bI
-zR
-dg
+cc
+dQ
 dD
 zu
-zr
+dD
+zv
 dg
 dD
-dy
 aN
 aN
 aN
@@ -45122,12 +45180,12 @@ aO
 bs
 bJ
 cb
-dh
+zb
 dc
-df
-zs
-yO
-di
+zc
+dD
+zy
+Eu
 dz
 eb
 ed
@@ -45380,11 +45438,11 @@ bt
 bt
 cb
 dD
+bG
+zc
 dD
-dg
-zb
-de
-da
+zv
+Ev
 dA
 bL
 ee
@@ -45638,10 +45696,10 @@ bt
 cb
 dD
 bG
-df
-zr
-dg
+zc
 dD
+zv
+dg
 dB
 aN
 aN
@@ -45888,17 +45946,17 @@ aa
 ag
 al
 ao
-aN
+zM
 bd
 bt
 bt
 cb
 dD
+bG
+zc
 dD
-dg
-zs
-yO
-di
+Er
+Eu
 dC
 eb
 ef
@@ -46152,10 +46210,10 @@ bK
 cb
 dD
 dD
-dg
-zc
-de
-da
+dy
+dD
+zv
+Ev
 dx
 bL
 eg
@@ -46408,11 +46466,11 @@ aN
 aN
 cc
 dD
-yX
+dD
+dy
+dD
 zv
-zt
-yO
-yR
+dg
 dD
 aN
 aN
@@ -46663,14 +46721,14 @@ aN
 bM
 ca
 bL
-zT
 cd
-yZ
-zy
+Ex
+er
+zr
 da
+Es
 df
-zS
-dE
+Ew
 bH
 zC
 zW
@@ -46920,15 +46978,15 @@ aN
 bM
 bv
 Am
-zt
+zT
 eu
-za
-dg
-dD
-dg
-yS
 di
-eb
+za
+yX
+Et
+dg
+dd
+zU
 eh
 db
 aN
@@ -47178,14 +47236,14 @@ bM
 bw
 et
 ce
-da
-da
-er
+zt
+zS
+zs
+yZ
 dD
 dh
-da
 dF
-zU
+Ey
 ei
 zC
 aN
@@ -47430,22 +47488,22 @@ aa
 ag
 al
 ao
-eo
-eo
-eo
-eo
-eo
-eo
-eo
-eo
-eo
-eo
-eo
-eo
-eo
-eo
-eo
-eo
+aN
+aN
+aN
+aN
+aN
+aN
+aN
+aN
+zR
+Ez
+Ez
+Ez
+EA
+aN
+aN
+aN
 ao
 ao
 eF

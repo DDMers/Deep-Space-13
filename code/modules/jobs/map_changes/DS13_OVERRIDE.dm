@@ -5,12 +5,10 @@
 //Command
 //-------
 
-/datum/job/ai/New()
-	..()
+/datum/job/ai
 	title = "Ship computer"
 
-/datum/job/captain/New()
-	..()
+/datum/job/captain
 	outfit = /datum/outfit/job/captain/DS13
 
 /datum/outfit/job/captain/DS13
@@ -24,8 +22,7 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	head = null
 
-/datum/job/hop/New()
-	..()
+/datum/job/hop
 	outfit = /datum/outfit/job/hop/DS13
 	title = "First Officer"
 
@@ -45,8 +42,7 @@
 
 //Security
 
-/datum/job/hos/New()
-	..()
+/datum/job/hos
 	outfit = /datum/outfit/job/hos/DS13
 	title = "Security Chief"
 
@@ -60,8 +56,7 @@
 	head = /obj/item/clothing/head/beret/sec/navyofficer
 	belt = /obj/item/gun/energy/phaser
 
-/datum/job/warden/New()
-	..()
+/datum/job/warden
 	outfit = /datum/outfit/job/warden/DS13
 
 /datum/outfit/job/warden/DS13
@@ -72,8 +67,7 @@
 	l_pocket = /obj/item/pda
 	belt = /obj/item/gun/energy/phaser
 
-/datum/job/officer/New()
-	..()
+/datum/job/officer
 	outfit = /datum/outfit/job/officer/DS13
 
 /datum/outfit/job/officer/DS13
@@ -88,8 +82,7 @@
 
 //Engineering
 
-/datum/job/chief_engineer/New()
-	..()
+/datum/job/chief_engineer
 	outfit = /datum/outfit/job/ce/DS13
 
 /datum/outfit/job/ce/DS13
@@ -100,10 +93,8 @@
 	l_pocket = /obj/item/pda
 
 
-/datum/job/engineer/New()
-	..()
+/datum/job/engineer
 	outfit = /datum/outfit/job/engineer/DS13
-	minimal_access += ACCESS_ATMOSPHERICS
 
 
 /datum/outfit/job/engineer/DS13
@@ -113,11 +104,8 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 
-/datum/job/qm/New()
-	..()
+/datum/job/qm
 	outfit = /datum/outfit/job/qm/DS13
-	minimal_access += ACCESS_ATMOSPHERICS
-
 
 /datum/outfit/job/qm/DS13
 	name = "Trek-Quartermaster"
@@ -126,10 +114,8 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 
-/datum/job/cargo_tech/New()
-	..()
+/datum/job/cargo_tech
 	outfit = /datum/outfit/job/cargo_tech/DS13
-	minimal_access += ACCESS_ATMOSPHERICS
 
 
 /datum/outfit/job/cargo_tech/DS13
@@ -146,8 +132,7 @@
 
 //Medbay
 
-/datum/job/cmo/New()
-	..()
+/datum/job/cmo
 	outfit = /datum/outfit/job/cmo/DS13
 
 /datum/outfit/job/cmo/DS13
@@ -158,8 +143,7 @@
 	l_pocket = /obj/item/pda
 
 
-/datum/job/doctor/New()
-	..()
+/datum/job/doctor
 	outfit = /datum/outfit/job/doctor/DS13
 
 /datum/outfit/job/doctor/DS13
@@ -169,8 +153,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 
-/datum/job/chemist/New()
-	..()
+/datum/job/chemist
 	outfit = /datum/outfit/job/chemist/DS13
 
 /datum/outfit/job/chemist/DS13
@@ -181,8 +164,7 @@
 	l_pocket = /obj/item/pda
 
 
-/datum/job/geneticist/New()
-	..()
+/datum/job/geneticist
 	outfit = /datum/outfit/job/geneticist/DS13
 
 /datum/outfit/job/geneticist/DS13
@@ -192,8 +174,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 
-/datum/job/virologist/New()
-	..()
+/datum/job/virologist
 	outfit = /datum/outfit/job/virologist/DS13
 
 /datum/outfit/job/virologist/DS13
@@ -205,8 +186,7 @@
 
 //Research
 
-/datum/job/rd/New()
-	..()
+/datum/job/rd
 	outfit = /datum/outfit/job/rd/DS13
 	title = "Chief Science Officer"
 
@@ -217,11 +197,8 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 
-/datum/job/scientist/New()
-	..()
+/datum/job/scientist
 	outfit = /datum/outfit/job/scientist/DS13
-	access += ACCESS_MORGUE
-	minimal_access += list(ACCESS_ROBOTICS, ACCESS_TECH_STORAGE)
 	title = "Science Officer"
 
 /datum/outfit/job/scientist/DS13
@@ -233,8 +210,7 @@
 
 //Civilian
 
-/datum/job/assistant/New()
-	..()
+/datum/job/assistant
 	outfit = /datum/outfit/job/assistant/DS13
 	title = "Ensign"
 
@@ -249,8 +225,7 @@
 	..()
 	uniform = /obj/item/clothing/under/trek/engsec/ds9
 
-/datum/job/chaplain/New()
-	..()
+/datum/job/chaplain
 	title = "Counselor"
 	outfit = /datum/outfit/job/chaplain/DS13
 
@@ -261,8 +236,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 
-/datum/job/janitor/New()
-	..()
+/datum/job/janitor
 	outfit = /datum/outfit/job/janitor/DS13
 
 /datum/outfit/job/janitor/DS13
@@ -272,8 +246,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 
-/datum/job/hydro/New()
-	..()
+/datum/job/hydro
 	outfit = /datum/outfit/job/hydro/DS13
 
 /datum/outfit/job/hydro/DS13
@@ -283,8 +256,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 
-/datum/job/cook/New()
-	..()
+/datum/job/cook
 	outfit = /datum/outfit/job/cook/DS13
 
 /datum/outfit/job/cook/DS13
@@ -294,8 +266,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 
-/datum/job/bartender/New()
-	..()
+/datum/job/bartender
 	outfit = /datum/outfit/job/cook/DS13
 
 /datum/outfit/job/bartender/DS13
