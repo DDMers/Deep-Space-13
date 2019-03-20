@@ -2758,6 +2758,7 @@
 #include "DS13\code\game\objects\trek_objects.dm"
 #include "DS13\code\game\objects\weapons.dm"
 #include "DS13\code\modules\admin\custom_verbs.dm"
+#include "DS13\code\modules\atmospherics\multiz_pipe.dm"
 #include "DS13\code\modules\borg\antag_datum.dm"
 #include "DS13\code\modules\borg\collective.dm"
 #include "DS13\code\modules\borg\gamemode.dm"
