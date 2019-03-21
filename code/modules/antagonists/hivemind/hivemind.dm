@@ -41,7 +41,7 @@
 			var/obj/effect/proc_holder/spell/the_spell = new power(null)
 			owner.AddSpell(the_spell)
 			if(hive_size > 0)
-				to_chat(owner, "<span class='assimilator'>We have unlocked [the_spell.name].</span><span class='bold'> [the_spell.desc]</span>")
+				to_chat(owner, "<span_class='assimilator'>We have unlocked [the_spell.name].</span><span_class='bold'> [the_spell.desc]</span>")
 
 /datum/antagonist/hivemind/proc/get_real_name() //Gets the real name of the host, even if they're temporarily in another one
 	var/obj/effect/proc_holder/spell/target_hive/hive_control/the_spell = locate(/obj/effect/proc_holder/spell/target_hive/hive_control) in owner.spell_list
@@ -56,8 +56,8 @@
 	return ""
 
 /datum/antagonist/hivemind/proc/add_to_hive(var/mob/living/carbon/human/H)
-	var/warning = "<span class='userdanger'>We detect a surge of psionic energy from [H.real_name] before they disappear from the hive. An enemy host, or simply a stolen vessel?</span>"
-	var/user_warning = "<span class='userdanger'>We have detected an enemy hivemind using our physical form as a vessel and have begun ejecting their mind! They will be alerted of our disappearance once we succeed!</span>"
+	var/warning = "<span_class='userdanger'>We detect a surge of psionic energy from [H.real_name] before they disappear from the hive. An enemy host, or simply a stolen vessel?</span>"
+	var/user_warning = "<span_class='userdanger'>We have detected an enemy hivemind using our physical form as a vessel and have begun ejecting their mind! They will be alerted of our disappearance once we succeed!</span>"
 	for(var/datum/antagonist/hivemind/enemy_hive in GLOB.antagonists)
 		if(H.mind == enemy_hive.owner)
 			var/eject_time = rand(1400,1600) //2.5 minutes +- 10 seconds
@@ -113,7 +113,7 @@
 		owner.RemoveSpell(power)
 
 	if(!silent && owner.current)
-		to_chat(owner.current,"<span class='userdanger'> Your psionic powers fade, you are no longer the hivemind's host! </span>")
+		to_chat(owner.current,"<span_class='userdanger'> Your psionic powers fade, you are no longer the hivemind's host! </span>")
 	owner.special_role = null
 	..()
 
@@ -195,9 +195,9 @@
 				break
 
 	if(objectives.len == 0 || greentext)
-		result += "<span class='greentext big'>The [name] was successful!</span>"
+		result += "<span_class='greentext big'>The [name] was successful!</span>"
 	else
-		result += "<span class='redtext big'>The [name] has failed!</span>"
+		result += "<span_class='redtext big'>The [name] has failed!</span>"
 
 	return result.Join("<br>")
 

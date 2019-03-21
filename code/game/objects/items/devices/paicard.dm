@@ -11,7 +11,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/paicard/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is staring sadly at [src]! [user.p_they()] can't keep living without real human intimacy!</span>")
+	user.visible_message("<span_class='suicide'>[user] is staring sadly at [src]! [user.p_they()] can't keep living without real human intimacy!</span>")
 	return OXYLOSS
 
 /obj/item/paicard/Initialize()
@@ -76,21 +76,21 @@
 			if(pai.master_dna)
 				return
 			if(!iscarbon(usr))
-				to_chat(usr, "<span class='warning'>You don't have any DNA, or your DNA is incompatible with this device!</span>")
+				to_chat(usr, "<span_class='warning'>You don't have any DNA, or your DNA is incompatible with this device!</span>")
 			else
 				var/mob/living/carbon/M = usr
 				pai.master = M.real_name
 				pai.master_dna = M.dna.unique_enzymes
-				to_chat(pai, "<span class='notice'>You have been bound to a new master.</span>")
+				to_chat(pai, "<span_class='notice'>You have been bound to a new master.</span>")
 				pai.emittersemicd = FALSE
 		if(href_list["wipe"])
 			var/confirm = input("Are you CERTAIN you wish to delete the current personality? This action cannot be undone.", "Personality Wipe") in list("Yes", "No")
 			if(confirm == "Yes")
 				if(pai)
-					to_chat(pai, "<span class='warning'>You feel yourself slipping away from reality.</span>")
-					to_chat(pai, "<span class='danger'>Byte by byte you lose your sense of self.</span>")
-					to_chat(pai, "<span class='userdanger'>Your mental faculties leave you.</span>")
-					to_chat(pai, "<span class='rose'>oblivion... </span>")
+					to_chat(pai, "<span_class='warning'>You feel yourself slipping away from reality.</span>")
+					to_chat(pai, "<span_class='danger'>Byte by byte you lose your sense of self.</span>")
+					to_chat(pai, "<span_class='userdanger'>Your mental faculties leave you.</span>")
+					to_chat(pai, "<span_class='rose'>oblivion... </span>")
 					qdel(pai)
 		if(href_list["wires"])
 			var/wire = text2num(href_list["wires"])
@@ -102,13 +102,13 @@
 				pai.add_supplied_law(0,newlaws)
 		if(href_list["toggle_holo"])
 			if(pai.canholo)
-				to_chat(pai, "<span class='userdanger'>Your owner has disabled your holomatrix projectors!</span>")
+				to_chat(pai, "<span_class='userdanger'>Your owner has disabled your holomatrix projectors!</span>")
 				pai.canholo = FALSE
-				to_chat(usr, "<span class='warning'>You disable your pAI's holomatrix!</span>")
+				to_chat(usr, "<span_class='warning'>You disable your pAI's holomatrix!</span>")
 			else
-				to_chat(pai, "<span class='boldnotice'>Your owner has enabled your holomatrix projectors!</span>")
+				to_chat(pai, "<span_class='boldnotice'>Your owner has enabled your holomatrix projectors!</span>")
 				pai.canholo = TRUE
-				to_chat(usr, "<span class='notice'>You enable your pAI's holomatrix!</span>")
+				to_chat(usr, "<span_class='notice'>You enable your pAI's holomatrix!</span>")
 
 	attack_self(usr)
 
@@ -149,7 +149,7 @@
 				src.add_overlay("pai-null")
 
 /obj/item/paicard/proc/alertUpdate()
-	visible_message("<span class ='info'>[src] flashes a message across its screen, \"Additional personalities available for download.\"", "<span class='notice'>[src] bleeps electronically.</span>")
+	visible_message("<span_class ='info'>[src] flashes a message across its screen, \"Additional personalities available for download.\"", "<span_class='notice'>[src] bleeps electronically.</span>")
 
 /obj/item/paicard/emp_act(severity)
 	. = ..()

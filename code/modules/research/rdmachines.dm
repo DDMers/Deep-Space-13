@@ -65,25 +65,25 @@
 //whether the machine can have an item inserted in its current state.
 /obj/machinery/rnd/proc/is_insertion_ready(mob/user)
 	if(panel_open)
-		to_chat(user, "<span class='warning'>You can't load [src] while it's opened!</span>")
+		to_chat(user, "<span_class='warning'>You can't load [src] while it's opened!</span>")
 		return FALSE
 	if(disabled)
-		to_chat(user, "<span class='warning'>The insertion belts of [src] won't engage!</span>")
+		to_chat(user, "<span_class='warning'>The insertion belts of [src] won't engage!</span>")
 		return FALSE
 	if(requires_console && !linked_console)
-		to_chat(user, "<span class='warning'>[src] must be linked to an R&D console first!</span>")
+		to_chat(user, "<span_class='warning'>[src] must be linked to an R&D console first!</span>")
 		return FALSE
 	if(busy)
-		to_chat(user, "<span class='warning'>[src] is busy right now.</span>")
+		to_chat(user, "<span_class='warning'>[src] is busy right now.</span>")
 		return FALSE
 	if(stat & BROKEN)
-		to_chat(user, "<span class='warning'>[src] is broken.</span>")
+		to_chat(user, "<span_class='warning'>[src] is broken.</span>")
 		return FALSE
 	if(stat & NOPOWER)
-		to_chat(user, "<span class='warning'>[src] has no power.</span>")
+		to_chat(user, "<span_class='warning'>[src] has no power.</span>")
 		return FALSE
 	if(loaded_item)
-		to_chat(user, "<span class='warning'>[src] is already loaded.</span>")
+		to_chat(user, "<span_class='warning'>[src] is already loaded.</span>")
 		return FALSE
 	return TRUE
 

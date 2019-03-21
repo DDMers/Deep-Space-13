@@ -48,7 +48,7 @@ The console is located at computer/gulag_teleporter.dm
 /obj/machinery/gulag_teleporter/interact(mob/user)
 	. = ..()
 	if(locked)
-		to_chat(user, "<span class='warning'>[src] is locked!</span>")
+		to_chat(user, "<span_class='warning'>[src] is locked!</span>")
 		return
 	toggle_open()
 
@@ -93,7 +93,7 @@ The console is located at computer/gulag_teleporter.dm
 	if(locked)
 		if(message_cooldown <= world.time)
 			message_cooldown = world.time + 50
-			to_chat(user, "<span class='warning'>[src]'s door won't budge!</span>")
+			to_chat(user, "<span_class='warning'>[src]'s door won't budge!</span>")
 		return
 	open_machine()
 
@@ -103,15 +103,15 @@ The console is located at computer/gulag_teleporter.dm
 		return
 	user.changeNext_move(CLICK_CD_BREAKOUT)
 	user.last_special = world.time + CLICK_CD_BREAKOUT
-	user.visible_message("<span class='notice'>You see [user] kicking against the door of [src]!</span>", \
-		"<span class='notice'>You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
-		"<span class='italics'>You hear a metallic creaking from [src].</span>")
+	user.visible_message("<span_class='notice'>You see [user] kicking against the door of [src]!</span>", \
+		"<span_class='notice'>You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
+		"<span_class='italics'>You hear a metallic creaking from [src].</span>")
 	if(do_after(user,(breakout_time), target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src || state_open || !locked)
 			return
 		locked = FALSE
-		user.visible_message("<span class='warning'>[user] successfully broke out of [src]!</span>", \
-			"<span class='notice'>You successfully break out of [src]!</span>")
+		user.visible_message("<span_class='warning'>[user] successfully broke out of [src]!</span>", \
+			"<span_class='notice'>You successfully break out of [src]!</span>")
 		open_machine()
 
 /obj/machinery/gulag_teleporter/proc/locate_reclaimer()
@@ -121,7 +121,7 @@ The console is located at computer/gulag_teleporter.dm
 
 /obj/machinery/gulag_teleporter/proc/toggle_open()
 	if(panel_open)
-		to_chat(usr, "<span class='notice'>Close the maintenance panel first.</span>")
+		to_chat(usr, "<span_class='notice'>Close the maintenance panel first.</span>")
 		return
 
 	if(state_open)

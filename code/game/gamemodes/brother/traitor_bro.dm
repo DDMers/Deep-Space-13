@@ -9,9 +9,9 @@
 
 	announce_span = "danger"
 	announce_text = "There are Syndicate agents and Blood Brothers on the station!\n\
-	<span class='danger'>Traitors</span>: Accomplish your objectives.\n\
-	<span class='danger'>Blood Brothers</span>: Accomplish your objectives.\n\
-	<span class='notice'>Crew</span>: Do not let the traitors or brothers succeed!"
+	<span_class='danger'>Traitors</span>: Accomplish your objectives.\n\
+	<span_class='danger'>Blood Brothers</span>: Accomplish your objectives.\n\
+	<span_class='notice'>Crew</span>: Do not let the traitors or brothers succeed!"
 
 	var/list/datum/team/brother_team/pre_brother_teams = list()
 	var/const/team_amount = 2 //hard limit on brother teams if scaling is turned off

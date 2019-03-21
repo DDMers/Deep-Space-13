@@ -1,6 +1,6 @@
 /proc/create_message(type, target_key, admin_ckey, text, timestamp, server, secret, logged = 1, browse, expiry, note_severity)
 	if(!SSdbcore.Connect())
-		to_chat(usr, "<span class='danger'>Failed to establish database connection.</span>")
+		to_chat(usr, "<span_class='danger'>Failed to establish database connection.</span>")
 		return
 	if(!type)
 		return
@@ -96,7 +96,7 @@
 
 /proc/delete_message(message_id, logged = 1, browse)
 	if(!SSdbcore.Connect())
-		to_chat(usr, "<span class='danger'>Failed to establish database connection.</span>")
+		to_chat(usr, "<span_class='danger'>Failed to establish database connection.</span>")
 		return
 	message_id = text2num(message_id)
 	if(!message_id)
@@ -132,7 +132,7 @@
 
 /proc/edit_message(message_id, browse)
 	if(!SSdbcore.Connect())
-		to_chat(usr, "<span class='danger'>Failed to establish database connection.</span>")
+		to_chat(usr, "<span_class='danger'>Failed to establish database connection.</span>")
 		return
 	message_id = text2num(message_id)
 	if(!message_id)
@@ -171,7 +171,7 @@
 
 /proc/edit_message_expiry(message_id, browse)
 	if(!SSdbcore.Connect())
-		to_chat(usr, "<span class='danger'>Failed to establish database connection.</span>")
+		to_chat(usr, "<span_class='danger'>Failed to establish database connection.</span>")
 		return
 	message_id = text2num(message_id)
 	if(!message_id)
@@ -229,7 +229,7 @@
 
 /proc/edit_message_severity(message_id)
 	if(!SSdbcore.Connect())
-		to_chat(usr, "<span class='danger'>Failed to establish database connection.</span>")
+		to_chat(usr, "<span_class='danger'>Failed to establish database connection.</span>")
 		return
 	message_id = text2num(message_id)
 	if(!message_id)
@@ -268,7 +268,7 @@
 
 /proc/toggle_message_secrecy(message_id)
 	if(!SSdbcore.Connect())
-		to_chat(usr, "<span class='danger'>Failed to establish database connection.</span>")
+		to_chat(usr, "<span_class='danger'>Failed to establish database connection.</span>")
 		return
 	message_id = text2num(message_id)
 	if(!message_id)
@@ -300,7 +300,7 @@
 
 /proc/browse_messages(type, target_ckey, index, linkless = FALSE, filter, agegate = FALSE)
 	if(!SSdbcore.Connect())
-		to_chat(usr, "<span class='danger'>Failed to establish database connection.</span>")
+		to_chat(usr, "<span_class='danger'>Failed to establish database connection.</span>")
 		return
 	var/list/output = list()
 	var/ruler = "<hr style='background:#000000; border:0; height:3px'>"
@@ -510,7 +510,7 @@
 
 /proc/get_message_output(type, target_ckey)
 	if(!SSdbcore.Connect())
-		to_chat(usr, "<span class='danger'>Failed to establish database connection.</span>")
+		to_chat(usr, "<span_class='danger'>Failed to establish database connection.</span>")
 		return
 	if(!type)
 		return
@@ -532,7 +532,7 @@
 		var/editor_key = query_get_message_output.item[5]
 		switch(type)
 			if("message")
-				output += "<font color='red' size='3'><b>Admin message left by <span class='prefix'>[admin_key]</span> on [timestamp]</b></font>"
+				output += "<font color='red' size='3'><b>Admin message left by <span_class='prefix'>[admin_key]</span> on [timestamp]</b></font>"
 				output += "<br><font color='red'>[text]</font><br>"
 				var/datum/DBQuery/query_message_read = SSdbcore.NewQuery("UPDATE [format_table_name("messages")] SET type = 'message sent' WHERE id = [message_id]")
 				if(!query_message_read.warn_execute())
@@ -544,9 +544,9 @@
 				message_admins("<font color='red'><B>Notice: </B></font><span_class='notice'>[key_name_admin(target_ckey)] has been on the watchlist since [timestamp] and has just connected - Reason: [text]</span>")
 				send2irc_adminless_only("Watchlist", "[key_name(target_ckey)] is on the watchlist and has just connected - Reason: [text]")
 			if("memo")
-				output += "<span class='memo'>Memo by <span class='prefix'>[admin_key]</span> on [timestamp]"
+				output += "<span_class='memo'>Memo by <span_class='prefix'>[admin_key]</span> on [timestamp]"
 				if(editor_key)
-					output += "<br><span class='memoedit'>Last edit by [editor_key] <A href='?_src_=holder;[HrefToken()];messageedits=[message_id]'>(Click here to see edit log)</A></span>"
+					output += "<br><span_class='memoedit'>Last edit by [editor_key] <A href='?_src_=holder;[HrefToken()];messageedits=[message_id]'>(Click here to see edit log)</A></span>"
 				output += "<br>[text]</span><br>"
 	qdel(query_get_message_output)
 	return output

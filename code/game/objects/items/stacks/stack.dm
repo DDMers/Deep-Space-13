@@ -29,7 +29,7 @@
 
 /obj/item/stack/grind_requirements()
 	if(is_cyborg)
-		to_chat(usr, "<span class='danger'>[src] is electronically synthesized in your chassis and can't be ground up!</span>")
+		to_chat(usr, "<span_class='danger'>[src] is electronically synthesized in your chassis and can't be ground up!</span>")
 		return
 	return TRUE
 
@@ -91,7 +91,7 @@
 		to_chat(user, "There are [get_amount()] in the stack.")
 	else
 		to_chat(user, "There is [get_amount()] in the stack.")
-	to_chat(user, "<span class='notice'>Alt-click to take a custom amount.</span>")
+	to_chat(user, "<span_class='notice'>Alt-click to take a custom amount.</span>")
 
 /obj/item/stack/proc/get_amount()
 	if(is_cyborg)
@@ -182,7 +182,7 @@
 		if(!building_checks(R, multiplier))
 			return
 		if (R.time)
-			usr.visible_message("<span class='notice'>[usr] starts building [R.title].</span>", "<span class='notice'>You start building [R.title]...</span>")
+			usr.visible_message("<span_class='notice'>[usr] starts building [R.title].</span>", "<span_class='notice'>You start building [R.title]...</span>")
 			if (!do_after(usr, R.time, target = usr))
 				return
 			if(!building_checks(R, multiplier))
@@ -226,22 +226,22 @@
 /obj/item/stack/proc/building_checks(datum/stack_recipe/R, multiplier)
 	if (get_amount() < R.req_amount*multiplier)
 		if (R.req_amount*multiplier>1)
-			to_chat(usr, "<span class='warning'>You haven't got enough [src] to build \the [R.req_amount*multiplier] [R.title]\s!</span>")
+			to_chat(usr, "<span_class='warning'>You haven't got enough [src] to build \the [R.req_amount*multiplier] [R.title]\s!</span>")
 		else
-			to_chat(usr, "<span class='warning'>You haven't got enough [src] to build \the [R.title]!</span>")
+			to_chat(usr, "<span_class='warning'>You haven't got enough [src] to build \the [R.title]!</span>")
 		return FALSE
 	var/turf/T = get_turf(usr)
 
 	var/obj/D = R.result_type
 	if(R.window_checks && !valid_window_location(T, initial(D.dir) == FULLTILE_WINDOW_DIR ? FULLTILE_WINDOW_DIR : usr.dir))
-		to_chat(usr, "<span class='warning'>The [R.title] won't fit here!</span>")
+		to_chat(usr, "<span_class='warning'>The [R.title] won't fit here!</span>")
 		return FALSE
 	if(R.one_per_turf && (locate(R.result_type) in T))
-		to_chat(usr, "<span class='warning'>There is another [R.title] here!</span>")
+		to_chat(usr, "<span_class='warning'>There is another [R.title] here!</span>")
 		return FALSE
 	if(R.on_floor)
 		if(!isfloorturf(T))
-			to_chat(usr, "<span class='warning'>\The [R.title] must be constructed on the floor!</span>")
+			to_chat(usr, "<span_class='warning'>\The [R.title] must be constructed on the floor!</span>")
 			return FALSE
 		for(var/obj/AM in T)
 			if(istype(AM,/obj/structure/grille))
@@ -253,7 +253,7 @@
 				if(!W.fulltile)
 					continue
 			if(AM.density)
-				to_chat(usr, "<span class='warning'>Theres a [AM.name] here. You cant make a [R.title] here!</span>")
+				to_chat(usr, "<span_class='warning'>Theres a [AM.name] here. You cant make a [R.title] here!</span>")
 				return FALSE
 	if(R.placement_checks)
 		switch(R.placement_checks)
@@ -262,11 +262,11 @@
 				for(var/direction in GLOB.cardinals)
 					step = get_step(T, direction)
 					if(locate(R.result_type) in step)
-						to_chat(usr, "<span class='warning'>\The [R.title] must not be built directly adjacent to another!</span>")
+						to_chat(usr, "<span_class='warning'>\The [R.title] must not be built directly adjacent to another!</span>")
 						return FALSE
 			if(STACK_CHECK_ADJACENT)
 				if(locate(R.result_type) in range(1, T))
-					to_chat(usr, "<span class='warning'>\The [R.title] must be constructed at least one tile away from others of its type!</span>")
+					to_chat(usr, "<span_class='warning'>\The [R.title] must be constructed at least one tile away from others of its type!</span>")
 					return FALSE
 	return TRUE
 
@@ -288,11 +288,11 @@
 	if(get_amount() < amount)
 		if(singular_name)
 			if(amount > 1)
-				to_chat(user, "<span class='warning'>You need at least [amount] [singular_name]\s to do this!</span>")
+				to_chat(user, "<span_class='warning'>You need at least [amount] [singular_name]\s to do this!</span>")
 			else
-				to_chat(user, "<span class='warning'>You need at least [amount] [singular_name] to do this!</span>")
+				to_chat(user, "<span_class='warning'>You need at least [amount] [singular_name] to do this!</span>")
 		else
-			to_chat(user, "<span class='warning'>You need at least [amount] to do this!</span>")
+			to_chat(user, "<span_class='warning'>You need at least [amount] to do this!</span>")
 
 		return FALSE
 
@@ -365,7 +365,7 @@
 			return
 		else
 			change_stack(user, stackmaterial)
-			to_chat(user, "<span class='notice'>You take [stackmaterial] sheets out of the stack</span>")
+			to_chat(user, "<span_class='notice'>You take [stackmaterial] sheets out of the stack</span>")
 
 /obj/item/stack/proc/change_stack(mob/user, amount)
 	if(!use(amount, TRUE, FALSE))
@@ -384,7 +384,7 @@
 	if(istype(W, merge_type))
 		var/obj/item/stack/S = W
 		if(merge(S))
-			to_chat(user, "<span class='notice'>Your [S.name] stack now contains [S.get_amount()] [S.singular_name]\s.</span>")
+			to_chat(user, "<span_class='notice'>Your [S.name] stack now contains [S.get_amount()] [S.singular_name]\s.</span>")
 	else
 		. = ..()
 

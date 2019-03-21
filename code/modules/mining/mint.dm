@@ -63,7 +63,7 @@
 	usr.set_machine(src)
 	src.add_fingerprint(usr)
 	if(processing==1)
-		to_chat(usr, "<span class='notice'>The machine is processing.</span>")
+		to_chat(usr, "<span_class='notice'>The machine is processing.</span>")
 		return
 	GET_COMPONENT(materials, /datum/component/material_container)
 	if(href_list["choose"])

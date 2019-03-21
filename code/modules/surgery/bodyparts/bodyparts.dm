@@ -67,9 +67,9 @@
 /obj/item/bodypart/examine(mob/user)
 	..()
 	if(brute_dam > DAMAGE_PRECISION)
-		to_chat(user, "<span class='warning'>This limb has [brute_dam > 30 ? "severe" : "minor"] bruising.</span>")
+		to_chat(user, "<span_class='warning'>This limb has [brute_dam > 30 ? "severe" : "minor"] bruising.</span>")
 	if(burn_dam > DAMAGE_PRECISION)
-		to_chat(user, "<span class='warning'>This limb has [burn_dam > 30 ? "severe" : "minor"] burns.</span>")
+		to_chat(user, "<span_class='warning'>This limb has [burn_dam > 30 ? "severe" : "minor"] burns.</span>")
 
 /obj/item/bodypart/blob_act()
 	take_damage(max_damage)
@@ -86,11 +86,11 @@
 		if(C.has_trait(TRAIT_LIMBATTACHMENT))
 			if(!H.get_bodypart(body_zone) && !animal_origin)
 				if(H == user)
-					H.visible_message("<span class='warning'>[H] jams [src] into [H.p_their()] empty socket!</span>",\
-					"<span class='notice'>You force [src] into your empty socket, and it locks into place!</span>")
+					H.visible_message("<span_class='warning'>[H] jams [src] into [H.p_their()] empty socket!</span>",\
+					"<span_class='notice'>You force [src] into your empty socket, and it locks into place!</span>")
 				else
-					H.visible_message("<span class='warning'>[user] jams [src] into [H]'s empty socket!</span>",\
-					"<span class='notice'>[user] forces [src] into your empty socket, and it locks into place!</span>")
+					H.visible_message("<span_class='warning'>[user] jams [src] into [H]'s empty socket!</span>",\
+					"<span_class='notice'>[user] forces [src] into your empty socket, and it locks into place!</span>")
 				user.temporarilyRemoveItemFromInventory(src, TRUE)
 				attach_limb(C)
 				return
@@ -100,11 +100,11 @@
 	if(W.sharpness)
 		add_fingerprint(user)
 		if(!contents.len)
-			to_chat(user, "<span class='warning'>There is nothing left inside [src]!</span>")
+			to_chat(user, "<span_class='warning'>There is nothing left inside [src]!</span>")
 			return
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
-		user.visible_message("<span class='warning'>[user] begins to cut open [src].</span>",\
-			"<span class='notice'>You begin to cut open [src]...</span>")
+		user.visible_message("<span_class='warning'>[user] begins to cut open [src].</span>",\
+			"<span_class='notice'>You begin to cut open [src]...</span>")
 		if(do_after(user, 54, target = src))
 			drop_organs(user, TRUE)
 	else
@@ -510,12 +510,12 @@
 		if(owner.stat > UNCONSCIOUS)
 			owner.emote("scream")
 		if(. && (owner.stat > DEAD))
-			to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
+			to_chat(owner, "<span_class='userdanger'>Your [name] is too damaged to function!</span>")
 		if(held_index)
 			owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
 		if(. && (owner.stat > DEAD))
-			to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
+			to_chat(owner, "<span_class='userdanger'>You can't feel your [name]!</span>")
 			if(held_index)
 				owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	if(owner.hud_used)
@@ -575,12 +575,12 @@
 		if(owner.stat > UNCONSCIOUS)
 			owner.emote("scream")
 		if(. && (owner.stat > DEAD))
-			to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
+			to_chat(owner, "<span_class='userdanger'>Your [name] is too damaged to function!</span>")
 		if(held_index)
 			owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
 		if(. && (owner.stat > DEAD))
-			to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
+			to_chat(owner, "<span_class='userdanger'>You can't feel your [name]!</span>")
 			if(held_index)
 				owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	if(owner.hud_used)
@@ -637,10 +637,10 @@
 		if(owner.stat > UNCONSCIOUS)
 			owner.emote("scream")
 		if(. && (owner.stat > DEAD))
-			to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
+			to_chat(owner, "<span_class='userdanger'>Your [name] is too damaged to function!</span>")
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
 		if(. && (owner.stat > DEAD))
-			to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
+			to_chat(owner, "<span_class='userdanger'>You can't feel your [name]!</span>")
 
 /obj/item/bodypart/l_leg/digitigrade
 	name = "left digitigrade leg"
@@ -696,10 +696,10 @@
 		if(owner.stat > UNCONSCIOUS)
 			owner.emote("scream")
 		if(. && (owner.stat > DEAD))
-			to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
+			to_chat(owner, "<span_class='userdanger'>Your [name] is too damaged to function!</span>")
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
 		if(. && (owner.stat > DEAD))
-			to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
+			to_chat(owner, "<span_class='userdanger'>You can't feel your [name]!</span>")
 
 /obj/item/bodypart/r_leg/digitigrade
 	name = "right digitigrade leg"

@@ -67,7 +67,7 @@
 		if(!(L.mobility_flags & MOBILITY_PICKUP))
 			return
 	if(cards.len == 0)
-		to_chat(user, "<span class='warning'>There are no more cards to draw!</span>")
+		to_chat(user, "<span_class='warning'>There are no more cards to draw!</span>")
 		return
 	var/obj/item/toy/cards/singlecard/cas/H = new/obj/item/toy/cards/singlecard/cas(user.loc)
 	var/datum/playingcard/choice = cards[1]
@@ -81,21 +81,21 @@
 	src.cards -= choice
 	H.pickup(user)
 	user.put_in_hands(H)
-	user.visible_message("[user] draws a card from the deck.", "<span class='notice'>You draw a card from the deck.</span>")
+	user.visible_message("[user] draws a card from the deck.", "<span_class='notice'>You draw a card from the deck.</span>")
 	update_icon()
 
 /obj/item/toy/cards/deck/cas/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/toy/cards/singlecard/cas))
 		var/obj/item/toy/cards/singlecard/cas/SC = I
 		if(!user.temporarilyRemoveItemFromInventory(SC))
-			to_chat(user, "<span class='warning'>The card is stuck to your hand, you can't add it to the deck!</span>")
+			to_chat(user, "<span_class='warning'>The card is stuck to your hand, you can't add it to the deck!</span>")
 			return
 		var/datum/playingcard/RC // replace null datum for the re-added card
 		RC = new()
 		RC.name = "[SC.name]"
 		RC.card_icon = SC.card_face
 		cards += RC
-		user.visible_message("[user] adds a card to the bottom of the deck.","<span class='notice'>You add the card to the bottom of the deck.</span>")
+		user.visible_message("[user] adds a card to the bottom of the deck.","<span_class='notice'>You add the card to the bottom of the deck.</span>")
 		qdel(SC)
 	update_icon()
 
@@ -115,12 +115,12 @@
 /obj/item/toy/cards/singlecard/cas/examine(mob/user)
 	..()
 	if (flipped)
-		to_chat(user, "<span class='notice'>The card is face down.</span>")
+		to_chat(user, "<span_class='notice'>The card is face down.</span>")
 	else if (blank)
-		to_chat(user, "<span class='notice'>The card is blank. Write on it with a pen.</span>")
+		to_chat(user, "<span_class='notice'>The card is blank. Write on it with a pen.</span>")
 	else
-		to_chat(user, "<span class='notice'>The card reads: [name]</span>")
-	to_chat(user, "<span class='notice'>Alt-click to flip it.</span>")
+		to_chat(user, "<span_class='notice'>The card reads: [name]</span>")
+	to_chat(user, "<span_class='notice'>Alt-click to flip it.</span>")
 
 /obj/item/toy/cards/singlecard/cas/Flip()
 	set name = "Flip Card"
@@ -149,7 +149,7 @@
 /obj/item/toy/cards/singlecard/cas/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/pen))
 		if(!user.is_literate())
-			to_chat(user, "<span class='notice'>You scribble illegibly on [src]!</span>")
+			to_chat(user, "<span_class='notice'>You scribble illegibly on [src]!</span>")
 			return
 		if(!blank)
 			to_chat(user, "You cannot write on that card.")

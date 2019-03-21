@@ -23,10 +23,10 @@
 
 /datum/antagonist/creep/greet()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/creepalert.ogg', 100, FALSE, pressure_affected = FALSE)
-	to_chat(owner, "<span class='boldannounce'>You are the Creep!</span>")
+	to_chat(owner, "<span_class='boldannounce'>You are the Creep!</span>")
 	to_chat(owner, "<B>They would call it an obsession. They would call you crazy, because they don't understand your unrequited love.<br>All you know is that you love [trauma.obsession]. And you. will. show them.</B>")
 	to_chat(owner, "<B>I will surely go insane if I don't spend enough time around [trauma.obsession], but when i'm near them too long it gets too difficult to speak properly, making me look like a CREEP!</B>")
-	to_chat(owner, "<span class='boldannounce'>The gods would like to remind you that this role, as with all other antags, does not allow you to break ANY server rules, especially Rule 8 (These rules being listed from the \"Rules\" button at the top right of your mind's screen). Feel free to murder and pillage just like any other antag, though.</span>")
+	to_chat(owner, "<span_class='boldannounce'>The gods would like to remind you that this role, as with all other antags, does not allow you to break ANY server rules, especially Rule 8 (These rules being listed from the \"Rules\" button at the top right of your mind's screen). Feel free to murder and pillage just like any other antag, though.</span>")
 	owner.announce_objectives()
 
 /datum/antagonist/creep/Destroy()
@@ -95,7 +95,7 @@
 		O.update_explanation_text()
 
 /datum/antagonist/creep/roundend_report_header()
-	return 	"<span class='header'>Someone became a creep!</span><br>"
+	return 	"<span_class='header'>Someone became a creep!</span><br>"
 
 /datum/antagonist/creep/roundend_report()
 	var/list/report = list()
@@ -114,16 +114,16 @@
 				break
 	if(trauma)
 		if(trauma.total_time_creeping > 0)
-			report += "<span class='greentext'>The [name] spent a total of [DisplayTimeText(trauma.total_time_creeping)] being near [trauma.obsession]!</span>"
+			report += "<span_class='greentext'>The [name] spent a total of [DisplayTimeText(trauma.total_time_creeping)] being near [trauma.obsession]!</span>"
 		else
-			report += "<span class='redtext'>The [name] did not go near their obsession the entire round! That's extremely impressive, but you are a shit [name]!</span>"
+			report += "<span_class='redtext'>The [name] did not go near their obsession the entire round! That's extremely impressive, but you are a shit [name]!</span>"
 	else
-		report += "<span class='redtext'>The [name] had no trauma attached to their antagonist ways! Either it bugged out or an admin incorrectly gave this good samaritan antag and it broke! You might as well show yourself!!</span>"
+		report += "<span_class='redtext'>The [name] had no trauma attached to their antagonist ways! Either it bugged out or an admin incorrectly gave this good samaritan antag and it broke! You might as well show yourself!!</span>"
 
 	if(objectives.len == 0 || objectives_complete)
-		report += "<span class='greentext big'>The [name] was successful!</span>"
+		report += "<span_class='greentext big'>The [name] was successful!</span>"
 	else
-		report += "<span class='redtext big'>The [name] has failed!</span>"
+		report += "<span_class='redtext big'>The [name] has failed!</span>"
 
 	return report.Join("<br>")
 

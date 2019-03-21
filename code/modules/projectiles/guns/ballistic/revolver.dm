@@ -30,7 +30,7 @@
 		return
 	var/num_loaded = magazine.attackby(A, user, params, 1)
 	if(num_loaded)
-		to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src].</span>")
+		to_chat(user, "<span_class='notice'>You load [num_loaded] shell\s into \the [src].</span>")
 		playsound(user, 'sound/weapons/revolverload.ogg', 40, TRUE)
 		A.update_icon()
 		update_icon()
@@ -47,10 +47,10 @@
 			CB.bounce_away(FALSE, NONE)
 			num_unloaded++
 	if (num_unloaded)
-		to_chat(user, "<span class='notice'>You unload [num_unloaded] shell\s from [src].</span>")
+		to_chat(user, "<span_class='notice'>You unload [num_unloaded] shell\s from [src].</span>")
 		playsound(user, 'sound/weapons/revolverempty.ogg', 40, FALSE)
 	else
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, "<span_class='warning'>[src] is empty!</span>")
 
 /obj/item/gun/ballistic/revolver/verb/spin()
 	set name = "Spin Chamber"
@@ -64,7 +64,7 @@
 
 	if(do_spin())
 		playsound(usr, "revolver_spin", 30, FALSE)
-		usr.visible_message("[usr] spins [src]'s chamber.", "<span class='notice'>You spin [src]'s chamber.</span>")
+		usr.visible_message("[usr] spins [src]'s chamber.", "<span_class='notice'>You spin [src]'s chamber.</span>")
 	else
 		verbs -= /obj/item/gun/ballistic/revolver/verb/spin
 
@@ -109,7 +109,7 @@
 	if(magazine.caliber != initial(magazine.caliber))
 		if(prob(70 - (magazine.ammo_count() * 10)))	//minimum probability of 10, maximum of 60
 			playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
-			to_chat(user, "<span class='userdanger'>[src] blows up in your face!</span>")
+			to_chat(user, "<span_class='userdanger'>[src] blows up in your face!</span>")
 			user.take_bodypart_damage(0,20)
 			user.dropItemToGround(src)
 			return 0
@@ -119,33 +119,33 @@
 	if(..())
 		return TRUE
 	if(magazine.caliber == "38")
-		to_chat(user, "<span class='notice'>You begin to reinforce the barrel of [src]...</span>")
+		to_chat(user, "<span_class='notice'>You begin to reinforce the barrel of [src]...</span>")
 		if(magazine.ammo_count())
 			afterattack(user, user)	//you know the drill
-			user.visible_message("<span class='danger'>[src] goes off!</span>", "<span class='userdanger'>[src] goes off in your face!</span>")
+			user.visible_message("<span_class='danger'>[src] goes off!</span>", "<span_class='userdanger'>[src] goes off in your face!</span>")
 			return TRUE
 		if(I.use_tool(src, user, 30))
 			if(magazine.ammo_count())
-				to_chat(user, "<span class='warning'>You can't modify it!</span>")
+				to_chat(user, "<span_class='warning'>You can't modify it!</span>")
 				return TRUE
 			magazine.caliber = "357"
 			fire_sound = 'sound/weapons/revolver357shot.ogg'
 			desc = "The barrel and chamber assembly seems to have been modified."
-			to_chat(user, "<span class='notice'>You reinforce the barrel of [src]. Now it will fire .357 rounds.</span>")
+			to_chat(user, "<span_class='notice'>You reinforce the barrel of [src]. Now it will fire .357 rounds.</span>")
 	else
-		to_chat(user, "<span class='notice'>You begin to revert the modifications to [src]...</span>")
+		to_chat(user, "<span_class='notice'>You begin to revert the modifications to [src]...</span>")
 		if(magazine.ammo_count())
 			afterattack(user, user)	//and again
-			user.visible_message("<span class='danger'>[src] goes off!</span>", "<span class='userdanger'>[src] goes off in your face!</span>")
+			user.visible_message("<span_class='danger'>[src] goes off!</span>", "<span_class='userdanger'>[src] goes off in your face!</span>")
 			return TRUE
 		if(I.use_tool(src, user, 30))
 			if(magazine.ammo_count())
-				to_chat(user, "<span class='warning'>You can't modify it!</span>")
+				to_chat(user, "<span_class='warning'>You can't modify it!</span>")
 				return
 			magazine.caliber = "38"
 			fire_sound = 'sound/weapons/revolver38shot.ogg'
 			desc = initial(desc)
-			to_chat(user, "<span class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>")
+			to_chat(user, "<span_class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>")
 	return TRUE
 
 
@@ -215,13 +215,13 @@
 			return
 	if(target != user)
 		if(ismob(target))
-			to_chat(user, "<span class='warning'>A mechanism prevents you from shooting anyone but yourself!</span>")
+			to_chat(user, "<span_class='warning'>A mechanism prevents you from shooting anyone but yourself!</span>")
 		return
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(!spun)
-			to_chat(user, "<span class='warning'>You need to spin the revolver's chamber first!</span>")
+			to_chat(user, "<span_class='warning'>You need to spin the revolver's chamber first!</span>")
 			return
 
 		spun = FALSE
@@ -235,16 +235,16 @@
 				if(zone == BODY_ZONE_HEAD || zone == BODY_ZONE_PRECISE_EYES || zone == BODY_ZONE_PRECISE_MOUTH)
 					shoot_self(user, affecting)
 				else
-					user.visible_message("<span class='danger'>[user.name] cowardly fires [src] at [user.p_their()] [affecting.name]!</span>", "<span class='userdanger'>You cowardly fire [src] at your [affecting.name]!</span>", "<span class='italics'>You hear a gunshot!</span>")
+					user.visible_message("<span_class='danger'>[user.name] cowardly fires [src] at [user.p_their()] [affecting.name]!</span>", "<span_class='userdanger'>You cowardly fire [src] at your [affecting.name]!</span>", "<span_class='italics'>You hear a gunshot!</span>")
 				chambered = null
 				return
 
-		user.visible_message("<span class='danger'>*click*</span>")
+		user.visible_message("<span_class='danger'>*click*</span>")
 		playsound(src, dry_fire_sound, 30, TRUE)
 
 /obj/item/gun/ballistic/revolver/russian/proc/shoot_self(mob/living/carbon/human/user, affecting = BODY_ZONE_HEAD)
 	user.apply_damage(300, BRUTE, affecting)
-	user.visible_message("<span class='danger'>[user.name] fires [src] at [user.p_their()] head!</span>", "<span class='userdanger'>You fire [src] at your head!</span>", "<span class='italics'>You hear a gunshot!</span>")
+	user.visible_message("<span_class='danger'>[user.name] fires [src] at [user.p_their()] head!</span>", "<span_class='userdanger'>You fire [src] at your head!</span>", "<span_class='italics'>You hear a gunshot!</span>")
 
 /obj/item/gun/ballistic/revolver/russian/soul
 	name = "cursed Russian revolver"
@@ -256,7 +256,7 @@
 	if(!SS.transfer_soul("FORCE", user)) //Something went wrong
 		qdel(SS)
 		return
-	user.visible_message("<span class='danger'>[user.name]'s soul is captured by \the [src]!</span>", "<span class='userdanger'>You've lost the gamble! Your soul is forfeit!</span>")
+	user.visible_message("<span_class='danger'>[user.name]'s soul is captured by \the [src]!</span>", "<span_class='userdanger'>You've lost the gamble! Your soul is forfeit!</span>")
 
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
@@ -307,9 +307,9 @@
 		CB.update_icon()
 		num_unloaded++
 	if (num_unloaded)
-		to_chat(user, "<span class='notice'>You break open \the [src] and unload [num_unloaded] shell\s.</span>")
+		to_chat(user, "<span_class='notice'>You break open \the [src] and unload [num_unloaded] shell\s.</span>")
 	else
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, "<span_class='warning'>[src] is empty!</span>")
 
 // IMPROVISED SHOTGUN //
 
@@ -332,11 +332,11 @@
 		var/obj/item/stack/cable_coil/C = A
 		if(C.use(10))
 			slot_flags = ITEM_SLOT_BACK
-			to_chat(user, "<span class='notice'>You tie the lengths of cable to the shotgun, making a sling.</span>")
+			to_chat(user, "<span_class='notice'>You tie the lengths of cable to the shotgun, making a sling.</span>")
 			slung = TRUE
 			update_icon()
 		else
-			to_chat(user, "<span class='warning'>You need at least ten lengths of cable if you want to make a sling!</span>")
+			to_chat(user, "<span_class='warning'>You need at least ten lengths of cable if you want to make a sling!</span>")
 
 /obj/item/gun/ballistic/revolver/doublebarrel/improvised/update_icon()
 	..()
@@ -367,7 +367,7 @@
 	if((user.has_trait(TRAIT_CLUMSY)) || (user.mind && user.mind.assigned_role == "Clown"))
 		return ..()
 	if(process_fire(user, user, FALSE, null, BODY_ZONE_HEAD))
-		user.visible_message("<span class='warning'>[user] somehow manages to shoot [user.p_them()]self in the face!</span>", "<span class='userdanger'>You somehow shoot yourself in the face! How the hell?!</span>")
+		user.visible_message("<span_class='warning'>[user] somehow manages to shoot [user.p_them()]self in the face!</span>", "<span_class='userdanger'>You somehow shoot yourself in the face! How the hell?!</span>")
 		user.emote("scream")
 		user.drop_all_held_items()
 		user.Paralyze(80)

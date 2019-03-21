@@ -22,7 +22,7 @@
 
 /obj/item/assembly/prox_sensor/examine(mob/user)
 	..()
-	to_chat(user, "<span class='notice'>The proximity sensor is [timing ? "arming" : (scanning ? "armed" : "disarmed")].</span>")
+	to_chat(user, "<span_class='notice'>The proximity sensor is [timing ? "arming" : (scanning ? "armed" : "disarmed")].</span>")
 
 /obj/item/assembly/prox_sensor/activate()
 	if(!..())

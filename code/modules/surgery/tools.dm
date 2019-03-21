@@ -134,7 +134,7 @@
 	sharpness = IS_SHARP_ACCURATE
 
 /obj/item/scalpel/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] [pick("wrists", "throat", "stomach")] with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span_class='suicide'>[user] is slitting [user.p_their()] [pick("wrists", "throat", "stomach")] with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (BRUTELOSS)
 
 
@@ -202,13 +202,13 @@
 	if(!proximity)
 		return
 	if(contents.len)
-		to_chat(user, "<span class='notice'>[src] already has something inside it.</span>")
+		to_chat(user, "<span_class='notice'>[src] already has something inside it.</span>")
 		return
 	if(!isorgan(I) && !isbodypart(I))
-		to_chat(user, "<span class='notice'>[src] can only hold body parts!</span>")
+		to_chat(user, "<span_class='notice'>[src] can only hold body parts!</span>")
 		return
 
-	user.visible_message("[user] puts [I] into [src].", "<span class='notice'>You put [I] inside [src].</span>")
+	user.visible_message("[user] puts [I] into [src].", "<span_class='notice'>You put [I] inside [src].</span>")
 	icon_state = "evidence"
 	var/xx = I.pixel_x
 	var/yy = I.pixel_y
@@ -227,7 +227,7 @@
 /obj/item/organ_storage/attack_self(mob/user)
 	if(contents.len)
 		var/obj/item/I = contents[1]
-		user.visible_message("[user] dumps [I] from [src].", "<span class='notice'>You dump [I] from [src].</span>")
+		user.visible_message("[user] dumps [I] from [src].", "<span_class='notice'>You dump [I] from [src].</span>")
 		cut_overlays()
 		I.forceMove(get_turf(src))
 		icon_state = "evidenceobj"
@@ -249,13 +249,13 @@
 	if(!proximity)
 		return
 	if(istype(O, /obj/item/disk/surgery))
-		to_chat(user, "<span class='notice'>You load the surgery protocol from [O] into [src].</span>")
+		to_chat(user, "<span_class='notice'>You load the surgery protocol from [O] into [src].</span>")
 		var/obj/item/disk/surgery/D = O
 		if(do_after(user, 10, target = O))
 			advanced_surgeries |= D.surgeries
 		return TRUE
 	if(istype(O, /obj/machinery/computer/operating))
-		to_chat(user, "<span class='notice'>You copy surgery protocols from [O] into [src].</span>")
+		to_chat(user, "<span_class='notice'>You copy surgery protocols from [O] into [src].</span>")
 		var/obj/machinery/computer/operating/OC = O
 		if(do_after(user, 10, target = O))
 			advanced_surgeries |= OC.advanced_surgeries
@@ -279,7 +279,7 @@
 /obj/item/scalpel/advanced/attack_self(mob/user)
 	playsound(get_turf(user),'sound/machines/click.ogg',50,1)
 	var/obj/item/circular_saw/advanced/saw = new /obj/item/circular_saw/advanced(drop_location())
-	to_chat(user, "<span class='notice'>You incease the power, now it can cut bones.</span>")
+	to_chat(user, "<span_class='notice'>You incease the power, now it can cut bones.</span>")
 	qdel(src)
 	user.put_in_active_hand(saw)
 
@@ -301,7 +301,7 @@
 /obj/item/circular_saw/advanced/attack_self(mob/user)
 	playsound(get_turf(user),'sound/machines/click.ogg',50,1)
 	var/obj/item/scalpel/advanced/scalpel = new /obj/item/scalpel/advanced(drop_location())
-	to_chat(user, "<span class='notice'>You lower the power.</span>")
+	to_chat(user, "<span_class='notice'>You lower the power.</span>")
 	qdel(src)
 	user.put_in_active_hand(scalpel)
 
@@ -315,7 +315,7 @@
 /obj/item/retractor/advanced/attack_self(mob/user)
 	playsound(get_turf(user),'sound/items/change_drill.ogg',50,1)
 	var/obj/item/hemostat/advanced/hemostat = new /obj/item/hemostat/advanced(drop_location())
-	to_chat(user, "<span class='notice'>You set the [src] to hemostat mode.</span>")
+	to_chat(user, "<span_class='notice'>You set the [src] to hemostat mode.</span>")
 	qdel(src)
 	user.put_in_active_hand(hemostat)
 
@@ -329,7 +329,7 @@
 /obj/item/hemostat/advanced/attack_self(mob/user)
 	playsound(get_turf(user),'sound/items/change_drill.ogg',50,1)
 	var/obj/item/retractor/advanced/retractor = new /obj/item/retractor/advanced(drop_location())
-	to_chat(user, "<span class='notice'>You set the [src] to retractor mode.</span>")
+	to_chat(user, "<span_class='notice'>You set the [src] to retractor mode.</span>")
 	qdel(src)
 	user.put_in_active_hand(retractor)
 
@@ -349,7 +349,7 @@
 /obj/item/surgicaldrill/advanced/attack_self(mob/user)
 	playsound(get_turf(user),'sound/weapons/tap.ogg',50,1)
 	var/obj/item/cautery/advanced/cautery = new /obj/item/cautery/advanced(drop_location())
-	to_chat(user, "<span class='notice'>You dilate the lenses, setting it to mending mode.</span>")
+	to_chat(user, "<span_class='notice'>You dilate the lenses, setting it to mending mode.</span>")
 	qdel(src)
 	user.put_in_active_hand(cautery)
 
@@ -370,6 +370,6 @@
 /obj/item/cautery/advanced/attack_self(mob/user)
 	playsound(get_turf(user),'sound/items/welderdeactivate.ogg',50,1)
 	var/obj/item/surgicaldrill/advanced/surgicaldrill = new /obj/item/surgicaldrill/advanced(drop_location())
-	to_chat(user, "<span class='notice'>You focus the lensess, it is now set to drilling mode.</span>")
+	to_chat(user, "<span_class='notice'>You focus the lensess, it is now set to drilling mode.</span>")
 	qdel(src)
 	user.put_in_active_hand(surgicaldrill)

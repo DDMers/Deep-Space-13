@@ -36,12 +36,12 @@
 			if(user.transferItemToLoc(AM, src))
 				magazine = AM
 				if(oldmag)
-					to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src], replacing the magazine.</span>")
+					to_chat(user, "<span_class='notice'>You perform a tactical reload on \the [src], replacing the magazine.</span>")
 					oldmag.dropped()
 					oldmag.forceMove(get_turf(src.loc))
 					oldmag.update_icon()
 				else
-					to_chat(user, "<span class='notice'>You insert the magazine into \the [src].</span>")
+					to_chat(user, "<span_class='notice'>You insert the magazine into \the [src].</span>")
 
 				playsound(src, 'sound/weapons/autoguninsert.ogg', 60, TRUE)
 				chamber_round()
@@ -49,7 +49,7 @@
 				update_icon()
 				return 1
 			else
-				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
+				to_chat(user, "<span_class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
 
 /obj/item/gun/ballistic/automatic/ui_action_click(mob/user, actiontype)
 	if(istype(actiontype, /datum/action/item_action/toggle_firemode))
@@ -63,11 +63,11 @@
 	if(!select)
 		burst_size = 1
 		fire_delay = 0
-		to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+		to_chat(user, "<span_class='notice'>You switch to semi-automatic.</span>")
 	else
 		burst_size = initial(burst_size)
 		fire_delay = initial(fire_delay)
-		to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		to_chat(user, "<span_class='notice'>You switch to [burst_size]-rnd burst.</span>")
 
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
@@ -197,15 +197,15 @@
 			select = 1
 			burst_size = initial(burst_size)
 			fire_delay = initial(fire_delay)
-			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+			to_chat(user, "<span_class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select = 2
-			to_chat(user, "<span class='notice'>You switch to grenades.</span>")
+			to_chat(user, "<span_class='notice'>You switch to grenades.</span>")
 		if(2)
 			select = 0
 			burst_size = 1
 			fire_delay = 0
-			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
+			to_chat(user, "<span_class='notice'>You switch to semi-auto.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
 	return
@@ -300,12 +300,12 @@
 /obj/item/gun/ballistic/automatic/l6_saw/examine(mob/user)
 	..()
 	if(cover_open && magazine)
-		to_chat(user, "<span class='notice'>It seems like you could use an <b>empty hand</b> to remove the magazine.</span>")
+		to_chat(user, "<span_class='notice'>It seems like you could use an <b>empty hand</b> to remove the magazine.</span>")
 
 
 /obj/item/gun/ballistic/automatic/l6_saw/attack_self(mob/user)
 	cover_open = !cover_open
-	to_chat(user, "<span class='notice'>You [cover_open ? "open" : "close"] [src]'s cover.</span>")
+	to_chat(user, "<span_class='notice'>You [cover_open ? "open" : "close"] [src]'s cover.</span>")
 	if(cover_open)
 		playsound(user, 'sound/weapons/sawopen.ogg', 60, 1)
 	else
@@ -320,7 +320,7 @@
 
 /obj/item/gun/ballistic/automatic/l6_saw/afterattack(atom/target as mob|obj|turf, mob/living/user as mob|obj, flag, params) //what I tried to do here is just add a check to see if the cover is open or not and add an icon_state change because I can't figure out how c-20rs do it with overlays
 	if(cover_open)
-		to_chat(user, "<span class='warning'>[src]'s cover is open! Close it before firing!</span>")
+		to_chat(user, "<span_class='warning'>[src]'s cover is open! Close it before firing!</span>")
 	else
 		. = ..()
 		update_icon()
@@ -339,12 +339,12 @@
 		user.put_in_hands(magazine)
 		magazine = null
 		update_icon()
-		to_chat(user, "<span class='notice'>You remove the magazine from [src].</span>")
+		to_chat(user, "<span_class='notice'>You remove the magazine from [src].</span>")
 		playsound(user, 'sound/weapons/magout.ogg', 60, 1)
 
 /obj/item/gun/ballistic/automatic/l6_saw/attackby(obj/item/A, mob/user, params)
 	if(!cover_open && istype(A, mag_type))
-		to_chat(user, "<span class='warning'>[src]'s cover is closed! You can't insert a new mag.</span>")
+		to_chat(user, "<span_class='warning'>[src]'s cover is closed! You can't insert a new mag.</span>")
 		return
 	..()
 

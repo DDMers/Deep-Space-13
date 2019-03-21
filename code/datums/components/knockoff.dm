@@ -11,7 +11,7 @@
 	RegisterSignal(parent, COMSIG_ITEM_DROPPED,.proc/OnDropped)
 
 	src.knockoff_chance = knockoff_chance
-	
+
 	if(zone_override)
 		target_zones = zone_override
 
@@ -30,7 +30,7 @@
 	if(!wearer.dropItemToGround(I))
 		return
 
-	wearer.visible_message("<span class='warning'>[attacker] knocks off [wearer]'s [I.name]!</span>","<span class='userdanger'>[attacker] knocks off your [I.name]!</span>")
+	wearer.visible_message("<span_class='warning'>[attacker] knocks off [wearer]'s [I.name]!</span>","<span_class='userdanger'>[attacker] knocks off your [I.name]!</span>")
 
 /datum/component/knockoff/proc/OnEquipped(datum/source, mob/living/carbon/human/H,slot)
 	if(!istype(H))

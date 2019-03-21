@@ -47,7 +47,7 @@
 		. = is_convertable_to_cult(new_owner.current,cult_team)
 
 /datum/antagonist/cult/greet()
-	to_chat(owner, "<span class='userdanger'>You are a member of the cult!</span>")
+	to_chat(owner, "<span_class='userdanger'>You are a member of the cult!</span>")
 	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/bloodcult.ogg', 100, FALSE, pressure_affected = FALSE)//subject to change
 	owner.announce_objectives()
 
@@ -89,10 +89,10 @@
 	var/item_name = initial(item_path.name)
 	var/where = mob.equip_in_one_of_slots(T, slots)
 	if(!where)
-		to_chat(mob, "<span class='userdanger'>Unfortunately, you weren't able to get a [item_name]. This is very bad and you should adminhelp immediately (press F1).</span>")
+		to_chat(mob, "<span_class='userdanger'>Unfortunately, you weren't able to get a [item_name]. This is very bad and you should adminhelp immediately (press F1).</span>")
 		return 0
 	else
-		to_chat(mob, "<span class='danger'>You have a [item_name] in your [where].</span>")
+		to_chat(mob, "<span_class='danger'>You have a [item_name] in your [where].</span>")
 		if(where == "backpack")
 			SEND_SIGNAL(mob.back, COMSIG_TRY_STORAGE_SHOW, mob)
 		return TRUE
@@ -136,8 +136,8 @@
 	SSticker.mode.cult -= owner
 	SSticker.mode.update_cult_icons_removed(owner)
 	if(!silent)
-		owner.current.visible_message("<span class='deconversion_message'>[owner.current] looks like [owner.current.p_theyve()] just reverted to [owner.current.p_their()] old faith!</span>", null, null, null, owner.current)
-		to_chat(owner.current, "<span class='userdanger'>An unfamiliar white light flashes through your mind, cleansing the taint of the Geometer and all your memories as her servant.</span>")
+		owner.current.visible_message("<span_class='deconversion_message'>[owner.current] looks like [owner.current.p_theyve()] just reverted to [owner.current.p_their()] old faith!</span>", null, null, null, owner.current)
+		to_chat(owner.current, "<span_class='userdanger'>An unfamiliar white light flashes through your mind, cleansing the taint of the Geometer and all your memories as her servant.</span>")
 		owner.current.log_message("has renounced the cult of Nar'Sie!", LOG_ATTACK, color="#960000")
 	if(cult_team.blood_target && cult_team.blood_target_image && owner.current.client)
 		owner.current.client.images -= cult_team.blood_target_image
@@ -161,11 +161,11 @@
 
 /datum/antagonist/cult/proc/admin_give_dagger(mob/admin)
 	if(!equip_cultist(FALSE))
-		to_chat(admin, "<span class='danger'>Spawning dagger failed!</span>")
+		to_chat(admin, "<span_class='danger'>Spawning dagger failed!</span>")
 
 /datum/antagonist/cult/proc/admin_give_metal(mob/admin)
 	if (!equip_cultist(TRUE))
-		to_chat(admin, "<span class='danger'>Spawning runed metal failed!</span>")
+		to_chat(admin, "<span_class='danger'>Spawning runed metal failed!</span>")
 
 /datum/antagonist/cult/master
 	ignore_implant = TRUE
@@ -186,7 +186,7 @@
 	set_antag_hud(current, "cultmaster")
 
 /datum/antagonist/cult/master/greet()
-	to_chat(owner.current, "<span class='cultlarge'>You are the cult's Master</span>. As the cult's Master, you have a unique title and loud voice when communicating, are capable of marking \
+	to_chat(owner.current, "<span_class='cultlarge'>You are the cult's Master</span>. As the cult's Master, you have a unique title and loud voice when communicating, are capable of marking \
 	targets, such as a location or a noncultist, to direct the cult to them, and, finally, you are capable of summoning the entire living cult to your location <b><i>once</i></b>.")
 	to_chat(owner.current, "Use these abilities to direct the cult to victory at any cost.")
 
@@ -254,7 +254,7 @@
 		for(var/datum/mind/B in members)
 			if(B.current)
 				SEND_SOUND(B.current, 'sound/hallucinations/i_see_you2.ogg')
-				to_chat(B.current, "<span class='cultlarge'>The veil weakens as your cult grows, your eyes begin to glow...")
+				to_chat(B.current, "<span_class='cultlarge'>The veil weakens as your cult grows, your eyes begin to glow...")
 				addtimer(CALLBACK(src, .proc/rise, B.current), 200)
 		cult_risen = TRUE
 
@@ -262,7 +262,7 @@
 		for(var/datum/mind/B in members)
 			if(B.current)
 				SEND_SOUND(B.current, 'sound/hallucinations/im_here1.ogg')
-				to_chat(B.current, "<span class='cultlarge'>Your cult is ascendent and the red harvest approaches - you cannot hide your true nature for much longer!!")
+				to_chat(B.current, "<span_class='cultlarge'>Your cult is ascendent and the red harvest approaches - you cannot hide your true nature for much longer!!")
 				addtimer(CALLBACK(src, .proc/ascend, B.current), 200)
 		cult_ascendent = TRUE
 
@@ -366,22 +366,22 @@
 	var/list/parts = list()
 
 	if(check_cult_victory())
-		parts += "<span class='greentext big'>The cult has succeeded! Nar'Sie has snuffed out another torch in the void!</span>"
+		parts += "<span_class='greentext big'>The cult has succeeded! Nar'Sie has snuffed out another torch in the void!</span>"
 	else
-		parts += "<span class='redtext big'>The staff managed to stop the cult! Dark words and heresy are no match for Nanotrasen's finest!</span>"
+		parts += "<span_class='redtext big'>The staff managed to stop the cult! Dark words and heresy are no match for Nanotrasen's finest!</span>"
 
 	if(objectives.len)
 		parts += "<b>The cultists' objectives were:</b>"
 		var/count = 1
 		for(var/datum/objective/objective in objectives)
 			if(objective.check_completion())
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] <span class='greentext'>Success!</span>"
+				parts += "<b>Objective #[count]</b>: [objective.explanation_text] <span_class='greentext'>Success!</span>"
 			else
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] <span class='redtext'>Fail.</span>"
+				parts += "<b>Objective #[count]</b>: [objective.explanation_text] <span_class='redtext'>Fail.</span>"
 			count++
 
 	if(members.len)
-		parts += "<span class='header'>The cultists were:</span>"
+		parts += "<span_class='header'>The cultists were:</span>"
 		parts += printplayerlist(members)
 
 	return "<div class='panel redborder'>[parts.Join("<br>")]</div>"

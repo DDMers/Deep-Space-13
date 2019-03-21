@@ -252,7 +252,7 @@
 		position = (position == vending_names_paths.len) ? 1 : (position + 1)
 		var/typepath = vending_names_paths[position]
 
-		to_chat(user, "<span class='notice'>You set the board to \"[vending_names_paths[typepath]]\".</span>")
+		to_chat(user, "<span_class='notice'>You set the board to \"[vending_names_paths[typepath]]\".</span>")
 		set_type(typepath)
 	else
 		return ..()
@@ -329,7 +329,7 @@
 		name = initial(new_type.name)
 		build_path = initial(new_type.build_path)
 		I.play_tool_sound(src)
-		to_chat(user, "<span class='notice'>You change the circuitboard setting to \"[new_setting]\".</span>")
+		to_chat(user, "<span_class='notice'>You change the circuitboard setting to \"[new_setting]\".</span>")
 	else
 		return ..()
 
@@ -379,11 +379,11 @@
 		if(build_path == /obj/machinery/processor)
 			name = "Slime Processor (Machine Board)"
 			build_path = /obj/machinery/processor/slime
-			to_chat(user, "<span class='notice'>Name protocols successfully updated.</span>")
+			to_chat(user, "<span_class='notice'>Name protocols successfully updated.</span>")
 		else
 			name = "Food Processor (Machine Board)"
 			build_path = /obj/machinery/processor
-			to_chat(user, "<span class='notice'>Defaulting name protocols.</span>")
+			to_chat(user, "<span_class='notice'>Defaulting name protocols.</span>")
 	else
 		return ..()
 
@@ -414,13 +414,13 @@
 		var/position = fridges_name_paths.Find(build_path, fridges_name_paths)
 		position = (position == fridges_name_paths.len) ? 1 : (position + 1)
 		build_path = fridges_name_paths[position]
-		to_chat(user, "<span class='notice'>You set the board to [fridges_name_paths[build_path]].</span>")
+		to_chat(user, "<span_class='notice'>You set the board to [fridges_name_paths[build_path]].</span>")
 	else
 		return ..()
 
 /obj/item/circuitboard/machine/smartfridge/examine(mob/user)
 	..()
-	to_chat(user, "<span class='info'>[src] is set to [fridges_name_paths[build_path]]. You can use a screwdriver to reconfigure it.</span>")
+	to_chat(user, "<span_class='info'>[src] is set to [fridges_name_paths[build_path]]. You can use a screwdriver to reconfigure it.</span>")
 
 /obj/item/circuitboard/machine/biogenerator
 	name = "Biogenerator (Machine Board)"
@@ -606,7 +606,7 @@
 		name = initial(new_type.name)
 		build_path = initial(new_type.build_path)
 		I.play_tool_sound(src)
-		to_chat(user, "<span class='notice'>You change the circuitboard setting to \"[new_setting]\".</span>")
+		to_chat(user, "<span_class='notice'>You change the circuitboard setting to \"[new_setting]\".</span>")
 	else
 		return ..()
 
@@ -700,7 +700,7 @@
 
 		build_path = new_path
 		name = "[new_name] 3000 (Machine Board)"
-		to_chat(user, "<span class='notice'>You change the circuit board setting to \"[new_name]\".</span>")
+		to_chat(user, "<span_class='notice'>You change the circuit board setting to \"[new_name]\".</span>")
 	else
 		return ..()
 
@@ -933,18 +933,18 @@
 
 /obj/item/circuitboard/machine/dish_drive/examine(mob/user)
 	..()
-	to_chat(user, "<span class='notice'>Its suction function is [suction ? "enabled" : "disabled"]. Use it in-hand to switch.</span>")
-	to_chat(user, "<span class='notice'>Its disposal auto-transmit function is [transmit ? "enabled" : "disabled"]. Alt-click it to switch.</span>")
+	to_chat(user, "<span_class='notice'>Its suction function is [suction ? "enabled" : "disabled"]. Use it in-hand to switch.</span>")
+	to_chat(user, "<span_class='notice'>Its disposal auto-transmit function is [transmit ? "enabled" : "disabled"]. Alt-click it to switch.</span>")
 
 /obj/item/circuitboard/machine/dish_drive/attack_self(mob/living/user)
 	suction = !suction
-	to_chat(user, "<span class='notice'>You [suction ? "enable" : "disable"] the board's suction function.</span>")
+	to_chat(user, "<span_class='notice'>You [suction ? "enable" : "disable"] the board's suction function.</span>")
 
 /obj/item/circuitboard/machine/dish_drive/AltClick(mob/living/user)
 	if(!user.Adjacent(src))
 		return
 	transmit = !transmit
-	to_chat(user, "<span class='notice'>You [transmit ? "enable" : "disable"] the board's automatic disposal transmission.</span>")
+	to_chat(user, "<span_class='notice'>You [transmit ? "enable" : "disable"] the board's automatic disposal transmission.</span>")
 
 /obj/item/circuitboard/machine/stacking_unit_console
 	name = "Stacking Machine Console (Machine Board)"

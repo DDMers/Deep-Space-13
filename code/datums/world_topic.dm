@@ -70,7 +70,7 @@
 		if(PRcounts[id] > PR_ANNOUNCEMENTS_PER_ROUND)
 			return
 
-	var/final_composed = "<span class='announce'>PR: [input[keyword]]</span>"
+	var/final_composed = "<span_class='announce'>PR: [input[keyword]]</span>"
 	for(var/client/C in GLOB.clients)
 		C.AnnouncePR(final_composed)
 
@@ -79,7 +79,7 @@
 	require_comms_key = TRUE
 
 /datum/world_topic/ahelp_relay/Run(list/input)
-	relay_msg_admins("<span class='adminnotice'><b><font color=red>HELP: </font> [input["source"]] [input["message_sender"]]: [input["message"]]</b></span>")
+	relay_msg_admins("<span_class='adminnotice'><b><font color=red>HELP: </font> [input["source"]] [input["message_sender"]]: [input["message"]]</b></span>")
 
 /datum/world_topic/comms_console
 	keyword = "Comms_Console"
@@ -168,7 +168,7 @@
 	.["security_level"] = get_security_level()
 	.["round_duration"] = SSticker ? round((world.time-SSticker.round_start_time)/10) : 0
 	// Amount of world's ticks in seconds, useful for calculating round duration
-	
+
 	//Time dilation stats.
 	.["time_dilation_current"] = SStime_track.time_dilation_current
 	.["time_dilation_avg"] = SStime_track.time_dilation_avg
@@ -180,4 +180,4 @@
 		// Shuttle status, see /__DEFINES/stat.dm
 		.["shuttle_timer"] = SSshuttle.emergency.timeLeft()
 		// Shuttle timer, in seconds
-	
+

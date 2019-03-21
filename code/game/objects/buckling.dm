@@ -48,9 +48,9 @@
 	M.buckling = src
 	if(!M.can_buckle() && !force)
 		if(M == usr)
-			to_chat(M, "<span class='warning'>You are unable to buckle yourself to [src]!</span>")
+			to_chat(M, "<span_class='warning'>You are unable to buckle yourself to [src]!</span>")
 		else
-			to_chat(usr, "<span class='warning'>You are unable to buckle [M] to [src]!</span>")
+			to_chat(usr, "<span_class='warning'>You are unable to buckle [M] to [src]!</span>")
 		M.buckling = null
 		return FALSE
 
@@ -113,27 +113,27 @@
 	if(.)
 		if(M == user)
 			M.visible_message(\
-				"<span class='notice'>[M] buckles [M.p_them()]self to [src].</span>",\
-				"<span class='notice'>You buckle yourself to [src].</span>",\
-				"<span class='italics'>You hear metal clanking.</span>")
+				"<span_class='notice'>[M] buckles [M.p_them()]self to [src].</span>",\
+				"<span_class='notice'>You buckle yourself to [src].</span>",\
+				"<span_class='italics'>You hear metal clanking.</span>")
 		else
 			M.visible_message(\
-				"<span class='warning'>[user] buckles [M] to [src]!</span>",\
-				"<span class='warning'>[user] buckles you to [src]!</span>",\
-				"<span class='italics'>You hear metal clanking.</span>")
+				"<span_class='warning'>[user] buckles [M] to [src]!</span>",\
+				"<span_class='warning'>[user] buckles you to [src]!</span>",\
+				"<span_class='italics'>You hear metal clanking.</span>")
 
 /atom/movable/proc/user_unbuckle_mob(mob/living/buckled_mob, mob/user)
 	var/mob/living/M = unbuckle_mob(buckled_mob)
 	if(M)
 		if(M != user)
 			M.visible_message(\
-				"<span class='notice'>[user] unbuckles [M] from [src].</span>",\
-				"<span class='notice'>[user] unbuckles you from [src].</span>",\
-				"<span class='italics'>You hear metal clanking.</span>")
+				"<span_class='notice'>[user] unbuckles [M] from [src].</span>",\
+				"<span_class='notice'>[user] unbuckles you from [src].</span>",\
+				"<span_class='italics'>You hear metal clanking.</span>")
 		else
 			M.visible_message(\
-				"<span class='notice'>[M] unbuckles [M.p_them()]self from [src].</span>",\
-				"<span class='notice'>You unbuckle yourself from [src].</span>",\
-				"<span class='italics'>You hear metal clanking.</span>")
+				"<span_class='notice'>[M] unbuckles [M.p_them()]self from [src].</span>",\
+				"<span_class='notice'>You unbuckle yourself from [src].</span>",\
+				"<span_class='italics'>You hear metal clanking.</span>")
 		add_fingerprint(user)
 	return M

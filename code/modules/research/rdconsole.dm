@@ -117,24 +117,24 @@ Nothing else in the console has ID requirements.
 	if(istype(D, /obj/item/disk))
 		if(istype(D, /obj/item/disk/tech_disk))
 			if(t_disk)
-				to_chat(user, "<span class='danger'>A technology disk is already loaded!</span>")
+				to_chat(user, "<span_class='danger'>A technology disk is already loaded!</span>")
 				return
 			if(!user.transferItemToLoc(D, src))
-				to_chat(user, "<span class='danger'>[D] is stuck to your hand!</span>")
+				to_chat(user, "<span_class='danger'>[D] is stuck to your hand!</span>")
 				return
 			t_disk = D
 		else if (istype(D, /obj/item/disk/design_disk))
 			if(d_disk)
-				to_chat(user, "<span class='danger'>A design disk is already loaded!</span>")
+				to_chat(user, "<span_class='danger'>A design disk is already loaded!</span>")
 				return
 			if(!user.transferItemToLoc(D, src))
-				to_chat(user, "<span class='danger'>[D] is stuck to your hand!</span>")
+				to_chat(user, "<span_class='danger'>[D] is stuck to your hand!</span>")
 				return
 			d_disk = D
 		else
-			to_chat(user, "<span class='danger'>Machine cannot accept disks in that format.</span>")
+			to_chat(user, "<span_class='danger'>Machine cannot accept disks in that format.</span>")
 			return
-		to_chat(user, "<span class='notice'>You insert [D] into \the [src]!</span>")
+		to_chat(user, "<span_class='notice'>You insert [D] into \the [src]!</span>")
 	else if(!(linked_destroy && linked_destroy.busy) && !(linked_lathe && linked_lathe.busy) && !(linked_imprinter && linked_imprinter.busy))
 		. = ..()
 
@@ -189,7 +189,7 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/emag_act(mob/user)
 	if(!(obj_flags & EMAGGED))
-		to_chat(user, "<span class='notice'>You disable the security protocols[locked? " and unlock the console":""].</span>")
+		to_chat(user, "<span_class='notice'>You disable the security protocols[locked? " and unlock the console":""].</span>")
 		playsound(src, "sparks", 75, 1)
 		obj_flags |= EMAGGED
 		locked = FALSE
@@ -226,7 +226,7 @@ Nothing else in the console has ID requirements.
 	l += "Available points: <BR>[techweb_point_display_rdconsole(stored_research.research_points, stored_research.last_bitcoins)]"
 	l += "Security protocols: [obj_flags & EMAGGED ? "<font color='red'>Disabled</font>" : "<font color='green'>Enabled</font>"]"
 	l += "<a href='?src=[REF(src)];switch_screen=[RDSCREEN_MENU]'>Main Menu</a> | <a href='?src=[REF(src)];switch_screen=[back]'>Back</a></div>[RDSCREEN_NOBREAK]"
-	l += "[ui_mode == 1? "<span class='linkOn'>Normal View</span>" : "<a href='?src=[REF(src)];ui_mode=1'>Normal View</a>"] | [ui_mode == 2? "<span class='linkOn'>Expert View</span>" : "<a href='?src=[REF(src)];ui_mode=2'>Expert View</a>"] | [ui_mode == 3? "<span class='linkOn'>List View</span>" : "<a href='?src=[REF(src)];ui_mode=3'>List View</a>"]"
+	l += "[ui_mode == 1? "<span_class='linkOn'>Normal View</span>" : "<a href='?src=[REF(src)];ui_mode=1'>Normal View</a>"] | [ui_mode == 2? "<span_class='linkOn'>Expert View</span>" : "<a href='?src=[REF(src)];ui_mode=2'>Expert View</a>"] | [ui_mode == 3? "<span_class='linkOn'>List View</span>" : "<a href='?src=[REF(src)];ui_mode=3'>List View</a>"]"
 	return l
 
 /obj/machinery/computer/rdconsole/proc/ui_main_menu()
@@ -300,7 +300,7 @@ Nothing else in the console has ID requirements.
 			var/t = linked_lathe.check_mat(D, M)
 			temp_material += " | "
 			if (t < 1)
-				temp_material += "<span class='bad'>[all_materials[M]/coeff] [CallMaterialName(M)]</span>"
+				temp_material += "<span_class='bad'>[all_materials[M]/coeff] [CallMaterialName(M)]</span>"
 			else
 				temp_material += " [all_materials[M]/coeff] [CallMaterialName(M)]"
 			c = min(c,t)
@@ -313,7 +313,7 @@ Nothing else in the console has ID requirements.
 				l += "<A href='?src=[REF(src)];build=[D.id];amount=10'>x10</A>[RDSCREEN_NOBREAK]"
 			l += "[temp_material][RDSCREEN_NOBREAK]"
 		else
-			l += "<span class='linkOff'>[D.name]</span>[temp_material][RDSCREEN_NOBREAK]"
+			l += "<span_class='linkOff'>[D.name]</span>[temp_material][RDSCREEN_NOBREAK]"
 		l += ""
 	l += "</div>"
 	return l
@@ -353,7 +353,7 @@ Nothing else in the console has ID requirements.
 			var/t = linked_lathe.check_mat(D, M)
 			temp_material += " | "
 			if (t < 1)
-				temp_material += "<span class='bad'>[all_materials[M]/coeff] [CallMaterialName(M)]</span>"
+				temp_material += "<span_class='bad'>[all_materials[M]/coeff] [CallMaterialName(M)]</span>"
 			else
 				temp_material += " [all_materials[M]/coeff] [CallMaterialName(M)]"
 			c = min(c,t)
@@ -366,7 +366,7 @@ Nothing else in the console has ID requirements.
 				l += "<A href='?src=[REF(src)];build=[D.id];amount=10'>x10</A>[RDSCREEN_NOBREAK]"
 			l += "[temp_material][RDSCREEN_NOBREAK]"
 		else
-			l += "<span class='linkOff'>[D.name]</span>[temp_material][RDSCREEN_NOBREAK]"
+			l += "<span_class='linkOff'>[D.name]</span>[temp_material][RDSCREEN_NOBREAK]"
 		l += ""
 	l += "</div>"
 	return l
@@ -453,13 +453,13 @@ Nothing else in the console has ID requirements.
 			temp_materials += " | "
 			if (!linked_imprinter.check_mat(D, M))
 				check_materials = FALSE
-				temp_materials += " <span class='bad'>[all_materials[M]/coeff] [CallMaterialName(M)]</span>"
+				temp_materials += " <span_class='bad'>[all_materials[M]/coeff] [CallMaterialName(M)]</span>"
 			else
 				temp_materials += " [all_materials[M]/coeff] [CallMaterialName(M)]"
 		if (check_materials)
 			l += "<A href='?src=[REF(src)];imprint=[D.id]'>[D.name]</A>[temp_materials]"
 		else
-			l += "<span class='linkOff'>[D.name]</span>[temp_materials]"
+			l += "<span_class='linkOff'>[D.name]</span>[temp_materials]"
 	l += "</div>"
 	return l
 
@@ -483,13 +483,13 @@ Nothing else in the console has ID requirements.
 			temp_materials += " | "
 			if (!linked_imprinter.check_mat(D, M))
 				check_materials = FALSE
-				temp_materials += " <span class='bad'>[all_materials[M]/coeff] [CallMaterialName(M)]</span>"
+				temp_materials += " <span_class='bad'>[all_materials[M]/coeff] [CallMaterialName(M)]</span>"
 			else
 				temp_materials += " [all_materials[M]/coeff] [CallMaterialName(M)]"
 		if (check_materials)
 			l += "<A href='?src=[REF(src)];imprint=[D.id]'>[D.name]</A>[temp_materials]"
 		else
-			l += "<span class='linkOff'>[D.name]</span>[temp_materials]"
+			l += "<span_class='linkOff'>[D.name]</span>[temp_materials]"
 	l += "</div>"
 	return l
 
@@ -581,14 +581,14 @@ Nothing else in the console has ID requirements.
 
 			l += "<div class='statusDisplay'>[RDSCREEN_NOBREAK]"
 			if (stored_research.researched_nodes[N.id])  // already researched
-				l += "<span class='linkOff'>[N.display_name]</span>"
+				l += "<span_class='linkOff'>[N.display_name]</span>"
 				l += "This node has already been researched."
 			else if(!length(worth))  // reveal only
 				if (stored_research.hidden_nodes[N.id])
 					l += "<A href='?src=[REF(src)];deconstruct=[N.id]'>[N.display_name]</A>"
 					l += "This node will be revealed."
 				else
-					l += "<span class='linkOff'>[N.display_name]</span>"
+					l += "<span_class='linkOff'>[N.display_name]</span>"
 					l += "This node has already been revealed."
 			else  // boost by the difference
 				var/list/differences = list()
@@ -602,7 +602,7 @@ Nothing else in the console has ID requirements.
 					l += "<A href='?src=[REF(src)];deconstruct=[N.id]'>[N.display_name]</A>"
 					l += "This node will be boosted with the following:<BR>[techweb_point_display_generic(differences)]"
 				else
-					l += "<span class='linkOff'>[N.display_name]</span>"
+					l += "<span_class='linkOff'>[N.display_name]</span>"
 					l += "This node has already been boosted.</span>"
 			l += "</div>[RDSCREEN_NOBREAK]"
 
@@ -612,7 +612,7 @@ Nothing else in the console has ID requirements.
 			anything = TRUE
 			l += "<div class='statusDisplay'>[RDSCREEN_NOBREAK]"
 			if (stored_research.deconstructed_items[linked_destroy.loaded_item.type])
-				l += "<span class='linkOff'>Point Deconstruction</span>"
+				l += "<span_class='linkOff'>Point Deconstruction</span>"
 				l += "This item's points have already been claimed."
 			else
 				l += "<A href='?src=[REF(src)];deconstruct=[RESEARCH_MATERIAL_RECLAMATION_ID]'>Point Deconstruction</A>"
@@ -671,7 +671,7 @@ Nothing else in the console has ID requirements.
 		for(var/datum/techweb_node/N in avail)
 			var/not_unlocked = (stored_research.available_nodes[N.id] && !stored_research.researched_nodes[N.id])
 			var/has_points = (stored_research.can_afford(N.get_price(stored_research)))
-			var/research_href = not_unlocked? (has_points? "<A href='?src=[REF(src)];research_node=[N.id]'>Research</A>" : "<span class='linkOff bad'>Not Enough Points</span>") : null
+			var/research_href = not_unlocked? (has_points? "<A href='?src=[REF(src)];research_node=[N.id]'>Research</A>" : "<span_class='linkOff bad'>Not Enough Points</span>") : null
 			l += "<A href='?src=[REF(src)];view_node=[N.id];back_screen=[screen]'>[N.display_name]</A>[research_href]"
 		l += "</div><div><h3>Locked Nodes:</h3>"
 		for(var/datum/techweb_node/N in unavail)
@@ -697,14 +697,14 @@ Nothing else in the console has ID requirements.
 		l += "<br>[node.description]"
 	else
 		if(stored_research.researched_nodes[node.id])
-			l += "<span class='linkOff'>Researched</span>"
+			l += "<span_class='linkOff'>Researched</span>"
 		else if(stored_research.available_nodes[node.id])
 			if(stored_research.can_afford(node.get_price(stored_research)))
 				l += "<BR><A href='?src=[REF(src)];research_node=[node.id]'>[node.price_display(stored_research)]</A>"
 			else
-				l += "<BR><span class='linkOff'>[node.price_display(stored_research)]</span>"  // gray - too expensive
+				l += "<BR><span_class='linkOff'>[node.price_display(stored_research)]</span>"  // gray - too expensive
 		else
-			l += "<BR><span class='linkOff bad'>[node.price_display(stored_research)]</span>"  // red - missing prereqs
+			l += "<BR><span_class='linkOff bad'>[node.price_display(stored_research)]</span>"  // red - missing prereqs
 		if(ui_mode == RDCONSOLE_UI_MODE_NORMAL)
 			l += "[node.description]"
 			for(var/i in node.design_ids)
@@ -850,17 +850,17 @@ Nothing else in the console has ID requirements.
 		ui_mode = text2num(ls["ui_mode"])
 	if(ls["lock_console"])
 		if(obj_flags & EMAGGED)
-			to_chat(usr, "<span class='boldwarning'>Security protocol error: Unable to lock.</span>")
+			to_chat(usr, "<span_class='boldwarning'>Security protocol error: Unable to lock.</span>")
 			return
 		if(allowed(usr))
 			lock_console(usr)
 		else
-			to_chat(usr, "<span class='boldwarning'>Unauthorized Access.</span>")
+			to_chat(usr, "<span_class='boldwarning'>Unauthorized Access.</span>")
 	if(ls["unlock_console"])
 		if(allowed(usr))
 			unlock_console(usr)
 		else
-			to_chat(usr, "<span class='boldwarning'>Unauthorized Access.</span>")
+			to_chat(usr, "<span_class='boldwarning'>Unauthorized Access.</span>")
 	if(ls["find_device"])
 		SyncRDevices()
 		say("Resynced with nearby devices.")
@@ -1032,7 +1032,7 @@ Nothing else in the console has ID requirements.
 			say("No Destructive Analyzer Linked!")
 			return
 		if(linked_destroy.busy)
-			to_chat(usr, "<span class='danger'>The destructive analyzer is busy at the moment.</span>")
+			to_chat(usr, "<span_class='danger'>The destructive analyzer is busy at the moment.</span>")
 		else if(linked_destroy.loaded_item)
 			linked_destroy.unload_item()
 			screen = RDSCREEN_MENU

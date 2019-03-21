@@ -101,7 +101,7 @@
 		return
 	open = !open
 	if(open && !bomb_defused)
-		audible_message("<span class='warning'>[icon2html(src, hearers(src))] *beep*</span>")
+		audible_message("<span_class='warning'>[icon2html(src, hearers(src))] *beep*</span>")
 		bomb_active = TRUE
 		START_PROCESSING(SSobj, src)
 	update_icon()
@@ -113,13 +113,13 @@
 	if(open)
 		if(pizza)
 			user.put_in_hands(pizza)
-			to_chat(user, "<span class='notice'>You take [pizza] out of [src].</span>")
+			to_chat(user, "<span_class='notice'>You take [pizza] out of [src].</span>")
 			pizza = null
 			update_icon()
 		else if(bomb)
 			if(wires.is_all_cut() && bomb_defused)
 				user.put_in_hands(bomb)
-				to_chat(user, "<span class='notice'>You carefully remove the [bomb] from [src].</span>")
+				to_chat(user, "<span_class='notice'>You carefully remove the [bomb] from [src].</span>")
 				bomb = null
 				update_icon()
 				return
@@ -131,13 +131,13 @@
 				log_bomber(user, "has trapped a", src, "with [bomb] set to [bomb_timer * 2] seconds")
 				bomb.adminlog = "The [bomb.name] in [src.name] that [key_name(user)] activated has detonated!"
 
-				to_chat(user, "<span class='warning'>You trap [src] with [bomb].</span>")
+				to_chat(user, "<span_class='warning'>You trap [src] with [bomb].</span>")
 				update_icon()
 	else if(boxes.len)
 		var/obj/item/pizzabox/topbox = boxes[boxes.len]
 		boxes -= topbox
 		user.put_in_hands(topbox)
-		to_chat(user, "<span class='notice'>You remove the topmost [name] from the stack.</span>")
+		to_chat(user, "<span_class='notice'>You remove the topmost [name] from the stack.</span>")
 		topbox.update_icon()
 		update_icon()
 		user.regenerate_icons()
@@ -153,28 +153,28 @@
 				return
 			boxes += add
 			newbox.boxes.Cut()
-			to_chat(user, "<span class='notice'>You put [newbox] on top of [src]!</span>")
+			to_chat(user, "<span_class='notice'>You put [newbox] on top of [src]!</span>")
 			newbox.update_icon()
 			update_icon()
 			user.regenerate_icons()
 			if(boxes.len >= 5)
 				if(prob(10 * boxes.len))
-					to_chat(user, "<span class='danger'>You can't keep holding the stack!</span>")
+					to_chat(user, "<span_class='danger'>You can't keep holding the stack!</span>")
 					disperse_pizzas()
 				else
-					to_chat(user, "<span class='warning'>The stack is getting a little high...</span>")
+					to_chat(user, "<span_class='warning'>The stack is getting a little high...</span>")
 			return
 		else
-			to_chat(user, "<span class='notice'>Close [open ? src : newbox] first!</span>")
+			to_chat(user, "<span_class='notice'>Close [open ? src : newbox] first!</span>")
 	else if(istype(I, /obj/item/reagent_containers/food/snacks/pizza) || istype(I, /obj/item/reagent_containers/food/snacks/customizable/pizza))
 		if(open)
 			if(pizza)
-				to_chat(user, "<span class='warning'>[src] already has \a [pizza.name]!</span>")
+				to_chat(user, "<span_class='warning'>[src] already has \a [pizza.name]!</span>")
 				return
 			if(!user.transferItemToLoc(I, src))
 				return
 			pizza = I
-			to_chat(user, "<span class='notice'>You put [I] in [src].</span>")
+			to_chat(user, "<span_class='notice'>You put [I] in [src].</span>")
 			update_icon()
 			return
 	else if(istype(I, /obj/item/bombcore/miniature/pizza))
@@ -183,28 +183,28 @@
 				return
 			wires = new /datum/wires/explosive/pizza(src)
 			bomb = I
-			to_chat(user, "<span class='notice'>You put [I] in [src]. Sneeki breeki...</span>")
+			to_chat(user, "<span_class='notice'>You put [I] in [src]. Sneeki breeki...</span>")
 			update_icon()
 			return
 		else if(bomb)
-			to_chat(user, "<span class='notice'>[src] already has a bomb in it!</span>")
+			to_chat(user, "<span_class='notice'>[src] already has a bomb in it!</span>")
 	else if(istype(I, /obj/item/pen))
 		if(!open)
 			if(!user.is_literate())
-				to_chat(user, "<span class='notice'>You scribble illegibly on [src]!</span>")
+				to_chat(user, "<span_class='notice'>You scribble illegibly on [src]!</span>")
 				return
 			var/obj/item/pizzabox/box = boxes.len ? boxes[boxes.len] : src
 			box.boxtag += stripped_input(user, "Write on [box]'s tag:", box, "", 30)
 			if(!user.canUseTopic(src, BE_CLOSE))
 				return
-			to_chat(user, "<span class='notice'>You write with [I] on [src].</span>")
+			to_chat(user, "<span_class='notice'>You write with [I] on [src].</span>")
 			update_icon()
 			return
 	else if(is_wire_tool(I))
 		if(wires && bomb)
 			wires.interact(user)
 	else if(istype(I, /obj/item/reagent_containers/food))
-		to_chat(user, "<span class='warning'>That's not a pizza!</span>")
+		to_chat(user, "<span_class='warning'>That's not a pizza!</span>")
 	..()
 
 /obj/item/pizzabox/process()
@@ -233,7 +233,7 @@
 		disperse_pizzas()
 
 /obj/item/pizzabox/proc/disperse_pizzas()
-	visible_message("<span class='warning'>The pizzas fall everywhere!</span>")
+	visible_message("<span_class='warning'>The pizzas fall everywhere!</span>")
 	for(var/V in boxes)
 		var/obj/item/pizzabox/P = V
 		var/fall_dir = pick(GLOB.alldirs)
@@ -318,7 +318,7 @@
 /obj/item/pizzabox/infinite/examine(mob/user)
 	..()
 	if(isobserver(user))
-		to_chat(user, "<span class='deadsay'>This pizza box is anomalous, and will produce infinite pizza.</span>")
+		to_chat(user, "<span_class='deadsay'>This pizza box is anomalous, and will produce infinite pizza.</span>")
 
 /obj/item/pizzabox/infinite/attack_self(mob/living/user)
 	QDEL_NULL(pizza)

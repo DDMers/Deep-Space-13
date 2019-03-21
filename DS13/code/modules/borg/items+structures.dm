@@ -321,18 +321,18 @@
 		var/mob/living/carbon/human/H = M
 		if(isBorgDrone(H))
 			user = H
-			to_chat(H, "<span class='warning'>Establishing connection...</span>")
-			to_chat(H, "<span class='warning'>Success!</span>")
-			to_chat(H, "<span class='warning'>Connection established with [src]</span>")
+			to_chat(H, "<span_class='warning'>Establishing connection...</span>")
+			to_chat(H, "<span_class='warning'>Success!</span>")
+			to_chat(H, "<span_class='warning'>Connection established with [src]</span>")
 			. = ..()
 			user = H
 			START_PROCESSING(SSobj, src)
 		else
-			src.visible_message("<span class='warning'>[M] cannot be recharged as they are not borg.</span>")
+			src.visible_message("<span_class='warning'>[M] cannot be recharged as they are not borg.</span>")
 			unbuckle_mob(M)
 			return TRUE
 	else
-		src.visible_message("<span class='warning'>[M] cannot be recharged.</span>")
+		src.visible_message("<span_class='warning'>[M] cannot be recharged.</span>")
 		unbuckle_mob(M)
 		return TRUE
 
@@ -443,7 +443,7 @@
 		var/obj/structure/CP = locate(/obj/structure) in T
 		var/obj/machinery/CA = locate(/obj/machinery) in T
 		if(CP || CA)
-			to_chat(user,"<span class='danger'>[T] already has a structure on it.</span>")
+			to_chat(user,"<span_class='danger'>[T] already has a structure on it.</span>")
 			return
 		var/mode = input("Borg construction.", "Build what?")in list("Conversion suite", "Borg alcove","Wall","Cancel")
 		var/obj/structure/chair/borg/suite
@@ -458,7 +458,7 @@
 				return
 		if(resource_amount >= resource_cost)
 			busy = TRUE //stop spamming
-			to_chat(user, "<span class='danger'>We are constructing a structure ontop of [T].</span>")
+			to_chat(user, "<span_class='danger'>We are constructing a structure ontop of [T].</span>")
 			playsound(user.loc, 'sound/items/rped.ogg',100,1)
 			if(do_after(user, convert_time, target = T)) //doesnt get past here
 				var/atom/newsuite = new suite(get_turf(T))
@@ -473,19 +473,19 @@
 /obj/item/borg_tool/proc/assimilate_human(mob/user,mob/living/carbon/human/I)
 	var/mob/living/carbon/human/M = I
 	if(user == M)
-		to_chat(user, "<span class='warning'>There is no use in assimilating ourselves.</span>")
+		to_chat(user, "<span_class='warning'>There is no use in assimilating ourselves.</span>")
 		return
 	if(isBorgDrone(M))
-		to_chat(user, "<span class='warning'>They are already in the collective.</span>")
+		to_chat(user, "<span_class='warning'>They are already in the collective.</span>")
 		return
 	if(!M.mind && M.stat != DEAD)
 		to_chat(user, "[M] does not have a consciousness, they would add nothing to the collective. Nanites programmed for disposal of waste life-form.")
 		M.death()
 		return
-	to_chat(M, "<span class='warning'>[user] pierces you with their assimilation tubules!</span>")
+	to_chat(M, "<span_class='warning'>[user] pierces you with their assimilation tubules!</span>")
 	SEND_SIGNAL(M, COMSIG_LIVING_MINOR_SHOCK)
 	M.Jitter(3)
-	M.visible_message("<span class='warning'>[user] pierces [M] with their assimilation tubules!</span>")
+	M.visible_message("<span_class='warning'>[user] pierces [M] with their assimilation tubules!</span>")
 	playsound(M.loc, 'sound/weapons/pierce.ogg', 100,1)
 	if(do_after(user, 50, target = M)) //5 seconds
 		M.mind.make_borg()
@@ -502,7 +502,7 @@
 				if(busy)
 					return FALSE
 				var/turf/open/A = I
-				to_chat(user, "<span class='danger'>We are assimilating [I].</span>")
+				to_chat(user, "<span_class='danger'>We are assimilating [I].</span>")
 				busy = TRUE
 				if(do_after(user, convert_time, target = A))
 					if(A.TerraformTurf(/turf/open/floor/plating/borg, /turf/open/floor/plating/borg))
@@ -516,7 +516,7 @@
 				if(busy)
 					return
 				playsound(src.loc, 'DS13/sound/effects/borg/machines/convertx.ogg', 40, 4)
-				to_chat(user, "<span class='danger'>We are assimilating [I].</span>")
+				to_chat(user, "<span_class='danger'>We are assimilating [I].</span>")
 				var/turf/closed/wall/A = I
 				if(do_after(user, convert_time, target = A))
 					if(A.TerraformTurf(/turf/closed/wall/trek_smooth/borg, /turf/closed/wall/trek_smooth/borg)) //if it's indestructible, this will fail
@@ -548,8 +548,8 @@
 						target.stop_pulling()
 						log_combat(user, target, "grabbed", addition="aggressively")
 						user.grab_state = GRAB_NECK //Instant neck grab
-				target.visible_message("<span class='warning'>[user] violently grabs [target]!</span>", \
-				"<span class='userdanger'>[user] violently grabs you!</span>")
+				target.visible_message("<span_class='warning'>[user] violently grabs [target]!</span>", \
+				"<span_class='userdanger'>[user] violently grabs you!</span>")
 				target.Jitter(3)
 				playsound(target.loc, 'DS13/sound/effects/borg/grab.ogg', 100,1)
 				assimilate_human(user, target)
@@ -563,13 +563,13 @@
 
 /obj/item/borg_tool/proc/tear_airlock(obj/machinery/door/airlock/A, mob/user)
 	busy = TRUE
-	to_chat(user,"<span class='notice'>You start tearing apart the airlock...\
+	to_chat(user,"<span_class='notice'>You start tearing apart the airlock...\
 		</span>")
 	playsound(src.loc, 'DS13/sound/effects/borg/machines/borgforcedoor.ogg', 100, 4)
-	A.audible_message("<span class='italics'>You hear a loud metallic \
+	A.audible_message("<span_class='italics'>You hear a loud metallic \
 		grinding sound.</span>")
 	if(do_after(user, delay=80, needhand=FALSE, target=A, progress=TRUE))
-		A.audible_message("<span class='danger'>[A] is ripped \
+		A.audible_message("<span_class='danger'>[A] is ripped \
 			apart by [user]!</span>")
 		qdel(A)
 	busy = FALSE

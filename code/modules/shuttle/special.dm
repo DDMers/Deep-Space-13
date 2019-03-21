@@ -31,12 +31,12 @@
 	. = ..()
 	if(active_tables.len >= tables_required)
 		if(!active)
-			visible_message("<span class='revenboldnotice'>\
+			visible_message("<span_class='revenboldnotice'>\
 				[src] opens its eyes.</span>")
 		active = TRUE
 	else
 		if(active)
-			visible_message("<span class='revenboldnotice'>\
+			visible_message("<span_class='revenboldnotice'>\
 				[src] closes its eyes.</span>")
 		active = FALSE
 	update_icon()
@@ -91,8 +91,8 @@
 	for(var/i in found - sleepers)
 		var/mob/living/L = i
 		L.add_atom_colour("#800080", TEMPORARY_COLOUR_PRIORITY)
-		L.visible_message("<span class='revennotice'>A strange purple glow wraps itself around [L] as [L.p_they()] suddenly fall[L.p_s()] unconscious.</span>",
-			"<span class='revendanger'>[desc]</span>")
+		L.visible_message("<span_class='revennotice'>A strange purple glow wraps itself around [L] as [L.p_they()] suddenly fall[L.p_s()] unconscious.</span>",
+			"<span_class='revendanger'>[desc]</span>")
 		// Don't let them sit suround unconscious forever
 		addtimer(CALLBACK(src, .proc/sleeper_dreams, L), 100)
 
@@ -105,7 +105,7 @@
 	for(var/i in sleepers - found)
 		var/mob/living/L = i
 		L.remove_atom_colour(TEMPORARY_COLOUR_PRIORITY, "#800080")
-		L.visible_message("<span class='revennotice'>The glow from [L] fades \
+		L.visible_message("<span_class='revennotice'>The glow from [L] fades \
 			away.</span>")
 		L.grab_ghost()
 
@@ -121,7 +121,7 @@
 
 /obj/structure/table/abductor/wabbajack/proc/sleeper_dreams(mob/living/sleeper)
 	if(sleeper in sleepers)
-		to_chat(sleeper, "<span class='revennotice'>While you slumber, you have the strangest dream, like you can see yourself from the outside.</span>")
+		to_chat(sleeper, "<span_class='revennotice'>While you slumber, you have the strangest dream, like you can see yourself from the outside.</span>")
 		sleeper.ghostize(TRUE)
 
 /obj/structure/table/abductor/wabbajack/left
@@ -188,7 +188,7 @@
 		var/throwtarget = get_edge_target_turf(src, boot_dir)
 		M.Paralyze(40)
 		M.throw_at(throwtarget, 5, 1,src)
-		to_chat(M, "<span class='notice'>No climbing on the bar please.</span>")
+		to_chat(M, "<span_class='notice'>No climbing on the bar please.</span>")
 	else
 		. = ..()
 
@@ -279,7 +279,7 @@
 		for(var/obj/I in counted_money)
 			qdel(I)
 		payees[AM] -= threshold
-		say("<span class='robot'>Welcome aboard, [AM]!</span>")
+		say("<span_class='robot'>Welcome aboard, [AM]!</span>")
 		approved_passengers += AM
 
 		if(payees[AM] > 0 && ishuman(AM))
@@ -295,7 +295,7 @@
 		for(var/obj/I in counted_money)
 			qdel(I)
 		if(!check_times[AM] || check_times[AM] < world.time) //Let's not spam the message
-			say("<span class='robot'>$[payees[AM]] received, [AM]. You need $[threshold-payees[AM]] more.</span>")
+			say("<span_class='robot'>$[payees[AM]] received, [AM]. You need $[threshold-payees[AM]] more.</span>")
 			check_times[AM] = world.time + LUXURY_MESSAGE_COOLDOWN
 		return ..()
 	else

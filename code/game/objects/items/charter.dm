@@ -59,7 +59,7 @@
 	to_chat(user, "Your name has been sent to your employers for approval.")
 	// Autoapproves after a certain time
 	response_timer_id = addtimer(CALLBACK(src, .proc/rename_station, new_name, user.name, user.real_name, key_name(user)), approval_time, TIMER_STOPPABLE)
-	to_chat(GLOB.admins, "<span class='adminnotice'><b><font color=orange>CUSTOM STATION RENAME:</font></b>[ADMIN_LOOKUPFLW(user)] proposes to rename the [name_type] to [new_name] (will autoapprove in [DisplayTimeText(approval_time)]). [ADMIN_SMITE(user)] (<A HREF='?_src_=holder;[HrefToken(TRUE)];reject_custom_name=[REF(src)]'>REJECT</A>) [ADMIN_CENTCOM_REPLY(user)]</span>")
+	to_chat(GLOB.admins, "<span_class='adminnotice'><b><font color=orange>CUSTOM STATION RENAME:</font></b>[ADMIN_LOOKUPFLW(user)] proposes to rename the [name_type] to [new_name] (will autoapprove in [DisplayTimeText(approval_time)]). [ADMIN_SMITE(user)] (<A HREF='?_src_=holder;[HrefToken(TRUE)];reject_custom_name=[REF(src)]'>REJECT</A>) [ADMIN_CENTCOM_REPLY(user)]</span>")
 
 /obj/item/station_charter/proc/reject_proposed(user)
 	if(!user)
@@ -67,7 +67,7 @@
 	if(!response_timer_id)
 		return
 	var/turf/T = get_turf(src)
-	T.visible_message("<span class='warning'>The proposed changes disappear \
+	T.visible_message("<span_class='warning'>The proposed changes disappear \
 		from [src]; it looks like they've been rejected.</span>")
 	var/m = "[key_name(user)] has rejected the proposed station name."
 

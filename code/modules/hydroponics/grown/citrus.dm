@@ -114,7 +114,7 @@
 	wine_power = 70
 
 /obj/item/reagent_containers/food/snacks/grown/firelemon/attack_self(mob/living/user)
-	user.visible_message("<span class='warning'>[user] primes [src]!</span>", "<span class='userdanger'>You prime [src]!</span>")
+	user.visible_message("<span_class='warning'>[user] primes [src]!</span>", "<span_class='userdanger'>You prime [src]!</span>")
 	log_bomber(user, "primed a", src, "for detonation")
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user

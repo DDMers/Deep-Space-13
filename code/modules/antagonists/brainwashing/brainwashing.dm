@@ -17,7 +17,7 @@
 			B.objectives += objective
 		M.add_antag_datum(B)
 
-	var/begin_message = "<span class='deadsay'><b>[L]</b> has been brainwashed with the following objectives: "
+	var/begin_message = "<span_class='deadsay'><b>[L]</b> has been brainwashed with the following objectives: "
 	var/obj_message = english_list(directives)
 	var/end_message = "</b>.</span>"
 	var/rendered = begin_message + obj_message + end_message
@@ -32,8 +32,8 @@
 	show_name_in_check_antagonists = TRUE
 
 /datum/antagonist/brainwashed/greet()
-	to_chat(owner, "<span class='warning'>Your mind reels as it begins focusing on a single purpose...</span>")
-	to_chat(owner, "<big><span class='warning'><b>Follow the Directives, at any cost!</b></span></big>")
+	to_chat(owner, "<span_class='warning'>Your mind reels as it begins focusing on a single purpose...</span>")
+	to_chat(owner, "<big><span_class='warning'><b>Follow the Directives, at any cost!</b></span></big>")
 	var/i = 1
 	for(var/X in objectives)
 		var/datum/objective/O = X
@@ -41,8 +41,8 @@
 		i++
 
 /datum/antagonist/brainwashed/farewell()
-	to_chat(owner, "<span class='warning'>Your mind suddenly clears...</span>")
-	to_chat(owner, "<big><span class='warning'><b>You feel the weight of the Directives disappear! You no longer have to obey them.</b></span></big>")
+	to_chat(owner, "<span_class='warning'>Your mind suddenly clears...</span>")
+	to_chat(owner, "<big><span_class='warning'><b>You feel the weight of the Directives disappear! You no longer have to obey them.</b></span></big>")
 	owner.announce_objectives()
 
 /datum/antagonist/brainwashed/admin_add(datum/mind/new_owner,mob/admin)

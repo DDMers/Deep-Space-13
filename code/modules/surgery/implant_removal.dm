@@ -17,13 +17,13 @@
 		I = O
 		break
 	if(I)
-		user.visible_message("[user] begins to extract [I] from [target]'s [target_zone].", "<span class='notice'>You begin to extract [I] from [target]'s [target_zone]...</span>")
+		user.visible_message("[user] begins to extract [I] from [target]'s [target_zone].", "<span_class='notice'>You begin to extract [I] from [target]'s [target_zone]...</span>")
 	else
-		user.visible_message("[user] looks for an implant in [target]'s [target_zone].", "<span class='notice'>You look for an implant in [target]'s [target_zone]...</span>")
+		user.visible_message("[user] looks for an implant in [target]'s [target_zone].", "<span_class='notice'>You look for an implant in [target]'s [target_zone]...</span>")
 
 /datum/surgery_step/extract_implant/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(I)
-		user.visible_message("[user] successfully removes [I] from [target]'s [target_zone]!", "<span class='notice'>You successfully remove [I] from [target]'s [target_zone].</span>")
+		user.visible_message("[user] successfully removes [I] from [target]'s [target_zone]!", "<span_class='notice'>You successfully remove [I] from [target]'s [target_zone].</span>")
 		I.removed(target)
 
 		var/obj/item/implantcase/case
@@ -36,12 +36,12 @@
 			case.imp = I
 			I.forceMove(case)
 			case.update_icon()
-			user.visible_message("[user] places [I] into [case]!", "<span class='notice'>You place [I] into [case].</span>")
+			user.visible_message("[user] places [I] into [case]!", "<span_class='notice'>You place [I] into [case].</span>")
 		else
 			qdel(I)
 
 	else
-		to_chat(user, "<span class='warning'>You can't find anything in [target]'s [target_zone]!</span>")
+		to_chat(user, "<span_class='warning'>You can't find anything in [target]'s [target_zone]!</span>")
 	return 1
 
 /datum/surgery/implant_removal/mechanic

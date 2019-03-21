@@ -12,7 +12,7 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(src == C.wear_mask)
-			to_chat(user, "<span class='warning'>You need help taking this off!</span>")
+			to_chat(user, "<span_class='warning'>You need help taking this off!</span>")
 			return
 	..()
 
@@ -79,7 +79,7 @@
 
 /obj/item/clothing/mask/pig/attack_self(mob/user)
 	voicechange = !voicechange
-	to_chat(user, "<span class='notice'>You turn the voice box [voicechange ? "on" : "off"]!</span>")
+	to_chat(user, "<span_class='notice'>You turn the voice box [voicechange ? "on" : "off"]!</span>")
 
 /obj/item/clothing/mask/pig/speechModification(message)
 	if(voicechange)
@@ -112,7 +112,7 @@
 
 /obj/item/clothing/mask/frog/attack_self(mob/user)
 	voicechange = !voicechange
-	to_chat(user, "<span class='notice'>You turn the voice box [voicechange ? "on" : "off"]!</span>")
+	to_chat(user, "<span_class='notice'>You turn the voice box [voicechange ? "on" : "off"]!</span>")
 
 /obj/item/clothing/mask/frog/speechModification(message) //whenever you speak
 	if(voicechange)
@@ -131,7 +131,7 @@
 /obj/item/clothing/mask/frog/cursed/equipped(mob/user, slot)
 	var/mob/living/carbon/C = user
 	if(C.wear_mask == src)
-		to_chat(user, "<span class='warning'><B>[src] was cursed! Ree!!</B></span>")
+		to_chat(user, "<span_class='warning'><B>[src] was cursed! Ree!!</B></span>")
 	return ..()
 
 
@@ -234,10 +234,10 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if((C.get_item_by_slot(SLOT_HEAD == src)) || (C.get_item_by_slot(SLOT_WEAR_MASK) == src))
-			to_chat(user, "<span class='warning'>You can't tie [src] while wearing it!</span>")
+			to_chat(user, "<span_class='warning'>You can't tie [src] while wearing it!</span>")
 			return
 	if(slot_flags & ITEM_SLOT_HEAD)
-		to_chat(user, "<span class='warning'>You must undo [src] before you can tie it into a neckerchief!</span>")
+		to_chat(user, "<span_class='warning'>You must undo [src] before you can tie it into a neckerchief!</span>")
 	else
 		if(user.is_holding(src))
 			var/obj/item/clothing/neck/neckerchief/nk = new(src)
@@ -248,10 +248,10 @@
 			var/currentHandIndex = user.get_held_index_of_item(src)
 			user.transferItemToLoc(src, null)
 			user.put_in_hand(nk, currentHandIndex)
-			user.visible_message("<span class='notice'>You tie [src] up like a neckerchief.</span>", "<span class='notice'>[user] ties [src] up like a neckerchief.</span>")
+			user.visible_message("<span_class='notice'>You tie [src] up like a neckerchief.</span>", "<span_class='notice'>[user] ties [src] up like a neckerchief.</span>")
 			qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You must be holding [src] in order to tie it!")
+			to_chat(user, "<span_class='warning'>You must be holding [src] in order to tie it!")
 
 /obj/item/clothing/mask/bandana/red
 	name = "red bandana"

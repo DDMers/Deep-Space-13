@@ -42,7 +42,7 @@
 		nadeassembly = A
 		A.master = src
 		assemblyattacher = user.ckey
-		to_chat(user, "<span class='notice'>You add [A] to the [name].</span>")
+		to_chat(user, "<span_class='notice'>You add [A] to the [name].</span>")
 		playsound(src, 'sound/weapons/tap.ogg', 20, 1)
 		update_icon()
 		return
@@ -106,7 +106,7 @@
 	if(ismob(AM) && !can_attach_mob)
 		return
 
-	to_chat(user, "<span class='notice'>You start planting [src]. The timer is set to [det_time]...</span>")
+	to_chat(user, "<span_class='notice'>You start planting [src]. The timer is set to [det_time]...</span>")
 
 	if(do_after(user, 30, target = AM))
 		if(!user.temporarilyRemoveItemFromInventory(src))
@@ -128,7 +128,7 @@
 
 		target.add_overlay(plastic_overlay, TRUE)
 		if(!nadeassembly)
-			to_chat(user, "<span class='notice'>You plant the bomb. Timer counting down from [det_time].</span>")
+			to_chat(user, "<span_class='notice'>You plant the bomb. Timer counting down from [det_time].</span>")
 			addtimer(CALLBACK(src, .proc/prime), det_time*10)
 		else
 			qdel(src)	//How?
@@ -154,7 +154,7 @@
 /obj/item/grenade/plastic/suicide_act(mob/user)
 	message_admins("[ADMIN_LOOKUPFLW(user)] suicided with [src] at [ADMIN_VERBOSEJMP(user)]")
 	log_game("[key_name(user)] suicided with [src] at [AREACOORD(user)]")
-	user.visible_message("<span class='suicide'>[user] activates [src] and holds it above [user.p_their()] head! It looks like [user.p_theyre()] going out with a bang!</span>")
+	user.visible_message("<span_class='suicide'>[user] activates [src] and holds it above [user.p_their()] head! It looks like [user.p_theyre()] going out with a bang!</span>")
 	shout_syndicate_crap(user)
 	explosion(user,0,2,0) //Cheap explosion imitation because putting prime() here causes runtimes
 	user.gib(1, 1)
@@ -188,7 +188,7 @@
 	return ..()
 
 /obj/item/grenade/plastic/c4/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] activates the [src.name] and holds it above [user.p_their()] head! It looks like [user.p_theyre()] going out with a bang!</span>")
+	user.visible_message("<span_class='suicide'>[user] activates the [src.name] and holds it above [user.p_their()] head! It looks like [user.p_theyre()] going out with a bang!</span>")
 	shout_syndicate_crap(user)
 	target = user
 	message_admins("[ADMIN_LOOKUPFLW(user)] suicided with [name] at [ADMIN_VERBOSEJMP(src)]")
@@ -200,7 +200,7 @@
 /obj/item/grenade/plastic/c4/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		open_panel = !open_panel
-		to_chat(user, "<span class='notice'>You [open_panel ? "open" : "close"] the wire panel.</span>")
+		to_chat(user, "<span_class='notice'>You [open_panel ? "open" : "close"] the wire panel.</span>")
 	else if(is_wire_tool(I))
 		wires.interact(user)
 	else

@@ -36,7 +36,7 @@
 	var/boost = 0
 	bloodcrawl = BLOODCRAWL_EAT
 	var/list/consumed_mobs = list()
-	var/playstyle_string = "<span class='big bold'>You are an imp,</span><B> a mischievous creature from hell. You are the lowest rank on the hellish totem pole  \
+	var/playstyle_string = "<span_class='big bold'>You are an imp,</span><B> a mischievous creature from hell. You are the lowest rank on the hellish totem pole  \
 							Though you are not obligated to help, perhaps by aiding a higher ranking devil, you might just get a promotion.  However, you are incapable	\
 							of intentionally harming a fellow devil.</B>"
 
@@ -54,7 +54,7 @@
 /mob/living/simple_animal/imp/death()
 	..(1)
 	playsound(get_turf(src),'sound/magic/demon_dies.ogg', 200, 1)
-	visible_message("<span class='danger'>[src] screams in agony as it sublimates into a sulfurous smoke.</span>")
+	visible_message("<span_class='danger'>[src] screams in agony as it sublimates into a sulfurous smoke.</span>")
 	ghostize()
 	qdel(src)
 

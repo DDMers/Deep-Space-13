@@ -124,7 +124,7 @@ Difficulty: Medium
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/lava_pools(var/amount)
 	if(!target)
 		return
-	target.visible_message("<span class='boldwarning'>Lava starts to pool up around you!</span>")
+	target.visible_message("<span_class='boldwarning'>Lava starts to pool up around you!</span>")
 	while(amount > 0)
 		if(!target)
 			break
@@ -152,7 +152,7 @@ Difficulty: Medium
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/lava_arena()
 	if(!target)
 		return
-	target.visible_message("<span class='boldwarning'>[src] encases you in an arena of lava!</span>")
+	target.visible_message("<span_class='boldwarning'>[src] encases you in an arena of lava!</span>")
 	var/amount = 3
 	var/turf/center = get_turf(target)
 	var/list/walled = RANGE_TURFS(3, center) - RANGE_TURFS(2, center)
@@ -216,7 +216,7 @@ Difficulty: Medium
 				continue
 			hit_list += L
 			L.adjustFireLoss(20)
-			to_chat(L, "<span class='userdanger'>You're hit by [src]'s fire breath!</span>")
+			to_chat(L, "<span_class='userdanger'>You're hit by [src]'s fire breath!</span>")
 
 		// deals damage to mechs
 		for(var/obj/mecha/M in T.contents)
@@ -237,7 +237,7 @@ Difficulty: Medium
 	swooping |= SWOOP_DAMAGEABLE
 	density = FALSE
 	icon_state = "shadow"
-	visible_message("<span class='boldwarning'>[src] swoops up high!</span>")
+	visible_message("<span_class='boldwarning'>[src] swoops up high!</span>")
 
 	var/negative
 	var/initial_x = x
@@ -293,7 +293,7 @@ Difficulty: Medium
 	playsound(loc, 'sound/effects/meteorimpact.ogg', 200, 1)
 	for(var/mob/living/L in orange(1, src))
 		if(L.stat)
-			visible_message("<span class='warning'>[src] slams down on [L], crushing [L.p_them()]!</span>")
+			visible_message("<span_class='warning'>[src] slams down on [L], crushing [L.p_them()]!</span>")
 			L.gib()
 		else
 			L.adjustBruteLoss(75)
@@ -303,7 +303,7 @@ Difficulty: Medium
 					throw_dir = pick(GLOB.alldirs)
 				var/throwtarget = get_edge_target_turf(src, throw_dir)
 				L.throw_at(throwtarget, 3)
-				visible_message("<span class='warning'>[L] is thrown clear of [src]!</span>")
+				visible_message("<span_class='warning'>[L] is thrown clear of [src]!</span>")
 	for(var/obj/mecha/M in orange(1, src))
 		M.take_damage(75, BRUTE, "melee", 1)
 
@@ -319,7 +319,7 @@ Difficulty: Medium
 	if(!istype(A))
 		return
 	if(player_cooldown >= world.time)
-		to_chat(src, "<span class='warning'>You need to wait 20 seconds between swoop attacks!</span>")
+		to_chat(src, "<span_class='warning'>You need to wait 20 seconds between swoop attacks!</span>")
 		return
 	swoop_attack(FALSE, A, 30)
 	lava_pools(10)
@@ -356,7 +356,7 @@ Difficulty: Medium
 		if(istype(L, /mob/living/simple_animal/hostile/megafauna/dragon))
 			continue
 		L.adjustFireLoss(10)
-		to_chat(L, "<span class='userdanger'>You fall directly into the pool of lava!</span>")
+		to_chat(L, "<span_class='userdanger'>You fall directly into the pool of lava!</span>")
 
 	// deals damage to mechs
 	for(var/obj/mecha/M in T.contents)

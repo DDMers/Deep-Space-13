@@ -70,7 +70,7 @@
 						contract = new /obj/item/paper/contract/infernal/friend(C.loc, C.mind, user.mind)
 				C.put_in_hands(contract)
 		else
-			to_chat(user, "<span class='notice'>[C] seems to not be sentient.  You cannot summon a contract for [C.p_them()].</span>")
+			to_chat(user, "<span_class='notice'>[C] seems to not be sentient.  You cannot summon a contract for [C.p_them()].</span>")
 
 
 /obj/effect/proc_holder/spell/aimed/fireball/hellish
@@ -106,25 +106,25 @@
 	if(istype(user))
 		if(istype(user.loc, /obj/effect/dummy/phased_mob/slaughter/))
 			if(valid_location(user))
-				to_chat(user, "<span class='warning'>You are now phasing in.</span>")
+				to_chat(user, "<span_class='warning'>You are now phasing in.</span>")
 				if(do_mob(user,user,150))
 					if(valid_location(user))
 						user.infernalphasein()
 					else
-						to_chat(user, "<span class='warning'>You are no longer near a potential signer.</span>")
+						to_chat(user, "<span_class='warning'>You are no longer near a potential signer.</span>")
 
 			else
-				to_chat(user, "<span class='warning'>You can only re-appear near a potential signer.</span>")
+				to_chat(user, "<span_class='warning'>You can only re-appear near a potential signer.</span>")
 				revert_cast()
 				return ..()
 		else
 			user.notransform = TRUE
 			user.fakefire()
-			to_chat(src, "<span class='warning'>You begin to phase back into sinful flames.</span>")
+			to_chat(src, "<span_class='warning'>You begin to phase back into sinful flames.</span>")
 			if(do_mob(user,user,150))
 				user.infernalphaseout()
 			else
-				to_chat(user, "<span class='warning'>You must remain still while exiting.</span>")
+				to_chat(user, "<span_class='warning'>You must remain still while exiting.</span>")
 				user.notransform = FALSE
 				user.fakefireextinguish()
 		start_recharge()
@@ -143,7 +143,7 @@
 /mob/living/proc/infernalphaseout()
 	dust_animation()
 	spawn_dust()
-	visible_message("<span class='warning'>[src] disappears in a flashfire!</span>")
+	visible_message("<span_class='warning'>[src] disappears in a flashfire!</span>")
 	playsound(get_turf(src), 'sound/magic/enter_blood.ogg', 100, 1, -1)
 	var/obj/effect/dummy/phased_mob/slaughter/holder = new /obj/effect/dummy/phased_mob/slaughter(loc)
 	ExtinguishMob()
@@ -154,12 +154,12 @@
 
 /mob/living/proc/infernalphasein()
 	if(notransform)
-		to_chat(src, "<span class='warning'>You're too busy to jaunt in.</span>")
+		to_chat(src, "<span_class='warning'>You're too busy to jaunt in.</span>")
 		return FALSE
 	fakefire()
 	forceMove(drop_location())
 	client.eye = src
-	visible_message("<span class='warning'><B>[src] appears in a fiery blaze!</B></span>")
+	visible_message("<span_class='warning'><B>[src] appears in a fiery blaze!</B></span>")
 	playsound(get_turf(src), 'sound/magic/exit_blood.ogg', 100, 1, -1)
 	addtimer(CALLBACK(src, .proc/fakefireextinguish), 15, TIMER_UNIQUE)
 
@@ -238,7 +238,7 @@
 	else
 		var/list/funky_turfs = RANGE_TURFS(1, user)
 		for(var/turf/closed/solid in funky_turfs)
-			to_chat(user, "<span class='warning'>You're too close to a wall.</span>")
+			to_chat(user, "<span_class='warning'>You're too close to a wall.</span>")
 			return
 		dancefloor_exists = TRUE
 		var/i = 1

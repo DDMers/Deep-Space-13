@@ -11,10 +11,10 @@
 	dog_fashion = /datum/dog_fashion/head/chef
 
 /obj/item/clothing/head/chefhat/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is donning [src]! It looks like [user.p_theyre()] trying to become a chef.</span>")
+	user.visible_message("<span_class='suicide'>[user] is donning [src]! It looks like [user.p_theyre()] trying to become a chef.</span>")
 	user.say("Bork Bork Bork!", forced = "chef hat suicide")
 	sleep(20)
-	user.visible_message("<span class='suicide'>[user] climbs into an imaginary oven!</span>")
+	user.visible_message("<span_class='suicide'>[user] climbs into an imaginary oven!</span>")
 	user.say("BOOORK!", forced = "chef hat suicide")
 	playsound(user, 'sound/machines/ding.ogg', 50, 1)
 	return(FIRELOSS)
@@ -71,7 +71,7 @@
 
 /obj/item/clothing/head/fedora/det_hat/examine(mob/user)
 	..()
-	to_chat(user, "<span class='notice'>Alt-click to take a candy corn.</span>")
+	to_chat(user, "<span_class='notice'>Alt-click to take a candy corn.</span>")
 
 /obj/item/clothing/head/fedora/det_hat/AltClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE, ismonkey(user)))

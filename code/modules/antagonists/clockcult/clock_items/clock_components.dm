@@ -12,12 +12,12 @@
 /obj/item/clockwork/component/examine(mob/user)
 	. = ..()
 	if(is_servant_of_ratvar(user) || isobserver(user))
-		to_chat(user, "<span class='[get_component_span(component_id)]'>You can activate this in your hand to break it down for power.</span>")
+		to_chat(user, "<span_class='[get_component_span(component_id)]'>You can activate this in your hand to break it down for power.</span>")
 
 /obj/item/clockwork/component/attack_self(mob/living/user)
 	if(is_servant_of_ratvar(user))
-		user.visible_message("<span class='notice'>[user] crushes [src] in [user.p_their()] hand!</span>", \
-		"<span class='alloy'>You crush [src], capturing its escaping energy for use as power.</span>")
+		user.visible_message("<span_class='notice'>[user] crushes [src] in [user.p_their()] hand!</span>", \
+		"<span_class='alloy'>You crush [src], capturing its escaping energy for use as power.</span>")
 		playsound(user, 'sound/effects/pop_expl.ogg', 50, TRUE)
 		adjust_clockwork_power(POWER_WALL_TOTAL)
 		qdel(src)
@@ -25,15 +25,15 @@
 /obj/item/clockwork/component/pickup(mob/living/user)
 	..()
 	if(iscultist(user) || (user.mind && user.mind.isholy))
-		to_chat(user, "<span class='[message_span]'>[cultist_message]</span>")
+		to_chat(user, "<span_class='[message_span]'>[cultist_message]</span>")
 		if(user.mind && user.mind.isholy)
-			to_chat(user, "<span class='boldannounce'>The power of your faith melts away [src]!</span>")
+			to_chat(user, "<span_class='boldannounce'>The power of your faith melts away [src]!</span>")
 			var/obj/item/stack/ore/slag/wrath = new /obj/item/stack/ore/slag
 			qdel(src)
 			user.put_in_active_hand(wrath)
 	if(is_servant_of_ratvar(user) && prob(20))
 		var/pickedmessage = pick(servant_of_ratvar_messages)
-		to_chat(user, "<span class='[message_span]'>[servant_of_ratvar_messages[pickedmessage] ? "[text2ratvar(pickedmessage)]" : pickedmessage]</span>")
+		to_chat(user, "<span_class='[message_span]'>[servant_of_ratvar_messages[pickedmessage] ? "[text2ratvar(pickedmessage)]" : pickedmessage]</span>")
 
 /obj/item/clockwork/component/belligerent_eye
 	name = "belligerent eye"
@@ -183,7 +183,7 @@
 /obj/item/clockwork/alloy_shards/examine(mob/user)
 	..()
 	if(is_servant_of_ratvar(user) || isobserver(user))
-		to_chat(user, "<span class='brass'>Can be consumed by a replica fabricator as a source of power.</span>")
+		to_chat(user, "<span_class='brass'>Can be consumed by a replica fabricator as a source of power.</span>")
 
 /obj/item/clockwork/alloy_shards/proc/replace_name_desc()
 	name = "replicant alloy shard"

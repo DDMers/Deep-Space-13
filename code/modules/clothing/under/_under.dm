@@ -31,7 +31,7 @@
 		var/obj/item/stack/cable_coil/C = I
 		C.use(1)
 		has_sensor = HAS_SENSORS
-		to_chat(user,"<span class='notice'>You repair the suit sensors on [src] with [C].</span>")
+		to_chat(user,"<span_class='notice'>You repair the suit sensors on [src] with [C].</span>")
 		return 1
 	if(!attach_accessory(I, user))
 		return ..()
@@ -86,7 +86,7 @@
 		var/obj/item/clothing/accessory/A = I
 		if(attached_accessory)
 			if(user)
-				to_chat(user, "<span class='warning'>[src] already has an accessory.</span>")
+				to_chat(user, "<span_class='warning'>[src] already has an accessory.</span>")
 			return
 		else
 
@@ -98,7 +98,7 @@
 				return
 
 			if(user && notifyAttach)
-				to_chat(user, "<span class='notice'>You attach [I] to [src].</span>")
+				to_chat(user, "<span_class='notice'>You attach [I] to [src].</span>")
 
 			var/accessory_color = attached_accessory.item_color
 			if(!accessory_color)
@@ -124,9 +124,9 @@
 		var/obj/item/clothing/accessory/A = attached_accessory
 		attached_accessory.detach(src, user)
 		if(user.put_in_hands(A))
-			to_chat(user, "<span class='notice'>You detach [A] from [src].</span>")
+			to_chat(user, "<span_class='notice'>You detach [A] from [src].</span>")
 		else
-			to_chat(user, "<span class='notice'>You detach [A] from [src] and it falls on the floor.</span>")
+			to_chat(user, "<span_class='notice'>You detach [A] from [src] and it falls on the floor.</span>")
 
 		if(ishuman(loc))
 			var/mob/living/carbon/human/H = loc

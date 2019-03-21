@@ -18,10 +18,10 @@
 	time = 125
 
 /datum/surgery_step/reinforce_ligaments/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message("[user] starts reinforce [target]'s ligaments.", "<span class='notice'>You start reinforcing [target]'s ligaments.</span>")
+	user.visible_message("[user] starts reinforce [target]'s ligaments.", "<span_class='notice'>You start reinforcing [target]'s ligaments.</span>")
 
 /datum/surgery_step/reinforce_ligaments/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message("[user] reinforces [target]'s ligaments!", "<span class='notice'>You reinforce [target]'s ligaments!</span>")
+	user.visible_message("[user] reinforces [target]'s ligaments!", "<span_class='notice'>You reinforce [target]'s ligaments!</span>")
 	new /datum/bioware/reinforced_ligaments(target)
 	return TRUE
 

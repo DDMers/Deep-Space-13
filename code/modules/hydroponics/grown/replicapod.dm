@@ -43,9 +43,9 @@
 				factions = B.data["factions"]
 				factions = B.data["quirks"]
 				contains_sample = TRUE
-				visible_message("<span class='notice'>The [src] is injected with a fresh blood sample.</span>")
+				visible_message("<span_class='notice'>The [src] is injected with a fresh blood sample.</span>")
 			else
-				visible_message("<span class='warning'>The [src] rejects the sample!</span>")
+				visible_message("<span_class='warning'>The [src] rejects the sample!</span>")
 
 	if(!reagents.has_reagent("blood"))
 		mind = null

@@ -257,7 +257,7 @@
 			return
 		if(buckled)
 			Feedstop(silent = TRUE)
-			visible_message("<span class='danger'>[M] pulls [src] off!</span>")
+			visible_message("<span_class='danger'>[M] pulls [src] off!</span>")
 			return
 		attacked += 5
 		if(nutrition >= 100) //steal some nutrition. negval handled in life()
@@ -291,22 +291,22 @@
 		M.do_attack_animation(src, ATTACK_EFFECT_DISARM)
 		if(buckled == M)
 			if(prob(60))
-				visible_message("<span class='warning'>[M] attempts to wrestle \the [name] off!</span>")
+				visible_message("<span_class='warning'>[M] attempts to wrestle \the [name] off!</span>")
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
 
 			else
-				visible_message("<span class='warning'>[M] manages to wrestle \the [name] off!</span>")
+				visible_message("<span_class='warning'>[M] manages to wrestle \the [name] off!</span>")
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 
 				discipline_slime(M)
 
 		else
 			if(prob(30))
-				visible_message("<span class='warning'>[M] attempts to wrestle \the [name] off of [buckled]!</span>")
+				visible_message("<span_class='warning'>[M] attempts to wrestle \the [name] off of [buckled]!</span>")
 				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
 
 			else
-				visible_message("<span class='warning'>[M] manages to wrestle \the [name] off of [buckled]!</span>")
+				visible_message("<span_class='warning'>[M] manages to wrestle \the [name] off of [buckled]!</span>")
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 
 				discipline_slime(M)
@@ -336,7 +336,7 @@
 			++Friends[user]
 		else
 			Friends[user] = 1
-		to_chat(user, "<span class='notice'>You feed the slime the plasma. It chirps happily.</span>")
+		to_chat(user, "<span_class='notice'>You feed the slime the plasma. It chirps happily.</span>")
 		var/obj/item/stack/sheet/mineral/plasma/S = W
 		S.use(1)
 		return
@@ -345,7 +345,7 @@
 		if(prob(25))
 			user.do_attack_animation(src)
 			user.changeNext_move(CLICK_CD_MELEE)
-			to_chat(user, "<span class='danger'>[W] passes right through [src]!</span>")
+			to_chat(user, "<span_class='danger'>[W] passes right through [src]!</span>")
 			return
 		if(Discipline && prob(50)) // wow, buddy, why am I getting attacked??
 			Discipline = 0
@@ -358,7 +358,7 @@
 	if(istype(W, /obj/item/storage/bag/bio))
 		var/obj/item/storage/P = W
 		if(!effectmod)
-			to_chat(user, "<span class='warning'>The slime is not currently being mutated.</span>")
+			to_chat(user, "<span_class='warning'>The slime is not currently being mutated.</span>")
 			return
 		var/hasOutput = FALSE //Have we outputted text?
 		var/hasFound = FALSE //Have we found an extract to be added?
@@ -369,23 +369,23 @@
 				applied++
 				hasFound = TRUE
 			if(applied >= SLIME_EXTRACT_CROSSING_REQUIRED)
-				to_chat(user, "<span class='notice'>You feed the slime as many of the extracts from the bag as you can, and it mutates!</span>")
+				to_chat(user, "<span_class='notice'>You feed the slime as many of the extracts from the bag as you can, and it mutates!</span>")
 				playsound(src, 'sound/effects/attackblob.ogg', 50, 1)
 				spawn_corecross()
 				hasOutput = TRUE
 				break
 		if(!hasOutput)
 			if(!hasFound)
-				to_chat(user, "<span class='warning'>There are no extracts in the bag that this slime will accept!</span>")
+				to_chat(user, "<span_class='warning'>There are no extracts in the bag that this slime will accept!</span>")
 			else
-				to_chat(user, "<span class='notice'>You feed the slime some extracts from the bag.</span>")
+				to_chat(user, "<span_class='notice'>You feed the slime some extracts from the bag.</span>")
 				playsound(src, 'sound/effects/attackblob.ogg', 50, 1)
 		return
 	..()
 
 /mob/living/simple_animal/slime/proc/spawn_corecross()
 	var/static/list/crossbreeds = subtypesof(/obj/item/slimecross)
-	visible_message("<span class='danger'>[src] shudders, its mutated core consuming the rest of its body!</span>")
+	visible_message("<span_class='danger'>[src] shudders, its mutated core consuming the rest of its body!</span>")
 	playsound(src, 'sound/magic/smoke.ogg', 50, 1)
 	var/crosspath
 	for(var/X in crossbreeds)
@@ -396,7 +396,7 @@
 	if(crosspath)
 		new crosspath(loc)
 	else
-		visible_message("<span class='warning'>The mutated core shudders, and collapses into a puddle, unable to maintain its form.</span>")
+		visible_message("<span_class='warning'>The mutated core shudders, and collapses into a puddle, unable to maintain its form.</span>")
 	qdel(src)
 
 /mob/living/simple_animal/slime/proc/apply_water()
@@ -409,14 +409,14 @@
 
 /mob/living/simple_animal/slime/examine(mob/user)
 
-	var/msg = "<span class='info'>*---------*\nThis is [icon2html(src, user)] \a <EM>[src]</EM>!\n"
+	var/msg = "<span_class='info'>*---------*\nThis is [icon2html(src, user)] \a <EM>[src]</EM>!\n"
 	if (src.stat == DEAD)
-		msg += "<span class='deadsay'>It is limp and unresponsive.</span>\n"
+		msg += "<span_class='deadsay'>It is limp and unresponsive.</span>\n"
 	else
 		if (stat == UNCONSCIOUS) // Slime stasis
-			msg += "<span class='deadsay'>It appears to be alive but unresponsive.</span>\n"
+			msg += "<span_class='deadsay'>It appears to be alive but unresponsive.</span>\n"
 		if (src.getBruteLoss())
-			msg += "<span class='warning'>"
+			msg += "<span_class='warning'>"
 			if (src.getBruteLoss() < 40)
 				msg += "It has some punctures in its flesh!"
 			else
@@ -431,10 +431,10 @@
 				msg += "It is glowing gently with moderate levels of electrical activity.\n"
 
 			if(6 to 9)
-				msg += "<span class='warning'>It is glowing brightly with high levels of electrical activity.</span>\n"
+				msg += "<span_class='warning'>It is glowing brightly with high levels of electrical activity.</span>\n"
 
 			if(10)
-				msg += "<span class='warning'><B>It is radiating with massive levels of electrical activity!</B></span>\n"
+				msg += "<span_class='warning'><B>It is radiating with massive levels of electrical activity!</B></span>\n"
 
 	msg += "*---------*</span>"
 	to_chat(user, msg)

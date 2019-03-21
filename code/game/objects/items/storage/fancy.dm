@@ -144,7 +144,7 @@
 
 /obj/item/storage/fancy/cigarettes/examine(mob/user)
 	..()
-	to_chat(user, "<span class='notice'>Alt-click to extract contents.</span>")
+	to_chat(user, "<span_class='notice'>Alt-click to extract contents.</span>")
 
 /obj/item/storage/fancy/cigarettes/AltClick(mob/living/carbon/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -154,9 +154,9 @@
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
 		user.put_in_hands(W)
 		contents -= W
-		to_chat(user, "<span class='notice'>You take \a [W] out of the pack.</span>")
+		to_chat(user, "<span_class='notice'>You take \a [W] out of the pack.</span>")
 	else
-		to_chat(user, "<span class='notice'>There are no [icon_type]s left in the pack.</span>")
+		to_chat(user, "<span_class='notice'>There are no [icon_type]s left in the pack.</span>")
 
 /obj/item/storage/fancy/cigarettes/update_icon()
 	if(fancy_open || !contents.len)
@@ -193,11 +193,11 @@
 			SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, M)
 			M.equip_to_slot_if_possible(W, SLOT_WEAR_MASK)
 			contents -= W
-			to_chat(user, "<span class='notice'>You take \a [W] out of the pack.</span>")
+			to_chat(user, "<span_class='notice'>You take \a [W] out of the pack.</span>")
 		else
 			..()
 	else
-		to_chat(user, "<span class='notice'>There are no [icon_type]s left in the pack.</span>")
+		to_chat(user, "<span_class='notice'>There are no [icon_type]s left in the pack.</span>")
 
 /obj/item/storage/fancy/cigarettes/dromedaryco
 	name = "\improper DromedaryCo packet"

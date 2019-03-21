@@ -87,13 +87,13 @@
 		if(!H.myseed)
 			return
 		if(!H.harvest)// So it's bit harder.
-			to_chat(user, "<span class='warning'>Plant needs to be ready to harvest to perform full data scan.</span>") //Because space dna is actually magic
+			to_chat(user, "<span_class='warning'>Plant needs to be ready to harvest to perform full data scan.</span>") //Because space dna is actually magic
 			return
 		if(plants[H.myseed.type])
-			to_chat(user, "<span class='notice'>Plant data already present in local storage.</span>")
+			to_chat(user, "<span_class='notice'>Plant data already present in local storage.</span>")
 			return
 		plants[H.myseed.type] = 1
-		to_chat(user, "<span class='notice'>Plant data added to local storage.</span>")
+		to_chat(user, "<span_class='notice'>Plant data added to local storage.</span>")
 
 	//animals
 	var/static/list/non_simple_animals = typecacheof(list(/mob/living/carbon/monkey, /mob/living/carbon/alien))
@@ -101,22 +101,22 @@
 		if(isanimal(target))
 			var/mob/living/simple_animal/A = target
 			if(!A.healable)//simple approximation of being animal not a robot or similar
-				to_chat(user, "<span class='warning'>No compatible DNA detected</span>")
+				to_chat(user, "<span_class='warning'>No compatible DNA detected</span>")
 				return
 		if(animals[target.type])
-			to_chat(user, "<span class='notice'>Animal data already present in local storage.</span>")
+			to_chat(user, "<span_class='notice'>Animal data already present in local storage.</span>")
 			return
 		animals[target.type] = 1
-		to_chat(user, "<span class='notice'>Animal data added to local storage.</span>")
+		to_chat(user, "<span_class='notice'>Animal data added to local storage.</span>")
 
 	//humans
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
 		if(dna[H.dna.uni_identity])
-			to_chat(user, "<span class='notice'>Humanoid data already present in local storage.</span>")
+			to_chat(user, "<span_class='notice'>Humanoid data already present in local storage.</span>")
 			return
 		dna[H.dna.uni_identity] = 1
-		to_chat(user, "<span class='notice'>Humanoid data added to local storage.</span>")
+		to_chat(user, "<span_class='notice'>Humanoid data added to local storage.</span>")
 
 /obj/machinery/dna_vault
 	name = "DNA Vault"
@@ -242,7 +242,7 @@
 				uploaded++
 				dna[ui] = 1
 		check_goal()
-		to_chat(user, "<span class='notice'>[uploaded] new datapoints uploaded.</span>")
+		to_chat(user, "<span_class='notice'>[uploaded] new datapoints uploaded.</span>")
 	else
 		return ..()
 
@@ -254,31 +254,31 @@
 	var/datum/species/S = H.dna.species
 	switch(upgrade_type)
 		if(VAULT_TOXIN)
-			to_chat(H, "<span class='notice'>You feel resistant to airborne toxins.</span>")
+			to_chat(H, "<span_class='notice'>You feel resistant to airborne toxins.</span>")
 			if(locate(/obj/item/organ/lungs) in H.internal_organs)
 				var/obj/item/organ/lungs/L = H.internal_organs_slot[ORGAN_SLOT_LUNGS]
 				L.tox_breath_dam_min = 0
 				L.tox_breath_dam_max = 0
 			H.add_trait(TRAIT_VIRUSIMMUNE, "dna_vault")
 		if(VAULT_NOBREATH)
-			to_chat(H, "<span class='notice'>Your lungs feel great.</span>")
+			to_chat(H, "<span_class='notice'>Your lungs feel great.</span>")
 			H.add_trait(TRAIT_NOBREATH, "dna_vault")
 		if(VAULT_FIREPROOF)
-			to_chat(H, "<span class='notice'>You feel fireproof.</span>")
+			to_chat(H, "<span_class='notice'>You feel fireproof.</span>")
 			S.burnmod = 0.5
 			H.add_trait(TRAIT_RESISTHEAT, "dna_vault")
 			H.add_trait(TRAIT_NOFIRE, "dna_vault")
 		if(VAULT_STUNTIME)
-			to_chat(H, "<span class='notice'>Nothing can keep you down for long.</span>")
+			to_chat(H, "<span_class='notice'>Nothing can keep you down for long.</span>")
 			S.stunmod = 0.5
 		if(VAULT_ARMOUR)
-			to_chat(H, "<span class='notice'>You feel tough.</span>")
+			to_chat(H, "<span_class='notice'>You feel tough.</span>")
 			S.armor = 30
 			H.add_trait(TRAIT_PIERCEIMMUNE, "dna_vault")
 		if(VAULT_SPEED)
-			to_chat(H, "<span class='notice'>Your legs feel faster.</span>")
+			to_chat(H, "<span_class='notice'>Your legs feel faster.</span>")
 			H.add_movespeed_modifier(MOVESPEED_ID_DNA_VAULT, update=TRUE, priority=100, multiplicative_slowdown=-1, blacklisted_movetypes=(FLYING|FLOATING))
 		if(VAULT_QUICK)
-			to_chat(H, "<span class='notice'>Your arms move as fast as lightning.</span>")
+			to_chat(H, "<span_class='notice'>Your arms move as fast as lightning.</span>")
 			H.next_move_modifier = 0.5
 	power_lottery[H] = list()

@@ -18,16 +18,16 @@
 /obj/item/banner/examine(mob/user)
 	..()
 	if(inspiration_available)
-		to_chat(user, "<span class='notice'>Activate it in your hand to inspire nearby allies of this banner's allegiance!</span>")
+		to_chat(user, "<span_class='notice'>Activate it in your hand to inspire nearby allies of this banner's allegiance!</span>")
 
 /obj/item/banner/attack_self(mob/living/carbon/human/user)
 	if(!inspiration_available)
 		return
 	if(morale_time > world.time)
-		to_chat(user, "<span class='warning'>You aren't feeling inspired enough to flourish [src] again yet.</span>")
+		to_chat(user, "<span_class='warning'>You aren't feeling inspired enough to flourish [src] again yet.</span>")
 		return
-	user.visible_message("<span class='big notice'>[user] flourishes [src]!</span>", \
-	"<span class='notice'>You raise [src] skywards, inspiring your allies!</span>")
+	user.visible_message("<span_class='big notice'>[user] flourishes [src]!</span>", \
+	"<span_class='notice'>You raise [src] skywards, inspiring your allies!</span>")
 	playsound(src, "rustle", 100, FALSE)
 	if(warcry)
 		user.say("[warcry]", forced="banner")
@@ -54,7 +54,7 @@
 	for(var/V in inspired)
 		var/mob/living/carbon/human/H = V
 		if(H != user)
-			to_chat(H, "<span class='notice'>Your confidence surges as [user] flourishes [user.p_their()] [name]!</span>")
+			to_chat(H, "<span_class='notice'>Your confidence surges as [user] flourishes [user.p_their()] [name]!</span>")
 		inspiration(H)
 		special_inspiration(H)
 
@@ -365,7 +365,7 @@
 	desc = "This one is rusted."
 	force = 30
 	armour_penetration = 15
-	
+
 /obj/item/claymore/weak/ceremonial
 	desc = "A rusted claymore, once at the heart of a powerful scottish clan struck down and oppressed by tyrants, it has been passed down the ages as a symbol of defiance."
 	force = 15

@@ -84,22 +84,22 @@ Credit where due:
 		if(R.deployed)
 			var/mob/living/silicon/ai/AI = R.mainframe
 			R.undeploy()
-			to_chat(AI, "<span class='userdanger'>Anomaly Detected. Returned to core!</span>") //The AI needs to be in its core to properly be converted
+			to_chat(AI, "<span_class='userdanger'>Anomaly Detected. Returned to core!</span>") //The AI needs to be in its core to properly be converted
 
 	. = L.mind.add_antag_datum(C)
 
 	if(!silent && L)
 		if(.)
-			to_chat(L, "<span class='heavy_brass'>The world before you suddenly glows a brilliant yellow. [issilicon(L) ? "You cannot compute this truth!" : \
+			to_chat(L, "<span_class='heavy_brass'>The world before you suddenly glows a brilliant yellow. [issilicon(L) ? "You cannot compute this truth!" : \
 			"Your mind is racing!"] You hear the whooshing steam and cl[pick("ank", "ink", "unk", "ang")]ing cogs of a billion billion machines, and all at once it comes to you.<br>\
 			Ratvar, the Clockwork Justiciar, [GLOB.ratvar_awakens ? "has been freed from his eternal prison" : "lies in exile, derelict and forgotten in an unseen realm"].</span>")
 			flash_color(L, flash_color = list("#BE8700", "#BE8700", "#BE8700", rgb(0,0,0)), flash_time = 50)
 		else
-			L.visible_message("<span class='boldwarning'>[L] seems to resist an unseen force!</span>", null, null, 7, L)
-			to_chat(L, "<span class='heavy_brass'>The world before you suddenly glows a brilliant yellow. [issilicon(L) ? "You cannot compute this truth!" : \
-			"Your mind is racing!"] You hear the whooshing steam and cl[pick("ank", "ink", "unk", "ang")]ing cogs of a billion billion machines, and the sound</span> <span class='boldwarning'>\
+			L.visible_message("<span_class='boldwarning'>[L] seems to resist an unseen force!</span>", null, null, 7, L)
+			to_chat(L, "<span_class='heavy_brass'>The world before you suddenly glows a brilliant yellow. [issilicon(L) ? "You cannot compute this truth!" : \
+			"Your mind is racing!"] You hear the whooshing steam and cl[pick("ank", "ink", "unk", "ang")]ing cogs of a billion billion machines, and the sound</span> <span_class='boldwarning'>\
 			is a meaningless cacophony.</span><br>\
-			<span class='userdanger'>You see an abomination of rusting parts[GLOB.ratvar_awakens ? ", and it is here.<br>It is too late" : \
+			<span_class='userdanger'>You see an abomination of rusting parts[GLOB.ratvar_awakens ? ", and it is here.<br>It is too late" : \
 			" in an endless grey void.<br>It cannot be allowed to escape"].</span>")
 			L.playsound_local(get_turf(L), 'sound/ambience/antag/clockcultalr.ogg', 40, TRUE, frequency = 100000, pressure_affected = FALSE)
 			flash_color(L, flash_color = list("#BE8700", "#BE8700", "#BE8700", rgb(0,0,0)), flash_time = 5)
@@ -139,8 +139,8 @@ Credit where due:
 	restricted_jobs = list("Chaplain", "Captain")
 	announce_span = "brass"
 	announce_text = "Servants of Ratvar are trying to summon the Justiciar!\n\
-	<span class='brass'>Servants</span>: Construct defenses to protect the Ark. Sabotage the station!\n\
-	<span class='notice'>Crew</span>: Stop the servants before they can summon the Clockwork Justiciar."
+	<span_class='brass'>Servants</span>: Construct defenses to protect the Ark. Sabotage the station!\n\
+	<span_class='notice'>Crew</span>: Stop the servants before they can summon the Clockwork Justiciar."
 	var/servants_to_serve = list()
 	var/roundstart_player_count
 	var/ark_time //In minutes, how long the Ark waits before activation; this is equal to 30 + (number of players / 5) (max 40 mins.)
@@ -199,10 +199,10 @@ Credit where due:
 /datum/game_mode/clockwork_cult/proc/greet_servant(mob/M) //Description of their role
 	if(!M)
 		return 0
-	to_chat(M, "<span class='bold large_brass'>You are a servant of Ratvar, the Clockwork Justiciar!</span>")
-	to_chat(M, "<span class='brass'>You have approximately <b>[ark_time]</b> minutes until the Ark activates.</span>")
-	to_chat(M, "<span class='brass'>Unlock <b>Script</b> scripture by converting a new servant.</span>")
-	to_chat(M, "<span class='brass'><b>Application</b> scripture will be unlocked halfway until the Ark's activation.</span>")
+	to_chat(M, "<span_class='bold large_brass'>You are a servant of Ratvar, the Clockwork Justiciar!</span>")
+	to_chat(M, "<span_class='brass'>You have approximately <b>[ark_time]</b> minutes until the Ark activates.</span>")
+	to_chat(M, "<span_class='brass'>Unlock <b>Script</b> scripture by converting a new servant.</span>")
+	to_chat(M, "<span_class='brass'><b>Application</b> scripture will be unlocked halfway until the Ark's activation.</span>")
 	M.playsound_local(get_turf(M), 'sound/ambience/antag/clockcultalr.ogg', 100, FALSE, pressure_affected = FALSE)
 	return 1
 
@@ -223,10 +223,10 @@ Credit where due:
 		if(!S.forceMove(get_turf(L)))
 			qdel(S)
 	if(S && !QDELETED(S))
-		to_chat(L, "<span class='bold large_brass'>There is a paper in your backpack! It'll tell you if anything's changed, as well as what to expect.</span>")
-		to_chat(L, "<span class='alloy'>[slot] is a <b>clockwork slab</b>, a multipurpose tool used to construct machines and invoke ancient words of power. If this is your first time \
+		to_chat(L, "<span_class='bold large_brass'>There is a paper in your backpack! It'll tell you if anything's changed, as well as what to expect.</span>")
+		to_chat(L, "<span_class='alloy'>[slot] is a <b>clockwork slab</b>, a multipurpose tool used to construct machines and invoke ancient words of power. If this is your first time \
 		as a servant, you can find a concise tutorial in the Recollection category of its interface.</span>")
-		to_chat(L, "<span class='alloy italics'>If you want more information, you can read <a href=\"https://tgstation13.org/wiki/Clockwork_Cult\">the wiki page</a> to learn more.</span>")
+		to_chat(L, "<span_class='alloy italics'>If you want more information, you can read <a href=\"https://tgstation13.org/wiki/Clockwork_Cult\">the wiki page</a> to learn more.</span>")
 		return TRUE
 	return FALSE
 
@@ -352,5 +352,5 @@ Credit where due:
 
 /obj/item/paper/servant_primer/examine(mob/user)
 	if(!is_servant_of_ratvar(user) && !isobserver(user))
-		to_chat(user, "<span class='danger'>You can't understand any of the words on [src].</span>")
+		to_chat(user, "<span_class='danger'>You can't understand any of the words on [src].</span>")
 	..()

@@ -15,8 +15,8 @@
 	minimum_devils = 3
 
 	announce_text = "There are devil agents onboard the station, trying to outbid each other!\n\
-		+	<span class='danger'>Devils</span>: Purchase souls and interfere with your rivals!\n\
-		+	<span class='notice'>Crew</span>: Resist the lure of sin and remain pure!"
+		+	<span_class='danger'>Devils</span>: Purchase souls and interfere with your rivals!\n\
+		+	<span_class='notice'>Crew</span>: Resist the lure of sin and remain pure!"
 
 /datum/game_mode/devil/devil_agents/post_setup()
 	var/i = 0

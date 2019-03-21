@@ -35,10 +35,10 @@
 			if(!user.transferItemToLoc(I, src))
 				return
 			inserted_id = I
-			to_chat(user, "<span class='notice'>You insert [I].</span>")
+			to_chat(user, "<span_class='notice'>You insert [I].</span>")
 			return
 		else
-			to_chat(user, "<span class='notice'>There's an ID inserted already.</span>")
+			to_chat(user, "<span_class='notice'>There's an ID inserted already.</span>")
 	return ..()
 
 /obj/machinery/gulag_item_reclaimer/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, \

@@ -109,8 +109,8 @@
 		return
 	obj_flags |= EMAGGED
 	if(user)
-		user.visible_message("<span class='warning'>Sparks fly out of [src]!</span>",
-							"<span class='notice'>You emag [src], disabling its thermal sensors.</span>")
+		user.visible_message("<span_class='warning'>Sparks fly out of [src]!</span>",
+							"<span_class='notice'>You emag [src], disabling its thermal sensors.</span>")
 	playsound(src, "sparks", 50, 1)
 
 /obj/machinery/firealarm/temperature_expose(datum/gas_mixture/air, temperature, volume)
@@ -158,7 +158,7 @@
 	if(W.tool_behaviour == TOOL_SCREWDRIVER && buildstage == 2)
 		W.play_tool_sound(src)
 		panel_open = !panel_open
-		to_chat(user, "<span class='notice'>The wires have been [panel_open ? "exposed" : "unexposed"].</span>")
+		to_chat(user, "<span_class='notice'>The wires have been [panel_open ? "exposed" : "unexposed"].</span>")
 		update_icon()
 		return
 
@@ -169,12 +169,12 @@
 				if(!W.tool_start_check(user, amount=0))
 					return
 
-				to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
+				to_chat(user, "<span_class='notice'>You begin repairing [src]...</span>")
 				if(W.use_tool(src, user, 40, volume=50))
 					obj_integrity = max_integrity
-					to_chat(user, "<span class='notice'>You repair [src].</span>")
+					to_chat(user, "<span_class='notice'>You repair [src].</span>")
 			else
-				to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
+				to_chat(user, "<span_class='warning'>[src] is already in good condition!</span>")
 			return
 
 		switch(buildstage)
@@ -182,16 +182,16 @@
 				if(W.tool_behaviour == TOOL_MULTITOOL)
 					detecting = !detecting
 					if (src.detecting)
-						user.visible_message("[user] has reconnected [src]'s detecting unit!", "<span class='notice'>You reconnect [src]'s detecting unit.</span>")
+						user.visible_message("[user] has reconnected [src]'s detecting unit!", "<span_class='notice'>You reconnect [src]'s detecting unit.</span>")
 					else
-						user.visible_message("[user] has disconnected [src]'s detecting unit!", "<span class='notice'>You disconnect [src]'s detecting unit.</span>")
+						user.visible_message("[user] has disconnected [src]'s detecting unit!", "<span_class='notice'>You disconnect [src]'s detecting unit.</span>")
 					return
 
 				else if(W.tool_behaviour == TOOL_WIRECUTTER)
 					buildstage = 1
 					W.play_tool_sound(src)
 					new /obj/item/stack/cable_coil(user.loc, 5)
-					to_chat(user, "<span class='notice'>You cut the wires from \the [src].</span>")
+					to_chat(user, "<span_class='notice'>You cut the wires from \the [src].</span>")
 					update_icon()
 					return
 
@@ -206,31 +206,31 @@
 				if(istype(W, /obj/item/stack/cable_coil))
 					var/obj/item/stack/cable_coil/coil = W
 					if(coil.get_amount() < 5)
-						to_chat(user, "<span class='warning'>You need more cable for this!</span>")
+						to_chat(user, "<span_class='warning'>You need more cable for this!</span>")
 					else
 						coil.use(5)
 						buildstage = 2
-						to_chat(user, "<span class='notice'>You wire \the [src].</span>")
+						to_chat(user, "<span_class='notice'>You wire \the [src].</span>")
 						update_icon()
 					return
 
 				else if(W.tool_behaviour == TOOL_CROWBAR)
 					user.visible_message("[user.name] removes the electronics from [src.name].", \
-										"<span class='notice'>You start prying out the circuit...</span>")
+										"<span_class='notice'>You start prying out the circuit...</span>")
 					if(W.use_tool(src, user, 20, volume=50))
 						if(buildstage == 1)
 							if(stat & BROKEN)
-								to_chat(user, "<span class='notice'>You remove the destroyed circuit.</span>")
+								to_chat(user, "<span_class='notice'>You remove the destroyed circuit.</span>")
 								stat &= ~BROKEN
 							else
-								to_chat(user, "<span class='notice'>You pry out the circuit.</span>")
+								to_chat(user, "<span_class='notice'>You pry out the circuit.</span>")
 								new /obj/item/electronics/firealarm(user.loc)
 							buildstage = 0
 							update_icon()
 					return
 			if(0)
 				if(istype(W, /obj/item/electronics/firealarm))
-					to_chat(user, "<span class='notice'>You insert the circuit.</span>")
+					to_chat(user, "<span_class='notice'>You insert the circuit.</span>")
 					qdel(W)
 					buildstage = 1
 					update_icon()
@@ -240,15 +240,15 @@
 					var/obj/item/electroadaptive_pseudocircuit/P = W
 					if(!P.adapt_circuit(user, 15))
 						return
-					user.visible_message("<span class='notice'>[user] fabricates a circuit and places it into [src].</span>", \
-					"<span class='notice'>You adapt a fire alarm circuit and slot it into the assembly.</span>")
+					user.visible_message("<span_class='notice'>[user] fabricates a circuit and places it into [src].</span>", \
+					"<span_class='notice'>You adapt a fire alarm circuit and slot it into the assembly.</span>")
 					buildstage = 1
 					update_icon()
 					return
 
 				else if(W.tool_behaviour == TOOL_WRENCH)
 					user.visible_message("[user] removes the fire alarm assembly from the wall.", \
-										 "<span class='notice'>You remove the fire alarm assembly from the wall.</span>")
+										 "<span_class='notice'>You remove the fire alarm assembly from the wall.</span>")
 					var/obj/item/wallframe/firealarm/frame = new /obj/item/wallframe/firealarm()
 					frame.forceMove(user.drop_location())
 					W.play_tool_sound(src)

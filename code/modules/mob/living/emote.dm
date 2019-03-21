@@ -246,10 +246,10 @@
 		var/mob/living/carbon/human/H = user
 		if(H.get_num_arms() == 0)
 			if(H.get_num_legs() != 0)
-				message_param = "tries to point at %t with a leg, <span class='userdanger'>falling down</span> in the process!"
+				message_param = "tries to point at %t with a leg, <span_class='userdanger'>falling down</span> in the process!"
 				H.Paralyze(20)
 			else
-				message_param = "<span class='userdanger'>bumps [user.p_their()] head on the ground</span> trying to motion towards %t."
+				message_param = "<span_class='userdanger'>bumps [user.p_their()] head on the ground</span> trying to motion towards %t."
 				H.adjustBrainLoss(5)
 	..()
 
@@ -402,13 +402,13 @@
 /datum/emote/living/custom/proc/check_invalid(mob/user, input)
 	. = TRUE
 	if(copytext(input,1,5) == "says")
-		to_chat(user, "<span class='danger'>Invalid emote.</span>")
+		to_chat(user, "<span_class='danger'>Invalid emote.</span>")
 	else if(copytext(input,1,9) == "exclaims")
-		to_chat(user, "<span class='danger'>Invalid emote.</span>")
+		to_chat(user, "<span_class='danger'>Invalid emote.</span>")
 	else if(copytext(input,1,6) == "yells")
-		to_chat(user, "<span class='danger'>Invalid emote.</span>")
+		to_chat(user, "<span_class='danger'>Invalid emote.</span>")
 	else if(copytext(input,1,5) == "asks")
-		to_chat(user, "<span class='danger'>Invalid emote.</span>")
+		to_chat(user, "<span_class='danger'>Invalid emote.</span>")
 	else
 		. = FALSE
 
@@ -491,10 +491,10 @@
 	. = ..()
 	var/obj/item/circlegame/N = new(user)
 	if(user.put_in_hands(N))
-		to_chat(user, "<span class='notice'>You make a circle with your hand.</span>")
+		to_chat(user, "<span_class='notice'>You make a circle with your hand.</span>")
 	else
 		qdel(N)
-		to_chat(user, "<span class='warning'>You don't have any free hands to make a circle with.</span>")
+		to_chat(user, "<span_class='warning'>You don't have any free hands to make a circle with.</span>")
 
 /datum/emote/living/slap
 	key = "slap"
@@ -507,6 +507,6 @@
 		return
 	var/obj/item/slapper/N = new(user)
 	if(user.put_in_hands(N))
-		to_chat(user, "<span class='notice'>You ready your slapping hand.</span>")
+		to_chat(user, "<span_class='notice'>You ready your slapping hand.</span>")
 	else
-		to_chat(user, "<span class='warning'>You're incapable of slapping in your current state.</span>")
+		to_chat(user, "<span_class='warning'>You're incapable of slapping in your current state.</span>")

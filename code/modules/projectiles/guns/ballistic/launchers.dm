@@ -101,18 +101,18 @@
 		if(user.is_holding(src))
 			user.put_in_hands(magazine)
 		playsound(src, 'sound/weapons/gun_magazine_remove_full.ogg', 70, TRUE)
-		to_chat(user, "<span class='notice'>You work the [magazine] out from [src].</span>")
+		to_chat(user, "<span_class='notice'>You work the [magazine] out from [src].</span>")
 		magazine = null
 	else
-		to_chat(user, "<span class='notice'>There's no rocket in [src].</span>")
+		to_chat(user, "<span_class='notice'>There's no rocket in [src].</span>")
 	update_icon()
 
 /obj/item/gun/ballistic/rocketlauncher/update_icon()
 	icon_state = "[initial(icon_state)]-[chambered ? "1" : "0"]"
 
 /obj/item/gun/ballistic/rocketlauncher/suicide_act(mob/living/user)
-	user.visible_message("<span class='warning'>[user] aims [src] at the ground! It looks like [user.p_theyre()] performing a sick rocket jump!<span>", \
-		"<span class='userdanger'>You aim [src] at the ground to perform a bisnasty rocket jump...</span>")
+	user.visible_message("<span_class='warning'>[user] aims [src] at the ground! It looks like [user.p_theyre()] performing a sick rocket jump!<span>", \
+		"<span_class='userdanger'>You aim [src] at the ground to perform a bisnasty rocket jump...</span>")
 	if(can_shoot())
 		user.notransform = TRUE
 		playsound(src, 'sound/vehicles/rocketlaunch.ogg', 80, 1, 5)
@@ -129,8 +129,8 @@
 		sleep(5)
 		shoot_with_empty_chamber(user)
 		sleep(20)
-		user.visible_message("<span class='warning'>[user] looks about the room realizing [user.p_theyre()] still there. [user.p_they(TRUE)] proceed to shove [src] down their throat and choke [user.p_them()]self with it!</span>", \
-			"<span class='userdanger'>You look around after realizing you're still here, then proceed to choke yourself to death with [src]!</span>")
+		user.visible_message("<span_class='warning'>[user] looks about the room realizing [user.p_theyre()] still there. [user.p_they(TRUE)] proceed to shove [src] down their throat and choke [user.p_them()]self with it!</span>", \
+			"<span_class='userdanger'>You look around after realizing you're still here, then proceed to choke yourself to death with [src]!</span>")
 		sleep(20)
 		return OXYLOSS
 
@@ -138,4 +138,3 @@
 
 
 
-	

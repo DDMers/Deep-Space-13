@@ -55,7 +55,7 @@
 
 /obj/machinery/portable_atmospherics/canister/interact(mob/user)
 	if(!allowed(user))
-		to_chat(user, "<span class='warning'>Error - Unauthorized User</span>")
+		to_chat(user, "<span_class='warning'>Error - Unauthorized User</span>")
 		playsound(src, 'sound/misc/compiler-failure.ogg', 50, 1)
 		return
 	..()
@@ -293,11 +293,11 @@
 	if(stat & BROKEN)
 		if(!I.tool_start_check(user, amount=0))
 			return TRUE
-		to_chat(user, "<span class='notice'>You begin cutting [src] apart...</span>")
+		to_chat(user, "<span_class='notice'>You begin cutting [src] apart...</span>")
 		if(I.use_tool(src, user, 30, volume=50))
 			deconstruct(TRUE)
 	else
-		to_chat(user, "<span class='notice'>You cannot slice [src] apart when it isn't broken.</span>")
+		to_chat(user, "<span_class='notice'>You cannot slice [src] apart when it isn't broken.</span>")
 
 	return TRUE
 
@@ -480,8 +480,8 @@
 		if("eject")
 			if(holding)
 				if(valve_open)
-					message_admins("[ADMIN_LOOKUPFLW(usr)] removed [holding] from [src] with valve still open at [ADMIN_VERBOSEJMP(src)] releasing contents into the <span class='boldannounce'>air</span><br>.")
-					investigate_log("[key_name(usr)] removed the [holding], leaving the valve open and transferring into the <span class='boldannounce'>air</span><br>", INVESTIGATE_ATMOS)
+					message_admins("[ADMIN_LOOKUPFLW(usr)] removed [holding] from [src] with valve still open at [ADMIN_VERBOSEJMP(src)] releasing contents into the <span_class='boldannounce'>air</span><br>.")
+					investigate_log("[key_name(usr)] removed the [holding], leaving the valve open and transferring into the <span_class='boldannounce'>air</span><br>", INVESTIGATE_ATMOS)
 				replace_tank(usr, FALSE)
 				. = TRUE
 	update_icon()

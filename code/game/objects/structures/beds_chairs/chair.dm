@@ -16,9 +16,9 @@
 
 /obj/structure/chair/examine(mob/user)
 	..()
-	to_chat(user, "<span class='notice'>It's held together by a couple of <b>bolts</b>.</span>")
+	to_chat(user, "<span_class='notice'>It's held together by a couple of <b>bolts</b>.</span>")
 	if(!has_buckled_mobs())
-		to_chat(user, "<span class='notice'>Drag your sprite to sit in it.</span>")
+		to_chat(user, "<span_class='notice'>Drag your sprite to sit in it.</span>")
 
 /obj/structure/chair/Initialize()
 	. = ..()
@@ -237,7 +237,7 @@
 			return
 		if(!usr.canUseTopic(src, BE_CLOSE, ismonkey(usr)))
 			return
-		usr.visible_message("<span class='notice'>[usr] grabs \the [src.name].</span>", "<span class='notice'>You grab \the [src.name].</span>")
+		usr.visible_message("<span_class='notice'>[usr] grabs \the [src.name].</span>", "<span_class='notice'>You grab \the [src.name].</span>")
 		var/C = new item_chair(loc)
 		TransferComponents(C)
 		usr.put_in_hands(C)
@@ -268,7 +268,7 @@
 	var/obj/structure/chair/origin_type = /obj/structure/chair
 
 /obj/item/chair/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins hitting [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span_class='suicide'>[user] begins hitting [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	playsound(src,hitsound,50,1)
 	return BRUTELOSS
 
@@ -283,13 +283,13 @@
 /obj/item/chair/proc/plant(mob/user)
 	for(var/obj/A in get_turf(loc))
 		if(istype(A, /obj/structure/chair))
-			to_chat(user, "<span class='danger'>There is already a chair here.</span>")
+			to_chat(user, "<span_class='danger'>There is already a chair here.</span>")
 			return
 		if(A.density && !(A.flags_1 & ON_BORDER_1))
-			to_chat(user, "<span class='danger'>There is already something here.</span>")
+			to_chat(user, "<span_class='danger'>There is already something here.</span>")
 			return
 
-	user.visible_message("<span class='notice'>[user] rights \the [src.name].</span>", "<span class='notice'>You right \the [name].</span>")
+	user.visible_message("<span_class='notice'>[user] rights \the [src.name].</span>", "<span_class='notice'>You right \the [name].</span>")
 	var/obj/structure/chair/C = new origin_type(get_turf(loc))
 	TransferComponents(C)
 	C.setDir(dir)
@@ -313,7 +313,7 @@
 
 /obj/item/chair/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == UNARMED_ATTACK && prob(hit_reaction_chance))
-		owner.visible_message("<span class='danger'>[owner] fends off [attack_text] with [src]!</span>")
+		owner.visible_message("<span_class='danger'>[owner] fends off [attack_text] with [src]!</span>")
 		return 1
 	return 0
 
@@ -322,7 +322,7 @@
 	if(!proximity)
 		return
 	if(prob(break_chance))
-		user.visible_message("<span class='danger'>[user] smashes \the [src] to pieces against \the [target]</span>")
+		user.visible_message("<span_class='danger'>[user] smashes \the [src] to pieces against \the [target]</span>")
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target
 			if(C.health < C.maxHealth*0.5)
@@ -399,12 +399,12 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(!(datum_flags & DF_ISPROCESSING))
-		user.visible_message("<span class='notice'>[user] spins [src] around, and Ratvarian technology keeps it spinning FOREVER.</span>", \
-		"<span class='notice'>Automated spinny chairs. The pinnacle of Ratvarian technology.</span>")
+		user.visible_message("<span_class='notice'>[user] spins [src] around, and Ratvarian technology keeps it spinning FOREVER.</span>", \
+		"<span_class='notice'>Automated spinny chairs. The pinnacle of Ratvarian technology.</span>")
 		START_PROCESSING(SSfastprocess, src)
 	else
-		user.visible_message("<span class='notice'>[user] stops [src]'s uncontrollable spinning.</span>", \
-		"<span class='notice'>You grab [src] and stop its wild spinning.</span>")
+		user.visible_message("<span_class='notice'>[user] stops [src]'s uncontrollable spinning.</span>", \
+		"<span_class='notice'>You grab [src] and stop its wild spinning.</span>")
 		STOP_PROCESSING(SSfastprocess, src)
 
 /obj/structure/chair/bronze

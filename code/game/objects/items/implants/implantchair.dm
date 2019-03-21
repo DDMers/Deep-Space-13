@@ -88,12 +88,12 @@
 	if(istype(I, /obj/item/implant))
 		var/obj/item/implant/P = I
 		if(P.implant(M))
-			visible_message("<span class='warning'>[M] has been implanted by [src].</span>")
+			visible_message("<span_class='warning'>[M] has been implanted by [src].</span>")
 			return TRUE
 	else if(istype(I, /obj/item/organ))
 		var/obj/item/organ/P = I
 		P.Insert(M, drop_if_replaced = FALSE)
-		visible_message("<span class='warning'>[M] has been implanted by [src].</span>")
+		visible_message("<span_class='warning'>[M] has been implanted by [src].</span>")
 		return TRUE
 
 /obj/machinery/implantchair/update_icon()
@@ -122,20 +122,20 @@
 /obj/machinery/implantchair/container_resist(mob/living/user)
 	user.changeNext_move(CLICK_CD_BREAKOUT)
 	user.last_special = world.time + CLICK_CD_BREAKOUT
-	user.visible_message("<span class='notice'>You see [user] kicking against the door of [src]!</span>", \
-		"<span class='notice'>You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
-		"<span class='italics'>You hear a metallic creaking from [src].</span>")
+	user.visible_message("<span_class='notice'>You see [user] kicking against the door of [src]!</span>", \
+		"<span_class='notice'>You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
+		"<span_class='italics'>You hear a metallic creaking from [src].</span>")
 	if(do_after(user,(breakout_time), target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src || state_open)
 			return
-		user.visible_message("<span class='warning'>[user] successfully broke out of [src]!</span>", \
-			"<span class='notice'>You successfully break out of [src]!</span>")
+		user.visible_message("<span_class='warning'>[user] successfully broke out of [src]!</span>", \
+			"<span_class='notice'>You successfully break out of [src]!</span>")
 		open_machine()
 
 /obj/machinery/implantchair/relaymove(mob/user)
 	if(message_cooldown <= world.time)
 		message_cooldown = world.time + 50
-		to_chat(user, "<span class='warning'>[src]'s door won't budge!</span>")
+		to_chat(user, "<span_class='warning'>[src]'s door won't budge!</span>")
 
 /obj/machinery/implantchair/MouseDrop_T(mob/target, mob/user)
 	if(user.stat || !Adjacent(user) || !user.Adjacent(target) || !isliving(target) || !user.IsAdvancedToolUser())

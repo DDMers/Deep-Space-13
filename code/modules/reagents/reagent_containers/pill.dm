@@ -32,24 +32,24 @@
 		return FALSE
 
 	if(M == user)
-		M.visible_message("<span class='notice'>[user] attempts to [apply_method] [src].</span>")
+		M.visible_message("<span_class='notice'>[user] attempts to [apply_method] [src].</span>")
 		if(self_delay)
 			if(!do_mob(user, M, self_delay))
 				return FALSE
-		to_chat(M, "<span class='notice'>You [apply_method] [src].</span>")
+		to_chat(M, "<span_class='notice'>You [apply_method] [src].</span>")
 
 	else
-		M.visible_message("<span class='danger'>[user] attempts to force [M] to [apply_method] [src].</span>", \
-							"<span class='userdanger'>[user] attempts to force [M] to [apply_method] [src].</span>")
+		M.visible_message("<span_class='danger'>[user] attempts to force [M] to [apply_method] [src].</span>", \
+							"<span_class='userdanger'>[user] attempts to force [M] to [apply_method] [src].</span>")
 		if(!do_mob(user, M))
 			return FALSE
-		M.visible_message("<span class='danger'>[user] forces [M] to [apply_method] [src].</span>", \
-							"<span class='userdanger'>[user] forces [M] to [apply_method] [src].</span>")
+		M.visible_message("<span_class='danger'>[user] forces [M] to [apply_method] [src].</span>", \
+							"<span_class='userdanger'>[user] forces [M] to [apply_method] [src].</span>")
 
 	var/makes_me_think = pick(strings(REDPILL_FILE, "redpill_questions"))
 	if(icon_state == "pill4" && prob(5)) //you take the red pill - you stay in Wonderland, and I show you how deep the rabbit hole goes
 		sleep(50)
-		to_chat(M, "<span class='notice'>[makes_me_think]</span>")
+		to_chat(M, "<span_class='notice'>[makes_me_think]</span>")
 
 	if(reagents.total_volume)
 		reagents.reaction(M, apply_type)
@@ -65,16 +65,16 @@
 	if(!dissolvable || !target.is_refillable())
 		return
 	if(target.is_drainable() && !target.reagents.total_volume)
-		to_chat(user, "<span class='warning'>[target] is empty! There's nothing to dissolve [src] in.</span>")
+		to_chat(user, "<span_class='warning'>[target] is empty! There's nothing to dissolve [src] in.</span>")
 		return
 
 	if(target.reagents.holder_full())
-		to_chat(user, "<span class='warning'>[target] is full.</span>")
+		to_chat(user, "<span_class='warning'>[target] is full.</span>")
 		return
 
-	to_chat(user, "<span class='notice'>You dissolve [src] in [target].</span>")
+	to_chat(user, "<span_class='notice'>You dissolve [src] in [target].</span>")
 	for(var/mob/O in viewers(2, user))	//viewers is necessary here because of the small radius
-		to_chat(O, "<span class='warning'>[user] slips something into [target]!</span>")
+		to_chat(O, "<span_class='warning'>[user] slips something into [target]!</span>")
 	reagents.trans_to(target, reagents.total_volume, transfered_by = user)
 	qdel(src)
 

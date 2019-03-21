@@ -76,7 +76,7 @@
 	return istype(surface, /turf/open/floor)
 
 /obj/item/toy/crayon/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is jamming [src] up [user.p_their()] nose and into [user.p_their()] brain. It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span_class='suicide'>[user] is jamming [src] up [user.p_their()] nose and into [user.p_their()] brain. It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (BRUTELOSS|OXYLOSS)
 
 /obj/item/toy/crayon/Initialize()
@@ -132,12 +132,12 @@
 	if(charges == -1)
 		. = FALSE
 	else if(!charges_left)
-		to_chat(user, "<span class='warning'>There is no more of [src] left!</span>")
+		to_chat(user, "<span_class='warning'>There is no more of [src] left!</span>")
 		if(self_contained)
 			qdel(src)
 		. = TRUE
 	else if(charges_left < amount && requires_full)
-		to_chat(user, "<span class='warning'>There is not enough of [src] left!</span>")
+		to_chat(user, "<span_class='warning'>There is not enough of [src] left!</span>")
 		. = TRUE
 
 /obj/item/toy/crayon/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, datum/tgui/master_ui = null, datum/ui_state/state = GLOB.hands_state)
@@ -153,7 +153,7 @@
 	if(user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		if(has_cap)
 			is_capped = !is_capped
-			to_chat(user, "<span class='notice'>The cap on [src] is now [is_capped ? "on" : "off"].</span>")
+			to_chat(user, "<span_class='notice'>The cap on [src] is now [is_capped ? "on" : "off"].</span>")
 			update_icon()
 
 /obj/item/toy/crayon/proc/staticDrawables()
@@ -349,10 +349,10 @@
 		clicky = CLAMP(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
 
 	if(!instant)
-		to_chat(user, "<span class='notice'>You start drawing a [temp] on the	[target.name]...</span>")
+		to_chat(user, "<span_class='notice'>You start drawing a [temp] on the	[target.name]...</span>")
 
 	if(pre_noise)
-		audible_message("<span class='notice'>You hear spraying.</span>")
+		audible_message("<span_class='notice'>You hear spraying.</span>")
 		playsound(user.loc, 'sound/effects/spray.ogg', 5, 1, 5)
 
 	var/wait_time = 50
@@ -387,19 +387,19 @@
 					affected_turfs += right
 					affected_turfs += target
 				else
-					to_chat(user, "<span class='warning'>There isn't enough space to paint!</span>")
+					to_chat(user, "<span_class='warning'>There isn't enough space to paint!</span>")
 					return
 
 	if(!instant)
-		to_chat(user, "<span class='notice'>You finish drawing \the [temp].</span>")
+		to_chat(user, "<span_class='notice'>You finish drawing \the [temp].</span>")
 	else
-		to_chat(user, "<span class='notice'>You spray a [temp] on \the [target.name]</span>")
+		to_chat(user, "<span_class='notice'>You spray a [temp] on \the [target.name]</span>")
 
 	if(length(text_buffer))
 		text_buffer = copytext(text_buffer,2)
 
 	if(post_noise)
-		audible_message("<span class='notice'>You hear spraying.</span>")
+		audible_message("<span_class='notice'>You hear spraying.</span>")
 		playsound(user.loc, 'sound/effects/spray.ogg', 5, 1, 5)
 
 	var/fraction = min(1, . / reagents.maximum_volume)
@@ -574,11 +574,11 @@
 /obj/item/toy/crayon/spraycan/suicide_act(mob/user)
 	var/mob/living/carbon/human/H = user
 	if(is_capped || !actually_paints)
-		user.visible_message("<span class='suicide'>[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, but nothing happens!</span>")
+		user.visible_message("<span_class='suicide'>[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, but nothing happens!</span>")
 		user.say("MEDIOCRE!!", forced="spraycan suicide")
 		return SHAME
 	else
-		user.visible_message("<span class='suicide'>[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, spraying paint across [user.p_their()] teeth!</span>")
+		user.visible_message("<span_class='suicide'>[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, spraying paint across [user.p_their()] teeth!</span>")
 		user.say("WITNESS ME!!", forced="spraycan suicide")
 		if(pre_noise || post_noise)
 			playsound(src, 'sound/effects/spray.ogg', 5, TRUE, 5)
@@ -612,14 +612,14 @@
 		to_chat(user, "It has [charges_left] use\s left.")
 	else
 		to_chat(user, "It is empty.")
-	to_chat(user, "<span class='notice'>Alt-click [src] to [ is_capped ? "take the cap off" : "put the cap on"].</span>")
+	to_chat(user, "<span_class='notice'>Alt-click [src] to [ is_capped ? "take the cap off" : "put the cap on"].</span>")
 
 /obj/item/toy/crayon/spraycan/afterattack(atom/target, mob/user, proximity)
 	if(!proximity)
 		return
 
 	if(is_capped)
-		to_chat(user, "<span class='warning'>Take the cap off first!</span>")
+		to_chat(user, "<span_class='warning'>Take the cap off first!</span>")
 		return
 
 	if(check_empty(user))
@@ -630,8 +630,8 @@
 			playsound(user.loc, 'sound/effects/spray.ogg', 25, 1, 5)
 
 		var/mob/living/carbon/C = target
-		user.visible_message("<span class='danger'>[user] sprays [src] into the face of [target]!</span>")
-		to_chat(target, "<span class='userdanger'>[user] sprays [src] into your face!</span>")
+		user.visible_message("<span_class='danger'>[user] sprays [src] into the face of [target]!</span>")
+		to_chat(target, "<span_class='userdanger'>[user] sprays [src] into your face!</span>")
 
 		if(C.client)
 			C.blur_eyes(3)
@@ -685,7 +685,7 @@
 /obj/item/toy/crayon/spraycan/borg/afterattack(atom/target,mob/user,proximity)
 	var/diff = ..()
 	if(!iscyborg(user))
-		to_chat(user, "<span class='notice'>How did you get this?</span>")
+		to_chat(user, "<span_class='notice'>How did you get this?</span>")
 		qdel(src)
 		return FALSE
 

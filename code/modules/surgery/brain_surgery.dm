@@ -24,10 +24,10 @@
 	return TRUE
 
 /datum/surgery_step/fix_brain/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message("[user] begins to fix [target]'s brain.", "<span class='notice'>You begin to fix [target]'s brain...</span>")
+	user.visible_message("[user] begins to fix [target]'s brain.", "<span_class='notice'>You begin to fix [target]'s brain...</span>")
 
 /datum/surgery_step/fix_brain/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message("[user] successfully fixes [target]'s brain!", "<span class='notice'>You succeed in fixing [target]'s brain.</span>")
+	user.visible_message("[user] successfully fixes [target]'s brain!", "<span_class='notice'>You succeed in fixing [target]'s brain.</span>")
 	if(target.mind && target.mind.has_antag_datum(/datum/antagonist/brainwashed))
 		target.mind.remove_antag_datum(/datum/antagonist/brainwashed)
 	target.adjustBrainLoss(-60)
@@ -36,9 +36,9 @@
 
 /datum/surgery_step/fix_brain/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(target.getorganslot(ORGAN_SLOT_BRAIN))
-		user.visible_message("<span class='warning'>[user] screws up, causing more damage!</span>", "<span class='warning'>You screw up, causing more damage!</span>")
+		user.visible_message("<span_class='warning'>[user] screws up, causing more damage!</span>", "<span_class='warning'>You screw up, causing more damage!</span>")
 		target.adjustBrainLoss(60)
 		target.gain_trauma_type(BRAIN_TRAUMA_SEVERE, TRAUMA_RESILIENCE_LOBOTOMY)
 	else
-		user.visible_message("<span class='warning'>[user] suddenly notices that the brain [user.p_they()] [user.p_were()] working on is not there anymore.", "<span class='warning'>You suddenly notice that the brain you were working on is not there anymore.</span>")
+		user.visible_message("<span_class='warning'>[user] suddenly notices that the brain [user.p_they()] [user.p_were()] working on is not there anymore.", "<span_class='warning'>You suddenly notice that the brain you were working on is not there anymore.</span>")
 	return FALSE

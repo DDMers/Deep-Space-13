@@ -151,7 +151,7 @@
 /proc/tkMaxRangeCheck(mob/user, atom/target)
 	var/d = get_dist(user, target)
 	if(d > TK_MAXRANGE)
-		to_chat(user, "<span class ='warning'>Your mind won't reach that far.</span>")
+		to_chat(user, "<span_class ='warning'>Your mind won't reach that far.</span>")
 		return
 	return TRUE
 
@@ -192,7 +192,7 @@
 		focus.plane = old_plane
 
 /obj/item/tk_grab/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is using [user.p_their()] telekinesis to choke [user.p_them()]self! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span_class='suicide'>[user] is using [user.p_their()] telekinesis to choke [user.p_them()]self! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (OXYLOSS)
 
 

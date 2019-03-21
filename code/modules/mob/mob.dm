@@ -63,12 +63,12 @@
 
 	var/datum/gas_mixture/environment = loc.return_air()
 
-	var/t =	"<span class='notice'>Coordinates: [x],[y] \n</span>"
-	t +=	"<span class='danger'>Temperature: [environment.temperature] \n</span>"
+	var/t =	"<span_class='notice'>Coordinates: [x],[y] \n</span>"
+	t +=	"<span_class='danger'>Temperature: [environment.temperature] \n</span>"
 	for(var/id in environment.gases)
 		var/gas = environment.gases[id]
 		if(gas[MOLES])
-			t+="<span class='notice'>[gas[GAS_META][META_GAS_NAME]]: [gas[MOLES]] \n</span>"
+			t+="<span_class='notice'>[gas[GAS_META][META_GAS_NAME]]: [gas[MOLES]] \n</span>"
 
 	to_chat(usr, t)
 
@@ -216,7 +216,7 @@
 			qdel(W)
 		else
 			if(!disable_warning)
-				to_chat(src, "<span class='warning'>You are unable to equip that!</span>")
+				to_chat(src, "<span_class='warning'>You are unable to equip that!</span>")
 		return FALSE
 	equip_to_slot(W, slot, redraw_mob) //This proc should not ever fail.
 	return TRUE
@@ -302,7 +302,7 @@
 		return
 
 	if(is_blind(src))
-		to_chat(src, "<span class='notice'>Something is there but you can't see it.</span>")
+		to_chat(src, "<span_class='notice'>Something is there but you can't see it.</span>")
 		return
 
 	face_atom(A)
@@ -311,7 +311,7 @@
 //same as above
 //note: ghosts can point, this is intended
 //visible_message will handle invisibility properly
-//overridden here and in /mob/dead/observer for different point span classes and sanity checks
+//overridden here and in /mob/dead/observer for different point span_classes and sanity checks
 /mob/verb/pointed(atom/A as mob|obj|turf in view())
 	set name = "Point To"
 	set category = "Object"
@@ -405,12 +405,12 @@
 	if (CONFIG_GET(flag/norespawn))
 		return
 	if ((stat != DEAD || !( SSticker )))
-		to_chat(usr, "<span class='boldnotice'>You must be dead to use this!</span>")
+		to_chat(usr, "<span_class='boldnotice'>You must be dead to use this!</span>")
 		return
 
 	log_game("[key_name(usr)] used abandon mob.")
 
-	to_chat(usr, "<span class='boldnotice'>Please roleplay correctly!</span>")
+	to_chat(usr, "<span_class='boldnotice'>Please roleplay correctly!</span>")
 
 	if(!client)
 		log_game("[key_name(usr)] AM failed due to disconnect.")
@@ -893,10 +893,10 @@
 
 /mob/proc/can_read(obj/O)
 	if(is_blind(src))
-		to_chat(src, "<span class='warning'>As you are trying to read [O], you suddenly feel very stupid!</span>")
+		to_chat(src, "<span_class='warning'>As you are trying to read [O], you suddenly feel very stupid!</span>")
 		return
 	if(!is_literate())
-		to_chat(src, "<span class='notice'>You try to read [O], but can't comprehend any of it.</span>")
+		to_chat(src, "<span_class='notice'>You try to read [O], but can't comprehend any of it.</span>")
 		return
 	return TRUE
 

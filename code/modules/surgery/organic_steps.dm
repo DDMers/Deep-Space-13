@@ -8,7 +8,7 @@
 
 /datum/surgery_step/incise/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	user.visible_message("[user] begins to make an incision in [target]'s [parse_zone(target_zone)].",
-		"<span class='notice'>You begin to make an incision in [target]'s [parse_zone(target_zone)]...</span>")
+		"<span_class='notice'>You begin to make an incision in [target]'s [parse_zone(target_zone)]...</span>")
 
 /datum/surgery_step/incise/tool_check(mob/user, obj/item/tool)
 	if(implement_type == /obj/item && !tool.is_sharp())
@@ -24,7 +24,7 @@
 
 /datum/surgery_step/clamp_bleeders/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	user.visible_message("[user] begins to clamp bleeders in [target]'s [parse_zone(target_zone)].",
-		"<span class='notice'>You begin to clamp bleeders in [target]'s [parse_zone(target_zone)]...</span>")
+		"<span_class='notice'>You begin to clamp bleeders in [target]'s [parse_zone(target_zone)]...</span>")
 
 /datum/surgery_step/clamp_bleeders/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(locate(/datum/surgery_step/saw) in surgery.steps)
@@ -40,7 +40,7 @@
 
 /datum/surgery_step/retract_skin/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	user.visible_message("[user] begins to retract the skin in [target]'s [parse_zone(target_zone)].",
-		"<span class='notice'>You begin to retract the skin in [target]'s [parse_zone(target_zone)]...</span>")
+		"<span_class='notice'>You begin to retract the skin in [target]'s [parse_zone(target_zone)]...</span>")
 
 
 
@@ -53,7 +53,7 @@
 
 /datum/surgery_step/close/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	user.visible_message("[user] begins to mend the incision in [target]'s [parse_zone(target_zone)].",
-		"<span class='notice'>You begin to mend the incision in [target]'s [parse_zone(target_zone)]...</span>")
+		"<span_class='notice'>You begin to mend the incision in [target]'s [parse_zone(target_zone)]...</span>")
 
 /datum/surgery_step/close/tool_check(mob/user, obj/item/tool)
 	if(implement_type == TOOL_WELDER || implement_type == /obj/item)
@@ -78,12 +78,12 @@
 
 /datum/surgery_step/saw/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	user.visible_message("[user] begins to saw through the bone in [target]'s [parse_zone(target_zone)].",
-		"<span class='notice'>You begin to saw through the bone in [target]'s [parse_zone(target_zone)]...</span>")
+		"<span_class='notice'>You begin to saw through the bone in [target]'s [parse_zone(target_zone)]...</span>")
 
 /datum/surgery_step/saw/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	target.apply_damage(50, BRUTE, "[target_zone]")
 
-	user.visible_message("[user] saws [target]'s [parse_zone(target_zone)] open!", "<span class='notice'>You saw [target]'s [parse_zone(target_zone)] open.</span>")
+	user.visible_message("[user] saws [target]'s [parse_zone(target_zone)] open!", "<span_class='notice'>You saw [target]'s [parse_zone(target_zone)] open.</span>")
 	return 1
 
 //drill bone
@@ -94,9 +94,9 @@
 
 /datum/surgery_step/drill/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	user.visible_message("[user] begins to drill into the bone in [target]'s [parse_zone(target_zone)].",
-		"<span class='notice'>You begin to drill into the bone in [target]'s [parse_zone(target_zone)]...</span>")
+		"<span_class='notice'>You begin to drill into the bone in [target]'s [parse_zone(target_zone)]...</span>")
 
 /datum/surgery_step/drill/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	user.visible_message("[user] drills into [target]'s [parse_zone(target_zone)]!",
-		"<span class='notice'>You drill into [target]'s [parse_zone(target_zone)].</span>")
+		"<span_class='notice'>You drill into [target]'s [parse_zone(target_zone)].</span>")
 	return 1

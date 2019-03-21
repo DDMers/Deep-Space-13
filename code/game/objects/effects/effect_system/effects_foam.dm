@@ -291,7 +291,7 @@
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
-	to_chat(user, "<span class='warning'>You hit [src] but bounce off it!</span>")
+	to_chat(user, "<span_class='warning'>You hit [src] but bounce off it!</span>")
 	playsound(src.loc, 'sound/weapons/tap.ogg', 100, 1)
 
 /obj/structure/foamedmetal/CanPass(atom/movable/mover, turf/target)
@@ -331,7 +331,7 @@
 			if(!U.welded)
 				U.welded = TRUE
 				U.update_icon()
-				U.visible_message("<span class='danger'>[U] sealed shut!</span>")
+				U.visible_message("<span_class='danger'>[U] sealed shut!</span>")
 		for(var/mob/living/L in O)
 			L.ExtinguishMob()
 		for(var/obj/item/Item in O)

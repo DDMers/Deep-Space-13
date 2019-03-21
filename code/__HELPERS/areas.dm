@@ -45,10 +45,10 @@
 		))
 	var/list/turfs = detect_room(get_turf(creator), area_or_turf_fail_types)
 	if(!turfs)
-		to_chat(creator, "<span class='warning'>The new area must be completely airtight and not a part of a shuttle.</span>")
+		to_chat(creator, "<span_class='warning'>The new area must be completely airtight and not a part of a shuttle.</span>")
 		return
 	if(turfs.len > BP_MAX_ROOM_SIZE)
-		to_chat(creator, "<span class='warning'>The room you're in is too big. It is [((turfs.len / BP_MAX_ROOM_SIZE)-1)*100]% larger than allowed.</span>")
+		to_chat(creator, "<span_class='warning'>The room you're in is too big. It is [((turfs.len / BP_MAX_ROOM_SIZE)-1)*100]% larger than allowed.</span>")
 		return
 	var/list/areas = list("New Area" = /area)
 	for(var/i in 1 to turfs.len)
@@ -62,7 +62,7 @@
 	area_choice = areas[area_choice]
 
 	if(!area_choice)
-		to_chat(creator, "<span class='warning'>No choice selected. The area remains undefined.</span>")
+		to_chat(creator, "<span_class='warning'>No choice selected. The area remains undefined.</span>")
 		return
 	var/area/newA
 	var/area/oldA = get_area(get_turf(creator))
@@ -71,7 +71,7 @@
 		if(!str || !length(str)) //cancel
 			return
 		if(length(str) > 50)
-			to_chat(creator, "<span class='warning'>The given name is too long. The area remains undefined.</span>")
+			to_chat(creator, "<span_class='warning'>The given name is too long. The area remains undefined.</span>")
 			return
 		newA = new area_choice
 		newA.setup(str)
@@ -93,7 +93,7 @@
 		var/obj/machinery/door/firedoor/FD = door
 		FD.CalculateAffectingAreas()
 
-	to_chat(creator, "<span class='notice'>You have created a new area, named [newA.name]. It is now weather proof, and constructing an APC will allow it to be powered.</span>")
+	to_chat(creator, "<span_class='notice'>You have created a new area, named [newA.name]. It is now weather proof, and constructing an APC will allow it to be powered.</span>")
 	return TRUE
 
 #undef BP_MAX_ROOM_SIZE

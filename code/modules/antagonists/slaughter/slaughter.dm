@@ -36,7 +36,7 @@
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	var/boost = 0
 	bloodcrawl = BLOODCRAWL_EAT
-	var/playstyle_string = "<span class='big bold'>You are a slaughter demon,</span><B> a terrible creature from another realm. You have a single desire: To kill.  \
+	var/playstyle_string = "<span_class='big bold'>You are a slaughter demon,</span><B> a terrible creature from another realm. You have a single desire: To kill.  \
 							You may use the \"Blood Crawl\" ability near blood pools to travel through them, appearing and disappearing from the station at will. \
 							Pulling a dead or unconscious mob while you enter a pool will pull them in with you, allowing you to feast and regain your health. \
 							You move quickly upon leaving a pool of blood, but the material world will soon sap your strength and leave you sluggish. </B>"
@@ -87,16 +87,16 @@
 /obj/item/organ/heart/demon/attack(mob/M, mob/living/carbon/user, obj/target)
 	if(M != user)
 		return ..()
-	user.visible_message("<span class='warning'>[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!</span>", \
-						 "<span class='danger'>An unnatural hunger consumes you. You raise [src] your mouth and devour it!</span>")
+	user.visible_message("<span_class='warning'>[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!</span>", \
+						 "<span_class='danger'>An unnatural hunger consumes you. You raise [src] your mouth and devour it!</span>")
 	playsound(user, 'sound/magic/demon_consume.ogg', 50, 1)
 	for(var/obj/effect/proc_holder/spell/knownspell in user.mind.spell_list)
 		if(knownspell.type == /obj/effect/proc_holder/spell/bloodcrawl)
-			to_chat(user, "<span class='warning'>...and you don't feel any different.</span>")
+			to_chat(user, "<span_class='warning'>...and you don't feel any different.</span>")
 			qdel(src)
 			return
-	user.visible_message("<span class='warning'>[user]'s eyes flare a deep crimson!</span>", \
-						 "<span class='userdanger'>You feel a strange power seep into your body... you have absorbed the demon's blood-travelling powers!</span>")
+	user.visible_message("<span_class='warning'>[user]'s eyes flare a deep crimson!</span>", \
+						 "<span_class='userdanger'>You feel a strange power seep into your body... you have absorbed the demon's blood-travelling powers!</span>")
 	user.temporarilyRemoveItemFromInventory(src, TRUE)
 	src.Insert(user) //Consuming the heart literally replaces your heart with a demon heart. H A R D C O R E
 
@@ -137,9 +137,9 @@
 	// Keep the people we hug!
 	var/list/consumed_mobs = list()
 
-	playstyle_string = "<span class='big bold'>You are a laughter \
+	playstyle_string = "<span_class='big bold'>You are a laughter \
 	demon,</span><B> a wonderful creature from another realm. You have a single \
-	desire: <span class='clown'>To hug and tickle.</span><BR>\
+	desire: <span_class='clown'>To hug and tickle.</span><BR>\
 	You may use the \"Blood Crawl\" ability near blood pools to travel \
 	through them, appearing and disappearing from the station at will. \
 	Pulling a dead or unconscious mob while you enter a pool will pull \
@@ -178,7 +178,7 @@
 		if(M.revive(full_heal = TRUE, admin_revive = TRUE))
 			M.grab_ghost(force = TRUE)
 			playsound(T, feast_sound, 50, 1, -1)
-			to_chat(M, "<span class='clown'>You leave [src]'s warm embrace,	and feel ready to take on the world.</span>")
+			to_chat(M, "<span_class='clown'>You leave [src]'s warm embrace,	and feel ready to take on the world.</span>")
 
 /mob/living/simple_animal/slaughter/laughter/bloodcrawl_swallow(var/mob/living/victim)
 	if(consumed_mobs)

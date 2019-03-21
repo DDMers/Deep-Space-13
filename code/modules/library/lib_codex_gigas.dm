@@ -24,11 +24,11 @@
 	if(!user.can_read(src))
 		return FALSE
 	if(inUse)
-		to_chat(user, "<span class='notice'>Someone else is reading it.</span>")
+		to_chat(user, "<span_class='notice'>Someone else is reading it.</span>")
 	if(ishuman(user))
 		var/mob/living/carbon/human/U = user
 		if(U.check_acedia())
-			to_chat(user, "<span class='notice'>None of this matters, why are you reading this? You put [title] down.</span>")
+			to_chat(user, "<span_class='notice'>None of this matters, why are you reading this? You put [title] down.</span>")
 			return
 	user.visible_message("[user] opens [title] and begins reading intently.")
 	ask_name(user)

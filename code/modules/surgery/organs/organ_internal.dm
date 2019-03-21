@@ -57,7 +57,7 @@
 /obj/item/organ/examine(mob/user)
 	..()
 	if(status == ORGAN_ROBOTIC && crit_fail)
-		to_chat(user, "<span class='warning'>[src] seems to be broken!</span>")
+		to_chat(user, "<span_class='warning'>[src] seems to be broken!</span>")
 
 
 /obj/item/organ/proc/prepare_eat()

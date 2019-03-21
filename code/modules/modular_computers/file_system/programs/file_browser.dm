@@ -176,12 +176,12 @@
 	return t
 
 /datum/computer_file/program/filemanager/proc/prepare_printjob(t) // Additional stuff to parse if we want to print it and make a happy Head of Personnel. Forms FTW.
-	t = replacetext(t, "\[field\]", "<span class=\"paper_field\"></span>")
-	t = replacetext(t, "\[sign\]", "<span class=\"paper_field\"></span>")
+	t = replacetext(t, "\[field\]", "<span_class=\"paper_field\"></span>")
+	t = replacetext(t, "\[sign\]", "<span_class=\"paper_field\"></span>")
 
 	t = parse_tags(t)
 
-	t = replacetext(t, regex("(?:%s(?:ign)|%f(?:ield))(?=\\s|$)", "ig"), "<span class=\"paper_field\"></span>")
+	t = replacetext(t, regex("(?:%s(?:ign)|%f(?:ield))(?=\\s|$)", "ig"), "<span_class=\"paper_field\"></span>")
 
 	return t
 

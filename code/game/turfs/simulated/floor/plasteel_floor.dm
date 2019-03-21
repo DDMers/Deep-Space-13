@@ -6,7 +6,7 @@
 
 /turf/open/floor/plasteel/examine(mob/user)
 	..()
-	to_chat(user, "<span class='notice'>There's a <b>small crack</b> on the edge of it.</span>")
+	to_chat(user, "<span_class='notice'>There's a <b>small crack</b> on the edge of it.</span>")
 
 /turf/open/floor/plasteel/update_icon()
 	if(!..())

@@ -8,8 +8,8 @@
 	name = "Hallucinations"
 	desc = "Patient suffers constant hallucinations."
 	scan_desc = "schizophrenia"
-	gain_text = "<span class='warning'>You feel your grip on reality slipping...</span>"
-	lose_text = "<span class='notice'>You feel more grounded.</span>"
+	gain_text = "<span_class='warning'>You feel your grip on reality slipping...</span>"
+	lose_text = "<span_class='notice'>You feel more grounded.</span>"
 
 /datum/brain_trauma/mild/hallucinations/on_life()
 	owner.hallucination = min(owner.hallucination + 10, 50)
@@ -23,8 +23,8 @@
 	name = "Stuttering"
 	desc = "Patient can't speak properly."
 	scan_desc = "reduced mouth coordination"
-	gain_text = "<span class='warning'>Speaking clearly is getting harder.</span>"
-	lose_text = "<span class='notice'>You feel in control of your speech.</span>"
+	gain_text = "<span_class='warning'>Speaking clearly is getting harder.</span>"
+	lose_text = "<span_class='notice'>You feel in control of your speech.</span>"
 
 /datum/brain_trauma/mild/stuttering/on_life()
 	owner.stuttering = min(owner.stuttering + 5, 25)
@@ -38,8 +38,8 @@
 	name = "Dumbness"
 	desc = "Patient has reduced brain activity, making them less intelligent."
 	scan_desc = "reduced brain activity"
-	gain_text = "<span class='warning'>You feel dumber.</span>"
-	lose_text = "<span class='notice'>You feel smart again.</span>"
+	gain_text = "<span_class='warning'>You feel dumber.</span>"
+	lose_text = "<span_class='notice'>You feel smart again.</span>"
 
 /datum/brain_trauma/mild/dumbness/on_gain()
 	owner.add_trait(TRAIT_DUMB, TRAUMA_TRAIT)
@@ -85,8 +85,8 @@
 	name = "Concussion"
 	desc = "Patient's brain is concussed."
 	scan_desc = "concussion"
-	gain_text = "<span class='warning'>Your head hurts!</span>"
-	lose_text = "<span class='notice'>The pressure inside your head starts fading.</span>"
+	gain_text = "<span_class='warning'>Your head hurts!</span>"
+	lose_text = "<span_class='notice'>The pressure inside your head starts fading.</span>"
 
 /datum/brain_trauma/mild/concussion/on_life()
 	if(prob(5))
@@ -101,10 +101,10 @@
 			if(6 to 9)
 				owner.slurring += 30
 			if(10)
-				to_chat(owner, "<span class='notice'>You forget for a moment what you were doing.</span>")
+				to_chat(owner, "<span_class='notice'>You forget for a moment what you were doing.</span>")
 				owner.Stun(20)
 			if(11)
-				to_chat(owner, "<span class='warning'>You faint.</span>")
+				to_chat(owner, "<span_class='warning'>You faint.</span>")
 				owner.Unconscious(80)
 
 	..()
@@ -113,8 +113,8 @@
 	name = "Anosognosia"
 	desc = "Patient always feels healthy, regardless of their condition."
 	scan_desc = "self-awareness deficit"
-	gain_text = "<span class='notice'>You feel great!</span>"
-	lose_text = "<span class='warning'>You no longer feel perfectly healthy.</span>"
+	gain_text = "<span_class='notice'>You feel great!</span>"
+	lose_text = "<span_class='warning'>You no longer feel perfectly healthy.</span>"
 
 /datum/brain_trauma/mild/healthy/on_gain()
 	owner.set_screwyhud(SCREWYHUD_HEALTHY)
@@ -133,15 +133,15 @@
 	name = "Muscle Weakness"
 	desc = "Patient experiences occasional bouts of muscle weakness."
 	scan_desc = "weak motor nerve signal"
-	gain_text = "<span class='warning'>Your muscles feel oddly faint.</span>"
-	lose_text = "<span class='notice'>You feel in control of your muscles again.</span>"
+	gain_text = "<span_class='warning'>Your muscles feel oddly faint.</span>"
+	lose_text = "<span_class='notice'>You feel in control of your muscles again.</span>"
 
 /datum/brain_trauma/mild/muscle_weakness/on_life()
 	var/fall_chance = 1
 	if(owner.m_intent == MOVE_INTENT_RUN)
 		fall_chance += 2
 	if(prob(fall_chance) && (owner.mobility_flags & MOBILITY_STAND))
-		to_chat(owner, "<span class='warning'>Your leg gives out!</span>")
+		to_chat(owner, "<span_class='warning'>Your leg gives out!</span>")
 		owner.Paralyze(35)
 
 	else if(owner.get_active_held_item())
@@ -149,10 +149,10 @@
 		var/obj/item/I = owner.get_active_held_item()
 		drop_chance += I.w_class
 		if(prob(drop_chance) && owner.dropItemToGround(I))
-			to_chat(owner, "<span class='warning'>You drop [I]!</span>")
+			to_chat(owner, "<span_class='warning'>You drop [I]!</span>")
 
 	else if(prob(3))
-		to_chat(owner, "<span class='warning'>You feel a sudden weakness in your muscles!</span>")
+		to_chat(owner, "<span_class='warning'>You feel a sudden weakness in your muscles!</span>")
 		owner.adjustStaminaLoss(50)
 	..()
 
@@ -160,22 +160,22 @@
 	name = "Muscle Spasms"
 	desc = "Patient has occasional muscle spasms, causing them to move unintentionally."
 	scan_desc = "nervous fits"
-	gain_text = "<span class='warning'>Your muscles feel oddly faint.</span>"
-	lose_text = "<span class='notice'>You feel in control of your muscles again.</span>"
+	gain_text = "<span_class='warning'>Your muscles feel oddly faint.</span>"
+	lose_text = "<span_class='notice'>You feel in control of your muscles again.</span>"
 
 /datum/brain_trauma/mild/muscle_spasms/on_life()
 	if(prob(7))
 		switch(rand(1,5))
 			if(1)
 				if((owner.mobility_flags & MOBILITY_MOVE) && !isspaceturf(owner.loc))
-					to_chat(owner, "<span class='warning'>Your leg spasms!</span>")
+					to_chat(owner, "<span_class='warning'>Your leg spasms!</span>")
 					step(owner, pick(GLOB.cardinals))
 			if(2)
 				if(owner.incapacitated())
 					return
 				var/obj/item/I = owner.get_active_held_item()
 				if(I)
-					to_chat(owner, "<span class='warning'>Your fingers spasm!</span>")
+					to_chat(owner, "<span_class='warning'>Your fingers spasm!</span>")
 					owner.log_message("used [I] due to a Muscle Spasm", LOG_ATTACK)
 					I.attack_self(owner)
 			if(3)
@@ -191,14 +191,14 @@
 					if(isliving(M))
 						targets += M
 				if(LAZYLEN(targets))
-					to_chat(owner, "<span class='warning'>Your arm spasms!</span>")
+					to_chat(owner, "<span_class='warning'>Your arm spasms!</span>")
 					owner.log_message(" attacked someone due to a Muscle Spasm", LOG_ATTACK) //the following attack will log itself
 					owner.ClickOn(pick(targets))
 				owner.a_intent = prev_intent
 			if(4)
 				var/prev_intent = owner.a_intent
 				owner.a_intent = INTENT_HARM
-				to_chat(owner, "<span class='warning'>Your arm spasms!</span>")
+				to_chat(owner, "<span_class='warning'>Your arm spasms!</span>")
 				owner.log_message("attacked [owner.p_them()]self to a Muscle Spasm", LOG_ATTACK)
 				owner.ClickOn(owner)
 				owner.a_intent = prev_intent
@@ -210,7 +210,7 @@
 				for(var/turf/T in oview(owner, 3))
 					targets += T
 				if(LAZYLEN(targets) && I)
-					to_chat(owner, "<span class='warning'>Your arm spasms!</span>")
+					to_chat(owner, "<span_class='warning'>Your arm spasms!</span>")
 					owner.log_message("threw [I] due to a Muscle Spasm", LOG_ATTACK)
 					owner.throw_item(pick(targets))
 	..()
@@ -219,8 +219,8 @@
 	name = "Nervous Cough"
 	desc = "Patient feels a constant need to cough."
 	scan_desc = "nervous cough"
-	gain_text = "<span class='warning'>Your throat itches incessantly...</span>"
-	lose_text = "<span class='notice'>Your throat stops itching.</span>"
+	gain_text = "<span_class='warning'>Your throat itches incessantly...</span>"
+	lose_text = "<span_class='notice'>Your throat stops itching.</span>"
 
 /datum/brain_trauma/mild/nervous_cough/on_life()
 	if(prob(12))

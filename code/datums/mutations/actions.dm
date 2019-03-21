@@ -2,8 +2,8 @@
 	name = "Telepathy"
 	desc = "A rare mutation that allows the user to telepathically communicate to others."
 	quality = POSITIVE
-	text_gain_indication = "<span class='notice'>You can hear your own voice echoing in your mind!</span>"
-	text_lose_indication = "<span class='notice'>You don't hear your mind echo anymore.</span>"
+	text_gain_indication = "<span_class='notice'>You can hear your own voice echoing in your mind!</span>"
+	text_lose_indication = "<span_class='notice'>You don't hear your mind echo anymore.</span>"
 	difficulty = 12
 	power = /obj/effect/proc_holder/spell/targeted/telepathy
 	instability = 10
@@ -14,8 +14,8 @@
 	quality = POSITIVE
 	difficulty = 12
 	locked = TRUE
-	text_gain_indication = "<span class='notice'>Your throat is burning!</span>"
-	text_lose_indication = "<span class='notice'>Your throat is cooling down.</span>"
+	text_gain_indication = "<span_class='notice'>Your throat is burning!</span>"
+	text_lose_indication = "<span_class='notice'>Your throat is cooling down.</span>"
 	power = /obj/effect/proc_holder/spell/aimed/firebreath
 	instability = 30
 
@@ -40,7 +40,7 @@
 		if(C.is_mouth_covered())
 			C.adjust_fire_stacks(2)
 			C.IgniteMob()
-			to_chat(C,"<span class='warning'>Something in front of your mouth caught fire!</span>")
+			to_chat(C,"<span_class='warning'>Something in front of your mouth caught fire!</span>")
 			return FALSE
 
 /obj/item/projectile/magic/aoe/fireball/firebreath
@@ -54,7 +54,7 @@
 	name = "Void Magnet"
 	desc = "A rare genome that attracts odd forces not usually observed."
 	quality = MINOR_NEGATIVE //upsides and downsides
-	text_gain_indication = "<span class='notice'>You feel a heavy, dull force just beyond the walls watching you.</span>"
+	text_gain_indication = "<span_class='notice'>You feel a heavy, dull force just beyond the walls watching you.</span>"
 	instability = 30
 	power = /obj/effect/proc_holder/spell/self/void
 

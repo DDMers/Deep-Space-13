@@ -21,7 +21,7 @@
 		return
 	var/num_loaded = magazine.attackby(A, user, params, 1)
 	if(num_loaded)
-		to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
+		to_chat(user, "<span_class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
 		playsound(user, 'sound/weapons/shotguninsert.ogg', 40, 1)
 		A.update_icon()
 		update_icon()
@@ -124,7 +124,7 @@
 
 /obj/item/gun/ballistic/shotgun/boltaction/attackby(obj/item/A, mob/user, params)
 	if(!bolt_open)
-		to_chat(user, "<span class='notice'>The bolt is closed!</span>")
+		to_chat(user, "<span_class='notice'>The bolt is closed!</span>")
 		return
 	. = ..()
 
@@ -166,7 +166,7 @@
 
 /obj/item/gun/ballistic/shotgun/boltaction/enchanted/proc/discard_gun(mob/user)
 	throw_at(pick(oview(7,get_turf(user))),1,1)
-	user.visible_message("<span class='warning'>[user] tosses aside the spent rifle!</span>")
+	user.visible_message("<span_class='warning'>[user] tosses aside the spent rifle!</span>")
 
 /obj/item/gun/ballistic/shotgun/boltaction/enchanted/arcane_barrage/discard_gun(mob/user)
 	return
@@ -219,7 +219,7 @@
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
 	..()
-	to_chat(user, "<span class='notice'>Alt-click to pump it.</span>")
+	to_chat(user, "<span_class='notice'>Alt-click to pump it.</span>")
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/Initialize()
 	. = ..()

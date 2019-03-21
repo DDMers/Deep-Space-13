@@ -28,8 +28,8 @@
 /obj/item/organ/heart/attack_self(mob/user)
 	..()
 	if(!beating)
-		user.visible_message("<span class='notice'>[user] squeezes [src] to \
-			make it beat again!</span>","<span class='notice'>You squeeze [src] to make it beat again!</span>")
+		user.visible_message("<span_class='notice'>[user] squeezes [src] to \
+			make it beat again!</span>","<span_class='notice'>You squeeze [src] to make it beat again!</span>")
 		Restart()
 		addtimer(CALLBACK(src, .proc/stop_if_unowned), 80)
 
@@ -57,7 +57,7 @@
 		if(H.health <= H.crit_threshold && beat != BEAT_SLOW)
 			beat = BEAT_SLOW
 			H.playsound_local(get_turf(H), slowbeat,40,0, channel = CHANNEL_HEARTBEAT)
-			to_chat(owner, "<span class = 'notice'>You feel your heart slow down...</span>")
+			to_chat(owner, "<span_class = 'notice'>You feel your heart slow down...</span>")
 		if(beat == BEAT_SLOW && H.health > H.crit_threshold)
 			H.stop_sound_channel(CHANNEL_HEARTBEAT)
 			beat = BEAT_NONE
@@ -101,7 +101,7 @@
 			var/mob/living/carbon/human/H = owner
 			if(H.dna && !(NOBLOOD in H.dna.species.species_traits))
 				H.blood_volume = max(H.blood_volume - blood_loss, 0)
-				to_chat(H, "<span class = 'userdanger'>You have to keep pumping your blood!</span>")
+				to_chat(H, "<span_class = 'userdanger'>You have to keep pumping your blood!</span>")
 				if(add_colour)
 					H.add_client_colour(/datum/client_colour/cursed_heart_blood) //bloody screen so real
 					add_colour = FALSE
@@ -111,7 +111,7 @@
 /obj/item/organ/heart/cursed/Insert(mob/living/carbon/M, special = 0)
 	..()
 	if(owner)
-		to_chat(owner, "<span class ='userdanger'>Your heart has been replaced with a cursed one, you have to pump this one manually otherwise you'll die!</span>")
+		to_chat(owner, "<span_class ='userdanger'>Your heart has been replaced with a cursed one, you have to pump this one manually otherwise you'll die!</span>")
 
 /datum/action/item_action/organ_action/cursed_heart
 	name = "Pump your blood"
@@ -123,12 +123,12 @@
 		var/obj/item/organ/heart/cursed/cursed_heart = target
 
 		if(world.time < (cursed_heart.last_pump + (cursed_heart.pump_delay-10))) //no spam
-			to_chat(owner, "<span class='userdanger'>Too soon!</span>")
+			to_chat(owner, "<span_class='userdanger'>Too soon!</span>")
 			return
 
 		cursed_heart.last_pump = world.time
 		playsound(owner,'sound/effects/singlebeat.ogg',40,1)
-		to_chat(owner, "<span class = 'notice'>Your heart beats.</span>")
+		to_chat(owner, "<span_class = 'notice'>Your heart beats.</span>")
 
 		var/mob/living/carbon/human/H = owner
 		if(istype(H))
@@ -189,7 +189,7 @@
 	. = ..()
 	if(owner.health < 5 && world.time > min_next_adrenaline)
 		min_next_adrenaline = world.time + rand(250, 600) //anywhere from 4.5 to 10 minutes
-		to_chat(owner, "<span class='userdanger'>You feel yourself dying, but you refuse to give up!</span>")
+		to_chat(owner, "<span_class='userdanger'>You feel yourself dying, but you refuse to give up!</span>")
 		owner.heal_overall_damage(15, 15, 0, BODYPART_ORGANIC)
 		if(owner.reagents.get_reagent_amount("ephedrine") < 20)
 			owner.reagents.add_reagent("ephedrine", 10)

@@ -80,7 +80,7 @@
 	..()
 
 	if(!beehome)
-		to_chat(user, "<span class='warning'>This bee is homeless!</span>")
+		to_chat(user, "<span_class='warning'>This bee is homeless!</span>")
 
 
 /mob/living/simple_animal/hostile/poison/bees/proc/generate_bee_visuals()
@@ -264,18 +264,18 @@
 				if(queen && queen.beegent)
 					qb.queen.assign_reagent(queen.beegent) //Bees use the global singleton instances of reagents, so we don't need to worry about one bee being deleted and her copies losing their reagents.
 				user.put_in_active_hand(qb)
-				user.visible_message("<span class='notice'>[user] injects [src] with royal bee jelly, causing it to split into two bees, MORE BEES!</span>","<span class ='warning'>You inject [src] with royal bee jelly, causing it to split into two bees, MORE BEES!</span>")
+				user.visible_message("<span_class='notice'>[user] injects [src] with royal bee jelly, causing it to split into two bees, MORE BEES!</span>","<span_class ='warning'>You inject [src] with royal bee jelly, causing it to split into two bees, MORE BEES!</span>")
 			else
-				to_chat(user, "<span class='warning'>You don't have enough royal bee jelly to split a bee in two!</span>")
+				to_chat(user, "<span_class='warning'>You don't have enough royal bee jelly to split a bee in two!</span>")
 		else
 			var/datum/reagent/R = GLOB.chemical_reagents_list[S.reagents.get_master_reagent_id()]
 			if(R && S.reagents.has_reagent(R.id, 5))
 				S.reagents.remove_reagent(R.id,5)
 				queen.assign_reagent(R)
-				user.visible_message("<span class='warning'>[user] injects [src]'s genome with [R.name], mutating its DNA!</span>","<span class='warning'>You inject [src]'s genome with [R.name], mutating its DNA!</span>")
+				user.visible_message("<span_class='warning'>[user] injects [src]'s genome with [R.name], mutating its DNA!</span>","<span_class='warning'>You inject [src]'s genome with [R.name], mutating its DNA!</span>")
 				name = queen.name
 			else
-				to_chat(user, "<span class='warning'>You don't have enough units of that chemical to modify the bee's DNA!</span>")
+				to_chat(user, "<span_class='warning'>You don't have enough units of that chemical to modify the bee's DNA!</span>")
 	..()
 
 
@@ -296,7 +296,7 @@
 			forceMove(beehome.drop_location())
 	else
 		..()
-		
+
 /mob/living/simple_animal/hostile/poison/bees/short
 	desc = "These bees seem unstable and won't survive for long."
 

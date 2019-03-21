@@ -20,7 +20,7 @@
 	spillable = FALSE
 
 /obj/item/reagent_containers/glass/rag/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is smothering [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span_class='suicide'>[user] is smothering [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (OXYLOSS)
 
 /obj/item/reagent_containers/glass/rag/afterattack(atom/A as obj|turf|area, mob/user,proximity)
@@ -34,16 +34,16 @@
 		if(user.a_intent == INTENT_HARM && !C.is_mouth_covered())
 			reagents.reaction(C, INGEST)
 			reagents.trans_to(C, reagents.total_volume, transfered_by = user)
-			C.visible_message("<span class='danger'>[user] has smothered \the [C] with \the [src]!</span>", "<span class='userdanger'>[user] has smothered you with \the [src]!</span>", "<span class='italics'>You hear some struggling and muffled cries of surprise.</span>")
+			C.visible_message("<span_class='danger'>[user] has smothered \the [C] with \the [src]!</span>", "<span_class='userdanger'>[user] has smothered you with \the [src]!</span>", "<span_class='italics'>You hear some struggling and muffled cries of surprise.</span>")
 			log_combat(user, C, "smothered", log_object)
 		else
 			reagents.reaction(C, TOUCH)
 			reagents.clear_reagents()
-			C.visible_message("<span class='notice'>[user] has touched \the [C] with \the [src].</span>")
+			C.visible_message("<span_class='notice'>[user] has touched \the [C] with \the [src].</span>")
 			log_combat(user, C, "touched", log_object)
 
 	else if(istype(A) && src in user)
-		user.visible_message("[user] starts to wipe down [A] with [src]!", "<span class='notice'>You start to wipe down [A] with [src]...</span>")
+		user.visible_message("[user] starts to wipe down [A] with [src]!", "<span_class='notice'>You start to wipe down [A] with [src]...</span>")
 		if(do_after(user,30, target = A))
-			user.visible_message("[user] finishes wiping off [A]!", "<span class='notice'>You finish wiping off [A].</span>")
+			user.visible_message("[user] finishes wiping off [A]!", "<span_class='notice'>You finish wiping off [A].</span>")
 			SEND_SIGNAL(A, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_MEDIUM)

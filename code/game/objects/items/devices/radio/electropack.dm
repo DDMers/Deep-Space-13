@@ -16,7 +16,7 @@
 	var/shock_cooldown = 0
 
 /obj/item/electropack/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] hooks [user.p_them()]self to the electropack and spams the trigger! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span_class='suicide'>[user] hooks [user.p_them()]self to the electropack and spams the trigger! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (FIRELOSS)
 
 /obj/item/electropack/Initialize()
@@ -32,7 +32,7 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(src == C.back)
-			to_chat(user, "<span class='warning'>You need help taking this off!</span>")
+			to_chat(user, "<span_class='warning'>You need help taking this off!</span>")
 			return
 	return ..()
 
@@ -42,7 +42,7 @@
 		A.icon = 'icons/obj/assemblies.dmi'
 
 		if(!user.transferItemToLoc(W, A))
-			to_chat(user, "<span class='warning'>[W] is stuck to your hand, you cannot attach it to [src]!</span>")
+			to_chat(user, "<span_class='warning'>[W] is stuck to your hand, you cannot attach it to [src]!</span>")
 			return
 		W.master = A
 		A.part1 = W
@@ -111,7 +111,7 @@
 		var/mob/living/L = loc
 		step(L, pick(GLOB.cardinals))
 
-		to_chat(L, "<span class='danger'>You feel a sharp shock!</span>")
+		to_chat(L, "<span_class='danger'>You feel a sharp shock!</span>")
 		var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
 		s.set_up(3, 1, L)
 		s.start()

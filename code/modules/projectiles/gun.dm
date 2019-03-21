@@ -116,14 +116,14 @@
 	if(gun_light)
 		to_chat(user, "It has \a [gun_light] [can_flashlight ? "" : "permanently "]mounted on it.")
 		if(can_flashlight) //if it has a light and this is false, the light is permanent.
-			to_chat(user, "<span class='info'>[gun_light] looks like it can be <b>unscrewed</b> from [src].</span>")
+			to_chat(user, "<span_class='info'>[gun_light] looks like it can be <b>unscrewed</b> from [src].</span>")
 	else if(can_flashlight)
 		to_chat(user, "It has a mounting point for a <b>seclite</b>.")
 
 	if(bayonet)
 		to_chat(user, "It has \a [bayonet] [can_bayonet ? "" : "permanently "]affixed to it.")
 		if(can_bayonet) //if it has a bayonet and this is false, the bayonet is permanent.
-			to_chat(user, "<span class='info'>[bayonet] looks like it can be <b>unscrewed</b> from [src].</span>")
+			to_chat(user, "<span_class='info'>[bayonet] looks like it can be <b>unscrewed</b> from [src].</span>")
 	else if(can_bayonet)
 		to_chat(user, "It has a <b>bayonet</b> lug on it.")
 
@@ -142,7 +142,7 @@
 	return TRUE
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	to_chat(user, "<span class='danger'>*click*</span>")
+	to_chat(user, "<span_class='danger'>*click*</span>")
 	playsound(src, dry_fire_sound, 30, TRUE)
 
 
@@ -156,9 +156,9 @@
 		playsound(user, fire_sound, fire_sound_volume, vary_fire_sound)
 		if(message)
 			if(pointblank)
-				user.visible_message("<span class='danger'>[user] fires [src] point blank at [pbtarget]!</span>", null, null, COMBAT_MESSAGE_RANGE)
+				user.visible_message("<span_class='danger'>[user] fires [src] point blank at [pbtarget]!</span>", null, null, COMBAT_MESSAGE_RANGE)
 			else
-				user.visible_message("<span class='danger'>[user] fires [src]!</span>", null, null, COMBAT_MESSAGE_RANGE)
+				user.visible_message("<span_class='danger'>[user] fires [src]!</span>", null, null, COMBAT_MESSAGE_RANGE)
 
 /obj/item/gun/emp_act(severity)
 	. = ..()
@@ -199,14 +199,14 @@
 	if(clumsy_check)
 		if(istype(user))
 			if (user.has_trait(TRAIT_CLUMSY) && prob(40))
-				to_chat(user, "<span class='userdanger'>You shoot yourself in the foot with [src]!</span>")
+				to_chat(user, "<span_class='userdanger'>You shoot yourself in the foot with [src]!</span>")
 				var/shot_leg = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 				process_fire(user, user, FALSE, params, shot_leg)
 				user.dropItemToGround(src, TRUE)
 				return
 
 	if(weapon_weight == WEAPON_HEAVY && user.get_inactive_held_item())
-		to_chat(user, "<span class='userdanger'>You need both hands free to fire [src]!</span>")
+		to_chat(user, "<span_class='userdanger'>You need both hands free to fire [src]!</span>")
 		return
 
 	//DUAL (or more!) WIELDING
@@ -239,7 +239,7 @@
 			pin.auth_fail(user)
 			return FALSE
 	else
-		to_chat(user, "<span class='warning'>[src]'s trigger is locked. This weapon doesn't have a firing pin installed!</span>")
+		to_chat(user, "<span_class='warning'>[src]'s trigger is locked. This weapon doesn't have a firing pin installed!</span>")
 	return FALSE
 
 /obj/item/gun/proc/recharge_newshot()
@@ -256,7 +256,7 @@
 	if(chambered && chambered.BB)
 		if(user.has_trait(TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
 			if(chambered.harmful) // Is the bullet chambered harmful?
-				to_chat(user, "<span class='notice'> [src] is lethally chambered! You don't want to risk harming anyone...</span>")
+				to_chat(user, "<span_class='notice'> [src] is lethally chambered! You don't want to risk harming anyone...</span>")
 				return
 		if(randomspread)
 			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
@@ -305,7 +305,7 @@
 		if(chambered)
 			if(user.has_trait(TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
 				if(chambered.harmful) // Is the bullet chambered harmful?
-					to_chat(user, "<span class='notice'> [src] is lethally chambered! You don't want to risk harming anyone...</span>")
+					to_chat(user, "<span_class='notice'> [src] is lethally chambered! You don't want to risk harming anyone...</span>")
 					return
 			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
 			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd))
@@ -362,7 +362,7 @@
 		if(!gun_light)
 			if(!user.transferItemToLoc(I, src))
 				return
-			to_chat(user, "<span class='notice'>You click [S] into place on [src].</span>")
+			to_chat(user, "<span_class='notice'>You click [S] into place on [src].</span>")
 			if(S.on)
 				set_light(0)
 			gun_light = S
@@ -376,7 +376,7 @@
 			return ..()
 		if(!user.transferItemToLoc(I, src))
 			return
-		to_chat(user, "<span class='notice'>You attach [K] to [src]'s bayonet lug.</span>")
+		to_chat(user, "<span_class='notice'>You attach [K] to [src]'s bayonet lug.</span>")
 		bayonet = K
 		var/state = "bayonet"							//Generic state.
 		if(bayonet.icon_state in icon_states('icons/obj/guns/bayonets.dmi'))		//Snowflake state?
@@ -411,7 +411,7 @@
 /obj/item/gun/proc/remove_gun_attachment(mob/living/user, obj/item/tool_item, obj/item/item_to_remove, removal_verb)
 	if(tool_item)
 		tool_item.play_tool_sound(src)
-	to_chat(user, "<span class='notice'>You [removal_verb ? removal_verb : "remove"] [item_to_remove] from [src].</span>")
+	to_chat(user, "<span_class='notice'>You [removal_verb ? removal_verb : "remove"] [item_to_remove] from [src].</span>")
 	item_to_remove.forceMove(drop_location())
 
 	if(Adjacent(user) && !issilicon(user))
@@ -453,7 +453,7 @@
 
 	var/mob/living/carbon/human/user = usr
 	gun_light.on = !gun_light.on
-	to_chat(user, "<span class='notice'>You toggle the gunlight [gun_light.on ? "on":"off"].</span>")
+	to_chat(user, "<span_class='notice'>You toggle the gunlight [gun_light.on ? "on":"off"].</span>")
 
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
 	update_gunlight()
@@ -501,26 +501,26 @@
 		return
 
 	if(user == target)
-		target.visible_message("<span class='warning'>[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger...</span>", \
-			"<span class='userdanger'>You stick [src] in your mouth, ready to pull the trigger...</span>")
+		target.visible_message("<span_class='warning'>[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger...</span>", \
+			"<span_class='userdanger'>You stick [src] in your mouth, ready to pull the trigger...</span>")
 	else
-		target.visible_message("<span class='warning'>[user] points [src] at [target]'s head, ready to pull the trigger...</span>", \
-			"<span class='userdanger'>[user] points [src] at your head, ready to pull the trigger...</span>")
+		target.visible_message("<span_class='warning'>[user] points [src] at [target]'s head, ready to pull the trigger...</span>", \
+			"<span_class='userdanger'>[user] points [src] at your head, ready to pull the trigger...</span>")
 
 	semicd = TRUE
 
 	if(!bypass_timer && (!do_mob(user, target, 120) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
 		if(user)
 			if(user == target)
-				user.visible_message("<span class='notice'>[user] decided not to shoot.</span>")
+				user.visible_message("<span_class='notice'>[user] decided not to shoot.</span>")
 			else if(target && target.Adjacent(user))
-				target.visible_message("<span class='notice'>[user] has decided to spare [target]</span>", "<span class='notice'>[user] has decided to spare your life!</span>")
+				target.visible_message("<span_class='notice'>[user] has decided to spare [target]</span>", "<span_class='notice'>[user] has decided to spare your life!</span>")
 		semicd = FALSE
 		return
 
 	semicd = FALSE
 
-	target.visible_message("<span class='warning'>[user] pulls the trigger!</span>", "<span class='userdanger'>[(user == target) ? "You pull" : "[user] pulls"] the trigger!</span>")
+	target.visible_message("<span_class='warning'>[user] pulls the trigger!</span>", "<span_class='userdanger'>[(user == target) ? "You pull" : "[user] pulls"] the trigger!</span>")
 
 	if(chambered && chambered.BB)
 		chambered.BB.damage *= 5

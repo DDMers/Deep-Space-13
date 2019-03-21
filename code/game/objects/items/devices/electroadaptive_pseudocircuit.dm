@@ -18,24 +18,24 @@
 /obj/item/electroadaptive_pseudocircuit/examine(mob/user)
 	..()
 	if(iscyborg(user))
-		to_chat(user, "<span class='notice'>It has material for <b>[circuits]</b> circuit[circuits == 1 ? "" : "s"]. Use the pseudocircuit on existing circuits to gain material.</span>")
-		to_chat(user, "<span class='notice'>Serves as a substitute for <b>fire/air alarm</b>, <b>firelock</b>, and <b>APC</b> electronics.</span>")
-		to_chat(user, "<span class='notice'>It can also be used on an APC with no power cell to <b>fabricate a low-capacity cell</b> at a high power cost.</span>")
+		to_chat(user, "<span_class='notice'>It has material for <b>[circuits]</b> circuit[circuits == 1 ? "" : "s"]. Use the pseudocircuit on existing circuits to gain material.</span>")
+		to_chat(user, "<span_class='notice'>Serves as a substitute for <b>fire/air alarm</b>, <b>firelock</b>, and <b>APC</b> electronics.</span>")
+		to_chat(user, "<span_class='notice'>It can also be used on an APC with no power cell to <b>fabricate a low-capacity cell</b> at a high power cost.</span>")
 
 /obj/item/electroadaptive_pseudocircuit/proc/adapt_circuit(mob/living/silicon/robot/R, circuit_cost = 0)
 	if(QDELETED(R) || !istype(R))
 		return
 	if(!R.cell)
-		to_chat(R, "<span class='warning'>You need a power cell installed for that.</span>")
+		to_chat(R, "<span_class='warning'>You need a power cell installed for that.</span>")
 		return
 	if(!R.cell.use(circuit_cost))
-		to_chat(R, "<span class='warning'>You don't have the energy for that (you need [DisplayEnergy(circuit_cost)].)</span>")
+		to_chat(R, "<span_class='warning'>You don't have the energy for that (you need [DisplayEnergy(circuit_cost)].)</span>")
 		return
 	if(recharging)
-		to_chat(R, "<span class='warning'>[src] needs some time to recharge first.</span>")
+		to_chat(R, "<span_class='warning'>[src] needs some time to recharge first.</span>")
 		return
 	if(!circuits)
-		to_chat(R, "<span class='warning'>You need more material. Use [src] on existing simple circuits to break them down.</span>")
+		to_chat(R, "<span_class='warning'>You need more material. Use [src] on existing simple circuits to break them down.</span>")
 		return
 	playsound(R, 'sound/items/rped.ogg', 50, TRUE)
 	recharging = TRUE
@@ -54,8 +54,8 @@
 		return
 	circuits++
 	maptext = "[circuits]"
-	user.visible_message("<span class='notice'>User breaks down [target] with [src].</span>", \
-	"<span class='notice'>You recycle [target] into [src]. It now has material for <b>[circuits]</b> circuits.</span>")
+	user.visible_message("<span_class='notice'>User breaks down [target] with [src].</span>", \
+	"<span_class='notice'>You recycle [target] into [src]. It now has material for <b>[circuits]</b> circuits.</span>")
 	playsound(user, 'sound/items/deconstruct.ogg', 50, TRUE)
 	qdel(target)
 

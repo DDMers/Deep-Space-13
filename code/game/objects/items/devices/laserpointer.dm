@@ -44,13 +44,13 @@
 			if(!user.transferItemToLoc(W, src))
 				return
 			diode = W
-			to_chat(user, "<span class='notice'>You install a [diode.name] in [src].</span>")
+			to_chat(user, "<span_class='notice'>You install a [diode.name] in [src].</span>")
 		else
-			to_chat(user, "<span class='notice'>[src] already has a diode installed.</span>")
+			to_chat(user, "<span_class='notice'>[src] already has a diode installed.</span>")
 
 	else if(W.tool_behaviour == TOOL_SCREWDRIVER)
 		if(diode)
-			to_chat(user, "<span class='notice'>You remove the [diode.name] from \the [src].</span>")
+			to_chat(user, "<span_class='notice'>You remove the [diode.name] from \the [src].</span>")
 			diode.forceMove(drop_location())
 			diode = null
 	else
@@ -60,9 +60,9 @@
 	..()
 	if(in_range(user, src) || isobserver(user))
 		if(!diode)
-			to_chat(user, "<span class='notice'>The diode is missing.<span>")
+			to_chat(user, "<span_class='notice'>The diode is missing.<span>")
 		else
-			to_chat(user, "<span class='notice'>A class <b>[diode.rating]</b> laser diode is installed. It is <i>screwed</i> in place.<span>")
+			to_chat(user, "<span_class='notice'>A class <b>[diode.rating]</b> laser diode is installed. It is <i>screwed</i> in place.<span>")
 
 /obj/item/laser_pointer/afterattack(atom/target, mob/living/user, flag, params)
 	. = ..()
@@ -72,25 +72,25 @@
 	if( !(user in (viewers(7,target))) )
 		return
 	if (!diode)
-		to_chat(user, "<span class='notice'>You point [src] at [target], but nothing happens!</span>")
+		to_chat(user, "<span_class='notice'>You point [src] at [target], but nothing happens!</span>")
 		return
 	if (!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
+		to_chat(user, "<span_class='warning'>You don't have the dexterity to do this!</span>")
 		return
 	if(user.has_trait(TRAIT_NOGUNS))
-		to_chat(user, "<span class='warning'>Your fingers can't press the button!</span>")
+		to_chat(user, "<span_class='warning'>Your fingers can't press the button!</span>")
 		return
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.dna.check_mutation(HULK))
-			to_chat(user, "<span class='warning'>Your fingers can't press the button!</span>")
+			to_chat(user, "<span_class='warning'>Your fingers can't press the button!</span>")
 			return
 
 	add_fingerprint(user)
 
 	//nothing happens if the battery is drained
 	if(recharge_locked)
-		to_chat(user, "<span class='notice'>You point [src] at [target], but it's still charging.</span>")
+		to_chat(user, "<span_class='notice'>You point [src] at [target], but it's still charging.</span>")
 		return
 
 	var/outmsg
@@ -110,9 +110,9 @@
 
 			//chance to actually hit the eyes depends on internal component
 			if(prob(effectchance * diode.rating) && C.flash_act(severity))
-				outmsg = "<span class='notice'>You blind [C] by shining [src] in [C.p_their()] eyes.</span>"
+				outmsg = "<span_class='notice'>You blind [C] by shining [src] in [C.p_their()] eyes.</span>"
 			else
-				outmsg = "<span class='warning'>You fail to blind [C] by shining [src] at [C.p_their()] eyes!</span>"
+				outmsg = "<span_class='warning'>You fail to blind [C] by shining [src] at [C.p_their()] eyes!</span>"
 
 	//robots
 	else if(iscyborg(target))
@@ -122,20 +122,20 @@
 		if(prob(effectchance * diode.rating))
 			S.flash_act(affect_silicon = 1)
 			S.Paralyze(rand(100,200))
-			to_chat(S, "<span class='danger'>Your sensors were overloaded by a laser!</span>")
-			outmsg = "<span class='notice'>You overload [S] by shining [src] at [S.p_their()] sensors.</span>"
+			to_chat(S, "<span_class='danger'>Your sensors were overloaded by a laser!</span>")
+			outmsg = "<span_class='notice'>You overload [S] by shining [src] at [S.p_their()] sensors.</span>"
 		else
-			outmsg = "<span class='warning'>You fail to overload [S] by shining [src] at [S.p_their()] sensors!</span>"
+			outmsg = "<span_class='warning'>You fail to overload [S] by shining [src] at [S.p_their()] sensors!</span>"
 
 	//cameras
 	else if(istype(target, /obj/machinery/camera))
 		var/obj/machinery/camera/C = target
 		if(prob(effectchance * diode.rating))
 			C.emp_act(EMP_HEAVY)
-			outmsg = "<span class='notice'>You hit the lens of [C] with [src], temporarily disabling the camera!</span>"
+			outmsg = "<span_class='notice'>You hit the lens of [C] with [src], temporarily disabling the camera!</span>"
 			log_combat(user, C, "EMPed", src)
 		else
-			outmsg = "<span class='warning'>You miss the lens of [C] with [src]!</span>"
+			outmsg = "<span_class='warning'>You miss the lens of [C] with [src]!</span>"
 
 	//catpeople
 	for(var/mob/living/carbon/human/H in view(1,targloc))
@@ -144,22 +144,22 @@
 		if(user.mobility_flags & MOBILITY_STAND)
 			H.setDir(get_dir(H,targloc)) // kitty always looks at the light
 			if(prob(effectchance))
-				H.visible_message("<span class='warning'>[H] makes a grab for the light!</span>","<span class='userdanger'>LIGHT!</span>")
+				H.visible_message("<span_class='warning'>[H] makes a grab for the light!</span>","<span_class='userdanger'>LIGHT!</span>")
 				H.Move(targloc)
 				log_combat(user, H, "moved with a laser pointer",src)
 			else
-				H.visible_message("<span class='notice'>[H] looks briefly distracted by the light.</span>","<span class = 'warning'> You're briefly tempted by the shiny light... </span>")
+				H.visible_message("<span_class='notice'>[H] looks briefly distracted by the light.</span>","<span_class = 'warning'> You're briefly tempted by the shiny light... </span>")
 		else
-			H.visible_message("<span class='notice'>[H] stares at the light</span>","<span class = 'warning'> You stare at the light... </span>")
+			H.visible_message("<span_class='notice'>[H] stares at the light</span>","<span_class = 'warning'> You stare at the light... </span>")
 
 	//cats!
 	for(var/mob/living/simple_animal/pet/cat/C in view(1,targloc))
 		if(prob(50))
-			C.visible_message("<span class='notice'>[C] pounces on the light!</span>","<span class='warning'>LIGHT!</span>")
+			C.visible_message("<span_class='notice'>[C] pounces on the light!</span>","<span_class='warning'>LIGHT!</span>")
 			C.Move(targloc)
 			C.set_resting(TRUE, FALSE)
 		else
-			C.visible_message("<span class='notice'>[C] looks uninterested in your games.</span>","<span class='warning'>You spot [user] shining [src] at you. How insulting!</span>")
+			C.visible_message("<span_class='notice'>[C] looks uninterested in your games.</span>","<span_class='warning'>You spot [user] shining [src] at you. How insulting!</span>")
 
 	//laser pointer image
 	icon_state = "pointer_[pointer_icon_state]"
@@ -177,7 +177,7 @@
 	if(outmsg)
 		to_chat(user, outmsg)
 	else
-		to_chat(user, "<span class='info'>You point [src] at [target].</span>")
+		to_chat(user, "<span_class='info'>You point [src] at [target].</span>")
 
 	energy -= 1
 	if(energy <= max_energy)
@@ -185,7 +185,7 @@
 			recharging = 1
 			START_PROCESSING(SSobj, src)
 		if(energy <= 0)
-			to_chat(user, "<span class='warning'>[src]'s battery is overused, it needs time to recharge!</span>")
+			to_chat(user, "<span_class='warning'>[src]'s battery is overused, it needs time to recharge!</span>")
 			recharge_locked = TRUE
 
 	flick_overlay_view(I, targloc, 10)

@@ -33,18 +33,18 @@
 	..()
 	if(reinf)
 		if(anchored && state == WINDOW_SCREWED_TO_FRAME)
-			to_chat(user, "<span class='notice'>The window is <b>screwed</b> to the frame.</span>")
+			to_chat(user, "<span_class='notice'>The window is <b>screwed</b> to the frame.</span>")
 		else if(anchored && state == WINDOW_IN_FRAME)
-			to_chat(user, "<span class='notice'>The window is <i>unscrewed</i> but <b>pried</b> into the frame.</span>")
+			to_chat(user, "<span_class='notice'>The window is <i>unscrewed</i> but <b>pried</b> into the frame.</span>")
 		else if(anchored && state == WINDOW_OUT_OF_FRAME)
-			to_chat(user, "<span class='notice'>The window is out of the frame, but could be <i>pried</i> in. It is <b>screwed</b> to the floor.</span>")
+			to_chat(user, "<span_class='notice'>The window is out of the frame, but could be <i>pried</i> in. It is <b>screwed</b> to the floor.</span>")
 		else if(!anchored)
-			to_chat(user, "<span class='notice'>The window is <i>unscrewed</i> from the floor, and could be deconstructed by <b>wrenching</b>.</span>")
+			to_chat(user, "<span_class='notice'>The window is <i>unscrewed</i> from the floor, and could be deconstructed by <b>wrenching</b>.</span>")
 	else
 		if(anchored)
-			to_chat(user, "<span class='notice'>The window is <b>screwed</b> to the floor.</span>")
+			to_chat(user, "<span_class='notice'>The window is <b>screwed</b> to the floor.</span>")
 		else
-			to_chat(user, "<span class='notice'>The window is <i>unscrewed</i> from the floor, and could be deconstructed by <b>wrenching</b>.</span>")
+			to_chat(user, "<span_class='notice'>The window is <i>unscrewed</i> from the floor, and could be deconstructed by <b>wrenching</b>.</span>")
 
 /obj/structure/window/Initialize(mapload, direct)
 	. = ..()
@@ -76,7 +76,7 @@
 /obj/structure/window/rcd_act(mob/user, var/obj/item/construction/rcd/the_rcd)
 	switch(the_rcd.mode)
 		if(RCD_DECONSTRUCT)
-			to_chat(user, "<span class='notice'>You deconstruct the window.</span>")
+			to_chat(user, "<span_class='notice'>You deconstruct the window.</span>")
 			qdel(src)
 			return TRUE
 	return FALSE
@@ -130,7 +130,7 @@
 
 /obj/structure/window/attack_tk(mob/user)
 	user.changeNext_move(CLICK_CD_MELEE)
-	user.visible_message("<span class='notice'>Something knocks on [src].</span>")
+	user.visible_message("<span_class='notice'>Something knocks on [src].</span>")
 	add_fingerprint(user)
 	playsound(src, 'sound/effects/Glassknock.ogg', 50, 1)
 
@@ -169,13 +169,13 @@
 			if(!I.tool_start_check(user, amount=0))
 				return
 
-			to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
+			to_chat(user, "<span_class='notice'>You begin repairing [src]...</span>")
 			if(I.use_tool(src, user, 40, volume=50))
 				obj_integrity = max_integrity
 				update_nearby_icons()
-				to_chat(user, "<span class='notice'>You repair [src].</span>")
+				to_chat(user, "<span_class='notice'>You repair [src].</span>")
 		else
-			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
+			to_chat(user, "<span_class='warning'>[src] is already in good condition!</span>")
 		return
 
 	if(!(flags_1&NODECONSTRUCT_1))
@@ -183,39 +183,39 @@
 			I.play_tool_sound(src, 75)
 			if(reinf)
 				if(state == WINDOW_SCREWED_TO_FRAME || state == WINDOW_IN_FRAME)
-					to_chat(user, "<span class='notice'>You begin to [state == WINDOW_SCREWED_TO_FRAME ? "unscrew the window from":"screw the window to"] the frame...</span>")
+					to_chat(user, "<span_class='notice'>You begin to [state == WINDOW_SCREWED_TO_FRAME ? "unscrew the window from":"screw the window to"] the frame...</span>")
 					if(I.use_tool(src, user, decon_speed, extra_checks = CALLBACK(src, .proc/check_state_and_anchored, state, anchored)))
 						state = (state == WINDOW_IN_FRAME ? WINDOW_SCREWED_TO_FRAME : WINDOW_IN_FRAME)
-						to_chat(user, "<span class='notice'>You [state == WINDOW_IN_FRAME ? "unfasten the window from":"fasten the window to"] the frame.</span>")
+						to_chat(user, "<span_class='notice'>You [state == WINDOW_IN_FRAME ? "unfasten the window from":"fasten the window to"] the frame.</span>")
 				else if(state == WINDOW_OUT_OF_FRAME)
-					to_chat(user, "<span class='notice'>You begin to [anchored ? "unscrew the frame from":"screw the frame to"] the floor...</span>")
+					to_chat(user, "<span_class='notice'>You begin to [anchored ? "unscrew the frame from":"screw the frame to"] the floor...</span>")
 					if(I.use_tool(src, user, decon_speed, extra_checks = CALLBACK(src, .proc/check_state_and_anchored, state, anchored)))
 						setAnchored(!anchored)
-						to_chat(user, "<span class='notice'>You [anchored ? "fasten the frame to":"unfasten the frame from"] the floor.</span>")
+						to_chat(user, "<span_class='notice'>You [anchored ? "fasten the frame to":"unfasten the frame from"] the floor.</span>")
 			else //if we're not reinforced, we don't need to check or update state
-				to_chat(user, "<span class='notice'>You begin to [anchored ? "unscrew the window from":"screw the window to"] the floor...</span>")
+				to_chat(user, "<span_class='notice'>You begin to [anchored ? "unscrew the window from":"screw the window to"] the floor...</span>")
 				if(I.use_tool(src, user, decon_speed, extra_checks = CALLBACK(src, .proc/check_anchored, anchored)))
 					setAnchored(!anchored)
-					to_chat(user, "<span class='notice'>You [anchored ? "fasten the window to":"unfasten the window from"] the floor.</span>")
+					to_chat(user, "<span_class='notice'>You [anchored ? "fasten the window to":"unfasten the window from"] the floor.</span>")
 			return
 
 
 		else if(I.tool_behaviour == TOOL_CROWBAR && reinf && (state == WINDOW_OUT_OF_FRAME || state == WINDOW_IN_FRAME))
-			to_chat(user, "<span class='notice'>You begin to lever the window [state == WINDOW_OUT_OF_FRAME ? "into":"out of"] the frame...</span>")
+			to_chat(user, "<span_class='notice'>You begin to lever the window [state == WINDOW_OUT_OF_FRAME ? "into":"out of"] the frame...</span>")
 			I.play_tool_sound(src, 75)
 			if(I.use_tool(src, user, decon_speed, extra_checks = CALLBACK(src, .proc/check_state_and_anchored, state, anchored)))
 				state = (state == WINDOW_OUT_OF_FRAME ? WINDOW_IN_FRAME : WINDOW_OUT_OF_FRAME)
-				to_chat(user, "<span class='notice'>You pry the window [state == WINDOW_IN_FRAME ? "into":"out of"] the frame.</span>")
+				to_chat(user, "<span_class='notice'>You pry the window [state == WINDOW_IN_FRAME ? "into":"out of"] the frame.</span>")
 			return
 
 		else if(I.tool_behaviour == TOOL_WRENCH && !anchored)
 			I.play_tool_sound(src, 75)
-			to_chat(user, "<span class='notice'> You begin to disassemble [src]...</span>")
+			to_chat(user, "<span_class='notice'> You begin to disassemble [src]...</span>")
 			if(I.use_tool(src, user, decon_speed, extra_checks = CALLBACK(src, .proc/check_state_and_anchored, state, anchored)))
 				var/obj/item/stack/sheet/G = new glass_type(user.loc, glass_amount)
 				G.add_fingerprint(user)
 				playsound(src, 'sound/items/Deconstruct.ogg', 50, 1)
-				to_chat(user, "<span class='notice'>You successfully disassemble [src].</span>")
+				to_chat(user, "<span_class='notice'>You successfully disassemble [src].</span>")
 				qdel(src)
 			return
 	return ..()
@@ -287,13 +287,13 @@
 
 /obj/structure/window/proc/can_be_rotated(mob/user,rotation_type)
 	if(anchored)
-		to_chat(user, "<span class='warning'>[src] cannot be rotated while it is fastened to the floor!</span>")
+		to_chat(user, "<span_class='warning'>[src] cannot be rotated while it is fastened to the floor!</span>")
 		return FALSE
 
 	var/target_dir = turn(dir, rotation_type == ROTATION_CLOCKWISE ? -90 : 90)
 
 	if(!valid_window_location(loc, target_dir))
-		to_chat(user, "<span class='warning'>[src] cannot be rotated in that direction!</span>")
+		to_chat(user, "<span_class='warning'>[src] cannot be rotated in that direction!</span>")
 		return FALSE
 	return TRUE
 
@@ -701,7 +701,7 @@
 /obj/structure/window/paperframe/examine(mob/user)
 	. = ..()
 	if(obj_integrity < max_integrity)
-		to_chat(user, "<span class='info'>It looks a bit damaged, you may be able to fix it with some <b>paper</b>.</span>")
+		to_chat(user, "<span_class='info'>It looks a bit damaged, you may be able to fix it with some <b>paper</b>.</span>")
 
 /obj/structure/window/paperframe/spawnDebris(location)
 	. = list(new /obj/item/stack/sheet/mineral/wood(location))
@@ -721,7 +721,7 @@
 		take_damage(4,BRUTE,"melee", 0)
 		playsound(src, hitsound, 50, 1)
 		if(!QDELETED(src))
-			user.visible_message("<span class='danger'>[user] tears a hole in [src].</span>")
+			user.visible_message("<span_class='danger'>[user] tears a hole in [src].</span>")
 			update_icon()
 
 /obj/structure/window/paperframe/update_icon()

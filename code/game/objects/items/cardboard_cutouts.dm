@@ -22,7 +22,7 @@
 /obj/item/cardboard_cutout/attack_hand(mob/living/user)
 	if(user.a_intent == INTENT_HELP || pushed_over)
 		return ..()
-	user.visible_message("<span class='warning'>[user] pushes over [src]!</span>", "<span class='danger'>You push over [src]!</span>")
+	user.visible_message("<span_class='warning'>[user] pushes over [src]!</span>", "<span_class='danger'>You push over [src]!</span>")
 	playsound(src, 'sound/weapons/genhit.ogg', 50, 1)
 	push_over()
 
@@ -38,7 +38,7 @@
 /obj/item/cardboard_cutout/attack_self(mob/living/user)
 	if(!pushed_over)
 		return
-	to_chat(user, "<span class='notice'>You right [src].</span>")
+	to_chat(user, "<span_class='notice'>You right [src].</span>")
 	desc = initial(desc)
 	icon = initial(icon)
 	icon_state = initial(icon_state) //This resets a cutout to its blank state - this is intentional to allow for resetting
@@ -60,8 +60,8 @@
 	user.do_attack_animation(src)
 
 	if(I.force)
-		user.visible_message("<span class='danger'>[user] has hit \
-			[src] with [I]!</span>", "<span class='danger'>You hit [src] \
+		user.visible_message("<span_class='danger'>[user] has hit \
+			[src] with [I]!</span>", "<span_class='danger'>You hit [src] \
 			with [I]!</span>")
 
 		if(prob(I.force))
@@ -70,7 +70,7 @@
 /obj/item/cardboard_cutout/bullet_act(obj/item/projectile/P)
 	if(istype(P, /obj/item/projectile/bullet/reusable))
 		P.on_hit(src, 0)
-	visible_message("<span class='danger'>[src] has been hit by [P]!</span>")
+	visible_message("<span_class='danger'>[src] has been hit by [P]!</span>")
 	playsound(src, 'sound/weapons/slice.ogg', 50, 1)
 	if(prob(P.damage))
 		push_over()
@@ -79,19 +79,19 @@
 	if(!crayon || !user)
 		return
 	if(pushed_over)
-		to_chat(user, "<span class='warning'>Right [src] first!</span>")
+		to_chat(user, "<span_class='warning'>Right [src] first!</span>")
 		return
 	if(crayon.check_empty(user))
 		return
 	if(crayon.is_capped)
-		to_chat(user, "<span class='warning'>Take the cap off first!</span>")
+		to_chat(user, "<span_class='warning'>Take the cap off first!</span>")
 		return
 	var/new_appearance = input(user, "Choose a new appearance for [src].", "26th Century Deception") as null|anything in possible_appearances
 	if(!new_appearance || !crayon || !user.canUseTopic(src))
 		return
 	if(!do_after(user, 10, FALSE, src, TRUE))
 		return
-	user.visible_message("<span class='notice'>[user] gives [src] a new look.</span>", "<span class='notice'>Voila! You give [src] a new look.</span>")
+	user.visible_message("<span_class='notice'>[user] gives [src] a new look.</span>", "<span_class='notice'>Voila! You give [src] a new look.</span>")
 	crayon.use_charges(1)
 	crayon.check_empty(user)
 	alpha = 255

@@ -3,7 +3,7 @@
 	name = "Near Sightness"
 	desc = "The holder of this mutation has poor eyesight."
 	quality = MINOR_NEGATIVE
-	text_gain_indication = "<span class='danger'>You can't see very well.</span>"
+	text_gain_indication = "<span_class='danger'>You can't see very well.</span>"
 
 /datum/mutation/human/nearsight/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -21,7 +21,7 @@
 	name = "Blindness"
 	desc = "Renders the subject completely blind."
 	quality = NEGATIVE
-	text_gain_indication = "<span class='danger'>You can't seem to see anything.</span>"
+	text_gain_indication = "<span_class='danger'>You can't seem to see anything.</span>"
 
 /datum/mutation/human/blind/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -40,7 +40,7 @@
 	desc = "A strange genome that allows the user to see between the spaces of walls." //actual x-ray would mean you'd constantly be blasting rads, wich might be fun for later //hmb
 	quality = POSITIVE
 	difficulty = 18
-	text_gain_indication = "<span class='notice'>The walls suddenly disappear!</span>"
+	text_gain_indication = "<span_class='notice'>The walls suddenly disappear!</span>"
 	time_coeff = 2
 	instability = 25
 
@@ -65,7 +65,7 @@
 	quality = POSITIVE
 	locked = TRUE
 	difficulty = 16
-	text_gain_indication = "<span class='notice'>You feel pressure building up behind your eyes.</span>"
+	text_gain_indication = "<span_class='notice'>You feel pressure building up behind your eyes.</span>"
 	layer_used = FRONT_MUTATIONS_LAYER
 	limb_req = BODY_ZONE_HEAD
 

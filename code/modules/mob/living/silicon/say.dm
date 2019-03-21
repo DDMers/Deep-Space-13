@@ -9,14 +9,14 @@
 		var/mob/living/silicon/S = src
 		desig = trim_left(S.designation + " " + S.job)
 	var/message_a = say_quote(message, get_spans())
-	var/rendered = "Robotic Talk, <span class='name'>[name]</span> <span class='message'>[message_a]</span>"
+	var/rendered = "Robotic Talk, <span_class='name'>[name]</span> <span_class='message'>[message_a]</span>"
 	for(var/mob/M in GLOB.player_list)
 		if(M.binarycheck())
 			if(isAI(M))
-				var/renderedAI = "<span class='binarysay'>Robotic Talk, <a href='?src=[REF(M)];track=[html_encode(name)]'><span class='name'>[name] ([desig])</span></a> <span class='message'>[message_a]</span></span>"
+				var/renderedAI = "<span_class='binarysay'>Robotic Talk, <a href='?src=[REF(M)];track=[html_encode(name)]'><span_class='name'>[name] ([desig])</span></a> <span_class='message'>[message_a]</span></span>"
 				to_chat(M, renderedAI)
 			else
-				to_chat(M, "<span class='binarysay'>[rendered]</span>")
+				to_chat(M, "<span_class='binarysay'>[rendered]</span>")
 		if(isobserver(M))
 			var/following = src
 			// If the AI talks on binary chat, we still want to follow
@@ -25,7 +25,7 @@
 				var/mob/living/silicon/ai/ai = src
 				following = ai.eyeobj
 			var/link = FOLLOW_LINK(M, following)
-			to_chat(M, "<span class='binarysay'>[link] [rendered]</span>")
+			to_chat(M, "<span_class='binarysay'>[link] [rendered]</span>")
 
 /mob/living/silicon/binarycheck()
 	return 1

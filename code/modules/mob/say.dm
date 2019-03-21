@@ -3,7 +3,7 @@
 	set name = "Say"
 	set category = "IC"
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, "<span_class='danger'>Speech is currently admin-disabled.</span>")
 		return
 	if(message)
 		say(message)
@@ -13,7 +13,7 @@
 	set name = "Whisper"
 	set category = "IC"
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, "<span_class='danger'>Speech is currently admin-disabled.</span>")
 		return
 	whisper(message)
 
@@ -25,7 +25,7 @@
 	set category = "IC"
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, "<span_class='danger'>Speech is currently admin-disabled.</span>")
 		return
 
 	message = trim(copytext(sanitize(message), 1, MAX_MESSAGE_LEN))
@@ -37,7 +37,7 @@
 	var/alt_name = ""
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, "<span_class='danger'>Speech is currently admin-disabled.</span>")
 		return
 
 	var/jb = is_banned_from(ckey, "OOC")
@@ -45,14 +45,14 @@
 		return
 
 	if(jb)
-		to_chat(src, "<span class='danger'>You have been banned from deadchat.</span>")
+		to_chat(src, "<span_class='danger'>You have been banned from deadchat.</span>")
 		return
 
 
 
 	if (src.client)
 		if(src.client.prefs.muted & MUTE_DEADCHAT)
-			to_chat(src, "<span class='danger'>You cannot talk in deadchat (muted).</span>")
+			to_chat(src, "<span_class='danger'>You cannot talk in deadchat (muted).</span>")
 			return
 
 		if(src.client.handle_spam_prevention(message,MUTE_DEADCHAT))
@@ -75,7 +75,7 @@
 		K = src.key
 
 	var/spanned = src.say_quote(message, get_spans())
-	var/rendered = "<span class='game deadsay'><span class='prefix'>DEAD:</span> <span class='name'>[name]</span>[alt_name] <span class='message'>[emoji_parse(spanned)]</span></span>"
+	var/rendered = "<span_class='game deadsay'><span_class='prefix'>DEAD:</span> <span_class='name'>[name]</span>[alt_name] <span_class='message'>[emoji_parse(spanned)]</span></span>"
 	log_talk(message, LOG_SAY, tag="DEAD")
 	deadchat_broadcast(rendered, follow_target = src, speaker_key = K)
 

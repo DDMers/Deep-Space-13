@@ -110,7 +110,7 @@
 	GET_COMPONENT(materials, /datum/component/material_container)
 	for(var/mat_id in materials.materials)
 		var/datum/material/M = materials.materials[mat_id]
-		dat += "<span class=\"res_name\">[M.name]: </span>[M.amount] cm&sup3;"
+		dat += "<span_class=\"res_name\">[M.name]: </span>[M.amount] cm&sup3;"
 		if (selected_material == mat_id)
 			dat += " <i>Smelting</i>"
 		else
@@ -122,7 +122,7 @@
 
 	for(var/v in stored_research.researched_designs)
 		var/datum/design/D = SSresearch.techweb_design_by_id(v)
-		dat += "<span class=\"res_name\">[D.name] "
+		dat += "<span_class=\"res_name\">[D.name] "
 		if (selected_alloy == D.id)
 			dat += " <i>Smelting</i>"
 		else

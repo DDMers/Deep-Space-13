@@ -51,13 +51,13 @@
 /obj/machinery/mineral/ore_redemption/examine(mob/user)
 	..()
 	if(in_range(user, src) || isobserver(user))
-		to_chat(user, "<span class='notice'>The status display reads: Smelting <b>[sheet_per_ore]</b> sheet(s) per piece of ore.<br>Reward point generation at <b>[point_upgrade*100]%</b>.<br>Ore pickup speed at <b>[ore_pickup_rate]</b>.<span>")
+		to_chat(user, "<span_class='notice'>The status display reads: Smelting <b>[sheet_per_ore]</b> sheet(s) per piece of ore.<br>Reward point generation at <b>[point_upgrade*100]%</b>.<br>Ore pickup speed at <b>[ore_pickup_rate]</b>.<span>")
 
 /obj/machinery/mineral/ore_redemption/proc/smelt_ore(obj/item/stack/ore/O)
 	var/datum/component/material_container/mat_container = materials.mat_container
 	if (!mat_container)
 		return
-		
+
 	if(O.refined_type == null)
 		return
 
@@ -187,20 +187,20 @@
 		if(user.transferItemToLoc(W, src))
 			inserted_disk = W
 			return TRUE
-			
+
 	var/obj/item/stack/ore/O = W
 	if(istype(O))
 		if(O.refined_type == null)
-			to_chat(user, "<span class='notice'>[O] has already been refined!</span>")
+			to_chat(user, "<span_class='notice'>[O] has already been refined!</span>")
 			return
-		
+
 	return ..()
 
 /obj/machinery/mineral/ore_redemption/multitool_act(mob/living/user, obj/item/multitool/I)
 	if (panel_open)
 		input_dir = turn(input_dir, -90)
 		output_dir = turn(output_dir, -90)
-		to_chat(user, "<span class='notice'>You change [src]'s I/O settings, setting the input to [dir2text(input_dir)] and the output to [dir2text(output_dir)].</span>")
+		to_chat(user, "<span_class='notice'>You change [src]'s I/O settings, setting the input to [dir2text(input_dir)] and the output to [dir2text(output_dir)].</span>")
 		return TRUE
 
 /obj/machinery/mineral/ore_redemption/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
@@ -265,7 +265,7 @@
 					return
 				inserted_id = I
 			else
-				to_chat(usr, "<span class='warning'>Not a valid ID!</span>")
+				to_chat(usr, "<span_class='warning'>Not a valid ID!</span>")
 			return TRUE
 		if("Claim")
 			if(inserted_id)
@@ -276,9 +276,9 @@
 			if(!mat_container)
 				return
 			if(materials.on_hold())
-				to_chat(usr, "<span class='warning'>Mineral access is on hold, please contact the quartermaster.</span>")
+				to_chat(usr, "<span_class='warning'>Mineral access is on hold, please contact the quartermaster.</span>")
 			else if(!check_access(inserted_id) && !allowed(usr)) //Check the ID inside, otherwise check the user
-				to_chat(usr, "<span class='warning'>Required access not found.</span>")
+				to_chat(usr, "<span_class='warning'>Required access not found.</span>")
 			else
 				var/mat_id = params["id"]
 				if(!mat_container.materials[mat_id])
@@ -308,7 +308,7 @@
 					return
 				inserted_disk = disk
 			else
-				to_chat(usr, "<span class='warning'>Not a valid Design Disk!</span>")
+				to_chat(usr, "<span_class='warning'>Not a valid Design Disk!</span>")
 			return TRUE
 		if("diskEject")
 			if(inserted_disk)
@@ -324,7 +324,7 @@
 			if(!mat_container)
 				return
 			if(materials.on_hold())
-				to_chat(usr, "<span class='warning'>Mineral access is on hold, please contact the quartermaster.</span>")
+				to_chat(usr, "<span_class='warning'>Mineral access is on hold, please contact the quartermaster.</span>")
 				return
 			var/alloy_id = params["id"]
 			var/datum/design/alloy = stored_research.isDesignResearchedID(alloy_id)
@@ -345,7 +345,7 @@
 					output = new alloy.build_path(src)
 				unload_mineral(output)
 			else
-				to_chat(usr, "<span class='warning'>Required access not found.</span>")
+				to_chat(usr, "<span_class='warning'>Required access not found.</span>")
 			return TRUE
 
 /obj/machinery/mineral/ore_redemption/ex_act(severity, target)

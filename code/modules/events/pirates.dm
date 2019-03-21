@@ -124,8 +124,8 @@
 	SSshuttle.registerTradeBlockade(src)
 	gps.tracking = TRUE
 	active = TRUE
-	to_chat(user,"<span class='notice'>You toggle [src] [active ? "on":"off"].</span>")
-	to_chat(user,"<span class='warning'>The scrambling signal can be now tracked by GPS.</span>")
+	to_chat(user,"<span_class='notice'>You toggle [src] [active ? "on":"off"].</span>")
+	to_chat(user,"<span_class='warning'>The scrambling signal can be now tracked by GPS.</span>")
 	START_PROCESSING(SSobj,src)
 
 /obj/machinery/shuttle_scrambler/interact(mob/user)
@@ -150,7 +150,7 @@
 
 /obj/machinery/shuttle_scrambler/proc/dump_loot(mob/user)
 	new /obj/item/holochip(drop_location(), credits_stored)
-	to_chat(user,"<span class='notice'>You retrieve the siphoned credits!</span>")
+	to_chat(user,"<span_class='notice'>You retrieve the siphoned credits!</span>")
 	credits_stored = 0
 
 /obj/machinery/shuttle_scrambler/proc/send_notification()
@@ -238,7 +238,7 @@
 
 /obj/machinery/loot_locator/interact(mob/user)
 	if(world.time <= next_use)
-		to_chat(user,"<span class='warning'>[src] is recharging.</span>")
+		to_chat(user,"<span_class='warning'>[src] is recharging.</span>")
 		return
 	next_use = world.time + cooldown
 	var/atom/movable/AM = find_random_loot()
@@ -272,7 +272,7 @@
 
 /obj/machinery/piratepad/multitool_act(mob/living/user, obj/item/multitool/I)
 	if (istype(I))
-		to_chat(user, "<span class='notice'>You register [src] in [I]s buffer.</span>")
+		to_chat(user, "<span_class='notice'>You register [src] in [I]s buffer.</span>")
 		I.buffer = src
 		return TRUE
 
@@ -293,7 +293,7 @@
 
 /obj/machinery/computer/piratepad_control/multitool_act(mob/living/user, obj/item/multitool/I)
 	if (istype(I) && istype(I.buffer,/obj/machinery/piratepad))
-		to_chat(user, "<span class='notice'>You link [src] with [I.buffer] in [I] buffer.</span>")
+		to_chat(user, "<span_class='notice'>You link [src] with [I.buffer] in [I] buffer.</span>")
 		pad = I.buffer
 		updateDialog()
 		return TRUE
@@ -371,7 +371,7 @@
 
 	points += value
 
-	pad.visible_message("<span class='notice'>[pad] activates!</span>")
+	pad.visible_message("<span_class='notice'>[pad] activates!</span>")
 	flick(pad.sending_state,pad)
 	pad.icon_state = pad.idle_state
 	sending = FALSE
@@ -382,7 +382,7 @@
 		return
 	sending = TRUE
 	status_report = "Sending..."
-	pad.visible_message("<span class='notice'>[pad] starts charging up.</span>")
+	pad.visible_message("<span_class='notice'>[pad] starts charging up.</span>")
 	pad.icon_state = pad.warmup_state
 	sending_timer = addtimer(CALLBACK(src,.proc/send),warmup_time, TIMER_STOPPABLE)
 

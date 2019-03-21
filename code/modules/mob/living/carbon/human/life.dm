@@ -297,13 +297,13 @@
 		for(var/obj/item/I in BP.embedded_objects)
 			if(prob(I.embedding.embedded_pain_chance))
 				BP.receive_damage(I.w_class*I.embedding.embedded_pain_multiplier)
-				to_chat(src, "<span class='userdanger'>[I] embedded in your [BP.name] hurts!</span>")
+				to_chat(src, "<span_class='userdanger'>[I] embedded in your [BP.name] hurts!</span>")
 
 			if(prob(I.embedding.embedded_fall_chance))
 				BP.receive_damage(I.w_class*I.embedding.embedded_fall_pain_multiplier)
 				BP.embedded_objects -= I
 				I.forceMove(drop_location())
-				visible_message("<span class='danger'>[I] falls out of [name]'s [BP.name]!</span>","<span class='userdanger'>[I] falls out of your [BP.name]!</span>")
+				visible_message("<span_class='danger'>[I] falls out of [name]'s [BP.name]!</span>","<span_class='userdanger'>[I] falls out of your [BP.name]!</span>")
 				if(!has_embedded_objects())
 					clear_alert("embeddedobject")
 					SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "embedded")
@@ -326,13 +326,13 @@
 
 /mob/living/carbon/human/proc/handle_hygiene()
 	var/hygiene_loss = -HYGIENE_FACTOR
-	
+
 	//If you're covered in blood, you'll start smelling like shit faster.
 	var/obj/item/head = get_item_by_slot(SLOT_HEAD)
 	if(head)
 		IF_HAS_BLOOD_DNA(head)
 			hygiene_loss -= 2 * HYGIENE_FACTOR
-	
+
 	var/obj/item/mask = get_item_by_slot(SLOT_HEAD)
 	if(mask)
 		IF_HAS_BLOOD_DNA(mask)
@@ -347,14 +347,14 @@
 	if(suit)
 		IF_HAS_BLOOD_DNA(suit)
 			hygiene_loss -= 3 * HYGIENE_FACTOR
-	
+
 	var/obj/item/feet = get_item_by_slot(SLOT_SHOES)
 	if(feet)
 		IF_HAS_BLOOD_DNA(feet)
 			hygiene_loss -= 2 * HYGIENE_FACTOR
 
 	adjust_hygiene(hygiene_loss)
-	
+
 
 #undef THERMAL_PROTECTION_HEAD
 #undef THERMAL_PROTECTION_CHEST

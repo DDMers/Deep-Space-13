@@ -103,11 +103,11 @@
 /obj/item/organ/ears/penguin/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
 	. = ..()
 	if(istype(H))
-		to_chat(H, "<span class='notice'>You suddenly feel like you've lost your balance.</span>")
+		to_chat(H, "<span_class='notice'>You suddenly feel like you've lost your balance.</span>")
 		waddle = H.AddComponent(/datum/component/waddling)
 
 /obj/item/organ/ears/penguin/Remove(mob/living/carbon/human/H,  special = 0)
 	. = ..()
 	if(istype(H))
-		to_chat(H, "<span class='notice'>Your sense of balance comes back to you.</span>")
+		to_chat(H, "<span_class='notice'>Your sense of balance comes back to you.</span>")
 		QDEL_NULL(waddle)

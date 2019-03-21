@@ -21,9 +21,9 @@
 /obj/effect/proc_holder/spell/targeted/touch/cast(list/targets,mob/user = usr)
 	if(!QDELETED(attached_hand))
 		remove_hand(TRUE)
-		to_chat(user, "<span class='notice'>You draw the power out of your hand.</span>")
+		to_chat(user, "<span_class='notice'>You draw the power out of your hand.</span>")
 		return
-	
+
 	for(var/mob/living/carbon/C in targets)
 		if(!attached_hand)
 			if(ChargeHand(C))
@@ -42,11 +42,11 @@
 	if(!user.put_in_hands(attached_hand))
 		remove_hand(TRUE)
 		if (user.get_num_arms() <= 0)
-			to_chat(user, "<span class='warning'>You dont have any usable hands!</span>")
+			to_chat(user, "<span_class='warning'>You dont have any usable hands!</span>")
 		else
-			to_chat(user, "<span class='warning'>Your hands are full!</span>")
+			to_chat(user, "<span_class='warning'>Your hands are full!</span>")
 		return FALSE
-	to_chat(user, "<span class='notice'>You channel the power of the spell to your hand.</span>")
+	to_chat(user, "<span_class='notice'>You channel the power of the spell to your hand.</span>")
 	return TRUE
 
 

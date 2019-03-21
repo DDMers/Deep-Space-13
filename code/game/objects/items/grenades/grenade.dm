@@ -19,7 +19,7 @@
 	var/clumsy_check = GRENADE_CLUMSY_FUMBLE
 
 /obj/item/grenade/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] primes [src], then eats it! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span_class='suicide'>[user] primes [src], then eats it! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	playsound(src, 'sound/items/eatfood.ogg', 50, 1)
 	preprime(user, det_time)
 	user.transferItemToLoc(src, user, TRUE)//>eat a grenade set to 5 seconds >rush captain
@@ -36,11 +36,11 @@
 	var/clumsy = user.has_trait(TRAIT_CLUMSY)
 	if(clumsy && (clumsy_check == GRENADE_CLUMSY_FUMBLE))
 		if(prob(50))
-			to_chat(user, "<span class='warning'>Huh? How does this thing work?</span>")
+			to_chat(user, "<span_class='warning'>Huh? How does this thing work?</span>")
 			preprime(user, 5, FALSE)
 			return FALSE
 	else if(!clumsy && (clumsy_check == GRENADE_NONCLUMSY_FUMBLE))
-		to_chat(user, "<span class='warning'>You pull the pin on [src]. Attached to it is a pink ribbon that says, \"<span class='clown'>HONK</span>\"</span>")
+		to_chat(user, "<span_class='warning'>You pull the pin on [src]. Attached to it is a pink ribbon that says, \"<span_class='clown'>HONK</span>\"</span>")
 		preprime(user, 5, FALSE)
 		return FALSE
 	return TRUE
@@ -72,7 +72,7 @@
 			var/mob/living/carbon/C = user
 			C.throw_mode_on()
 		if(msg)
-			to_chat(user, "<span class='warning'>You prime [src]! [DisplayTimeText(det_time)]!</span>")
+			to_chat(user, "<span_class='warning'>You prime [src]! [DisplayTimeText(det_time)]!</span>")
 	playsound(src, 'sound/weapons/armbomb.ogg', volume, 1)
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
@@ -91,16 +91,16 @@
 		switch(det_time)
 			if (1)
 				det_time = 10
-				to_chat(user, "<span class='notice'>You set the [name] for 1 second detonation time.</span>")
+				to_chat(user, "<span_class='notice'>You set the [name] for 1 second detonation time.</span>")
 			if (10)
 				det_time = 30
-				to_chat(user, "<span class='notice'>You set the [name] for 3 second detonation time.</span>")
+				to_chat(user, "<span_class='notice'>You set the [name] for 3 second detonation time.</span>")
 			if (30)
 				det_time = 50
-				to_chat(user, "<span class='notice'>You set the [name] for 5 second detonation time.</span>")
+				to_chat(user, "<span_class='notice'>You set the [name] for 5 second detonation time.</span>")
 			if (50)
 				det_time = 1
-				to_chat(user, "<span class='notice'>You set the [name] for instant detonation.</span>")
+				to_chat(user, "<span_class='notice'>You set the [name] for instant detonation.</span>")
 		add_fingerprint(user)
 	else
 		return ..()
@@ -111,6 +111,6 @@
 /obj/item/grenade/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	var/obj/item/projectile/P = hitby
 	if(damage && attack_type == PROJECTILE_ATTACK && P.damage_type != STAMINA && prob(15))
-		owner.visible_message("<span class='danger'>[attack_text] hits [owner]'s [src], setting it off! What a shot!</span>")
+		owner.visible_message("<span_class='danger'>[attack_text] hits [owner]'s [src], setting it off! What a shot!</span>")
 		prime()
 		return TRUE //It hit the grenade, not them

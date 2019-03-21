@@ -65,14 +65,14 @@
 				deity = SSreligion.deity
 			else
 				deity = "Christ"
-			to_chat(R, "<span class='userdanger'>The power of [deity] compels you!</span>")
+			to_chat(R, "<span_class='userdanger'>The power of [deity] compels you!</span>")
 			R.stun(20)
 			R.reveal(100)
 			R.adjustHealth(50)
 		sleep(20)
 		for(var/mob/living/carbon/C in get_hearers_in_view(round(created_volume/48,1),get_turf(holder.my_atom)))
 			if(iscultist(C))
-				to_chat(C, "<span class='userdanger'>The divine explosion sears you!</span>")
+				to_chat(C, "<span_class='userdanger'>The divine explosion sears you!</span>")
 				C.Paralyze(40)
 				C.adjust_fire_stacks(5)
 				C.IgniteMob()
@@ -92,7 +92,7 @@
 	required_temp = 474
 	strengthdiv = 6
 	modifier = 1
-	mix_message = "<span class='boldannounce'>Sparks start flying around the black powder!</span>"
+	mix_message = "<span_class='boldannounce'>Sparks start flying around the black powder!</span>"
 
 /datum/chemical_reaction/reagent_explosion/blackpowder_explosion/on_reaction(datum/reagents/holder, created_volume)
 	sleep(rand(50,100))
@@ -407,7 +407,7 @@
 	id = "teslium"
 	results = list("teslium" = 3)
 	required_reagents = list("stable_plasma" = 1, "silver" = 1, "blackpowder" = 1)
-	mix_message = "<span class='danger'>A jet of sparks flies from the mixture as it merges into a flickering slurry.</span>"
+	mix_message = "<span_class='danger'>A jet of sparks flies from the mixture as it merges into a flickering slurry.</span>"
 	required_temp = 400
 
 /datum/chemical_reaction/energized_jelly
@@ -415,7 +415,7 @@
 	id = "energized_jelly"
 	results = list("energized_jelly" = 2)
 	required_reagents = list("slimejelly" = 1, "teslium" = 1)
-	mix_message = "<span class='danger'>The slime jelly starts glowing intermittently.</span>"
+	mix_message = "<span_class='danger'>The slime jelly starts glowing intermittently.</span>"
 
 /datum/chemical_reaction/reagent_explosion/teslium_lightning
 	name = "Teslium Destabilization"
@@ -423,7 +423,7 @@
 	required_reagents = list("teslium" = 1, "water" = 1)
 	strengthdiv = 100
 	modifier = -100
-	mix_message = "<span class='boldannounce'>The teslium starts to spark as electricity arcs away from it!</span>"
+	mix_message = "<span_class='boldannounce'>The teslium starts to spark as electricity arcs away from it!</span>"
 	mix_sound = 'sound/machines/defib_zap.ogg'
 	var/tesla_flags = TESLA_MOB_DAMAGE | TESLA_OBJ_DAMAGE | TESLA_MOB_STUN
 

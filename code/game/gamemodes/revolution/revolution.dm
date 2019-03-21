@@ -21,8 +21,8 @@
 
 	announce_span = "danger"
 	announce_text = "Some crewmembers are attempting a coup!\n\
-	<span class='danger'>Revolutionaries</span>: Expand your cause and overthrow the heads of staff by execution or otherwise.\n\
-	<span class='notice'>Crew</span>: Prevent the revolutionaries from taking over the station."
+	<span_class='danger'>Revolutionaries</span>: Expand your cause and overthrow the heads of staff by execution or otherwise.\n\
+	<span_class='notice'>Crew</span>: Prevent the revolutionaries from taking over the station."
 
 	var/finished = 0
 	var/check_counter = 0
@@ -185,9 +185,9 @@
 //TODO What should be displayed for revs in non-rev rounds
 /datum/game_mode/revolution/special_report()
 	if(finished == 1)
-		return "<span class='redtext big'>The heads of staff were killed or exiled! The revolutionaries win!</span>"
+		return "<span_class='redtext big'>The heads of staff were killed or exiled! The revolutionaries win!</span>"
 	else if(finished == 2)
-		return "<span class='redtext big'>The heads of staff managed to stop the revolution!</span>"
+		return "<span_class='redtext big'>The heads of staff managed to stop the revolution!</span>"
 
 /datum/game_mode/revolution/generate_report()
 	return "Employee unrest has spiked in recent weeks, with several attempted mutinies on heads of staff. Some crew have been observed using flashbulb devices to blind their colleagues, \

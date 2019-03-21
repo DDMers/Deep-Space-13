@@ -5,7 +5,7 @@
 	quality = POSITIVE
 	locked = TRUE
 	difficulty = 16
-	text_gain_indication = "<span class='notice'>Your muscles hurt!</span>"
+	text_gain_indication = "<span_class='notice'>Your muscles hurt!</span>"
 	species_allowed = list("human") //no skeleton/lizard hulk
 	health_req = 25
 	instability = 40
@@ -26,7 +26,7 @@
 /datum/mutation/human/hulk/on_life()
 	if(owner.health < 0)
 		on_losing(owner)
-		to_chat(owner, "<span class='danger'>You suddenly feel very weak.</span>")
+		to_chat(owner, "<span_class='danger'>You suddenly feel very weak.</span>")
 
 /datum/mutation/human/hulk/on_losing(mob/living/carbon/human/owner)
 	if(..())

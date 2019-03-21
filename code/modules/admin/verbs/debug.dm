@@ -124,10 +124,10 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 		CRASH("WrapAdminProcCall with no ckey: [target] [procname] [english_list(arguments)]")
 	if(current_caller && current_caller != ckey)
 		if(!GLOB.AdminProcCallSpamPrevention[ckey])
-			to_chat(usr, "<span class='adminnotice'>Another set of admin called procs are still running, your proc will be run after theirs finish.</span>")
+			to_chat(usr, "<span_class='adminnotice'>Another set of admin called procs are still running, your proc will be run after theirs finish.</span>")
 			GLOB.AdminProcCallSpamPrevention[ckey] = TRUE
 			UNTIL(!GLOB.AdminProcCaller)
-			to_chat(usr, "<span class='adminnotice'>Running your proc</span>")
+			to_chat(usr, "<span_class='adminnotice'>Running your proc</span>")
 			GLOB.AdminProcCallSpamPrevention -= ckey
 		else
 			UNTIL(!GLOB.AdminProcCaller)
@@ -175,7 +175,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 		return
 
 	if(!A || !IsValidSrc(A))
-		to_chat(usr, "<span class='warning'>Error: callproc_datum(): owner of proc no longer exists.</span>")
+		to_chat(usr, "<span_class='warning'>Error: callproc_datum(): owner of proc no longer exists.</span>")
 		return
 	log_admin("[key_name(src)] called [A]'s [procname]() with [lst.len ? "the arguments [list2params(lst)]":"no arguments"].")
 	var/msg = "[key_name(src)] called [A]'s [procname]() with [lst.len ? "the arguments [list2params(lst)]":"no arguments"]."
@@ -334,7 +334,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 		INVOKE_ASYNC(M, /mob/living/carbon/human/proc/Alienize)
 		SSblackbox.record_feedback("tally", "admin_verb", 1, "Make Alien") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		log_admin("[key_name(usr)] made [key_name(M)] into an alien at [AREACOORD(M)].")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] made [ADMIN_LOOKUPFLW(M)] into an alien.</span>")
+		message_admins("<span_class='adminnotice'>[key_name_admin(usr)] made [ADMIN_LOOKUPFLW(M)] into an alien.</span>")
 	else
 		alert("Invalid mob")
 
@@ -349,7 +349,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 		INVOKE_ASYNC(M, /mob/living/carbon/human/proc/slimeize)
 		SSblackbox.record_feedback("tally", "admin_verb", 1, "Make Slime") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		log_admin("[key_name(usr)] made [key_name(M)] into a slime at [AREACOORD(M)].")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] made [ADMIN_LOOKUPFLW(M)] into a slime.</span>")
+		message_admins("<span_class='adminnotice'>[key_name_admin(usr)] made [ADMIN_LOOKUPFLW(M)] into a slime.</span>")
 	else
 		alert("Invalid mob")
 
@@ -486,7 +486,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 		alert("Invalid mob")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Grant Full Access") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_admin("[key_name(src)] has granted [M.key] full access.")
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] has granted [M.key] full access.</span>")
+	message_admins("<span_class='adminnotice'>[key_name_admin(usr)] has granted [M.key] full access.</span>")
 
 /client/proc/cmd_assume_direct_control(mob/M in GLOB.mob_list)
 	set category = "Admin"
@@ -499,7 +499,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 		else
 			var/mob/dead/observer/ghost = new/mob/dead/observer(M,1)
 			ghost.ckey = M.ckey
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] assumed direct control of [M].</span>")
+	message_admins("<span_class='adminnotice'>[key_name_admin(usr)] assumed direct control of [M].</span>")
 	log_admin("[key_name(usr)] assumed direct control of [M].")
 	var/mob/adminmob = src.mob
 	M.ckey = src.ckey
@@ -517,7 +517,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 		to_chat(usr, "Game still loading, please hold!")
 		return
 
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] used the Test Atmos Monitor debug command.</span>")
+	message_admins("<span_class='adminnotice'>[key_name_admin(usr)] used the Test Atmos Monitor debug command.</span>")
 	log_admin("[key_name(usr)] used the Test Atmos Monitor debug command.")
 
 	var/bad_shit = 0
@@ -570,7 +570,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 	else
 		log_message = "all z-levels"
 
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] used the Test Areas debug command checking [log_message].</span>")
+	message_admins("<span_class='adminnotice'>[key_name_admin(usr)] used the Test Areas debug command checking [log_message].</span>")
 	log_admin("[key_name(usr)] used the Test Areas debug command checking [log_message].")
 
 	for(var/area/A in world)
@@ -753,7 +753,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 	H.regenerate_icons()
 
 	log_admin("[key_name(usr)] changed the equipment of [key_name(H)] to [dresscode].")
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] changed the equipment of [ADMIN_LOOKUPFLW(H)] to [dresscode].</span>")
+	message_admins("<span_class='adminnotice'>[key_name_admin(usr)] changed the equipment of [ADMIN_LOOKUPFLW(H)] to [dresscode].</span>")
 
 /client/proc/robust_dress_shop()
 	var/list/outfits = list("Naked","Custom","As Job...")
@@ -954,8 +954,8 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 	if(istype(landmark))
 		var/datum/map_template/ruin/template = landmark.ruin_template
 		usr.forceMove(get_turf(landmark))
-		to_chat(usr, "<span class='name'>[template.name]</span>")
-		to_chat(usr, "<span class='italics'>[template.description]</span>")
+		to_chat(usr, "<span_class='name'>[template.name]</span>")
+		to_chat(usr, "<span_class='italics'>[template.description]</span>")
 
 /client/proc/place_ruin()
 	set category = "Debug"
@@ -996,10 +996,10 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 		var/obj/effect/landmark/ruin/landmark = GLOB.ruin_landmarks[GLOB.ruin_landmarks.len]
 		log_admin("[key_name(src)] randomly spawned ruin [ruinname] at [COORD(landmark)].")
 		usr.forceMove(get_turf(landmark))
-		to_chat(src, "<span class='name'>[template.name]</span>")
-		to_chat(src, "<span class='italics'>[template.description]</span>")
+		to_chat(src, "<span_class='name'>[template.name]</span>")
+		to_chat(src, "<span_class='italics'>[template.description]</span>")
 	else
-		to_chat(src, "<span class='warning'>Failed to place [template.name].</span>")
+		to_chat(src, "<span_class='warning'>Failed to place [template.name].</span>")
 
 /client/proc/clear_dynamic_transit()
 	set category = "Debug"
@@ -1010,7 +1010,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 	var/answer = alert("WARNING: THIS WILL WIPE ALL RESERVED SPACE TO A CLEAN SLATE! ANY MOVING SHUTTLES, ELEVATORS, OR IN-PROGRESS PHOTOGRAPHY WILL BE DELETED!", "Really wipe dynamic turfs?", "YES", "NO")
 	if(answer != "YES")
 		return
-	message_admins("<span class='adminnotice'>[key_name_admin(src)] cleared dynamic transit space.</span>")
+	message_admins("<span_class='adminnotice'>[key_name_admin(src)] cleared dynamic transit space.</span>")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Clear Dynamic Transit") // If...
 	log_admin("[key_name(src)] cleared dynamic transit space.")
 	SSmapping.wipe_reservations()				//this goes after it's logged, incase something horrible happens.
@@ -1025,7 +1025,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 
 	SSmedals.hub_enabled = !SSmedals.hub_enabled
 
-	message_admins("<span class='adminnotice'>[key_name_admin(src)] [SSmedals.hub_enabled ? "disabled" : "enabled"] the medal hub lockout.</span>")
+	message_admins("<span_class='adminnotice'>[key_name_admin(src)] [SSmedals.hub_enabled ? "disabled" : "enabled"] the medal hub lockout.</span>")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Toggle Medal Disable") // If...
 	log_admin("[key_name(src)] [SSmedals.hub_enabled ? "disabled" : "enabled"] the medal hub lockout.")
 
@@ -1048,7 +1048,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 
 	SSevents.scheduled = world.time
 
-	message_admins("<span class='adminnotice'>[key_name_admin(src)] pumped a random event.</span>")
+	message_admins("<span_class='adminnotice'>[key_name_admin(src)] pumped a random event.</span>")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Pump Random Event")
 	log_admin("[key_name(src)] pumped a random event.")
 
@@ -1059,7 +1059,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 
 	PROFILE_START
 
-	message_admins("<span class='adminnotice'>[key_name_admin(src)] started line by line profiling.</span>")
+	message_admins("<span_class='adminnotice'>[key_name_admin(src)] started line by line profiling.</span>")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Start Line Profiling")
 	log_admin("[key_name(src)] started line by line profiling.")
 
@@ -1070,7 +1070,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 
 	PROFILE_STOP
 
-	message_admins("<span class='adminnotice'>[key_name_admin(src)] stopped line by line profiling.</span>")
+	message_admins("<span_class='adminnotice'>[key_name_admin(src)] stopped line by line profiling.</span>")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Stop Line Profiling")
 	log_admin("[key_name(src)] stopped line by line profiling.")
 

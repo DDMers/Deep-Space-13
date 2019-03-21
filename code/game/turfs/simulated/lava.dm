@@ -60,7 +60,7 @@
 /turf/open/lava/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_FLOORWALL)
-			to_chat(user, "<span class='notice'>You build a floor.</span>")
+			to_chat(user, "<span_class='notice'>You build a floor.</span>")
 			PlaceOnTop(/turf/open/floor/plating)
 			return TRUE
 	return FALSE

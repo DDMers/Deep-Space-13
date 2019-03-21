@@ -11,8 +11,8 @@
 
 	announce_span = "danger"
 	announce_text = "There are sleeping Syndicate agents on the station who are trying to stage a coup!\n\
-	<span class='danger'>Agents</span>: Accomplish your objectives, convert heads and targets, take control of the AI.\n\
-	<span class='notice'>Crew</span>: Do not let the agents succeed!"
+	<span_class='danger'>Agents</span>: Accomplish your objectives, convert heads and targets, take control of the AI.\n\
+	<span_class='notice'>Crew</span>: Do not let the agents succeed!"
 	var/list/initial_agents = list() // Why doesn't this exist at /game_mode level? Literally every gamemode has some sort of version for this, what the fuck
 
 /datum/game_mode/overthrow/pre_setup()
@@ -74,4 +74,4 @@
 		var/datum/team/Tagain = l
 		if(teams[Tagain] == max_points)
 			winners += Tagain.name
-	return "<span class='greentext big'>The [english_list(winners)] team[winners.len > 1 ? "s tied" : " won"] with [max_points] points!</span>"
+	return "<span_class='greentext big'>The [english_list(winners)] team[winners.len > 1 ? "s tied" : " won"] with [max_points] points!</span>"

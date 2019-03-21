@@ -43,8 +43,8 @@
 /datum/antagonist/clockcult/greet()
 	if(!owner.current || silent)
 		return
-	owner.current.visible_message("<span class='heavy_brass'>[owner.current]'s eyes glow a blazing yellow!</span>", null, null, 7, owner.current) //don't show the owner this message
-	to_chat(owner.current, "<span class='heavy_brass'>Assist your new companions in their righteous efforts. Your goal is theirs, and theirs yours. You serve the Clockwork \
+	owner.current.visible_message("<span_class='heavy_brass'>[owner.current]'s eyes glow a blazing yellow!</span>", null, null, 7, owner.current) //don't show the owner this message
+	to_chat(owner.current, "<span_class='heavy_brass'>Assist your new companions in their righteous efforts. Your goal is theirs, and theirs yours. You serve the Clockwork \
 	Justiciar above all else. Perform his every whim without hesitation.</span>")
 	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/clockcultalr.ogg', 70, FALSE, pressure_affected = FALSE)
 
@@ -58,15 +58,15 @@
 		if(iscyborg(current) && !silent)
 			var/mob/living/silicon/robot/R = current
 			if(R.connected_ai && !is_servant_of_ratvar(R.connected_ai))
-				to_chat(R, "<span class='boldwarning'>You have been desynced from your master AI.<br>\
+				to_chat(R, "<span_class='boldwarning'>You have been desynced from your master AI.<br>\
 				In addition, your onboard camera is no longer active and you have gained additional equipment, including a limited clockwork slab.</span>")
 			else
-				to_chat(R, "<span class='boldwarning'>Your onboard camera is no longer active and you have gained additional equipment, including a limited clockwork slab.</span>")
+				to_chat(R, "<span_class='boldwarning'>Your onboard camera is no longer active and you have gained additional equipment, including a limited clockwork slab.</span>")
 		if(isAI(current))
-			to_chat(current, "<span class='boldwarning'>You are now able to use your cameras to listen in on conversations, but can no longer speak in anything but Ratvarian.</span>")
-		to_chat(current, "<span class='heavy_brass'>You can communicate with other servants by using the Hierophant Network action button in the upper left.</span>")
+			to_chat(current, "<span_class='boldwarning'>You are now able to use your cameras to listen in on conversations, but can no longer speak in anything but Ratvarian.</span>")
+		to_chat(current, "<span_class='heavy_brass'>You can communicate with other servants by using the Hierophant Network action button in the upper left.</span>")
 	else if(isbrain(current) || isclockmob(current))
-		to_chat(current, "<span class='nezbere'>You can communicate with other servants by using the Hierophant Network action button in the upper left.</span>")
+		to_chat(current, "<span_class='nezbere'>You can communicate with other servants by using the Hierophant Network action button in the upper left.</span>")
 	..()
 	to_chat(current, "<b>This is Ratvar's will:</b> [CLOCKCULT_OBJECTIVE]")
 	antag_memory += "<b>Ratvar's will:</b> [CLOCKCULT_OBJECTIVE]<br>" //Memorize the objectives
@@ -159,12 +159,12 @@
 	SSticker.mode.servants_of_ratvar -= owner
 	SSticker.mode.update_servant_icons_removed(owner)
 	if(!silent)
-		owner.current.visible_message("<span class='deconversion_message'>[owner.current] seems to have remembered [owner.current.p_their()] true allegiance!</span>", null, null, null, owner.current)
-		to_chat(owner, "<span class='userdanger'>A cold, cold darkness flows through your mind, extinguishing the Justiciar's light and all of your memories as his servant.</span>")
+		owner.current.visible_message("<span_class='deconversion_message'>[owner.current] seems to have remembered [owner.current.p_their()] true allegiance!</span>", null, null, null, owner.current)
+		to_chat(owner, "<span_class='userdanger'>A cold, cold darkness flows through your mind, extinguishing the Justiciar's light and all of your memories as his servant.</span>")
 	owner.current.log_message("has renounced the cult of Ratvar!", LOG_ATTACK, color="#BE8700")
 	owner.special_role = null
 	if(iscyborg(owner.current))
-		to_chat(owner.current, "<span class='warning'>Despite your freedom from Ratvar's influence, you are still irreparably damaged and no longer possess certain functions such as AI linking.</span>")
+		to_chat(owner.current, "<span_class='warning'>Despite your freedom from Ratvar's influence, you are still irreparably damaged and no longer possess certain functions such as AI linking.</span>")
 	. = ..()
 
 
@@ -184,9 +184,9 @@
 
 /datum/antagonist/clockcult/proc/admin_give_slab(mob/admin)
 	if(!SSticker.mode.equip_servant(owner.current))
-		to_chat(admin, "<span class='warning'>Failed to outfit [owner.current]!</span>")
+		to_chat(admin, "<span_class='warning'>Failed to outfit [owner.current]!</span>")
 	else
-		to_chat(admin, "<span class='notice'>Successfully gave [owner.current] servant equipment!</span>")
+		to_chat(admin, "<span_class='notice'>Successfully gave [owner.current] servant equipment!</span>")
 
 /datum/team/clockcult
 	name = "Clockcult"
@@ -213,9 +213,9 @@
 	var/list/parts = list()
 
 	if(check_clockwork_victory())
-		parts += "<span class='greentext big'>Ratvar's servants defended the Ark until its activation!</span>"
+		parts += "<span_class='greentext big'>Ratvar's servants defended the Ark until its activation!</span>"
 	else
-		parts += "<span class='redtext big'>The Ark was destroyed! Ratvar will rust away for all eternity!</span>"
+		parts += "<span_class='redtext big'>The Ark was destroyed! Ratvar will rust away for all eternity!</span>"
 	parts += " "
 	parts += "<b>The servants' objective was:</b> [CLOCKCULT_OBJECTIVE]."
 	parts += "<b>Construction Value(CV)</b> was: <b>[GLOB.clockwork_construction_value]</b>"
@@ -223,9 +223,9 @@
 		if(i != SCRIPTURE_DRIVER)
 			parts += "<b>[i] scripture</b> was: <b>[GLOB.scripture_states[i] ? "UN":""]LOCKED</b>"
 	if(eminence)
-		parts += "<span class='header'>The Eminence was:</span> [printplayer(eminence)]"
+		parts += "<span_class='header'>The Eminence was:</span> [printplayer(eminence)]"
 	if(members.len)
-		parts += "<span class='header'>Ratvar's servants were:</span>"
+		parts += "<span_class='header'>Ratvar's servants were:</span>"
 		parts += printplayerlist(members - eminence)
 
 	return "<div class='panel clockborder'>[parts.Join("<br>")]</div>"

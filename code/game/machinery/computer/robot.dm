@@ -26,7 +26,7 @@
 /obj/machinery/computer/robotics/ui_interact(mob/user)
 	. = ..()
 	if(z > 6)
-		to_chat(user, "<span class='boldannounce'>Unable to establish a connection: You're too far away from the station!</span>")
+		to_chat(user, "<span_class='boldannounce'>Unable to establish a connection: You're too far away from the station!</span>")
 		return
 	user.set_machine(src)
 	var/dat
@@ -121,13 +121,13 @@
 				var/choice = input("Are you certain you wish to detonate [R.name]?") in list("Confirm", "Abort")
 				if(choice == "Confirm" && can_control(usr, R) && !..())
 					var/turf/T = get_turf(R)
-					message_admins("<span class='notice'>[ADMIN_LOOKUPFLW(usr)] detonated [key_name_admin(R, R.client)] at [ADMIN_VERBOSEJMP(T)]!</span>")
-					log_game("\<span class='notice'>[key_name(usr)] detonated [key_name(R)]!</span>")
+					message_admins("<span_class='notice'>[ADMIN_LOOKUPFLW(usr)] detonated [key_name_admin(R, R.client)] at [ADMIN_VERBOSEJMP(T)]!</span>")
+					log_game("\<span_class='notice'>[key_name(usr)] detonated [key_name(R)]!</span>")
 					if(R.connected_ai)
-						to_chat(R.connected_ai, "<br><br><span class='alert'>ALERT - Cyborg detonation detected: [R.name]</span><br>")
+						to_chat(R.connected_ai, "<br><br><span_class='alert'>ALERT - Cyborg detonation detected: [R.name]</span><br>")
 					R.self_destruct()
 		else
-			to_chat(usr, "<span class='danger'>Access Denied.</span>")
+			to_chat(usr, "<span_class='danger'>Access Denied.</span>")
 
 	else if (href_list["stopbot"])
 		if(allowed(usr))
@@ -135,15 +135,15 @@
 			if(can_control(usr, R))
 				var/choice = input("Are you certain you wish to [!R.lockcharge ? "lock down" : "release"] [R.name]?") in list("Confirm", "Abort")
 				if(choice == "Confirm" && can_control(usr, R) && !..())
-					message_admins("<span class='notice'>[ADMIN_LOOKUPFLW(usr)] [!R.lockcharge ? "locked down" : "released"] [ADMIN_LOOKUPFLW(R)]!</span>")
+					message_admins("<span_class='notice'>[ADMIN_LOOKUPFLW(usr)] [!R.lockcharge ? "locked down" : "released"] [ADMIN_LOOKUPFLW(R)]!</span>")
 					log_game("[key_name(usr)] [!R.lockcharge ? "locked down" : "released"] [key_name(R)]!")
 					R.SetLockdown(!R.lockcharge)
-					to_chat(R, "[!R.lockcharge ? "<span class='notice'>Your lockdown has been lifted!" : "<span class='alert'>You have been locked down!"]</span>")
+					to_chat(R, "[!R.lockcharge ? "<span_class='notice'>Your lockdown has been lifted!" : "<span_class='alert'>You have been locked down!"]</span>")
 					if(R.connected_ai)
-						to_chat(R.connected_ai, "[!R.lockcharge ? "<span class='notice'>NOTICE - Cyborg lockdown lifted" : "<span class='alert'>ALERT - Cyborg lockdown detected"]: <a href='?src=[REF(R.connected_ai)];track=[html_encode(R.name)]'>[R.name]</a></span><br>")
+						to_chat(R.connected_ai, "[!R.lockcharge ? "<span_class='notice'>NOTICE - Cyborg lockdown lifted" : "<span_class='alert'>ALERT - Cyborg lockdown detected"]: <a href='?src=[REF(R.connected_ai)];track=[html_encode(R.name)]'>[R.name]</a></span><br>")
 
 		else
-			to_chat(usr, "<span class='danger'>Access Denied.</span>")
+			to_chat(usr, "<span_class='danger'>Access Denied.</span>")
 
 	else if (href_list["magbot"])
 		var/mob/living/silicon/S = usr
@@ -166,7 +166,7 @@
 		if(allowed(usr))
 			var/mob/living/simple_animal/drone/D = locate(href_list["killdrone"]) in GLOB.mob_list
 			if(D.hacked)
-				to_chat(usr, "<span class='danger'>ERROR: [D] is not responding to external commands.</span>")
+				to_chat(usr, "<span_class='danger'>ERROR: [D] is not responding to external commands.</span>")
 			else
 				var/turf/T = get_turf(D)
 				message_admins("[ADMIN_LOOKUPFLW(usr)] detonated [key_name_admin(D)] at [ADMIN_VERBOSEJMP(T)]!")
@@ -174,7 +174,7 @@
 				var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
 				s.set_up(3, TRUE, D)
 				s.start()
-				D.visible_message("<span class='danger'>\the [D] self destructs!</span>")
+				D.visible_message("<span_class='danger'>\the [D] self destructs!</span>")
 				D.gib()
 
 

@@ -38,8 +38,8 @@
 /datum/martial_art/the_sleeping_carp/proc/wristWrench(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!D.stat && !D.IsStun() && !D.IsParalyzed())
 		A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
-		D.visible_message("<span class='warning'>[A] grabs [D]'s wrist and wrenches it sideways!</span>", \
-						  "<span class='userdanger'>[A] grabs your wrist and violently wrenches it to the side!</span>")
+		D.visible_message("<span_class='warning'>[A] grabs [D]'s wrist and wrenches it sideways!</span>", \
+						  "<span_class='userdanger'>[A] grabs your wrist and violently wrenches it to the side!</span>")
 		playsound(get_turf(A), 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 		D.emote("scream")
 		D.dropItemToGround(D.get_active_held_item())
@@ -52,8 +52,8 @@
 /datum/martial_art/the_sleeping_carp/proc/backKick(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(A.dir == D.dir && !D.stat && !D.IsParalyzed())
 		A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
-		D.visible_message("<span class='warning'>[A] kicks [D] in the back!</span>", \
-						  "<span class='userdanger'>[A] kicks you in the back, making you stumble and fall!</span>")
+		D.visible_message("<span_class='warning'>[A] kicks [D] in the back!</span>", \
+						  "<span_class='userdanger'>[A] kicks you in the back, making you stumble and fall!</span>")
 		step_to(D,get_step(D,D.dir),1)
 		D.Paralyze(80)
 		playsound(get_turf(D), 'sound/weapons/punch1.ogg', 50, 1, -1)
@@ -64,8 +64,8 @@
 /datum/martial_art/the_sleeping_carp/proc/kneeStomach(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!D.stat && !D.IsParalyzed())
 		A.do_attack_animation(D, ATTACK_EFFECT_KICK)
-		D.visible_message("<span class='warning'>[A] knees [D] in the stomach!</span>", \
-						  "<span class='userdanger'>[A] winds you with a knee in the stomach!</span>")
+		D.visible_message("<span_class='warning'>[A] knees [D] in the stomach!</span>", \
+						  "<span_class='userdanger'>[A] winds you with a knee in the stomach!</span>")
 		D.audible_message("<b>[D]</b> gags!")
 		D.losebreath += 3
 		D.Stun(40)
@@ -77,8 +77,8 @@
 /datum/martial_art/the_sleeping_carp/proc/headKick(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!D.stat && !D.IsParalyzed())
 		A.do_attack_animation(D, ATTACK_EFFECT_KICK)
-		D.visible_message("<span class='warning'>[A] kicks [D] in the head!</span>", \
-						  "<span class='userdanger'>[A] kicks you in the jaw!</span>")
+		D.visible_message("<span_class='warning'>[A] kicks [D] in the head!</span>", \
+						  "<span_class='userdanger'>[A] kicks you in the jaw!</span>")
 		D.apply_damage(20, A.dna.species.attack_type, BODY_ZONE_HEAD)
 		D.drop_all_held_items()
 		playsound(get_turf(D), 'sound/weapons/punch1.ogg', 50, 1, -1)
@@ -90,8 +90,8 @@
 /datum/martial_art/the_sleeping_carp/proc/elbowDrop(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!(D.mobility_flags & MOBILITY_STAND))
 		A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
-		D.visible_message("<span class='warning'>[A] elbow drops [D]!</span>", \
-						  "<span class='userdanger'>[A] piledrives you with their elbow!</span>")
+		D.visible_message("<span_class='warning'>[A] elbow drops [D]!</span>", \
+						  "<span_class='userdanger'>[A] piledrives you with their elbow!</span>")
 		if(D.stat)
 			D.death() //FINISH HIM!
 		D.apply_damage(50, A.dna.species.attack_type, BODY_ZONE_CHEST)
@@ -113,8 +113,8 @@
 			D.stop_pulling()
 			if(A.a_intent == INTENT_GRAB)
 				log_combat(A, D, "grabbed", addition="aggressively")
-				D.visible_message("<span class='warning'>[A] violently grabs [D]!</span>", \
-				  "<span class='userdanger'>[A] violently grabs you!</span>")
+				D.visible_message("<span_class='warning'>[A] violently grabs [D]!</span>", \
+				  "<span_class='userdanger'>[A] violently grabs you!</span>")
 				A.grab_state = GRAB_AGGRESSIVE //Instant aggressive grab
 			else
 				log_combat(A, D, "grabbed", addition="passively")
@@ -127,12 +127,12 @@
 		return 1
 	A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 	var/atk_verb = pick("punches", "kicks", "chops", "hits", "slams")
-	D.visible_message("<span class='danger'>[A] [atk_verb] [D]!</span>", \
-					  "<span class='userdanger'>[A] [atk_verb] you!</span>")
+	D.visible_message("<span_class='danger'>[A] [atk_verb] [D]!</span>", \
+					  "<span_class='userdanger'>[A] [atk_verb] you!</span>")
 	D.apply_damage(rand(10,15), BRUTE)
 	playsound(get_turf(D), 'sound/weapons/punch1.ogg', 25, 1, -1)
 	if(prob(D.getBruteLoss()) && (D.mobility_flags & MOBILITY_STAND))
-		D.visible_message("<span class='warning'>[D] stumbles and falls!</span>", "<span class='userdanger'>The blow sends you to the ground!</span>")
+		D.visible_message("<span_class='warning'>[D] stumbles and falls!</span>", "<span_class='userdanger'>The blow sends you to the ground!</span>")
 		D.Paralyze(80)
 	log_combat(A, D, "[atk_verb] (Sleeping Carp)")
 	return 1
@@ -151,11 +151,11 @@
 
 	to_chat(usr, "<b><i>You retreat inward and recall the teachings of the Sleeping Carp...</i></b>")
 
-	to_chat(usr, "<span class='notice'>Wrist Wrench</span>: Disarm Disarm. Forces opponent to drop item in hand.")
-	to_chat(usr, "<span class='notice'>Back Kick</span>: Harm Grab. Opponent must be facing away. Knocks down.")
-	to_chat(usr, "<span class='notice'>Stomach Knee</span>: Grab Harm. Knocks the wind out of opponent and stuns.")
-	to_chat(usr, "<span class='notice'>Head Kick</span>: Disarm Harm Harm. Decent damage, forces opponent to drop item in hand.")
-	to_chat(usr, "<span class='notice'>Elbow Drop</span>: Harm Disarm Harm Disarm Harm. Opponent must be on the ground. Deals huge damage, instantly kills anyone in critical condition.")
+	to_chat(usr, "<span_class='notice'>Wrist Wrench</span>: Disarm Disarm. Forces opponent to drop item in hand.")
+	to_chat(usr, "<span_class='notice'>Back Kick</span>: Harm Grab. Opponent must be facing away. Knocks down.")
+	to_chat(usr, "<span_class='notice'>Stomach Knee</span>: Grab Harm. Knocks the wind out of opponent and stuns.")
+	to_chat(usr, "<span_class='notice'>Head Kick</span>: Disarm Harm Harm. Decent damage, forces opponent to drop item in hand.")
+	to_chat(usr, "<span_class='notice'>Elbow Drop</span>: Harm Disarm Harm Disarm Harm. Opponent must be on the ground. Deals huge damage, instantly kills anyone in critical condition.")
 
 /obj/item/twohanded/bostaff
 	name = "bo staff"
@@ -181,7 +181,7 @@
 /obj/item/twohanded/bostaff/attack(mob/target, mob/living/user)
 	add_fingerprint(user)
 	if((user.has_trait(TRAIT_CLUMSY)) && prob(50))
-		to_chat(user, "<span class ='warning'>You club yourself over the head with [src].</span>")
+		to_chat(user, "<span_class ='warning'>You club yourself over the head with [src].</span>")
 		user.Paralyze(60)
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
@@ -195,7 +195,7 @@
 		return ..()
 	var/mob/living/carbon/C = target
 	if(C.stat)
-		to_chat(user, "<span class='warning'>It would be dishonorable to attack a foe while they cannot retaliate.</span>")
+		to_chat(user, "<span_class='warning'>It would be dishonorable to attack a foe while they cannot retaliate.</span>")
 		return
 	if(user.a_intent == INTENT_DISARM)
 		if(!wielded)
@@ -209,19 +209,19 @@
 									  "[user] smashes [H]'s head with [src]!", \
 									  "[user] beats [H] with front of [src]!", \
 									  "[user] twirls and slams [H] with [src]!")
-		H.visible_message("<span class='warning'>[pick(fluffmessages)]</span>", \
-							   "<span class='userdanger'>[pick(fluffmessages)]</span>")
+		H.visible_message("<span_class='warning'>[pick(fluffmessages)]</span>", \
+							   "<span_class='userdanger'>[pick(fluffmessages)]</span>")
 		playsound(get_turf(user), 'sound/effects/woodhit.ogg', 75, 1, -1)
 		H.adjustStaminaLoss(rand(13,20))
 		if(prob(10))
-			H.visible_message("<span class='warning'>[H] collapses!</span>", \
-								   "<span class='userdanger'>Your legs give out!</span>")
+			H.visible_message("<span_class='warning'>[H] collapses!</span>", \
+								   "<span_class='userdanger'>Your legs give out!</span>")
 			H.Paralyze(80)
 		if(H.staminaloss && !H.IsSleeping())
 			var/total_health = (H.health - H.staminaloss)
 			if(total_health <= HEALTH_THRESHOLD_CRIT && !H.stat)
-				H.visible_message("<span class='warning'>[user] delivers a heavy hit to [H]'s head, knocking [H.p_them()] out cold!</span>", \
-									   "<span class='userdanger'>[user] knocks you unconscious!</span>")
+				H.visible_message("<span_class='warning'>[user] delivers a heavy hit to [H]'s head, knocking [H.p_them()] out cold!</span>", \
+									   "<span_class='userdanger'>[user] knocks you unconscious!</span>")
 				H.SetSleeping(600)
 				H.adjustBrainLoss(15, 150)
 	else

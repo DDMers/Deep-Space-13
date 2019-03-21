@@ -17,10 +17,10 @@
 	time = 155
 
 /datum/surgery_step/ground_nerves/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message("[user] starts splicing together [target]'s nerves.", "<span class='notice'>You start splicing together [target]'s nerves.</span>")
+	user.visible_message("[user] starts splicing together [target]'s nerves.", "<span_class='notice'>You start splicing together [target]'s nerves.</span>")
 
 /datum/surgery_step/ground_nerves/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message("[user] successfully splices [target]'s nervous system!", "<span class='notice'>You successfully splice [target]'s nervous system!</span>")
+	user.visible_message("[user] successfully splices [target]'s nervous system!", "<span_class='notice'>You successfully splice [target]'s nervous system!</span>")
 	new /datum/bioware/grounded_nerves(target)
 	return TRUE
 

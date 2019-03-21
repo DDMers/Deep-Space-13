@@ -221,16 +221,16 @@
 	if(istype(W, /obj/item/reagent_containers/glass))
 		. = 1 //no afterattack
 		if(locked)
-			to_chat(user, "<span class='warning'>You cannot insert a beaker because the panel is locked!</span>")
+			to_chat(user, "<span_class='warning'>You cannot insert a beaker because the panel is locked!</span>")
 			return
 		if(!isnull(reagent_glass))
-			to_chat(user, "<span class='warning'>There is already a beaker loaded!</span>")
+			to_chat(user, "<span_class='warning'>There is already a beaker loaded!</span>")
 			return
 		if(!user.transferItemToLoc(W, src))
 			return
 
 		reagent_glass = W
-		to_chat(user, "<span class='notice'>You insert [W].</span>")
+		to_chat(user, "<span_class='notice'>You insert [W].</span>")
 		show_controls(user)
 
 	else
@@ -244,8 +244,8 @@
 	if(emagged == 2)
 		declare_crit = 0
 		if(user)
-			to_chat(user, "<span class='notice'>You short out [src]'s reagent synthesis circuits.</span>")
-		audible_message("<span class='danger'>[src] buzzes oddly!</span>")
+			to_chat(user, "<span_class='notice'>You short out [src]'s reagent synthesis circuits.</span>")
+		audible_message("<span_class='danger'>[src] buzzes oddly!</span>")
 		flick("medibot_spark", src)
 		playsound(src, "sparks", 75, 1)
 		if(user)
@@ -475,7 +475,7 @@
 
 	if(!reagent_id) //If they don't need any of that they're probably cured!
 		if(C.maxHealth - C.health < heal_threshold)
-			to_chat(src, "<span class='notice'>[C] is healthy! Your programming prevents you from injecting anyone without at least [heal_threshold] damage of any one type ([heal_threshold + 15] for oxygen damage.)</span>")
+			to_chat(src, "<span_class='notice'>[C] is healthy! Your programming prevents you from injecting anyone without at least [heal_threshold] damage of any one type ([heal_threshold + 15] for oxygen damage.)</span>")
 		var/list/messagevoice = list("All patched up!" = 'sound/voice/medbot/patchedup.ogg',"An apple a day keeps me away." = 'sound/voice/medbot/apple.ogg',"Feel better soon!" = 'sound/voice/medbot/feelbetter.ogg')
 		var/message = pick(messagevoice)
 		speak(message)
@@ -486,8 +486,8 @@
 		if(!emagged && check_overdose(patient,reagent_id,injection_amount))
 			soft_reset()
 			return
-		C.visible_message("<span class='danger'>[src] is trying to inject [patient]!</span>", \
-			"<span class='userdanger'>[src] is trying to inject you!</span>")
+		C.visible_message("<span_class='danger'>[src] is trying to inject [patient]!</span>", \
+			"<span_class='userdanger'>[src] is trying to inject you!</span>")
 
 		var/failed = FALSE
 		if(do_mob(src, patient, 30))	//Is C == patient? This is so confusing
@@ -499,8 +499,8 @@
 						reagent_glass.reagents.trans_to(patient,injection_amount) //Inject from beaker instead.
 				else
 					patient.reagents.add_reagent(reagent_id,injection_amount)
-				C.visible_message("<span class='danger'>[src] injects [patient] with its syringe!</span>", \
-					"<span class='userdanger'>[src] injects you with its syringe!</span>")
+				C.visible_message("<span_class='danger'>[src] injects [patient] with its syringe!</span>", \
+					"<span_class='userdanger'>[src] injects you with its syringe!</span>")
 			else
 				failed = TRUE
 		else
@@ -526,7 +526,7 @@
 
 /mob/living/simple_animal/bot/medbot/explode()
 	on = FALSE
-	visible_message("<span class='boldannounce'>[src] blows apart!</span>")
+	visible_message("<span_class='boldannounce'>[src] blows apart!</span>")
 	var/atom/Tsec = drop_location()
 
 	drop_part(firstaid, Tsec)

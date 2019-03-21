@@ -60,14 +60,14 @@
 
 /obj/item/extinguisher/suicide_act(mob/living/carbon/user)
 	if (!safety && (reagents.total_volume >= 1))
-		user.visible_message("<span class='suicide'>[user] puts the nozzle to [user.p_their()] mouth. It looks like [user.p_theyre()] trying to extinguish the spark of life!</span>")
+		user.visible_message("<span_class='suicide'>[user] puts the nozzle to [user.p_their()] mouth. It looks like [user.p_theyre()] trying to extinguish the spark of life!</span>")
 		afterattack(user,user)
 		return OXYLOSS
 	else if (safety && (reagents.total_volume >= 1))
-		user.visible_message("<span class='warning'>[user] puts the nozzle to [user.p_their()] mouth... The safety's still on!</span>")
+		user.visible_message("<span_class='warning'>[user] puts the nozzle to [user.p_their()] mouth... The safety's still on!</span>")
 		return SHAME
 	else
-		user.visible_message("<span class='warning'>[user] puts the nozzle to [user.p_their()] mouth... [src] is empty!</span>")
+		user.visible_message("<span_class='warning'>[user] puts the nozzle to [user.p_their()] mouth... [src] is empty!</span>")
 		return SHAME
 
 /obj/item/extinguisher/attack_self(mob/user)
@@ -94,25 +94,25 @@
 	to_chat(user, "The safety is [safety ? "on" : "off"].")
 
 	if(reagents.total_volume)
-		to_chat(user, "<span class='notice'>Alt-click to empty it.</span>")
+		to_chat(user, "<span_class='notice'>Alt-click to empty it.</span>")
 
 /obj/item/extinguisher/proc/AttemptRefill(atom/target, mob/user)
 	if(istype(target, tanktype) && target.Adjacent(user))
 		var/safety_save = safety
 		safety = TRUE
 		if(reagents.total_volume == reagents.maximum_volume)
-			to_chat(user, "<span class='warning'>\The [src] is already full!</span>")
+			to_chat(user, "<span_class='warning'>\The [src] is already full!</span>")
 			safety = safety_save
 			return 1
 		var/obj/structure/reagent_dispensers/W = target //will it work?
 		var/transferred = W.reagents.trans_to(src, max_water, transfered_by = user)
 		if(transferred > 0)
-			to_chat(user, "<span class='notice'>\The [src] has been refilled by [transferred] units.</span>")
+			to_chat(user, "<span_class='notice'>\The [src] has been refilled by [transferred] units.</span>")
 			playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
 			for(var/datum/reagent/water/R in reagents.reagent_list)
 				R.cooling_temperature = cooling_power
 		else
-			to_chat(user, "<span class='warning'>\The [W] is empty!</span>")
+			to_chat(user, "<span_class='warning'>\The [W] is empty!</span>")
 		safety = safety_save
 		return 1
 	else
@@ -129,7 +129,7 @@
 		return
 	if (!safety)
 		if (src.reagents.total_volume < 1)
-			to_chat(usr, "<span class='warning'>\The [src] is empty!</span>")
+			to_chat(usr, "<span_class='warning'>\The [src] is empty!</span>")
 			return
 
 		if (world.time < src.last_use + 12)
@@ -228,4 +228,4 @@
 			var/turf/open/theturf = T
 			theturf.MakeSlippery(TURF_WET_WATER, min_wet_time = 10 SECONDS, wet_time_to_add = 5 SECONDS)
 
-		user.visible_message("[user] empties out \the [src] onto the floor using the release valve.", "<span class='info'>You quietly empty out \the [src] using its release valve.</span>")
+		user.visible_message("[user] empties out \the [src] onto the floor using the release valve.", "<span_class='info'>You quietly empty out \the [src] using its release valve.</span>")

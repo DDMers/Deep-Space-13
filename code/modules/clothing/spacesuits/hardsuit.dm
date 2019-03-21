@@ -65,7 +65,7 @@
 /obj/item/clothing/head/helmet/space/hardsuit/proc/display_visor_message(var/msg)
 	var/mob/wearer = loc
 	if(msg && ishuman(wearer))
-		wearer.show_message("[icon2html(src, wearer)]<b><span class='robot'>[msg]</span></b>", 1)
+		wearer.show_message("[icon2html(src, wearer)]<b><span_class='robot'>[msg]</span></b>", 1)
 
 /obj/item/clothing/head/helmet/space/hardsuit/rad_act(severity)
 	. = ..()
@@ -117,28 +117,28 @@
 /obj/item/clothing/suit/space/hardsuit/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/tank/jetpack/suit))
 		if(jetpack)
-			to_chat(user, "<span class='warning'>[src] already has a jetpack installed.</span>")
+			to_chat(user, "<span_class='warning'>[src] already has a jetpack installed.</span>")
 			return
 		if(src == user.get_item_by_slot(SLOT_WEAR_SUIT)) //Make sure the player is not wearing the suit before applying the upgrade.
-			to_chat(user, "<span class='warning'>You cannot install the upgrade to [src] while wearing it.</span>")
+			to_chat(user, "<span_class='warning'>You cannot install the upgrade to [src] while wearing it.</span>")
 			return
 
 		if(user.transferItemToLoc(I, src))
 			jetpack = I
-			to_chat(user, "<span class='notice'>You successfully install the jetpack into [src].</span>")
+			to_chat(user, "<span_class='notice'>You successfully install the jetpack into [src].</span>")
 			return
 	else if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		if(!jetpack)
-			to_chat(user, "<span class='warning'>[src] has no jetpack installed.</span>")
+			to_chat(user, "<span_class='warning'>[src] has no jetpack installed.</span>")
 			return
 		if(src == user.get_item_by_slot(SLOT_WEAR_SUIT))
-			to_chat(user, "<span class='warning'>You cannot remove the jetpack from [src] while wearing it.</span>")
+			to_chat(user, "<span_class='warning'>You cannot remove the jetpack from [src] while wearing it.</span>")
 			return
 
 		jetpack.turn_off(user)
 		jetpack.forceMove(drop_location())
 		jetpack = null
-		to_chat(user, "<span class='notice'>You successfully remove the jetpack from [src].</span>")
+		to_chat(user, "<span_class='notice'>You successfully remove the jetpack from [src].</span>")
 		return
 	return ..()
 
@@ -284,11 +284,11 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/attack_self(mob/user) //Toggle Helmet
 	if(!isturf(user.loc))
-		to_chat(user, "<span class='warning'>You cannot toggle your helmet while in this [user.loc]!</span>" )
+		to_chat(user, "<span_class='warning'>You cannot toggle your helmet while in this [user.loc]!</span>" )
 		return
 	on = !on
 	if(on || force)
-		to_chat(user, "<span class='notice'>You switch your hardsuit to EVA mode, sacrificing speed for space protection.</span>")
+		to_chat(user, "<span_class='notice'>You switch your hardsuit to EVA mode, sacrificing speed for space protection.</span>")
 		name = initial(name)
 		desc = initial(desc)
 		set_light(brightness_on)
@@ -297,7 +297,7 @@
 		flags_inv |= visor_flags_inv
 		cold_protection |= HEAD
 	else
-		to_chat(user, "<span class='notice'>You switch your hardsuit to combat mode and can now run at full speed.</span>")
+		to_chat(user, "<span_class='notice'>You switch your hardsuit to combat mode and can now run at full speed.</span>")
 		name += " (combat)"
 		desc = alt_desc
 		set_light(0)
@@ -678,7 +678,7 @@
 		var/datum/effect_system/spark_spread/s = new
 		s.set_up(2, 1, src)
 		s.start()
-		owner.visible_message("<span class='danger'>[owner]'s shields deflect [attack_text] in a shower of sparks!</span>")
+		owner.visible_message("<span_class='danger'>[owner]'s shields deflect [attack_text] in a shower of sparks!</span>")
 		current_charges--
 		if(recharge_rate)
 			START_PROCESSING(SSobj, src)

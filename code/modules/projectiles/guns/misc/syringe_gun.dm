@@ -40,7 +40,7 @@
 
 /obj/item/gun/syringe/attack_self(mob/living/user)
 	if(!syringes.len)
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, "<span_class='warning'>[src] is empty!</span>")
 		return 0
 
 	var/obj/item/reagent_containers/syringe/S = syringes[syringes.len]
@@ -50,7 +50,7 @@
 	user.put_in_hands(S)
 
 	syringes.Remove(S)
-	to_chat(user, "<span class='notice'>You unload [S] from \the [src].</span>")
+	to_chat(user, "<span_class='notice'>You unload [S] from \the [src].</span>")
 
 	return 1
 
@@ -59,12 +59,12 @@
 		if(syringes.len < max_syringes)
 			if(!user.transferItemToLoc(A, src))
 				return FALSE
-			to_chat(user, "<span class='notice'>You load [A] into \the [src].</span>")
+			to_chat(user, "<span_class='notice'>You load [A] into \the [src].</span>")
 			syringes += A
 			recharge_newshot()
 			return TRUE
 		else
-			to_chat(user, "<span class='warning'>[src] cannot hold more syringes!</span>")
+			to_chat(user, "<span_class='warning'>[src] cannot hold more syringes!</span>")
 	return FALSE
 
 /obj/item/gun/syringe/rapidsyringe
@@ -95,15 +95,15 @@
 	if(istype(A, /obj/item/dnainjector))
 		var/obj/item/dnainjector/D = A
 		if(D.used)
-			to_chat(user, "<span class='warning'>This injector is used up!</span>")
+			to_chat(user, "<span_class='warning'>This injector is used up!</span>")
 			return
 		if(syringes.len < max_syringes)
 			if(!user.transferItemToLoc(D, src))
 				return FALSE
-			to_chat(user, "<span class='notice'>You load \the [D] into \the [src].</span>")
+			to_chat(user, "<span_class='notice'>You load \the [D] into \the [src].</span>")
 			syringes += D
 			recharge_newshot()
 			return TRUE
 		else
-			to_chat(user, "<span class='warning'>[src] cannot hold more syringes!</span>")
+			to_chat(user, "<span_class='warning'>[src] cannot hold more syringes!</span>")
 	return FALSE

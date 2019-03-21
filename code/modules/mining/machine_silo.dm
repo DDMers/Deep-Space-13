@@ -47,11 +47,11 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 	if(I.item_flags & ABSTRACT)
 		return
 	if(!istype(I) || (I.flags_1 & HOLOGRAM_1) || (I.item_flags & NO_MAT_REDEMPTION))
-		to_chat(user, "<span class='warning'>[M] won't accept [I]!</span>")
+		to_chat(user, "<span_class='warning'>[M] won't accept [I]!</span>")
 		return
 	var/item_mats = I.materials & materials.materials
 	if(!length(item_mats))
-		to_chat(user, "<span class='warning'>[I] does not contain sufficient materials to be accepted by [M].</span>")
+		to_chat(user, "<span_class='warning'>[I] does not contain sufficient materials to be accepted by [M].</span>")
 		return
 	// assumes unlimited space...
 	var/amount = I.amount
@@ -81,11 +81,11 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 			if (sheets >= 1)
 				ui += "<a href='?src=[REF(src)];ejectsheet=[mat.id];eject_amt=1'>Eject</a>"
 			else
-				ui += "<span class='linkOff'>Eject</span>"
+				ui += "<span_class='linkOff'>Eject</span>"
 			if (sheets >= 20)
 				ui += "<a href='?src=[REF(src)];ejectsheet=[mat.id];eject_amt=20'>20x</a>"
 			else
-				ui += "<span class='linkOff'>20x</span>"
+				ui += "<span_class='linkOff'>20x</span>"
 			ui += "<b>[mat.name]</b>: [sheets] sheets<br>"
 			any = TRUE
 	if(!any)
@@ -110,7 +110,7 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 	if(num_pages > 1)
 		for(var/i in 1 to num_pages)
 			if(i == page)
-				ui += "<span class='linkOff'>[i]</span>"
+				ui += "<span_class='linkOff'>[i]</span>"
 			else
 				ui += "<a href='?src=[REF(src)];page=[i]'>[i]</a>"
 
@@ -162,7 +162,7 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 
 /obj/machinery/ore_silo/multitool_act(mob/living/user, obj/item/multitool/I)
 	if (istype(I))
-		to_chat(user, "<span class='notice'>You log [src] in the multitool's buffer.</span>")
+		to_chat(user, "<span_class='notice'>You log [src] in the multitool's buffer.</span>")
 		I.buffer = src
 		return TRUE
 
@@ -182,7 +182,7 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 
 /obj/machinery/ore_silo/examine(mob/user)
 	..()
-	to_chat(user, "<span class='notice'>[src] can be linked to techfabs, circuit printers and protolathes with a multitool.</span>")
+	to_chat(user, "<span_class='notice'>[src] can be linked to techfabs, circuit printers and protolathes with a multitool.</span>")
 
 /datum/ore_silo_log
 	var/name  // for VV

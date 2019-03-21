@@ -46,7 +46,7 @@
 	attack_verb = list("stung")
 
 /obj/item/reagent_containers/food/snacks/grown/nettle/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is eating some of [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span_class='suicide'>[user] is eating some of [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (BRUTELOSS|TOXLOSS)
 
 /obj/item/reagent_containers/food/snacks/grown/nettle/pickup(mob/living/user)
@@ -63,7 +63,7 @@
 	if(affecting)
 		if(affecting.receive_damage(0, force))
 			C.update_damage_overlays()
-	to_chat(C, "<span class='userdanger'>The nettle burns your bare hand!</span>")
+	to_chat(C, "<span_class='userdanger'>The nettle burns your bare hand!</span>")
 	return TRUE
 
 /obj/item/reagent_containers/food/snacks/grown/nettle/afterattack(atom/A as mob|obj, mob/user,proximity)
@@ -86,7 +86,7 @@
 /obj/item/reagent_containers/food/snacks/grown/nettle/death
 	seed = /obj/item/seeds/nettle/death
 	name = "deathnettle"
-	desc = "The <span class='danger'>glowing</span> nettle incites <span class='boldannounce'>rage</span> in you just from looking at it!"
+	desc = "The <span_class='danger'>glowing</span> nettle incites <span_class='boldannounce'>rage</span> in you just from looking at it!"
 	icon_state = "deathnettle"
 	force = 30
 	throwforce = 15
@@ -99,13 +99,13 @@
 	if(..())
 		if(prob(50))
 			user.Paralyze(100)
-			to_chat(user, "<span class='userdanger'>You are stunned by the Deathnettle as you try picking it up!</span>")
+			to_chat(user, "<span_class='userdanger'>You are stunned by the Deathnettle as you try picking it up!</span>")
 
 /obj/item/reagent_containers/food/snacks/grown/nettle/death/attack(mob/living/carbon/M, mob/user)
 	if(!..())
 		return
 	if(isliving(M))
-		to_chat(M, "<span class='danger'>You are stunned by the powerful acid of the Deathnettle!</span>")
+		to_chat(M, "<span_class='danger'>You are stunned by the powerful acid of the Deathnettle!</span>")
 		log_combat(user, M, "attacked", src)
 
 		M.adjust_blurriness(force/7)

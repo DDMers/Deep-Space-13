@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(doppler_arrays)
 
 /obj/machinery/doppler_array/examine(mob/user)
 	..()
-	to_chat(user, "<span class='notice'>Its dish is facing to the [dir2text(dir)].</span>")
+	to_chat(user, "<span_class='notice'>Its dish is facing to the [dir2text(dir)].</span>")
 
 /obj/machinery/doppler_array/process()
 	return PROCESS_KILL
@@ -35,17 +35,17 @@ GLOBAL_LIST_EMPTY(doppler_arrays)
 		if(!anchored && !isinspace())
 			anchored = TRUE
 			power_change()
-			to_chat(user, "<span class='notice'>You fasten [src].</span>")
+			to_chat(user, "<span_class='notice'>You fasten [src].</span>")
 		else if(anchored)
 			anchored = FALSE
 			power_change()
-			to_chat(user, "<span class='notice'>You unfasten [src].</span>")
+			to_chat(user, "<span_class='notice'>You unfasten [src].</span>")
 		I.play_tool_sound(src)
 	else
 		return ..()
 
 /obj/machinery/doppler_array/proc/rot_message(mob/user)
-	to_chat(user, "<span class='notice'>You adjust [src]'s dish to face to the [dir2text(dir)].</span>")
+	to_chat(user, "<span_class='notice'>You adjust [src]'s dish to face to the [dir2text(dir)].</span>")
 	playsound(src, 'sound/items/screwdriver2.ogg', 50, 1)
 
 /obj/machinery/doppler_array/proc/sense_explosion(turf/epicenter,devastation_range,heavy_impact_range,light_impact_range,

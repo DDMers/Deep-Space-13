@@ -40,7 +40,7 @@ BONUS
 				H.skin_tone = "albino"
 				H.update_body(0)
 			else
-				H.visible_message("<span class='warning'>[H] looks a bit pale...</span>", "<span class='notice'>Your skin suddenly appears lighter...</span>")
+				H.visible_message("<span_class='warning'>[H] looks a bit pale...</span>", "<span_class='notice'>Your skin suddenly appears lighter...</span>")
 
 
 /*
@@ -85,4 +85,4 @@ BONUS
 				H.skin_tone = "african2"
 				H.update_body(0)
 			else
-				H.visible_message("<span class='warning'>[H] looks a bit dark...</span>", "<span class='notice'>Your skin suddenly appears darker...</span>")
+				H.visible_message("<span_class='warning'>[H] looks a bit dark...</span>", "<span_class='notice'>Your skin suddenly appears darker...</span>")

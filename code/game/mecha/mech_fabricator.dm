@@ -66,7 +66,7 @@
 	..()
 	GET_COMPONENT(materials, /datum/component/material_container)
 	if(in_range(user, src) || isobserver(user))
-		to_chat(user, "<span class='notice'>The status display reads: Storing up to <b>[materials.max_amount]</b> material units.<br>Material consumption at <b>[component_coeff*100]%</b>.<br>Build time reduced by <b>[100-time_coeff*100]%</b>.<span>")
+		to_chat(user, "<span_class='notice'>The status display reads: Storing up to <b>[materials.max_amount]</b> material units.<br>Material consumption at <b>[component_coeff*100]%</b>.<br>Build time reduced by <b>[100-time_coeff*100]%</b>.<span>")
 
 /obj/machinery/mecha_part_fabricator/emag_act()
 	if(obj_flags & EMAGGED)
@@ -112,7 +112,7 @@
 	GET_COMPONENT(materials, /datum/component/material_container)
 	for(var/mat_id in materials.materials)
 		var/datum/material/M = materials.materials[mat_id]
-		output += "<span class=\"res_name\">[M.name]: </span>[M.amount] cm&sup3;"
+		output += "<span_class=\"res_name\">[M.name]: </span>[M.amount] cm&sup3;"
 		if(M.amount >= MINERAL_MATERIAL_AMOUNT)
 			output += "<span style='font-size:80%;'>- Remove \[<a href='?src=[REF(src)];remove_mat=1;material=[mat_id]'>1</a>\]"
 			if(M.amount >= (MINERAL_MATERIAL_AMOUNT * 10))
@@ -198,7 +198,7 @@
 			return FALSE
 		if(!check_resources(D))
 			say("Not enough resources. Queue processing stopped.")
-			temp = {"<span class='alert'>Not enough resources to build next part.</span><br>
+			temp = {"<span_class='alert'>Not enough resources to build next part.</span><br>
 						<a href='?src=[REF(src)];process_queue=1'>Try again</a> | <a href='?src=[REF(src)];clear_temp=1'>Return</a><a>"}
 			return FALSE
 		remove_from_queue(1)
@@ -415,10 +415,10 @@
 
 /obj/machinery/mecha_part_fabricator/proc/is_insertion_ready(mob/user)
 	if(panel_open)
-		to_chat(user, "<span class='warning'>You can't load [src] while it's opened!</span>")
+		to_chat(user, "<span_class='warning'>You can't load [src] while it's opened!</span>")
 		return FALSE
 	if(being_built)
-		to_chat(user, "<span class='warning'>\The [src] is currently processing! Please wait until completion.</span>")
+		to_chat(user, "<span_class='warning'>\The [src] is currently processing! Please wait until completion.</span>")
 		return FALSE
 
 	return TRUE

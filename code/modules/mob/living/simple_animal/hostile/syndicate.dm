@@ -133,7 +133,7 @@
 	if(prob(50))
 		return ..()
 	else
-		visible_message("<span class='danger'>[src] blocks [Proj] with its shield!</span>")
+		visible_message("<span_class='danger'>[src] blocks [Proj] with its shield!</span>")
 		return 0
 
 /mob/living/simple_animal/hostile/syndicate/melee/sword/space

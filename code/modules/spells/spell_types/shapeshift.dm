@@ -54,7 +54,7 @@
 /obj/effect/proc_holder/spell/targeted/shapeshift/proc/Shapeshift(mob/living/caster)
 	var/obj/shapeshift_holder/H = locate() in caster
 	if(H)
-		to_chat(caster, "<span class='warning'>You're already shapeshifted!</span>")
+		to_chat(caster, "<span_class='warning'>You're already shapeshifted!</span>")
 		return
 
 	var/mob/living/shape = new shapeshift_type(caster.loc)
@@ -78,7 +78,7 @@
 	desc = "Take on the shape a lesser ash drake."
 	invocation = "RAAAAAAAAWR!"
 	convert_damage = FALSE
-	
+
 
 	shapeshift_type = /mob/living/simple_animal/hostile/megafauna/dragon/lesser
 

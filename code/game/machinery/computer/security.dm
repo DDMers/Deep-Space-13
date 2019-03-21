@@ -26,7 +26,7 @@
 /obj/machinery/computer/secure_data/examine(mob/user)
 	..()
 	if(scan)
-		to_chat(user, "<span class='notice'>Alt-click to eject the ID card.</span>")
+		to_chat(user, "<span_class='notice'>Alt-click to eject the ID card.</span>")
 
 /obj/machinery/computer/secure_data/syndie
 	icon_keyboard = "syndie_key"
@@ -46,11 +46,11 @@
 			if(!user.transferItemToLoc(O, src))
 				return
 			scan = O
-			to_chat(user, "<span class='notice'>You insert [O].</span>")
+			to_chat(user, "<span_class='notice'>You insert [O].</span>")
 			playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, 0)
 			updateUsrDialog()
 		else
-			to_chat(user, "<span class='warning'>There's already an ID card in the console.</span>")
+			to_chat(user, "<span_class='warning'>There's already an ID card in the console.</span>")
 	else
 		return ..()
 
@@ -58,7 +58,7 @@
 /obj/machinery/computer/secure_data/ui_interact(mob/user)
 	. = ..()
 	if(src.z > 6)
-		to_chat(user, "<span class='boldannounce'>Unable to establish a connection</span>: \black You're too far away from the station!")
+		to_chat(user, "<span_class='boldannounce'>Unable to establish a connection</span>: \black You're too far away from the station!")
 		return
 	var/dat
 

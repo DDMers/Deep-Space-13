@@ -265,7 +265,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/welder_act(mob/living/user, obj/item/I)
 	if(!I.tool_start_check(user, amount=0))
 		return TRUE
-	to_chat(user, "<span class='notice'>Now welding the scrubber.</span>")
+	to_chat(user, "<span_class='notice'>Now welding the scrubber.</span>")
 	if(I.use_tool(src, user, 20, volume=50))
 		if(!welded)
 			user.visible_message("[user] welds the scrubber shut.","You weld the scrubber shut.", "You hear welding.")
@@ -281,7 +281,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/can_unwrench(mob/user)
 	. = ..()
 	if(. && on && is_operational())
-		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
+		to_chat(user, "<span_class='warning'>You cannot unwrench [src], turn it off first!</span>")
 		return FALSE
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/examine(mob/user)

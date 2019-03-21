@@ -34,10 +34,10 @@
 	if(!SSticker.HasRoundStarted() || !loc || !ghost_usable)
 		return
 	if(!uses)
-		to_chat(user, "<span class='warning'>This spawner is out of charges!</span>")
+		to_chat(user, "<span_class='warning'>This spawner is out of charges!</span>")
 		return
 	if(is_banned_from(user.key, banType))
-		to_chat(user, "<span class='warning'>You are jobanned!</span>")
+		to_chat(user, "<span_class='warning'>You are jobanned!</span>")
 		return
 	if(QDELETED(src) || QDELETED(user))
 		return
@@ -320,7 +320,7 @@
 	name = "sleeper"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
-	flavour_text = "<span class='big bold'>You are a space doctor!</span>"
+	flavour_text = "<span_class='big bold'>You are a space doctor!</span>"
 	assignedrole = "Space Doctor"
 
 /obj/effect/mob_spawn/human/doctor/alive/equip(mob/living/carbon/human/H)
@@ -375,7 +375,7 @@
 	name = "bartender sleeper"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
-	flavour_text = "<span class='big bold'>You are a space bartender!</span><b> Time to mix drinks and change lives. Smoking space drugs makes it easier to understand your patrons' odd dialect.</b>"
+	flavour_text = "<span_class='big bold'>You are a space bartender!</span><b> Time to mix drinks and change lives. Smoking space drugs makes it easier to understand your patrons' odd dialect.</b>"
 	assignedrole = "Space Bartender"
 	id_job = "Bartender"
 
@@ -399,11 +399,11 @@
 	name = "beach bum sleeper"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
-	flavour_text = "<span class='big bold'>You're, like, totally a dudebro, bruh.</span><b> Ch'yea. You came here, like, on spring break, hopin' to pick up some bangin' hot chicks, y'knaw?</b>"
+	flavour_text = "<span_class='big bold'>You're, like, totally a dudebro, bruh.</span><b> Ch'yea. You came here, like, on spring break, hopin' to pick up some bangin' hot chicks, y'knaw?</b>"
 	assignedrole = "Beach Bum"
 
 /obj/effect/mob_spawn/human/beach/alive/lifeguard
-	flavour_text = "<span class='big bold'>You're a spunky lifeguard!</span><b> It's up to you to make sure nobody drowns or gets eaten by sharks and stuff.</b>"
+	flavour_text = "<span_class='big bold'>You're a spunky lifeguard!</span><b> It's up to you to make sure nobody drowns or gets eaten by sharks and stuff.</b>"
 	mob_gender = "female"
 	name = "lifeguard sleeper"
 	id_job = "Lifeguard"
@@ -486,7 +486,7 @@
 	name = "sleeper"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
-	flavour_text = "<span class='big bold'>You are a Nanotrasen Commander!</span>"
+	flavour_text = "<span_class='big bold'>You are a Nanotrasen Commander!</span>"
 
 /obj/effect/mob_spawn/human/nanotrasensoldier/alive
 	death = FALSE
@@ -496,7 +496,7 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 	faction = "nanotrasenprivate"
-	flavour_text = "<span class='big bold'>You are a Nanotrasen Private Security Officer!</span>"
+	flavour_text = "<span_class='big bold'>You are a Nanotrasen Private Security Officer!</span>"
 
 
 /////////////////Spooky Undead//////////////////////
@@ -512,7 +512,7 @@
 	roundstart = FALSE
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "remains"
-	flavour_text = "<span class='big bold'>By unknown powers, your skeletal remains have been reanimated!</span><b> Walk this mortal plain and terrorize all living adventurers who dare cross your path.</b>"
+	flavour_text = "<span_class='big bold'>By unknown powers, your skeletal remains have been reanimated!</span><b> Walk this mortal plain and terrorize all living adventurers who dare cross your path.</b>"
 	assignedrole = "Skeleton"
 
 /obj/effect/mob_spawn/human/zombie
@@ -526,7 +526,7 @@
 	roundstart = FALSE
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "remains"
-	flavour_text = "<span class='big bold'>By unknown powers, your rotting remains have been resurrected!</span><b> Walk this mortal plain and terrorize all living adventurers who dare cross your path.</b>"
+	flavour_text = "<span_class='big bold'>By unknown powers, your rotting remains have been resurrected!</span><b> Walk this mortal plain and terrorize all living adventurers who dare cross your path.</b>"
 
 
 /obj/effect/mob_spawn/human/abductor
@@ -556,7 +556,7 @@
 	var/despawn = alert("Return to cryosleep? (Warning, Your mob will be deleted!)",,"Yes","No")
 	if(despawn == "No" || !loc || !Adjacent(user))
 		return
-	user.visible_message("<span class='notice'>[user.name] climbs back into cryosleep...</span>")
+	user.visible_message("<span_class='notice'>[user.name] climbs back into cryosleep...</span>")
 	qdel(user)
 
 /datum/outfit/cryobartender

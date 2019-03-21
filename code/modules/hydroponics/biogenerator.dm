@@ -55,7 +55,7 @@
 /obj/machinery/biogenerator/examine(mob/user)
 	..()
 	if(in_range(user, src) || isobserver(user))
-		to_chat(user, "<span class='notice'>The status display reads: Productivity at <b>[productivity*100]%</b>.<br>Matter consumption reduced by <b>[(efficiency*25)-25]</b>%.<br>Machine can hold up to <b>[max_items]</b> pieces of produce.<span>")
+		to_chat(user, "<span_class='notice'>The status display reads: Productivity at <b>[productivity*100]%</b>.<br>Matter consumption reduced by <b>[(efficiency*25)-25]</b>%.<br>Machine can hold up to <b>[max_items]</b> pieces of produce.<span>")
 
 /obj/machinery/biogenerator/on_reagent_change(changetype)			//When the reagents change, change the icon as well.
 	update_icon()
@@ -76,7 +76,7 @@
 		return ..()
 
 	if(processing)
-		to_chat(user, "<span class='warning'>The biogenerator is currently processing.</span>")
+		to_chat(user, "<span_class='warning'>The biogenerator is currently processing.</span>")
 		return
 
 	if(default_deconstruction_screwdriver(user, "biogen-empty-o", "biogen-empty", O))
@@ -94,16 +94,16 @@
 		. = 1 //no afterattack
 		if(!panel_open)
 			if(beaker)
-				to_chat(user, "<span class='warning'>A container is already loaded into the machine.</span>")
+				to_chat(user, "<span_class='warning'>A container is already loaded into the machine.</span>")
 			else
 				if(!user.transferItemToLoc(O, src))
 					return
 				beaker = O
-				to_chat(user, "<span class='notice'>You add the container to the machine.</span>")
+				to_chat(user, "<span_class='notice'>You add the container to the machine.</span>")
 				update_icon()
 				updateUsrDialog()
 		else
-			to_chat(user, "<span class='warning'>Close the maintenance panel first.</span>")
+			to_chat(user, "<span_class='warning'>Close the maintenance panel first.</span>")
 		return
 
 	else if(istype(O, /obj/item/storage/bag/plants))
@@ -112,7 +112,7 @@
 		for(var/obj/item/reagent_containers/food/snacks/grown/G in contents)
 			i++
 		if(i >= max_items)
-			to_chat(user, "<span class='warning'>The biogenerator is already full! Activate it.</span>")
+			to_chat(user, "<span_class='warning'>The biogenerator is already full! Activate it.</span>")
 		else
 			for(var/obj/item/reagent_containers/food/snacks/grown/G in PB.contents)
 				if(i >= max_items)
@@ -120,11 +120,11 @@
 				if(SEND_SIGNAL(PB, COMSIG_TRY_STORAGE_TAKE, G, src))
 					i++
 			if(i<max_items)
-				to_chat(user, "<span class='info'>You empty the plant bag into the biogenerator.</span>")
+				to_chat(user, "<span_class='info'>You empty the plant bag into the biogenerator.</span>")
 			else if(PB.contents.len == 0)
-				to_chat(user, "<span class='info'>You empty the plant bag into the biogenerator, filling it to its capacity.</span>")
+				to_chat(user, "<span_class='info'>You empty the plant bag into the biogenerator, filling it to its capacity.</span>")
 			else
-				to_chat(user, "<span class='info'>You fill the biogenerator to its capacity.</span>")
+				to_chat(user, "<span_class='info'>You fill the biogenerator to its capacity.</span>")
 		return TRUE //no afterattack
 
 	else if(istype(O, /obj/item/reagent_containers/food/snacks/grown))
@@ -132,10 +132,10 @@
 		for(var/obj/item/reagent_containers/food/snacks/grown/G in contents)
 			i++
 		if(i >= max_items)
-			to_chat(user, "<span class='warning'>The biogenerator is full! Activate it.</span>")
+			to_chat(user, "<span_class='warning'>The biogenerator is full! Activate it.</span>")
 		else
 			if(user.transferItemToLoc(O, src))
-				to_chat(user, "<span class='info'>You put [O.name] in [src.name]</span>")
+				to_chat(user, "<span_class='info'>You put [O.name] in [src.name]</span>")
 		return TRUE //no afterattack
 	else if (istype(O, /obj/item/disk/design_disk))
 		user.visible_message("[user] begins to load \the [O] in \the [src]...",
@@ -150,7 +150,7 @@
 		processing = FALSE
 		return TRUE
 	else
-		to_chat(user, "<span class='warning'>You cannot put this in [src.name]!</span>")
+		to_chat(user, "<span_class='warning'>You cannot put this in [src.name]!</span>")
 
 /obj/machinery/biogenerator/ui_interact(mob/user)
 	if(stat & BROKEN || panel_open)
@@ -210,7 +210,7 @@
 	if (src.stat != NONE) //NOPOWER etc
 		return
 	if(processing)
-		to_chat(usr, "<span class='warning'>The biogenerator is in the process of working.</span>")
+		to_chat(usr, "<span_class='warning'>The biogenerator is in the process of working.</span>")
 		return
 	var/S = 0
 	for(var/obj/item/reagent_containers/food/snacks/grown/I in contents)

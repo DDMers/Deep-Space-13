@@ -64,7 +64,7 @@
 
 
 /mob/living/carbon/true_devil/examine(mob/user)
-	var/msg = "<span class='info'>*---------*\nThis is [icon2html(src, user)] <b>[src]</b>!\n"
+	var/msg = "<span_class='info'>*---------*\nThis is [icon2html(src, user)] <b>[src]</b>!\n"
 
 	//Left hand items
 	for(var/obj/item/I in held_items)
@@ -77,11 +77,11 @@
 
 	//Damaged
 	if(stat == DEAD)
-		msg += "<span class='deadsay'>The hellfire seems to have been extinguished, for now at least.</span>\n"
+		msg += "<span_class='deadsay'>The hellfire seems to have been extinguished, for now at least.</span>\n"
 	else if(health < (maxHealth/10))
-		msg += "<span class='warning'>You can see hellfire inside its gaping wounds.</span>\n"
+		msg += "<span_class='warning'>You can see hellfire inside its gaping wounds.</span>\n"
 	else if(health < (maxHealth/2))
-		msg += "<span class='warning'>You can see hellfire inside its wounds.</span>\n"
+		msg += "<span_class='warning'>You can see hellfire inside its wounds.</span>\n"
 	msg += "*---------*</span>"
 	to_chat(user, msg)
 
@@ -91,15 +91,15 @@
 /mob/living/carbon/true_devil/resist_buckle()
 	if(buckled)
 		buckled.user_unbuckle_mob(src,src)
-		visible_message("<span class='warning'>[src] easily breaks out of [p_their()] handcuffs!</span>", \
-					"<span class='notice'>With just a thought your handcuffs fall off.</span>")
+		visible_message("<span_class='warning'>[src] easily breaks out of [p_their()] handcuffs!</span>", \
+					"<span_class='notice'>With just a thought your handcuffs fall off.</span>")
 
 /mob/living/carbon/true_devil/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
 	if(incapacitated())
-		to_chat(src, "<span class='warning'>You can't do that right now!</span>")
+		to_chat(src, "<span_class='warning'>You can't do that right now!</span>")
 		return FALSE
 	if(be_close && !in_range(M, src))
-		to_chat(src, "<span class='warning'>You are too far away!</span>")
+		to_chat(src, "<span_class='warning'>You are too far away!</span>")
 		return FALSE
 	return TRUE
 
@@ -133,8 +133,8 @@
 		if(user in viewers(src, null))
 			attack_message = "[user] has [message_verb] [src] with [I]!"
 	if(message_verb)
-		visible_message("<span class='danger'>[attack_message]</span>",
-		"<span class='userdanger'>[attack_message]</span>", null, COMBAT_MESSAGE_RANGE)
+		visible_message("<span_class='danger'>[attack_message]</span>",
+		"<span_class='userdanger'>[attack_message]</span>", null, COMBAT_MESSAGE_RANGE)
 	return TRUE
 
 /mob/living/carbon/true_devil/singularity_act()
@@ -166,8 +166,8 @@
 			if ("harm")
 				var/damage = rand(1, 5)
 				playsound(loc, "punch", 25, 1, -1)
-				visible_message("<span class='danger'>[M] has punched [src]!</span>", \
-						"<span class='userdanger'>[M] has punched [src]!</span>")
+				visible_message("<span_class='danger'>[M] has punched [src]!</span>", \
+						"<span_class='userdanger'>[M] has punched [src]!</span>")
 				adjustBruteLoss(damage)
 				log_combat(M, src, "attacked")
 				updatehealth()
@@ -177,17 +177,17 @@
 						Unconscious(40)
 						playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 						log_combat(M, src, "pushed")
-						visible_message("<span class='danger'>[M] has pushed down [src]!</span>", \
-							"<span class='userdanger'>[M] has pushed down [src]!</span>")
+						visible_message("<span_class='danger'>[M] has pushed down [src]!</span>", \
+							"<span_class='userdanger'>[M] has pushed down [src]!</span>")
 					else
 						if (prob(25))
 							dropItemToGround(get_active_held_item())
 							playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
-							visible_message("<span class='danger'>[M] has disarmed [src]!</span>", \
-							"<span class='userdanger'>[M] has disarmed [src]!</span>")
+							visible_message("<span_class='danger'>[M] has disarmed [src]!</span>", \
+							"<span_class='userdanger'>[M] has disarmed [src]!</span>")
 						else
 							playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
-							visible_message("<span class='danger'>[M] has attempted to disarm [src]!</span>")
+							visible_message("<span_class='danger'>[M] has attempted to disarm [src]!</span>")
 
 /mob/living/carbon/true_devil/handle_breathing()
 	// devils do not need to breathe

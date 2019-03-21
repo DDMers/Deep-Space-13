@@ -366,11 +366,11 @@
 	if(priority_absorb_key)
 		if(priority_absorb_key["visible_message"] || priority_absorb_key["self_message"])
 			if(priority_absorb_key["visible_message"] && priority_absorb_key["self_message"])
-				visible_message("<span class='warning'>[src][priority_absorb_key["visible_message"]]</span>", "<span class='boldwarning'>[priority_absorb_key["self_message"]]</span>")
+				visible_message("<span_class='warning'>[src][priority_absorb_key["visible_message"]]</span>", "<span_class='boldwarning'>[priority_absorb_key["self_message"]]</span>")
 			else if(priority_absorb_key["visible_message"])
-				visible_message("<span class='warning'>[src][priority_absorb_key["visible_message"]]</span>")
+				visible_message("<span_class='warning'>[src][priority_absorb_key["visible_message"]]</span>")
 			else if(priority_absorb_key["self_message"])
-				to_chat(src, "<span class='boldwarning'>[priority_absorb_key["self_message"]]</span>")
+				to_chat(src, "<span_class='boldwarning'>[priority_absorb_key["self_message"]]</span>")
 		priority_absorb_key["stuns_absorbed"] += amount
 		return TRUE
 

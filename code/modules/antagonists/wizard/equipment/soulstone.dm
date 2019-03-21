@@ -32,18 +32,18 @@
 /obj/item/soulstone/pickup(mob/living/user)
 	..()
 	if(!iscultist(user) && !iswizard(user) && !usability)
-		to_chat(user, "<span class='danger'>An overwhelming feeling of dread comes over you as you pick up the soulstone. It would be wise to be rid of this quickly.</span>")
+		to_chat(user, "<span_class='danger'>An overwhelming feeling of dread comes over you as you pick up the soulstone. It would be wise to be rid of this quickly.</span>")
 
 /obj/item/soulstone/examine(mob/user)
 	..()
 	if(usability || iscultist(user) || iswizard(user) || isobserver(user))
 		if (old_shard)
-			to_chat(user, "<span class='cult'>A soulstone, used to capture a soul, either from dead humans or from freed shades.</span>")
+			to_chat(user, "<span_class='cult'>A soulstone, used to capture a soul, either from dead humans or from freed shades.</span>")
 		else
-			to_chat(user, "<span class='cult'>A soulstone, used to capture souls, either from unconscious or sleeping humans or from freed shades.</span>")
-		to_chat(user, "<span class='cult'>The captured soul can be placed into a construct shell to produce a construct, or released from the stone as a shade.</span>")
+			to_chat(user, "<span_class='cult'>A soulstone, used to capture souls, either from unconscious or sleeping humans or from freed shades.</span>")
+		to_chat(user, "<span_class='cult'>The captured soul can be placed into a construct shell to produce a construct, or released from the stone as a shade.</span>")
 		if(spent)
-			to_chat(user, "<span class='cult'>This shard is spent; it is now just a creepy rock.</span>")
+			to_chat(user, "<span_class='cult'>This shard is spent; it is now just a creepy rock.</span>")
 
 /obj/item/soulstone/Destroy() //Stops the shade from being qdel'd immediately and their ghost being sent back to the arrival shuttle.
 	for(var/mob/living/simple_animal/shade/A in src)
@@ -55,16 +55,16 @@
 /obj/item/soulstone/attack(mob/living/carbon/human/M, mob/living/user)
 	if(!iscultist(user) && !iswizard(user) && !usability)
 		user.Unconscious(100)
-		to_chat(user, "<span class='userdanger'>Your body is wracked with debilitating pain!</span>")
+		to_chat(user, "<span_class='userdanger'>Your body is wracked with debilitating pain!</span>")
 		return
 	if(spent)
-		to_chat(user, "<span class='warning'>There is no power left in the shard.</span>")
+		to_chat(user, "<span_class='warning'>There is no power left in the shard.</span>")
 		return
 	if(!ishuman(M))//If target is not a human.
 		return ..()
 	if(iscultist(M))
 		if(iscultist(user))
-			to_chat(user, "<span class='cultlarge'>\"Come now, do not capture your bretheren's soul.\"</span>")
+			to_chat(user, "<span_class='cultlarge'>\"Come now, do not capture your bretheren's soul.\"</span>")
 			return
 	log_combat(user, M, "captured [M.name]'s soul", src)
 	transfer_soul("VICTIM", M, user)
@@ -76,7 +76,7 @@
 		return
 	if(!iscultist(user) && !iswizard(user) && !usability)
 		user.Unconscious(100)
-		to_chat(user, "<span class='userdanger'>Your body is wracked with debilitating pain!</span>")
+		to_chat(user, "<span_class='userdanger'>Your body is wracked with debilitating pain!</span>")
 		return
 	release_shades(user)
 
@@ -104,17 +104,17 @@
 /obj/structure/constructshell/examine(mob/user)
 	..()
 	if(iscultist(user) || iswizard(user) || user.stat == DEAD)
-		to_chat(user, "<span class='cult'>A construct shell, used to house bound souls from a soulstone.</span>")
-		to_chat(user, "<span class='cult'>Placing a soulstone with a soul into this shell allows you to produce your choice of the following:</span>")
-		to_chat(user, "<span class='cult'>An <b>Artificer</b>, which can produce <b>more shells and soulstones</b>, as well as fortifications.</span>")
-		to_chat(user, "<span class='cult'>A <b>Wraith</b>, which does high damage and can jaunt through walls, though it is quite fragile.</span>")
-		to_chat(user, "<span class='cult'>A <b>Juggernaut</b>, which is very hard to kill and can produce temporary walls, but is slow.</span>")
+		to_chat(user, "<span_class='cult'>A construct shell, used to house bound souls from a soulstone.</span>")
+		to_chat(user, "<span_class='cult'>Placing a soulstone with a soul into this shell allows you to produce your choice of the following:</span>")
+		to_chat(user, "<span_class='cult'>An <b>Artificer</b>, which can produce <b>more shells and soulstones</b>, as well as fortifications.</span>")
+		to_chat(user, "<span_class='cult'>A <b>Wraith</b>, which does high damage and can jaunt through walls, though it is quite fragile.</span>")
+		to_chat(user, "<span_class='cult'>A <b>Juggernaut</b>, which is very hard to kill and can produce temporary walls, but is slow.</span>")
 
 /obj/structure/constructshell/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/soulstone))
 		var/obj/item/soulstone/SS = O
 		if(!iscultist(user) && !iswizard(user) && !SS.usability)
-			to_chat(user, "<span class='danger'>An overwhelming feeling of dread comes over you as you attempt to place the soulstone into the shell. It would be wise to be rid of this quickly.</span>")
+			to_chat(user, "<span_class='danger'>An overwhelming feeling of dread comes over you as you attempt to place the soulstone into the shell. It would be wise to be rid of this quickly.</span>")
 			user.Dizzy(30)
 			return
 		SS.transfer_soul("CONSTRUCT",src,user)
@@ -139,7 +139,7 @@
 				init_shade(T, user)
 				return TRUE
 			else
-				to_chat(user, "<span class='userdanger'>Capture failed!</span>: The soul has already fled its mortal frame. You attempt to bring it back...")
+				to_chat(user, "<span_class='userdanger'>Capture failed!</span>: The soul has already fled its mortal frame. You attempt to bring it back...")
 				return getCultGhost(T,user)
 
 		if("VICTIM")
@@ -147,16 +147,16 @@
 			var/datum/antagonist/cult/C = user.mind.has_antag_datum(/datum/antagonist/cult,TRUE)
 			if(C && C.cult_team.is_sacrifice_target(T.mind))
 				if(iscultist(user))
-					to_chat(user, "<span class='cult'><b>\"This soul is mine.</b></span> <span class='cultlarge'>SACRIFICE THEM!\"</span>")
+					to_chat(user, "<span_class='cult'><b>\"This soul is mine.</b></span> <span_class='cultlarge'>SACRIFICE THEM!\"</span>")
 				else
-					to_chat(user, "<span class='danger'>The soulstone seems to reject this soul.</span>")
+					to_chat(user, "<span_class='danger'>The soulstone seems to reject this soul.</span>")
 				return FALSE
 			if(contents.len)
-				to_chat(user, "<span class='userdanger'>Capture failed!</span>: The soulstone is full! Free an existing soul to make room.")
+				to_chat(user, "<span_class='userdanger'>Capture failed!</span>: The soulstone is full! Free an existing soul to make room.")
 			else
 				if((!old_shard && T.stat != CONSCIOUS) || (old_shard && T.stat == DEAD))
 					if(T.client == null)
-						to_chat(user, "<span class='userdanger'>Capture failed!</span>: The soul has already fled its mortal frame. You attempt to bring it back...")
+						to_chat(user, "<span_class='userdanger'>Capture failed!</span>: The soul has already fled its mortal frame. You attempt to bring it back...")
 						getCultGhost(T,user)
 					else
 						for(var/obj/item/W in T)
@@ -164,12 +164,12 @@
 						init_shade(T, user, vic = 1)
 						qdel(T)
 				else
-					to_chat(user, "<span class='userdanger'>Capture failed!</span>: Kill or maim the victim first!")
+					to_chat(user, "<span_class='userdanger'>Capture failed!</span>: Kill or maim the victim first!")
 
 		if("SHADE")
 			var/mob/living/simple_animal/shade/T = target
 			if(contents.len)
-				to_chat(user, "<span class='userdanger'>Capture failed!</span>: The soulstone is full! Free an existing soul to make room.")
+				to_chat(user, "<span_class='userdanger'>Capture failed!</span>: The soulstone is full! Free an existing soul to make room.")
 			else
 				T.forceMove(src) //put shade in stone
 				T.status_flags |= GODMODE
@@ -177,9 +177,9 @@
 				T.health = T.maxHealth
 				icon_state = "soulstone2"
 				name = "soulstone: Shade of [T.real_name]"
-				to_chat(T, "<span class='notice'>Your soul has been captured by the soulstone. Its arcane energies are reknitting your ethereal form.</span>")
+				to_chat(T, "<span_class='notice'>Your soul has been captured by the soulstone. Its arcane energies are reknitting your ethereal form.</span>")
 				if(user != T)
-					to_chat(user, "<span class='info'><b>Capture successful!</b>:</span> [T.real_name]'s soul has been captured and stored within the soulstone.")
+					to_chat(user, "<span_class='info'><b>Capture successful!</b>:</span> [T.real_name]'s soul has been captured and stored within the soulstone.")
 
 		if("CONSTRUCT")
 			var/obj/structure/constructshell/T = target
@@ -208,7 +208,7 @@
 				qdel(T)
 				qdel(src)
 			else
-				to_chat(user, "<span class='userdanger'>Creation failed!</span>: The soul stone is empty! Go kill someone!")
+				to_chat(user, "<span_class='userdanger'>Creation failed!</span>: The soul stone is empty! Go kill someone!")
 
 
 /proc/makeNewConstruct(mob/living/simple_animal/hostile/construct/ctype, mob/target, mob/stoner = null, cultoverride = 0, loc_override = null)
@@ -257,7 +257,7 @@
 	else if(U && iscultist(U))
 		to_chat(S, "Your soul has been captured! You are now bound to the cult's will. Help them succeed in their goals at all costs.")
 	if(vic && U)
-		to_chat(U, "<span class='info'><b>Capture successful!</b>:</span> [T.real_name]'s soul has been ripped from [T.p_their()] body and stored within the soul stone.")
+		to_chat(U, "<span_class='info'><b>Capture successful!</b>:</span> [T.real_name]'s soul has been ripped from [T.p_their()] body and stored within the soul stone.")
 
 
 /obj/item/soulstone/proc/getCultGhost(mob/living/carbon/human/T, mob/U)
@@ -275,7 +275,7 @@
 	if(!T)
 		return FALSE
 	if(!chosen_ghost)
-		to_chat(U, "<span class='danger'>There were no spirits willing to become a shade.</span>")
+		to_chat(U, "<span_class='danger'>There were no spirits willing to become a shade.</span>")
 		return FALSE
 	if(contents.len) //If they used the soulstone on someone else in the meantime
 		return FALSE

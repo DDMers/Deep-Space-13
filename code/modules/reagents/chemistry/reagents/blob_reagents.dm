@@ -19,7 +19,7 @@
 	if(message_living && !issilicon(M))
 		totalmessage += message_living
 	totalmessage += "!"
-	to_chat(M, "<span class='userdanger'>[totalmessage]</span>")
+	to_chat(M, "<span_class='userdanger'>[totalmessage]</span>")
 
 /datum/reagent/blob/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message, touch_protection, mob/camera/blob/O)
 	if(M.stat == DEAD || istype(M, /mob/living/simple_animal/hostile/blob))
@@ -236,11 +236,11 @@
 		O.blob_mobs.Add(BS)
 		BS.Zombify(M)
 		O.add_points(points)
-		to_chat(O, "<span class='notice'>Gained [points] resources from the zombification of [M].</span>")
+		to_chat(O, "<span_class='notice'>Gained [points] resources from the zombification of [M].</span>")
 
 /datum/reagent/blob/zombifying_pods/damage_reaction(obj/structure/blob/B, damage, damage_type, damage_flag)
 	if((damage_flag == "melee" || damage_flag == "bullet" || damage_flag == "laser") && damage <= 20 && B.obj_integrity - damage <= 0 && prob(30)) //if the cause isn't fire or a bomb, the damage is less than 21, we're going to die from that damage, 20% chance of a shitty spore.
-		B.visible_message("<span class='warning'><b>A spore floats free of the blob!</b></span>")
+		B.visible_message("<span_class='warning'><b>A spore floats free of the blob!</b></span>")
 		var/mob/living/simple_animal/hostile/blob/blobspore/weak/BS = new/mob/living/simple_animal/hostile/blob/blobspore/weak(B.loc)
 		BS.overmind = B.overmind
 		BS.update_icons()
@@ -446,7 +446,7 @@
 /datum/reagent/blob/reactive_spines/damage_reaction(obj/structure/blob/B, damage, damage_type, damage_flag)
 	if(damage && damage_type == BRUTE && B.obj_integrity - damage > 0) //is there any damage, is it brute, and will we be alive
 		if(damage_flag == "melee")
-			B.visible_message("<span class='boldwarning'>The blob retaliates, lashing out!</span>")
+			B.visible_message("<span_class='boldwarning'>The blob retaliates, lashing out!</span>")
 		for(var/atom/A in range(1, B))
 			A.blob_act(B)
 	return ..()
@@ -486,7 +486,7 @@
 
 /datum/reagent/blob/pressurized_slime/death_reaction(obj/structure/blob/B, damage_flag)
 	if(damage_flag == "melee" || damage_flag == "bullet" || damage_flag == "laser")
-		B.visible_message("<span class='boldwarning'>The blob ruptures, spraying the area with liquid!</span>")
+		B.visible_message("<span_class='boldwarning'>The blob ruptures, spraying the area with liquid!</span>")
 		extinguisharea(B, 50)
 
 /datum/reagent/blob/pressurized_slime/proc/extinguisharea(obj/structure/blob/B, probchance)

@@ -9,11 +9,11 @@
 		emote("deathgasp")
 
 	. = ..()
-	
+
 	for(var/T in get_traumas())
 		var/datum/brain_trauma/BT = T
 		BT.on_death()
-	
+
 	if(SSticker.mode)
 		SSticker.mode.check_win() //Calls the rounds wincheck, mainly for wizard, malf, and changeling now
 
@@ -23,7 +23,7 @@
 		if(M in stomach_contents)
 			stomach_contents.Remove(M)
 		M.forceMove(Tsec)
-		visible_message("<span class='danger'>[M] bursts out of [src]!</span>")
+		visible_message("<span_class='danger'>[M] bursts out of [src]!</span>")
 	..()
 
 /mob/living/carbon/spill_organs(no_brain, no_organs, no_bodyparts)

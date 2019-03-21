@@ -89,11 +89,11 @@
 	tick_interval = 1
 	duration = 100
 	alert_type = null
-	
+
 /datum/status_effect/pacify/on_creation(mob/living/new_owner, set_duration)
 	if(isnum(set_duration))
 		duration = set_duration
-	. = ..()	
+	. = ..()
 
 /datum/status_effect/pacify/on_apply()
 	owner.add_trait(TRAIT_PACIFISM, "status_effect")
@@ -158,9 +158,9 @@
 				owner.apply_damage(leg_damage_on_toggle * 0.5, BURN, BODY_ZONE_R_LEG)
 		if(owner.m_intent != MOVE_INTENT_WALK)
 			if(!iscultist(owner))
-				to_chat(owner, "<span class='warning'>Your leg[number_legs > 1 ? "s shiver":" shivers"] with pain!</span>")
+				to_chat(owner, "<span_class='warning'>Your leg[number_legs > 1 ? "s shiver":" shivers"] with pain!</span>")
 			else //Cultists take extra burn damage
-				to_chat(owner, "<span class='warning'>Your leg[number_legs > 1 ? "s burn":" burns"] with pain!</span>")
+				to_chat(owner, "<span_class='warning'>Your leg[number_legs > 1 ? "s burn":" burns"] with pain!</span>")
 			owner.toggle_move_intent()
 		return TRUE
 	return FALSE
@@ -201,16 +201,16 @@
 	var/span_part = severity > 50 ? "" : "_small" //let's save like one check
 	if(QDELETED(motor))
 		if(!is_servant)
-			to_chat(owner, "<span class='sevtug[span_part]'>You feel a frustrated voice quietly fade from your mind...</span>")
+			to_chat(owner, "<span_class='sevtug[span_part]'>You feel a frustrated voice quietly fade from your mind...</span>")
 		qdel(src)
 		return
 	if(!motor.active) //it being off makes it fall off much faster
 		if(!is_servant && !warned_turnoff)
 			if(can_access_clockwork_power(motor, motor.mania_cost))
-				to_chat(owner, "<span class='sevtug[span_part]'>\"[text2ratvar(pick(turnoff_messages))]\"</span>")
+				to_chat(owner, "<span_class='sevtug[span_part]'>\"[text2ratvar(pick(turnoff_messages))]\"</span>")
 			else
 				var/pickedmessage = pick(powerloss_messages)
-				to_chat(owner, "<span class='sevtug[span_part]'>[powerloss_messages[pickedmessage] ? "[text2ratvar(pickedmessage)]" : pickedmessage]</span>")
+				to_chat(owner, "<span_class='sevtug[span_part]'>[powerloss_messages[pickedmessage] ? "[text2ratvar(pickedmessage)]" : pickedmessage]</span>")
 			warned_turnoff = TRUE
 		severity = max(severity - 2, 0)
 		if(!severity)
@@ -221,7 +221,7 @@
 			warned_turnoff = FALSE
 		if(!(owner in viewers(7, motor))) //not being in range makes it fall off slightly faster
 			if(!is_servant && !warned_outofsight)
-				to_chat(owner, "<span class='sevtug[span_part]'>\"[text2ratvar(pick(flee_messages))]\"</span>")
+				to_chat(owner, "<span_class='sevtug[span_part]'>\"[text2ratvar(pick(flee_messages))]\"</span>")
 				warned_outofsight = TRUE
 			severity = max(severity - 1, 0)
 			if(!severity)
@@ -243,13 +243,13 @@
 		var/static/hum = get_sfx('sound/effects/screech.ogg') //same sound for every proc call
 		if(owner.getToxLoss() > MANIA_DAMAGE_TO_CONVERT)
 			if(is_eligible_servant(owner))
-				to_chat(owner, "<span class='sevtug[span_part]'>\"[text2ratvar("You are mine and his, now.")]\"</span>")
+				to_chat(owner, "<span_class='sevtug[span_part]'>\"[text2ratvar("You are mine and his, now.")]\"</span>")
 				if(add_servant_of_ratvar(owner))
 					owner.log_message("conversion was done with a Mania Motor", LOG_ATTACK, color="#BE8700")
 			owner.Unconscious(100)
 		else
 			if(prob(severity * 0.15))
-				to_chat(owner, "<span class='sevtug[span_part]'>\"[text2ratvar(pick(mania_messages))]\"</span>")
+				to_chat(owner, "<span_class='sevtug[span_part]'>\"[text2ratvar(pick(mania_messages))]\"</span>")
 			owner.playsound_local(get_turf(motor), hum, severity, 1)
 			owner.adjust_drugginess(CLAMP(max(severity * 0.075, 1), 0, max(0, 50 - owner.druggy))) //7.5% of severity per second, minimum 1
 			if(owner.hallucination < 50)
@@ -489,15 +489,15 @@
 	var/health_difference = old_health - owner.health
 	if(!health_difference)
 		return
-	owner.visible_message("<span class='warning'>The light in [owner]'s eyes dims as [owner.p_theyre()] harmed!</span>", \
-	"<span class='boldannounce'>The dazzling lights dim as you're harmed!</span>")
+	owner.visible_message("<span_class='warning'>The light in [owner]'s eyes dims as [owner.p_theyre()] harmed!</span>", \
+	"<span_class='boldannounce'>The dazzling lights dim as you're harmed!</span>")
 	health_difference *= 2 //so 10 health difference translates to 20 deciseconds of stun reduction
 	duration -= health_difference
 	old_health = owner.health
 
 /datum/status_effect/kindle/on_remove()
-	owner.visible_message("<span class='warning'>The light in [owner]'s eyes fades!</span>", \
-	"<span class='boldannounce'>You snap out of your daze!</span>")
+	owner.visible_message("<span_class='warning'>The light in [owner]'s eyes fades!</span>", \
+	"<span_class='boldannounce'>You snap out of your daze!</span>")
 
 /obj/screen/alert/status_effect/kindle
 	name = "Dazzling Lights"
@@ -511,17 +511,17 @@
 	id = "ichorial_stain"
 	status_type = STATUS_EFFECT_UNIQUE
 	duration = 600
-	examine_text = "<span class='warning'>SUBJECTPRONOUN is drenched in thick, blue ichor!</span>"
+	examine_text = "<span_class='warning'>SUBJECTPRONOUN is drenched in thick, blue ichor!</span>"
 	alert_type = /obj/screen/alert/status_effect/ichorial_stain
 
 /datum/status_effect/ichorial_stain/on_apply()
-	owner.visible_message("<span class='danger'>[owner] gets back up, [owner.p_their()] body dripping blue ichor!</span>", \
-	"<span class='userdanger'>Thick blue ichor covers your body; you can't be revived like this again until it dries!</span>")
+	owner.visible_message("<span_class='danger'>[owner] gets back up, [owner.p_their()] body dripping blue ichor!</span>", \
+	"<span_class='userdanger'>Thick blue ichor covers your body; you can't be revived like this again until it dries!</span>")
 	return TRUE
 
 /datum/status_effect/ichorial_stain/on_remove()
-	owner.visible_message("<span class='danger'>The blue ichor on [owner]'s body dries out!</span>", \
-	"<span class='boldnotice'>The ichor on your body is dry - you can now be revived by vitality matrices again!</span>")
+	owner.visible_message("<span_class='danger'>The blue ichor on [owner]'s body dries out!</span>", \
+	"<span_class='boldnotice'>The ichor on your body is dry - you can now be revived by vitality matrices again!</span>")
 
 /obj/screen/alert/status_effect/ichorial_stain
 	name = "Ichorial Stain"
@@ -539,7 +539,7 @@
 	owner.add_trait(TRAIT_PACIFISM, "gonbolaPacify")
 	owner.add_trait(TRAIT_MUTE, "gonbolaMute")
 	owner.add_trait(TRAIT_JOLLY, "gonbolaJolly")
-	to_chat(owner, "<span class='notice'>You suddenly feel at peace and feel no need to make any sudden or rash actions...</span>")
+	to_chat(owner, "<span_class='notice'>You suddenly feel at peace and feel no need to make any sudden or rash actions...</span>")
 	return ..()
 
 /datum/status_effect/gonbolaPacify/on_remove()
@@ -552,10 +552,10 @@
 	status_type = STATUS_EFFECT_UNIQUE
 	duration = 300
 	tick_interval = 10
-	examine_text = "<span class='warning'>SUBJECTPRONOUN seems slow and unfocused.</span>"
+	examine_text = "<span_class='warning'>SUBJECTPRONOUN seems slow and unfocused.</span>"
 	var/stun = TRUE
 	alert_type = /obj/screen/alert/status_effect/trance
-	
+
 /obj/screen/alert/status_effect/trance
 	name = "Trance"
 	desc = "Everything feels so distant, and you can feel your thoughts forming loops inside your head..."
@@ -573,8 +573,8 @@
 	owner.add_trait(TRAIT_MUTE, "trance")
 	if(!owner.has_quirk(/datum/quirk/monochromatic))
 		owner.add_client_colour(/datum/client_colour/monochrome)
-	owner.visible_message("[stun ? "<span class='warning'>[owner] stands still as [owner.p_their()] eyes seem to focus on a distant point.</span>" : ""]", \
-	"<span class='warning'>[pick("You feel your thoughts slow down...", "You suddenly feel extremely dizzy...", "You feel like you're in the middle of a dream...","You feel incredibly relaxed...")]</span>")
+	owner.visible_message("[stun ? "<span_class='warning'>[owner] stands still as [owner.p_their()] eyes seem to focus on a distant point.</span>" : ""]", \
+	"<span_class='warning'>[pick("You feel your thoughts slow down...", "You suddenly feel extremely dizzy...", "You feel like you're in the middle of a dream...","You feel incredibly relaxed...")]</span>")
 	return TRUE
 
 /datum/status_effect/trance/on_creation(mob/living/new_owner, _duration, _stun = TRUE)
@@ -588,7 +588,7 @@
 	owner.dizziness = 0
 	if(!owner.has_quirk(/datum/quirk/monochromatic))
 		owner.remove_client_colour(/datum/client_colour/monochrome)
-	to_chat(owner, "<span class='warning'>You snap out of your trance!</span>")
+	to_chat(owner, "<span_class='warning'>You snap out of your trance!</span>")
 
 /datum/status_effect/trance/proc/hypnotize(datum/source, message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode)
 	if(!owner.can_hear())

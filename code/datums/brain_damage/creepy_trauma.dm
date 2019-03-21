@@ -3,7 +3,7 @@
 	desc = "Patient has a subtype of delusional disorder, becoming irrationally attached to someone."
 	scan_desc = "severe erotomaniac delusions"
 	gain_text = "If you see this message, make a github issue report. The trauma initialized wrong."
-	lose_text = "<span class='warning'>You no longer feel so attached.</span>"
+	lose_text = "<span_class='warning'>You no longer feel so attached.</span>"
 	can_gain = TRUE
 	resilience = TRAUMA_RESILIENCE_SURGERY
 	var/mob/living/obsession
@@ -23,7 +23,7 @@
 		if(!obsession)//we didn't find one
 			lose_text = ""
 			qdel(src)
-	gain_text = "<span class='warning'>You feel a strange attachment to [obsession].</span>"
+	gain_text = "<span_class='warning'>You feel a strange attachment to [obsession].</span>"
 	owner.apply_status_effect(STATUS_EFFECT_INLOVE, obsession)
 	owner.mind.add_antag_datum(/datum/antagonist/creep)
 	antagonist = owner.mind.has_antag_datum(/datum/antagonist/creep)
@@ -95,11 +95,11 @@
 			owner.dizziness += 10
 			fail = TRUE
 		if(3)
-			to_chat(owner, "<span class='userdanger'>You feel your heart lurching in your chest...</span>")
+			to_chat(owner, "<span_class='userdanger'>You feel your heart lurching in your chest...</span>")
 			owner.Stun(20)
 			shake_camera(owner, 15, 1)
 		if(4)
-			to_chat(owner, "<span class='warning'>You faint.</span>")
+			to_chat(owner, "<span_class='warning'>You faint.</span>")
 			owner.Unconscious(80)
 			fail = TRUE
 	return fail

@@ -10,7 +10,7 @@ Applications: 8 servants, 3 caches, and 100 CV
 GLOBAL_LIST_INIT(scripture_states,scripture_states_init_value()) //list of clockcult scripture states for announcements
 
 /proc/scripture_states_init_value()
-	return list(SCRIPTURE_DRIVER = TRUE, SCRIPTURE_SCRIPT = FALSE, SCRIPTURE_APPLICATION = FALSE) 
+	return list(SCRIPTURE_DRIVER = TRUE, SCRIPTURE_SCRIPT = FALSE, SCRIPTURE_APPLICATION = FALSE)
 
 /datum/clockwork_scripture
 	var/descname = "useless" //a simple name for the scripture's effect
@@ -57,7 +57,7 @@ GLOBAL_LIST_INIT(scripture_states,scripture_states_init_value()) //list of clock
 	var/successful = FALSE
 	if(can_recite() && has_requirements())
 		if(slab.busy)
-			to_chat(invoker, "<span class='warning'>[slab] refuses to work, displaying the message: \"[slab.busy]!\"</span>")
+			to_chat(invoker, "<span_class='warning'>[slab] refuses to work, displaying the message: \"[slab.busy]!\"</span>")
 			return FALSE
 		pre_recital()
 		slab.busy = "Invocation ([name]) in progress"
@@ -83,7 +83,7 @@ GLOBAL_LIST_INIT(scripture_states,scripture_states_init_value()) //list of clock
 	if(!invoker || !slab || invoker.get_active_held_item() != slab)
 		return FALSE
 	if(!invoker.can_speak_vocal())
-		to_chat(invoker, "<span class='warning'>You are unable to speak the words of the scripture!</span>")
+		to_chat(invoker, "<span_class='warning'>You are unable to speak the words of the scripture!</span>")
 		return FALSE
 	return TRUE
 
@@ -92,7 +92,7 @@ GLOBAL_LIST_INIT(scripture_states,scripture_states_init_value()) //list of clock
 	if(!GLOB.ratvar_awakens && !slab.no_cost)
 		checked_penalty = check_offstation_penalty()
 		if(!get_clockwork_power(power_cost))
-			to_chat(invoker, "<span class='warning'>There isn't enough power to recite this scripture! ([DisplayPower(get_clockwork_power())]/[DisplayPower(power_cost)])</span>")
+			to_chat(invoker, "<span_class='warning'>There isn't enough power to recite this scripture! ([DisplayPower(get_clockwork_power())]/[DisplayPower(power_cost)])</span>")
 			return
 	if(multiple_invokers_used && !multiple_invokers_optional && !GLOB.ratvar_awakens && !slab.no_cost)
 		var/nearby_servants = 0
@@ -100,7 +100,7 @@ GLOBAL_LIST_INIT(scripture_states,scripture_states_init_value()) //list of clock
 			if(can_recite_scripture(L))
 				nearby_servants++
 		if(nearby_servants < invokers_required)
-			to_chat(invoker, "<span class='warning'>There aren't enough non-mute servants nearby ([nearby_servants]/[invokers_required])!</span>")
+			to_chat(invoker, "<span_class='warning'>There aren't enough non-mute servants nearby ([nearby_servants]/[invokers_required])!</span>")
 			return FALSE
 	if(!check_special_requirements())
 		return FALSE
@@ -126,7 +126,7 @@ GLOBAL_LIST_INIT(scripture_states,scripture_states_init_value()) //list of clock
 		if(message)
 			if(prob(ratvarian_prob))
 				message = text2ratvar(message)
-			to_chat(invoker, "<span class='[get_component_span(primary_component)]_large'>\"[message]\"</span>")
+			to_chat(invoker, "<span_class='[get_component_span(primary_component)]_large'>\"[message]\"</span>")
 			SEND_SOUND(invoker, sound('sound/magic/clockwork/invoke_general.ogg'))
 	return TRUE
 
@@ -150,7 +150,7 @@ GLOBAL_LIST_INIT(scripture_states,scripture_states_init_value()) //list of clock
 		else
 			for(var/invocation in invocations)
 				clockwork_say(invoker, text2ratvar(invocation), whispered)
-	to_chat(invoker, "<span class='brass'>You [channel_time <= 0 ? "recite" : "begin reciting"] a piece of scripture entitled \"[name]\".</span>")
+	to_chat(invoker, "<span_class='brass'>You [channel_time <= 0 ? "recite" : "begin reciting"] a piece of scripture entitled \"[name]\".</span>")
 	if(!channel_time)
 		return TRUE
 	chant()
@@ -213,14 +213,14 @@ GLOBAL_LIST_INIT(scripture_states,scripture_states_init_value()) //list of clock
 /datum/clockwork_scripture/channeled/proc/chant_effects(chant_number) //The chant's periodic effects
 
 /datum/clockwork_scripture/channeled/proc/chant_end_effects() //The chant's effect upon ending
-	to_chat(invoker, "<span class='brass'>You cease your chant.</span>")
+	to_chat(invoker, "<span_class='brass'>You cease your chant.</span>")
 
 
 //Creates an object at the invoker's feet
 /datum/clockwork_scripture/create_object
 	var/object_path = /obj/item/clockwork //The path of the object created
 	var/put_object_in_hands = TRUE
-	var/creator_message = "<span class='brass'>You create a meme.</span>" //Shown to the invoker
+	var/creator_message = "<span_class='brass'>You create a meme.</span>" //Shown to the invoker
 	var/observer_message
 	var/one_per_tile = FALSE
 	var/atom/movable/prevent_path
@@ -234,10 +234,10 @@ GLOBAL_LIST_INIT(scripture_states,scripture_states_init_value()) //list of clock
 /datum/clockwork_scripture/create_object/check_special_requirements()
 	var/turf/T = get_turf(invoker)
 	if(!space_allowed && isspaceturf(T))
-		to_chat(invoker, "<span class='warning'>You need solid ground to place this object!</span>")
+		to_chat(invoker, "<span_class='warning'>You need solid ground to place this object!</span>")
 		return FALSE
 	if(one_per_tile && (locate(prevent_path) in T))
-		to_chat(invoker, "<span class='warning'>You can only place one of this object on each tile!</span>")
+		to_chat(invoker, "<span_class='warning'>You can only place one of this object on each tile!</span>")
 		return FALSE
 	return TRUE
 
@@ -265,7 +265,7 @@ GLOBAL_LIST_INIT(scripture_states,scripture_states_init_value()) //list of clock
 	update_construct_limit()
 	var/constructs = get_constructs()
 	if(constructs >= construct_limit)
-		to_chat(invoker, "<span class='warning'>There are too many constructs of this type ([constructs])! You may only have [round(construct_limit)] at once.</span>")
+		to_chat(invoker, "<span_class='warning'>There are too many constructs of this type ([constructs])! You may only have [round(construct_limit)] at once.</span>")
 		return
 	var/obj/structure/destructible/clockwork/massive/celestial_gateway/G = GLOB.ark_of_the_clockwork_justiciar
 	if(G && !G.active && combat_construct && is_reebe(invoker.z) && !confirmed) //Putting marauders on the base during the prep phase is a bad idea mmkay

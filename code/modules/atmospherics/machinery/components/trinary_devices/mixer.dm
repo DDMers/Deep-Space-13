@@ -80,12 +80,12 @@
 
 	if(!node2_concentration)
 		if(air1.temperature <= 0)
-			return	
+			return
 		transfer_moles1 = min(transfer_moles1, air1_moles)
 		transfer_moles2 = 0
 	else if(!node1_concentration)
 		if(air2.temperature <= 0)
-			return	
+			return
 		transfer_moles2 = min(transfer_moles2, air2_moles)
 		transfer_moles1 = 0
 	else
@@ -174,7 +174,7 @@
 /obj/machinery/atmospherics/components/trinary/mixer/can_unwrench(mob/user)
 	. = ..()
 	if(. && on && is_operational())
-		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
+		to_chat(user, "<span_class='warning'>You cannot unwrench [src], turn it off first!</span>")
 		return FALSE
 
 // mapping

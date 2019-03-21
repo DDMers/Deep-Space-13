@@ -8,7 +8,7 @@
 	max_integrity = 25
 	construction_value = 15
 	layer = WALL_OBJ_LAYER
-	break_message = "<span class='warning'>The warden's eye gives a glare of utter hate before falling dark!</span>"
+	break_message = "<span_class='warning'>The warden's eye gives a glare of utter hate before falling dark!</span>"
 	debris = list(/obj/item/clockwork/component/belligerent_eye/blind_eye = 1)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	var/damage_per_tick = 3
@@ -26,7 +26,7 @@
 
 /obj/structure/destructible/clockwork/ocular_warden/examine(mob/user)
 	..()
-	to_chat(user, "<span class='brass'>[target ? "<b>It's fixated on [target]!</b>" : "Its gaze is wandering aimlessly."]</span>")
+	to_chat(user, "<span_class='brass'>[target ? "<b>It's fixated on [target]!</b>" : "Its gaze is wandering aimlessly."]</span>")
 
 /obj/structure/destructible/clockwork/ocular_warden/hulk_damage()
 	return 25
@@ -36,7 +36,7 @@
 		for(var/obj/structure/destructible/clockwork/ocular_warden/W in orange(OCULAR_WARDEN_EXCLUSION_RANGE, src))
 			if(W.anchored)
 				if(!silent)
-					to_chat(user, "<span class='neovgre'>You sense another ocular warden too near this location. Activating this one this close would cause them to fight.</span>")
+					to_chat(user, "<span_class='neovgre'>You sense another ocular warden too near this location. Activating this one this close would cause them to fight.</span>")
 				return FAILED_UNFASTEN
 	return SUCCESSFUL_UNFASTEN
 
@@ -86,16 +86,16 @@
 		if(validtargets.len)
 			target = pick(validtargets)
 			playsound(src,'sound/machines/clockcult/ocularwarden-target.ogg',50,1)
-			visible_message("<span class='warning'>[src] swivels to face [target]!</span>")
+			visible_message("<span_class='warning'>[src] swivels to face [target]!</span>")
 			if(isliving(target))
 				var/mob/living/L = target
-				to_chat(L, "<span class='neovgre'>\"I SEE YOU!\"</span>\n<span class='userdanger'>[src]'s gaze [GLOB.ratvar_awakens ? "melts you alive" : "burns you"]!</span>")
+				to_chat(L, "<span_class='neovgre'>\"I SEE YOU!\"</span>\n<span_class='userdanger'>[src]'s gaze [GLOB.ratvar_awakens ? "melts you alive" : "burns you"]!</span>")
 			else if(ismecha(target))
 				var/obj/mecha/M = target
-				to_chat(M.occupant, "<span class='neovgre'>\"I SEE YOU!\"</span>" )
+				to_chat(M.occupant, "<span_class='neovgre'>\"I SEE YOU!\"</span>" )
 		else if(prob(0.5)) //Extremely low chance because of how fast the subsystem it uses processes
 			if(prob(50))
-				visible_message("<span class='notice'>[src][pick(idle_messages)]</span>")
+				visible_message("<span_class='notice'>[src][pick(idle_messages)]</span>")
 			else
 				setDir(pick(GLOB.cardinals))//Random rotation
 
@@ -105,7 +105,7 @@
 		var/obj/item/storage/book/bible/B = L.bible_check()
 		if(B)
 			if(!(B.resistance_flags & ON_FIRE))
-				to_chat(L, "<span class='warning'>Your [B.name] bursts into flames!</span>")
+				to_chat(L, "<span_class='warning'>Your [B.name] bursts into flames!</span>")
 			for(var/obj/item/storage/book/bible/BI in L.GetAllContents())
 				if(!(BI.resistance_flags & ON_FIRE))
 					BI.fire_act()
@@ -145,7 +145,7 @@
 	if(!target)
 		return 0
 	target = null
-	visible_message("<span class='warning'>[src] settles and seems almost disappointed.</span>")
+	visible_message("<span_class='warning'>[src] settles and seems almost disappointed.</span>")
 	return 1
 
 /obj/structure/destructible/clockwork/ocular_warden/get_efficiency_mod()

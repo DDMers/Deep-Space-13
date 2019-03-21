@@ -131,7 +131,7 @@
 /obj/machinery/droneDispenser/examine(mob/user)
 	..()
 	if((mode == DRONE_RECHARGING) && !stat && recharging_text)
-		to_chat(user, "<span class='warning'>[recharging_text]</span>")
+		to_chat(user, "<span_class='warning'>[recharging_text]</span>")
 
 /obj/machinery/droneDispenser/power_change()
 	..()
@@ -160,7 +160,7 @@
 			if(maximum_idle && (count_shells() >= maximum_idle))
 				return // then do nothing; check again next tick
 			if(begin_create_message)
-				visible_message("<span class='notice'>[src] [begin_create_message]</span>")
+				visible_message("<span_class='notice'>[src] [begin_create_message]</span>")
 			if(work_sound)
 				playsound(src, work_sound, 50, 1)
 			mode = DRONE_PRODUCTION
@@ -178,7 +178,7 @@
 			if(create_sound)
 				playsound(src, create_sound, 50, 1)
 			if(end_create_message)
-				visible_message("<span class='notice'>[src] [end_create_message]</span>")
+				visible_message("<span_class='notice'>[src] [end_create_message]</span>")
 
 			mode = DRONE_RECHARGING
 			timer = world.time + cooldownTime
@@ -188,7 +188,7 @@
 			if(recharge_sound)
 				playsound(src, recharge_sound, 50, 1)
 			if(recharge_message)
-				visible_message("<span class='notice'>[src] [recharge_message]</span>")
+				visible_message("<span_class='notice'>[src] [recharge_message]</span>")
 
 			mode = DRONE_READY
 			update_icon()
@@ -214,26 +214,26 @@
 		GET_COMPONENT(materials, /datum/component/material_container)
 		materials.retrieve_all()
 		I.play_tool_sound(src)
-		to_chat(user, "<span class='notice'>You retrieve the materials from [src].</span>")
+		to_chat(user, "<span_class='notice'>You retrieve the materials from [src].</span>")
 
 	else if(I.tool_behaviour == TOOL_WELDER)
 		if(!(stat & BROKEN))
-			to_chat(user, "<span class='warning'>[src] doesn't need repairs.</span>")
+			to_chat(user, "<span_class='warning'>[src] doesn't need repairs.</span>")
 			return
 
 		if(!I.tool_start_check(user, amount=1))
 			return
 
 		user.visible_message(
-			"<span class='notice'>[user] begins patching up [src] with [I].</span>",
-			"<span class='notice'>You begin restoring the damage to [src]...</span>")
+			"<span_class='notice'>[user] begins patching up [src] with [I].</span>",
+			"<span_class='notice'>You begin restoring the damage to [src]...</span>")
 
 		if(!I.use_tool(src, user, 40, volume=50, amount=1))
 			return
 
 		user.visible_message(
-			"<span class='notice'>[user] fixes [src]!</span>",
-			"<span class='notice'>You restore [src] to operation.</span>")
+			"<span_class='notice'>[user] fixes [src]!</span>",
+			"<span_class='notice'>You restore [src] to operation.</span>")
 
 		stat &= ~BROKEN
 		obj_integrity = max_integrity
@@ -245,7 +245,7 @@
 	if(!(flags_1 & NODECONSTRUCT_1))
 		if(!(stat & BROKEN))
 			if(break_message)
-				audible_message("<span class='warning'>[src] [break_message]</span>")
+				audible_message("<span_class='warning'>[src] [break_message]</span>")
 			if(break_sound)
 				playsound(src, break_sound, 50, 1)
 			stat |= BROKEN

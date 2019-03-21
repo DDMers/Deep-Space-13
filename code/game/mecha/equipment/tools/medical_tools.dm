@@ -55,8 +55,8 @@
 		return
 	if(!patient_insertion_check(target))
 		return
-	occupant_message("<span class='notice'>You start putting [target] into [src]...</span>")
-	chassis.visible_message("<span class='warning'>[chassis] starts putting [target] into \the [src].</span>")
+	occupant_message("<span_class='notice'>You start putting [target] into [src]...</span>")
+	chassis.visible_message("<span_class='warning'>[chassis] starts putting [target] into \the [src].</span>")
 	if(do_after_cooldown(target))
 		if(!patient_insertion_check(target))
 			return
@@ -64,19 +64,19 @@
 		patient = target
 		START_PROCESSING(SSobj, src)
 		update_equip_info()
-		occupant_message("<span class='notice'>[target] successfully loaded into [src]. Life support functions engaged.</span>")
-		chassis.visible_message("<span class='warning'>[chassis] loads [target] into [src].</span>")
+		occupant_message("<span_class='notice'>[target] successfully loaded into [src]. Life support functions engaged.</span>")
+		chassis.visible_message("<span_class='warning'>[chassis] loads [target] into [src].</span>")
 		log_message("[target] loaded. Life support functions engaged.", LOG_MECHA)
 
 /obj/item/mecha_parts/mecha_equipment/medical/sleeper/proc/patient_insertion_check(mob/living/carbon/target)
 	if(target.buckled)
-		occupant_message("<span class='warning'>[target] will not fit into the sleeper because [target.p_theyre()] buckled to [target.buckled]!</span>")
+		occupant_message("<span_class='warning'>[target] will not fit into the sleeper because [target.p_theyre()] buckled to [target.buckled]!</span>")
 		return
 	if(target.has_buckled_mobs())
-		occupant_message("<span class='warning'>[target] will not fit into the sleeper because of the creatures attached to it!</span>")
+		occupant_message("<span_class='warning'>[target] will not fit into the sleeper because of the creatures attached to it!</span>")
 		return
 	if(patient)
-		occupant_message("<span class='warning'>The sleeper is already occupied!</span>")
+		occupant_message("<span_class='warning'>The sleeper is already occupied!</span>")
 		return
 	return 1
 
@@ -92,7 +92,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/medical/sleeper/detach()
 	if(patient)
-		occupant_message("<span class='warning'>Unable to detach [src] - equipment occupied!</span>")
+		occupant_message("<span_class='warning'>Unable to detach [src] - equipment occupied!</span>")
 		return
 	STOP_PROCESSING(SSobj, src)
 	return ..()
@@ -301,10 +301,10 @@
 	if(mode)
 		return analyze_reagents(target)
 	if(!syringes.len)
-		occupant_message("<span class=\"alert\">No syringes loaded.</span>")
+		occupant_message("<span_class=\"alert\">No syringes loaded.</span>")
 		return
 	if(reagents.total_volume<=0)
-		occupant_message("<span class=\"alert\">No available reagents to load syringe with.</span>")
+		occupant_message("<span_class=\"alert\">No available reagents to load syringe with.</span>")
 		return
 	var/turf/trg = get_turf(target)
 	var/obj/item/reagent_containers/syringe/mechsyringe = syringes[1]
@@ -328,7 +328,7 @@
 				var/mob/living/carbon/M = safepick(mobs)
 				if(M)
 					var/R
-					mechsyringe.visible_message("<span class=\"attack\"> [M] was hit by the syringe!</span>")
+					mechsyringe.visible_message("<span_class=\"attack\"> [M] was hit by the syringe!</span>")
 					if(M.can_inject(null, 1))
 						if(mechsyringe.reagents)
 							for(var/datum/reagent/A in mechsyringe.reagents.reagent_list)
@@ -479,7 +479,7 @@
 		occupant_message("The object is too far away.")
 		return 0
 	if(!A.reagents || ismob(A))
-		occupant_message("<span class=\"alert\">No reagent info gained from [A].</span>")
+		occupant_message("<span_class=\"alert\">No reagent info gained from [A].</span>")
 		return 0
 	occupant_message("Analyzing reagents...")
 	for(var/datum/reagent/R in A.reagents.reagent_list)
@@ -513,7 +513,7 @@
 	if(..())
 		return
 	if(!processed_reagents.len || reagents.total_volume >= reagents.maximum_volume || !chassis.has_charge(energy_drain))
-		occupant_message("<span class=\"alert\">Reagent processing stopped.</a>")
+		occupant_message("<span_class=\"alert\">Reagent processing stopped.</a>")
 		log_message("Reagent processing stopped.", LOG_MECHA)
 		STOP_PROCESSING(SSobj, src)
 		return

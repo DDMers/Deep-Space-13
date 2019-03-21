@@ -1,7 +1,7 @@
 //CREATOR'S NOTE: DO NOT FUCKING GIVE THIS TO BOTANY!
 /obj/item/hot_potato
 	name = "hot potato"
-	desc = "A label on the side of this potato reads \"Product of DonkCo Service Wing. Activate far away from populated areas. Device will only attach to sapient creatures.\" <span class='boldnotice'>You can attack anyone with it to force it on them instead of yourself!</span>"
+	desc = "A label on the side of this potato reads \"Product of DonkCo Service Wing. Activate far away from populated areas. Device will only attach to sapient creatures.\" <span_class='boldnotice'>You can attack anyone with it to force it on them instead of yourself!</span>"
 	icon = 'icons/obj/hydroponics/harvest.dmi'
 	icon_state = "potato"
 	item_flags = NOBLUDGEON
@@ -50,7 +50,7 @@
 
 /obj/item/hot_potato/proc/detonate()
 	var/atom/location = loc
-	location.visible_message("<span class='userdanger'>[src] [detonate_explosion? "explodes" : "activates"]!</span>", "<span class='userdanger'>[src] activates! You've ran out of time!</span>")
+	location.visible_message("<span_class='userdanger'>[src] [detonate_explosion? "explodes" : "activates"]!</span>", "<span_class='userdanger'>[src] activates! You've ran out of time!</span>")
 	if(detonate_explosion)
 		explosion(src, detonate_dev_range, detonate_heavy_range, detonate_light_range, detonate_flash_range, flame_range = detonate_fire_range)
 	deactivate()
@@ -62,8 +62,8 @@
 
 /obj/item/hot_potato/attack_self(mob/user)
 	if(activate(timer, user))
-		user.visible_message("<span class='boldwarning'>[user] squeezes [src], which promptly starts to flash red-hot colors!</span>", "<span class='boldwarning'>You squeeze [src], activating its countdown and attachment mechanism!</span>",
-		"<span class='boldwarning'>You hear a mechanical click and a loud beeping!</span>")
+		user.visible_message("<span_class='boldwarning'>[user] squeezes [src], which promptly starts to flash red-hot colors!</span>", "<span_class='boldwarning'>You squeeze [src], activating its countdown and attachment mechanism!</span>",
+		"<span_class='boldwarning'>You hear a mechanical click and a loud beeping!</span>")
 		return
 	return ..()
 
@@ -83,14 +83,14 @@
 /obj/item/hot_potato/examine(mob/user)
 	. = ..()
 	if(active)
-		to_chat(user, "<span class='warning'>[src] is flashing red-hot! You should probably get rid of it!</span>")
+		to_chat(user, "<span_class='warning'>[src] is flashing red-hot! You should probably get rid of it!</span>")
 		if(show_timer)
-			to_chat(user, "<span class='warning'>[src]'s timer looks to be at [DisplayTimeText(activation_time - world.time)]!</span>")
+			to_chat(user, "<span_class='warning'>[src]'s timer looks to be at [DisplayTimeText(activation_time - world.time)]!</span>")
 
 /obj/item/hot_potato/equipped(mob/user)
 	. = ..()
 	if(active)
-		to_chat(user, "<span class='userdanger'>You have a really bad feeling about [src]!</span>")
+		to_chat(user, "<span_class='userdanger'>You have a really bad feeling about [src]!</span>")
 
 /obj/item/hot_potato/afterattack(atom/target, mob/user, adjacent, params)
 	. = ..()
@@ -102,9 +102,9 @@
 	if(!istype(victim) || user != loc || victim == user)
 		return FALSE
 	if(!victim.client)
-		to_chat(user, "<span class='boldwarning'>[src] refuses to attach to a non-sapient creature!</span>")
+		to_chat(user, "<span_class='boldwarning'>[src] refuses to attach to a non-sapient creature!</span>")
 	if(victim.stat != CONSCIOUS || !victim.get_num_legs())
-		to_chat(user, "<span class='boldwarning'>[src] refuses to attach to someone incapable of using it!</span>")
+		to_chat(user, "<span_class='boldwarning'>[src] refuses to attach to someone incapable of using it!</span>")
 	user.temporarilyRemoveItemFromInventory(src, TRUE)
 	. = FALSE
 	if(!victim.put_in_hands(src))
@@ -120,11 +120,11 @@
 		. = TRUE
 	if(.)
 		log_combat(user, victim, "forced a hot potato with explosive variables ([detonate_explosion]-[detonate_dev_range]/[detonate_heavy_range]/[detonate_light_range]/[detonate_flash_range]/[detonate_fire_range]) onto")
-		user.visible_message("<span class='userdanger'>[user] forces [src] onto [victim]!</span>", "<span class='userdanger'>You force [src] onto [victim]!</span>", "<span class='boldwarning'>You hear a mechanical click and a beep.</span>")
+		user.visible_message("<span_class='userdanger'>[user] forces [src] onto [victim]!</span>", "<span_class='userdanger'>You force [src] onto [victim]!</span>", "<span_class='boldwarning'>You hear a mechanical click and a beep.</span>")
 		colorize(null)
 	else
 		log_combat(user, victim, "tried to force a hot potato with explosive variables ([detonate_explosion]-[detonate_dev_range]/[detonate_heavy_range]/[detonate_light_range]/[detonate_flash_range]/[detonate_fire_range]) onto")
-		user.visible_message("<span class='boldwarning'>[user] tried to force [src] onto [victim], but it could not attach!</span>", "<span class='boldwarning'>You try to force [src] onto [victim], but it is unable to attach!</span>", "<span class='boldwarning'>You hear a mechanical click and two buzzes.</span>")
+		user.visible_message("<span_class='boldwarning'>[user] tried to force [src] onto [victim], but it could not attach!</span>", "<span_class='boldwarning'>You try to force [src] onto [victim], but it is unable to attach!</span>", "<span_class='boldwarning'>You hear a mechanical click and two buzzes.</span>")
 		user.put_in_hands(src)
 
 /obj/item/hot_potato/dropped(mob/user)
@@ -168,7 +168,7 @@
 	detonate_explosion = FALSE
 
 /obj/item/hot_potato/harmless/toy
-	desc = "A label on the side of this potato reads \"Product of DonkCo Toys and Recreation department.\" <span class='boldnotice'>You can attack anyone with it to put it on them instead, if they have a free hand to take it!</span>"
+	desc = "A label on the side of this potato reads \"Product of DonkCo Toys and Recreation department.\" <span_class='boldnotice'>You can attack anyone with it to put it on them instead, if they have a free hand to take it!</span>"
 	sticky = FALSE
 	reusable = TRUE
 	forceful_attachment = FALSE

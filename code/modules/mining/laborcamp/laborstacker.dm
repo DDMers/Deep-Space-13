@@ -40,10 +40,10 @@ GLOBAL_LIST(labor_sheet_values)
 			if(!user.transferItemToLoc(I, src))
 				return
 			inserted_id = I
-			to_chat(user, "<span class='notice'>You insert [I].</span>")
+			to_chat(user, "<span_class='notice'>You insert [I].</span>")
 			return
 		else
-			to_chat(user, "<span class='notice'>There's an ID inserted already.</span>")
+			to_chat(user, "<span_class='notice'>There's an ID inserted already.</span>")
 	return ..()
 
 /obj/machinery/mineral/labor_claim_console/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, \
@@ -98,20 +98,20 @@ GLOBAL_LIST(labor_sheet_values)
 			to_chat(usr, "Points transferred.")
 		if("move_shuttle")
 			if(!alone_in_area(get_area(src), usr))
-				to_chat(usr, "<span class='warning'>Prisoners are only allowed to be released while alone.</span>")
+				to_chat(usr, "<span_class='warning'>Prisoners are only allowed to be released while alone.</span>")
 			else
 				switch(SSshuttle.moveShuttle("laborcamp", "laborcamp_home", TRUE))
 					if(1)
-						to_chat(usr, "<span class='notice'>Shuttle not found.</span>")
+						to_chat(usr, "<span_class='notice'>Shuttle not found.</span>")
 					if(2)
-						to_chat(usr, "<span class='notice'>Shuttle already at station.</span>")
+						to_chat(usr, "<span_class='notice'>Shuttle already at station.</span>")
 					if(3)
-						to_chat(usr, "<span class='notice'>No permission to dock could be granted.</span>")
+						to_chat(usr, "<span_class='notice'>No permission to dock could be granted.</span>")
 					else
 						if(!(obj_flags & EMAGGED))
 							Radio.set_frequency(FREQ_SECURITY)
 							Radio.talk_into(src, "[inserted_id.registered_name] has returned to the station. Minerals and Prisoner ID card ready for retrieval.", FREQ_SECURITY, get_spans(), get_default_language())
-						to_chat(usr, "<span class='notice'>Shuttle received message and will be sent shortly.</span>")
+						to_chat(usr, "<span_class='notice'>Shuttle received message and will be sent shortly.</span>")
 
 /obj/machinery/mineral/labor_claim_console/proc/check_auth()
 	if(obj_flags & EMAGGED)
@@ -128,7 +128,7 @@ GLOBAL_LIST(labor_sheet_values)
 /obj/machinery/mineral/labor_claim_console/emag_act(mob/user)
 	if(!(obj_flags & EMAGGED))
 		obj_flags |= EMAGGED
-		to_chat(user, "<span class='warning'>PZZTTPFFFT</span>")
+		to_chat(user, "<span_class='warning'>PZZTTPFFFT</span>")
 
 
 /**********************Prisoner Collection Unit**************************/
@@ -166,11 +166,11 @@ GLOBAL_LIST(labor_sheet_values)
 	if(istype(I, /obj/item/card/id))
 		if(istype(I, /obj/item/card/id/prisoner))
 			var/obj/item/card/id/prisoner/prisoner_id = I
-			to_chat(user, "<span class='notice'><B>ID: [prisoner_id.registered_name]</B></span>")
-			to_chat(user, "<span class='notice'>Points Collected:[prisoner_id.points]</span>")
-			to_chat(user, "<span class='notice'>Point Quota: [prisoner_id.goal]</span>")
-			to_chat(user, "<span class='notice'>Collect points by bringing smelted minerals to the Labor Shuttle stacking machine. Reach your quota to earn your release.</span>")
+			to_chat(user, "<span_class='notice'><B>ID: [prisoner_id.registered_name]</B></span>")
+			to_chat(user, "<span_class='notice'>Points Collected:[prisoner_id.points]</span>")
+			to_chat(user, "<span_class='notice'>Point Quota: [prisoner_id.goal]</span>")
+			to_chat(user, "<span_class='notice'>Collect points by bringing smelted minerals to the Labor Shuttle stacking machine. Reach your quota to earn your release.</span>")
 		else
-			to_chat(user, "<span class='warning'>Error: Invalid ID</span>")
+			to_chat(user, "<span_class='warning'>Error: Invalid ID</span>")
 	else
 		return ..()

@@ -11,8 +11,8 @@
 		if (prob(90))
 			log_combat(M, src, "attacked")
 			playsound(loc, 'sound/weapons/slash.ogg', 25, 1, -1)
-			visible_message("<span class='danger'>[M] has slashed at [src]!</span>", \
-							"<span class='userdanger'>[M] has slashed at [src]!</span>")
+			visible_message("<span_class='danger'>[M] has slashed at [src]!</span>", \
+							"<span_class='userdanger'>[M] has slashed at [src]!</span>")
 			if(prob(8))
 				flash_act(affect_silicon = 1)
 			log_combat(M, src, "attacked")
@@ -20,8 +20,8 @@
 			updatehealth()
 		else
 			playsound(loc, 'sound/weapons/slashmiss.ogg', 25, 1, -1)
-			visible_message("<span class='danger'>[M] took a swipe at [src]!</span>", \
-							"<span class='userdanger'>[M] took a swipe at [src]!</span>")
+			visible_message("<span_class='danger'>[M] took a swipe at [src]!</span>", \
+							"<span_class='userdanger'>[M] took a swipe at [src]!</span>")
 
 /mob/living/silicon/attack_animal(mob/living/simple_animal/M)
 	. = ..()
@@ -31,7 +31,7 @@
 			for(var/mob/living/N in buckled_mobs)
 				N.Paralyze(20)
 				unbuckle_mob(N)
-				N.visible_message("<span class='boldwarning'>[N] is knocked off of [src] by [M]!</span>")
+				N.visible_message("<span_class='boldwarning'>[N] is knocked off of [src] by [M]!</span>")
 		switch(M.melee_damage_type)
 			if(BRUTE)
 				adjustBruteLoss(damage)
@@ -58,8 +58,8 @@
 		..(user, 1)
 		adjustBruteLoss(rand(10, 15))
 		playsound(loc, "punch", 25, 1, -1)
-		visible_message("<span class='danger'>[user] has punched [src]!</span>", \
-				"<span class='userdanger'>[user] has punched [src]!</span>")
+		visible_message("<span_class='danger'>[user] has punched [src]!</span>", \
+				"<span_class='userdanger'>[user] has punched [src]!</span>")
 		return 1
 	return 0
 
@@ -71,14 +71,14 @@
 	switch(M.a_intent)
 		if ("help")
 			M.visible_message("[M] pets [src].", \
-							"<span class='notice'>You pet [src].</span>")
+							"<span_class='notice'>You pet [src].</span>")
 		if("grab")
 			grabbedby(M)
 		else
 			M.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
 			playsound(src.loc, 'sound/effects/bang.ogg', 10, 1)
-			visible_message("<span class='danger'>[M] punches [src], but doesn't leave a dent.</span>", \
-				"<span class='warning'>[M] punches [src], but doesn't leave a dent.</span>", null, COMBAT_MESSAGE_RANGE)
+			visible_message("<span_class='danger'>[M] punches [src], but doesn't leave a dent.</span>", \
+				"<span_class='warning'>[M] punches [src], but doesn't leave a dent.</span>", null, COMBAT_MESSAGE_RANGE)
 
 /mob/living/silicon/attack_drone(mob/living/simple_animal/drone/M)
 	if(M.a_intent == INTENT_HARM)
@@ -94,7 +94,7 @@
 
 /mob/living/silicon/emp_act(severity)
 	. = ..()
-	to_chat(src, "<span class='danger'>Warning: Electromagnetic pulse detected.</span>")
+	to_chat(src, "<span_class='danger'>Warning: Electromagnetic pulse detected.</span>")
 	if(. & EMP_PROTECT_SELF)
 		return
 	switch(severity)
@@ -102,12 +102,12 @@
 			src.take_bodypart_damage(20)
 		if(2)
 			src.take_bodypart_damage(10)
-	to_chat(src, "<span class='userdanger'>*BZZZT*</span>")
+	to_chat(src, "<span_class='userdanger'>*BZZZT*</span>")
 	for(var/mob/living/M in buckled_mobs)
 		if(prob(severity*50))
 			unbuckle_mob(M)
 			M.Paralyze(40)
-			M.visible_message("<span class='boldwarning'>[M] is thrown off of [src]!</span>")
+			M.visible_message("<span_class='boldwarning'>[M] is thrown off of [src]!</span>")
 	flash_act(affect_silicon = 1)
 
 /mob/living/silicon/bullet_act(obj/item/projectile/Proj, def_zone)
@@ -116,13 +116,13 @@
 		adjustBruteLoss(Proj.damage)
 		if(prob(Proj.damage*1.5))
 			for(var/mob/living/M in buckled_mobs)
-				M.visible_message("<span class='boldwarning'>[M] is knocked off of [src]!</span>")
+				M.visible_message("<span_class='boldwarning'>[M] is knocked off of [src]!</span>")
 				unbuckle_mob(M)
 				M.Paralyze(40)
 	if(Proj.stun || Proj.knockdown || Proj.paralyze)
 		for(var/mob/living/M in buckled_mobs)
 			unbuckle_mob(M)
-			M.visible_message("<span class='boldwarning'>[M] is knocked off of [src] by the [Proj]!</span>")
+			M.visible_message("<span_class='boldwarning'>[M] is knocked off of [src] by the [Proj]!</span>")
 	Proj.on_hit(src)
 	return 2
 

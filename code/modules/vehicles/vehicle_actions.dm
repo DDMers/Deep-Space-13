@@ -130,15 +130,15 @@
 
 /datum/action/vehicle/sealed/horn/Trigger()
 	if(world.time - last_honk_time > 20)
-		vehicle_entered_target.visible_message("<span class='danger'>[vehicle_entered_target] loudly honks!</span>")
-		to_chat(owner, "<span class='notice'>You press the vehicle's horn.</span>")
+		vehicle_entered_target.visible_message("<span_class='danger'>[vehicle_entered_target] loudly honks!</span>")
+		to_chat(owner, "<span_class='notice'>You press the vehicle's horn.</span>")
 		playsound(vehicle_entered_target, hornsound, 75)
 		last_honk_time = world.time
 
 /datum/action/vehicle/sealed/horn/clowncar/Trigger()
 	if(world.time - last_honk_time > 20)
-		vehicle_entered_target.visible_message("<span class='danger'>[vehicle_entered_target] loudly honks!</span>")
-		to_chat(owner, "<span class='notice'>You press the vehicle's horn.</span>")
+		vehicle_entered_target.visible_message("<span_class='danger'>[vehicle_entered_target] loudly honks!</span>")
+		to_chat(owner, "<span_class='notice'>You press the vehicle's horn.</span>")
 		last_honk_time = world.time
 		if(vehicle_target.inserted_key)
 			vehicle_target.inserted_key.attack_self(owner) //The key plays a sound
@@ -151,7 +151,7 @@
 	button_icon_state = "car_dump"
 
 /datum/action/vehicle/sealed/DumpKidnappedMobs/Trigger()
-	vehicle_entered_target.visible_message("<span class='danger'>[vehicle_entered_target] starts dumping the people inside of it.</span>")
+	vehicle_entered_target.visible_message("<span_class='danger'>[vehicle_entered_target] starts dumping the people inside of it.</span>")
 	vehicle_entered_target.DumpSpecificMobs(VEHICLE_CONTROL_KIDNAPPED)
 
 
@@ -174,7 +174,7 @@
 	if(istype(vehicle_entered_target, /obj/vehicle/sealed/car/clowncar))
 		var/obj/vehicle/sealed/car/clowncar/C = vehicle_entered_target
 		if(C.cannonbusy)
-			to_chat(owner, "<span class='notice'>Please wait for the vehicle to finish its current action first.</span>")
+			to_chat(owner, "<span_class='notice'>Please wait for the vehicle to finish its current action first.</span>")
 		C.ToggleCannon()
 
 /datum/action/vehicle/sealed/Thank
