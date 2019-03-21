@@ -26,6 +26,9 @@ SUBSYSTEM_DEF(job)
 
 /datum/controller/subsystem/job/proc/set_overflow_role(new_overflow_role)
 	var/datum/job/new_overflow = GetJob(new_overflow_role)
+	if(!new_overflow)
+		new_overflow_role = overflow_role
+		new_overflow = GetJob(overflow_role)//Failsafe incase the config'd overflow role doesn't exist.
 	var/cap = CONFIG_GET(number/overflow_cap)
 
 	new_overflow.spawn_positions = cap
