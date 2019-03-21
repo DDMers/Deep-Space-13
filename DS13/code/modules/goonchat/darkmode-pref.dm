@@ -36,6 +36,8 @@
 	winset(src, "stat", "tab-background-color = #272727;tab-background-color = none")
 	winset(src, "stat", "text-color = #99aab5;text-color = #000000")
 	winset(src, "stat", "tab-text-color = #99aab5;tab-text-color = #000000")
+	winset(src, "stat", "prefix-color = #ebebeb;prefix-color = #000000")
+	winset(src, "stat", "suffix-color = #ebebeb;suffix-color = #000000")
 	//Say, OOC, me Buttons etc.
 	winset(src, "saybutton", "background-color = #272727;background-color = none")
 	winset(src, "saybutton", "text-color = #99aab5;text-color = #000000")
@@ -84,6 +86,8 @@
 	winset(src, "stat", "tab-background-color = none;tab-background-color = #272727")
 	winset(src, "stat", "text-color = #000000;text-color = #99aab5")
 	winset(src, "stat", "tab-text-color = #000000;tab-text-color = #99aab5")
+	winset(src, "stat", "prefix-color = #000000;prefix-color = #ebebeb")
+	winset(src, "stat", "suffix-color = #000000;suffix-color = #ebebeb")
 	//Say, OOC, me Buttons etc.
 	winset(src, "saybutton", "background-color = none;background-color = #272727")
 	winset(src, "saybutton", "text-color = #000000;text-color = #99aab5")
