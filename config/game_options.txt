@@ -434,6 +434,9 @@ ROUNDSTART_RACES plasmaman
 
 ## Races that are better than humans in some ways, but worse in others
 ROUNDSTART_RACES ethereal
+ROUNDSTART_RACES klingon
+ROUNDSTART_RACES andorian
+ROUNDSTART_RACES vulcan
 #ROUNDSTART_RACES jelly
 #ROUNDSTART_RACES golem
 #ROUNDSTART_RACES adamantine
