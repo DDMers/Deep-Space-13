@@ -54,7 +54,7 @@
 /obj/machinery/chem_heater/examine(mob/user)
 	..()
 	if(in_range(user, src) || isobserver(user))
-		to_chat(user, "<span_class='notice'>The status display reads: Heating reagents at <b>[heater_coefficient*1000]%</b> speed.<span>")
+		to_chat(user, "<span class='notice'>The status display reads: Heating reagents at <b>[heater_coefficient*1000]%</b> speed.<span>")
 
 /obj/machinery/chem_heater/process()
 	..()
@@ -78,7 +78,7 @@
 		if(!user.transferItemToLoc(B, src))
 			return
 		replace_beaker(user, B)
-		to_chat(user, "<span_class='notice'>You add [B] to [src].</span>")
+		to_chat(user, "<span class='notice'>You add [B] to [src].</span>")
 		updateUsrDialog()
 		update_icon()
 		return

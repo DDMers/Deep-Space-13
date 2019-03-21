@@ -9,18 +9,18 @@
 
 /datum/action/changeling/regenerate/sting_action(mob/living/user)
 	..()
-	to_chat(user, "<span_class='notice'>You feel an itching, both inside and \
+	to_chat(user, "<span class='notice'>You feel an itching, both inside and \
 		outside as your tissues knit and reknit.</span>")
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		var/list/missing = C.get_missing_limbs()
 		if(missing.len)
 			playsound(user, 'sound/magic/demon_consume.ogg', 50, 1)
-			C.visible_message("<span_class='warning'>[user]'s missing limbs \
+			C.visible_message("<span class='warning'>[user]'s missing limbs \
 				reform, making a loud, grotesque sound!</span>",
-				"<span_class='userdanger'>Your limbs regrow, making a \
+				"<span class='userdanger'>Your limbs regrow, making a \
 				loud, crunchy sound and giving you great pain!</span>",
-				"<span_class='italics'>You hear organic matter ripping \
+				"<span class='italics'>You hear organic matter ripping \
 				and tearing!</span>")
 			C.emote("scream")
 			C.regenerate_limbs(1)

@@ -23,7 +23,7 @@
 	return cell
 
 /obj/item/melee/baton/suicide_act(mob/user)
-	user.visible_message("<span_class='suicide'>[user] is putting the live [name] in [user.p_their()] mouth! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is putting the live [name] in [user.p_their()] mouth! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (FIRELOSS)
 
 /obj/item/melee/baton/Initialize()
@@ -67,23 +67,23 @@
 /obj/item/melee/baton/examine(mob/user)
 	..()
 	if(cell)
-		to_chat(user, "<span_class='notice'>\The [src] is [round(cell.percent())]% charged.</span>")
+		to_chat(user, "<span class='notice'>\The [src] is [round(cell.percent())]% charged.</span>")
 	else
-		to_chat(user, "<span_class='warning'>\The [src] does not have a power source installed.</span>")
+		to_chat(user, "<span class='warning'>\The [src] does not have a power source installed.</span>")
 
 /obj/item/melee/baton/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stock_parts/cell))
 		var/obj/item/stock_parts/cell/C = W
 		if(cell)
-			to_chat(user, "<span_class='notice'>[src] already has a cell.</span>")
+			to_chat(user, "<span class='notice'>[src] already has a cell.</span>")
 		else
 			if(C.maxcharge < hitcost)
-				to_chat(user, "<span_class='notice'>[src] requires a higher capacity cell.</span>")
+				to_chat(user, "<span class='notice'>[src] requires a higher capacity cell.</span>")
 				return
 			if(!user.transferItemToLoc(W, src))
 				return
 			cell = W
-			to_chat(user, "<span_class='notice'>You install a cell in [src].</span>")
+			to_chat(user, "<span class='notice'>You install a cell in [src].</span>")
 			update_icon()
 
 	else if(W.tool_behaviour == TOOL_SCREWDRIVER)
@@ -91,7 +91,7 @@
 			cell.update_icon()
 			cell.forceMove(get_turf(src))
 			cell = null
-			to_chat(user, "<span_class='notice'>You remove the cell from [src].</span>")
+			to_chat(user, "<span class='notice'>You remove the cell from [src].</span>")
 			status = 0
 			update_icon()
 	else
@@ -100,21 +100,21 @@
 /obj/item/melee/baton/attack_self(mob/user)
 	if(cell && cell.charge > hitcost)
 		status = !status
-		to_chat(user, "<span_class='notice'>[src] is now [status ? "on" : "off"].</span>")
+		to_chat(user, "<span class='notice'>[src] is now [status ? "on" : "off"].</span>")
 		playsound(loc, "sparks", 75, 1, -1)
 	else
 		status = 0
 		if(!cell)
-			to_chat(user, "<span_class='warning'>[src] does not have a power source!</span>")
+			to_chat(user, "<span class='warning'>[src] does not have a power source!</span>")
 		else
-			to_chat(user, "<span_class='warning'>[src] is out of charge.</span>")
+			to_chat(user, "<span class='warning'>[src] is out of charge.</span>")
 	update_icon()
 	add_fingerprint(user)
 
 /obj/item/melee/baton/attack(mob/M, mob/living/carbon/human/user)
 	if(status && user.has_trait(TRAIT_CLUMSY) && prob(50))
-		user.visible_message("<span_class='danger'>[user] accidentally hits [user.p_them()]self with [src]!</span>", \
-							"<span_class='userdanger'>You accidentally hit yourself with [src]!</span>")
+		user.visible_message("<span class='danger'>[user] accidentally hits [user.p_them()]self with [src]!</span>", \
+							"<span class='userdanger'>You accidentally hit yourself with [src]!</span>")
 		user.Paralyze(stunforce*3)
 		deductcharge(hitcost)
 		return
@@ -135,8 +135,8 @@
 				user.do_attack_animation(M)
 				return
 		else
-			M.visible_message("<span_class='warning'>[user] has prodded [M] with [src]. Luckily it was off.</span>", \
-							"<span_class='warning'>[user] has prodded you with [src]. Luckily it was off</span>")
+			M.visible_message("<span class='warning'>[user] has prodded [M] with [src]. Luckily it was off.</span>", \
+							"<span class='warning'>[user] has prodded you with [src]. Luckily it was off</span>")
 	else
 		if(status)
 			baton_stun(M, user)
@@ -163,8 +163,8 @@
 	if(user)
 		L.lastattacker = user.real_name
 		L.lastattackerckey = user.ckey
-		L.visible_message("<span_class='danger'>[user] has stunned [L] with [src]!</span>", \
-								"<span_class='userdanger'>[user] has stunned you with [src]!</span>")
+		L.visible_message("<span class='danger'>[user] has stunned [L] with [src]!</span>", \
+								"<span class='userdanger'>[user] has stunned you with [src]!</span>")
 		log_combat(user, L, "stunned")
 
 	playsound(loc, 'sound/weapons/egloves.ogg', 50, 1, -1)

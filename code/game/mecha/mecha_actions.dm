@@ -179,10 +179,10 @@
 	button_icon_state = "mech_defense_mode_[chassis.defence_mode ? "on" : "off"]"
 	if(chassis.defence_mode)
 		chassis.deflect_chance = chassis.defence_mode_deflect_chance
-		chassis.occupant_message("<span_class='notice'>You enable [chassis] defence mode.</span>")
+		chassis.occupant_message("<span class='notice'>You enable [chassis] defence mode.</span>")
 	else
 		chassis.deflect_chance = initial(chassis.deflect_chance)
-		chassis.occupant_message("<span_class='danger'>You disable [chassis] defence mode.</span>")
+		chassis.occupant_message("<span class='danger'>You disable [chassis] defence mode.</span>")
 	chassis.log_message("Toggled defence mode.", LOG_MECHA)
 	UpdateButtonIcon()
 
@@ -204,13 +204,13 @@
 		chassis.bumpsmash = 1
 		chassis.step_in = min(1, round(chassis.step_in/2))
 		chassis.step_energy_drain = max(chassis.overload_step_energy_drain_min,chassis.step_energy_drain*chassis.leg_overload_coeff)
-		chassis.occupant_message("<span_class='danger'>You enable leg actuators overload.</span>")
+		chassis.occupant_message("<span class='danger'>You enable leg actuators overload.</span>")
 	else
 		chassis.leg_overload_mode = 0
 		chassis.bumpsmash = 0
 		chassis.step_in = initial(chassis.step_in)
 		chassis.step_energy_drain = chassis.normal_step_energy_drain
-		chassis.occupant_message("<span_class='notice'>You disable leg actuators overload.</span>")
+		chassis.occupant_message("<span class='notice'>You disable leg actuators overload.</span>")
 	UpdateButtonIcon()
 
 /datum/action/innate/mecha/mech_smoke

@@ -193,9 +193,9 @@ Auto Patrol: []"},
 	..()
 	if(emagged == 2)
 		if(user)
-			to_chat(user, "<span_class='danger'>You short out [src]'s target assessment circuits.</span>")
+			to_chat(user, "<span class='danger'>You short out [src]'s target assessment circuits.</span>")
 			oldtarget_name = user.name
-		audible_message("<span_class='danger'>[src] buzzes oddly!</span>")
+		audible_message("<span class='danger'>[src] buzzes oddly!</span>")
 		declare_arrests = FALSE
 		update_icon()
 
@@ -232,8 +232,8 @@ Auto Patrol: []"},
 /mob/living/simple_animal/bot/secbot/proc/cuff(mob/living/carbon/C)
 	mode = BOT_ARREST
 	playsound(src, 'sound/weapons/cablecuff.ogg', 30, TRUE, -2)
-	C.visible_message("<span_class='danger'>[src] is trying to put zipties on [C]!</span>",\
-						"<span_class='userdanger'>[src] is trying to put zipties on you!</span>")
+	C.visible_message("<span class='danger'>[src] is trying to put zipties on [C]!</span>",\
+						"<span class='userdanger'>[src] is trying to put zipties on you!</span>")
 	addtimer(CALLBACK(src, .proc/attempt_handcuff, C), 60)
 
 /mob/living/simple_animal/bot/secbot/proc/attempt_handcuff(mob/living/carbon/C)
@@ -265,8 +265,8 @@ Auto Patrol: []"},
 	if(declare_arrests)
 		var/area/location = get_area(src)
 		speak("[arrest_type ? "Detaining" : "Arresting"] level [threat] scumbag <b>[C]</b> in [location].", radio_channel)
-	C.visible_message("<span_class='danger'>[src] has stunned [C]!</span>",\
-							"<span_class='userdanger'>[src] has stunned you!</span>")
+	C.visible_message("<span class='danger'>[src] has stunned [C]!</span>",\
+							"<span class='userdanger'>[src] has stunned you!</span>")
 
 /mob/living/simple_animal/bot/secbot/handle_automated_action()
 	if(!..())
@@ -406,7 +406,7 @@ Auto Patrol: []"},
 /mob/living/simple_animal/bot/secbot/explode()
 
 	walk_to(src,0)
-	visible_message("<span_class='boldannounce'>[src] blows apart!</span>")
+	visible_message("<span class='boldannounce'>[src] blows apart!</span>")
 	var/atom/Tsec = drop_location()
 
 	var/obj/item/bot_assembly/secbot/Sa = new (Tsec)

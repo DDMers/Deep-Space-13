@@ -55,7 +55,7 @@
 	if(!usr.canUseTopic(src))
 		return
 	if(!is_station_level(z) && !is_reserved_level(z)) //Can only use in transit and on SS13
-		to_chat(usr, "<span_class='boldannounce'>Unable to establish a connection</span>: \black You're too far away from the station!")
+		to_chat(usr, "<span class='boldannounce'>Unable to establish a connection</span>: \black You're too far away from the station!")
 		return
 	usr.set_machine(src)
 
@@ -83,7 +83,7 @@
 				if(obj_flags & EMAGGED)
 					authenticated = 2
 					auth_id = "Unknown"
-					to_chat(M, "<span_class='warning'>[src] lets out a quiet alarm as its login is overridden.</span>")
+					to_chat(M, "<span class='warning'>[src] lets out a quiet alarm as its login is overridden.</span>")
 					playsound(src, 'sound/machines/terminal_on.ogg', 50, 0)
 					playsound(src, 'sound/machines/terminal_alert.ogg', 25, 0)
 					if(prob(25))
@@ -110,21 +110,21 @@
 						tmp_alertlevel = SEC_LEVEL_BLUE //Cannot engage delta with this
 					set_security_level(tmp_alertlevel)
 					if(GLOB.security_level != old_level)
-						to_chat(usr, "<span_class='notice'>Authorization confirmed. Modifying security level.</span>")
+						to_chat(usr, "<span class='notice'>Authorization confirmed. Modifying security level.</span>")
 						playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, 0)
 						//Only notify people if an actual change happened
 						var/security_level = get_security_level()
 						log_game("[key_name(usr)] has changed the security level to [security_level] with [src] at [AREACOORD(usr)].")
 						message_admins("[ADMIN_LOOKUPFLW(usr)] has changed the security level to [security_level] with [src] at [AREACOORD(usr)].")
-						deadchat_broadcast("<span_class='deadsay'><span_class='name'>[usr.real_name]</span> has changed the security level to [security_level] with [src] at <span_class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
+						deadchat_broadcast("<span class='deadsay'><span class='name'>[usr.real_name]</span> has changed the security level to [security_level] with [src] at <span class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
 					tmp_alertlevel = 0
 				else
-					to_chat(usr, "<span_class='warning'>You are not authorized to do this!</span>")
+					to_chat(usr, "<span class='warning'>You are not authorized to do this!</span>")
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 					tmp_alertlevel = 0
 				state = STATE_DEFAULT
 			else
-				to_chat(usr, "<span_class='warning'>You need to swipe your ID!</span>")
+				to_chat(usr, "<span class='warning'>You need to swipe your ID!</span>")
 				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 
 		if("announce")
@@ -135,7 +135,7 @@
 		if("crossserver")
 			if(authenticated==2)
 				if(!checkCCcooldown())
-					to_chat(usr, "<span_class='warning'>Arrays recycling.  Please stand by.</span>")
+					to_chat(usr, "<span class='warning'>Arrays recycling.  Please stand by.</span>")
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 					return
 				var/input = stripped_multiline_input(usr, "Please choose a message to transmit to allied stations.  Please be aware that this process is very expensive, and abuse will lead to... termination.", "Send a message to an allied station.", "")
@@ -146,7 +146,7 @@
 				minor_announce(input, title = "Outgoing message to allied station")
 				usr.log_talk(input, LOG_SAY, tag="message to the other server")
 				message_admins("[ADMIN_LOOKUPFLW(usr)] has sent a message to the other server.")
-				deadchat_broadcast("<span_class='deadsay bold'>[usr.real_name] has sent an outgoing message to the other station(s).</span>", usr)
+				deadchat_broadcast("<span class='deadsay bold'>[usr.real_name] has sent an outgoing message to the other station(s).</span>", usr)
 				CM.lastTimeUsed = world.time
 
 		if("purchase_menu")
@@ -255,13 +255,13 @@
 			make_maint_all_access()
 			log_game("[key_name(usr)] enabled emergency maintenance access.")
 			message_admins("[ADMIN_LOOKUPFLW(usr)] enabled emergency maintenance access.")
-			deadchat_broadcast("<span_class='deadsay'><span_class='name'>[usr.real_name]</span> enabled emergency maintenance access at <span_class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
+			deadchat_broadcast("<span class='deadsay'><span class='name'>[usr.real_name]</span> enabled emergency maintenance access at <span class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
 			state = STATE_DEFAULT
 		if("disableemergency")
 			revoke_maint_all_access()
 			log_game("[key_name(usr)] disabled emergency maintenance access.")
 			message_admins("[ADMIN_LOOKUPFLW(usr)] disabled emergency maintenance access.")
-			deadchat_broadcast("<span_class='deadsay'><span_class='name'>[usr.real_name]</span> disabled emergency maintenance access at <span_class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
+			deadchat_broadcast("<span class='deadsay'><span class='name'>[usr.real_name]</span> disabled emergency maintenance access at <span class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
 			state = STATE_DEFAULT
 
 		// Status display stuff
@@ -286,23 +286,23 @@
 		if("MessageCentCom")
 			if(authenticated==2)
 				if(!checkCCcooldown())
-					to_chat(usr, "<span_class='warning'>Arrays recycling.  Please stand by.</span>")
+					to_chat(usr, "<span class='warning'>Arrays recycling.  Please stand by.</span>")
 					return
 				var/input = stripped_input(usr, "Please choose a message to transmit to CentCom via quantum entanglement.  Please be aware that this process is very expensive, and abuse will lead to... termination.  Transmission does not guarantee a response.", "Send a message to CentCom.", "")
 				if(!input || !(usr in view(1,src)) || !checkCCcooldown())
 					return
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, 0)
 				CentCom_announce(input, usr)
-				to_chat(usr, "<span_class='notice'>Message transmitted to Central Command.</span>")
+				to_chat(usr, "<span class='notice'>Message transmitted to Central Command.</span>")
 				usr.log_talk(input, LOG_SAY, tag="CentCom announcement")
-				deadchat_broadcast("<span_class='deadsay'><span_class='name'>[usr.real_name]</span> has messaged CentCom, \"[input]\" at <span_class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
+				deadchat_broadcast("<span class='deadsay'><span class='name'>[usr.real_name]</span> has messaged CentCom, \"[input]\" at <span class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
 				CM.lastTimeUsed = world.time
 
 		// OMG SYNDICATE ...LETTERHEAD
 		if("MessageSyndicate")
 			if((authenticated==2) && (obj_flags & EMAGGED))
 				if(!checkCCcooldown())
-					to_chat(usr, "<span_class='warning'>Arrays recycling.  Please stand by.</span>")
+					to_chat(usr, "<span class='warning'>Arrays recycling.  Please stand by.</span>")
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 					return
 				var/input = stripped_input(usr, "Please choose a message to transmit to \[ABNORMAL ROUTING COORDINATES\] via quantum entanglement.  Please be aware that this process is very expensive, and abuse will lead to... termination. Transmission does not guarantee a response.", "Send a message to /??????/.", "")
@@ -310,13 +310,13 @@
 					return
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, 0)
 				Syndicate_announce(input, usr)
-				to_chat(usr, "<span_class='danger'>SYSERR @l(19833)of(transmit.dm): !@$ MESSAGE TRANSMITTED TO SYNDICATE COMMAND.</span>")
+				to_chat(usr, "<span class='danger'>SYSERR @l(19833)of(transmit.dm): !@$ MESSAGE TRANSMITTED TO SYNDICATE COMMAND.</span>")
 				usr.log_talk(input, LOG_SAY, tag="Syndicate announcement")
-				deadchat_broadcast("<span_class='deadsay'><span_class='name'>[usr.real_name]</span> has messaged the Syndicate, \"[input]\" at <span_class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
+				deadchat_broadcast("<span class='deadsay'><span class='name'>[usr.real_name]</span> has messaged the Syndicate, \"[input]\" at <span class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
 				CM.lastTimeUsed = world.time
 
 		if("RestoreBackup")
-			to_chat(usr, "<span_class='notice'>Backup routing data restored!</span>")
+			to_chat(usr, "<span class='notice'>Backup routing data restored!</span>")
 			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, 0)
 			obj_flags &= ~EMAGGED
 			updateDialog()
@@ -324,13 +324,13 @@
 		if("nukerequest") //When there's no other way
 			if(authenticated==2)
 				if(!checkCCcooldown())
-					to_chat(usr, "<span_class='warning'>Arrays recycling. Please stand by.</span>")
+					to_chat(usr, "<span class='warning'>Arrays recycling. Please stand by.</span>")
 					return
 				var/input = stripped_input(usr, "Please enter the reason for requesting the nuclear self-destruct codes. Misuse of the nuclear request system will not be tolerated under any circumstances.  Transmission does not guarantee a response.", "Self Destruct Code Request.","")
 				if(!input || !(usr in view(1,src)) || !checkCCcooldown())
 					return
 				Nuke_request(input, usr)
-				to_chat(usr, "<span_class='notice'>Request sent.</span>")
+				to_chat(usr, "<span class='notice'>Request sent.</span>")
 				usr.log_message("has requested the nuclear codes from CentCom", LOG_SAY)
 				priority_announce("The codes for the on-station nuclear self-destruct have been requested by [usr]. Confirmation or denial of this request will be sent shortly.", "Nuclear Self Destruct Codes Requested",'sound/ai/commandreport.ogg')
 				CM.lastTimeUsed = world.time
@@ -397,7 +397,7 @@
 				var/security_level = get_security_level()
 				log_game("[key_name(usr)] has changed the security level to [security_level] from [src] at [AREACOORD(usr)].")
 				message_admins("[ADMIN_LOOKUPFLW(usr)] has changed the security level to [security_level] from [src] at [AREACOORD(usr)].")
-				deadchat_broadcast("<span_class='deadsay'><span_class='name'>[usr.real_name]</span> has changed the security level to [security_level] from [src] at [get_area_name(usr, TRUE)].</span>", usr)
+				deadchat_broadcast("<span class='deadsay'><span class='name'>[usr.real_name]</span> has changed the security level to [security_level] from [src] at [get_area_name(usr, TRUE)].</span>", usr)
 			tmp_alertlevel = 0
 			aistate = STATE_DEFAULT
 		if("ai-changeseclevel")
@@ -408,13 +408,13 @@
 			make_maint_all_access()
 			log_game("[key_name(usr)] enabled emergency maintenance access.")
 			message_admins("[ADMIN_LOOKUPFLW(usr)] enabled emergency maintenance access.")
-			deadchat_broadcast("<span_class='deadsay bold'>[usr.real_name] enabled emergency maintenance access.</span>", usr)
+			deadchat_broadcast("<span class='deadsay bold'>[usr.real_name] enabled emergency maintenance access.</span>", usr)
 			aistate = STATE_DEFAULT
 		if("ai-disableemergency")
 			revoke_maint_all_access()
 			log_game("[key_name(usr)] disabled emergency maintenance access.")
 			message_admins("[ADMIN_LOOKUPFLW(usr)] disabled emergency maintenance access.")
-			deadchat_broadcast("<span_class='deadsay bold'>[usr.real_name] disabled emergency maintenance access.</span>", usr)
+			deadchat_broadcast("<span class='deadsay bold'>[usr.real_name] disabled emergency maintenance access.</span>", usr)
 			aistate = STATE_DEFAULT
 
 	updateUsrDialog()
@@ -431,13 +431,13 @@
 	obj_flags |= EMAGGED
 	if(authenticated == 1)
 		authenticated = 2
-	to_chat(user, "<span_class='danger'>You scramble the communication routing circuits!</span>")
+	to_chat(user, "<span class='danger'>You scramble the communication routing circuits!</span>")
 	playsound(src, 'sound/machines/terminal_alert.ogg', 50, 0)
 
 /obj/machinery/computer/communications/ui_interact(mob/user)
 	. = ..()
 	if (z > 6)
-		to_chat(user, "<span_class='boldannounce'>Unable to establish a connection</span>: \black You're too far away from the station!")
+		to_chat(user, "<span class='boldannounce'>Unable to establish a connection</span>: \black You're too far away from the station!")
 		return
 
 	var/dat = ""
@@ -711,7 +711,7 @@
 	if(!input || !user.canUseTopic(src))
 		return
 	SScommunications.make_announcement(user, is_silicon, input)
-	deadchat_broadcast("<span_class='deadsay'><span_class='name'>[user.real_name]</span> made a priority announcement from <span_class='name'>[get_area_name(usr, TRUE)]</span>.</span>", user)
+	deadchat_broadcast("<span class='deadsay'><span class='name'>[user.real_name]</span> made a priority announcement from <span class='name'>[get_area_name(usr, TRUE)]</span>.</span>", user)
 
 /obj/machinery/computer/communications/proc/post_status(command, data1, data2)
 

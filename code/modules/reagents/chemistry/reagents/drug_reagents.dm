@@ -27,7 +27,7 @@
 	..()
 
 /datum/reagent/drug/space_drugs/overdose_start(mob/living/M)
-	to_chat(M, "<span_class='userdanger'>You start tripping hard!</span>")
+	to_chat(M, "<span class='userdanger'>You start tripping hard!</span>")
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[id]_overdose", /datum/mood_event/overdose, name)
 
 /datum/reagent/drug/space_drugs/overdose_process(mob/living/M)
@@ -50,7 +50,7 @@
 /datum/reagent/drug/nicotine/on_mob_life(mob/living/carbon/M)
 	if(prob(1))
 		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
-		to_chat(M, "<span_class='notice'>[smoke_message]</span>")
+		to_chat(M, "<span class='notice'>[smoke_message]</span>")
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "smoked", /datum/mood_event/smoked, name)
 	M.AdjustStun(-20, FALSE)
 	M.AdjustKnockdown(-20, FALSE)
@@ -79,7 +79,7 @@
 /datum/reagent/drug/crank/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
 		var/high_message = pick("You feel jittery.", "You feel like you gotta go fast.", "You feel like you need to step it up.")
-		to_chat(M, "<span_class='notice'>[high_message]</span>")
+		to_chat(M, "<span class='notice'>[high_message]</span>")
 	M.AdjustStun(-20, FALSE)
 	M.AdjustKnockdown(-20, FALSE)
 	M.AdjustUnconscious(-20, FALSE)
@@ -129,7 +129,7 @@
 /datum/reagent/drug/krokodil/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("You feel calm.", "You feel collected.", "You feel like you need to relax.")
 	if(prob(5))
-		to_chat(M, "<span_class='notice'>[high_message]</span>")
+		to_chat(M, "<span class='notice'>[high_message]</span>")
 	..()
 
 /datum/reagent/drug/krokodil/overdose_process(mob/living/M)
@@ -146,12 +146,12 @@
 
 /datum/reagent/drug/krokodil/addiction_act_stage2(mob/living/M)
 	if(prob(25))
-		to_chat(M, "<span_class='danger'>Your skin feels loose...</span>")
+		to_chat(M, "<span class='danger'>Your skin feels loose...</span>")
 	..()
 
 /datum/reagent/drug/krokodil/addiction_act_stage3(mob/living/M)
 	if(prob(25))
-		to_chat(M, "<span_class='danger'>Your skin starts to peel away...</span>")
+		to_chat(M, "<span class='danger'>Your skin starts to peel away...</span>")
 	M.adjustBruteLoss(3*REM, 0)
 	..()
 	. = 1
@@ -159,7 +159,7 @@
 /datum/reagent/drug/krokodil/addiction_act_stage4(mob/living/carbon/human/M)
 	CHECK_DNA_AND_SPECIES(M)
 	if(!istype(M.dna.species, /datum/species/krokodil_addict))
-		to_chat(M, "<span_class='userdanger'>Your skin falls off easily!</span>")
+		to_chat(M, "<span class='userdanger'>Your skin falls off easily!</span>")
 		M.adjustBruteLoss(50*REM, 0) // holy shit your skin just FELL THE FUCK OFF
 		M.set_species(/datum/species/krokodil_addict)
 	else
@@ -188,7 +188,7 @@
 /datum/reagent/drug/methamphetamine/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("You feel hyper.", "You feel like you need to go faster.", "You feel like you can run the world.")
 	if(prob(5))
-		to_chat(M, "<span_class='notice'>[high_message]</span>")
+		to_chat(M, "<span class='notice'>[high_message]</span>")
 	M.AdjustStun(-40, FALSE)
 	M.AdjustKnockdown(-40, FALSE)
 	M.AdjustUnconscious(-40, FALSE)
@@ -209,7 +209,7 @@
 	if(prob(20))
 		M.emote("laugh")
 	if(prob(33))
-		M.visible_message("<span_class='danger'>[M]'s hands flip out and flail everywhere!</span>")
+		M.visible_message("<span class='danger'>[M]'s hands flip out and flail everywhere!</span>")
 		M.drop_all_held_items()
 	..()
 	M.adjustToxLoss(1, 0)
@@ -281,7 +281,7 @@
 /datum/reagent/drug/bath_salts/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("You feel amped up.", "You feel ready.", "You feel like you can push it to the limit.")
 	if(prob(5))
-		to_chat(M, "<span_class='notice'>[high_message]</span>")
+		to_chat(M, "<span class='notice'>[high_message]</span>")
 	M.adjustStaminaLoss(-5, 0)
 	M.adjustBrainLoss(4)
 	M.hallucination += 5
@@ -361,7 +361,7 @@
 /datum/reagent/drug/aranesp/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("You feel amped up.", "You feel ready.", "You feel like you can push it to the limit.")
 	if(prob(5))
-		to_chat(M, "<span_class='notice'>[high_message]</span>")
+		to_chat(M, "<span class='notice'>[high_message]</span>")
 	M.adjustStaminaLoss(-18, 0)
 	M.adjustToxLoss(0.5, 0)
 	if(prob(50))

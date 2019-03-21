@@ -13,7 +13,7 @@
 	power_cost = 10
 	whispered = TRUE
 	object_path = /obj/item/clockwork/integration_cog
-	creator_message = "<span_class='brass'>You form an integration cog, which can be inserted into an open APC to passively siphon power.</span>"
+	creator_message = "<span class='brass'>You form an integration cog, which can be inserted into an open APC to passively siphon power.</span>"
 	usage_tip = "Tampering isn't visible unless the APC is opened. You can use the cog on a locked APC to unlock it."
 	tier = SCRIPTURE_DRIVER
 	space_allowed = TRUE
@@ -34,7 +34,7 @@
 	power_cost = 50
 	whispered = TRUE
 	object_path = /obj/effect/clockwork/sigil/transgression
-	creator_message = "<span_class='brass'>A sigil silently appears below you. The next non-Servant to cross it will be smitten.</span>"
+	creator_message = "<span class='brass'>A sigil silently appears below you. The next non-Servant to cross it will be smitten.</span>"
 	usage_tip = "The sigil does not silence its victim, and is generally used to soften potential converts or would-be invaders."
 	tier = SCRIPTURE_DRIVER
 	one_per_tile = TRUE
@@ -54,7 +54,7 @@
 	power_cost = 125
 	whispered = TRUE
 	object_path = /obj/effect/clockwork/sigil/submission
-	creator_message = "<span_class='brass'>A luminous sigil appears below you. Any non-Servants to cross it will be converted after 8 seconds if they do not move.</span>"
+	creator_message = "<span class='brass'>A luminous sigil appears below you. Any non-Servants to cross it will be converted after 8 seconds if they do not move.</span>"
 	usage_tip = "This is the primary conversion method, though it will not penetrate mindshield implants."
 	tier = SCRIPTURE_DRIVER
 	one_per_tile = TRUE
@@ -79,7 +79,7 @@
 	sort_priority = 4
 	slab_overlay = "volt"
 	ranged_type = /obj/effect/proc_holder/slab/kindle
-	ranged_message = "<span_class='brass'><i>You charge the clockwork slab with divine energy.</i>\n\
+	ranged_message = "<span class='brass'><i>You charge the clockwork slab with divine energy.</i>\n\
 	<b>Left-click a target within melee range to stun!\n\
 	Click your slab to cancel.</b></span>"
 	timeout_time = 150
@@ -103,7 +103,7 @@
 	sort_priority = 5
 	ranged_type = /obj/effect/proc_holder/slab/hateful_manacles
 	slab_overlay = "hateful_manacles"
-	ranged_message = "<span_class='neovgre_small'><i>You charge the clockwork slab with divine energy.</i>\n\
+	ranged_message = "<span class='neovgre_small'><i>You charge the clockwork slab with divine energy.</i>\n\
 	<b>Left-click a target within melee range to shackle!\n\
 	Click your slab to cancel.</b></span>"
 	timeout_time = 200
@@ -130,7 +130,7 @@
 
 /datum/clockwork_scripture/vanguard/check_special_requirements()
 	if(!GLOB.ratvar_awakens && islist(invoker.stun_absorption) && invoker.stun_absorption["vanguard"] && invoker.stun_absorption["vanguard"]["end_time"] > world.time)
-		to_chat(invoker, "<span_class='warning'>You are already shielded by a Vanguard!</span>")
+		to_chat(invoker, "<span class='warning'>You are already shielded by a Vanguard!</span>")
 		return FALSE
 	return TRUE
 
@@ -161,7 +161,7 @@
 	quickbind_desc = "Allows you to convert a Servant's brute, burn, and oxygen damage to half toxin damage.<br><b>Click your slab to disable.</b>"
 	slab_overlay = "compromise"
 	ranged_type = /obj/effect/proc_holder/slab/compromise
-	ranged_message = "<span_class='inathneq_small'><i>You charge the clockwork slab with healing power.</i>\n\
+	ranged_message = "<span class='inathneq_small'><i>You charge the clockwork slab with healing power.</i>\n\
 	<b>Left-click a fellow Servant or yourself to heal!\n\
 	Click your slab to cancel.</b></span>"
 
@@ -188,7 +188,7 @@
 
 /datum/clockwork_scripture/abscond/check_special_requirements()
 	if(is_reebe(invoker.z))
-		to_chat(invoker, "<span_class='danger'>You're already at Reebe.</span>")
+		to_chat(invoker, "<span class='danger'>You're already at Reebe.</span>")
 		return
 	return TRUE
 
@@ -200,9 +200,9 @@
 /datum/clockwork_scripture/abscond/scripture_effects()
 	var/take_pulling = invoker.pulling && isliving(invoker.pulling) && get_clockwork_power(ABSCOND_ABDUCTION_COST)
 	var/turf/T = GLOB.ark_of_the_clockwork_justiciar ? get_step(GLOB.ark_of_the_clockwork_justiciar, SOUTH) : get_turf(pick(GLOB.servant_spawns))
-	invoker.visible_message("<span_class='warning'>[invoker] flickers and phases out of existence!</span>", \
-	"<span_class='bold sevtug_small'>You feel a dizzying sense of vertigo as you're yanked back to Reebe!</span>")
-	T.visible_message("<span_class='warning'>[invoker] flickers and phases into existence!</span>")
+	invoker.visible_message("<span class='warning'>[invoker] flickers and phases out of existence!</span>", \
+	"<span class='bold sevtug_small'>You feel a dizzying sense of vertigo as you're yanked back to Reebe!</span>")
+	T.visible_message("<span class='warning'>[invoker] flickers and phases into existence!</span>")
 	playsound(invoker, 'sound/magic/magic_missile.ogg', 50, TRUE)
 	playsound(T, 'sound/magic/magic_missile.ogg', 50, TRUE)
 	do_sparks(5, TRUE, invoker)
@@ -229,7 +229,7 @@
 	power_cost = 25
 	whispered = TRUE
 	object_path = /obj/item/clockwork/slab
-	creator_message = "<span_class='brass'>You copy a piece of replicant alloy and command it into a new slab.</span>"
+	creator_message = "<span class='brass'>You copy a piece of replicant alloy and command it into a new slab.</span>"
 	usage_tip = "This is inefficient as a way to produce components, as the slab produced must be held by someone with no other slabs to produce components."
 	tier = SCRIPTURE_DRIVER
 	space_allowed = TRUE
@@ -250,7 +250,7 @@
 	power_cost = 50
 	whispered = TRUE
 	object_path = /obj/item/clothing/glasses/wraith_spectacles
-	creator_message = "<span_class='brass'>You form a pair of wraith spectacles, which grant true sight but cause gradual vision loss.</span>"
+	creator_message = "<span class='brass'>You form a pair of wraith spectacles, which grant true sight but cause gradual vision loss.</span>"
 	usage_tip = "\"True sight\" means that you are able to see through walls and in darkness."
 	tier = SCRIPTURE_DRIVER
 	space_allowed = TRUE

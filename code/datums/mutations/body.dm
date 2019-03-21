@@ -5,11 +5,11 @@
 	name = "Epilepsy"
 	desc = "A genetic defect that sporadically causes seizures."
 	quality = NEGATIVE
-	text_gain_indication = "<span_class='danger'>You get a headache.</span>"
+	text_gain_indication = "<span class='danger'>You get a headache.</span>"
 
 /datum/mutation/human/epilepsy/on_life()
 	if(prob(1) && owner.stat == CONSCIOUS)
-		owner.visible_message("<span_class='danger'>[owner] starts having a seizure!</span>", "<span_class='userdanger'>You have a seizure!</span>")
+		owner.visible_message("<span class='danger'>[owner] starts having a seizure!</span>", "<span class='userdanger'>You have a seizure!</span>")
 		owner.Unconscious(200)
 		owner.Jitter(1000)
 		SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "epilepsy", /datum/mood_event/epilepsy)
@@ -25,7 +25,7 @@
 	name = "Unstable DNA"
 	desc = "Strange mutation that causes the holder to randomly mutate."
 	quality = NEGATIVE
-	text_gain_indication = "<span_class='danger'>You feel strange.</span>"
+	text_gain_indication = "<span class='danger'>You feel strange.</span>"
 	locked = TRUE
 
 /datum/mutation/human/bad_dna/on_acquiring(mob/living/carbon/human/owner)
@@ -51,7 +51,7 @@
 	name = "Cough"
 	desc = "A chronic cough."
 	quality = MINOR_NEGATIVE
-	text_gain_indication = "<span_class='danger'>You start coughing.</span>"
+	text_gain_indication = "<span class='danger'>You start coughing.</span>"
 
 /datum/mutation/human/cough/on_life()
 	if(prob(5) && owner.stat == CONSCIOUS)
@@ -74,7 +74,7 @@
 	owner.resize = 0.8
 	owner.update_transform()
 	owner.pass_flags |= PASSTABLE
-	owner.visible_message("<span_class='danger'>[owner] suddenly shrinks!</span>", "<span_class='notice'>Everything around you seems to grow..</span>")
+	owner.visible_message("<span class='danger'>[owner] suddenly shrinks!</span>", "<span class='notice'>Everything around you seems to grow..</span>")
 
 /datum/mutation/human/dwarfism/on_losing(mob/living/carbon/human/owner)
 	if(..())
@@ -82,7 +82,7 @@
 	owner.resize = 1.25
 	owner.update_transform()
 	owner.pass_flags &= ~PASSTABLE
-	owner.visible_message("<span_class='danger'>[owner] suddenly grows!</span>", "<span_class='notice'>Everything around you seems to shrink..</span>")
+	owner.visible_message("<span class='danger'>[owner] suddenly grows!</span>", "<span class='notice'>Everything around you seems to shrink..</span>")
 
 
 //Clumsiness has a very large amount of small drawbacks depending on item.
@@ -90,7 +90,7 @@
 	name = "Clumsiness"
 	desc = "A genome that inhibits certain brain functions, causing the holder to appear clumsy. Honk"
 	quality = MINOR_NEGATIVE
-	text_gain_indication = "<span_class='danger'>You feel lightheaded.</span>"
+	text_gain_indication = "<span class='danger'>You feel lightheaded.</span>"
 
 /datum/mutation/human/clumsy/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -108,7 +108,7 @@
 	name = "Tourette's Syndrome"
 	desc = "A chronic twitch that forces the user to scream bad words." //definitely needs rewriting
 	quality = NEGATIVE
-	text_gain_indication = "<span_class='danger'>You twitch.</span>"
+	text_gain_indication = "<span class='danger'>You twitch.</span>"
 
 /datum/mutation/human/tourettes/on_life(mob/living/carbon/human/owner)
 	if(prob(10) && owner.stat == CONSCIOUS && !owner.IsStun())
@@ -131,7 +131,7 @@
 	name = "Deafness"
 	desc = "The holder of this genome is completely deaf."
 	quality = NEGATIVE
-	text_gain_indication = "<span_class='danger'>You can't seem to hear anything.</span>"
+	text_gain_indication = "<span class='danger'>You can't seem to hear anything.</span>"
 
 /datum/mutation/human/deaf/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -165,7 +165,7 @@
 	name = "Glowy"
 	desc = "You permanently emit a light with a random color and intensity."
 	quality = POSITIVE
-	text_gain_indication = "<span_class='notice'>Your skin begins to glow softly.</span>"
+	text_gain_indication = "<span class='notice'>Your skin begins to glow softly.</span>"
 	instability = 5
 	var/obj/effect/dummy/luminescent_glow/glowth //shamelessly copied from luminescents
 	var/glow = 1.5
@@ -185,15 +185,15 @@
 	name = "Strength"
 	desc = "The user's muscles slightly expand."
 	quality = POSITIVE
-	text_gain_indication = "<span_class='notice'>You feel strong.</span>"
+	text_gain_indication = "<span class='notice'>You feel strong.</span>"
 	difficulty = 16
 
 /datum/mutation/human/fire
 	name = "Fiery Sweat"
 	desc = "The user's skin will randomly combust, but is generally alot more resilient to burning."
 	quality = NEGATIVE
-	text_gain_indication = "<span_class='warning'>You feel hot.</span>"
-	text_lose_indication = "<span_class'notice'>You feel a lot cooler.</span>"
+	text_gain_indication = "<span class='warning'>You feel hot.</span>"
+	text_lose_indication = "<span class'notice'>You feel a lot cooler.</span>"
 	difficulty = 14
 
 /datum/mutation/human/fire/on_life()

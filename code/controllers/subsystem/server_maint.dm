@@ -34,7 +34,7 @@ SUBSYSTEM_DEF(server_maint)
 			var/cmob = C.mob
 			if(!(isobserver(cmob) || (isdead(cmob) && C.holder)))
 				log_access("AFK: [key_name(C)]")
-				to_chat(C, "<span_class='danger'>You have been inactive for more than [DisplayTimeText(afk_period)] and have been disconnected.</span>")
+				to_chat(C, "<span class='danger'>You have been inactive for more than [DisplayTimeText(afk_period)] and have been disconnected.</span>")
 				qdel(C)
 
 		if (!(!C || world.time - C.connection_time < PING_BUFFER_TIME || C.inactivity >= (wait-1)))
@@ -44,7 +44,7 @@ SUBSYSTEM_DEF(server_maint)
 			return
 
 /datum/controller/subsystem/server_maint/Shutdown()
-	kick_clients_in_lobby("<span_class='boldannounce'>The round came to an end with you in the lobby.</span>", TRUE) //second parameter ensures only afk clients are kicked
+	kick_clients_in_lobby("<span class='boldannounce'>The round came to an end with you in the lobby.</span>", TRUE) //second parameter ensures only afk clients are kicked
 	var/server = CONFIG_GET(string/server)
 	for(var/thing in GLOB.clients)
 		if(!thing)

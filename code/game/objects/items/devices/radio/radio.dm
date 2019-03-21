@@ -42,7 +42,7 @@
 	//FREQ_BROADCASTING = 2
 
 /obj/item/radio/suicide_act(mob/living/user)
-	user.visible_message("<span_class='suicide'>[user] starts bouncing [src] off [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] starts bouncing [src] off [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/radio/proc/set_frequency(new_frequency)
@@ -321,18 +321,18 @@
 /obj/item/radio/examine(mob/user)
 	..()
 	if (unscrewed)
-		to_chat(user, "<span_class='notice'>It can be attached and modified.</span>")
+		to_chat(user, "<span class='notice'>It can be attached and modified.</span>")
 	else
-		to_chat(user, "<span_class='notice'>It cannot be modified or attached.</span>")
+		to_chat(user, "<span class='notice'>It cannot be modified or attached.</span>")
 
 /obj/item/radio/attackby(obj/item/W, mob/user, params)
 	add_fingerprint(user)
 	if(W.tool_behaviour == TOOL_SCREWDRIVER)
 		unscrewed = !unscrewed
 		if(unscrewed)
-			to_chat(user, "<span_class='notice'>The radio can now be attached and modified!</span>")
+			to_chat(user, "<span class='notice'>The radio can now be attached and modified!</span>")
 		else
-			to_chat(user, "<span_class='notice'>The radio can no longer be modified or attached!</span>")
+			to_chat(user, "<span class='notice'>The radio can no longer be modified or attached!</span>")
 	else
 		return ..()
 
@@ -343,7 +343,7 @@
 	emped++ //There's been an EMP; better count it
 	var/curremp = emped //Remember which EMP this was
 	if (listening && ismob(loc))	// if the radio is turned on and on someone's person they notice
-		to_chat(loc, "<span_class='warning'>\The [src] overloads.</span>")
+		to_chat(loc, "<span class='warning'>\The [src] overloads.</span>")
 	broadcasting = FALSE
 	listening = FALSE
 	for (var/ch_name in channels)
@@ -392,14 +392,14 @@
 					keyslot = null
 
 			recalculateChannels()
-			to_chat(user, "<span_class='notice'>You pop out the encryption key in the radio.</span>")
+			to_chat(user, "<span class='notice'>You pop out the encryption key in the radio.</span>")
 
 		else
-			to_chat(user, "<span_class='warning'>This radio doesn't have any encryption keys!</span>")
+			to_chat(user, "<span class='warning'>This radio doesn't have any encryption keys!</span>")
 
 	else if(istype(W, /obj/item/encryptionkey/))
 		if(keyslot)
-			to_chat(user, "<span_class='warning'>The radio can't hold another key!</span>")
+			to_chat(user, "<span class='warning'>The radio can't hold another key!</span>")
 			return
 
 		if(!keyslot)

@@ -36,7 +36,7 @@
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			if(H.has_trait(TRAIT_LAW_ENFORCEMENT_METABOLISM) && !H.has_trait(TRAIT_AGEUSIA))
-				to_chat(H,"<span_class='notice'>I love this taste!</span>")
+				to_chat(H,"<span class='notice'>I love this taste!</span>")
 				H.adjust_disgust(-5 + -2.5 * fraction)
 				GET_COMPONENT_FROM(mood, /datum/component/mood, H)
 				if(mood)
@@ -440,11 +440,11 @@
 	if(istype(I, /obj/item/reagent_containers/food/snacks/pancakes/))
 		var/obj/item/reagent_containers/food/snacks/pancakes/P = I
 		if((contents.len >= PANCAKE_MAX_STACK) || ((P.contents.len + contents.len) > PANCAKE_MAX_STACK) || (reagents.total_volume >= volume))
-			to_chat(user, "<span_class='warning'>You can't add that many pancakes to [src]!</span>")
+			to_chat(user, "<span class='warning'>You can't add that many pancakes to [src]!</span>")
 		else
 			if(!user.transferItemToLoc(I, src))
 				return
-			to_chat(user, "<span_class='notice'>You add the [I] to the [name].</span>")
+			to_chat(user, "<span class='notice'>You add the [I] to the [name].</span>")
 			P.name = initial(P.name)
 			contents += P
 			update_overlays(P)

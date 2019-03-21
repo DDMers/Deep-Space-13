@@ -11,7 +11,7 @@
 	C.admin_select_appearance()
 	C.ckey = user.ckey
 	playsound(loc, 'DS13/sound/effects/admin_message.ogg', 100) //You better pick up this goddamn channel boi
-	to_chat(user, "<span_class='notice'>Click anywhere to terminate transmission. You can move as far from the transmitter as you like.</span>")
+	to_chat(user, "<span class='notice'>Click anywhere to terminate transmission. You can move as far from the transmitter as you like.</span>")
 
 // This is basically a communications hologram mob. It can exist in nullspace
 // or it can be manifested on a communications holopad. It usually controls a

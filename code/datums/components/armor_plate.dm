@@ -34,29 +34,29 @@
 	if(ismecha(parent))
 		if(amount)
 			if(amount < maxamount)
-				to_chat(user, "<span_class='notice'>Its armor is enhanced with [amount] [upgrade_name].</span>")
+				to_chat(user, "<span class='notice'>Its armor is enhanced with [amount] [upgrade_name].</span>")
 			else
-				to_chat(user, "<span_class='notice'>It's wearing a fearsome carapace entirely composed of [upgrade_name] - its pilot must be an experienced monster hunter.</span>")
+				to_chat(user, "<span class='notice'>It's wearing a fearsome carapace entirely composed of [upgrade_name] - its pilot must be an experienced monster hunter.</span>")
 		else
-			to_chat(user, "<span_class='notice'>It has attachment points for strapping monster hide on for added protection.</span>")
+			to_chat(user, "<span class='notice'>It has attachment points for strapping monster hide on for added protection.</span>")
 	else
 		if(amount)
-			to_chat(user, "<span_class='notice'>It has been strengthened with [amount]/[maxamount] [upgrade_name].</span>")
+			to_chat(user, "<span class='notice'>It has been strengthened with [amount]/[maxamount] [upgrade_name].</span>")
 		else
-			to_chat(user, "<span_class='notice'>It can be strengthened with up to [maxamount] [upgrade_name].</span>")
+			to_chat(user, "<span class='notice'>It can be strengthened with up to [maxamount] [upgrade_name].</span>")
 
 /datum/component/armor_plate/proc/applyplate(datum/source, obj/item/I, mob/user, params)
 	if(!istype(I,upgrade_item))
 		return
 	if(amount >= maxamount)
-		to_chat(user, "<span_class='warning'>You can't improve [parent] any further!</span>")
+		to_chat(user, "<span class='warning'>You can't improve [parent] any further!</span>")
 		return
 
 	if(istype(I,/obj/item/stack))
 		I.use(1)
 	else
 		if(length(I.contents))
-			to_chat(user, "<span_class='warning'>[I] cannot be used for armoring while there's something inside!</span>")
+			to_chat(user, "<span class='warning'>[I] cannot be used for armoring while there's something inside!</span>")
 			return
 		qdel(I)
 
@@ -67,9 +67,9 @@
 	if(ismecha(O))
 		var/obj/mecha/R = O
 		R.update_icon()
-		to_chat(user, "<span_class='info'>You strengthen [R], improving its resistance against melee, bullet and laser damage.</span>")
+		to_chat(user, "<span class='info'>You strengthen [R], improving its resistance against melee, bullet and laser damage.</span>")
 	else
-		to_chat(user, "<span_class='info'>You strengthen [O], improving its resistance against melee attacks.</span>")
+		to_chat(user, "<span class='info'>You strengthen [O], improving its resistance against melee attacks.</span>")
 
 
 /datum/component/armor_plate/proc/dropplates(datum/source, force)

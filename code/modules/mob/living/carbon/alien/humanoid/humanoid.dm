@@ -35,7 +35,7 @@
 	var/list/dat = list()
 	dat += {"
 	<HR>
-	<span_class='big bold'>[name]</span>
+	<span class='big bold'>[name]</span>
 	<HR>"}
 	for(var/i in 1 to held_items.len)
 		var/obj/item/I = get_item_for_held_index(i)
@@ -58,8 +58,8 @@
 /mob/living/carbon/alien/humanoid/Topic(href, href_list)
 	//strip panel
 	if(href_list["pouches"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERY))
-		visible_message("<span_class='danger'>[usr] tries to empty [src]'s pouches.</span>", \
-						"<span_class='userdanger'>[usr] tries to empty [src]'s pouches.</span>")
+		visible_message("<span class='danger'>[usr] tries to empty [src]'s pouches.</span>", \
+						"<span class='userdanger'>[usr] tries to empty [src]'s pouches.</span>")
 		if(do_mob(usr, src, POCKET_STRIP_DELAY * 0.5))
 			dropItemToGround(r_store)
 			dropItemToGround(l_store)
@@ -73,7 +73,7 @@
 
 /mob/living/carbon/alien/humanoid/resist_grab(moving_resist)
 	if(pulledby.grab_state)
-		visible_message("<span_class='danger'>[src] has broken free of [pulledby]'s grip!</span>")
+		visible_message("<span class='danger'>[src] has broken free of [pulledby]'s grip!</span>")
 	pulledby.stop_pulling()
 	. = 0
 

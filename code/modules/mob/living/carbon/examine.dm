@@ -6,11 +6,11 @@
 	var/t_has = p_have()
 	var/t_is = p_are()
 
-	var/msg = "<span_class='info'>*---------*\nThis is [icon2html(src, user)] \a <EM>[src]</EM>!\n"
+	var/msg = "<span class='info'>*---------*\nThis is [icon2html(src, user)] \a <EM>[src]</EM>!\n"
 	var/list/obscured = check_obscured_slots()
 
 	if (handcuffed)
-		msg += "<span_class='warning'>[t_He] [t_is] [icon2html(handcuffed, user)] handcuffed!</span>\n"
+		msg += "<span class='warning'>[t_He] [t_is] [icon2html(handcuffed, user)] handcuffed!</span>\n"
 	if (head)
 		msg += "[t_He] [t_is] wearing [head.get_examine_string(user)] on [t_his] head. \n"
 	if(wear_mask && !(SLOT_WEAR_MASK in obscured))
@@ -28,18 +28,18 @@
 	if (stat == DEAD)
 		appears_dead = 1
 		if(getorgan(/obj/item/organ/brain))
-			msg += "<span_class='deadsay'>[t_He] [t_is] limp and unresponsive, with no signs of life.</span>\n"
+			msg += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive, with no signs of life.</span>\n"
 		else if(get_bodypart(BODY_ZONE_HEAD))
-			msg += "<span_class='deadsay'>It appears that [t_his] brain is missing...</span>\n"
+			msg += "<span class='deadsay'>It appears that [t_his] brain is missing...</span>\n"
 
 	var/list/missing = get_missing_limbs()
 	for(var/t in missing)
 		if(t==BODY_ZONE_HEAD)
-			msg += "<span_class='deadsay'><B>[t_His] [parse_zone(t)] is missing!</B></span>\n"
+			msg += "<span class='deadsay'><B>[t_His] [parse_zone(t)] is missing!</B></span>\n"
 			continue
-		msg += "<span_class='warning'><B>[t_His] [parse_zone(t)] is missing!</B></span>\n"
+		msg += "<span class='warning'><B>[t_His] [parse_zone(t)] is missing!</B></span>\n"
 
-	msg += "<span_class='warning'>"
+	msg += "<span class='warning'>"
 	var/temp = getBruteLoss()
 	if(!(user == src && src.hal_screwyhud == SCREWYHUD_HEALTHY)) //fake healthy
 		if(temp)

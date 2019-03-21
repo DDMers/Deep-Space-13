@@ -54,9 +54,9 @@
 	add_fingerprint(user)
 	if (W.tool_behaviour == TOOL_WIRECUTTER)
 		if (bulb)
-			user.visible_message("[user] begins to disconnect [src]'s flashbulb.", "<span_class='notice'>You begin to disconnect [src]'s flashbulb...</span>")
+			user.visible_message("[user] begins to disconnect [src]'s flashbulb.", "<span class='notice'>You begin to disconnect [src]'s flashbulb...</span>")
 			if(W.use_tool(src, user, 30, volume=50) && bulb)
-				user.visible_message("[user] has disconnected [src]'s flashbulb!", "<span_class='notice'>You disconnect [src]'s flashbulb.</span>")
+				user.visible_message("[user] has disconnected [src]'s flashbulb!", "<span class='notice'>You disconnect [src]'s flashbulb.</span>")
 				bulb.forceMove(loc)
 				bulb = null
 				power_change()
@@ -65,20 +65,20 @@
 		if (!bulb)
 			if(!user.transferItemToLoc(W, src))
 				return
-			user.visible_message("[user] installs [W] into [src].", "<span_class='notice'>You install [W] into [src].</span>")
+			user.visible_message("[user] installs [W] into [src].", "<span class='notice'>You install [W] into [src].</span>")
 			bulb = W
 			power_change()
 		else
-			to_chat(user, "<span_class='warning'>A flashbulb is already installed in [src]!</span>")
+			to_chat(user, "<span class='warning'>A flashbulb is already installed in [src]!</span>")
 
 	else if (W.tool_behaviour == TOOL_WRENCH)
 		if(!bulb)
-			to_chat(user, "<span_class='notice'>You start unsecuring the flasher frame...</span>")
+			to_chat(user, "<span class='notice'>You start unsecuring the flasher frame...</span>")
 			if(W.use_tool(src, user, 40, volume=50))
-				to_chat(user, "<span_class='notice'>You unsecure the flasher frame.</span>")
+				to_chat(user, "<span class='notice'>You unsecure the flasher frame.</span>")
 				deconstruct(TRUE)
 		else
-			to_chat(user, "<span_class='warning'>Remove a flashbulb from [src] first!</span>")
+			to_chat(user, "<span class='warning'>Remove a flashbulb from [src] first!</span>")
 	else
 		return ..()
 
@@ -172,13 +172,13 @@
 		W.play_tool_sound(src, 100)
 
 		if (!anchored && !isinspace())
-			to_chat(user, "<span_class='notice'>[src] is now secured.</span>")
+			to_chat(user, "<span class='notice'>[src] is now secured.</span>")
 			add_overlay("[base_state]-s")
 			setAnchored(TRUE)
 			power_change()
 			proximity_monitor.SetRange(range)
 		else
-			to_chat(user, "<span_class='notice'>[src] can now be moved.</span>")
+			to_chat(user, "<span class='notice'>[src] can now be moved.</span>")
 			cut_overlays()
 			setAnchored(FALSE)
 			power_change()
@@ -197,7 +197,7 @@
 
 /obj/item/wallframe/flasher/examine(mob/user)
 	..()
-	to_chat(user, "<span_class='notice'>Its channel ID is '[id]'.</span>")
+	to_chat(user, "<span class='notice'>Its channel ID is '[id]'.</span>")
 
 /obj/item/wallframe/flasher/after_attach(var/obj/O)
 	..()

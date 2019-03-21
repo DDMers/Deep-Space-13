@@ -14,8 +14,8 @@
 	. = ..()
 	if(!cooked_type) // This isn't cooked, why would you put uncooked spaghetti in your pocket?
 		var/list/display_message = list(
-			"<span_class='notice'>Something wet falls out of their pocket and hits the ground. Is that... [name]?</span>",
-			"<span_class='warning'>Oh shit! All your pocket [name] fell out!</span>")
+			"<span class='notice'>Something wet falls out of their pocket and hits the ground. Is that... [name]?</span>",
+			"<span class='warning'>Oh shit! All your pocket [name] fell out!</span>")
 		AddComponent(/datum/component/spill, display_message, 'sound/effects/splat.ogg')
 
 /obj/item/reagent_containers/food/snacks/spaghetti/boiledspaghetti

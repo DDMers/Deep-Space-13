@@ -26,7 +26,7 @@
 	return 1
 
 /obj/item/stack/ore/bluespace_crystal/attack_self(mob/user)
-	user.visible_message("<span_class='warning'>[user] crushes [src]!</span>", "<span_class='danger'>You crush [src]!</span>")
+	user.visible_message("<span class='warning'>[user] crushes [src]!</span>", "<span class='danger'>You crush [src]!</span>")
 	new /obj/effect/particle_effect/sparks(loc)
 	playsound(loc, "sparks", 50, 1)
 	blink_mob(user)
@@ -37,7 +37,7 @@
 
 /obj/item/stack/ore/bluespace_crystal/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	if(!..()) // not caught in mid-air
-		visible_message("<span_class='notice'>[src] fizzles and disappears upon impact!</span>")
+		visible_message("<span class='notice'>[src] fizzles and disappears upon impact!</span>")
 		var/turf/T = get_turf(hit_atom)
 		new /obj/effect/particle_effect/sparks(T)
 		playsound(loc, "sparks", 50, 1)
@@ -71,7 +71,7 @@
 	var/crystal_type = /obj/item/stack/ore/bluespace_crystal/refined
 
 /obj/item/stack/sheet/bluespace_crystal/attack_self(mob/user)// to prevent the construction menu from ever happening
-	to_chat(user, "<span_class='warning'>You cannot crush the polycrystal in-hand, try breaking one off.</span>")
+	to_chat(user, "<span class='warning'>You cannot crush the polycrystal in-hand, try breaking one off.</span>")
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/stack/sheet/bluespace_crystal/attack_hand(mob/user)
@@ -82,8 +82,8 @@
 		user.put_in_hands(BC)
 		use(1)
 		if(!amount)
-			to_chat(user, "<span_class='notice'>You break the final crystal off.</span>")
+			to_chat(user, "<span class='notice'>You break the final crystal off.</span>")
 		else
-			to_chat(user, "<span_class='notice'>You break off a crystal.</span>")
+			to_chat(user, "<span class='notice'>You break off a crystal.</span>")
 	else
 		..()

@@ -1,9 +1,9 @@
 /mob/living/silicon/ai/examine(mob/user)
-	var/msg = "<span_class='info'>*---------*\nThis is [icon2html(src, user)] <EM>[src]</EM>!\n"
+	var/msg = "<span class='info'>*---------*\nThis is [icon2html(src, user)] <EM>[src]</EM>!\n"
 	if (stat == DEAD)
-		msg += "<span_class='deadsay'>It appears to be powered-down.</span>\n"
+		msg += "<span class='deadsay'>It appears to be powered-down.</span>\n"
 	else
-		msg += "<span_class='warning'>"
+		msg += "<span class='warning'>"
 		if (getBruteLoss())
 			if (getBruteLoss() < 30)
 				msg += "It looks slightly dented.\n"

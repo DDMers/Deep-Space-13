@@ -15,8 +15,8 @@
 	round_ends_with_antag_death = 1
 	announce_span = "danger"
 	announce_text = "There is a space wizard attacking the station!\n\
-	<span_class='danger'>Wizard</span>: Accomplish your objectives and cause mayhem on the station.\n\
-	<span_class='notice'>Crew</span>: Eliminate the wizard before they can succeed!"
+	<span class='danger'>Wizard</span>: Accomplish your objectives and cause mayhem on the station.\n\
+	<span class='notice'>Crew</span>: Eliminate the wizard before they can succeed!"
 	var/finished = 0
 
 /datum/game_mode/wizard/pre_setup()
@@ -67,7 +67,7 @@
 
 /datum/game_mode/wizard/special_report()
 	if(finished)
-		return "<span_class='redtext big'>The wizard[(wizards.len>1)?"s":""] has been killed by the crew! The Space Wizards Federation has been taught a lesson they will not soon forget!</span>"
+		return "<span class='redtext big'>The wizard[(wizards.len>1)?"s":""] has been killed by the crew! The Space Wizards Federation has been taught a lesson they will not soon forget!</span>"
 
 //returns whether the mob is a wizard (or apprentice)
 /proc/iswizard(mob/living/M)

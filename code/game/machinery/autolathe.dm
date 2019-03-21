@@ -87,7 +87,7 @@
 
 /obj/machinery/autolathe/attackby(obj/item/O, mob/user, params)
 	if (busy)
-		to_chat(user, "<span_class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
+		to_chat(user, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
 		return TRUE
 
 	if(default_deconstruction_screwdriver(user, "autolathe_t", "autolathe", O))
@@ -183,7 +183,7 @@
 					matching_designs.Add(D)
 			updateUsrDialog()
 	else
-		to_chat(usr, "<span_class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
+		to_chat(usr, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
 
 	updateUsrDialog()
 
@@ -226,7 +226,7 @@
 	..()
 	GET_COMPONENT(materials, /datum/component/material_container)
 	if(in_range(user, src) || isobserver(user))
-		to_chat(user, "<span_class='notice'>The status display reads: Storing up to <b>[materials.max_amount]</b> material units.<br>Material consumption at <b>[prod_coeff*100]%</b>.<span>")
+		to_chat(user, "<span class='notice'>The status display reads: Storing up to <b>[materials.max_amount]</b> material units.<br>Material consumption at <b>[prod_coeff*100]%</b>.<span>")
 
 /obj/machinery/autolathe/proc/main_win(mob/user)
 	var/dat = "<div class='statusDisplay'><h3>Autolathe Menu:</h3><br>"
@@ -265,7 +265,7 @@
 			continue
 
 		if(disabled || !can_build(D))
-			dat += "<span_class='linkOff'>[D.name]</span>"
+			dat += "<span class='linkOff'>[D.name]</span>"
 		else
 			dat += "<a href='?src=[REF(src)];make=[D.id];multiplier=1'>[D.name]</a>"
 
@@ -297,7 +297,7 @@
 	for(var/v in matching_designs)
 		var/datum/design/D = v
 		if(disabled || !can_build(D))
-			dat += "<span_class='linkOff'>[D.name]</span>"
+			dat += "<span class='linkOff'>[D.name]</span>"
 		else
 			dat += "<a href='?src=[REF(src)];make=[D.id];multiplier=1'>[D.name]</a>"
 

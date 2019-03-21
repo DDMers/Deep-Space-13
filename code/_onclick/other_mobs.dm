@@ -7,7 +7,7 @@
 /mob/living/carbon/human/UnarmedAttack(atom/A, proximity)
 
 	if(!has_active_hand()) //can't attack without a hand.
-		to_chat(src, "<span_class='notice'>You look at your arm and sigh.</span>")
+		to_chat(src, "<span class='notice'>You look at your arm and sigh.</span>")
 		return
 
 	// Special glove functions:
@@ -50,7 +50,7 @@
 	if(!user.can_interact_with(src))
 		return FALSE
 	if((interaction_flags_atom & INTERACT_ATOM_REQUIRES_DEXTERITY) && !user.IsAdvancedToolUser())
-		to_chat(user, "<span_class='warning'>You don't have the dexterity to do this!</span>")
+		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
 		return FALSE
 	if(!(interaction_flags_atom & INTERACT_ATOM_IGNORE_INCAPACITATED) && user.incapacitated((interaction_flags_atom & INTERACT_ATOM_IGNORE_RESTRAINED), !(interaction_flags_atom & INTERACT_ATOM_CHECK_GRAB)))
 		return FALSE
@@ -146,15 +146,15 @@
 		var/armor = ML.run_armor_check(affecting, "melee")
 		if(prob(75))
 			ML.apply_damage(rand(1,3), BRUTE, affecting, armor)
-			ML.visible_message("<span_class='danger'>[name] bites [ML]!</span>", \
-							"<span_class='userdanger'>[name] bites [ML]!</span>")
+			ML.visible_message("<span class='danger'>[name] bites [ML]!</span>", \
+							"<span class='userdanger'>[name] bites [ML]!</span>")
 			if(armor >= 2)
 				return
 			for(var/thing in diseases)
 				var/datum/disease/D = thing
 				ML.ForceContractDisease(D)
 		else
-			ML.visible_message("<span_class='danger'>[src] has attempted to bite [ML]!</span>")
+			ML.visible_message("<span class='danger'>[src] has attempted to bite [ML]!</span>")
 
 /*
 	Aliens

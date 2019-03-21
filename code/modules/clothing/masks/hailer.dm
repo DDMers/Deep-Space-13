@@ -43,21 +43,21 @@
 		return TRUE
 	switch(aggressiveness)
 		if(1)
-			to_chat(user, "<span_class='notice'>You set the restrictor to the middle position.</span>")
+			to_chat(user, "<span class='notice'>You set the restrictor to the middle position.</span>")
 			aggressiveness = 2
 		if(2)
-			to_chat(user, "<span_class='notice'>You set the restrictor to the last position.</span>")
+			to_chat(user, "<span class='notice'>You set the restrictor to the last position.</span>")
 			aggressiveness = 3
 		if(3)
-			to_chat(user, "<span_class='notice'>You set the restrictor to the first position.</span>")
+			to_chat(user, "<span class='notice'>You set the restrictor to the first position.</span>")
 			aggressiveness = 1
 		if(4)
-			to_chat(user, "<span_class='danger'>You adjust the restrictor but nothing happens, probably because it's broken.</span>")
+			to_chat(user, "<span class='danger'>You adjust the restrictor but nothing happens, probably because it's broken.</span>")
 	return TRUE
 
 /obj/item/clothing/mask/gas/sechailer/wirecutter_act(mob/living/user, obj/item/I)
 	if(aggressiveness != 4)
-		to_chat(user, "<span_class='danger'>You broke the restrictor!</span>")
+		to_chat(user, "<span class='danger'>You broke the restrictor!</span>")
 		aggressiveness = 4
 	return TRUE
 
@@ -72,7 +72,7 @@
 /obj/item/clothing/mask/gas/sechailer/emag_act(mob/user as mob)
 	if(safety)
 		safety = FALSE
-		to_chat(user, "<span_class='warning'>You silently fry [src]'s vocal circuit with the cryptographic sequencer.</span>")
+		to_chat(user, "<span class='warning'>You silently fry [src]'s vocal circuit with the cryptographic sequencer.</span>")
 	else
 		return
 
@@ -85,7 +85,7 @@
 	if(!can_use(usr))
 		return
 	if(broken_hailer)
-		to_chat(usr, "<span_class='warning'>\The [src]'s hailing system is broken.</span>")
+		to_chat(usr, "<span class='warning'>\The [src]'s hailing system is broken.</span>")
 		return
 
 	var/phrase = 0	//selects which phrase to use
@@ -100,12 +100,12 @@
 
 		switch(recent_uses)
 			if(3)
-				to_chat(usr, "<span_class='warning'>\The [src] is starting to heat up.</span>")
+				to_chat(usr, "<span class='warning'>\The [src] is starting to heat up.</span>")
 			if(4)
-				to_chat(usr, "<span_class='userdanger'>\The [src] is heating up dangerously from overuse!</span>")
+				to_chat(usr, "<span class='userdanger'>\The [src] is heating up dangerously from overuse!</span>")
 			if(5) //overload
 				broken_hailer = 1
-				to_chat(usr, "<span_class='userdanger'>\The [src]'s power modulator overloads and breaks.</span>")
+				to_chat(usr, "<span class='userdanger'>\The [src]'s power modulator overloads and breaks.</span>")
 				return
 
 		switch(aggressiveness)		// checks if the user has unlocked the restricted phrases

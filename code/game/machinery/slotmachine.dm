@@ -28,7 +28,7 @@
 	var/jackpots = 0
 	var/list/coinvalues = list()
 	var/list/reels = list(list("", "", "") = 0, list("", "", "") = 0, list("", "", "") = 0, list("", "", "") = 0, list("", "", "") = 0)
-	var/list/symbols = list(SEVEN = 1, "<font color='orange'>&</font>" = 2, "<font color='yellow'>@</font>" = 2, "<font color='green'>$</font>" = 2, "<span_class='notice'>?</span>" = 2, "<font color='grey'>#</font>" = 2, "<font color='white'>!</font>" = 2, "<font color='fuchsia'>%</font>" = 2) //if people are winning too much, multiply every number in this list by 2 and see if they are still winning too much.
+	var/list/symbols = list(SEVEN = 1, "<font color='orange'>&</font>" = 2, "<font color='yellow'>@</font>" = 2, "<font color='green'>$</font>" = 2, "<span class='notice'>?</span>" = 2, "<font color='grey'>#</font>" = 2, "<font color='white'>!</font>" = 2, "<font color='fuchsia'>%</font>" = 2) //if people are winning too much, multiply every number in this list by 2 and see if they are still winning too much.
 
 	light_color = LIGHT_COLOR_BROWN
 
@@ -87,12 +87,12 @@
 			C.throw_at(user, 3, 10)
 			if(prob(10))
 				balance = max(balance - SPIN_PRICE, 0)
-			to_chat(user, "<span_class='warning'>[src] spits your coin back out!</span>")
+			to_chat(user, "<span class='warning'>[src] spits your coin back out!</span>")
 
 		else
 			if(!user.temporarilyRemoveItemFromInventory(C))
 				return
-			to_chat(user, "<span_class='notice'>You insert a [C.cmineral] coin into [src]'s slot!</span>")
+			to_chat(user, "<span class='notice'>You insert a [C.cmineral] coin into [src]'s slot!</span>")
 			balance += C.value
 			qdel(C)
 	else
@@ -171,7 +171,7 @@
 	var/the_name
 	if(user)
 		the_name = user.real_name
-		visible_message("<span_class='notice'>[user] pulls the lever and the slot machine starts spinning!</span>")
+		visible_message("<span class='notice'>[user] pulls the lever and the slot machine starts spinning!</span>")
 	else
 		the_name = "Exaybachay"
 
@@ -199,14 +199,14 @@
 
 /obj/machinery/computer/slot_machine/proc/can_spin(mob/user)
 	if(stat & NOPOWER)
-		to_chat(user, "<span_class='warning'>The slot machine has no power!</span>")
+		to_chat(user, "<span class='warning'>The slot machine has no power!</span>")
 	if(stat & BROKEN)
-		to_chat(user, "<span_class='warning'>The slot machine is broken!</span>")
+		to_chat(user, "<span class='warning'>The slot machine is broken!</span>")
 	if(working)
-		to_chat(user, "<span_class='warning'>You need to wait until the machine stops spinning before you can play again!</span>")
+		to_chat(user, "<span class='warning'>You need to wait until the machine stops spinning before you can play again!</span>")
 		return 0
 	if(balance < SPIN_PRICE)
-		to_chat(user, "<span_class='warning'>Insufficient money to play!</span>")
+		to_chat(user, "<span class='warning'>Insufficient money to play!</span>")
 		return 0
 	return 1
 
@@ -247,12 +247,12 @@
 		give_money(SMALL_PRIZE)
 
 	else if(linelength == 3)
-		to_chat(user, "<span_class='notice'>You win three free games!</span>")
+		to_chat(user, "<span class='notice'>You win three free games!</span>")
 		balance += SPIN_PRICE * 4
 		money = max(money - SPIN_PRICE * 4, money)
 
 	else
-		to_chat(user, "<span_class='warning'>No luck!</span>")
+		to_chat(user, "<span class='warning'>No luck!</span>")
 
 /obj/machinery/computer/slot_machine/proc/get_lines()
 	var/amountthesame

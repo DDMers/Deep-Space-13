@@ -17,14 +17,14 @@
 	var/hearing_range = 1
 
 /obj/item/assembly/signaler/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span_class='suicide'>[user] eats \the [src]! If it is signaled, [user.p_they()] will die!</span>")
+	user.visible_message("<span class='suicide'>[user] eats \the [src]! If it is signaled, [user.p_they()] will die!</span>")
 	playsound(src, 'sound/items/eatfood.ogg', 50, TRUE)
 	user.transferItemToLoc(src, user, TRUE)
 	suicider = user
 	return MANUAL_SUICIDE
 
 /obj/item/assembly/signaler/proc/manual_suicide(mob/living/carbon/user)
-	user.visible_message("<span_class='suicide'>[user]'s \the [src] receives a signal, killing [user.p_them()] instantly!</span>")
+	user.visible_message("<span class='suicide'>[user]'s \the [src] receives a signal, killing [user.p_them()] instantly!</span>")
 	user.adjustOxyLoss(200)//it sends an electrical pulse to their heart, killing them. or something.
 	user.death(0)
 
@@ -170,7 +170,7 @@ Code:
 
 /obj/item/assembly/signaler/receiver/examine(mob/user)
 	..()
-	to_chat(user, "<span_class='notice'>The radio receiver is [on?"on":"off"].</span>")
+	to_chat(user, "<span class='notice'>The radio receiver is [on?"on":"off"].</span>")
 
 /obj/item/assembly/signaler/receiver/receive_signal(datum/signal/signal)
 	if(!on)

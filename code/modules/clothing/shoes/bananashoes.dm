@@ -24,7 +24,7 @@
 			if(!always_noslip)
 				clothing_flags &= ~NOSLIP
 			update_icon()
-			to_chat(loc, "<span_class='warning'>You ran out of bananium!</span>")
+			to_chat(loc, "<span class='warning'>You ran out of bananium!</span>")
 		else
 			new /obj/item/grown/bananapeel/specialpeel(get_step(src,turn(usr.dir, 180))) //honk
 			bananium.use_amount_type(100, MAT_BANANIUM)
@@ -33,27 +33,27 @@
 	GET_COMPONENT(bananium, /datum/component/material_container)
 	var/sheet_amount = bananium.retrieve_all()
 	if(sheet_amount)
-		to_chat(user, "<span_class='notice'>You retrieve [sheet_amount] sheets of bananium from the prototype shoes.</span>")
+		to_chat(user, "<span class='notice'>You retrieve [sheet_amount] sheets of bananium from the prototype shoes.</span>")
 	else
-		to_chat(user, "<span_class='notice'>You cannot retrieve any bananium from the prototype shoes.</span>")
+		to_chat(user, "<span class='notice'>You cannot retrieve any bananium from the prototype shoes.</span>")
 
 /obj/item/clothing/shoes/clown_shoes/banana_shoes/examine(mob/user)
 	..()
-	to_chat(user, "<span_class='notice'>The shoes are [on ? "enabled" : "disabled"].</span>")
+	to_chat(user, "<span class='notice'>The shoes are [on ? "enabled" : "disabled"].</span>")
 
 /obj/item/clothing/shoes/clown_shoes/banana_shoes/ui_action_click(mob/user)
 	GET_COMPONENT(bananium, /datum/component/material_container)
 	if(bananium.amount(MAT_BANANIUM))
 		on = !on
 		update_icon()
-		to_chat(user, "<span_class='notice'>You [on ? "activate" : "deactivate"] the prototype shoes.</span>")
+		to_chat(user, "<span class='notice'>You [on ? "activate" : "deactivate"] the prototype shoes.</span>")
 		if(!always_noslip)
 			if(on)
 				clothing_flags |= NOSLIP
 			else
 				clothing_flags &= ~NOSLIP
 	else
-		to_chat(user, "<span_class='warning'>You need bananium to turn the prototype shoes on!</span>")
+		to_chat(user, "<span class='warning'>You need bananium to turn the prototype shoes on!</span>")
 
 /obj/item/clothing/shoes/clown_shoes/banana_shoes/update_icon()
 	if(on)

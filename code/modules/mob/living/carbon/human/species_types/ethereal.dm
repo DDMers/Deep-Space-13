@@ -68,7 +68,7 @@
 	.=..()
 	EMPeffect = TRUE
 	spec_updatehealth(H)
-	to_chat(H, "<span_class='notice'>You feel the light of your body leave you.</span>")
+	to_chat(H, "<span class='notice'>You feel the light of your body leave you.</span>")
 	switch(severity)
 		if(EMP_LIGHT)
 			addtimer(CALLBACK(src, .proc/stop_emp, H), 100, TIMER_UNIQUE|TIMER_OVERRIDE) //We're out for 10 seconds
@@ -79,8 +79,8 @@
 	if(emageffect)
 		return
 	emageffect = TRUE
-	to_chat(user, "<span_class='notice'>You tap [H] on the back with your card.</span>")
-	H.visible_message("<span_class='danger'>[H] starts flickering in an array of colors!</span>")
+	to_chat(user, "<span class='notice'>You tap [H] on the back with your card.</span>")
+	H.visible_message("<span class='danger'>[H] starts flickering in an array of colors!</span>")
 	handle_emag(H)
 	addtimer(CALLBACK(src, .proc/stop_emag, H), 300, TIMER_UNIQUE|TIMER_OVERRIDE) //Disco mode for 30 seconds! This doesn't affect the ethereal at all besides either annoying some players, or making someone look badass.
 
@@ -96,13 +96,13 @@
 /datum/species/ethereal/spec_electrocute_act(mob/living/carbon/human/H, shock_damage, obj/source, siemens_coeff = 1, safety = 0, override = 0, tesla_shock = 0, illusion = 0, stun = TRUE)
 	.=..()
 	adjust_charge(shock_damage * siemens_coeff * 2)
-	to_chat(H, "<span_class='notice'>You absorb some of the shock into your body!</span>")
+	to_chat(H, "<span class='notice'>You absorb some of the shock into your body!</span>")
 
 
 /datum/species/ethereal/proc/stop_emp(mob/living/carbon/human/H)
 	EMPeffect = FALSE
 	spec_updatehealth(H)
-	to_chat(H, "<span_class='notice'>You feel more energized as your shine comes back.</span>")
+	to_chat(H, "<span class='notice'>You feel more energized as your shine comes back.</span>")
 
 
 /datum/species/ethereal/proc/handle_emag(mob/living/carbon/human/H)
@@ -115,7 +115,7 @@
 /datum/species/ethereal/proc/stop_emag(mob/living/carbon/human/H)
 	emageffect = FALSE
 	spec_updatehealth(H)
-	H.visible_message("<span_class='danger'>[H] stops flickering and goes back to their normal state!</span>")
+	H.visible_message("<span class='danger'>[H] stops flickering and goes back to their normal state!</span>")
 
 /datum/species/ethereal/proc/handle_charge(mob/living/carbon/human/H)
 	var/charge_rate = ETHEREAL_CHARGE_FACTOR

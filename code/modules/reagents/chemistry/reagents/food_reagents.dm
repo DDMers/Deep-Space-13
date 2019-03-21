@@ -116,7 +116,7 @@
 /datum/reagent/consumable/cooking_oil/reaction_obj(obj/O, reac_volume)
 	if(holder && holder.chem_temp >= fry_temperature)
 		if(isitem(O) && !istype(O, /obj/item/reagent_containers/food/snacks/deepfryholder))
-			O.loc.visible_message("<span_class='warning'>[O] rapidly fries as it's splashed with hot oil! Somehow.</span>")
+			O.loc.visible_message("<span class='warning'>[O] rapidly fries as it's splashed with hot oil! Somehow.</span>")
 			var/obj/item/reagent_containers/food/snacks/deepfryholder/F = new(O.drop_location(), O)
 			F.fry(volume)
 			F.reagents.add_reagent("cooking_oil", reac_volume)
@@ -128,8 +128,8 @@
 		boiling = TRUE
 	if(method == VAPOR || method == TOUCH) //Directly coats the mob, and doesn't go into their bloodstream
 		if(boiling)
-			M.visible_message("<span_class='warning'>The boiling oil sizzles as it covers [M]!</span>", \
-			"<span_class='userdanger'>You're covered in boiling oil!</span>")
+			M.visible_message("<span class='warning'>The boiling oil sizzles as it covers [M]!</span>", \
+			"<span class='userdanger'>You're covered in boiling oil!</span>")
 			M.emote("scream")
 			playsound(M, 'sound/machines/fryer/deep_fryer_emerge.ogg', 25, TRUE)
 			var/oil_damage = (holder.chem_temp / fry_temperature) * 0.33 //Damage taken per unit
@@ -159,7 +159,7 @@
 	taste_description = "sweetness"
 
 /datum/reagent/consumable/sugar/overdose_start(mob/living/M)
-	to_chat(M, "<span_class='userdanger'>You go into hyperglycaemic shock! Lay off the twinkies!</span>")
+	to_chat(M, "<span class='userdanger'>You go into hyperglycaemic shock! Lay off the twinkies!</span>")
 	M.AdjustSleeping(600, FALSE)
 	. = 1
 
@@ -315,7 +315,7 @@
 
 /datum/reagent/consumable/condensedcapsaicin/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
-		M.visible_message("<span_class='warning'>[M] [pick("dry heaves!","coughs!","splutters!")]</span>")
+		M.visible_message("<span class='warning'>[M] [pick("dry heaves!","coughs!","splutters!")]</span>")
 	..()
 
 /datum/reagent/consumable/sodiumchloride
@@ -602,10 +602,10 @@
 				unprotected = TRUE
 	if(unprotected)
 		if(!M.getorganslot(ORGAN_SLOT_EYES))	//can't blind somebody with no eyes
-			to_chat(M, "<span_class = 'notice'>Your eye sockets feel wet.</span>")
+			to_chat(M, "<span class = 'notice'>Your eye sockets feel wet.</span>")
 		else
 			if(!M.eye_blurry)
-				to_chat(M, "<span_class = 'warning'>Tears well up in your eyes!</span>")
+				to_chat(M, "<span class = 'warning'>Tears well up in your eyes!</span>")
 			M.blind_eyes(2)
 			M.blur_eyes(5)
 	..()
@@ -615,7 +615,7 @@
 	if(M.eye_blurry)	//Don't worsen vision if it was otherwise fine
 		M.blur_eyes(4)
 		if(prob(10))
-			to_chat(M, "<span_class = 'warning'>Your eyes sting!</span>")
+			to_chat(M, "<span class = 'warning'>Your eyes sting!</span>")
 			M.blind_eyes(2)
 
 

@@ -13,7 +13,7 @@
 	blacklisted = TRUE
 	limbs_id = "human"
 	skinned_type = /obj/item/stack/sheet/animalhide/human
-	var/info_text = "You are a <span_class='danger'>Vampire</span>. You will slowly but constantly lose blood if outside of a coffin. If inside a coffin, you will slowly heal. You may gain more blood by grabbing a live victim and using your drain ability."
+	var/info_text = "You are a <span class='danger'>Vampire</span>. You will slowly but constantly lose blood if outside of a coffin. If inside a coffin, you will slowly heal. You may gain more blood by grabbing a live victim and using your drain ability."
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/bat/batform //attached to the datum itself to avoid cloning memes, and other duplicates
 
 /datum/species/vampire/check_roundstart_eligible()
@@ -46,14 +46,14 @@
 		return
 	C.blood_volume -= 0.75
 	if(C.blood_volume <= BLOOD_VOLUME_SURVIVE)
-		to_chat(C, "<span_class='danger'>You ran out of blood!</span>")
+		to_chat(C, "<span class='danger'>You ran out of blood!</span>")
 		var/obj/shapeshift_holder/H = locate() in C
 		if(H)
 			H.shape.dust() //make sure we're killing the bat if you are out of blood, if you don't it creates weird situations where the bat is alive but the caster is dusted.
 		C.dust()
 	var/area/A = get_area(C)
 	if(istype(A, /area/chapel))
-		to_chat(C, "<span_class='danger'>You don't belong here!</span>")
+		to_chat(C, "<span class='danger'>You don't belong here!</span>")
 		C.adjustFireLoss(20)
 		C.adjust_fire_stacks(6)
 		C.IgniteMob()
@@ -76,35 +76,35 @@
 		var/mob/living/carbon/H = owner
 		var/obj/item/organ/tongue/vampire/V = target
 		if(V.drain_cooldown >= world.time)
-			to_chat(H, "<span_class='notice'>You just drained blood, wait a few seconds.</span>")
+			to_chat(H, "<span class='notice'>You just drained blood, wait a few seconds.</span>")
 			return
 		if(H.pulling && iscarbon(H.pulling))
 			var/mob/living/carbon/victim = H.pulling
 			if(H.blood_volume >= BLOOD_VOLUME_MAXIMUM)
-				to_chat(H, "<span_class='notice'>You're already full!</span>")
+				to_chat(H, "<span class='notice'>You're already full!</span>")
 				return
 			if(victim.stat == DEAD)
-				to_chat(H, "<span_class='notice'>You need a living victim!</span>")
+				to_chat(H, "<span class='notice'>You need a living victim!</span>")
 				return
 			if(!victim.blood_volume || (victim.dna && ((NOBLOOD in victim.dna.species.species_traits) || victim.dna.species.exotic_blood)))
-				to_chat(H, "<span_class='notice'>[victim] doesn't have blood!</span>")
+				to_chat(H, "<span class='notice'>[victim] doesn't have blood!</span>")
 				return
 			V.drain_cooldown = world.time + 30
 			if(victim.anti_magic_check(FALSE, TRUE, FALSE))
-				to_chat(victim, "<span_class='warning'>[H] tries to bite you, but stops before touching you!</span>")
-				to_chat(H, "<span_class='warning'>[victim] is blessed! You stop just in time to avoid catching fire.</span>")
+				to_chat(victim, "<span class='warning'>[H] tries to bite you, but stops before touching you!</span>")
+				to_chat(H, "<span class='warning'>[victim] is blessed! You stop just in time to avoid catching fire.</span>")
 				return
 			if(!do_after(H, 30, target = victim))
 				return
 			var/blood_volume_difference = BLOOD_VOLUME_MAXIMUM - H.blood_volume //How much capacity we have left to absorb blood
 			var/drained_blood = min(victim.blood_volume, VAMP_DRAIN_AMOUNT, blood_volume_difference)
-			to_chat(victim, "<span_class='danger'>[H] is draining your blood!</span>")
-			to_chat(H, "<span_class='notice'>You drain some blood!</span>")
+			to_chat(victim, "<span class='danger'>[H] is draining your blood!</span>")
+			to_chat(H, "<span class='notice'>You drain some blood!</span>")
 			playsound(H, 'sound/items/drink.ogg', 30, 1, -2)
 			victim.blood_volume = CLAMP(victim.blood_volume - drained_blood, 0, BLOOD_VOLUME_MAXIMUM)
 			H.blood_volume = CLAMP(H.blood_volume + drained_blood, 0, BLOOD_VOLUME_MAXIMUM)
 			if(!victim.blood_volume)
-				to_chat(H, "<span_class='warning'>You finish off [victim]'s blood supply!</span>")
+				to_chat(H, "<span class='warning'>You finish off [victim]'s blood supply!</span>")
 
 #undef VAMP_DRAIN_AMOUNT
 
@@ -121,7 +121,7 @@
 	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/H = owner
-		to_chat(H, "<span_class='notice'>Current blood level: [H.blood_volume]/[BLOOD_VOLUME_MAXIMUM].</span>")
+		to_chat(H, "<span class='notice'>Current blood level: [H.blood_volume]/[BLOOD_VOLUME_MAXIMUM].</span>")
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/bat
 	name = "Bat Form"

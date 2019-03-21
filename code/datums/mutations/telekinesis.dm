@@ -4,7 +4,7 @@
 	desc = "A strange mutation that allows the holder to interact with objects through thought."
 	quality = POSITIVE
 	difficulty = 18
-	text_gain_indication = "<span_class='notice'>You feel smarter!</span>"
+	text_gain_indication = "<span class='notice'>You feel smarter!</span>"
 	limb_req = BODY_ZONE_HEAD
 	instability = 30
 

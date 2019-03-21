@@ -75,7 +75,7 @@
 			user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[stars(info)]<HR>[stamps]</BODY></HTML>", "window=[name]")
 			onclose(user, "[name]")
 	else
-		to_chat(user, "<span_class='warning'>You're too far away to read it!</span>")
+		to_chat(user, "<span class='warning'>You're too far away to read it!</span>")
 
 
 /obj/item/paper/verb/rename()
@@ -88,7 +88,7 @@
 	if(ishuman(usr))
 		var/mob/living/carbon/human/H = usr
 		if(H.has_trait(TRAIT_CLUMSY) && prob(25))
-			to_chat(H, "<span_class='warning'>You cut yourself on the paper! Ahhhh! Ahhhhh!</span>")
+			to_chat(H, "<span class='warning'>You cut yourself on the paper! Ahhhh! Ahhhhh!</span>")
 			H.damageoverlaytemp = 9001
 			H.update_damage_hud()
 			return
@@ -99,7 +99,7 @@
 
 
 /obj/item/paper/suicide_act(mob/user)
-	user.visible_message("<span_class='suicide'>[user] scratches a grid on [user.p_their()] wrist with the paper! It looks like [user.p_theyre()] trying to commit sudoku...</span>")
+	user.visible_message("<span class='suicide'>[user] scratches a grid on [user.p_their()] wrist with the paper! It looks like [user.p_theyre()] trying to commit sudoku...</span>")
 	return (BRUTELOSS)
 
 /obj/item/paper/proc/reset_spamflag()
@@ -135,9 +135,9 @@
 	while(1)	//I know this can cause infinite loops and fuck up the whole server, but the if(istart==0) should be safe as fuck
 		var/istart = 0
 		if(links)
-			istart = findtext(info_links, "<span_class=\"paper_field\">", laststart)
+			istart = findtext(info_links, "<span class=\"paper_field\">", laststart)
 		else
-			istart = findtext(info, "<span_class=\"paper_field\">", laststart)
+			istart = findtext(info, "<span class=\"paper_field\">", laststart)
 
 		if(istart == 0)
 			return	//No field found with matching id
@@ -197,7 +197,7 @@
 	// Count the fields
 	var/laststart = 1
 	while(1)
-		var/i = findtext(t, "<span_class=\"paper_field\">", laststart)
+		var/i = findtext(t, "<span class=\"paper_field\">", laststart)
 		if(i == 0)
 			break
 		laststart = i+1
@@ -209,7 +209,7 @@
 	fields = 0
 	var/laststart = 1
 	while(1)
-		var/i = findtext(info, "<span_class=\"paper_field\">", laststart)
+		var/i = findtext(info, "<span class=\"paper_field\">", laststart)
 		if(i == 0)
 			break
 		laststart = i+1
@@ -290,7 +290,7 @@
 			user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[info_links]<HR>[stamps]</BODY><div align='right'style='position:fixed;bottom:0;font-style:bold;'><A href='?src=[REF(src)];help=1'>\[?\]</A></div></HTML>", "window=[name]")
 			return
 		else
-			to_chat(user, "<span_class='notice'>You don't know how to read or write.</span>")
+			to_chat(user, "<span class='notice'>You don't know how to read or write.</span>")
 			return
 
 	else if(istype(P, /obj/item/stamp))
@@ -309,12 +309,12 @@
 		LAZYADD(stamped, P.icon_state)
 		add_overlay(stampoverlay)
 
-		to_chat(user, "<span_class='notice'>You stamp the paper with your rubber stamp.</span>")
+		to_chat(user, "<span class='notice'>You stamp the paper with your rubber stamp.</span>")
 
 	if(P.is_hot())
 		if(user.has_trait(TRAIT_CLUMSY) && prob(10))
-			user.visible_message("<span_class='warning'>[user] accidentally ignites [user.p_them()]self!</span>", \
-								"<span_class='userdanger'>You miss the paper and accidentally light yourself on fire!</span>")
+			user.visible_message("<span class='warning'>[user] accidentally ignites [user.p_them()]self!</span>", \
+								"<span class='userdanger'>You miss the paper and accidentally light yourself on fire!</span>")
 			user.dropItemToGround(P)
 			user.adjust_fire_stacks(1)
 			user.IgniteMob()
@@ -324,7 +324,7 @@
 			return
 
 		user.dropItemToGround(src)
-		user.visible_message("<span_class='danger'>[user] lights [src] ablaze with [P]!</span>", "<span_class='danger'>You light [src] on fire!</span>")
+		user.visible_message("<span class='danger'>[user] lights [src] ablaze with [P]!</span>", "<span class='danger'>You light [src] on fire!</span>")
 		fire_act()
 
 

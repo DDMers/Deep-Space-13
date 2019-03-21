@@ -18,7 +18,7 @@ override their Hear() proc.
 	Here follows a list of say()-related procs and variables.
 global procs
 	get_radio_span(freq)
-		Returns the span_class associated with that frequency.
+		Returns the span class associated with that frequency.
 
 	get_radio_name(freq)
 		Returns the name of that frequency.
@@ -34,13 +34,13 @@ global procs
 		Like view(), but ignores luminosity.
 
 	message_spans_start(spans)
-		Turns each element of spans into a span_class.
+		Turns each element of spans into a span class.
 
 	message_spans_end(length)
 		Returns lenght times "</span>"
 
 	attach_spans(input, spans)
-		Attaches span_classes around input.
+		Attaches span classes around input.
 
 /atom/movable
 	flags
@@ -76,7 +76,7 @@ global procs
 		Passes message_mode to say_quote.
 
 	say_quote(input, spans, message_mode)
-		Adds a verb and quotes to a message. Also attaches span_classes to a message. Verbs are determined by verb_say/verb_ask/verb_yell variables. Called on the speaker.
+		Adds a verb and quotes to a message. Also attaches span classes to a message. Verbs are determined by verb_say/verb_ask/verb_yell variables. Called on the speaker.
 
 	get_spans(input, spans)
 		Returns the list of spans that are always applied to messages of this atom.

@@ -13,7 +13,7 @@
 		if(L.has_trait(TRAIT_PROSOPAGNOSIA))
 			obscure_name = TRUE
 
-	var/msg = "<span_class='info'>*---------*\nThis is <EM>[!obscure_name ? name : "Unknown"]</EM>!\n"
+	var/msg = "<span class='info'>*---------*\nThis is <EM>[!obscure_name ? name : "Unknown"]</EM>!\n"
 
 	var/list/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
@@ -53,16 +53,16 @@
 	else if(FR && length(FR.blood_DNA))
 		var/hand_number = get_num_arms(FALSE)
 		if(hand_number)
-			msg += "<span_class='warning'>[t_He] [t_has] [hand_number > 1 ? "" : "a"] blood-stained hand[hand_number > 1 ? "s" : ""]!</span>\n"
+			msg += "<span class='warning'>[t_He] [t_has] [hand_number > 1 ? "" : "a"] blood-stained hand[hand_number > 1 ? "s" : ""]!</span>\n"
 
 	//handcuffed?
 
 	//handcuffed?
 	if(handcuffed)
 		if(istype(handcuffed, /obj/item/restraints/handcuffs/cable))
-			msg += "<span_class='warning'>[t_He] [t_is] [icon2html(handcuffed, user)] restrained with cable!</span>\n"
+			msg += "<span class='warning'>[t_He] [t_is] [icon2html(handcuffed, user)] restrained with cable!</span>\n"
 		else
-			msg += "<span_class='warning'>[t_He] [t_is] [icon2html(handcuffed, user)] handcuffed!</span>\n"
+			msg += "<span class='warning'>[t_He] [t_is] [icon2html(handcuffed, user)] handcuffed!</span>\n"
 
 	//belt
 	if(belt)
@@ -84,7 +84,7 @@
 		if(glasses)
 			msg += "[t_He] [t_has] [glasses.get_examine_string(user)] covering [t_his] eyes.\n"
 		else if(eye_color == BLOODCULT_EYE && iscultist(src) && has_trait(CULT_EYES))
-			msg += "<span_class='warning'><B>[t_His] eyes are glowing an unnatural red!</B></span>\n"
+			msg += "<span class='warning'><B>[t_His] eyes are glowing an unnatural red!</B></span>\n"
 
 	//ears
 	if(ears && !(SLOT_EARS in obscured))
@@ -100,31 +100,31 @@
 	//Jitters
 	switch(jitteriness)
 		if(300 to INFINITY)
-			msg += "<span_class='warning'><B>[t_He] [t_is] convulsing violently!</B></span>\n"
+			msg += "<span class='warning'><B>[t_He] [t_is] convulsing violently!</B></span>\n"
 		if(200 to 300)
-			msg += "<span_class='warning'>[t_He] [t_is] extremely jittery.</span>\n"
+			msg += "<span class='warning'>[t_He] [t_is] extremely jittery.</span>\n"
 		if(100 to 200)
-			msg += "<span_class='warning'>[t_He] [t_is] twitching ever so slightly.</span>\n"
+			msg += "<span class='warning'>[t_He] [t_is] twitching ever so slightly.</span>\n"
 
 	var/appears_dead = 0
 	if(stat == DEAD || (has_trait(TRAIT_FAKEDEATH)))
 		appears_dead = 1
 		if(suiciding)
-			msg += "<span_class='warning'>[t_He] appear[p_s()] to have committed suicide... there is no hope of recovery.</span>\n"
+			msg += "<span class='warning'>[t_He] appear[p_s()] to have committed suicide... there is no hope of recovery.</span>\n"
 		if(hellbound)
-			msg += "<span_class='warning'>[t_His] soul seems to have been ripped out of [t_his] body.  Revival is impossible.</span>\n"
-		msg += "<span_class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life"
+			msg += "<span class='warning'>[t_His] soul seems to have been ripped out of [t_his] body.  Revival is impossible.</span>\n"
+		msg += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life"
 		if(getorgan(/obj/item/organ/brain))
 			if(!key && !get_ghost(FALSE, TRUE))
 				msg += " and [t_his] soul has departed"
 		msg += "...</span>\n"
 
 	if(get_bodypart(BODY_ZONE_HEAD) && !getorgan(/obj/item/organ/brain))
-		msg += "<span_class='deadsay'>It appears that [t_his] brain is missing...</span>\n"
+		msg += "<span class='deadsay'>It appears that [t_his] brain is missing...</span>\n"
 
 	var/temp = getBruteLoss() //no need to calculate each of these twice
 
-	msg += "<span_class='warning'>"
+	msg += "<span class='warning'>"
 
 	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	var/list/disabled = list()
@@ -150,7 +150,7 @@
 	var/r_limbs_missing = 0
 	for(var/t in missing)
 		if(t==BODY_ZONE_HEAD)
-			msg += "<span_class='deadsay'><B>[t_His] [parse_zone(t)] is missing!</B><span_class='warning'>\n"
+			msg += "<span class='deadsay'><B>[t_His] [parse_zone(t)] is missing!</B><span class='warning'>\n"
 			continue
 		if(t == BODY_ZONE_L_ARM || t == BODY_ZONE_L_LEG)
 			l_limbs_missing++
@@ -264,7 +264,7 @@
 				msg += "[t_He] [t_is] barely conscious.\n"
 		if(getorgan(/obj/item/organ/brain))
 			if(!key)
-				msg += "<span_class='deadsay'>[t_He] [t_is] totally catatonic. The stresses of life in deep-space must have been too much for [t_him]. Any recovery is unlikely.</span>\n"
+				msg += "<span class='deadsay'>[t_He] [t_is] totally catatonic. The stresses of life in deep-space must have been too much for [t_him]. Any recovery is unlikely.</span>\n"
 			else if(!client)
 				msg += "[t_He] [t_has] a blank, absent-minded stare and appears completely unresponsive to anything. [t_He] may snap out of it soon.\n"
 
@@ -282,7 +282,7 @@
 			if(perpname)
 				var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.general)
 				if(R)
-					msg += "<span_class='deptradio'>Rank:</span> [R.fields["rank"]]<br>"
+					msg += "<span class='deptradio'>Rank:</span> [R.fields["rank"]]<br>"
 					msg += "<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a> "
 					msg += "<a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a><br>"
 				if(istype(H.glasses, /obj/item/clothing/glasses/hud/health) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/medical))
@@ -302,8 +302,8 @@
 					if(R)
 						msg += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Medical evaluation\]</a><br>"
 					if(traitstring)
-						msg += "<span_class='info'>Detected physiological traits:<br></span>"
-						msg += "<span_class='info'>[traitstring]</span><br>"
+						msg += "<span class='info'>Detected physiological traits:<br></span>"
+						msg += "<span class='info'>[traitstring]</span><br>"
 
 
 
@@ -316,13 +316,13 @@
 						if(R)
 							criminal = R.fields["criminal"]
 
-						msg += "<span_class='deptradio'>Criminal status:</span> <a href='?src=[REF(src)];hud=s;status=1'>\[[criminal]\]</a>\n"
-						msg += "<span_class='deptradio'>Security record:</span> <a href='?src=[REF(src)];hud=s;view=1'>\[View\]</a> "
+						msg += "<span class='deptradio'>Criminal status:</span> <a href='?src=[REF(src)];hud=s;status=1'>\[[criminal]\]</a>\n"
+						msg += "<span class='deptradio'>Security record:</span> <a href='?src=[REF(src)];hud=s;view=1'>\[View\]</a> "
 						msg += "<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Add crime\]</a> "
 						msg += "<a href='?src=[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a> "
 						msg += "<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>\n"
 	else if(isobserver(user) && traitstring)
-		msg += "<span_class='info'><b>Traits:</b> [traitstring]</span><br>"
+		msg += "<span class='info'><b>Traits:</b> [traitstring]</span><br>"
 	msg += "*---------*</span>"
 
 	to_chat(user, msg)

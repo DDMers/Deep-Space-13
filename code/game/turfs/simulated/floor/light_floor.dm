@@ -15,7 +15,7 @@
 
 /turf/open/floor/light/examine(mob/user)
 	..()
-	to_chat(user, "<span_class='notice'>There's a <b>small crack</b> on the edge of it.</span>")
+	to_chat(user, "<span class='notice'>There's a <b>small crack</b> on the edge of it.</span>")
 
 /turf/open/floor/light/Initialize()
 	. = ..()
@@ -79,9 +79,9 @@
 			qdel(C)
 			state = 0 //fixing it by bashing it with a light bulb, fun eh?
 			update_icon()
-			to_chat(user, "<span_class='notice'>You replace the light bulb.</span>")
+			to_chat(user, "<span class='notice'>You replace the light bulb.</span>")
 		else
-			to_chat(user, "<span_class='notice'>The light bulb seems fine, no need to replace it.</span>")
+			to_chat(user, "<span class='notice'>The light bulb seems fine, no need to replace it.</span>")
 
 
 //Cycles through all of the colours

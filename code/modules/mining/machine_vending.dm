@@ -105,7 +105,7 @@
 	if(href_list["choice"])
 		if(istype(inserted_id))
 			if(href_list["choice"] == "eject")
-				to_chat(usr, "<span_class='notice'>You eject the ID from [src]'s card slot.</span>")
+				to_chat(usr, "<span class='notice'>You eject the ID from [src]'s card slot.</span>")
 				inserted_id.forceMove(loc)
 				inserted_id.verb_pickup()
 				inserted_id = null
@@ -115,27 +115,27 @@
 				if(!usr.transferItemToLoc(I, src))
 					return
 				inserted_id = I
-				to_chat(usr, "<span_class='notice'>You insert the ID into [src]'s card slot.</span>")
+				to_chat(usr, "<span class='notice'>You insert the ID into [src]'s card slot.</span>")
 			else
-				to_chat(usr, "<span_class='warning'>Error: No valid ID!</span>")
+				to_chat(usr, "<span class='warning'>Error: No valid ID!</span>")
 				flick(icon_deny, src)
 	if(href_list["purchase"])
 		if(istype(inserted_id))
 			var/datum/data/mining_equipment/prize = locate(href_list["purchase"]) in prize_list
 			if (!prize || !(prize in prize_list))
-				to_chat(usr, "<span_class='warning'>Error: Invalid choice!</span>")
+				to_chat(usr, "<span class='warning'>Error: Invalid choice!</span>")
 				flick(icon_deny, src)
 				return
 			if(prize.cost > inserted_id.mining_points)
-				to_chat(usr, "<span_class='warning'>Error: Insufficient points for [prize.equipment_name]!</span>")
+				to_chat(usr, "<span class='warning'>Error: Insufficient points for [prize.equipment_name]!</span>")
 				flick(icon_deny, src)
 			else
 				inserted_id.mining_points -= prize.cost
-				to_chat(usr, "<span_class='notice'>[src] clanks to life briefly before vending [prize.equipment_name]!</span>")
+				to_chat(usr, "<span class='notice'>[src] clanks to life briefly before vending [prize.equipment_name]!</span>")
 				new prize.equipment_path(src.loc)
 				SSblackbox.record_feedback("nested tally", "mining_equipment_bought", 1, list("[type]", "[prize.equipment_path]"))
 		else
-			to_chat(usr, "<span_class='warning'>Error: Please insert a valid ID!</span>")
+			to_chat(usr, "<span class='warning'>Error: Please insert a valid ID!</span>")
 			flick(icon_deny, src)
 	updateUsrDialog()
 	return
@@ -150,7 +150,7 @@
 			if(!usr.transferItemToLoc(C, src))
 				return
 			inserted_id = C
-			to_chat(usr, "<span_class='notice'>You insert the ID into [src]'s card slot.</span>")
+			to_chat(usr, "<span class='notice'>You insert the ID into [src]'s card slot.</span>")
 			interact(user)
 		return
 	if(default_deconstruction_screwdriver(user, "mining-open", "mining", I))
@@ -241,10 +241,10 @@
 		if(points)
 			var/obj/item/card/id/C = I
 			C.mining_points += points
-			to_chat(user, "<span_class='info'>You transfer [points] points to [C].</span>")
+			to_chat(user, "<span class='info'>You transfer [points] points to [C].</span>")
 			points = 0
 		else
-			to_chat(user, "<span_class='info'>There's no points left on [src].</span>")
+			to_chat(user, "<span class='info'>There's no points left on [src].</span>")
 	..()
 
 /obj/item/card/mining_point_card/examine(mob/user)

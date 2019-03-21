@@ -118,7 +118,7 @@
 		return FALSE
 	send_sound_lift('DS13/sound/effects/turbolift/turbolift-close.ogg')
 	if(!bolt_door())
-		to_chat(user, "<span_class='notice'> The door cannot close when someone is standing in it.</span>")
+		to_chat(user, "<span class='notice'> The door cannot close when someone is standing in it.</span>")
 		bolted = FALSE
 		in_use = FALSE
 		return
@@ -194,7 +194,7 @@
 		if(forced) //Forced means get out the FUCKING WAY.
 			for(var/atom/movable/M in get_turf(linked_door))
 				if(M.density && M != linked_door) //something is blocking the door
-					to_chat(M, "<span_class='warning'>You step away from [linked_door] to avoid getting crushed.</span>")
+					to_chat(M, "<span class='warning'>You step away from [linked_door] to avoid getting crushed.</span>")
 					M.forceMove(get_step(M, NORTH)) //get them out of my way, REEE
 		if(linked_door.close())
 			linked_door.bolt()
@@ -312,7 +312,7 @@
 
 /obj/structure/turbolift/manual/romulan //These are manually set and used for ships, as the maps themselves aren't actually multiZ enabled
 	height = 1
-	floor_directory = "<span_class='notice'>Deck 1: Bridge | Officers' Quarters.<br>\
+	floor_directory = "<span class='notice'>Deck 1: Bridge | Officers' Quarters.<br>\
 		Deck 2: Engineering | Brig | Transporter<br>\
 		Deck 3: Mess hall | Crew Quarters<br></span>" //Change this if you intend to make a new map. Helps players know where they're going.
 

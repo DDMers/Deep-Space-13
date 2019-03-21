@@ -20,10 +20,10 @@
 	if(is_adjacent)
 		to_chat(user, "It [case ? "contains \a [case]" : "is currently empty"].")
 		if(case)
-			to_chat(user, "<span_class='info'>Alt-click to remove [case].</span>")
+			to_chat(user, "<span class='info'>Alt-click to remove [case].</span>")
 	else
 		if(case)
-			to_chat(user, "<span_class='warning'>There seems to be something inside it, but you can't quite tell what from here...</span>")
+			to_chat(user, "<span class='warning'>There seems to be something inside it, but you can't quite tell what from here...</span>")
 
 /obj/item/implantpad/handle_atom_del(atom/A)
 	if(A == case)
@@ -37,7 +37,7 @@
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
 	if(!case)
-		to_chat(user, "<span_class='warning'>There's no implant to remove from [src].</span>")
+		to_chat(user, "<span class='warning'>There's no implant to remove from [src].</span>")
 		return
 
 	user.put_in_hands(case)

@@ -59,7 +59,7 @@
 	if( ishuman(AM) )
 		if(!stat)
 			var/mob/M = AM
-			to_chat(M, "<span_class='notice'>[icon2html(src, M)] Squeak!</span>")
+			to_chat(M, "<span class='notice'>[icon2html(src, M)] Squeak!</span>")
 	..()
 
 /mob/living/simple_animal/mouse/handle_automated_action()
@@ -69,13 +69,13 @@
 			var/obj/structure/cable/C = locate() in F
 			if(C && prob(15))
 				if(C.avail())
-					visible_message("<span_class='warning'>[src] chews through the [C]. It's toast!</span>")
+					visible_message("<span class='warning'>[src] chews through the [C]. It's toast!</span>")
 					playsound(src, 'sound/effects/sparks2.ogg', 100, 1)
 					C.deconstruct()
 					death(toast=1)
 				else
 					C.deconstruct()
-					visible_message("<span_class='warning'>[src] chews through the [C].</span>")
+					visible_message("<span class='warning'>[src] chews through the [C].</span>")
 
 /*
  * Mouse types
@@ -117,10 +117,10 @@
 	if(I.is_sharp() && user.a_intent == INTENT_HARM)
 		if(isturf(loc))
 			new /obj/item/reagent_containers/food/snacks/meat/slab/mouse(loc)
-			to_chat(user, "<span_class='notice'>You butcher [src].</span>")
+			to_chat(user, "<span class='notice'>You butcher [src].</span>")
 			qdel(src)
 		else
-			to_chat(user, "<span_class='warning'>You need to put [src] on a surface to butcher it!</span>")
+			to_chat(user, "<span class='warning'>You need to put [src] on a surface to butcher it!</span>")
 	else
 		return ..()
 

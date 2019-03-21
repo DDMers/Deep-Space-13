@@ -19,8 +19,8 @@
 	antag_datum = /datum/antagonist/traitor/internal_affairs
 
 	announce_text = "There are Nanotrasen Internal Affairs Agents trying to kill each other!\n\
-	<span_class='danger'>IAA</span>: Eliminate your targets and protect yourself!\n\
-	<span_class='notice'>Crew</span>: Stop the IAA agents before they can cause too much mayhem."
+	<span class='danger'>IAA</span>: Eliminate your targets and protect yourself!\n\
+	<span class='notice'>Crew</span>: Stop the IAA agents before they can cause too much mayhem."
 
 
 

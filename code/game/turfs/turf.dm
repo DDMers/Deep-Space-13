@@ -148,7 +148,7 @@
 			return FALSE
 	if(zFall(A, ++levels))
 		return FALSE
-	A.visible_message("<span_class='danger'>[A] crashes into [src]!</span>")
+	A.visible_message("<span class='danger'>[A] crashes into [src]!</span>")
 	A.onZImpact(src, levels)
 	return TRUE
 
@@ -161,7 +161,7 @@
 		return FALSE
 	if(!force && (!can_zFall(A, levels, target) || !A.can_zFall(src, levels, target, DOWN)))
 		return FALSE
-	A.visible_message("<span_class='danger'>[A] falls through [src]!</span>")
+	A.visible_message("<span class='danger'>[A] falls through [src]!</span>")
 	A.zfalling = TRUE
 	A.forceMove(target)
 	A.zfalling = FALSE
@@ -354,7 +354,7 @@
 	if(.)
 		return
 	if(length(src_object.contents()))
-		to_chat(usr, "<span_class='notice'>You start dumping out the contents...</span>")
+		to_chat(usr, "<span class='notice'>You start dumping out the contents...</span>")
 		if(!do_after(usr,20,target=src_object.parent))
 			return FALSE
 

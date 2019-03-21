@@ -28,27 +28,27 @@
 	var/originalname = "condiment" //Can't use initial(name) for this. This stores the name set by condimasters.
 
 /obj/item/reagent_containers/food/condiment/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span_class='suicide'>[user] is trying to eat the entire [src]! It looks like [user.p_they()] forgot how food works!</span>")
+	user.visible_message("<span class='suicide'>[user] is trying to eat the entire [src]! It looks like [user.p_they()] forgot how food works!</span>")
 	return OXYLOSS
 
 /obj/item/reagent_containers/food/condiment/attack(mob/M, mob/user, def_zone)
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, "<span_class='warning'>None of [src] left, oh no!</span>")
+		to_chat(user, "<span class='warning'>None of [src] left, oh no!</span>")
 		return 0
 
 	if(!canconsume(M, user))
 		return 0
 
 	if(M == user)
-		user.visible_message("<span_class='notice'>[user] swallows some of contents of \the [src].</span>", "<span_class='notice'>You swallow some of contents of \the [src].</span>")
+		user.visible_message("<span class='notice'>[user] swallows some of contents of \the [src].</span>", "<span class='notice'>You swallow some of contents of \the [src].</span>")
 	else
-		user.visible_message("<span_class='warning'>[user] attempts to feed [M] from [src].</span>")
+		user.visible_message("<span class='warning'>[user] attempts to feed [M] from [src].</span>")
 		if(!do_mob(user, M))
 			return
 		if(!reagents || !reagents.total_volume)
 			return // The condiment might be empty after the delay.
-		user.visible_message("<span_class='warning'>[user] feeds [M] from [src].</span>")
+		user.visible_message("<span class='warning'>[user] feeds [M] from [src].</span>")
 		log_combat(user, M, "fed", reagents.log_list())
 
 	var/fraction = min(10/reagents.total_volume, 1)
@@ -64,26 +64,26 @@
 	if(istype(target, /obj/structure/reagent_dispensers)) //A dispenser. Transfer FROM it TO us.
 
 		if(!target.reagents.total_volume)
-			to_chat(user, "<span_class='warning'>[target] is empty!</span>")
+			to_chat(user, "<span class='warning'>[target] is empty!</span>")
 			return
 
 		if(reagents.total_volume >= reagents.maximum_volume)
-			to_chat(user, "<span_class='warning'>[src] is full!</span>")
+			to_chat(user, "<span class='warning'>[src] is full!</span>")
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span_class='notice'>You fill [src] with [trans] units of the contents of [target].</span>")
+		to_chat(user, "<span class='notice'>You fill [src] with [trans] units of the contents of [target].</span>")
 
 	//Something like a glass or a food item. Player probably wants to transfer TO it.
 	else if(target.is_drainable() || istype(target, /obj/item/reagent_containers/food/snacks))
 		if(!reagents.total_volume)
-			to_chat(user, "<span_class='warning'>[src] is empty!</span>")
+			to_chat(user, "<span class='warning'>[src] is empty!</span>")
 			return
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, "<span_class='warning'>you can't add anymore to [target]!</span>")
+			to_chat(user, "<span class='warning'>you can't add anymore to [target]!</span>")
 			return
 		var/trans = src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
-		to_chat(user, "<span_class='notice'>You transfer [trans] units of the condiment to [target].</span>")
+		to_chat(user, "<span class='notice'>You transfer [trans] units of the condiment to [target].</span>")
 
 /obj/item/reagent_containers/food/condiment/on_reagent_change(changetype)
 	if(!possible_states.len)
@@ -138,7 +138,7 @@
 		icon_state = "saltshakersmall"
 
 /obj/item/reagent_containers/food/condiment/saltshaker/suicide_act(mob/user)
-	user.visible_message("<span_class='suicide'>[user] begins to swap forms with the salt shaker! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins to swap forms with the salt shaker! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	var/newname = "[name]"
 	name = "[user.name]"
 	user.name = newname
@@ -152,9 +152,9 @@
 		return
 	if(isturf(target))
 		if(!reagents.has_reagent("sodiumchloride", 2))
-			to_chat(user, "<span_class='warning'>You don't have enough salt to make a pile!</span>")
+			to_chat(user, "<span class='warning'>You don't have enough salt to make a pile!</span>")
 			return
-		user.visible_message("<span_class='notice'>[user] shakes some salt onto [target].</span>", "<span_class='notice'>You shake some salt onto [target].</span>")
+		user.visible_message("<span class='notice'>[user] shakes some salt onto [target].</span>", "<span class='notice'>You shake some salt onto [target].</span>")
 		reagents.remove_reagent("sodiumchloride", 2)
 		new/obj/effect/decal/cleanable/food/salt(target)
 		return
@@ -249,15 +249,15 @@
 	//You can tear the bag open above food to put the condiments on it, obviously.
 	if(istype(target, /obj/item/reagent_containers/food/snacks))
 		if(!reagents.total_volume)
-			to_chat(user, "<span_class='warning'>You tear open [src], but there's nothing in it.</span>")
+			to_chat(user, "<span class='warning'>You tear open [src], but there's nothing in it.</span>")
 			qdel(src)
 			return
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, "<span_class='warning'>You tear open [src], but [target] is stacked so high that it just drips off!</span>" )
+			to_chat(user, "<span class='warning'>You tear open [src], but [target] is stacked so high that it just drips off!</span>" )
 			qdel(src)
 			return
 		else
-			to_chat(user, "<span_class='notice'>You tear open [src] above [target] and the condiments drip onto it.</span>")
+			to_chat(user, "<span class='notice'>You tear open [src] above [target] and the condiments drip onto it.</span>")
 			src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 			qdel(src)
 

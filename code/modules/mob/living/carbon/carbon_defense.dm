@@ -68,7 +68,7 @@
 				if(isturf(I.loc))
 					I.attack_hand(src)
 					if(get_active_held_item() == I) //if our attack_hand() picks up the item...
-						visible_message("<span_class='warning'>[src] catches [I]!</span>") //catch that sucker!
+						visible_message("<span class='warning'>[src] catches [I]!</span>") //catch that sucker!
 						throw_mode_off()
 						return 1
 	..()
@@ -172,8 +172,8 @@
 				if(M.powerlevel < 0)
 					M.powerlevel = 0
 
-				visible_message("<span_class='danger'>The [M.name] has shocked [src]!</span>", \
-				"<span_class='userdanger'>The [M.name] has shocked [src]!</span>")
+				visible_message("<span class='danger'>The [M.name] has shocked [src]!</span>", \
+				"<span class='userdanger'>The [M.name] has shocked [src]!</span>")
 
 				do_sparks(5, TRUE, src)
 				var/power = M.powerlevel + rand(0,3)
@@ -212,7 +212,7 @@
 	if (stat == DEAD)
 		return
 	else
-		show_message("<span_class='userdanger'>The blob attacks!</span>")
+		show_message("<span class='userdanger'>The blob attacks!</span>")
 		adjustBruteLoss(10)
 
 /mob/living/carbon/emp_act(severity)
@@ -240,9 +240,9 @@
 	else
 		take_overall_damage(0,shock_damage)
 	visible_message(
-		"<span_class='danger'>[src] was shocked by \the [source]!</span>", \
-		"<span_class='userdanger'>You feel a powerful shock coursing through your body!</span>", \
-		"<span_class='italics'>You hear a heavy electrical crack.</span>" \
+		"<span class='danger'>[src] was shocked by \the [source]!</span>", \
+		"<span class='userdanger'>You feel a powerful shock coursing through your body!</span>", \
+		"<span class='italics'>You hear a heavy electrical crack.</span>" \
 		)
 	jitteriness += 1000 //High numbers for violent convulsions
 	do_jitter_animation(jitteriness)
@@ -260,18 +260,18 @@
 
 /mob/living/carbon/proc/help_shake_act(mob/living/carbon/M)
 	if(on_fire)
-		to_chat(M, "<span_class='warning'>You can't put [p_them()] out with just your bare hands!</span>")
+		to_chat(M, "<span class='warning'>You can't put [p_them()] out with just your bare hands!</span>")
 		return
 
 	if(!(mobility_flags & MOBILITY_STAND))
 		if(buckled)
-			to_chat(M, "<span_class='warning'>You need to unbuckle [src] first to do that!")
+			to_chat(M, "<span class='warning'>You need to unbuckle [src] first to do that!")
 			return
-		M.visible_message("<span_class='notice'>[M] shakes [src] trying to get [p_them()] up!</span>", \
-						"<span_class='notice'>You shake [src] trying to get [p_them()] up!</span>")
+		M.visible_message("<span class='notice'>[M] shakes [src] trying to get [p_them()] up!</span>", \
+						"<span class='notice'>You shake [src] trying to get [p_them()] up!</span>")
 	else
-		M.visible_message("<span_class='notice'>[M] hugs [src] to make [p_them()] feel better!</span>", \
-					"<span_class='notice'>You hug [src] to make [p_them()] feel better!</span>")
+		M.visible_message("<span class='notice'>[M] hugs [src] to make [p_them()] feel better!</span>", \
+					"<span class='notice'>You hug [src] to make [p_them()] feel better!</span>")
 		SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/hug)
 		for(var/datum/brain_trauma/trauma in M.get_traumas())
 			trauma.on_hug(M, src)
@@ -298,16 +298,16 @@
 			return
 
 		if (damage == 1)
-			to_chat(src, "<span_class='warning'>Your eyes sting a little.</span>")
+			to_chat(src, "<span class='warning'>Your eyes sting a little.</span>")
 			if(prob(40))
 				adjust_eye_damage(1)
 
 		else if (damage == 2)
-			to_chat(src, "<span_class='warning'>Your eyes burn.</span>")
+			to_chat(src, "<span class='warning'>Your eyes burn.</span>")
 			adjust_eye_damage(rand(2, 4))
 
 		else if( damage >= 3)
-			to_chat(src, "<span_class='warning'>Your eyes itch and burn severely!</span>")
+			to_chat(src, "<span class='warning'>Your eyes itch and burn severely!</span>")
 			adjust_eye_damage(rand(12, 16))
 
 		if(eyes.eye_damage > 10)
@@ -317,22 +317,22 @@
 			if(eyes.eye_damage > 20)
 				if(prob(eyes.eye_damage - 20))
 					if(!has_trait(TRAIT_NEARSIGHT))
-						to_chat(src, "<span_class='warning'>Your eyes start to burn badly!</span>")
+						to_chat(src, "<span class='warning'>Your eyes start to burn badly!</span>")
 					become_nearsighted(EYE_DAMAGE)
 
 				else if(prob(eyes.eye_damage - 25))
 					if(!has_trait(TRAIT_BLIND))
-						to_chat(src, "<span_class='warning'>You can't see anything!</span>")
+						to_chat(src, "<span class='warning'>You can't see anything!</span>")
 					become_blind(EYE_DAMAGE)
 
 			else
-				to_chat(src, "<span_class='warning'>Your eyes are really starting to hurt. This can't be good for you!</span>")
+				to_chat(src, "<span class='warning'>Your eyes are really starting to hurt. This can't be good for you!</span>")
 		if(has_bane(BANE_LIGHT))
 			mind.disrupt_spells(-500)
 		return 1
 	else if(damage == 0) // just enough protection
 		if(prob(20))
-			to_chat(src, "<span_class='notice'>Something bright flashes in the corner of your vision!</span>")
+			to_chat(src, "<span class='notice'>Something bright flashes in the corner of your vision!</span>")
 		if(has_bane(BANE_LIGHT))
 			mind.disrupt_spells(0)
 
@@ -354,13 +354,13 @@
 			adjustEarDamage(ear_damage,deaf)
 
 			if(ears.ear_damage >= 15)
-				to_chat(src, "<span_class='warning'>Your ears start to ring badly!</span>")
+				to_chat(src, "<span class='warning'>Your ears start to ring badly!</span>")
 				if(prob(ears.ear_damage - 5))
-					to_chat(src, "<span_class='userdanger'>You can't hear anything!</span>")
+					to_chat(src, "<span class='userdanger'>You can't hear anything!</span>")
 					ears.ear_damage = min(ears.ear_damage, UNHEALING_EAR_DAMAGE)
 					// you need earmuffs, inacusiate, or replacement
 			else if(ears.ear_damage >= 5)
-				to_chat(src, "<span_class='warning'>Your ears start to ring!</span>")
+				to_chat(src, "<span class='warning'>Your ears start to ring!</span>")
 			SEND_SOUND(src, sound('sound/weapons/flash_ring.ogg',0,1,0,250))
 		return effect_amount //how soundbanged we are
 

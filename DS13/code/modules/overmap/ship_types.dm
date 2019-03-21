@@ -54,8 +54,8 @@
 
 /obj/structure/trek_decor/plaque/examine(mob/user)
 	. = ..()
-	to_chat(user, "<span_class='notice'><b>Launch supervised by: [list2text(supervisors)]</b></span>")
-	to_chat(user, "<span_class='notice'><b>Retrofit conducted by: [list2text(supervisors)]</b></span>")
+	to_chat(user, "<span class='notice'><b>Launch supervised by: [list2text(supervisors)]</b></span>")
+	to_chat(user, "<span class='notice'><b>Retrofit conducted by: [list2text(supervisors)]</b></span>")
 	to_chat(user, "<i>There is a small inscription underneath it: '[inscription]'</i>")
 	to_chat(user, "<i>Somebody seems to have drawn an odd symbol on it. It says: 'Kilroy was here'</i>")
 

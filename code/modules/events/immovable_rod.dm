@@ -112,7 +112,7 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 /obj/effect/immovablerod/Bump(atom/clong)
 	if(prob(10))
 		playsound(src, 'sound/effects/bang.ogg', 50, 1)
-		audible_message("<span_class='danger'>You hear a CLANG!</span>")
+		audible_message("<span class='danger'>You hear a CLANG!</span>")
 
 	if(clong && prob(25))
 		x = clong.x
@@ -129,7 +129,7 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 		penetrate(clong)
 	else if(istype(clong, type))
 		var/obj/effect/immovablerod/other = clong
-		visible_message("<span_class='danger'>[src] collides with [other]!\
+		visible_message("<span class='danger'>[src] collides with [other]!\
 			</span>")
 		var/datum/effect_system/smoke_spread/smoke = new
 		smoke.set_up(2, get_turf(src))
@@ -138,7 +138,7 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 		qdel(other)
 
 /obj/effect/immovablerod/proc/penetrate(mob/living/L)
-	L.visible_message("<span_class='danger'>[L] is penetrated by an immovable rod!</span>" , "<span_class='userdanger'>The rod penetrates you!</span>" , "<span_class ='danger'>You hear a CLANG!</span>")
+	L.visible_message("<span class='danger'>[L] is penetrated by an immovable rod!</span>" , "<span class='userdanger'>The rod penetrates you!</span>" , "<span class ='danger'>You hear a CLANG!</span>")
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
 		H.adjustBruteLoss(160)
@@ -154,14 +154,14 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 				if(!M.stat)
 					shake_camera(M, 2, 3)
 			if(wizard)
-				U.visible_message("<span_class='boldwarning'>[src] transforms into [wizard] as [U] suplexes them!</span>", "<span_class='warning'>As you grab [src], it suddenly turns into [wizard] as you suplex them!</span>")
-				to_chat(wizard, "<span_class='boldwarning'>You're suddenly jolted out of rod-form as [U] somehow manages to grab you, slamming you into the ground!</span>")
+				U.visible_message("<span class='boldwarning'>[src] transforms into [wizard] as [U] suplexes them!</span>", "<span class='warning'>As you grab [src], it suddenly turns into [wizard] as you suplex them!</span>")
+				to_chat(wizard, "<span class='boldwarning'>You're suddenly jolted out of rod-form as [U] somehow manages to grab you, slamming you into the ground!</span>")
 				wizard.Stun(60)
 				wizard.apply_damage(25, BRUTE)
 				qdel(src)
 			else
 				SSmedals.UnlockMedal(MEDAL_RODSUPLEX,U.client) //rod-form wizards would probably make this a lot easier to get so keep it to regular rods only
-				U.visible_message("<span_class='boldwarning'>[U] suplexes [src] into the ground!</span>", "<span_class='warning'>You suplex [src] into the ground!</span>")
+				U.visible_message("<span class='boldwarning'>[U] suplexes [src] into the ground!</span>", "<span class='warning'>You suplex [src] into the ground!</span>")
 				new /obj/structure/festivus/anchored(drop_location())
 				new /obj/effect/anomaly/flux(drop_location())
 				qdel(src)

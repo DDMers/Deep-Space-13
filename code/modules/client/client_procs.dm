@@ -45,7 +45,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			completed_asset_jobs += job
 			return
 		else if (job in completed_asset_jobs) //byond bug ID:2256651
-			to_chat(src, "<span_class='danger'>An error has been detected in how your client is receiving resources. Attempting to correct.... (If you keep seeing these messages you might want to close byond and reconnect)</span>")
+			to_chat(src, "<span class='danger'>An error has been detected in how your client is receiving resources. Attempting to correct.... (If you keep seeing these messages you might want to close byond and reconnect)</span>")
 			src << browse("...", "window=asset_cache_browser")
 
 	var/mtl = CONFIG_GET(number/minute_topic_limit)
@@ -64,7 +64,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 				msg += " Administrators have been informed."
 				log_game("[key_name(src)] Has hit the per-minute topic limit of [mtl] topic calls in a given game minute")
 				message_admins("[ADMIN_LOOKUPFLW(src)] [ADMIN_KICK(usr)] Has hit the per-minute topic limit of [mtl] topic calls in a given game minute")
-			to_chat(src, "<span_class='danger'>[msg]</span>")
+			to_chat(src, "<span class='danger'>[msg]</span>")
 			return
 
 	var/stl = CONFIG_GET(number/second_topic_limit)
@@ -77,7 +77,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			topiclimiter[SECOND_COUNT] = 0
 		topiclimiter[SECOND_COUNT] += 1
 		if (topiclimiter[SECOND_COUNT] > stl)
-			to_chat(src, "<span_class='danger'>Your previous action was ignored because you've done too many in a second</span>")
+			to_chat(src, "<span class='danger'>Your previous action was ignored because you've done too many in a second</span>")
 			return
 
 	//Logs all hrefs, except chat pings
@@ -126,11 +126,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(CONFIG_GET(flag/automute_on) && !holder && last_message == message)
 		src.last_message_count++
 		if(src.last_message_count >= SPAM_TRIGGER_AUTOMUTE)
-			to_chat(src, "<span_class='danger'>You have exceeded the spam filter limit for identical messages. An auto-mute was applied.</span>")
+			to_chat(src, "<span class='danger'>You have exceeded the spam filter limit for identical messages. An auto-mute was applied.</span>")
 			cmd_admin_mute(src, mute_type, 1)
 			return 1
 		if(src.last_message_count >= SPAM_TRIGGER_WARNING)
-			to_chat(src, "<span_class='danger'>You are nearing the spam filter limit for identical messages.</span>")
+			to_chat(src, "<span class='danger'>You are nearing the spam filter limit for identical messages.</span>")
 			return 0
 	else
 		last_message = message
@@ -224,10 +224,10 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 					alert_mob_dupe_login = TRUE
 				if(matches)
 					if(C)
-						message_admins("<font color='red'><B>Notice: </B><span_class='notice'>[key_name_admin(src)] has the same [matches] as [key_name_admin(C)].</span>")
+						message_admins("<font color='red'><B>Notice: </B><span class='notice'>[key_name_admin(src)] has the same [matches] as [key_name_admin(C)].</span>")
 						log_access("Notice: [key_name(src)] has the same [matches] as [key_name(C)].")
 					else
-						message_admins("<font color='red'><B>Notice: </B><span_class='notice'>[key_name_admin(src)] has the same [matches] as [key_name_admin(C)] (no longer logged in). </span>")
+						message_admins("<font color='red'><B>Notice: </B><span class='notice'>[key_name_admin(src)] has the same [matches] as [key_name_admin(C)] (no longer logged in). </span>")
 						log_access("Notice: [key_name(src)] has the same [matches] as [key_name(C)] (no longer logged in).")
 
 	if(GLOB.player_details[ckey])
@@ -243,16 +243,16 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 
 	if (byond_version >= 512)
 		if (!byond_build || byond_build < 1386)
-			message_admins("<span_class='adminnotice'>[key_name(src)] has been detected as spoofing their byond version. Connection rejected.</span>")
+			message_admins("<span class='adminnotice'>[key_name(src)] has been detected as spoofing their byond version. Connection rejected.</span>")
 			add_system_note("Spoofed-Byond-Version", "Detected as using a spoofed byond version.")
 			log_access("Failed Login: [key] - Spoofed byond version")
 			qdel(src)
 
 		if (num2text(byond_build) in GLOB.blacklisted_builds)
 			log_access("Failed login: [key] - blacklisted byond version")
-			to_chat(src, "<span_class='userdanger'>Your version of byond is blacklisted.</span>")
-			to_chat(src, "<span_class='danger'>Byond build [byond_build] ([byond_version].[byond_build]) has been blacklisted for the following reason: [GLOB.blacklisted_builds[num2text(byond_build)]].</span>")
-			to_chat(src, "<span_class='danger'>Please download a new version of byond. If [byond_build] is the latest, you can go to <a href=\"https://secure.byond.com/download/build\">BYOND's website</a> to download other versions.</span>")
+			to_chat(src, "<span class='userdanger'>Your version of byond is blacklisted.</span>")
+			to_chat(src, "<span class='danger'>Byond build [byond_build] ([byond_version].[byond_build]) has been blacklisted for the following reason: [GLOB.blacklisted_builds[num2text(byond_build)]].</span>")
+			to_chat(src, "<span class='danger'>Please download a new version of byond. If [byond_build] is the latest, you can go to <a href=\"https://secure.byond.com/download/build\">BYOND's website</a> to download other versions.</span>")
 			if(connecting_admin)
 				to_chat(src, "As an admin, you are being allowed to continue using this version, but please consider changing byond versions")
 			else
@@ -275,7 +275,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 	var/cev = CONFIG_GET(number/client_error_version)
 	var/cwv = CONFIG_GET(number/client_warn_version)
 	if (byond_version < cev)		//Out of date client.
-		to_chat(src, "<span_class='danger'><b>Your version of BYOND is too old:</b></span>")
+		to_chat(src, "<span class='danger'><b>Your version of BYOND is too old:</b></span>")
 		to_chat(src, CONFIG_GET(string/client_error_message))
 		to_chat(src, "Your version: [byond_version]")
 		to_chat(src, "Required version: [cev] or later")
@@ -294,7 +294,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 			msg += "Visit <a href=\"https://secure.byond.com/download\">BYOND's website</a> to get the latest version of BYOND.<br>"
 			src << browse(msg, "window=warning_popup")
 		else
-			to_chat(src, "<span_class='danger'><b>Your version of byond may be getting out of date:</b></span>")
+			to_chat(src, "<span class='danger'><b>Your version of byond may be getting out of date:</b></span>")
 			to_chat(src, CONFIG_GET(string/client_warn_message))
 			to_chat(src, "Your version: [byond_version]")
 			to_chat(src, "Required version to remove this message: [cwv] or later")
@@ -347,7 +347,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 	apply_clickcatcher()
 
 	if(prefs.lastchangelog != GLOB.changelog_hash) //bolds the changelog button on the interface so we know there are updates.
-		to_chat(src, "<span_class='info'>You have unread updates in the changelog.</span>")
+		to_chat(src, "<span class='info'>You have unread updates in the changelog.</span>")
 		if(CONFIG_GET(flag/aggressive_changelog))
 			changelog()
 		else
@@ -362,7 +362,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 		convert_notes_sql(ckey)
 	to_chat(src, get_message_output("message", ckey))
 	if(!winexists(src, "asset_cache_browser")) // The client is using a custom skin, tell them.
-		to_chat(src, "<span_class='warning'>Unable to access asset cache browser, if you are using a custom skin file, please allow DS to download the updated version, if you are not, then make a bug report. This is not a critical issue but can cause issues with resource downloading, as it is impossible to know when extra resources arrived to you.</span>")
+		to_chat(src, "<span class='warning'>Unable to access asset cache browser, if you are using a custom skin file, please allow DS to download the updated version, if you are not, then make a bug report. This is not a critical issue but can cause issues with resource downloading, as it is impossible to know when extra resources arrived to you.</span>")
 
 
 	//This is down here because of the browse() calls in tooltip/New()
@@ -472,13 +472,13 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 	if(!query_client_in_db.NextRow())
 		if (CONFIG_GET(flag/panic_bunker) && !holder && !GLOB.deadmins[ckey])
 			log_access("Failed Login: [key] - New account attempting to connect during panic bunker")
-			message_admins("<span_class='adminnotice'>Failed Login: [key] - New account attempting to connect during panic bunker</span>")
+			message_admins("<span class='adminnotice'>Failed Login: [key] - New account attempting to connect during panic bunker</span>")
 			to_chat(src, "Sorry but the server is currently not accepting connections from never before seen players.")
 			var/list/connectiontopic_a = params2list(connectiontopic)
 			var/list/panic_addr = CONFIG_GET(string/panic_server_address)
 			if(panic_addr && !connectiontopic_a["redirect"])
 				var/panic_name = CONFIG_GET(string/panic_server_name)
-				to_chat(src, "<span_class='notice'>Sending you to [panic_name ? panic_name : panic_addr].</span>")
+				to_chat(src, "<span class='notice'>Sending you to [panic_name ? panic_name : panic_addr].</span>")
 				winset(src, null, "command=.options")
 				src << link("[panic_addr]?redirect=1")
 			qdel(query_client_in_db)
@@ -599,7 +599,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 	if (oldcid)
 		if (!topic || !topic["token"] || !tokens[ckey] || topic["token"] != tokens[ckey])
 			if (!cidcheck_spoofckeys[ckey])
-				message_admins("<span_class='adminnotice'>[key_name(src)] appears to have attempted to spoof a cid randomizer check.</span>")
+				message_admins("<span class='adminnotice'>[key_name(src)] appears to have attempted to spoof a cid randomizer check.</span>")
 				cidcheck_spoofckeys[ckey] = TRUE
 			cidcheck[ckey] = computer_id
 			tokens[ckey] = cid_check_reconnect()
@@ -615,11 +615,11 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 		if (oldcid != computer_id && computer_id != lastcid) //IT CHANGED!!!
 			cidcheck -= ckey //so they can try again after removing the cid randomizer.
 
-			to_chat(src, "<span_class='userdanger'>Connection Error:</span>")
-			to_chat(src, "<span_class='danger'>Invalid ComputerID(spoofed). Please remove the ComputerID spoofer from your byond installation and try again.</span>")
+			to_chat(src, "<span class='userdanger'>Connection Error:</span>")
+			to_chat(src, "<span class='danger'>Invalid ComputerID(spoofed). Please remove the ComputerID spoofer from your byond installation and try again.</span>")
 
 			if (!cidcheck_failedckeys[ckey])
-				message_admins("<span_class='adminnotice'>[key_name(src)] has been detected as using a cid randomizer. Connection rejected.</span>")
+				message_admins("<span class='adminnotice'>[key_name(src)] has been detected as using a cid randomizer. Connection rejected.</span>")
 				send2irc_adminless_only("CidRandomizer", "[key_name(src)] has been detected as using a cid randomizer. Connection rejected.")
 				cidcheck_failedckeys[ckey] = TRUE
 				note_randomizer_user()
@@ -630,11 +630,11 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 			return TRUE
 		else
 			if (cidcheck_failedckeys[ckey])
-				message_admins("<span_class='adminnotice'>[key_name_admin(src)] has been allowed to connect after showing they removed their cid randomizer</span>")
+				message_admins("<span class='adminnotice'>[key_name_admin(src)] has been allowed to connect after showing they removed their cid randomizer</span>")
 				send2irc_adminless_only("CidRandomizer", "[key_name(src)] has been allowed to connect after showing they removed their cid randomizer.")
 				cidcheck_failedckeys -= ckey
 			if (cidcheck_spoofckeys[ckey])
-				message_admins("<span_class='adminnotice'>[key_name_admin(src)] has been allowed to connect after appearing to have attempted to spoof a cid randomizer check because it <i>appears</i> they aren't spoofing one this time</span>")
+				message_admins("<span class='adminnotice'>[key_name_admin(src)] has been allowed to connect after appearing to have attempted to spoof a cid randomizer check because it <i>appears</i> they aren't spoofing one this time</span>")
 				cidcheck_spoofckeys -= ckey
 			cidcheck -= ckey
 	else if (computer_id != lastcid)
@@ -691,7 +691,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 	if (CONFIG_GET(string/ipintel_email))
 		var/datum/ipintel/res = get_ip_intel(address)
 		if (res.intel >= CONFIG_GET(number/ipintel_rating_bad))
-			message_admins("<span_class='adminnotice'>Proxy Detection: [key_name_admin(src)] IP intel rated [res.intel*100]% likely to be a Proxy/VPN.</span>")
+			message_admins("<span class='adminnotice'>Proxy Detection: [key_name_admin(src)] IP intel rated [res.intel*100]% likely to be a Proxy/VPN.</span>")
 		ip_intel = res.intel
 
 /client/Click(atom/object, atom/location, control, params)
@@ -721,7 +721,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 
 				log_game("[key_name(src)] Has hit the per-minute click limit of [mcl] clicks in a given game minute")
 				message_admins("[ADMIN_LOOKUPFLW(src)] [ADMIN_KICK(usr)] Has hit the per-minute click limit of [mcl] clicks in a given game minute")
-			to_chat(src, "<span_class='danger'>[msg]</span>")
+			to_chat(src, "<span class='danger'>[msg]</span>")
 			return
 
 	var/scl = CONFIG_GET(number/second_click_limit)
@@ -734,7 +734,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 			clicklimiter[SECOND_COUNT] = 0
 		clicklimiter[SECOND_COUNT] += 1+(!!ab)
 		if (clicklimiter[SECOND_COUNT] > scl)
-			to_chat(src, "<span_class='danger'>Your previous click was ignored because you've done too many in a second</span>")
+			to_chat(src, "<span class='danger'>Your previous click was ignored because you've done too many in a second</span>")
 			return
 
 	if (prefs.hotkeys)

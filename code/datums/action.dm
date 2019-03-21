@@ -425,7 +425,7 @@
 			owner.research_scanner++
 		else
 			owner.research_scanner--
-		to_chat(owner, "<span_class='notice'>[target] research scanner has been [active ? "activated" : "deactivated"].</span>")
+		to_chat(owner, "<span class='notice'>[target] research scanner has been [active ? "activated" : "deactivated"].</span>")
 		return 1
 
 /datum/action/item_action/toggle_research_scanner/Remove(mob/M)
@@ -492,9 +492,9 @@
 		I.attack_self(owner)
 	else
 		if (owner.get_num_arms() <= 0)
-			to_chat(owner, "<span_class='warning'>You dont have any usable hands!</span>")
+			to_chat(owner, "<span class='warning'>You dont have any usable hands!</span>")
 		else
-			to_chat(owner, "<span_class='warning'>Your hands are full!</span>")
+			to_chat(owner, "<span class='warning'>Your hands are full!</span>")
 
 /datum/action/item_action/agent_box
 	name = "Deploy Box"

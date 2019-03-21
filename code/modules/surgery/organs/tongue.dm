@@ -90,25 +90,25 @@
 		return
 
 	if(T.mothership == mothership)
-		to_chat(H, "<span_class='notice'>[src] is already attuned to the same channel as your own.</span>")
+		to_chat(H, "<span class='notice'>[src] is already attuned to the same channel as your own.</span>")
 
-	H.visible_message("<span_class='notice'>[H] holds [src] in their hands, and concentrates for a moment.</span>", "<span_class='notice'>You attempt to modify the attunation of [src].</span>")
+	H.visible_message("<span class='notice'>[H] holds [src] in their hands, and concentrates for a moment.</span>", "<span class='notice'>You attempt to modify the attunation of [src].</span>")
 	if(do_after(H, delay=15, target=src))
-		to_chat(H, "<span_class='notice'>You attune [src] to your own channel.</span>")
+		to_chat(H, "<span class='notice'>You attune [src] to your own channel.</span>")
 		mothership = T.mothership
 
 /obj/item/organ/tongue/abductor/examine(mob/M)
 	. = ..()
 	if(M.has_trait(TRAIT_ABDUCTOR_TRAINING) || isobserver(M))
 		if(!mothership)
-			to_chat(M, "<span_class='notice'>It is not attuned to a specific mothership.</span>")
+			to_chat(M, "<span class='notice'>It is not attuned to a specific mothership.</span>")
 		else
-			to_chat(M, "<span_class='notice'>It is attuned to [mothership].</span>")
+			to_chat(M, "<span class='notice'>It is attuned to [mothership].</span>")
 
 /obj/item/organ/tongue/abductor/TongueSpeech(var/message)
 	//Hacks
 	var/mob/living/carbon/human/user = usr
-	var/rendered = "<span_class='abductor'><b>[user.real_name]:</b> [message]</span>"
+	var/rendered = "<span class='abductor'><b>[user.real_name]:</b> [message]</span>"
 	user.log_talk(message, LOG_SAY, tag="abductor")
 	for(var/mob/living/carbon/human/H in GLOB.alive_mob_list)
 		var/obj/item/organ/tongue/abductor/T = H.getorganslot(ORGAN_SLOT_TONGUE)

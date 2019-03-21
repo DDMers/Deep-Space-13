@@ -13,7 +13,7 @@
 		if(!istype(T, /obj/structure/destructible/clockwork/trap/trigger))
 			wired_to += T
 			T.wired_to += src
-			to_chat(usr, "<span_class='alloy'>[src] automatically links with [T] beneath it.</span>")
+			to_chat(usr, "<span class='alloy'>[src] automatically links with [T] beneath it.</span>")
 
 /obj/structure/destructible/clockwork/trap/trigger/pressure_sensor/Crossed(atom/movable/AM)
 	if(isliving(AM) && !is_servant_of_ratvar(AM))

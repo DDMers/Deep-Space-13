@@ -246,7 +246,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			add_overlay("[initial(icon_state)]-panel")
 		updateUsrDialog()
 	else
-		to_chat(user, "<span_class='warning'>You must first secure [src].</span>")
+		to_chat(user, "<span class='warning'>You must first secure [src].</span>")
 	return TRUE
 
 /obj/machinery/vending/attackby(obj/item/I, mob/user, params)
@@ -255,21 +255,21 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		return
 	if(refill_canister && istype(I, refill_canister))
 		if (!panel_open)
-			to_chat(user, "<span_class='notice'>You should probably unscrew the service panel first.</span>")
+			to_chat(user, "<span class='notice'>You should probably unscrew the service panel first.</span>")
 		else if (stat & (BROKEN|NOPOWER))
-			to_chat(user, "<span_class='notice'>[src] does not respond.</span>")
+			to_chat(user, "<span class='notice'>[src] does not respond.</span>")
 		else
 			//if the panel is open we attempt to refill the machine
 			var/obj/item/vending_refill/canister = I
 			if(canister.get_part_rating() == 0)
-				to_chat(user, "<span_class='notice'>[canister] is empty!</span>")
+				to_chat(user, "<span class='notice'>[canister] is empty!</span>")
 			else
 				// instantiate canister if needed
 				var/transferred = restock(canister)
 				if(transferred)
-					to_chat(user, "<span_class='notice'>You loaded [transferred] items in [src].</span>")
+					to_chat(user, "<span class='notice'>You loaded [transferred] items in [src].</span>")
 				else
-					to_chat(user, "<span_class='notice'>There's nothing to restock!</span>")
+					to_chat(user, "<span class='notice'>There's nothing to restock!</span>")
 			return
 	else
 		return ..()
@@ -304,7 +304,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(user, "<span_class='notice'>You short out the product lock on [src].</span>")
+	to_chat(user, "<span class='notice'>You short out the product lock on [src].</span>")
 
 /obj/machinery/vending/_try_interact(mob/user)
 	if(seconds_electrified && !(stat & NOPOWER))
@@ -351,7 +351,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 			if(R.amount > 0 && ((C && C.registered_account && onstation) || (!onstation && isliving(user))))
 				dat += "<a href='byond://?src=[REF(src)];vend=[REF(R)]'>Vend</a> "
 			else
-				dat += "<span_class='linkOff'>Not Available</span> "
+				dat += "<span class='linkOff'>Not Available</span> "
 			dat += "<font color = '[R.display_color]'><b>[sanitize(R.name)] ([price_listed])</b>:</font>"
 			dat += " <b>[R.amount]</b>"
 			dat += "</li>"
@@ -419,7 +419,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 	if((href_list["vend"]) && (vend_ready))
 		if(panel_open)
-			to_chat(usr, "<span_class='notice'>The vending machine cannot dispense products while its service panel is open!</span>")
+			to_chat(usr, "<span class='notice'>The vending machine cannot dispense products while its service panel is open!</span>")
 			return
 
 		vend_ready = 0 //One thing at a time!!
@@ -551,7 +551,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	pre_throw(throw_item)
 
 	throw_item.throw_at(target, 16, 3)
-	visible_message("<span_class='danger'>[src] launches [throw_item] at [target]!</span>")
+	visible_message("<span class='danger'>[src] launches [throw_item] at [target]!</span>")
 	return 1
 
 /obj/machinery/vending/proc/pre_throw(obj/item/I)

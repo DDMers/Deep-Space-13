@@ -260,12 +260,12 @@
 	// Nitryl
 		var/nitryl_pp = breath.get_breath_partial_pressure(breath_gases[/datum/gas/nitryl][MOLES])
 		if (prob(nitryl_pp))
-			to_chat(H, "<span_class='alert'>Your mouth feels like it's burning!</span>")
+			to_chat(H, "<span class='alert'>Your mouth feels like it's burning!</span>")
 		if (nitryl_pp >40)
 			H.emote("gasp")
 			H.adjustFireLoss(10)
 			if (prob(nitryl_pp/2))
-				to_chat(H, "<span_class='alert'>Your throat closes up!</span>")
+				to_chat(H, "<span class='alert'>Your throat closes up!</span>")
 				H.silent = max(H.silent, 3)
 		else
 			H.adjustFireLoss(nitryl_pp/4)
@@ -298,22 +298,22 @@
 					// At lower pp, give out a little warning
 					SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "smell")
 					if(prob(5))
-						to_chat(owner, "<span_class='notice'>There is an unpleasant smell in the air.</span>")
+						to_chat(owner, "<span class='notice'>There is an unpleasant smell in the air.</span>")
 				if(5 to 15)
 					//At somewhat higher pp, warning becomes more obvious
 					if(prob(15))
-						to_chat(owner, "<span_class='warning'>You smell something horribly decayed inside this room.</span>")
+						to_chat(owner, "<span class='warning'>You smell something horribly decayed inside this room.</span>")
 						SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/bad_smell)
 				if(15 to 30)
 					//Small chance to vomit. By now, people have internals on anyway
 					if(prob(5))
-						to_chat(owner, "<span_class='warning'>The stench of rotting carcasses is unbearable!</span>")
+						to_chat(owner, "<span class='warning'>The stench of rotting carcasses is unbearable!</span>")
 						SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/nauseating_stench)
 						owner.vomit()
 				if(30 to INFINITY)
 					//Higher chance to vomit. Let the horror start
 					if(prob(15))
-						to_chat(owner, "<span_class='warning'>The stench of rotting carcasses is unbearable!</span>")
+						to_chat(owner, "<span class='warning'>The stench of rotting carcasses is unbearable!</span>")
 						SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/nauseating_stench)
 						owner.vomit()
 				else
@@ -364,7 +364,7 @@
 			H.apply_damage_type(cold_level_1_damage*cold_modifier, cold_damage_type)
 		if(breath_temperature < cold_level_1_threshold)
 			if(prob(20))
-				to_chat(H, "<span_class='warning'>You feel [cold_message] in your [name]!</span>")
+				to_chat(H, "<span class='warning'>You feel [cold_message] in your [name]!</span>")
 
 	if(!H.has_trait(TRAIT_RESISTHEAT)) // HEAT DAMAGE
 		var/heat_modifier = H.dna.species.heatmod
@@ -376,7 +376,7 @@
 			H.apply_damage_type(heat_level_3_damage*heat_modifier, heat_damage_type)
 		if(breath_temperature > heat_level_1_threshold)
 			if(prob(20))
-				to_chat(H, "<span_class='warning'>You feel [hot_message] in your [name]!</span>")
+				to_chat(H, "<span class='warning'>You feel [hot_message] in your [name]!</span>")
 
 /obj/item/organ/lungs/prepare_eat()
 	var/obj/S = ..()

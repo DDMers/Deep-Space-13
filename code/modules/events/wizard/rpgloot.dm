@@ -48,10 +48,10 @@
 	var/quality = rpg_loot_datum.quality
 
 	if(can_backfire && (quality > 9 && prob((quality - 9)*10)))
-		to_chat(user, "<span_class='danger'>[target] violently glows blue for a while, then evaporates.</span>")
+		to_chat(user, "<span class='danger'>[target] violently glows blue for a while, then evaporates.</span>")
 		target.burn()
 	else
-		to_chat(user, "<span_class='notice'>[target] glows blue and seems vaguely \"better\"!</span>")
+		to_chat(user, "<span class='notice'>[target] glows blue and seems vaguely \"better\"!</span>")
 		rpg_loot_datum.modify(upgrade_amount)
 
 	if(one_use)

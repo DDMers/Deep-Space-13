@@ -46,7 +46,7 @@
 		SSblackbox.record_feedback("tally", "chaplain_armor", 1, "[choice]")
 		SSreligion.holy_armor_type = choice
 	else
-		to_chat(M, "<span_class='warning'>A selection has already been made. Self-Destructing...</span>")
+		to_chat(M, "<span class='warning'>A selection has already been made. Self-Destructing...</span>")
 		return
 
 
@@ -184,7 +184,7 @@
 	AddComponent(/datum/component/anti_magic, TRUE, TRUE)
 
 /obj/item/nullrod/suicide_act(mob/user)
-	user.visible_message("<span_class='suicide'>[user] is killing [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to get closer to god!</span>")
+	user.visible_message("<span class='suicide'>[user] is killing [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to get closer to god!</span>")
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/nullrod/attack_self(mob/user)
@@ -505,8 +505,8 @@
 	if(prob(30) && ishuman(A))
 		var/mob/living/carbon/human/H = A
 		user.reagents.trans_to(H, user.reagents.total_volume, 1, 1, 0, transfered_by = user)
-		to_chat(user, "<span_class='notice'>Your pride reflects on [H].</span>")
-		to_chat(H, "<span_class='userdanger'>You feel insecure, taking on [user]'s burden.</span>")
+		to_chat(user, "<span class='notice'>Your pride reflects on [H].</span>")
+		to_chat(H, "<span class='userdanger'>You feel insecure, taking on [user]'s burden.</span>")
 
 /obj/item/nullrod/whip
 	name = "holy whip"

@@ -8,9 +8,9 @@
 	. = ..()
 	if(. && silent && !prevent_warning)
 		if(quickdraw)
-			to_chat(user, "<span_class='notice'>You discreetly slip [I] into [parent]. Alt-click [parent] to remove it.</span>")
+			to_chat(user, "<span class='notice'>You discreetly slip [I] into [parent]. Alt-click [parent] to remove it.</span>")
 		else
-			to_chat(user, "<span_class='notice'>You discreetly slip [I] into [parent].</span>")
+			to_chat(user, "<span class='notice'>You discreetly slip [I] into [parent].</span>")
 
 /datum/component/storage/concrete/pockets
 	max_w_class = WEIGHT_CLASS_NORMAL

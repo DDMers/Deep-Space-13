@@ -230,17 +230,17 @@
 		if(alert)
 			switch(stability)
 				if(70 to 90)
-					message = "<span_class='warning'>You shiver.</span>"
+					message = "<span class='warning'>You shiver.</span>"
 				if(60 to 69)
-					message = "<span_class='warning'>You feel cold.</span>"
+					message = "<span class='warning'>You feel cold.</span>"
 				if(40 to 59)
-					message = "<span_class='warning'>You feel sick.</span>"
+					message = "<span class='warning'>You feel sick.</span>"
 				if(20 to 39)
-					message = "<span_class='warning'>It feels like your skin is moving.</span>"
+					message = "<span class='warning'>It feels like your skin is moving.</span>"
 				if(1 to 19)
-					message = "<span_class='warning'>You can feel your cells burning.</span>"
+					message = "<span class='warning'>You can feel your cells burning.</span>"
 				if(-INFINITY to 0)
-					message = "<span_class='boldwarning'>You can feel your DNA exploding, we need to do something fast!</span>"
+					message = "<span class='boldwarning'>You can feel your DNA exploding, we need to do something fast!</span>"
 		if(stability <= 0)
 			addtimer(CALLBACK(src, .proc/something_horrible), 600) //you've got 60 seconds to get your shit togheter
 		if(message)
@@ -265,7 +265,7 @@
 			if(2)
 				H.corgize()
 			if(3)
-				to_chat(H, "<span_class='notice'>Oh, we actually feel quite alright!</span>")
+				to_chat(H, "<span class='notice'>Oh, we actually feel quite alright!</span>")
 	else
 		switch(rand(0,3))
 			if(0)

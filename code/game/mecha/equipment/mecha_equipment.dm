@@ -35,7 +35,7 @@
 		if(chassis.selected == src)
 			chassis.selected = null
 		src.update_chassis_page()
-		chassis.occupant_message("<span_class='danger'>[src] is destroyed!</span>")
+		chassis.occupant_message("<span class='danger'>[src] is destroyed!</span>")
 		log_message("[src] is destroyed.", LOG_MECHA)
 		SEND_SOUND(chassis.occupant, sound(istype(src, /obj/item/mecha_parts/mecha_equipment/weapon) ? 'sound/mecha/weapdestr.ogg' : 'sound/mecha/critdestr.ogg', volume=50))
 		chassis = null
@@ -46,9 +46,9 @@
 		if(!user.temporarilyRemoveItemFromInventory(src))
 			return FALSE
 		attach(M)
-		user.visible_message("[user] attaches [src] to [M].", "<span_class='notice'>You attach [src] to [M].</span>")
+		user.visible_message("[user] attaches [src] to [M].", "<span class='notice'>You attach [src] to [M].</span>")
 		return TRUE
-	to_chat(user, "<span_class='warning'>You are unable to attach [src] to [M]!</span>")
+	to_chat(user, "<span class='warning'>You are unable to attach [src] to [M]!</span>")
 	return FALSE
 
 /obj/item/mecha_parts/mecha_equipment/proc/critfail()

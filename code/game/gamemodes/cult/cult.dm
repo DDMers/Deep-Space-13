@@ -45,8 +45,8 @@
 
 	announce_span = "cult"
 	announce_text = "Some crew members are trying to start a cult to Nar'Sie!\n\
-	<span_class='cult'>Cultists</span>: Carry out Nar'Sie's will.\n\
-	<span_class='notice'>Crew</span>: Prevent the cult from expanding and drive it out."
+	<span class='cult'>Cultists</span>: Carry out Nar'Sie's will.\n\
+	<span class='notice'>Crew</span>: Prevent the cult from expanding and drive it out."
 
 	var/finished = 0
 

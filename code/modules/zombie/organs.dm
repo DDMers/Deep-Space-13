@@ -36,7 +36,7 @@
 		deltimer(timer_id)
 
 /obj/item/organ/zombie_infection/on_find(mob/living/finder)
-	to_chat(finder, "<span_class='warning'>Inside the head is a disgusting black \
+	to_chat(finder, "<span class='warning'>Inside the head is a disgusting black \
 		web of pus and viscera, bound tightly around the brain like some \
 		biological harness.</span>")
 
@@ -48,7 +48,7 @@
 	if (causes_damage && !iszombie(owner) && owner.stat != DEAD)
 		owner.adjustToxLoss(1)
 		if (prob(10))
-			to_chat(owner, "<span_class='danger'>You feel sick...</span>")
+			to_chat(owner, "<span class='danger'>You feel sick...</span>")
 	if(timer_id)
 		return
 	if(owner.suiciding)
@@ -58,7 +58,7 @@
 	if(!owner.getorgan(/obj/item/organ/brain))
 		return
 	if(!iszombie(owner))
-		to_chat(owner, "<span_class='cultlarge'>You can feel your heart stopping, but something isn't right... \
+		to_chat(owner, "<span class='cultlarge'>You can feel your heart stopping, but something isn't right... \
 		life has not abandoned your broken form. You can only feel a deep and immutable hunger that \
 		not even death can stop, you will rise again!</span>")
 	var/revive_time = rand(revive_time_min, revive_time_max)
@@ -86,11 +86,11 @@
 		return
 
 	owner.grab_ghost()
-	owner.visible_message("<span_class='danger'>[owner] suddenly convulses, as [owner.p_they()][stand_up ? " stagger to [owner.p_their()] feet and" : ""] gain a ravenous hunger in [owner.p_their()] eyes!</span>", "<span_class='alien'>You HUNGER!</span>")
+	owner.visible_message("<span class='danger'>[owner] suddenly convulses, as [owner.p_they()][stand_up ? " stagger to [owner.p_their()] feet and" : ""] gain a ravenous hunger in [owner.p_their()] eyes!</span>", "<span class='alien'>You HUNGER!</span>")
 	playsound(owner.loc, 'sound/hallucinations/far_noise.ogg', 50, 1)
 	owner.do_jitter_animation(living_transformation_time)
 	owner.Stun(living_transformation_time)
-	to_chat(owner, "<span_class='alertalien'>You are now a zombie!</span>")
+	to_chat(owner, "<span class='alertalien'>You are now a zombie!</span>")
 
 /obj/item/organ/zombie_infection/nodamage
 	causes_damage = FALSE

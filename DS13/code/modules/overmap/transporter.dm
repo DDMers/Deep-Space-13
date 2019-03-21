@@ -124,7 +124,7 @@
 	if(A.linked_overmap)
 		if(!A.linked_overmap.shields.check_vulnerability())
 			playsound(loc, 'DS13/sound/effects/transporter/malfunction.ogg', 100, 4)
-			to_chat(operator, "<span_class='boldnotice'>Unable to comply</span> - <span_class='warning'>unable to establish transporter lock.</span>")
+			to_chat(operator, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>unable to establish transporter lock.</span>")
 			return
 	var/sound/S = pick('DS13/sound/effects/transporter/transporter_beep.ogg','DS13/sound/effects/transporter/transporter_beep2.ogg')
 	playsound(loc, S, 100)
@@ -198,7 +198,7 @@
 		if(S.shields.check_vulnerability() && S != thearea.linked_overmap)
 			ships += S
 	if(!ships.len)
-		to_chat(user, "<span_class='boldnotice'>Unable to comply</span> - <span_class='warning'>there are no suitable ships nearby. Target shields must be weakened to initiate transport</span>")
+		to_chat(user, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>there are no suitable ships nearby. Target shields must be weakened to initiate transport</span>")
 		return
 	shipchoice = input(user, "Target", "Transporter Control", shipchoice) as null|anything in ships
 	var/obj/structure/overmap/selected = shipchoice
@@ -221,7 +221,7 @@
 		give_eye_control(user, L)
 		return
 	if(!selected.linked_area)
-		to_chat(operator, "<span_class='boldnotice'>Unable to comply</span> - <span_class='warning'>that ship does not have any registered internal components.</span>")
+		to_chat(operator, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>that ship does not have any registered internal components.</span>")
 		return
 	operator = user
 	var/turf/L

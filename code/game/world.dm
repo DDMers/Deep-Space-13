@@ -168,7 +168,7 @@ GLOBAL_VAR_INIT(bypass_tgs_reboot, world.system_type == UNIX && world.byond_buil
 		if(PRcounts[id] > PR_ANNOUNCEMENTS_PER_ROUND)
 			return
 
-	var/final_composed = "<span_class='announce'>PR: [announcement]</span>"
+	var/final_composed = "<span class='announce'>PR: [announcement]</span>"
 	for(var/client/C in GLOB.clients)
 		C.AnnouncePR(final_composed)
 
@@ -198,9 +198,9 @@ GLOBAL_VAR_INIT(bypass_tgs_reboot, world.system_type == UNIX && world.byond_buil
 		if (usr)
 			log_admin("[key_name(usr)] Has requested an immediate world restart via client side debugging tools")
 			message_admins("[key_name_admin(usr)] Has requested an immediate world restart via client side debugging tools")
-		to_chat(world, "<span_class='boldannounce'>Rebooting World immediately due to host request</span>")
+		to_chat(world, "<span class='boldannounce'>Rebooting World immediately due to host request</span>")
 	else
-		to_chat(world, "<span_class='boldannounce'>Rebooting world...</span>")
+		to_chat(world, "<span class='boldannounce'>Rebooting world...</span>")
 		Master.Shutdown()	//run SS shutdowns
 
 	if(!GLOB.bypass_tgs_reboot)

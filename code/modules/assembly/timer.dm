@@ -12,13 +12,13 @@
 	var/hearing_range = 3
 
 /obj/item/assembly/timer/suicide_act(mob/living/user)
-	user.visible_message("<span_class='suicide'>[user] looks at the timer and decides [user.p_their()] fate! It looks like [user.p_theyre()] going to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] looks at the timer and decides [user.p_their()] fate! It looks like [user.p_theyre()] going to commit suicide!</span>")
 	activate()//doesnt rely on timer_end to prevent weird metas where one person can control the timer and therefore someone's life. (maybe that should be how it works...)
 	addtimer(CALLBACK(src, .proc/manual_suicide, user), time*10)//kill yourself once the time runs out
 	return MANUAL_SUICIDE
 
 /obj/item/assembly/timer/proc/manual_suicide(mob/living/user)
-	user.visible_message("<span_class='suicide'>[user]'s time is up!</span>")
+	user.visible_message("<span class='suicide'>[user]'s time is up!</span>")
 	user.adjustOxyLoss(200)
 	user.death(0)
 
@@ -32,7 +32,7 @@
 
 /obj/item/assembly/timer/examine(mob/user)
 	..()
-	to_chat(user, "<span_class='notice'>The timer is [timing ? "counting down from [time]":"set for [time] seconds"].</span>")
+	to_chat(user, "<span class='notice'>The timer is [timing ? "counting down from [time]":"set for [time] seconds"].</span>")
 
 /obj/item/assembly/timer/activate()
 	if(!..())

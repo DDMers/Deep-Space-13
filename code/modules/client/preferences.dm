@@ -679,9 +679,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				HTML += "<font color=orange>[rank]</font></td><td></td></tr>"
 				continue
 			if((rank in GLOB.command_positions) || (rank == "AI"))//Bold head jobs
-				HTML += "<b><span_class='dark'>[rank]</span></b>"
+				HTML += "<b><span class='dark'>[rank]</span></b>"
 			else
-				HTML += "<span_class='dark'>[rank]</span>"
+				HTML += "<span class='dark'>[rank]</span>"
 
 			HTML += "</td><td width='40%'>"
 
@@ -813,7 +813,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		return
 
 	if (!isnum(desiredLvl))
-		to_chat(user, "<span_class='danger'>UpdateJobPreference - desired level was not a number. Please notify coders!</span>")
+		to_chat(user, "<span class='danger'>UpdateJobPreference - desired level was not a number. Please notify coders!</span>")
 		ShowChoices(user)
 		return
 
@@ -878,7 +878,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /datum/preferences/proc/SetQuirks(mob/user)
 	if(!SSquirks)
-		to_chat(user, "<span_class='danger'>The quirk subsystem is still initializing! Try again in a minute.</span>")
+		to_chat(user, "<span class='danger'>The quirk subsystem is still initializing! Try again in a minute.</span>")
 		return
 
 	var/list/dat = list()
@@ -965,7 +965,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			var/expires = "This is a permanent ban."
 			if(ban_details["expiration_time"])
 				expires = " The ban is for [DisplayTimeText(text2num(ban_details["duration"]) MINUTES)] and expires on [ban_details["expiration_time"]] (server time)."
-			to_chat(user, "<span_class='danger'>You, or another user of this computer or connection ([ban_details["key"]]) is banned from playing [href_list["bancheck"]].<br>The ban reason is: [ban_details["reason"]]<br>This ban (BanID #[ban_details["id"]]) was applied by [ban_details["admin_key"]] on [ban_details["bantime"]] during round ID [ban_details["round_id"]].<br>[expires]</span>")
+			to_chat(user, "<span class='danger'>You, or another user of this computer or connection ([ban_details["key"]]) is banned from playing [href_list["bancheck"]].<br>The ban reason is: [ban_details["reason"]]<br>This ban (BanID #[ban_details["id"]]) was applied by [ban_details["admin_key"]] on [ban_details["bantime"]] during round ID [ban_details["round_id"]].<br>[expires]</span>")
 			return
 	if(href_list["preference"] == "job")
 		switch(href_list["task"])
@@ -1008,7 +1008,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/list/L = V
 					for(var/Q in all_quirks)
 						if((quirk in L) && (Q in L) && !(Q == quirk)) //two quirks have lined up in the list of the list of quirks that conflict with each other, so return (see quirks.dm for more details)
-							to_chat(user, "<span_class='danger'>[quirk] is incompatible with [Q].</span>")
+							to_chat(user, "<span class='danger'>[quirk] is incompatible with [Q].</span>")
 							return
 				var/value = SSquirks.quirk_points[quirk]
 				if(value == 0)
@@ -1025,16 +1025,16 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						all_quirks -= quirk
 					else if(quirk in negative_quirks)
 						if(balance + value < 0)
-							to_chat(user, "<span_class='warning'>Refunding this would cause you to go below your balance!</span>")
+							to_chat(user, "<span class='warning'>Refunding this would cause you to go below your balance!</span>")
 							return
 						negative_quirks -= quirk
 						all_quirks -= quirk
 					else if(value > 0)
 						if(positive_quirks.len >= MAX_QUIRKS)
-							to_chat(user, "<span_class='warning'>You can't have more than [MAX_QUIRKS] positive quirks!</span>")
+							to_chat(user, "<span class='warning'>You can't have more than [MAX_QUIRKS] positive quirks!</span>")
 							return
 						if(balance - value < 0)
-							to_chat(user, "<span_class='warning'>You don't have enough balance to gain this quirk!</span>")
+							to_chat(user, "<span class='warning'>You don't have enough balance to gain this quirk!</span>")
 							return
 						positive_quirks += quirk
 						all_quirks += quirk
@@ -1236,7 +1236,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV("#7F7F7F")[3]) // mutantcolors must be bright, but only if they affect the skin
 							features["mcolor"] = sanitize_hexcolor(new_mutantcolor)
 						else
-							to_chat(user, "<span_class='danger'>Invalid color. Your color is not bright enough.</span>")
+							to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
 
 				if("color_ethereal")
 					var/new_etherealcolor = input(user, "Choose your ethereal color", "Character Preference") as null|anything in GLOB.color_list_ethereal

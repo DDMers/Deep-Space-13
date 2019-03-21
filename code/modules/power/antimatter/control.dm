@@ -163,31 +163,31 @@
 		if(!anchored)
 			W.play_tool_sound(src, 75)
 			user.visible_message("[user.name] secures the [src.name] to the floor.", \
-				"<span_class='notice'>You secure the anchor bolts to the floor.</span>", \
-				"<span_class='italics'>You hear a ratchet.</span>")
+				"<span class='notice'>You secure the anchor bolts to the floor.</span>", \
+				"<span class='italics'>You hear a ratchet.</span>")
 			src.anchored = TRUE
 			connect_to_network()
 		else if(!linked_shielding.len > 0)
 			W.play_tool_sound(src, 75)
 			user.visible_message("[user.name] unsecures the [src.name].", \
-				"<span_class='notice'>You remove the anchor bolts.</span>", \
-				"<span_class='italics'>You hear a ratchet.</span>")
+				"<span class='notice'>You remove the anchor bolts.</span>", \
+				"<span class='italics'>You hear a ratchet.</span>")
 			src.anchored = FALSE
 			disconnect_from_network()
 		else
-			to_chat(user, "<span_class='warning'>Once bolted and linked to a shielding unit it the [src.name] is unable to be moved!</span>")
+			to_chat(user, "<span class='warning'>Once bolted and linked to a shielding unit it the [src.name] is unable to be moved!</span>")
 
 	else if(istype(W, /obj/item/am_containment))
 		if(fueljar)
-			to_chat(user, "<span_class='warning'>There is already a [fueljar] inside!</span>")
+			to_chat(user, "<span class='warning'>There is already a [fueljar] inside!</span>")
 			return
 
 		if(!user.transferItemToLoc(W, src))
 			return
 		fueljar = W
 		user.visible_message("[user.name] loads an [W.name] into the [src.name].", \
-				"<span_class='notice'>You load an [W.name].</span>", \
-				"<span_class='italics'>You hear a thunk.</span>")
+				"<span class='notice'>You load an [W.name].</span>", \
+				"<span class='italics'>You hear a thunk.</span>")
 	else
 		return ..()
 

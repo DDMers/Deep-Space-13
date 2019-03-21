@@ -3,7 +3,7 @@ GLOBAL_VAR(antag_prototypes)
 //Things to do somewhere in the future (If you're reading this feel free to do any of these)
 //Add HrefTokens to these
 //Make this template or at least remove + "<br>" with joins where you can grasp the big picture.
-//span_classes for the headers, wrap sections in div's and style them.
+//span classes for the headers, wrap sections in div's and style them.
 //Move common admin commands to /mob (maybe integrate with vv dropdown so the list is one thing with some flag where to show it)
 //Move objective initialization/editing stuff from mind to objectives and completely remove mind.objectives
 
@@ -79,14 +79,14 @@ GLOBAL_VAR(antag_prototypes)
 /datum/mind/proc/get_special_statuses()
 	var/list/result = list()
 	if(!current)
-		result += "<span_class='bad'>No body!</span>"
+		result += "<span class='bad'>No body!</span>"
 	if(current && current.has_trait(TRAIT_MINDSHIELD))
-		result += "<span_class='good'>Mindshielded</span>"
+		result += "<span class='good'>Mindshielded</span>"
 	//Move these to mob
 	if(iscyborg(current))
 		var/mob/living/silicon/robot/robot = current
 		if (robot.emagged)
-			result += "<span_class='bad'>Emagged</span>"
+			result += "<span class='bad'>Emagged</span>"
 	return result.Join(" | ")
 
 /datum/mind/proc/traitor_panel()
@@ -146,14 +146,14 @@ GLOBAL_VAR(antag_prototypes)
 
 		if(!current_antag) //Show antagging options
 			if(possible_admin_antags.len)
-				antag_header_parts += "<span_class='highlight'>None</span>"
+				antag_header_parts += "<span class='highlight'>None</span>"
 				antag_header_parts += possible_admin_antags
 			else
 				//If there's no antags to show in this category skip the section completely
 				continue
 		else //Show removal and current one
 			priority_sections |= antag_category
-			antag_header_parts += "<span_class='bad'>[current_antag.name]</span>"
+			antag_header_parts += "<span class='bad'>[current_antag.name]</span>"
 			antag_header_parts += "<a href='?src=[REF(src)];remove_antag=[REF(current_antag)]'>Remove</a>"
 
 

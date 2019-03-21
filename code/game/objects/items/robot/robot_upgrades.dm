@@ -16,7 +16,7 @@
 
 /obj/item/borg/upgrade/proc/action(mob/living/silicon/robot/R, user = usr)
 	if(R.stat == DEAD)
-		to_chat(user, "<span_class='notice'>[src] will not function on a deceased cyborg.</span>")
+		to_chat(user, "<span class='notice'>[src] will not function on a deceased cyborg.</span>")
 		return FALSE
 	if(module_type && !istype(R.module, module_type))
 		to_chat(R, "Upgrade mounting error!  No suitable hardpoint detected!")
@@ -56,7 +56,7 @@
 
 /obj/item/borg/upgrade/restart/action(mob/living/silicon/robot/R, user = usr)
 	if(R.health < 0)
-		to_chat(user, "<span_class='warning'>You have to repair the cyborg before using this module!</span>")
+		to_chat(user, "<span class='warning'>You have to repair the cyborg before using this module!</span>")
 		return FALSE
 
 	if(R.mind)
@@ -75,8 +75,8 @@
 	. = ..()
 	if(.)
 		if(R.speed < 0)
-			to_chat(R, "<span_class='notice'>A VTEC unit is already installed!</span>")
-			to_chat(user, "<span_class='notice'>There's no room for another VTEC unit!</span>")
+			to_chat(R, "<span class='notice'>A VTEC unit is already installed!</span>")
+			to_chat(user, "<span class='notice'>There's no room for another VTEC unit!</span>")
 			return FALSE
 
 		R.speed = -2 // Gotta go fast.
@@ -98,11 +98,11 @@
 	if(.)
 		var/obj/item/gun/energy/disabler/cyborg/T = locate() in R.module.modules
 		if(!T)
-			to_chat(user, "<span_class='notice'>There's no disabler in this unit!</span>")
+			to_chat(user, "<span class='notice'>There's no disabler in this unit!</span>")
 			return FALSE
 		if(T.charge_delay <= 2)
-			to_chat(R, "<span_class='notice'>A cooling unit is already installed!</span>")
-			to_chat(user, "<span_class='notice'>There's no room for another cooling unit!</span>")
+			to_chat(R, "<span class='notice'>A cooling unit is already installed!</span>")
+			to_chat(user, "<span class='notice'>There's no room for another cooling unit!</span>")
 			return FALSE
 
 		T.charge_delay = max(2 , T.charge_delay - 4)
@@ -124,7 +124,7 @@
 	. = ..()
 	if(.)
 		if(R.ionpulse)
-			to_chat(user, "<span_class='notice'>This unit already has ion thrusters installed!</span>")
+			to_chat(user, "<span class='notice'>This unit already has ion thrusters installed!</span>")
 			return FALSE
 
 		R.ionpulse = TRUE
@@ -304,7 +304,7 @@
 	if(.)
 		var/obj/item/borg/upgrade/selfrepair/U = locate() in R
 		if(U)
-			to_chat(user, "<span_class='warning'>This unit is already equipped with a self-repair module.</span>")
+			to_chat(user, "<span class='warning'>This unit is already equipped with a self-repair module.</span>")
 			return FALSE
 
 		cyborg = R
@@ -334,10 +334,10 @@
 /obj/item/borg/upgrade/selfrepair/ui_action_click()
 	on = !on
 	if(on)
-		to_chat(cyborg, "<span_class='notice'>You activate the self-repair module.</span>")
+		to_chat(cyborg, "<span class='notice'>You activate the self-repair module.</span>")
 		START_PROCESSING(SSobj, src)
 	else
-		to_chat(cyborg, "<span_class='notice'>You deactivate the self-repair module.</span>")
+		to_chat(cyborg, "<span class='notice'>You deactivate the self-repair module.</span>")
 		STOP_PROCESSING(SSobj, src)
 	update_icon()
 
@@ -362,12 +362,12 @@
 
 	if(cyborg && (cyborg.stat != DEAD) && on)
 		if(!cyborg.cell)
-			to_chat(cyborg, "<span_class='warning'>Self-repair module deactivated. Please, insert the power cell.</span>")
+			to_chat(cyborg, "<span class='warning'>Self-repair module deactivated. Please, insert the power cell.</span>")
 			deactivate_sr()
 			return
 
 		if(cyborg.cell.charge < powercost * 2)
-			to_chat(cyborg, "<span_class='warning'>Self-repair module deactivated. Please recharge.</span>")
+			to_chat(cyborg, "<span class='warning'>Self-repair module deactivated. Please recharge.</span>")
 			deactivate_sr()
 			return
 
@@ -392,7 +392,7 @@
 				msgmode = "critical"
 			else if(cyborg.health < cyborg.maxHealth)
 				msgmode = "normal"
-			to_chat(cyborg, "<span_class='notice'>Self-repair is active in <span_class='boldnotice'>[msgmode]</span> mode.</span>")
+			to_chat(cyborg, "<span class='notice'>Self-repair is active in <span class='boldnotice'>[msgmode]</span> mode.</span>")
 			msg_cooldown = world.time
 	else
 		deactivate_sr()
@@ -505,10 +505,10 @@
 	. = ..()
 	if(.)
 		if(R.shell)
-			to_chat(user, "<span_class='warning'>This unit is already an AI shell!</span>")
+			to_chat(user, "<span class='warning'>This unit is already an AI shell!</span>")
 			return FALSE
 		if(R.key) //You cannot replace a player unless the key is completely removed.
-			to_chat(user, "<span_class='warning'>Intelligence patterns detected in this [R.braintype]. Aborting.</span>")
+			to_chat(user, "<span class='warning'>Intelligence patterns detected in this [R.braintype]. Aborting.</span>")
 			return FALSE
 
 		R.make_shell(src)
@@ -530,7 +530,7 @@
 	if(.)
 
 		if(R.hasExpanded)
-			to_chat(usr, "<span_class='notice'>This unit already has an expand module installed!</span>")
+			to_chat(usr, "<span class='notice'>This unit already has an expand module installed!</span>")
 			return FALSE
 
 		R.notransform = TRUE
@@ -574,7 +574,7 @@
 
 		var/obj/item/storage/part_replacer/cyborg/RPED = locate() in R
 		if(RPED)
-			to_chat(user, "<span_class='warning'>This unit is already equipped with a RPED module.</span>")
+			to_chat(user, "<span class='warning'>This unit is already equipped with a RPED module.</span>")
 			return FALSE
 
 		RPED = new(R.module)
@@ -602,7 +602,7 @@
 
 		var/obj/item/pinpointer/crew/PP = locate() in R
 		if(PP)
-			to_chat(user, "<span_class='warning'>This unit is already equipped with a pinpointer module.</span>")
+			to_chat(user, "<span class='warning'>This unit is already equipped with a pinpointer module.</span>")
 			return FALSE
 
 		PP = new(R.module)

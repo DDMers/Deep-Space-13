@@ -33,7 +33,7 @@ RLD
 	var/plasteelmultiplier = 3 //Plasteel is worth 3 times more than glass or metal
 	var/plasmarglassmultiplier = 2 //50% less plasma than in plasteel
 	var/rglassmultiplier = 1.5 //One metal sheet, half a glass sheet
-	var/no_ammo_message = "<span_class='warning'>The \'Low Ammo\' light on the device blinks yellow.</span>"
+	var/no_ammo_message = "<span class='warning'>The \'Low Ammo\' light on the device blinks yellow.</span>"
 	var/has_ammobar = FALSE	//controls whether or not does update_icon apply ammo indicator overlays
 	var/ammo_sections = 10	//amount of divisions in the ammo indicator overlay/number of ammo indicator states
 
@@ -59,7 +59,7 @@ RLD
 		var/obj/item/rcd_ammo/R = W
 		var/load = min(R.ammoamt, max_matter - matter)
 		if(load <= 0)
-			to_chat(user, "<span_class='warning'>[src] can't hold any more matter-units!</span>")
+			to_chat(user, "<span class='warning'>[src] can't hold any more matter-units!</span>")
 			return
 		R.ammoamt -= load
 		if(R.ammoamt <= 0)
@@ -80,7 +80,7 @@ RLD
 	else if(istype(W, /obj/item/stack/tile/plasteel))
 		loaded = loadwithsheets(W, sheetmultiplier * 0.25, user) // 1 matter for 1 floortile, as 4 tiles are produced from 1 metal
 	if(loaded)
-		to_chat(user, "<span_class='notice'>[src] now holds [matter]/[max_matter] matter-units.</span>")
+		to_chat(user, "<span class='notice'>[src] now holds [matter]/[max_matter] matter-units.</span>")
 	else
 		return ..()
 	update_icon()	//ensures that ammo counters (if present) get updated
@@ -92,9 +92,9 @@ RLD
 		S.use(amount_to_use)
 		matter += value*amount_to_use
 		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
-		to_chat(user, "<span_class='notice'>You insert [amount_to_use] [S.name] sheets into [src]. </span>")
+		to_chat(user, "<span class='notice'>You insert [amount_to_use] [S.name] sheets into [src]. </span>")
 		return 1
-	to_chat(user, "<span_class='warning'>You can't insert any more [S.name] sheets into [src]!</span>")
+	to_chat(user, "<span class='warning'>You can't insert any more [S.name] sheets into [src]!</span>")
 	return 0
 
 /obj/item/construction/proc/activate()
@@ -124,7 +124,7 @@ RLD
 
 /obj/item/construction/proc/range_check(atom/A, mob/user)
 	if(!(A in view(7, get_turf(user))))
-		to_chat(user, "<span_class='warning'>The \'Out of Range\' light on [src] blinks red.</span>")
+		to_chat(user, "<span class='warning'>The \'Out of Range\' light on [src] blinks red.</span>")
 		return FALSE
 	else
 		return TRUE
@@ -158,7 +158,7 @@ RLD
 	var/canRturf = FALSE //Variable for R walls to deconstruct them
 
 /obj/item/construction/rcd/suicide_act(mob/user)
-	user.visible_message("<span_class='suicide'>[user] sets the RCD to 'Wall' and points it down [user.p_their()] throat! It looks like [user.p_theyre()] trying to commit suicide..</span>")
+	user.visible_message("<span class='suicide'>[user] sets the RCD to 'Wall' and points it down [user.p_their()] throat! It looks like [user.p_theyre()] trying to commit suicide..</span>")
 	return (BRUTELOSS)
 
 /obj/item/construction/rcd/verb/toggle_window_type_verb()
@@ -180,7 +180,7 @@ RLD
 		window_type = /obj/structure/window/fulltile
 		window_type_name = "glass"
 
-	to_chat(user, "<span_class='notice'>You change \the [src]'s window mode to [window_type_name].</span>")
+	to_chat(user, "<span class='notice'>You change \the [src]'s window mode to [window_type_name].</span>")
 
 /obj/item/construction/rcd/proc/change_airlock_access(mob/user)
 	if (!ishuman(user) && !user.has_unlimited_silicon_privilege)
@@ -467,7 +467,7 @@ RLD
 		else
 			return
 	playsound(src, 'sound/effects/pop.ogg', 50, 0)
-	to_chat(user, "<span_class='notice'>You change RCD's mode to '[choice]'.</span>")
+	to_chat(user, "<span class='notice'>You change RCD's mode to '[choice]'.</span>")
 
 /obj/item/construction/rcd/proc/target_check(atom/A, mob/user) // only returns true for stuff the device can actually work with
 	if((isturf(A) && A.density && mode==RCD_DECONSTRUCT) || (isturf(A) && !A.density) || (istype(A, /obj/machinery/door/airlock) && mode==RCD_DECONSTRUCT) || istype(A, /obj/structure/grille) || (istype(A, /obj/structure/window) && mode==RCD_DECONSTRUCT) || istype(A, /obj/structure/girder))
@@ -482,8 +482,8 @@ RLD
 	rcd_create(A, user)
 
 /obj/item/construction/rcd/proc/detonate_pulse()
-	audible_message("<span_class='danger'><b>[src] begins to vibrate and \
-		buzz loudly!</b></span>","<span_class='danger'><b>[src] begins \
+	audible_message("<span class='danger'><b>[src] begins to vibrate and \
+		buzz loudly!</b></span>","<span class='danger'><b>[src] begins \
 		vibrating violently!</b></span>")
 	// 5 seconds to get rid of it
 	addtimer(CALLBACK(src, .proc/detonate_pulse_explode), 50)
@@ -504,7 +504,7 @@ RLD
 	update_icon()
 
 /obj/item/construction/rcd/borg
-	no_ammo_message = "<span_class='warning'>Insufficient charge.</span>"
+	no_ammo_message = "<span class='warning'>Insufficient charge.</span>"
 	desc = "A device used to rapidly build walls and floors."
 	canRturf = TRUE
 	var/energyfactor = 72
@@ -642,13 +642,13 @@ RLD
 	switch(mode)
 		if(REMOVE_MODE)
 			mode = LIGHT_MODE
-			to_chat(user, "<span_class='notice'>You change RLD's mode to 'Permanent Light Construction'.</span>")
+			to_chat(user, "<span class='notice'>You change RLD's mode to 'Permanent Light Construction'.</span>")
 		if(LIGHT_MODE)
 			mode = GLOW_MODE
-			to_chat(user, "<span_class='notice'>You change RLD's mode to 'Light Launcher'.</span>")
+			to_chat(user, "<span class='notice'>You change RLD's mode to 'Light Launcher'.</span>")
 		if(GLOW_MODE)
 			mode = REMOVE_MODE
-			to_chat(user, "<span_class='notice'>You change RLD's mode to 'Deconstruct'.</span>")
+			to_chat(user, "<span class='notice'>You change RLD's mode to 'Deconstruct'.</span>")
 
 
 /obj/item/construction/rld/proc/checkdupes(var/target)
@@ -668,7 +668,7 @@ RLD
 		if(REMOVE_MODE)
 			if(istype(A, /obj/machinery/light/))
 				if(checkResource(deconcost, user))
-					to_chat(user, "<span_class='notice'>You start deconstructing [A]...</span>")
+					to_chat(user, "<span class='notice'>You start deconstructing [A]...</span>")
 					user.Beam(A,icon_state="nzcrentrs_power",time=15)
 					playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 					if(do_after(user, decondelay, target = A))
@@ -682,7 +682,7 @@ RLD
 			if(iswallturf(A))
 				var/turf/closed/wall/W = A
 				if(checkResource(floorcost, user))
-					to_chat(user, "<span_class='notice'>You start building a wall light...</span>")
+					to_chat(user, "<span class='notice'>You start building a wall light...</span>")
 					user.Beam(A,icon_state="nzcrentrs_power",time=15)
 					playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 					playsound(src.loc, 'sound/effects/light_flicker.ogg', 50, 0)
@@ -698,7 +698,7 @@ RLD
 							if(start.CanAtmosPass(C) && !dupes.len)
 								candidates += C
 						if(!candidates.len)
-							to_chat(user, "<span_class='warning'>Valid target not found...</span>")
+							to_chat(user, "<span class='warning'>Valid target not found...</span>")
 							playsound(src.loc, 'sound/misc/compiler-failure.ogg', 30, 1)
 							return FALSE
 						for(var/turf/open/O in candidates)
@@ -728,7 +728,7 @@ RLD
 			if(isfloorturf(A))
 				var/turf/open/floor/F = A
 				if(checkResource(floorcost, user))
-					to_chat(user, "<span_class='notice'>You start building a floor light...</span>")
+					to_chat(user, "<span class='notice'>You start building a floor light...</span>")
 					user.Beam(A,icon_state="nzcrentrs_power",time=15)
 					playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 					playsound(src.loc, 'sound/effects/light_flicker.ogg', 50, 1)
@@ -748,7 +748,7 @@ RLD
 		if(GLOW_MODE)
 			if(useResource(launchcost, user))
 				activate()
-				to_chat(user, "<span_class='notice'>You fire a glowstick!</span>")
+				to_chat(user, "<span class='notice'>You fire a glowstick!</span>")
 				var/obj/item/flashlight/glowstick/G  = new /obj/item/flashlight/glowstick(start)
 				G.color = color_choice
 				G.light_color = G.color

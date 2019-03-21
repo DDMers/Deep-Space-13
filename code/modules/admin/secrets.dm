@@ -124,7 +124,7 @@
 				return
 
 			log_admin("[key_name(usr)] reset the thunderdome to default with delete_mobs==[delete_mobs].", 1)
-			message_admins("<span_class='adminnotice'>[key_name_admin(usr)] reset the thunderdome to default with delete_mobs==[delete_mobs].</span>")
+			message_admins("<span class='adminnotice'>[key_name_admin(usr)] reset the thunderdome to default with delete_mobs==[delete_mobs].</span>")
 
 			var/area/thunderdome = GLOB.areas_by_type[/area/tdome/arena]
 			if(delete_mobs == "Yes")
@@ -153,7 +153,7 @@
 				return
 			set_station_name(new_name)
 			log_admin("[key_name(usr)] renamed the station to \"[new_name]\".")
-			message_admins("<span_class='adminnotice'>[key_name_admin(usr)] renamed the station to: [new_name].</span>")
+			message_admins("<span class='adminnotice'>[key_name_admin(usr)] renamed the station to: [new_name].</span>")
 			priority_announce("[command_name()] has renamed the station to \"[new_name]\".")
 		if("night_shift_set")
 			if(!check_rights(R_ADMIN))
@@ -179,7 +179,7 @@
 			var/new_name = new_station_name()
 			set_station_name(new_name)
 			log_admin("[key_name(usr)] reset the station name.")
-			message_admins("<span_class='adminnotice'>[key_name_admin(usr)] reset the station name.</span>")
+			message_admins("<span class='adminnotice'>[key_name_admin(usr)] reset the station name.</span>")
 			priority_announce("[command_name()] has renamed the station to \"[new_name]\".")
 
 		if("list_bombers")
@@ -241,7 +241,7 @@
 				message_admins("[key_name_admin(usr)] [new_perma ? "stopped" : "started"] the arrivals shuttle")
 				log_admin("[key_name(usr)] [new_perma ? "stopped" : "started"] the arrivals shuttle")
 			else
-				to_chat(usr, "<span_class='admin'>There is no arrivals shuttle</span>")
+				to_chat(usr, "<span class='admin'>There is no arrivals shuttle</span>")
 		if("showailaws")
 			if(!check_rights(R_ADMIN))
 				return
@@ -316,7 +316,7 @@
 				return
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Power All APCs"))
 			log_admin("[key_name(usr)] made all areas powered", 1)
-			message_admins("<span_class='adminnotice'>[key_name_admin(usr)] made all areas powered</span>")
+			message_admins("<span class='adminnotice'>[key_name_admin(usr)] made all areas powered</span>")
 			power_restore()
 
 		if("unpower")
@@ -324,7 +324,7 @@
 				return
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Depower All APCs"))
 			log_admin("[key_name(usr)] made all areas unpowered", 1)
-			message_admins("<span_class='adminnotice'>[key_name_admin(usr)] made all areas unpowered</span>")
+			message_admins("<span class='adminnotice'>[key_name_admin(usr)] made all areas unpowered</span>")
 			power_failure()
 
 		if("quickpower")
@@ -332,7 +332,7 @@
 				return
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Power All SMESs"))
 			log_admin("[key_name(usr)] made all SMESs powered", 1)
-			message_admins("<span_class='adminnotice'>[key_name_admin(usr)] made all SMESs powered</span>")
+			message_admins("<span class='adminnotice'>[key_name_admin(usr)] made all SMESs powered</span>")
 			power_restore_quick()
 
 		if("traitor_all")
@@ -359,7 +359,7 @@
 				new_objective.explanation_text = objective
 				T.add_objective(new_objective)
 				H.mind.add_antag_datum(T)
-			message_admins("<span_class='adminnotice'>[key_name_admin(usr)] used everyone is a traitor secret. Objective is [objective]</span>")
+			message_admins("<span class='adminnotice'>[key_name_admin(usr)] used everyone is a traitor secret. Objective is [objective]</span>")
 			log_admin("[key_name(usr)] used everyone is a traitor secret. Objective is [objective]")
 
 		if("changebombcap")
@@ -371,7 +371,7 @@
 			if (!CONFIG_SET(number/bombcap, newBombCap))
 				return
 
-			message_admins("<span_class='boldannounce'>[key_name_admin(usr)] changed the bomb cap to [GLOB.MAX_EX_DEVESTATION_RANGE], [GLOB.MAX_EX_HEAVY_RANGE], [GLOB.MAX_EX_LIGHT_RANGE]</span>")
+			message_admins("<span class='boldannounce'>[key_name_admin(usr)] changed the bomb cap to [GLOB.MAX_EX_DEVESTATION_RANGE], [GLOB.MAX_EX_HEAVY_RANGE], [GLOB.MAX_EX_LIGHT_RANGE]</span>")
 			log_admin("[key_name(usr)] changed the bomb cap to [GLOB.MAX_EX_DEVESTATION_RANGE], [GLOB.MAX_EX_HEAVY_RANGE], [GLOB.MAX_EX_LIGHT_RANGE]")
 
 		if("blackout")
@@ -453,7 +453,7 @@
 				return
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Mass Braindamage"))
 			for(var/mob/living/carbon/human/H in GLOB.player_list)
-				to_chat(H, "<span_class='boldannounce'>You suddenly feel stupid.</span>")
+				to_chat(H, "<span class='boldannounce'>You suddenly feel stupid.</span>")
 				H.adjustBrainLoss(60, 80)
 			message_admins("[key_name_admin(usr)] made everybody retarded")
 

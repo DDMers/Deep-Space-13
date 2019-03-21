@@ -198,7 +198,7 @@
 		if(T && !istype(X, /area/space) && !istype(T, /turf/open/space/basic))
 			AI.eyeobj.forceMove(T)
 		else
-			to_chat(AI, "<span_class='warning'>You cannot move here</span>")
+			to_chat(AI, "<span class='warning'>You cannot move here</span>")
 
 /obj/screen/ai/zdown
 	name = "Move down a deck"
@@ -214,7 +214,7 @@
 		if(T && !istype(X, /area/space) && !istype(T, /turf/open/space/basic))
 			AI.eyeobj.forceMove(T)
 		else
-			to_chat(AI, "<span_class='warning'>You cannot move here</span>")
+			to_chat(AI, "<span class='warning'>You cannot move here</span>")
 
 /datum/hud/ai
 	ui_style = 'icons/mob/screen_ai.dmi'

@@ -52,7 +52,7 @@
 		if(enemies.len && prob(10))
 			enemies = list()
 			LoseTarget()
-			src.visible_message("<span_class='notice'>[src] calms down.</span>")
+			src.visible_message("<span class='notice'>[src] calms down.</span>")
 	if(stat == CONSCIOUS)
 		udder.generateMilk()
 		eat_plants()
@@ -65,7 +65,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/goat/Retaliate()
 	..()
-	src.visible_message("<span_class='danger'>[src] gets an evil-looking gleam in [p_their()] eye.</span>")
+	src.visible_message("<span class='danger'>[src] gets an evil-looking gleam in [p_their()] eye.</span>")
 
 /mob/living/simple_animal/hostile/retaliate/goat/Move()
 	. = ..()
@@ -101,8 +101,8 @@
 		var/mob/living/carbon/human/H = target
 		if(istype(H.dna.species, /datum/species/pod))
 			var/obj/item/bodypart/NB = pick(H.bodyparts)
-			H.visible_message("<span_class='warning'>[src] takes a big chomp out of [H]!</span>", \
-								  "<span_class='userdanger'>[src] takes a big chomp out of your [NB]!</span>")
+			H.visible_message("<span class='warning'>[src] takes a big chomp out of [H]!</span>", \
+								  "<span class='userdanger'>[src] takes a big chomp out of your [NB]!</span>")
 			NB.dismember()
 //cow
 /mob/living/simple_animal/cow
@@ -158,9 +158,9 @@
 
 /mob/living/simple_animal/cow/attack_hand(mob/living/carbon/M)
 	if(!stat && M.a_intent == INTENT_DISARM && icon_state != icon_dead)
-		M.visible_message("<span_class='warning'>[M] tips over [src].</span>",
-			"<span_class='notice'>You tip over [src].</span>")
-		to_chat(src, "<span_class='userdanger'>You are tipped over by [M]!</span>")
+		M.visible_message("<span class='warning'>[M] tips over [src].</span>",
+			"<span class='notice'>You tip over [src].</span>")
+		to_chat(src, "<span class='userdanger'>You are tipped over by [M]!</span>")
 		Paralyze(60,ignore_canknockdown = TRUE)
 		icon_state = icon_dead
 		spawn(rand(20,50))
@@ -177,8 +177,8 @@
 					if(4)
 						external = "[src] seems resigned to its fate."
 						internal = "You resign yourself to your fate."
-				visible_message("<span_class='notice'>[external]</span>",
-					"<span_class='revennotice'>[internal]</span>")
+				visible_message("<span class='notice'>[external]</span>",
+					"<span class='revennotice'>[internal]</span>")
 	else
 		..()
 
@@ -294,7 +294,7 @@
 			qdel(O)
 			eggsleft += rand(1, 4)
 		else
-			to_chat(user, "<span_class='warning'>[name] doesn't seem hungry!</span>")
+			to_chat(user, "<span class='warning'>[name] doesn't seem hungry!</span>")
 	else
 		..()
 
@@ -303,7 +303,7 @@
 	if(!.)
 		return
 	if((!stat && prob(3) && eggsleft > 0) && egg_type)
-		visible_message("<span_class='alertalien'>[src] [pick(layMessage)]</span>")
+		visible_message("<span class='alertalien'>[src] [pick(layMessage)]</span>")
 		eggsleft--
 		var/obj/item/E = new egg_type(get_turf(src))
 		E.pixel_x = rand(-6,6)
@@ -340,10 +340,10 @@
 /obj/item/udder/proc/milkAnimal(obj/O, mob/user)
 	var/obj/item/reagent_containers/glass/G = O
 	if(G.reagents.total_volume >= G.volume)
-		to_chat(user, "<span_class='danger'>[O] is full.</span>")
+		to_chat(user, "<span class='danger'>[O] is full.</span>")
 		return
 	var/transfered = reagents.trans_to(O, rand(5,10))
 	if(transfered)
-		user.visible_message("[user] milks [src] using \the [O].", "<span_class='notice'>You milk [src] using \the [O].</span>")
+		user.visible_message("[user] milks [src] using \the [O].", "<span class='notice'>You milk [src] using \the [O].</span>")
 	else
-		to_chat(user, "<span_class='danger'>The udder is dry. Wait a bit longer...</span>")
+		to_chat(user, "<span class='danger'>The udder is dry. Wait a bit longer...</span>")

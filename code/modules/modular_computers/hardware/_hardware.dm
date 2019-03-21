@@ -36,10 +36,10 @@
 	if(istype(I, /obj/item/stack/cable_coil))
 		var/obj/item/stack/S = I
 		if(obj_integrity == max_integrity)
-			to_chat(user, "<span_class='warning'>\The [src] doesn't seem to require repairs.</span>")
+			to_chat(user, "<span class='warning'>\The [src] doesn't seem to require repairs.</span>")
 			return 1
 		if(S.use(1))
-			to_chat(user, "<span_class='notice'>You patch up \the [src] with a bit of \the [I].</span>")
+			to_chat(user, "<span class='notice'>You patch up \the [src] with a bit of \the [I].</span>")
 			obj_integrity = min(obj_integrity + 10, max_integrity)
 		return 1
 
@@ -75,11 +75,11 @@
 /obj/item/computer_hardware/examine(var/mob/user)
 	. = ..()
 	if(damage > damage_failure)
-		to_chat(user, "<span_class='danger'>It seems to be severely damaged!</span>")
+		to_chat(user, "<span class='danger'>It seems to be severely damaged!</span>")
 	else if(damage > damage_malfunction)
-		to_chat(user, "<span_class='warning'>It seems to be damaged!</span>")
+		to_chat(user, "<span class='warning'>It seems to be damaged!</span>")
 	else if(damage)
-		to_chat(user, "<span_class='notice'>It seems to be slightly damaged.</span>")
+		to_chat(user, "<span class='notice'>It seems to be slightly damaged.</span>")
 
 // Component-side compatibility check.
 /obj/item/computer_hardware/proc/can_install(obj/item/modular_computer/M, mob/living/user = null)

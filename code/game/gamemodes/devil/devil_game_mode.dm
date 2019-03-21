@@ -17,8 +17,8 @@
 	var/minimum_devils = 1
 
 	announce_text = "There are devils onboard the station!\n\
-		+	<span_class='danger'>Devils</span>: Purchase souls and tempt the crew to sin!\n\
-		+	<span_class='notice'>Crew</span>: Resist the lure of sin and remain pure!"
+		+	<span class='danger'>Devils</span>: Purchase souls and tempt the crew to sin!\n\
+		+	<span class='notice'>Crew</span>: Resist the lure of sin and remain pure!"
 
 /datum/game_mode/devil/pre_setup()
 	if(CONFIG_GET(flag/protect_roles_from_antagonist))

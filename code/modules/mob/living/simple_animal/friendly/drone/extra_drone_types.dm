@@ -38,7 +38,7 @@
 
 /mob/living/simple_animal/drone/syndrone/Login()
 	..()
-	to_chat(src, "<span_class='notice'>You can kill and eat other drones to increase your health!</span>" )
+	to_chat(src, "<span class='notice'>You can kill and eat other drones to increase your health!</span>" )
 
 /mob/living/simple_animal/drone/syndrone/badass
 	name = "Badass Syndrone"
@@ -130,7 +130,7 @@
 	hacked = TRUE
 	visualAppearence = CLOCKDRONE
 	can_be_held = FALSE
-	flavortext = "<b><span_class='nezbere'>You are a cogscarab,</span> a tiny building construct of Ratvar. While you're weak and can't recite scripture, \
+	flavortext = "<b><span class='nezbere'>You are a cogscarab,</span> a tiny building construct of Ratvar. While you're weak and can't recite scripture, \
 	you have a set of quick tools, as well as a replica fabricator that can create brass and convert objects.<br><br>Work with the servants of Ratvar \
 	to construct and maintain defenses at the City of Cogs. If there are no servants, use this time to experiment with base designs!"
 
@@ -158,9 +158,9 @@
 
 /mob/living/simple_animal/drone/cogscarab/alert_drones(msg, dead_can_hear = FALSE)
 	if(msg == DRONE_NET_CONNECT)
-		msg = "<span_class='brass'><i>Hierophant Network:</i> [name] activated.</span>"
+		msg = "<span class='brass'><i>Hierophant Network:</i> [name] activated.</span>"
 	else if(msg == DRONE_NET_DISCONNECT)
-		msg = "<span_class='brass'><i>Hierophant Network:</i></span> <span_class='alloy'>[name] disabled.</span>"
+		msg = "<span class='brass'><i>Hierophant Network:</i></span> <span class='alloy'>[name] disabled.</span>"
 	..()
 
 /mob/living/simple_animal/drone/attackby(obj/item/I, mob/user)
@@ -171,7 +171,7 @@
 
 /mob/living/simple_animal/drone/cogscarab/try_reactivate(mob/living/user)
 	if(!is_servant_of_ratvar(user))
-		to_chat(user, "<span_class='warning'>You fiddle around with [src] to no avail.</span>")
+		to_chat(user, "<span class='warning'>You fiddle around with [src] to no avail.</span>")
 	else
 		..()
 

@@ -81,8 +81,8 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 	if(!blob_core)
 		if(!placed)
 			if(manualplace_min_time && world.time >= manualplace_min_time)
-				to_chat(src, "<b><span_class='big'><font color=\"#EE4000\">You may now place your blob core.</font></span></b>")
-				to_chat(src, "<span_class='big'><font color=\"#EE4000\">You will automatically place your blob core in [DisplayTimeText(autoplace_max_time - world.time)].</font></span>")
+				to_chat(src, "<b><span class='big'><font color=\"#EE4000\">You may now place your blob core.</font></span></b>")
+				to_chat(src, "<span class='big'><font color=\"#EE4000\">You will automatically place your blob core in [DisplayTimeText(autoplace_max_time - world.time)].</font></span>")
 				manualplace_min_time = 0
 			if(autoplace_max_time && world.time >= autoplace_max_time)
 				place_blob_core(base_point_rate, 1)
@@ -96,7 +96,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 		blob_points = INFINITY
 		addtimer(CALLBACK(src, .proc/victory), 450)
 	else if(!free_chem_rerolls && (last_reroll_time + BLOB_REROLL_TIME<world.time))
-		to_chat(src, "<b><span_class='big'><font color=\"#EE4000\">You have gained another free chemical re-roll.</font></span></b>")
+		to_chat(src, "<b><span class='big'><font color=\"#EE4000\">You have gained another free chemical re-roll.</font></span></b>")
 		free_chem_rerolls = 1
 
 	if(!victory_in_progress && max_count < blobs_legit.len)
@@ -168,7 +168,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 
 /mob/camera/blob/Login()
 	..()
-	to_chat(src, "<span_class='notice'>You are the overmind!</span>")
+	to_chat(src, "<span class='notice'>You are the overmind!</span>")
 	blob_help()
 	update_health_hud()
 	add_points(0)
@@ -215,7 +215,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 	src.log_talk(message, LOG_SAY)
 
 	var/message_a = say_quote(message, get_spans())
-	var/rendered = "<span_class='big'><font color=\"#EE4000\"><b>\[Blob Telepathy\] [name](<font color=\"[blob_reagent_datum.color]\">[blob_reagent_datum.name]</font>)</b> [message_a]</font></span>"
+	var/rendered = "<span class='big'><font color=\"#EE4000\"><b>\[Blob Telepathy\] [name](<font color=\"[blob_reagent_datum.color]\">[blob_reagent_datum.name]</font>)</b> [message_a]</font></span>"
 
 	for(var/mob/M in GLOB.mob_list)
 		if(isovermind(M) || istype(M, /mob/living/simple_animal/hostile/blob))

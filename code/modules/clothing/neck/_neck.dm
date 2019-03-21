@@ -53,7 +53,7 @@
 	item_color = "stethoscope"
 
 /obj/item/clothing/neck/stethoscope/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span_class='suicide'>[user] puts \the [src] to [user.p_their()] chest! It looks like [user.p_they()] wont hear much!</span>")
+	user.visible_message("<span class='suicide'>[user] puts \the [src] to [user.p_their()] chest! It looks like [user.p_they()] wont hear much!</span>")
 	return OXYLOSS
 
 /obj/item/clothing/neck/stethoscope/attack(mob/living/carbon/human/M, mob/living/user)
@@ -61,27 +61,27 @@
 		if(user.a_intent == INTENT_HELP)
 			var/body_part = parse_zone(user.zone_selected)
 
-			var/heart_strength = "<span_class='danger'>no</span>"
-			var/lung_strength = "<span_class='danger'>no</span>"
+			var/heart_strength = "<span class='danger'>no</span>"
+			var/lung_strength = "<span class='danger'>no</span>"
 
 			var/obj/item/organ/heart/heart = M.getorganslot(ORGAN_SLOT_HEART)
 			var/obj/item/organ/lungs/lungs = M.getorganslot(ORGAN_SLOT_LUNGS)
 
 			if(!(M.stat == DEAD || (M.has_trait(TRAIT_FAKEDEATH))))
 				if(heart && istype(heart))
-					heart_strength = "<span_class='danger'>an unstable</span>"
+					heart_strength = "<span class='danger'>an unstable</span>"
 					if(heart.beating)
 						heart_strength = "a healthy"
 				if(lungs && istype(lungs))
-					lung_strength = "<span_class='danger'>strained</span>"
+					lung_strength = "<span class='danger'>strained</span>"
 					if(!(M.failed_last_breath || M.losebreath))
 						lung_strength = "healthy"
 
 			if(M.stat == DEAD && heart && world.time - M.timeofdeath < DEFIB_TIME_LIMIT * 10)
-				heart_strength = "<span_class='boldannounce'>a faint, fluttery</span>"
+				heart_strength = "<span class='boldannounce'>a faint, fluttery</span>"
 
 			var/diagnosis = (body_part == BODY_ZONE_CHEST ? "You hear [heart_strength] pulse and [lung_strength] respiration." : "You faintly hear [heart_strength] pulse.")
-			user.visible_message("[user] places [src] against [M]'s [body_part] and listens attentively.", "<span_class='notice'>You place [src] against [M]'s [body_part]. [diagnosis]</span>")
+			user.visible_message("[user] places [src] against [M]'s [body_part] and listens attentively.", "<span class='notice'>You place [src] against [M]'s [body_part]. [diagnosis]</span>")
 			return
 	return ..(M,user)
 
@@ -228,7 +228,7 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(C.get_item_by_slot(SLOT_NECK) == src)
-			to_chat(user, "<span_class='warning'>You can't untie [src] while wearing it!</span>")
+			to_chat(user, "<span class='warning'>You can't untie [src] while wearing it!</span>")
 			return
 		if(user.is_holding(src))
 			var/obj/item/clothing/mask/bandana/newBand = new sourceBandanaType(user)
@@ -238,4 +238,4 @@
 			user.put_in_hand(newBand, currentHandIndex)
 			user.visible_message("You untie [oldName] back into a [newBand.name]", "[user] unties [oldName] back into a [newBand.name]")
 		else
-			to_chat(user, "<span_class='warning'>You must be holding [src] in order to untie it!")
+			to_chat(user, "<span class='warning'>You must be holding [src] in order to untie it!")

@@ -8,7 +8,7 @@
 	resistance_flags = FLAMMABLE
 
 /obj/item/folder/suicide_act(mob/living/user)
-	user.visible_message("<span_class='suicide'>[user] begins filing an imaginary death warrant! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins filing an imaginary death warrant! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return OXYLOSS
 
 /obj/item/folder/blue
@@ -38,11 +38,11 @@
 	if(istype(W, /obj/item/paper) || istype(W, /obj/item/photo) || istype(W, /obj/item/documents))
 		if(!user.transferItemToLoc(W, src))
 			return
-		to_chat(user, "<span_class='notice'>You put [W] into [src].</span>")
+		to_chat(user, "<span class='notice'>You put [W] into [src].</span>")
 		update_icon()
 	else if(istype(W, /obj/item/pen))
 		if(!user.is_literate())
-			to_chat(user, "<span_class='notice'>You scribble illegibly on the cover of [src]!</span>")
+			to_chat(user, "<span class='notice'>You scribble illegibly on the cover of [src]!</span>")
 			return
 		var/n_name = copytext(sanitize(input(user, "What would you like to label the folder?", "Folder Labelling", null) as text), 1, MAX_NAME_LEN)
 		if(user.canUseTopic(src, BE_CLOSE))

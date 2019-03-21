@@ -30,7 +30,7 @@
 	var/datum/reagent/forkload //used to eat omelette
 
 /obj/item/kitchen/fork/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span_class='suicide'>[user] stabs \the [src] into [user.p_their()] chest! It looks like [user.p_theyre()] trying to take a bite out of [user.p_them()]self!</span>")
+	user.visible_message("<span class='suicide'>[user] stabs \the [src] into [user.p_their()] chest! It looks like [user.p_theyre()] trying to take a bite out of [user.p_them()]self!</span>")
 	playsound(src, 'sound/items/eatfood.ogg', 50, 1)
 	return BRUTELOSS
 
@@ -40,10 +40,10 @@
 
 	if(forkload)
 		if(M == user)
-			M.visible_message("<span_class='notice'>[user] eats a delicious forkful of omelette!</span>")
+			M.visible_message("<span class='notice'>[user] eats a delicious forkful of omelette!</span>")
 			M.reagents.add_reagent(forkload.id, 1)
 		else
-			M.visible_message("<span_class='notice'>[user] feeds [M] a delicious forkful of omelette!</span>")
+			M.visible_message("<span class='notice'>[user] feeds [M] a delicious forkful of omelette!</span>")
 			M.reagents.add_reagent(forkload.id, 1)
 		icon_state = "fork"
 		forkload = null
@@ -88,9 +88,9 @@
 		return ..()
 
 /obj/item/kitchen/knife/suicide_act(mob/user)
-	user.visible_message(pick("<span_class='suicide'>[user] is slitting [user.p_their()] wrists with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
-						"<span_class='suicide'>[user] is slitting [user.p_their()] throat with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
-						"<span_class='suicide'>[user] is slitting [user.p_their()] stomach open with the [src.name]! It looks like [user.p_theyre()] trying to commit seppuku.</span>"))
+	user.visible_message(pick("<span class='suicide'>[user] is slitting [user.p_their()] wrists with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
+						"<span class='suicide'>[user] is slitting [user.p_their()] throat with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
+						"<span class='suicide'>[user] is slitting [user.p_their()] stomach open with the [src.name]! It looks like [user.p_theyre()] trying to commit seppuku.</span>"))
 	return (BRUTELOSS)
 
 /obj/item/kitchen/knife/ritual
@@ -178,6 +178,6 @@
 	custom_price = 20
 
 /obj/item/kitchen/rollingpin/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span_class='suicide'>[user] begins flattening [user.p_their()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] begins flattening [user.p_their()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 /* Trays  moved to /obj/item/storage/bag */

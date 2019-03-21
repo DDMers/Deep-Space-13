@@ -76,11 +76,11 @@
 
 /obj/machinery/clonepod/examine(mob/user)
 	..()
-	to_chat(user, "<span_class='notice'>The <i>linking</i> device can be <i>scanned<i> with a multitool.</span>")
+	to_chat(user, "<span class='notice'>The <i>linking</i> device can be <i>scanned<i> with a multitool.</span>")
 	if(in_range(user, src) || isobserver(user))
-		to_chat(user, "<span_class='notice'>The status display reads: Cloning speed at <b>[speed_coeff*50]%</b>.<br>Predicted amount of cellular damage: <b>[100-heal_level]%</b>.<span>")
+		to_chat(user, "<span class='notice'>The status display reads: Cloning speed at <b>[speed_coeff*50]%</b>.<br>Predicted amount of cellular damage: <b>[100-heal_level]%</b>.<span>")
 		if(efficiency > 5)
-			to_chat(user, "<span_class='notice'>Pod has been upgraded to support autoprocessing and apply beneficial mutations.<span>")
+			to_chat(user, "<span class='notice'>Pod has been upgraded to support autoprocessing and apply beneficial mutations.<span>")
 
 //The return of data disks?? Just for transferring between genetics machine/cloning machine.
 //TO-DO: Make the genetics machine accept them.
@@ -100,7 +100,7 @@
 
 /obj/item/disk/data/attack_self(mob/user)
 	read_only = !read_only
-	to_chat(user, "<span_class='notice'>You flip the write-protect tab to [read_only ? "protected" : "unprotected"].</span>")
+	to_chat(user, "<span class='notice'>You flip the write-protect tab to [read_only ? "protected" : "unprotected"].</span>")
 
 /obj/item/disk/data/examine(mob/user)
 	..()
@@ -205,11 +205,11 @@
 
 	if(grab_ghost_when == CLONER_FRESH_CLONE)
 		H.grab_ghost()
-		to_chat(H, "<span_class='notice'><b>Consciousness slowly creeps over you as your body regenerates.</b><br><i>So this is what cloning feels like?</i></span>")
+		to_chat(H, "<span class='notice'><b>Consciousness slowly creeps over you as your body regenerates.</b><br><i>So this is what cloning feels like?</i></span>")
 
 	if(grab_ghost_when == CLONER_MATURE_CLONE)
 		H.ghostize(TRUE)	//Only does anything if they were still in their old body and not already a ghost
-		to_chat(H.get_ghost(TRUE), "<span_class='notice'>Your body is beginning to regenerate in a cloning pod. You will become conscious when it is complete.</span>")
+		to_chat(H.get_ghost(TRUE), "<span class='notice'>Your body is beginning to regenerate in a cloning pod. You will become conscious when it is complete.</span>")
 
 	if(H)
 		H.faction |= factions
@@ -334,15 +334,15 @@
 	var/mob/living/mob_occupant = occupant
 	if(W.GetID())
 		if(!check_access(W))
-			to_chat(user, "<span_class='danger'>Access Denied.</span>")
+			to_chat(user, "<span class='danger'>Access Denied.</span>")
 			return
 		if(!(mob_occupant || mess))
-			to_chat(user, "<span_class='danger'>Error: Pod has no occupant.</span>")
+			to_chat(user, "<span class='danger'>Error: Pod has no occupant.</span>")
 			return
 		else
 			connected_message("Emergency Ejection")
 			SPEAK("An emergency ejection of [clonemind.name] has occurred. Survival not guaranteed.")
-			to_chat(user, "<span_class='notice'>You force an emergency ejection. </span>")
+			to_chat(user, "<span class='notice'>You force an emergency ejection. </span>")
 			go_out()
 	else
 		return ..()
@@ -350,7 +350,7 @@
 /obj/machinery/clonepod/emag_act(mob/user)
 	if(!occupant)
 		return
-	to_chat(user, "<span_class='warning'>You corrupt the genetic compiler.</span>")
+	to_chat(user, "<span class='warning'>You corrupt the genetic compiler.</span>")
 	malfunction()
 
 //Put messages in the connected computer's temp var for display.
@@ -375,7 +375,7 @@
 		unattached_flesh.Cut()
 		mess = FALSE
 		new /obj/effect/gibspawner/generic(get_turf(src), mob_occupant)
-		audible_message("<span_class='italics'>You hear a splat.</span>")
+		audible_message("<span class='italics'>You hear a splat.</span>")
 		icon_state = "pod_0"
 		return
 
@@ -391,7 +391,7 @@
 
 	if(grab_ghost_when == CLONER_MATURE_CLONE)
 		mob_occupant.grab_ghost()
-		to_chat(occupant, "<span_class='notice'><b>There is a bright flash!</b><br><i>You feel like a new being.</i></span>")
+		to_chat(occupant, "<span class='notice'><b>There is a bright flash!</b><br><i>You feel like a new being.</i></span>")
 		mob_occupant.flash_act()
 
 	mob_occupant.adjustBrainLoss(mob_occupant.getCloneLoss())
@@ -418,7 +418,7 @@
 			clonemind.transfer_to(mob_occupant)
 		mob_occupant.grab_ghost() // We really just want to make you suffer.
 		flash_color(mob_occupant, flash_color="#960000", flash_time=100)
-		to_chat(mob_occupant, "<span_class='warning'><b>Agony blazes across your consciousness as your body is torn apart.</b><br><i>Is this what dying is like? Yes it is.</i></span>")
+		to_chat(mob_occupant, "<span class='warning'><b>Agony blazes across your consciousness as your body is torn apart.</b><br><i>Is this what dying is like? Yes it is.</i></span>")
 		playsound(loc, 'sound/machines/warning-buzzer.ogg', 50, 0)
 		SEND_SOUND(mob_occupant, sound('sound/hallucinations/veryfar_noise.ogg',0,1,50))
 		QDEL_IN(mob_occupant, 40)

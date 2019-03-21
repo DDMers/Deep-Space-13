@@ -11,7 +11,7 @@
 
 
 /datum/surgery_step/replace/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message("[user] begins to sever the muscles on [target]'s [parse_zone(user.zone_selected)].", "<span_class ='notice'>You begin to sever the muscles on [target]'s [parse_zone(user.zone_selected)]...</span>")
+	user.visible_message("[user] begins to sever the muscles on [target]'s [parse_zone(user.zone_selected)].", "<span class ='notice'>You begin to sever the muscles on [target]'s [parse_zone(user.zone_selected)]...</span>")
 
 
 /datum/surgery_step/replace_limb
@@ -26,16 +26,16 @@
 		tool = tool.contents[1]
 	var/obj/item/bodypart/aug = tool
 	if(aug.status != BODYPART_ROBOTIC)
-		to_chat(user, "<span_class='warning'>That's not an augment, silly!</span>")
+		to_chat(user, "<span class='warning'>That's not an augment, silly!</span>")
 		return -1
 	if(aug.body_zone != target_zone)
-		to_chat(user, "<span_class='warning'>[tool] isn't the right type for [parse_zone(target_zone)].</span>")
+		to_chat(user, "<span class='warning'>[tool] isn't the right type for [parse_zone(target_zone)].</span>")
 		return -1
 	L = surgery.operated_bodypart
 	if(L)
-		user.visible_message("[user] begins to augment [target]'s [parse_zone(user.zone_selected)].", "<span_class ='notice'>You begin to augment [target]'s [parse_zone(user.zone_selected)]...</span>")
+		user.visible_message("[user] begins to augment [target]'s [parse_zone(user.zone_selected)].", "<span class ='notice'>You begin to augment [target]'s [parse_zone(user.zone_selected)]...</span>")
 	else
-		user.visible_message("[user] looks for [target]'s [parse_zone(user.zone_selected)].", "<span_class ='notice'>You look for [target]'s [parse_zone(user.zone_selected)]...</span>")
+		user.visible_message("[user] looks for [target]'s [parse_zone(user.zone_selected)].", "<span class ='notice'>You look for [target]'s [parse_zone(user.zone_selected)]...</span>")
 
 
 //ACTUAL SURGERIES
@@ -58,8 +58,8 @@
 			tool = tool.contents[1]
 		if(istype(tool) && user.temporarilyRemoveItemFromInventory(tool))
 			tool.replace_limb(target, TRUE)
-		user.visible_message("[user] successfully augments [target]'s [parse_zone(target_zone)]!", "<span_class='notice'>You successfully augment [target]'s [parse_zone(target_zone)].</span>")
+		user.visible_message("[user] successfully augments [target]'s [parse_zone(target_zone)]!", "<span class='notice'>You successfully augment [target]'s [parse_zone(target_zone)].</span>")
 		log_combat(user, target, "augmented", addition="by giving him new [parse_zone(target_zone)] INTENT: [uppertext(user.a_intent)]")
 	else
-		to_chat(user, "<span_class='warning'>[target] has no organic [parse_zone(target_zone)] there!</span>")
+		to_chat(user, "<span class='warning'>[target] has no organic [parse_zone(target_zone)] there!</span>")
 	return TRUE

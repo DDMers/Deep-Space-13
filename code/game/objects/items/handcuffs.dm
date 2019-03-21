@@ -2,7 +2,7 @@
 	breakouttime = 600
 
 /obj/item/restraints/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span_class='suicide'>[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return(OXYLOSS)
 
 /obj/item/restraints/Destroy()
@@ -45,7 +45,7 @@
 		return
 
 	if(iscarbon(user) && (user.has_trait(TRAIT_CLUMSY) && prob(50)))
-		to_chat(user, "<span_class='warning'>Uh... how do those things work?!</span>")
+		to_chat(user, "<span class='warning'>Uh... how do those things work?!</span>")
 		apply_cuffs(user,user)
 		return
 
@@ -57,8 +57,8 @@
 
 	if(!C.handcuffed)
 		if(C.get_num_arms(FALSE) >= 2 || C.get_arm_ignore())
-			C.visible_message("<span_class='danger'>[user] is trying to put [src.name] on [C]!</span>", \
-								"<span_class='userdanger'>[user] is trying to put [src.name] on [C]!</span>")
+			C.visible_message("<span class='danger'>[user] is trying to put [src.name] on [C]!</span>", \
+								"<span class='userdanger'>[user] is trying to put [src.name] on [C]!</span>")
 
 			playsound(loc, cuffsound, 30, 1, -2)
 			if(do_mob(user, C, 30) && (C.get_num_arms(FALSE) >= 2 || C.get_arm_ignore()))
@@ -66,14 +66,14 @@
 					apply_cuffs(C, user, TRUE)
 				else
 					apply_cuffs(C, user)
-				to_chat(user, "<span_class='notice'>You handcuff [C].</span>")
+				to_chat(user, "<span class='notice'>You handcuff [C].</span>")
 				SSblackbox.record_feedback("tally", "handcuffs", 1, type)
 
 				log_combat(user, C, "handcuffed")
 			else
-				to_chat(user, "<span_class='warning'>You fail to handcuff [C]!</span>")
+				to_chat(user, "<span class='warning'>You fail to handcuff [C]!</span>")
 		else
-			to_chat(user, "<span_class='warning'>[C] doesn't have two hands...</span>")
+			to_chat(user, "<span class='warning'>[C] doesn't have two hands...</span>")
 
 /obj/item/restraints/handcuffs/proc/apply_cuffs(mob/living/carbon/target, mob/user, var/dispense = 0)
 	if(target.handcuffed)
@@ -178,24 +178,24 @@
 			var/obj/item/wirerod/W = new /obj/item/wirerod
 			remove_item_from_storage(user)
 			user.put_in_hands(W)
-			to_chat(user, "<span_class='notice'>You wrap the cable restraint around the top of the rod.</span>")
+			to_chat(user, "<span class='notice'>You wrap the cable restraint around the top of the rod.</span>")
 			qdel(src)
 		else
-			to_chat(user, "<span_class='warning'>You need one rod to make a wired rod!</span>")
+			to_chat(user, "<span class='warning'>You need one rod to make a wired rod!</span>")
 			return
 	else if(istype(I, /obj/item/stack/sheet/metal))
 		var/obj/item/stack/sheet/metal/M = I
 		if(M.get_amount() < 6)
-			to_chat(user, "<span_class='warning'>You need at least six metal sheets to make good enough weights!</span>")
+			to_chat(user, "<span class='warning'>You need at least six metal sheets to make good enough weights!</span>")
 			return
-		to_chat(user, "<span_class='notice'>You begin to apply [I] to [src]...</span>")
+		to_chat(user, "<span class='notice'>You begin to apply [I] to [src]...</span>")
 		if(do_after(user, 35, target = src))
 			if(M.get_amount() < 6 || !M)
 				return
 			var/obj/item/restraints/legcuffs/bola/S = new /obj/item/restraints/legcuffs/bola
 			M.use(6)
 			user.put_in_hands(S)
-			to_chat(user, "<span_class='notice'>You make some weights out of [I] and tie them to [src].</span>")
+			to_chat(user, "<span class='notice'>You make some weights out of [I] and tie them to [src].</span>")
 			remove_item_from_storage(user)
 			qdel(src)
 	else
@@ -250,7 +250,7 @@
 	icon_state = "[initial(icon_state)][armed]"
 
 /obj/item/restraints/legcuffs/beartrap/suicide_act(mob/user)
-	user.visible_message("<span_class='suicide'>[user] is sticking [user.p_their()] head in the [src.name]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is sticking [user.p_their()] head in the [src.name]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	playsound(loc, 'sound/weapons/bladeslice.ogg', 50, 1, -1)
 	return (BRUTELOSS)
 
@@ -259,7 +259,7 @@
 	if(ishuman(user) && !user.stat && !user.restrained())
 		armed = !armed
 		icon_state = "[initial(icon_state)][armed]"
-		to_chat(user, "<span_class='notice'>[src] is now [armed ? "armed" : "disarmed"]</span>")
+		to_chat(user, "<span class='notice'>[src] is now [armed ? "armed" : "disarmed"]</span>")
 
 /obj/item/restraints/legcuffs/beartrap/Crossed(AM as mob|obj)
 	if(armed && isturf(src.loc))
@@ -287,8 +287,8 @@
 				armed = 0
 				icon_state = "[initial(icon_state)][armed]"
 				playsound(src.loc, 'sound/effects/snap.ogg', 50, 1)
-				L.visible_message("<span_class='danger'>[L] triggers \the [src].</span>", \
-						"<span_class='userdanger'>You trigger \the [src]!</span>")
+				L.visible_message("<span class='danger'>[L] triggers \the [src].</span>", \
+						"<span class='userdanger'>You trigger \the [src]!</span>")
 				L.apply_damage(trap_damage,BRUTE, def_zone)
 	..()
 
@@ -335,12 +335,12 @@
 		return//abort
 	var/mob/living/carbon/C = hit_atom
 	if(!C.legcuffed && C.get_num_legs(FALSE) >= 2)
-		visible_message("<span_class='danger'>\The [src] ensnares [C]!</span>")
+		visible_message("<span class='danger'>\The [src] ensnares [C]!</span>")
 		C.legcuffed = src
 		forceMove(C)
 		C.update_inv_legcuffed()
 		SSblackbox.record_feedback("tally", "handcuffs", 1, type)
-		to_chat(C, "<span_class='userdanger'>\The [src] ensnares you!</span>")
+		to_chat(C, "<span class='userdanger'>\The [src] ensnares you!</span>")
 		C.Paralyze(knockdown)
 
 /obj/item/restraints/legcuffs/bola/tactical//traitor variant

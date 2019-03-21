@@ -19,13 +19,13 @@
 	var/glass_colour_type //colors your vision when worn
 
 /obj/item/clothing/glasses/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span_class='suicide'>[user] is stabbing \the [src] into [user.p_their()] eyes! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is stabbing \the [src] into [user.p_their()] eyes! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/clothing/glasses/examine(mob/user)
 	..()
 	if(glass_colour_type && ishuman(user))
-		to_chat(user, "<span_class='notice'>Alt-click to toggle its colors.</span>")
+		to_chat(user, "<span class='notice'>Alt-click to toggle its colors.</span>")
 
 /obj/item/clothing/glasses/visor_toggling()
 	..()
@@ -47,7 +47,7 @@
 		var/mob/living/carbon/human/H = src.loc
 		if(!(H.has_trait(TRAIT_BLIND)))
 			if(H.glasses == src)
-				to_chat(H, "<span_class='danger'>[src] overloads and blinds you!</span>")
+				to_chat(H, "<span class='danger'>[src] overloads and blinds you!</span>")
 				H.flash_act(visual = 1)
 				H.blind_eyes(3)
 				H.blur_eyes(5)
@@ -64,7 +64,7 @@
 	glass_colour_type = /datum/client_colour/glass_colour/lightgreen
 
 /obj/item/clothing/glasses/meson/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span_class='suicide'>[user] is putting \the [src] to [user.p_their()] eyes and overloading the brightness! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is putting \the [src] to [user.p_their()] eyes and overloading the brightness! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/clothing/glasses/meson/night
@@ -113,7 +113,7 @@
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
 /obj/item/clothing/glasses/science/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span_class='suicide'>[user] is tightening \the [src]'s straps around [user.p_their()] neck! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is tightening \the [src]'s straps around [user.p_their()] neck! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return OXYLOSS
 
 /obj/item/clothing/glasses/eyepatch
@@ -410,7 +410,7 @@
 				var/mob/living/carbon/C = user
 				C.update_inv_wear_mask()
 		else
-			to_chat(user, "<span_class='notice'>The eye winks at you and vanishes into the abyss, you feel really unlucky.</span>")
+			to_chat(user, "<span class='notice'>The eye winks at you and vanishes into the abyss, you feel really unlucky.</span>")
 		qdel(src)
 	..()
 

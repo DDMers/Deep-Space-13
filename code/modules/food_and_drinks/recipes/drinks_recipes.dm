@@ -531,7 +531,7 @@
 	id = "bacchus_blessing"
 	results = list("bacchus_blessing" = 4)
 	required_reagents = list("hooch" = 1, "absinthe" = 1, "manlydorf" = 1, "syndicatebomb" = 1)
-	mix_message = "<span_class='warning'>The mixture turns to a sickening froth.</span>"
+	mix_message = "<span class='warning'>The mixture turns to a sickening froth.</span>"
 
 /datum/chemical_reaction/arnold_palmer
 	name = "Arnold Palmer"

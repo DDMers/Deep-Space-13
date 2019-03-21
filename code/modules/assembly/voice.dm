@@ -23,7 +23,7 @@
 
 /obj/item/assembly/voice/examine(mob/user)
 	..()
-	to_chat(user, "<span_class='notice'>Use a multitool to swap between \"inclusive\", \"exclusive\", \"recognizer\", and \"voice sensor\" mode.</span>")
+	to_chat(user, "<span class='notice'>Use a multitool to swap between \"inclusive\", \"exclusive\", \"recognizer\", and \"voice sensor\" mode.</span>")
 
 /obj/item/assembly/voice/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode)
 	. = ..()
@@ -73,7 +73,7 @@
 /obj/item/assembly/voice/multitool_act(mob/living/user, obj/item/I)
 	mode %= modes.len
 	mode++
-	to_chat(user, "<span_class='notice'>You set [src] into [modes[mode]] mode.</span>")
+	to_chat(user, "<span class='notice'>You set [src] into [modes[mode]] mode.</span>")
 	listening = FALSE
 	recorded = ""
 	return TRUE

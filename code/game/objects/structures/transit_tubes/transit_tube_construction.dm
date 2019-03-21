@@ -32,10 +32,10 @@
 		icon_state = "[base_icon][flipped]"
 
 /obj/structure/c_transit_tube/wrench_act(mob/living/user, obj/item/I)
-	to_chat(user, "<span_class='notice'>You start attaching the [name]...</span>")
+	to_chat(user, "<span class='notice'>You start attaching the [name]...</span>")
 	add_fingerprint(user)
 	if(I.use_tool(src, user, time_to_unwrench, volume=50))
-		to_chat(user, "<span_class='notice'>You attach the [name].</span>")
+		to_chat(user, "<span class='notice'>You attach the [name].</span>")
 		var/obj/structure/transit_tube/R = new build_type(loc, dir)
 		transfer_fingerprints_to(R)
 		qdel(src)

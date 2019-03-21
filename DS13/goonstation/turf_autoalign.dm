@@ -177,13 +177,13 @@
 		var/obj/item/stack/sheet/S = W
 		if(istype(S, /obj/item/stack/sheet/duranium))
 			if(S.get_amount() < 2)
-				to_chat(user, "<span_class='warning'>You need two sheets of duranium to finish a wall!</span>")
+				to_chat(user, "<span class='warning'>You need two sheets of duranium to finish a wall!</span>")
 				return
 			if (do_after(user, 40, target = src))
 				if(S.get_amount() < 2)
 					return
 				S.use(2)
-				to_chat(user, "<span_class='notice'>You add the hull plating.</span>")
+				to_chat(user, "<span class='notice'>You add the hull plating.</span>")
 				var/turf/T = get_turf(src)
 				T.PlaceOnTop(/turf/closed/wall/trek_smooth/corridor)
 				transfer_fingerprints_to(T)
@@ -192,13 +192,13 @@
 
 		if(istype(S, /obj/item/stack/sheet/duotanium))
 			if(S.get_amount() < 2)
-				to_chat(user, "<span_class='warning'>You need two sheets of duotanium to finish a wall!</span>")
+				to_chat(user, "<span class='warning'>You need two sheets of duotanium to finish a wall!</span>")
 				return
 			if (do_after(user, 40, target = src))
 				if(S.get_amount() < 2)
 					return
 				S.use(2)
-				to_chat(user, "<span_class='notice'>You add the hull plating.</span>")
+				to_chat(user, "<span class='notice'>You add the hull plating.</span>")
 				var/turf/T = get_turf(src)
 				T.PlaceOnTop(/turf/closed/wall/trek_smooth/room)
 				transfer_fingerprints_to(T)

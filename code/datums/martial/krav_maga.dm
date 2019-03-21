@@ -12,14 +12,14 @@
 
 /datum/action/neck_chop/Trigger()
 	if(owner.incapacitated())
-		to_chat(owner, "<span_class='warning'>You can't use [name] while you're incapacitated.</span>")
+		to_chat(owner, "<span class='warning'>You can't use [name] while you're incapacitated.</span>")
 		return
 	var/mob/living/carbon/human/H = owner
 	if (H.mind.martial_art.streak == "neck_chop")
-		owner.visible_message("<span_class='danger'>[owner] assumes a neutral stance.</span>", "<b><i>Your next attack is cleared.</i></b>")
+		owner.visible_message("<span class='danger'>[owner] assumes a neutral stance.</span>", "<b><i>Your next attack is cleared.</i></b>")
 		H.mind.martial_art.streak = ""
 	else
-		owner.visible_message("<span_class='danger'>[owner] assumes the Neck Chop stance!</span>", "<b><i>Your next attack will be a Neck Chop.</i></b>")
+		owner.visible_message("<span class='danger'>[owner] assumes the Neck Chop stance!</span>", "<b><i>Your next attack will be a Neck Chop.</i></b>")
 		H.mind.martial_art.streak = "neck_chop"
 
 /datum/action/leg_sweep
@@ -29,14 +29,14 @@
 
 /datum/action/leg_sweep/Trigger()
 	if(owner.incapacitated())
-		to_chat(owner, "<span_class='warning'>You can't use [name] while you're incapacitated.</span>")
+		to_chat(owner, "<span class='warning'>You can't use [name] while you're incapacitated.</span>")
 		return
 	var/mob/living/carbon/human/H = owner
 	if (H.mind.martial_art.streak == "leg_sweep")
-		owner.visible_message("<span_class='danger'>[owner] assumes a neutral stance.</span>", "<b><i>Your next attack is cleared.</i></b>")
+		owner.visible_message("<span class='danger'>[owner] assumes a neutral stance.</span>", "<b><i>Your next attack is cleared.</i></b>")
 		H.mind.martial_art.streak = ""
 	else
-		owner.visible_message("<span_class='danger'>[owner] assumes the Leg Sweep stance!</span>", "<b><i>Your next attack will be a Leg Sweep.</i></b>")
+		owner.visible_message("<span class='danger'>[owner] assumes the Leg Sweep stance!</span>", "<b><i>Your next attack will be a Leg Sweep.</i></b>")
 		H.mind.martial_art.streak = "leg_sweep"
 
 /datum/action/lung_punch//referred to internally as 'quick choke'
@@ -46,26 +46,26 @@
 
 /datum/action/lung_punch/Trigger()
 	if(owner.incapacitated())
-		to_chat(owner, "<span_class='warning'>You can't use [name] while you're incapacitated.</span>")
+		to_chat(owner, "<span class='warning'>You can't use [name] while you're incapacitated.</span>")
 		return
 	var/mob/living/carbon/human/H = owner
 	if (H.mind.martial_art.streak == "quick_choke")
-		owner.visible_message("<span_class='danger'>[owner] assumes a neutral stance.</span>", "<b><i>Your next attack is cleared.</i></b>")
+		owner.visible_message("<span class='danger'>[owner] assumes a neutral stance.</span>", "<b><i>Your next attack is cleared.</i></b>")
 		H.mind.martial_art.streak = ""
 	else
-		owner.visible_message("<span_class='danger'>[owner] assumes the Lung Punch stance!</span>", "<b><i>Your next attack will be a Lung Punch.</i></b>")
+		owner.visible_message("<span class='danger'>[owner] assumes the Lung Punch stance!</span>", "<b><i>Your next attack will be a Lung Punch.</i></b>")
 		H.mind.martial_art.streak = "quick_choke"//internal name for lung punch
 
 /datum/martial_art/krav_maga/teach(mob/living/carbon/human/H,make_temporary=0)
 	if(..())
-		to_chat(H, "<span_class = 'userdanger'>You know the arts of [name]!</span>")
-		to_chat(H, "<span_class = 'danger'>Place your cursor over a move at the top of the screen to see what it does.</span>")
+		to_chat(H, "<span class = 'userdanger'>You know the arts of [name]!</span>")
+		to_chat(H, "<span class = 'danger'>Place your cursor over a move at the top of the screen to see what it does.</span>")
 		neckchop.Grant(H)
 		legsweep.Grant(H)
 		lungpunch.Grant(H)
 
 /datum/martial_art/krav_maga/on_remove(mob/living/carbon/human/H)
-	to_chat(H, "<span_class = 'userdanger'>You suddenly forget the arts of [name]...</span>")
+	to_chat(H, "<span class = 'userdanger'>You suddenly forget the arts of [name]...</span>")
 	neckchop.Remove(H)
 	legsweep.Remove(H)
 	lungpunch.Remove(H)
@@ -89,8 +89,8 @@
 /datum/martial_art/krav_maga/proc/leg_sweep(var/mob/living/carbon/human/A, var/mob/living/carbon/human/D)
 	if(D.stat || D.IsParalyzed())
 		return 0
-	D.visible_message("<span_class='warning'>[A] leg sweeps [D]!</span>", \
-					  	"<span_class='userdanger'>[A] leg sweeps you!</span>")
+	D.visible_message("<span class='warning'>[A] leg sweeps [D]!</span>", \
+					  	"<span class='userdanger'>[A] leg sweeps you!</span>")
 	playsound(get_turf(A), 'sound/effects/hit_kick.ogg', 50, 1, -1)
 	D.apply_damage(5, BRUTE)
 	D.Paralyze(40)
@@ -98,8 +98,8 @@
 	return 1
 
 /datum/martial_art/krav_maga/proc/quick_choke(var/mob/living/carbon/human/A, var/mob/living/carbon/human/D)//is actually lung punch
-	D.visible_message("<span_class='warning'>[A] pounds [D] on the chest!</span>", \
-				  	"<span_class='userdanger'>[A] slams your chest! You can't breathe!</span>")
+	D.visible_message("<span class='warning'>[A] pounds [D] on the chest!</span>", \
+				  	"<span class='userdanger'>[A] slams your chest! You can't breathe!</span>")
 	playsound(get_turf(A), 'sound/effects/hit_punch.ogg', 50, 1, -1)
 	if(D.losebreath <= 10)
 		D.losebreath = CLAMP(D.losebreath + 5, 0, 10)
@@ -108,8 +108,8 @@
 	return 1
 
 /datum/martial_art/krav_maga/proc/neck_chop(var/mob/living/carbon/human/A, var/mob/living/carbon/human/D)
-	D.visible_message("<span_class='warning'>[A] karate chops [D]'s neck!</span>", \
-				  	"<span_class='userdanger'>[A] karate chops your neck, rendering you unable to speak!</span>")
+	D.visible_message("<span class='warning'>[A] karate chops [D]'s neck!</span>", \
+				  	"<span class='userdanger'>[A] karate chops your neck, rendering you unable to speak!</span>")
 	playsound(get_turf(A), 'sound/effects/hit_punch.ogg', 50, 1, -1)
 	D.apply_damage(5, A.dna.species.attack_type)
 	if(D.silent <= 10)
@@ -139,8 +139,8 @@
 	else
 		A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 		playsound(get_turf(D), 'sound/effects/hit_punch.ogg', 50, 1, -1)
-	D.visible_message("<span_class='danger'>[A] [picked_hit_type] [D]!</span>", \
-					  "<span_class='userdanger'>[A] [picked_hit_type] you!</span>")
+	D.visible_message("<span class='danger'>[A] [picked_hit_type] [D]!</span>", \
+					  "<span class='userdanger'>[A] [picked_hit_type] you!</span>")
 	log_combat(A, D, "[picked_hit_type] with [name]")
 	return 1
 
@@ -153,12 +153,12 @@
 		if(I)
 			if(D.temporarilyRemoveItemFromInventory(I))
 				A.put_in_hands(I)
-		D.visible_message("<span_class='danger'>[A] has disarmed [D]!</span>", \
-							"<span_class='userdanger'>[A] has disarmed [D]!</span>")
+		D.visible_message("<span class='danger'>[A] has disarmed [D]!</span>", \
+							"<span class='userdanger'>[A] has disarmed [D]!</span>")
 		playsound(D, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 	else
-		D.visible_message("<span_class='danger'>[A] attempted to disarm [D]!</span>", \
-							"<span_class='userdanger'>[A] attempted to disarm [D]!</span>")
+		D.visible_message("<span class='danger'>[A] attempted to disarm [D]!</span>", \
+							"<span class='userdanger'>[A] attempted to disarm [D]!</span>")
 		playsound(D, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
 	log_combat(A, D, "disarmed (Krav Maga)", "[I ? " removing \the [I]" : ""]")
 	return 1

@@ -267,7 +267,7 @@
 			if(href_list["cable"])
 				var/turf/T = get_turf(loc)
 				cable = new /obj/item/pai_cable(T)
-				T.visible_message("<span_class='warning'>A port on [src] opens to reveal [cable], which promptly falls to the floor.</span>", "<span_class='italics'>You hear the soft click of something light and hard falling to the ground.</span>")
+				T.visible_message("<span class='warning'>A port on [src] opens to reveal [cable], which promptly falls to the floor.</span>", "<span class='italics'>You hear the soft click of something light and hard falling to the ground.</span>")
 		if("loudness")
 			internal_instrument.interact(src)
 
@@ -379,9 +379,9 @@
 /mob/living/silicon/pai/proc/CheckDNA(mob/living/carbon/M, mob/living/silicon/pai/P)
 	var/answer = input(M, "[P] is requesting a DNA sample from you. Will you allow it to confirm your identity?", "[P] Check DNA", "No") in list("Yes", "No")
 	if(answer == "Yes")
-		M.visible_message("<span_class='notice'>[M] presses [M.p_their()] thumb against [P].</span>",\
-						"<span_class='notice'>You press your thumb against [P].</span>",\
-						"<span_class='notice'>[P] makes a sharp clicking sound as it extracts DNA material from [M].</span>")
+		M.visible_message("<span class='notice'>[M] presses [M.p_their()] thumb against [P].</span>",\
+						"<span class='notice'>You press your thumb against [P].</span>",\
+						"<span class='notice'>[P] makes a sharp clicking sound as it extracts DNA material from [M].</span>")
 		if(!M.has_dna())
 			to_chat(P, "<b>No DNA detected</b>")
 			return

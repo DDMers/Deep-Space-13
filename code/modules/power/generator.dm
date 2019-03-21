@@ -106,7 +106,7 @@
 /obj/machinery/power/generator/proc/get_menu(include_link = TRUE)
 	var/t = ""
 	if(!powernet)
-		t += "<span_class='bad'>Unable to connect to the power network!</span>"
+		t += "<span class='bad'>Unable to connect to the power network!</span>"
 	else if(cold_circ && hot_circ)
 		var/datum/gas_mixture/cold_circ_air1 = cold_circ.airs[1]
 		var/datum/gas_mixture/cold_circ_air2 = cold_circ.airs[2]
@@ -129,11 +129,11 @@
 
 		t += "</div>"
 	else if(!hot_circ && cold_circ)
-		t += "<span_class='bad'>Unable to locate hot circulator!</span>"
+		t += "<span class='bad'>Unable to locate hot circulator!</span>"
 	else if(hot_circ && !cold_circ)
-		t += "<span_class='bad'>Unable to locate cold circulator!</span>"
+		t += "<span class='bad'>Unable to locate cold circulator!</span>"
 	else
-		t += "<span_class='bad'>Unable to locate any parts!</span>"
+		t += "<span class='bad'>Unable to locate any parts!</span>"
 	if(include_link)
 		t += "<BR><A href='?src=[REF(src)];close=1'>Close</A>"
 
@@ -200,14 +200,14 @@
 	if(!anchored)
 		kill_circs()
 	connect_to_network()
-	to_chat(user, "<span_class='notice'>You [anchored?"secure":"unsecure"] [src].</span>")
+	to_chat(user, "<span class='notice'>You [anchored?"secure":"unsecure"] [src].</span>")
 	return TRUE
 
 /obj/machinery/power/generator/multitool_act(mob/living/user, obj/item/I)
 	if(!anchored)
 		return
 	find_circs()
-	to_chat(user, "<span_class='notice'>You update [src]'s circulator links.</span>")
+	to_chat(user, "<span class='notice'>You update [src]'s circulator links.</span>")
 	return TRUE
 
 /obj/machinery/power/generator/screwdriver_act(mob/user, obj/item/I)
@@ -215,7 +215,7 @@
 		return TRUE
 	panel_open = !panel_open
 	I.play_tool_sound(src)
-	to_chat(user, "<span_class='notice'>You [panel_open?"open":"close"] the panel on [src].</span>")
+	to_chat(user, "<span class='notice'>You [panel_open?"open":"close"] the panel on [src].</span>")
 	return TRUE
 
 /obj/machinery/power/generator/crowbar_act(mob/user, obj/item/I)

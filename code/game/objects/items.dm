@@ -265,9 +265,9 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 		if(can_handle_hot)
 			extinguish()
-			to_chat(user, "<span_class='notice'>You put out the fire on [src].</span>")
+			to_chat(user, "<span class='notice'>You put out the fire on [src].</span>")
 		else
-			to_chat(user, "<span_class='warning'>You burn your hand on [src]!</span>")
+			to_chat(user, "<span class='warning'>You burn your hand on [src]!</span>")
 			var/obj/item/bodypart/affecting = C.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
 			if(affecting && affecting.receive_damage( 0, 5 ))		// 5 burn damage
 				C.update_damage_overlays()
@@ -277,7 +277,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		var/mob/living/carbon/C = user
 		if(istype(C))
 			if(!C.gloves || (!(C.gloves.resistance_flags & (UNACIDABLE|ACID_PROOF))))
-				to_chat(user, "<span_class='warning'>The acid on [src] burns your hand!</span>")
+				to_chat(user, "<span class='warning'>The acid on [src] burns your hand!</span>")
 				var/obj/item/bodypart/affecting = C.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
 				if(affecting && affecting.receive_damage( 0, 5 ))		// 5 burn damage
 					C.update_damage_overlays()
@@ -289,7 +289,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/grav = user.has_gravity()
 	if(grav > STANDARD_GRAVITY)
 		var/grav_power = min(3,grav - STANDARD_GRAVITY)
-		to_chat(user,"<span_class='notice'>You start picking up [src]...</span>")
+		to_chat(user,"<span class='notice'>You start picking up [src]...</span>")
 		if(!do_mob(user,src,30*grav_power))
 			return
 
@@ -336,7 +336,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	if(!A.has_fine_manipulation)
 		if(src in A.contents) // To stop Aliens having items stuck in their pockets
 			A.dropItemToGround(src)
-		to_chat(user, "<span_class='warning'>Your claws aren't capable of such fine manipulation!</span>")
+		to_chat(user, "<span class='warning'>Your claws aren't capable of such fine manipulation!</span>")
 		return
 	attack_paw(A)
 
@@ -358,7 +358,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 /obj/item/proc/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, args)
 	if(prob(final_block_chance))
-		owner.visible_message("<span_class='danger'>[owner] blocks [attack_text] with [src]!</span>")
+		owner.visible_message("<span class='danger'>[owner] blocks [attack_text] with [src]!</span>")
 		return 1
 	return 0
 
@@ -448,15 +448,15 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 	if(M.is_eyes_covered())
 		// you can't stab someone in the eyes wearing a mask!
-		to_chat(user, "<span_class='danger'>You're going to need to remove [M.p_their()] eye protection first!</span>")
+		to_chat(user, "<span class='danger'>You're going to need to remove [M.p_their()] eye protection first!</span>")
 		return
 
 	if(isalien(M))//Aliens don't have eyes./N     slimes also don't have eyes!
-		to_chat(user, "<span_class='warning'>You cannot locate any eyes on this creature!</span>")
+		to_chat(user, "<span class='warning'>You cannot locate any eyes on this creature!</span>")
 		return
 
 	if(isbrain(M))
-		to_chat(user, "<span_class='danger'>You cannot locate any organic eyes on this brain!</span>")
+		to_chat(user, "<span class='danger'>You cannot locate any organic eyes on this brain!</span>")
 		return
 
 	src.add_fingerprint(user)
@@ -466,12 +466,12 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	user.do_attack_animation(M)
 
 	if(M != user)
-		M.visible_message("<span_class='danger'>[user] has stabbed [M] in the eye with [src]!</span>", \
-							"<span_class='userdanger'>[user] stabs you in the eye with [src]!</span>")
+		M.visible_message("<span class='danger'>[user] has stabbed [M] in the eye with [src]!</span>", \
+							"<span class='userdanger'>[user] stabs you in the eye with [src]!</span>")
 	else
 		user.visible_message( \
-			"<span_class='danger'>[user] has stabbed [user.p_them()]self in the eyes with [src]!</span>", \
-			"<span_class='userdanger'>You stab yourself in the eyes with [src]!</span>" \
+			"<span class='danger'>[user] has stabbed [user.p_them()]self in the eyes with [src]!</span>", \
+			"<span class='userdanger'>You stab yourself in the eyes with [src]!</span>" \
 		)
 	if(is_human_victim)
 		var/mob/living/carbon/human/U = M
@@ -492,20 +492,20 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	if(eyes.eye_damage >= 10)
 		M.adjust_blurriness(15)
 		if(M.stat != DEAD)
-			to_chat(M, "<span_class='danger'>Your eyes start to bleed profusely!</span>")
+			to_chat(M, "<span class='danger'>Your eyes start to bleed profusely!</span>")
 		if(!(M.has_trait(TRAIT_BLIND) || M.has_trait(TRAIT_NEARSIGHT)))
-			to_chat(M, "<span_class='danger'>You become nearsighted!</span>")
+			to_chat(M, "<span class='danger'>You become nearsighted!</span>")
 		M.become_nearsighted(EYE_DAMAGE)
 		if(prob(50))
 			if(M.stat != DEAD)
 				if(M.drop_all_held_items())
-					to_chat(M, "<span_class='danger'>You drop what you're holding and clutch at your eyes!</span>")
+					to_chat(M, "<span class='danger'>You drop what you're holding and clutch at your eyes!</span>")
 			M.adjust_blurriness(10)
 			M.Unconscious(20)
 			M.Paralyze(40)
 		if (prob(eyes.eye_damage - 10 + 1))
 			M.become_blind(EYE_DAMAGE)
-			to_chat(M, "<span_class='danger'>You go blind!</span>")
+			to_chat(M, "<span class='danger'>You go blind!</span>")
 
 /obj/item/singularity_pull(S, current_size)
 	..()
@@ -608,7 +608,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 /obj/item/proc/ignition_effect(atom/A, mob/user)
 	if(is_hot())
-		. = "<span_class='notice'>[user] lights [A] with [src].</span>"
+		. = "<span class='notice'>[user] lights [A] with [src].</span>"
 	else
 		. = ""
 

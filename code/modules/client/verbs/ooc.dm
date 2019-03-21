@@ -6,7 +6,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set category = "OOC"
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span_class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
 
 	if(!mob)
@@ -14,16 +14,16 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 	if(!holder)
 		if(!GLOB.ooc_allowed)
-			to_chat(src, "<span_class='danger'>OOC is globally muted.</span>")
+			to_chat(src, "<span class='danger'>OOC is globally muted.</span>")
 			return
 		if(!GLOB.dooc_allowed && (mob.stat == DEAD))
-			to_chat(usr, "<span_class='danger'>OOC for dead mobs has been turned off.</span>")
+			to_chat(usr, "<span class='danger'>OOC for dead mobs has been turned off.</span>")
 			return
 		if(prefs.muted & MUTE_OOC)
-			to_chat(src, "<span_class='danger'>You cannot use OOC (muted).</span>")
+			to_chat(src, "<span class='danger'>You cannot use OOC (muted).</span>")
 			return
 	if(is_banned_from(ckey, "OOC"))
-		to_chat(src, "<span_class='danger'>You have been banned from OOC.</span>")
+		to_chat(src, "<span class='danger'>You have been banned from OOC.</span>")
 		return
 	if(QDELETED(src))
 		return
@@ -50,7 +50,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 			return
 
 	if(!(prefs.chat_toggles & CHAT_OOC))
-		to_chat(src, "<span_class='danger'>You have OOC muted.</span>")
+		to_chat(src, "<span class='danger'>You have OOC muted.</span>")
 		return
 
 	mob.log_talk(raw_msg, LOG_OOC)
@@ -59,25 +59,25 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	if(prefs.unlock_content)
 		if(prefs.toggles & MEMBER_PUBLIC)
 			keyname = "<font color='[prefs.ooccolor ? prefs.ooccolor : GLOB.normal_ooc_colour]'>[icon2html('icons/member_content.dmi', world, "blag")][keyname]</font>"
-	//The linkify span_classes and linkify=TRUE below make ooc text get clickable chat href links if you pass in something resembling a url
+	//The linkify span classes and linkify=TRUE below make ooc text get clickable chat href links if you pass in something resembling a url
 	for(var/client/C in GLOB.clients)
 		if(C.prefs.chat_toggles & CHAT_OOC)
 			if(holder)
 				if(!holder.fakekey || C.holder)
 					if(check_rights_for(src, R_ADMIN))
-						to_chat(C, "<span_class='adminooc'>[CONFIG_GET(flag/allow_admin_ooccolor) && prefs.ooccolor ? "<font color=[prefs.ooccolor]>" :"" ]<span_class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span_class='message linkify'>[msg]</span></span></font>")
+						to_chat(C, "<span class='adminooc'>[CONFIG_GET(flag/allow_admin_ooccolor) && prefs.ooccolor ? "<font color=[prefs.ooccolor]>" :"" ]<span class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span></font>")
 					else
-						to_chat(C, "<span_class='adminobserverooc'><span_class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span_class='message linkify'>[msg]</span></span>")
+						to_chat(C, "<span class='adminobserverooc'><span class='prefix'>OOC:</span> <EM>[keyname][holder.fakekey ? "/([holder.fakekey])" : ""]:</EM> <span class='message linkify'>[msg]</span></span>")
 				else
 					if(GLOB.OOC_COLOR)
-						to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span_class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span_class='message linkify'>[msg]</span></b></font>")
+						to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></b></font>")
 					else
-						to_chat(C, "<span_class='ooc'><span_class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span_class='message linkify'>[msg]</span></span>")
+						to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></span>")
 			else if(!(key in C.prefs.ignoring))
 				if(GLOB.OOC_COLOR)
-					to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span_class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span_class='message linkify'>[msg]</span></b></font>")
+					to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
 				else
-					to_chat(C, "<span_class='ooc'><span_class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span_class='message linkify'>[msg]</span></span></font>")
+					to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></span></font>")
 
 /proc/toggle_ooc(toggle = null)
 	if(toggle != null) //if we're specifically en/disabling ooc
@@ -144,9 +144,9 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set desc ="Check the admin notice if it has been set"
 
 	if(GLOB.admin_notice)
-		to_chat(src, "<span_class='boldnotice'>Admin Notice:</span>\n \t [GLOB.admin_notice]")
+		to_chat(src, "<span class='boldnotice'>Admin Notice:</span>\n \t [GLOB.admin_notice]")
 	else
-		to_chat(src, "<span_class='notice'>There are no admin notices at the moment.</span>")
+		to_chat(src, "<span class='notice'>There are no admin notices at the moment.</span>")
 
 /client/verb/fix_chat()
 	set name = "Fix chat"
@@ -240,7 +240,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	if(motd)
 		to_chat(src, "<div class=\"motd\">[motd]</div>", handle_whitespace=FALSE)
 	else
-		to_chat(src, "<span_class='notice'>The Message of the Day has not been set.</span>")
+		to_chat(src, "<span class='notice'>The Message of the Day has not been set.</span>")
 
 /client/proc/self_notes()
 	set name = "View Admin Remarks"
@@ -248,7 +248,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set desc = "View the notes that admins have written about you"
 
 	if(!CONFIG_GET(flag/see_own_notes))
-		to_chat(usr, "<span_class='notice'>Sorry, that function is not enabled on this server.</span>")
+		to_chat(usr, "<span class='notice'>Sorry, that function is not enabled on this server.</span>")
 		return
 
 	browse_messages(null, usr.ckey, null, TRUE)
@@ -259,7 +259,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set desc = "View the amount of playtime for roles the server has tracked."
 
 	if(!CONFIG_GET(flag/use_exp_tracking))
-		to_chat(usr, "<span_class='notice'>Sorry, tracking is currently disabled.</span>")
+		to_chat(usr, "<span class='notice'>Sorry, tracking is currently disabled.</span>")
 		return
 
 	var/list/body = list()

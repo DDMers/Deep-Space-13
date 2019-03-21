@@ -100,11 +100,11 @@
 
 /obj/machinery/power/port_gen/pacman/examine(mob/user)
 	..()
-	to_chat(user, "<span_class='notice'>The generator has [sheets] units of [sheet_name] fuel left, producing [power_gen] per cycle.</span>")
+	to_chat(user, "<span class='notice'>The generator has [sheets] units of [sheet_name] fuel left, producing [power_gen] per cycle.</span>")
 	if(crit_fail)
-		to_chat(user, "<span_class='danger'>The generator seems to have broken down.</span>")
+		to_chat(user, "<span class='danger'>The generator seems to have broken down.</span>")
 	if(in_range(user, src) || isobserver(user))
-		to_chat(user, "<span_class='notice'>The status display reads: Fuel efficiency increased by <b>[(consumption*100)-100]%</b>.<span>")
+		to_chat(user, "<span class='notice'>The status display reads: Fuel efficiency increased by <b>[(consumption*100)-100]%</b>.<span>")
 
 /obj/machinery/power/port_gen/pacman/HasFuel()
 	if(sheets >= 1 / (time_per_sheet / power_output) - sheet_left)
@@ -161,9 +161,9 @@
 		var/obj/item/stack/addstack = O
 		var/amount = min((max_sheets - sheets), addstack.amount)
 		if(amount < 1)
-			to_chat(user, "<span_class='notice'>The [src.name] is full!</span>")
+			to_chat(user, "<span class='notice'>The [src.name] is full!</span>")
 			return
-		to_chat(user, "<span_class='notice'>You add [amount] sheets to the [src.name].</span>")
+		to_chat(user, "<span class='notice'>You add [amount] sheets to the [src.name].</span>")
 		sheets += amount
 		addstack.use(amount)
 		updateUsrDialog()
@@ -174,11 +174,11 @@
 
 			if(!anchored && !isinspace())
 				connect_to_network()
-				to_chat(user, "<span_class='notice'>You secure the generator to the floor.</span>")
+				to_chat(user, "<span class='notice'>You secure the generator to the floor.</span>")
 				anchored = TRUE
 			else if(anchored)
 				disconnect_from_network()
-				to_chat(user, "<span_class='notice'>You unsecure the generator from the floor.</span>")
+				to_chat(user, "<span class='notice'>You unsecure the generator from the floor.</span>")
 				anchored = FALSE
 
 			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
@@ -187,9 +187,9 @@
 			panel_open = !panel_open
 			O.play_tool_sound(src)
 			if(panel_open)
-				to_chat(user, "<span_class='notice'>You open the access panel.</span>")
+				to_chat(user, "<span class='notice'>You open the access panel.</span>")
 			else
-				to_chat(user, "<span_class='notice'>You close the access panel.</span>")
+				to_chat(user, "<span class='notice'>You close the access panel.</span>")
 			return
 		else if(default_deconstruction_crowbar(O))
 			return

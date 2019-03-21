@@ -66,7 +66,7 @@
 /obj/item/candle/attack_self(mob/user)
 	if(lit)
 		user.visible_message(
-			"<span_class='notice'>[user] snuffs [src].</span>")
+			"<span class='notice'>[user] snuffs [src].</span>")
 		lit = FALSE
 		update_icon()
 		set_light(0)

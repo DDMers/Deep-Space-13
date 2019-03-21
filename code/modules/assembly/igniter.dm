@@ -7,7 +7,7 @@
 	heat = 1000
 
 /obj/item/assembly/igniter/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span_class='suicide'>[user] is trying to ignite [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is trying to ignite [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	user.IgniteMob()
 	return FIRELOSS
 
@@ -37,7 +37,7 @@
 	add_fingerprint(user)
 
 /obj/item/assembly/igniter/ignition_effect(atom/A, mob/user)
-	. = "<span_class='notice'>[user] fiddles with [src], and manages to \
+	. = "<span class='notice'>[user] fiddles with [src], and manages to \
 		light [A].</span>"
 	activate()
 	add_fingerprint(user)

@@ -15,7 +15,7 @@
 
 /obj/structure/trek_catwalk/attackby(obj/item/C as obj, mob/user as mob)
 	if(istype(C, /obj/item/wirecutters))
-		to_chat(user, "<span_class='notice'>You start to cut [src] up!</span>")
+		to_chat(user, "<span class='notice'>You start to cut [src] up!</span>")
 		if(do_after(user, 50, target = src))
 			new /obj/item/stack/rods(src.loc)
 			qdel(src)

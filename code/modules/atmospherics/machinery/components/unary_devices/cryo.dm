@@ -65,7 +65,7 @@
 /obj/machinery/atmospherics/components/unary/cryo_cell/examine(mob/user) //this is leaving out everything but efficiency since they follow the same idea of "better beaker, better results"
 	..()
 	if(in_range(user, src) || isobserver(user))
-		to_chat(user, "<span_class='notice'>The status display reads: Efficiency at <b>[efficiency*100]%</b>.<span>")
+		to_chat(user, "<span class='notice'>The status display reads: Efficiency at <b>[efficiency*100]%</b>.<span>")
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/Destroy()
 	QDEL_NULL(radio)
@@ -243,7 +243,7 @@
 /obj/machinery/atmospherics/components/unary/cryo_cell/relaymove(mob/user)
 	if(message_cooldown <= world.time)
 		message_cooldown = world.time + 50
-		to_chat(user, "<span_class='warning'>[src]'s door won't budge!</span>")
+		to_chat(user, "<span class='warning'>[src]'s door won't budge!</span>")
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/open_machine(drop = FALSE)
 	if(!state_open && !panel_open)
@@ -265,14 +265,14 @@
 /obj/machinery/atmospherics/components/unary/cryo_cell/container_resist(mob/living/user)
 	user.changeNext_move(CLICK_CD_BREAKOUT)
 	user.last_special = world.time + CLICK_CD_BREAKOUT
-	user.visible_message("<span_class='notice'>You see [user] kicking against the glass of [src]!</span>", \
-		"<span_class='notice'>You struggle inside [src], kicking the release with your foot... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
-		"<span_class='italics'>You hear a thump from [src].</span>")
+	user.visible_message("<span class='notice'>You see [user] kicking against the glass of [src]!</span>", \
+		"<span class='notice'>You struggle inside [src], kicking the release with your foot... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
+		"<span class='italics'>You hear a thump from [src].</span>")
 	if(do_after(user, breakout_time, target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src )
 			return
-		user.visible_message("<span_class='warning'>[user] successfully broke out of [src]!</span>", \
-			"<span_class='notice'>You successfully break out of [src]!</span>")
+		user.visible_message("<span class='warning'>[user] successfully broke out of [src]!</span>", \
+			"<span class='notice'>You successfully break out of [src]!</span>")
 		open_machine()
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/examine(mob/user)
@@ -293,7 +293,7 @@
 		if(L.incapacitated())
 			close_machine(target)
 	else
-		user.visible_message("<b>[user]</b> starts shoving [target] inside [src].", "<span_class='notice'>You start shoving [target] inside [src].</span>")
+		user.visible_message("<b>[user]</b> starts shoving [target] inside [src].", "<span class='notice'>You start shoving [target] inside [src].</span>")
 		if (do_after(user, 25, target=target))
 			close_machine(target)
 
@@ -301,13 +301,13 @@
 	if(istype(I, /obj/item/reagent_containers/glass))
 		. = 1 //no afterattack
 		if(beaker)
-			to_chat(user, "<span_class='warning'>A beaker is already loaded into [src]!</span>")
+			to_chat(user, "<span class='warning'>A beaker is already loaded into [src]!</span>")
 			return
 		if(!user.transferItemToLoc(I, src))
 			return
 		beaker = I
 		user.visible_message("[user] places [I] in [src].", \
-							"<span_class='notice'>You place [I] in [src].</span>")
+							"<span class='notice'>You place [I] in [src].</span>")
 		var/reagentlist = pretty_string_from_reagent_list(I.reagents.reagent_list)
 		log_game("[key_name(user)] added an [I] to cryo containing [reagentlist]")
 		return
@@ -318,7 +318,7 @@
 		update_icon()
 		return
 	else if(I.tool_behaviour == TOOL_SCREWDRIVER)
-		to_chat(user, "<span_class='notice'>You can't access the maintenance panel while the pod is " \
+		to_chat(user, "<span class='notice'>You can't access the maintenance panel while the pod is " \
 		+ (on ? "active" : (occupant ? "full" : "open")) + ".</span>")
 		return
 	return ..()

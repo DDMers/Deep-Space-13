@@ -82,9 +82,9 @@
 /obj/machinery/chem_dispenser/examine(mob/user)
 	..()
 	if(panel_open)
-		to_chat(user, "<span_class='notice'>[src]'s maintenance hatch is open!</span>")
+		to_chat(user, "<span class='notice'>[src]'s maintenance hatch is open!</span>")
 	if(in_range(user, src) || isobserver(user))
-		to_chat(user, "<span_class='notice'>The status display reads: <br>Recharging <b>[recharge_amount]</b> power units per interval.<br>Power efficiency increased by <b>[round((powerefficiency*1000)-100, 1)]%</b>.<br>Macro granularity at <b>[macroresolution]u</b>.<span>")
+		to_chat(user, "<span class='notice'>The status display reads: <br>Recharging <b>[recharge_amount]</b> power units per interval.<br>Power efficiency increased by <b>[round((powerefficiency*1000)-100, 1)]%</b>.<br>Macro granularity at <b>[macroresolution]u</b>.<span>")
 
 /obj/machinery/chem_dispenser/process()
 	if (recharge_counter >= 4)
@@ -125,9 +125,9 @@
 
 /obj/machinery/chem_dispenser/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
-		to_chat(user, "<span_class='warning'>[src] has no functional safeties to emag.</span>")
+		to_chat(user, "<span class='warning'>[src] has no functional safeties to emag.</span>")
 		return
-	to_chat(user, "<span_class='notice'>You short out [src]'s safeties.</span>")
+	to_chat(user, "<span class='notice'>You short out [src]'s safeties.</span>")
 	dispensable_reagents |= emagged_reagents//add the emagged reagents to the dispensable ones
 	obj_flags |= EMAGGED
 
@@ -282,8 +282,8 @@
 						continue
 					else
 						var/chemid = reagent[1]
-						visible_message("<span_class='warning'>[src] buzzes.</span>", "<span_class='italics'>You hear a faint buzz.</span>")
-						to_chat(usr, "<span_class ='danger'>[src] cannot find Chemical ID: <b>[chemid]</b>!</span>")
+						visible_message("<span class='warning'>[src] buzzes.</span>", "<span class='italics'>You hear a faint buzz.</span>")
+						to_chat(usr, "<span class ='danger'>[src] cannot find Chemical ID: <b>[chemid]</b>!</span>")
 						playsound(src, 'sound/machines/buzz-two.ogg', 50, 1)
 						return
 				if (resmismatch && alert("[src] is not yet capable of replicating this recipe with the precision it needs, do you want to save it anyway?",, "Yes","No") == "No")
@@ -304,11 +304,11 @@
 		if(!user.transferItemToLoc(B, src))
 			return
 		replace_beaker(user, B)
-		to_chat(user, "<span_class='notice'>You add [B] to [src].</span>")
+		to_chat(user, "<span class='notice'>You add [B] to [src].</span>")
 		updateUsrDialog()
 		update_icon()
 	else if(user.a_intent != INTENT_HARM && !istype(I, /obj/item/card/emag))
-		to_chat(user, "<span_class='warning'>You can't load [I] into [src]!</span>")
+		to_chat(user, "<span class='warning'>You can't load [I] into [src]!</span>")
 		return ..()
 	else
 		return ..()
@@ -334,7 +334,7 @@
 	cell.use(total/powerefficiency)
 	cell.emp_act(severity)
 	work_animation()
-	visible_message("<span_class='danger'>[src] malfunctions, spraying chemicals everywhere!</span>")
+	visible_message("<span class='danger'>[src] malfunctions, spraying chemicals everywhere!</span>")
 
 /obj/machinery/chem_dispenser/RefreshParts()
 	recharge_amount = initial(recharge_amount)

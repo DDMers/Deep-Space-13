@@ -11,7 +11,7 @@
 
 /obj/machinery/computer/shuttle/ferry/emag_act(mob/user)
 	if(!allow_emag)
-		to_chat(user, "<span_class='warning'>[src]'s security firewall is far too powerful for you to bypass.</span>")
+		to_chat(user, "<span class='warning'>[src]'s security firewall is far too powerful for you to bypass.</span>")
 		return FALSE
 	return ..()
 
@@ -36,5 +36,5 @@
 		if(last_request && (last_request + cooldown > world.time))
 			return
 		last_request = world.time
-		to_chat(usr, "<span_class='notice'>Your request has been received by CentCom.</span>")
-		to_chat(GLOB.admins, "<b>FERRY: <span_class='notice'>[ADMIN_LOOKUPFLW(usr)] (<A HREF='?_src_=holder;[HrefToken()];secrets=moveferry'>Move Ferry</a>)</b> is requesting to move the transport ferry to CentCom.</span>")
+		to_chat(usr, "<span class='notice'>Your request has been received by CentCom.</span>")
+		to_chat(GLOB.admins, "<b>FERRY: <span class='notice'>[ADMIN_LOOKUPFLW(usr)] (<A HREF='?_src_=holder;[HrefToken()];secrets=moveferry'>Move Ferry</a>)</b> is requesting to move the transport ferry to CentCom.</span>")

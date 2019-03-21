@@ -3,8 +3,8 @@
 #define DRONE_HEAD_LAYER 2
 #define DRONE_TOTAL_LAYERS 2
 
-#define DRONE_NET_CONNECT "<span_class='notice'>DRONE NETWORK: [name] connected.</span>"
-#define DRONE_NET_DISCONNECT "<span_class='danger'>DRONE NETWORK: [name] is not responding.</span>"
+#define DRONE_NET_CONNECT "<span class='notice'>DRONE NETWORK: [name] connected.</span>"
+#define DRONE_NET_DISCONNECT "<span class='danger'>DRONE NETWORK: [name] is not responding.</span>"
 
 #define MAINTDRONE	"drone_maint"
 #define REPAIRDRONE	"drone_repair"
@@ -69,14 +69,14 @@
 	var/visualAppearence = MAINTDRONE //What we appear as
 	var/hacked = FALSE //If we have laws to destroy the station
 	var/flavortext = \
-	"\n<big><span_class='warning'>DO NOT INTERFERE WITH THE ROUND AS A DRONE OR YOU WILL BE DRONE BANNED</span></big>\n"+\
-	"<span_class='notify'>Drones are a ghost role that are allowed to fix the station and build things. Interfering with the round as a drone is against the rules.</span>\n"+\
-	"<span_class='notify'>Actions that constitute interference include, but are not limited to:</span>\n"+\
-	"<span_class='notify'>     - Interacting with round critical objects (IDs, weapons, contraband, powersinks, bombs, etc.)</span>\n"+\
-	"<span_class='notify'>     - Interacting with living beings (communication, attacking, healing, etc.)</span>\n"+\
-	"<span_class='notify'>     - Interacting with non-living beings (dragging bodies, looting bodies, etc.)</span>\n"+\
-	"<span_class='warning'>These rules are at admin discretion and will be heavily enforced.</span>\n"+\
-	"<span_class='warning'><u>If you do not have the regular drone laws, follow your laws to the best of your ability.</u></span>"
+	"\n<big><span class='warning'>DO NOT INTERFERE WITH THE ROUND AS A DRONE OR YOU WILL BE DRONE BANNED</span></big>\n"+\
+	"<span class='notify'>Drones are a ghost role that are allowed to fix the station and build things. Interfering with the round as a drone is against the rules.</span>\n"+\
+	"<span class='notify'>Actions that constitute interference include, but are not limited to:</span>\n"+\
+	"<span class='notify'>     - Interacting with round critical objects (IDs, weapons, contraband, powersinks, bombs, etc.)</span>\n"+\
+	"<span class='notify'>     - Interacting with living beings (communication, attacking, healing, etc.)</span>\n"+\
+	"<span class='notify'>     - Interacting with non-living beings (dragging bodies, looting bodies, etc.)</span>\n"+\
+	"<span class='warning'>These rules are at admin discretion and will be heavily enforced.</span>\n"+\
+	"<span class='warning'><u>If you do not have the regular drone laws, follow your laws to the best of your ability.</u></span>"
 
 /mob/living/simple_animal/drone/Initialize()
 	. = ..()
@@ -164,7 +164,7 @@
 
 
 /mob/living/simple_animal/drone/examine(mob/user)
-	var/msg = "<span_class='info'>*---------*\nThis is [icon2html(src, user)] \a <b>[src]</b>!\n"
+	var/msg = "<span class='info'>*---------*\nThis is [icon2html(src, user)] \a <b>[src]</b>!\n"
 
 	//Hands
 	for(var/obj/item/I in held_items)
@@ -185,21 +185,21 @@
 
 	//Hacked
 	if(hacked)
-		msg += "<span_class='warning'>Its display is glowing red!</span>\n"
+		msg += "<span class='warning'>Its display is glowing red!</span>\n"
 
 	//Damaged
 	if(health != maxHealth)
 		if(health > maxHealth * 0.33) //Between maxHealth and about a third of maxHealth, between 30 and 10 for normal drones
-			msg += "<span_class='warning'>Its screws are slightly loose.</span>\n"
+			msg += "<span class='warning'>Its screws are slightly loose.</span>\n"
 		else //otherwise, below about 33%
-			msg += "<span_class='boldwarning'>Its screws are very loose!</span>\n"
+			msg += "<span class='boldwarning'>Its screws are very loose!</span>\n"
 
 	//Dead
 	if(stat == DEAD)
 		if(client)
-			msg += "<span_class='deadsay'>A message repeatedly flashes on its display: \"REBOOT -- REQUIRED\".</span>\n"
+			msg += "<span class='deadsay'>A message repeatedly flashes on its display: \"REBOOT -- REQUIRED\".</span>\n"
 		else
-			msg += "<span_class='deadsay'>A message repeatedly flashes on its display: \"ERROR -- OFFLINE\".</span>\n"
+			msg += "<span class='deadsay'>A message repeatedly flashes on its display: \"ERROR -- OFFLINE\".</span>\n"
 	msg += "*---------*</span>"
 	to_chat(user, msg)
 
@@ -213,10 +213,10 @@
 	if(. & EMP_PROTECT_SELF)
 		return
 	Stun(100)
-	to_chat(src, "<span_class='danger'><b>ER@%R: MME^RY CO#RU9T!</b> R&$b@0tin)...</span>")
+	to_chat(src, "<span class='danger'><b>ER@%R: MME^RY CO#RU9T!</b> R&$b@0tin)...</span>")
 	if(severity == 1)
 		adjustBruteLoss(heavy_emp_damage)
-		to_chat(src, "<span_class='userdanger'>HeAV% DA%^MMA+G TO I/O CIR!%UUT!</span>")
+		to_chat(src, "<span class='userdanger'>HeAV% DA%^MMA+G TO I/O CIR!%UUT!</span>")
 
 
 /mob/living/simple_animal/drone/proc/triggerAlarm(class, area/A, O, obj/alarmsource)

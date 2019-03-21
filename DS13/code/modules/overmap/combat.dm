@@ -103,7 +103,7 @@
 			tractor_beam.Start()
 	else
 		release_tractor()
-		to_chat(science, "<span_class='boldnotice'>Unable to comply</span> - <span_class='warning'>target shield strength is above 50%.</span>")
+		to_chat(science, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>target shield strength is above 50%.</span>")
 
 /obj/structure/overmap/proc/release_tractor()
 	if(!tractor_target)
@@ -165,7 +165,7 @@
 		else
 			if(tactical)
 				voice_alert('DS13/sound/effects/voice/OutOfTorpedoes.ogg')
-				to_chat(tactical, "<span_class='boldnotice'>Unable to comply</span> - <span_class='warning'>photon torpedo supply is depleted.</span>")
+				to_chat(tactical, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>photon torpedo supply is depleted.</span>")
 			return
 
 /obj/item/ammo_casing/energy/photon
@@ -190,7 +190,7 @@
 	if(!message)
 		return
 	hail_ready = FALSE
-	var/new_message = "<span_class='boldnotice'>Narrow band transmission:[src] ([science])</span> - <span_class='warning'>[message]</span>"
+	var/new_message = "<span class='boldnotice'>Narrow band transmission:[src] ([science])</span> - <span class='warning'>[message]</span>"
 	target.send_sound_crew('sound/ai/commandreport.ogg')
 	target.send_text_crew(new_message)
 	send_text_crew(new_message)
@@ -287,7 +287,7 @@
 		new /obj/effect/temp_visual/explosion_telegraph_non_explosive(T)
 	for(var/mob/F in orange(src, 3))
 		if(isliving(F))
-			to_chat(F, "<span_class='userdanger'>Something comes crashing down from the ceiling above you! GET OUT OF THE WAY!</span>")
+			to_chat(F, "<span class='userdanger'>Something comes crashing down from the ceiling above you! GET OUT OF THE WAY!</span>")
 			SEND_SOUND(F, 'sound/effects/seedling_chargeup.ogg')
 
 /obj/effect/temp_visual/explosion_telegraph/Destroy()
@@ -300,17 +300,17 @@
 	var/fluff = rand(1,6)
 	switch(fluff)
 		if(1)
-			visible_message("<span_class='warning'>Bits of [name] fly off into space!</span>")
+			visible_message("<span class='warning'>Bits of [name] fly off into space!</span>")
 		if(2)
-			visible_message("<span_class='warning'>[name]'s hull ruptures!</span>")
+			visible_message("<span class='warning'>[name]'s hull ruptures!</span>")
 		if(3)
-			visible_message("<span_class='warning'>[name]'s hull buckles!</span>")
+			visible_message("<span class='warning'>[name]'s hull buckles!</span>")
 		if(4)
-			visible_message("<span_class='warning'>Warp plasma spews from [name]!</span>")
+			visible_message("<span class='warning'>Warp plasma spews from [name]!</span>")
 		if(5)
 			visible_message("<spanR class='warning'>A beam tears across [name]'s hull!</span>")
 		if(6)
-			visible_message("<span_class='warning'>[name]'s hull is scorched!</span>")
+			visible_message("<span class='warning'>[name]'s hull is scorched!</span>")
 	if(!isnum(amount))
 		stack_trace("an overmap just took damage from [source] but the amount specific wasn't a number ([amount])")
 		return//Catch: The amount was inputted as something it's not supposed to. This is often caused by torpedoes because projectile code HATES him (click to find out more)
@@ -362,7 +362,7 @@
 	send_sound_crew('DS13/sound/effects/damage/ship_explode.ogg')
 	addtimer(CALLBACK(src, .proc/core_breach_finish), 450)
 	for(var/mob/A in operators)
-		to_chat(A, "<span_class='cult'><font size=3>Your ship has been destroyed!")
+		to_chat(A, "<span class='cult'><font size=3>Your ship has been destroyed!")
 		if(A.remote_control)
 			A.remote_control.forceMove(get_turf(A))
 	core_breach()

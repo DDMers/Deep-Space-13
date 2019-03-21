@@ -40,16 +40,16 @@ GLOBAL_LIST_INIT(freqtospan, list(
 		var/atom/movable/AM = _AM
 		AM.Hear(rendered, src, message_language, message, , spans, message_mode)
 
-//To get robot span_classes, stuff like that.
+//To get robot span classes, stuff like that.
 /atom/movable/proc/get_spans()
 	return list()
 
 /atom/movable/proc/compose_message(atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, face_name = FALSE)
 	//This proc uses text() because it is faster than appending strings. Thanks BYOND.
 	//Basic span
-	var/spanpart1 = "<span_class='[radio_freq ? get_radio_span(radio_freq) : "game say"]'>"
+	var/spanpart1 = "<span class='[radio_freq ? get_radio_span(radio_freq) : "game say"]'>"
 	//Start name span.
-	var/spanpart2 = "<span_class='name'>"
+	var/spanpart2 = "<span class='name'>"
 	//Radio freq/name display
 	var/freqpart = radio_freq ? "\[[get_radio_name(radio_freq)]\] " : ""
 	//Speaker name
@@ -61,7 +61,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	var/endspanpart = "</span>"
 
 	//Message
-	var/messagepart = " <span_class='message'>[lang_treat(speaker, message_language, raw_message, spans, message_mode)]</span></span>"
+	var/messagepart = " <span class='message'>[lang_treat(speaker, message_language, raw_message, spans, message_mode)]</span></span>"
 
 	var/languageicon = ""
 	var/datum/language/D = GLOB.language_datum_instances[message_language]
@@ -131,7 +131,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	return "[message_spans_start(spans)][input]</span>"
 
 /proc/message_spans_start(list/spans)
-	var/output = "<span_class='"
+	var/output = "<span class='"
 	for(var/S in spans)
 		output = "[output][S] "
 	output = "[output]'>"

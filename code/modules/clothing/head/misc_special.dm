@@ -97,12 +97,12 @@
 		src.icon_state = "ushankaup"
 		src.item_state = "ushankaup"
 		earflaps = 0
-		to_chat(user, "<span_class='notice'>You raise the ear flaps on the ushanka.</span>")
+		to_chat(user, "<span class='notice'>You raise the ear flaps on the ushanka.</span>")
 	else
 		src.icon_state = "ushankadown"
 		src.item_state = "ushankadown"
 		earflaps = 1
-		to_chat(user, "<span_class='notice'>You lower the ear flaps on the ushanka.</span>")
+		to_chat(user, "<span class='notice'>You lower the ear flaps on the ushanka.</span>")
 
 /*
  * Pumpkin head
@@ -246,7 +246,7 @@
 		paranoia = new()
 
 		user.gain_trauma(paranoia, TRAUMA_RESILIENCE_MAGIC)
-		to_chat(user, "<span_class='warning'>As you don the foiled hat, an entire world of conspiracy theories and seemingly insane ideas suddenly rush into your mind. What you once thought unbelievable suddenly seems.. undeniable. Everything is connected and nothing happens just by accident. You know too much and now they're out to get you. </span>")
+		to_chat(user, "<span class='warning'>As you don the foiled hat, an entire world of conspiracy theories and seemingly insane ideas suddenly rush into your mind. What you once thought unbelievable suddenly seems.. undeniable. Everything is connected and nothing happens just by accident. You know too much and now they're out to get you. </span>")
 
 /obj/item/clothing/head/foilhat/dropped(mob/user)
 	..()
@@ -257,6 +257,6 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(src == C.head)
-			to_chat(user, "<span_class='userdanger'>Why would you want to take this off? Do you want them to get into your mind?!</span>")
+			to_chat(user, "<span class='userdanger'>Why would you want to take this off? Do you want them to get into your mind?!</span>")
 			return
 	..()

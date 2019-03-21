@@ -92,7 +92,7 @@
 		var/obj/item/card/id/ID = L.get_idcard(FALSE)
 		if(ID && istype(ID))
 			if(check_access(ID))
-				to_chat(user, "<span_class='notice'>You can say <i>[redalert_activator]</i> to engage red alert, or say <b>[redalert_deactivator]</b> to disengage red alert.</span>")
+				to_chat(user, "<span class='notice'>You can say <i>[redalert_activator]</i> to engage red alert, or say <b>[redalert_deactivator]</b> to disengage red alert.</span>")
 
 /obj/structure/overmap_component/helm/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode)
 	. = ..()
@@ -251,7 +251,7 @@
 	var/obj/item/card/id/ID = L.get_idcard(FALSE)
 	if(ID && istype(ID))
 		if(!check_access(ID))
-			to_chat(user, "<span_class='boldnotice'>Unable to comply</span> - <span_class='warning'>you are not authorized to execute this command.</span>")
+			to_chat(user, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>you are not authorized to execute this command.</span>")
 			return
 	else
 		to_chat(user, "You need to be wearing an ID to use this machine.")
@@ -267,10 +267,10 @@
 /obj/structure/overmap_component/plasma_injector/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/tank/internals/plasma))
 		if(!anchored)
-			to_chat(user, "<span_class='warning'>[src] needs to be secured to the floor first!</span>")
+			to_chat(user, "<span class='warning'>[src] needs to be secured to the floor first!</span>")
 			return TRUE
 		if(loaded_tank)
-			to_chat(user, "<span_class='warning'>There's already a plasma tank loaded!</span>")
+			to_chat(user, "<span class='warning'>There's already a plasma tank loaded!</span>")
 			return TRUE
 		if(!user.transferItemToLoc(W, src))
 			return
@@ -279,9 +279,9 @@
 	else if(W.GetID())
 		if(allowed(user))
 			locked = !locked
-			to_chat(user, "<span_class='notice'>You [locked ? "lock" : "unlock"] the controls.</span>")
+			to_chat(user, "<span class='notice'>You [locked ? "lock" : "unlock"] the controls.</span>")
 		else
-			to_chat(user, "<span_class='danger'>Access denied.</span>")
+			to_chat(user, "<span class='danger'>Access denied.</span>")
 			return TRUE
 	else
 		return ..()
@@ -372,55 +372,55 @@
 	set_active(FALSE) //Remove us from our benefactor
 	supplying = Q
 	set_active(TRUE)
-	to_chat(user, "<span_class='notice'>[src] will now supply the [supplying] subsystem with power</span>")
+	to_chat(user, "<span class='notice'>[src] will now supply the [supplying] subsystem with power</span>")
 
 /obj/structure/overmap_component/plasma_relay/crowbar_act(mob/user, obj/item/I)
 	if(panel_open)
 		playsound(loc,I.usesound,100,1)
-		to_chat(user, "<span_class='notice'>You start to replace [src]'s cover.</span>")
+		to_chat(user, "<span class='notice'>You start to replace [src]'s cover.</span>")
 		if(do_after(user, 30, target = src))
 			panel_open = FALSE
 			set_active(TRUE)
-			to_chat(user, "<span_class='notice'>You replace [src]'s cover.</span>")
+			to_chat(user, "<span class='notice'>You replace [src]'s cover.</span>")
 		update_icon()
 		return TRUE
 	if(!panel_open)
 		playsound(loc,I.usesound,100,1)
-		to_chat(user, "<span_class='notice'>You start to prize off [src]'s cover.</span>")
+		to_chat(user, "<span class='notice'>You start to prize off [src]'s cover.</span>")
 		if(do_after(user, 30, target = src))
 			panel_open = TRUE
-			to_chat(user, "<span_class='notice'>You remove [src]'s cover.</span>")
+			to_chat(user, "<span class='notice'>You remove [src]'s cover.</span>")
 		update_icon()
 		return TRUE
 
 /obj/structure/overmap_component/plasma_relay/wrench_act(mob/user, obj/item/I)
 	if(repair_step == "wrench")
 		playsound(loc,I.usesound,100,1)
-		to_chat(user, "<span_class='notice'>You start to unfasten [src]'s couplings.</span>")
+		to_chat(user, "<span class='notice'>You start to unfasten [src]'s couplings.</span>")
 		if(do_after(user, 30, target = src))
 			repair_step = "screwdriver"
 		update_icon()
 		return TRUE
 	if(repair_step == "wrench2")
 		playsound(loc,I.usesound,100,1)
-		to_chat(user, "<span_class='notice'>You start to re-fasten [src]'s couplings.</span>")
+		to_chat(user, "<span class='notice'>You start to re-fasten [src]'s couplings.</span>")
 		if(do_after(user, 30, target = src))
 			repair_step = "wrench"
-			to_chat(user, "<span_class='notice'>You have successfully re-assembled [src]! replace its cover to complete repairs.</span>")
+			to_chat(user, "<span class='notice'>You have successfully re-assembled [src]! replace its cover to complete repairs.</span>")
 		update_icon()
 		return TRUE
 
 /obj/structure/overmap_component/plasma_relay/screwdriver_act(mob/user, obj/item/I)
 	if(repair_step == "screwdriver")
 		playsound(loc,I.usesound,100,1)
-		to_chat(user, "<span_class='notice'>You start to mend [src]'s isolinear circuitry.</span>")
+		to_chat(user, "<span class='notice'>You start to mend [src]'s isolinear circuitry.</span>")
 		if(do_after(user, 30, target = src))
 			repair_step = "wirecutters"
 		update_icon()
 		return TRUE
 	if(repair_step == "screwdriver2")
 		playsound(loc,I.usesound,100,1)
-		to_chat(user, "<span_class='notice'>You start fasten [src]'s screws.</span>")
+		to_chat(user, "<span class='notice'>You start fasten [src]'s screws.</span>")
 		if(do_after(user, 30, target = src))
 			repair_step = "wrench2"
 		update_icon()
@@ -429,10 +429,10 @@
 /obj/structure/overmap_component/plasma_relay/wirecutter_act(mob/user, obj/item/I)
 	if(repair_step == "wirecutters")
 		playsound(loc,I.usesound,100,1)
-		to_chat(user, "<span_class='notice'>You start cutting out [src]'s fused relays.</span>")
+		to_chat(user, "<span class='notice'>You start cutting out [src]'s fused relays.</span>")
 		if(do_after(user, 30, target = src))
 			repair_step = "screwdriver2"
-			to_chat(user, "<span_class='notice'>You have successfully repaired [src]! re-assembly is the reverse of removal.</span>")
+			to_chat(user, "<span class='notice'>You have successfully repaired [src]! re-assembly is the reverse of removal.</span>")
 			obj_integrity = max_integrity
 		update_icon()
 		return TRUE
@@ -608,18 +608,18 @@
 /obj/structure/overmap_component/system_control/crowbar_act(mob/user, obj/item/I)
 	if(panel_open)
 		playsound(loc,I.usesound,100,1)
-		to_chat(user, "<span_class='notice'>You start to replace [src]'s cover.</span>")
+		to_chat(user, "<span class='notice'>You start to replace [src]'s cover.</span>")
 		if(do_after(user, 50, target = src))
 			panel_open = FALSE
-			to_chat(user, "<span_class='notice'>You replace [src]'s cover.</span>")
+			to_chat(user, "<span class='notice'>You replace [src]'s cover.</span>")
 		update_icon()
 		return TRUE
 	if(!panel_open)
 		playsound(loc,I.usesound,100,1)
-		to_chat(user, "<span_class='notice'>You start to prize off [src]'s cover.</span>")
+		to_chat(user, "<span class='notice'>You start to prize off [src]'s cover.</span>")
 		if(do_after(user, 50, target = src))
 			panel_open = TRUE
-			to_chat(user, "<span_class='notice'>You remove [src]'s cover.</span>")
+			to_chat(user, "<span class='notice'>You remove [src]'s cover.</span>")
 		update_icon()
 		return TRUE
 
@@ -627,7 +627,7 @@
 	if(panel_open && !hacked)
 		if(step == "start")
 			playsound(loc,I.usesound,100,1)
-			to_chat(user, "<span_class='notice'>You start to undo [src]'s screws.</span>")
+			to_chat(user, "<span class='notice'>You start to undo [src]'s screws.</span>")
 			if(do_after(user, 100, target = src))
 				step = "wrench"
 			update_icon()
@@ -636,7 +636,7 @@
 /obj/structure/overmap_component/system_control/wrench_act(mob/user, obj/item/I)
 	if(step == "wrench")
 		playsound(loc,I.usesound,100,1)
-		to_chat(user, "<span_class='notice'>You force your way through [src]'s protective casings.</span>")
+		to_chat(user, "<span class='notice'>You force your way through [src]'s protective casings.</span>")
 		if(do_after(user, 100, target = src))
 			step = "end"
 		update_icon()
@@ -647,7 +647,7 @@
 		return
 	if(step == "end")
 		playsound(loc,I.usesound,100,1)
-		to_chat(user, "<span_class='notice'>You begin to cut through [src]'s authorization circuitry</span>")
+		to_chat(user, "<span class='notice'>You begin to cut through [src]'s authorization circuitry</span>")
 		if(do_after(user, 100, target = src))
 			hacked = TRUE
 			playsound(loc, 'DS13/sound/effects/computer/alert1.ogg',100)
@@ -657,7 +657,7 @@
 		return TRUE
 	if(step == "finished")
 		playsound(loc,I.usesound,100,1)
-		to_chat(user, "<span_class='notice'>You begin to mend [src]'s authorization circuitry</span>")
+		to_chat(user, "<span class='notice'>You begin to mend [src]'s authorization circuitry</span>")
 		if(do_after(user, 100, target = src))
 			hacked = FALSE
 			playsound(loc, 'DS13/sound/effects/computer/alert1.ogg',100)
@@ -680,7 +680,7 @@
 		var/obj/item/card/id/ID = L.get_idcard(FALSE)
 		if(ID && istype(ID))
 			if(!check_access(ID))
-				to_chat(user, "<span_class='boldnotice'>Unable to comply</span> - <span_class='warning'>you are not authorized to execute this command.</span>")
+				to_chat(user, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>you are not authorized to execute this command.</span>")
 				return
 		else
 			to_chat(user, "You need to be wearing an ID to use this machine.")

@@ -115,8 +115,8 @@ Difficulty: Medium
 	if(isliving(target))
 		var/mob/living/L = target
 		if(L.stat == DEAD)
-			visible_message("<span_class='danger'>[src] butchers [L]!</span>",
-			"<span_class='userdanger'>You butcher [L], restoring your health!</span>")
+			visible_message("<span class='danger'>[src] butchers [L]!</span>",
+			"<span class='userdanger'>You butcher [L], restoring your health!</span>")
 			if(!is_station_level(z) || client) //NPC monsters won't heal while on station
 				if(guidance)
 					adjustHealth(-L.maxHealth)
@@ -156,7 +156,7 @@ Difficulty: Medium
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/proc/shoot_ka()
 	if(ranged_cooldown <= world.time && get_dist(src, target) <= MINER_DASH_RANGE && !Adjacent(target))
 		ranged_cooldown = world.time + ranged_cooldown_time
-		visible_message("<span_class='danger'>[src] fires the proto-kinetic accelerator!</span>")
+		visible_message("<span class='danger'>[src] fires the proto-kinetic accelerator!</span>")
 		face_atom(target)
 		new /obj/effect/temp_visual/dir_setting/firing_effect(loc, dir)
 		Shoot(target)

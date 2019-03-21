@@ -10,7 +10,7 @@
 	density = TRUE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	var/can_be_repaired = TRUE //if a fabricator can repair it
-	break_message = "<span_class='warning'>The frog isn't a meme after all!</span>" //The message shown when a structure breaks
+	break_message = "<span class='warning'>The frog isn't a meme after all!</span>" //The message shown when a structure breaks
 	break_sound = 'sound/magic/clockwork/anima_fragment_death.ogg' //The sound played when a structure breaks
 	debris = list(/obj/item/clockwork/alloy_shards/large = 1, \
 	/obj/item/clockwork/alloy_shards/medium = 2, \
@@ -46,7 +46,7 @@
 	..()
 	desc = initial(desc)
 	if(unanchored_icon)
-		to_chat(user, "<span_class='notice'>[src] is [anchored ? "":"not "]secured to the floor.</span>")
+		to_chat(user, "<span class='notice'>[src] is [anchored ? "":"not "]secured to the floor.</span>")
 
 /obj/structure/destructible/clockwork/examine_status(mob/user)
 	if(is_servant_of_ratvar(user) || isobserver(user))
@@ -56,7 +56,7 @@
 		var/healthpercent = (obj_integrity/max_integrity) * 100
 		if(healthpercent < 50)
 			heavily_damaged = TRUE
-		return "<span_class='[heavily_damaged ? "alloy":"brass"]'>[t_It] [t_is] at <b>[obj_integrity]/[max_integrity]</b> integrity[heavily_damaged ? "!":"."]</span>"
+		return "<span class='[heavily_damaged ? "alloy":"brass"]'>[t_It] [t_is] at <b>[obj_integrity]/[max_integrity]</b> integrity[heavily_damaged ? "!":"."]</span>"
 	return ..()
 
 /obj/structure/destructible/clockwork/attack_hulk(mob/living/carbon/human/user, does_attack_animation = 0)
@@ -114,7 +114,7 @@
 		if(do_damage)
 			playsound(src, break_sound, 10 * (40 * (1 - get_efficiency_mod())), 1)
 			take_damage(round(max_integrity * 0.25, 1), BRUTE)
-			to_chat(user, "<span_class='warning'>As you unsecure [src] from the floor, you see cracks appear in its surface!</span>")
+			to_chat(user, "<span class='warning'>As you unsecure [src] from the floor, you see cracks appear in its surface!</span>")
 
 /obj/structure/destructible/clockwork/emp_act(severity)
 	. = ..()
@@ -158,9 +158,9 @@
 	..()
 	if(is_servant_of_ratvar(user) || isobserver(user))
 		if(!can_access_clockwork_power(src))
-			to_chat(user, "<span_class='alloy'>It has no access to the power network! Create a sigil of transmission nearby.</span>")
+			to_chat(user, "<span class='alloy'>It has no access to the power network! Create a sigil of transmission nearby.</span>")
 		else
-			to_chat(user, "<span_class='brass'>It has access to <b>[DisplayPower(get_clockwork_power())]</b> of power.</span>")
+			to_chat(user, "<span class='brass'>It has access to <b>[DisplayPower(get_clockwork_power())]</b> of power.</span>")
 
 /obj/structure/destructible/clockwork/powered/Destroy()
 	SSfastprocess.processing -= src
@@ -174,7 +174,7 @@
 /obj/structure/destructible/clockwork/powered/can_be_unfasten_wrench(mob/user, silent)
 	if(active)
 		if(!silent)
-			to_chat(user, "<span_class='warning'>[src] needs to be disabled before it can be unsecured!</span>")
+			to_chat(user, "<span class='warning'>[src] needs to be disabled before it can be unsecured!</span>")
 		return FAILED_UNFASTEN
 	return ..()
 
@@ -183,9 +183,9 @@
 		if(!is_servant_of_ratvar(user))
 			return FALSE
 		if(!anchored && !active)
-			to_chat(user, "<span_class='warning'>[src] needs to be secured to the floor before it can be activated!</span>")
+			to_chat(user, "<span class='warning'>[src] needs to be secured to the floor before it can be activated!</span>")
 			return FALSE
-		visible_message("<span_class='notice'>[user] [active ? "dis" : "en"]ables [src].</span>", "<span_class='brass'>You [active ? "dis" : "en"]able [src].</span>")
+		visible_message("<span class='notice'>[user] [active ? "dis" : "en"]ables [src].</span>", "<span class='brass'>You [active ? "dis" : "en"]able [src].</span>")
 	active = !active
 	if(active)
 		icon_state = active_icon

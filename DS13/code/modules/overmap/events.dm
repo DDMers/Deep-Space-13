@@ -21,7 +21,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 		return
 
 /datum/overmap_event/proc/succeed()
-	to_chat(world, "<span_class='notice'>Starfleet command has issued a commendation to the crew of [station_name()]. The ship has been allocated extra operational budget ([reward]) by Starfleet command.</span>")
+	to_chat(world, "<span class='notice'>Starfleet command has issued a commendation to the crew of [station_name()]. The ship has been allocated extra operational budget ([reward]) by Starfleet command.</span>")
 	priority_announce(succeed_text,"Incoming hail:",'sound/ai/commandreport.ogg')
 	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	if(D)
@@ -37,7 +37,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 		qdel(saved)
 
 /datum/overmap_event/proc/fail()
-	to_chat(world, "<span_class='warning'>Starfleet command has issued an official reprimand on [station_name()]'s permanent record.</span>")
+	to_chat(world, "<span class='warning'>Starfleet command has issued an official reprimand on [station_name()]'s permanent record.</span>")
 	priority_announce(fail_text)
 	spawner.used = FALSE
 
@@ -55,7 +55,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	for(var/mob/dead/observer/F in GLOB.dead_mob_list)
 		var/turf/turfy = get_turf(spawner)
 		var/link = TURF_LINK(F, turfy)
-		to_chat(F, "<span_class='purple'><b>[name] spawning at [link]</b></span>")
+		to_chat(F, "<span class='purple'><b>[name] spawning at [link]</b></span>")
 
 /datum/overmap_event/proc/start() //Now we have a spawn. Let's do whatever this mission is supposed to. Override this when you make new missions
 	var/I = rand(1,2)
@@ -148,7 +148,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	target.engine_power = 4 //Let her move again
 	target.max_shield_health = 100
 	target.shields.max_health = 100
-	to_chat(world, "<span_class='notice'>Starfleet command has issued a commendation to the crew of [station_name()]. The ship has been allocated extra operational budget ([reward]) by Starfleet command.</span>")
+	to_chat(world, "<span class='notice'>Starfleet command has issued a commendation to the crew of [station_name()]. The ship has been allocated extra operational budget ([reward]) by Starfleet command.</span>")
 	priority_announce(succeed_text)
 	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	if(D)

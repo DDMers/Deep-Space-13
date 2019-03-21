@@ -42,7 +42,7 @@
 
 /datum/antagonist/nukeop/greet()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/ops.ogg',100,0)
-	to_chat(owner, "<span_class='notice'>You are a [nuke_team ? nuke_team.syndicate_name : "syndicate"] agent!</span>")
+	to_chat(owner, "<span class='notice'>You are a [nuke_team ? nuke_team.syndicate_name : "syndicate"] agent!</span>")
 	owner.announce_objectives()
 
 /datum/antagonist/nukeop/on_gain()
@@ -140,7 +140,7 @@
 		antag_memory += "<B>Syndicate Nuclear Bomb Code</B>: [code]<br>"
 		to_chat(owner.current, "The nuclear authorization code is: <B>[code]</B>")
 	else
-		to_chat(admin, "<span_class='danger'>No valid nuke found!</span>")
+		to_chat(admin, "<span class='danger'>No valid nuke found!</span>")
 
 /datum/antagonist/nukeop/leader
 	name = "Nuclear Operative Leader"
@@ -303,41 +303,41 @@
 
 /datum/team/nuclear/roundend_report()
 	var/list/parts = list()
-	parts += "<span_class='header'>[syndicate_name] Operatives:</span>"
+	parts += "<span class='header'>[syndicate_name] Operatives:</span>"
 
 	switch(get_result())
 		if(NUKE_RESULT_FLUKE)
-			parts += "<span_class='redtext big'>Humiliating Syndicate Defeat</span>"
+			parts += "<span class='redtext big'>Humiliating Syndicate Defeat</span>"
 			parts += "<B>The crew of [station_name()] gave [syndicate_name] operatives back their bomb! The syndicate base was destroyed!</B> Next time, don't lose the nuke!"
 		if(NUKE_RESULT_NUKE_WIN)
-			parts += "<span_class='greentext big'>Syndicate Major Victory!</span>"
+			parts += "<span class='greentext big'>Syndicate Major Victory!</span>"
 			parts += "<B>[syndicate_name] operatives have destroyed [station_name()]!</B>"
 		if(NUKE_RESULT_NOSURVIVORS)
-			parts += "<span_class='neutraltext big'>Total Annihilation</span>"
+			parts += "<span class='neutraltext big'>Total Annihilation</span>"
 			parts +=  "<B>[syndicate_name] operatives destroyed [station_name()] but did not leave the area in time and got caught in the explosion.</B> Next time, don't lose the disk!"
 		if(NUKE_RESULT_WRONG_STATION)
-			parts += "<span_class='redtext big'>Crew Minor Victory</span>"
+			parts += "<span class='redtext big'>Crew Minor Victory</span>"
 			parts += "<B>[syndicate_name] operatives secured the authentication disk but blew up something that wasn't [station_name()].</B> Next time, don't do that!"
 		if(NUKE_RESULT_WRONG_STATION_DEAD)
-			parts += "<span_class='redtext big'>[syndicate_name] operatives have earned Darwin Award!</span>"
+			parts += "<span class='redtext big'>[syndicate_name] operatives have earned Darwin Award!</span>"
 			parts += "<B>[syndicate_name] operatives blew up something that wasn't [station_name()] and got caught in the explosion.</B> Next time, don't do that!"
 		if(NUKE_RESULT_CREW_WIN_SYNDIES_DEAD)
-			parts += "<span_class='redtext big'>Crew Major Victory!</span>"
+			parts += "<span class='redtext big'>Crew Major Victory!</span>"
 			parts += "<B>The Research Staff has saved the disk and killed the [syndicate_name] Operatives</B>"
 		if(NUKE_RESULT_CREW_WIN)
-			parts += "<span_class='redtext big'>Crew Major Victory</span>"
+			parts += "<span class='redtext big'>Crew Major Victory</span>"
 			parts += "<B>The Research Staff has saved the disk and stopped the [syndicate_name] Operatives!</B>"
 		if(NUKE_RESULT_DISK_LOST)
-			parts += "<span_class='neutraltext big'>Neutral Victory!</span>"
+			parts += "<span class='neutraltext big'>Neutral Victory!</span>"
 			parts += "<B>The Research Staff failed to secure the authentication disk but did manage to kill most of the [syndicate_name] Operatives!</B>"
 		if(NUKE_RESULT_DISK_STOLEN)
-			parts += "<span_class='greentext big'>Syndicate Minor Victory!</span>"
+			parts += "<span class='greentext big'>Syndicate Minor Victory!</span>"
 			parts += "<B>[syndicate_name] operatives survived the assault but did not achieve the destruction of [station_name()].</B> Next time, don't lose the disk!"
 		else
-			parts += "<span_class='neutraltext big'>Neutral Victory</span>"
+			parts += "<span class='neutraltext big'>Neutral Victory</span>"
 			parts += "<B>Mission aborted!</B>"
 
-	var/text = "<br><span_class='header'>The syndicate operatives were:</span>"
+	var/text = "<br><span class='header'>The syndicate operatives were:</span>"
 	var/purchases = ""
 	var/TC_uses = 0
 	LAZYINITLIST(GLOB.uplink_purchase_logs_by_key)

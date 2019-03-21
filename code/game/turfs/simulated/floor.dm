@@ -183,10 +183,10 @@
 		broken = 0
 		burnt = 0
 		if(user && !silent)
-			to_chat(user, "<span_class='notice'>You remove the broken plating.</span>")
+			to_chat(user, "<span class='notice'>You remove the broken plating.</span>")
 	else
 		if(user && !silent)
-			to_chat(user, "<span_class='notice'>You remove the floor tile.</span>")
+			to_chat(user, "<span class='notice'>You remove the floor tile.</span>")
 		if(floor_tile && make_tile)
 			new floor_tile(src)
 	return make_plating()
@@ -242,13 +242,13 @@
 /turf/open/floor/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_FLOORWALL)
-			to_chat(user, "<span_class='notice'>You build a wall.</span>")
+			to_chat(user, "<span class='notice'>You build a wall.</span>")
 			PlaceOnTop(/turf/closed/wall)
 			return TRUE
 		if(RCD_AIRLOCK)
 			if(locate(/obj/machinery/door/airlock) in src)
 				return FALSE
-			to_chat(user, "<span_class='notice'>You build an airlock.</span>")
+			to_chat(user, "<span class='notice'>You build an airlock.</span>")
 			var/obj/machinery/door/airlock/A = new the_rcd.airlock_type(src)
 
 			A.electronics = new/obj/item/electronics/airlock(A)
@@ -266,12 +266,12 @@
 		if(RCD_DECONSTRUCT)
 			if(ScrapeAway() == src)
 				return FALSE
-			to_chat(user, "<span_class='notice'>You deconstruct [src].</span>")
+			to_chat(user, "<span class='notice'>You deconstruct [src].</span>")
 			return TRUE
 		if(RCD_WINDOWGRILLE)
 			if(locate(/obj/structure/grille) in src)
 				return FALSE
-			to_chat(user, "<span_class='notice'>You construct the grille.</span>")
+			to_chat(user, "<span class='notice'>You construct the grille.</span>")
 			var/obj/structure/grille/G = new(src)
 			G.anchored = TRUE
 			return TRUE

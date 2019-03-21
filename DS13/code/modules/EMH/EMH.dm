@@ -67,7 +67,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 			emh = locate(/mob/living/carbon/human/species/holographic) in GLOB.alive_mob_list
 		if(emh.client && emh.client.key && blacklist == "yes")
 			GLOB.EMH_blacklist += emh.client.key
-			to_chat(emh, "<span_class='boldnotice'>[user] has blacklisted you from becoming an EMH for the duration of this round! If you feel this was in error, please ahelp immediately.")
+			to_chat(emh, "<span class='boldnotice'>[user] has blacklisted you from becoming an EMH for the duration of this round! If you feel this was in error, please ahelp immediately.")
 			log_game("[user] just blacklisted [emh.client.key] from becoming an EMH for the rest of the round")
 		if(emh)
 			emh.death()//Kill the emh.

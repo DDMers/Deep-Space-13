@@ -23,7 +23,7 @@
 		if(M in stomach_contents)
 			stomach_contents.Remove(M)
 		M.forceMove(Tsec)
-		visible_message("<span_class='danger'>[M] bursts out of [src]!</span>")
+		visible_message("<span class='danger'>[M] bursts out of [src]!</span>")
 	..()
 
 /mob/living/carbon/spill_organs(no_brain, no_organs, no_bodyparts)

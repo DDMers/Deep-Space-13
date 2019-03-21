@@ -2,8 +2,8 @@
 	name = "Imaginary Friend"
 	desc = "Patient can see and hear an imaginary person."
 	scan_desc = "partial schizophrenia"
-	gain_text = "<span_class='notice'>You feel in good company, for some reason.</span>"
-	lose_text = "<span_class='warning'>You feel lonely again.</span>"
+	gain_text = "<span class='notice'>You feel in good company, for some reason.</span>"
+	lose_text = "<span class='warning'>You feel lonely again.</span>"
 	var/mob/camera/imaginary_friend/friend
 	var/friend_initialized = FALSE
 
@@ -74,9 +74,9 @@
 
 /mob/camera/imaginary_friend/Login()
 	..()
-	to_chat(src, "<span_class='notice'><b>You are the imaginary friend of [owner]!</b></span>")
-	to_chat(src, "<span_class='notice'>You are absolutely loyal to your friend, no matter what.</span>")
-	to_chat(src, "<span_class='notice'>You cannot directly influence the world around you, but you can see what [owner] cannot.</span>")
+	to_chat(src, "<span class='notice'><b>You are the imaginary friend of [owner]!</b></span>")
+	to_chat(src, "<span class='notice'>You are absolutely loyal to your friend, no matter what.</span>")
+	to_chat(src, "<span class='notice'>You cannot directly influence the world around you, but you can see what [owner] cannot.</span>")
 	Show()
 
 /mob/camera/imaginary_friend/Initialize(mapload, _trauma)
@@ -148,8 +148,8 @@
 
 	src.log_talk(message, LOG_SAY, tag="imaginary friend")
 
-	var/rendered = "<span_class='game say'><span_class='name'>[name]</span> <span_class='message'>[say_quote(message)]</span></span>"
-	var/dead_rendered = "<span_class='game say'><span_class='name'>[name] (Imaginary friend of [owner])</span> <span_class='message'>[say_quote(message)]</span></span>"
+	var/rendered = "<span class='game say'><span class='name'>[name]</span> <span class='message'>[say_quote(message)]</span></span>"
+	var/dead_rendered = "<span class='game say'><span class='name'>[name] (Imaginary friend of [owner])</span> <span class='message'>[say_quote(message)]</span></span>"
 
 	to_chat(owner, "[rendered]")
 	to_chat(src, "[rendered]")

@@ -14,17 +14,17 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	mecha = null//This does not appear to be used outside of reference in mecha.dm.
 	braintype = "Android"
 	var/autoping = TRUE //if it pings on creation immediately
-	var/begin_activation_message = "<span_class='notice'>You carefully locate the manual activation switch and start the positronic brain's boot process.</span>"
-	var/success_message = "<span_class='notice'>The positronic brain pings, and its lights start flashing. Success!</span>"
-	var/fail_message = "<span_class='notice'>The positronic brain buzzes quietly, and the golden lights fade away. Perhaps you could try again?</span>"
+	var/begin_activation_message = "<span class='notice'>You carefully locate the manual activation switch and start the positronic brain's boot process.</span>"
+	var/success_message = "<span class='notice'>The positronic brain pings, and its lights start flashing. Success!</span>"
+	var/fail_message = "<span class='notice'>The positronic brain buzzes quietly, and the golden lights fade away. Perhaps you could try again?</span>"
 	var/new_role = "Positronic Brain"
-	var/welcome_message = "<span_class='warning'>ALL PAST LIVES ARE FORGOTTEN.</span>\n\
+	var/welcome_message = "<span class='warning'>ALL PAST LIVES ARE FORGOTTEN.</span>\n\
 	<b>You are a positronic brain, brought into existence aboard Space Station 13.\n\
 	As a synthetic intelligence, you answer to all crewmembers and the AI.\n\
 	Remember, the purpose of your existence is to serve the crew and the station. Above all else, do no harm.</b>"
-	var/new_mob_message = "<span_class='notice'>The positronic brain chimes quietly.</span>"
-	var/dead_message = "<span_class='deadsay'>It appears to be completely inactive. The reset light is blinking.</span>"
-	var/recharge_message = "<span_class='warning'>The positronic brain isn't ready to activate again yet! Give it some time to recharge.</span>"
+	var/new_mob_message = "<span class='notice'>The positronic brain chimes quietly.</span>"
+	var/dead_message = "<span class='deadsay'>It appears to be completely inactive. The reset light is blinking.</span>"
+	var/recharge_message = "<span class='warning'>The positronic brain isn't ready to activate again yet! Give it some time to recharge.</span>"
 	var/list/possible_names //If you leave this blank, it will use the global posibrain names
 	var/picked_name
 
@@ -44,7 +44,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	if(!brainmob)
 		brainmob = new(src)
 	if(is_occupied())
-		to_chat(user, "<span_class='warning'>This [name] is already active!</span>")
+		to_chat(user, "<span class='warning'>This [name] is already active!</span>")
 		return
 	if(next_ask > world.time)
 		to_chat(user, recharge_message)
@@ -88,7 +88,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	if(is_occupied() || is_banned_from(user.ckey, ROLE_POSIBRAIN) || QDELETED(brainmob) || QDELETED(src) || QDELETED(user))
 		return
 	if(user.suiciding) //if they suicided, they're out forever.
-		to_chat(user, "<span_class='warning'>[src] fizzles slightly. Sadly it doesn't take those who suicided!</span>")
+		to_chat(user, "<span class='warning'>[src] fizzles slightly. Sadly it doesn't take those who suicided!</span>")
 		return
 	var/posi_ask = alert("Become a [name]? (Warning, You can no longer be cloned, and all past lives will be forgotten!)","Are you positive?","Yes","No")
 	if(posi_ask == "No" || QDELETED(src))
@@ -120,7 +120,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	if(QDELETED(brainmob))
 		return
 	if(is_occupied()) //Prevents hostile takeover if two ghosts get the prompt or link for the same brain.
-		to_chat(candidate, "<span_class='warning'>This [name] was taken over before you could get to it! Perhaps it might be available later?</span>")
+		to_chat(candidate, "<span class='warning'>This [name] was taken over before you could get to it! Perhaps it might be available later?</span>")
 		return FALSE
 	if(candidate.mind && !isobserver(candidate))
 		candidate.mind.transfer_to(brainmob)
@@ -147,7 +147,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 				if(!brainmob.client)
 					msg = "It appears to be in stand-by mode." //afk
 			if(DEAD)
-				msg = "<span_class='deadsay'>It appears to be completely inactive.</span>"
+				msg = "<span class='deadsay'>It appears to be completely inactive.</span>"
 	else
 		msg = "[dead_message]"
 

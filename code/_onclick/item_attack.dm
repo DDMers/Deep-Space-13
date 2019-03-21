@@ -42,7 +42,7 @@
 	if(user.a_intent == INTENT_HARM && stat == DEAD && (butcher_results || guaranteed_butcher_results)) //can we butcher it?
 		GET_COMPONENT_FROM(butchering, /datum/component/butchering, I)
 		if(butchering && butchering.butchering_enabled)
-			to_chat(user, "<span_class='notice'>You begin to butcher [src]...</span>")
+			to_chat(user, "<span class='notice'>You begin to butcher [src]...</span>")
 			playsound(loc, butchering.butcher_sound, 50, TRUE, -1)
 			if(do_mob(user, src, butchering.speed) && Adjacent(I))
 				butchering.Butcher(user, src)
@@ -61,7 +61,7 @@
 		return
 
 	if(force && user.has_trait(TRAIT_PACIFISM))
-		to_chat(user, "<span_class='warning'>You don't want to harm other living beings!</span>")
+		to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 		return
 
 	if(!force)
@@ -94,7 +94,7 @@
 
 /obj/attacked_by(obj/item/I, mob/living/user)
 	if(I.force)
-		visible_message("<span_class='danger'>[user] has hit [src] with [I]!</span>", null, null, COMBAT_MESSAGE_RANGE)
+		visible_message("<span class='danger'>[user] has hit [src] with [I]!</span>", null, null, COMBAT_MESSAGE_RANGE)
 		//only witnesses close by and the victim see a hit message.
 		log_combat(user, src, "attacked", I)
 	take_damage(I.force, I.damtype, "melee", 1)
@@ -147,6 +147,6 @@
 	var/attack_message = "[src] has been [message_verb][message_hit_area] with [I]."
 	if(user in viewers(src, null))
 		attack_message = "[user] has [message_verb] [src][message_hit_area] with [I]!"
-	visible_message("<span_class='danger'>[attack_message]</span>",\
-		"<span_class='userdanger'>[attack_message]</span>", null, COMBAT_MESSAGE_RANGE)
+	visible_message("<span class='danger'>[attack_message]</span>",\
+		"<span class='userdanger'>[attack_message]</span>", null, COMBAT_MESSAGE_RANGE)
 	return 1

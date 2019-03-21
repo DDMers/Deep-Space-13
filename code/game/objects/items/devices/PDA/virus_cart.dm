@@ -25,11 +25,11 @@
 
 /obj/item/cartridge/virus/clown/send_virus(obj/item/pda/target, mob/living/U)
 	if(charges <= 0)
-		to_chat(U, "<span_class='notice'>Out of charges.</span>")
+		to_chat(U, "<span class='notice'>Out of charges.</span>")
 		return
 	if(!isnull(target) && !target.toff)
 		charges--
-		to_chat(U, "<span_class='notice'>Virus Sent!</span>")
+		to_chat(U, "<span class='notice'>Virus Sent!</span>")
 		target.honkamt = (rand(15,20))
 	else
 		to_chat(U, "PDA not found.")
@@ -41,11 +41,11 @@
 
 /obj/item/cartridge/virus/mime/send_virus(obj/item/pda/target, mob/living/U)
 	if(charges <= 0)
-		to_chat(U, "<span_class='notice'>Out of charges.</span>")
+		to_chat(U, "<span class='notice'>Out of charges.</span>")
 		return
 	if(!isnull(target) && !target.toff)
 		charges--
-		to_chat(U, "<span_class='notice'>Virus Sent!</span>")
+		to_chat(U, "<span class='notice'>Virus Sent!</span>")
 		target.silent = TRUE
 		target.ttone = "silence"
 	else
@@ -60,7 +60,7 @@
 
 /obj/item/cartridge/virus/syndicate/send_virus(obj/item/pda/target, mob/living/U)
 	if(charges <= 0)
-		to_chat(U, "<span_class='notice'>Out of charges.</span>")
+		to_chat(U, "<span class='notice'>Out of charges.</span>")
 		return
 	if(!isnull(target) && !target.toff)
 		charges--
@@ -73,10 +73,10 @@
 				difficulty += 2
 		GET_COMPONENT_FROM(hidden_uplink, /datum/component/uplink, target)
 		if(!target.detonatable || prob(difficulty * 15) || (hidden_uplink))
-			U.show_message("<span_class='danger'>An error flashes on your [src].</span>", 1)
+			U.show_message("<span class='danger'>An error flashes on your [src].</span>", 1)
 		else
 			log_bomber(U, "triggered a PDA explosion on", target, "[!is_special_character(U) ? "(TRIGGED BY NON-ANTAG)" : ""]")
-			U.show_message("<span_class='notice'>Success!</span>", 1)
+			U.show_message("<span class='notice'>Success!</span>", 1)
 			target.explode()
 	else
 		to_chat(U, "PDA not found.")
@@ -88,12 +88,12 @@
 
 /obj/item/cartridge/virus/frame/send_virus(obj/item/pda/target, mob/living/U)
 	if(charges <= 0)
-		to_chat(U, "<span_class='notice'>Out of charges.</span>")
+		to_chat(U, "<span class='notice'>Out of charges.</span>")
 		return
 	if(!isnull(target) && !target.toff)
 		charges--
 		var/lock_code = "[rand(100,999)] [pick(GLOB.phonetic_alphabet)]"
-		to_chat(U, "<span_class='notice'>Virus Sent!  The unlock code to the target is: [lock_code]</span>")
+		to_chat(U, "<span class='notice'>Virus Sent!  The unlock code to the target is: [lock_code]</span>")
 		GET_COMPONENT_FROM(hidden_uplink, /datum/component/uplink, target)
 		if(!hidden_uplink)
 			hidden_uplink = target.AddComponent(/datum/component/uplink)

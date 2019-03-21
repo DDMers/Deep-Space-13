@@ -96,15 +96,15 @@
 		var/obj/item/reagent_containers/food/snacks/icecream/I = O
 		if(!I.ice_creamed)
 			if(product_types[dispense_flavour] > 0)
-				visible_message("[icon2html(src, viewers(src))] <span_class='info'>[user] scoops delicious [flavour_name] ice cream into [I].</span>")
+				visible_message("[icon2html(src, viewers(src))] <span class='info'>[user] scoops delicious [flavour_name] ice cream into [I].</span>")
 				product_types[dispense_flavour] -= 1
 				I.add_ice_cream(flavour_name)
 				if(I.reagents.total_volume < 10)
 					I.reagents.add_reagent("sugar", 10 - I.reagents.total_volume)
 			else
-				to_chat(user, "<span_class='warning'>There is not enough ice cream left!</span>")
+				to_chat(user, "<span class='warning'>There is not enough ice cream left!</span>")
 		else
-			to_chat(user, "<span_class='notice'>[O] already has ice cream in it.</span>")
+			to_chat(user, "<span class='notice'>[O] already has ice cream in it.</span>")
 		return 1
 	else if(O.is_drainable())
 		return
@@ -123,11 +123,11 @@
 		product_types[make_type] += amount
 		var/flavour = get_flavour_name(make_type)
 		if(make_type > 4)
-			src.visible_message("<span_class='info'>[user] cooks up some [flavour] cones.</span>")
+			src.visible_message("<span class='info'>[user] cooks up some [flavour] cones.</span>")
 		else
-			src.visible_message("<span_class='info'>[user] whips up some [flavour] icecream.</span>")
+			src.visible_message("<span class='info'>[user] whips up some [flavour] icecream.</span>")
 	else
-		to_chat(user, "<span_class='warning'>You don't have the ingredients to make this!</span>")
+		to_chat(user, "<span class='warning'>You don't have the ingredients to make this!</span>")
 
 /obj/machinery/icecream_vat/Topic(href, href_list)
 	if(..())
@@ -135,7 +135,7 @@
 	if(href_list["select"])
 		dispense_flavour = text2num(href_list["select"])
 		flavour_name = get_flavour_name(dispense_flavour)
-		src.visible_message("<span_class='notice'>[usr] sets [src] to dispense [flavour_name] flavoured ice cream.</span>")
+		src.visible_message("<span class='notice'>[usr] sets [src] to dispense [flavour_name] flavoured ice cream.</span>")
 
 	if(href_list["cone"])
 		var/dispense_cone = text2num(href_list["cone"])
@@ -144,9 +144,9 @@
 			product_types[dispense_cone] -= 1
 			var/obj/item/reagent_containers/food/snacks/icecream/I = new(src.loc)
 			I.set_cone_type(cone_name)
-			src.visible_message("<span_class='info'>[usr] dispenses a crunchy [cone_name] cone from [src].</span>")
+			src.visible_message("<span class='info'>[usr] dispenses a crunchy [cone_name] cone from [src].</span>")
 		else
-			to_chat(usr, "<span_class='warning'>There are no [cone_name] cones left!</span>")
+			to_chat(usr, "<span class='warning'>There are no [cone_name] cones left!</span>")
 
 	if(href_list["make"])
 		var/amount = (text2num(href_list["amount"]))

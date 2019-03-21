@@ -35,10 +35,10 @@
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/attack_hand(mob/user)
 	if(jammed)
-		to_chat(user, "<span_class='warning'>The Syndicate is jamming the console!</span>")
+		to_chat(user, "<span class='warning'>The Syndicate is jamming the console!</span>")
 		return
 	if(!shuttle_port && !SSshuttle.getShuttle(shuttleId))
-		to_chat(user,"<span_class='warning'>Warning: Shuttle connection severed!</span>")
+		to_chat(user,"<span class='warning'>Warning: Shuttle connection severed!</span>")
 		return
 	return ..()
 
@@ -114,23 +114,23 @@
 	var/mob/camera/aiEye/remote/shuttle_docker/the_eye = eyeobj
 	var/landing_clear = checkLandingSpot()
 	if(designate_time && (landing_clear != SHUTTLE_DOCKER_BLOCKED))
-		to_chat(current_user, "<span_class='warning'>Targeting transit location, please wait [DisplayTimeText(designate_time)]...</span>")
+		to_chat(current_user, "<span class='warning'>Targeting transit location, please wait [DisplayTimeText(designate_time)]...</span>")
 		designating_target_loc = the_eye.loc
 		var/wait_completed = do_after(current_user, designate_time, FALSE, designating_target_loc, TRUE, CALLBACK(src, /obj/machinery/computer/camera_advanced/shuttle_docker/proc/canDesignateTarget))
 		designating_target_loc = null
 		if(!current_user)
 			return
 		if(!wait_completed)
-			to_chat(current_user, "<span_class='warning'>Operation aborted.</span>")
+			to_chat(current_user, "<span class='warning'>Operation aborted.</span>")
 			return
 		landing_clear = checkLandingSpot()
 
 	if(landing_clear != SHUTTLE_DOCKER_LANDING_CLEAR)
 		switch(landing_clear)
 			if(SHUTTLE_DOCKER_BLOCKED)
-				to_chat(current_user, "<span_class='warning'>Invalid transit location</span>")
+				to_chat(current_user, "<span class='warning'>Invalid transit location</span>")
 			if(SHUTTLE_DOCKER_BLOCKED_BY_HIDDEN_PORT)
-				to_chat(current_user, "<span_class='warning'>Unknown object detected in landing zone. Please designate another location.</span>")
+				to_chat(current_user, "<span class='warning'>Unknown object detected in landing zone. Please designate another location.</span>")
 		return
 
 	if(!my_port)
@@ -160,7 +160,7 @@
 
 	if(current_user.client)
 		current_user.client.images += the_eye.placed_images
-		to_chat(current_user, "<span_class='notice'>Transit location designated</span>")
+		to_chat(current_user, "<span class='notice'>Transit location designated</span>")
 	return
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/proc/canDesignateTarget()
@@ -339,7 +339,7 @@
 		if(T)
 			playsound(console, 'sound/machines/terminal_prompt_confirm.ogg', 25, 0)
 			remote_eye.setLoc(T)
-			to_chat(target, "<span_class='notice'>Jumped to [selected]</span>")
+			to_chat(target, "<span class='notice'>Jumped to [selected]</span>")
 			C.overlay_fullscreen("flash", /obj/screen/fullscreen/flash/static)
 			C.clear_fullscreen("flash", 3)
 	else

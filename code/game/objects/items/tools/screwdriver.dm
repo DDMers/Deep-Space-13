@@ -32,7 +32,7 @@
 	)
 
 /obj/item/screwdriver/suicide_act(mob/user)
-	user.visible_message("<span_class='suicide'>[user] is stabbing [src] into [user.p_their()] [pick("temple", "heart")]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is stabbing [src] into [user.p_their()] [pick("temple", "heart")]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return(BRUTELOSS)
 
 /obj/item/screwdriver/Initialize()
@@ -76,7 +76,7 @@
 	if(user.zone_selected != BODY_ZONE_PRECISE_EYES && user.zone_selected != BODY_ZONE_HEAD)
 		return ..()
 	if(user.has_trait(TRAIT_PACIFISM))
-		to_chat(user, "<span_class='warning'>You don't want to harm [M]!</span>")
+		to_chat(user, "<span class='warning'>You don't want to harm [M]!</span>")
 		return
 	if(user.has_trait(TRAIT_CLUMSY) && prob(50))
 		M = user
@@ -124,13 +124,13 @@
 	random_color = FALSE
 
 /obj/item/screwdriver/power/suicide_act(mob/user)
-	user.visible_message("<span_class='suicide'>[user] is putting [src] to [user.p_their()] temple. It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] is putting [src] to [user.p_their()] temple. It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return(BRUTELOSS)
 
 /obj/item/screwdriver/power/attack_self(mob/user)
 	playsound(get_turf(user),'sound/items/change_drill.ogg',50,1)
 	var/obj/item/wrench/power/b_drill = new /obj/item/wrench/power(drop_location())
-	to_chat(user, "<span_class='notice'>You attach the bolt driver bit to [src].</span>")
+	to_chat(user, "<span class='notice'>You attach the bolt driver bit to [src].</span>")
 	qdel(src)
 	user.put_in_active_hand(b_drill)
 

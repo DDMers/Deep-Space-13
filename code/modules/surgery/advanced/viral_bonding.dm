@@ -31,10 +31,10 @@
 	return TRUE
 
 /datum/surgery_step/viral_bond/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message("[user] starts heating [target]'s bone marrow with [tool]...", "<span_class='notice'>You start heating [target]'s bone marrow with [tool]...</span>")
+	user.visible_message("[user] starts heating [target]'s bone marrow with [tool]...", "<span class='notice'>You start heating [target]'s bone marrow with [tool]...</span>")
 
 /datum/surgery_step/viral_bond/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message("[target]'s bone marrow begins pulsing slowly.", "<span_class='notice'>[target]'s bone marrow begins pulsing slowly. The viral bonding is complete.</span>")
+	user.visible_message("[target]'s bone marrow begins pulsing slowly.", "<span class='notice'>[target]'s bone marrow begins pulsing slowly. The viral bonding is complete.</span>")
 	for(var/X in target.diseases)
 		var/datum/disease/D = X
 		D.carrier = TRUE

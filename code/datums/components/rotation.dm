@@ -79,7 +79,7 @@
 
 /datum/component/simple_rotation/proc/ExamineMessage(datum/source, mob/user)
 	if(rotation_flags & ROTATION_ALTCLICK)
-		to_chat(user, "<span_class='notice'>Alt-click to rotate it clockwise.</span>")
+		to_chat(user, "<span class='notice'>Alt-click to rotate it clockwise.</span>")
 
 /datum/component/simple_rotation/proc/HandRot(datum/source, mob/user, rotation = default_rotation_direction)
 	if(!can_be_rotated.Invoke(user, rotation) || !can_user_rotate.Invoke(user, rotation))
@@ -116,7 +116,7 @@
 	return !AM.anchored
 
 /datum/component/simple_rotation/proc/default_after_rotation(mob/user, rotation_type)
-	to_chat(user,"<span_class='notice'>You [rotation_type == ROTATION_FLIP ? "flip" : "rotate"] [parent].</span>")
+	to_chat(user,"<span class='notice'>You [rotation_type == ROTATION_FLIP ? "flip" : "rotate"] [parent].</span>")
 
 /atom/movable/proc/simple_rotate_clockwise()
 	set name = "Rotate Clockwise"

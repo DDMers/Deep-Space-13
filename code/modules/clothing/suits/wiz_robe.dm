@@ -165,7 +165,7 @@
 	if(!isliving(usr))
 		return
 	if(!robe_charge)
-		to_chat(usr, "<span_class='warning'>\The robe's internal magic supply is still recharging!</span>")
+		to_chat(usr, "<span class='warning'>\The robe's internal magic supply is still recharging!</span>")
 		return
 
 	usr.say("Rise, my creation! Off your page into this realm!", forced = "stickman summoning")
@@ -176,7 +176,7 @@
 	src.robe_charge = FALSE
 	sleep(30)
 	src.robe_charge = TRUE
-	to_chat(usr, "<span_class='notice'>\The robe hums, its internal magic supply restored.</span>")
+	to_chat(usr, "<span class='notice'>\The robe hums, its internal magic supply restored.</span>")
 
 
 //Shielded Armour
@@ -221,8 +221,8 @@
 /obj/item/wizard_armour_charge/afterattack(obj/item/clothing/suit/space/hardsuit/shielded/wizard/W, mob/user)
 	. = ..()
 	if(!istype(W))
-		to_chat(user, "<span_class='warning'>The rune can only be used on battlemage armour!</span>")
+		to_chat(user, "<span class='warning'>The rune can only be used on battlemage armour!</span>")
 		return
 	W.current_charges += 8
-	to_chat(user, "<span_class='notice'>You charge \the [W]. It can now absorb [W.current_charges] hits.</span>")
+	to_chat(user, "<span class='notice'>You charge \the [W]. It can now absorb [W.current_charges] hits.</span>")
 	qdel(src)

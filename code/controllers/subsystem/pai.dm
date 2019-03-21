@@ -148,7 +148,7 @@ SUBSYSTEM_DEF(pai)
 				continue
 			if(!(ROLE_PAI in G.client.prefs.be_special))
 				continue
-			to_chat(G, "<span_class='ghostalert'>[user] is requesting a pAI personality! Use the pAI button to submit yourself as one.</span>")
+			to_chat(G, "<span class='ghostalert'>[user] is requesting a pAI personality! Use the pAI button to submit yourself as one.</span>")
 		addtimer(CALLBACK(src, .proc/spam_again), spam_delay)
 	var/list/available = list()
 	for(var/datum/paiCandidate/c in SSpai.candidates)

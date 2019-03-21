@@ -30,7 +30,7 @@
 /obj/machinery/dna_scannernew/examine(mob/user)
 	..()
 	if(in_range(user, src) || isobserver(user))
-		to_chat(user, "<span_class='notice'>The status display reads: Radiation pulse accuracy increased by factor <b>[precision_coeff**2]</b>.<br>Radiation pulse damage decreased by factor <b>[damage_coeff**2]</b>.<span>")
+		to_chat(user, "<span class='notice'>The status display reads: Radiation pulse accuracy increased by factor <b>[precision_coeff**2]</b>.<br>Radiation pulse damage decreased by factor <b>[damage_coeff**2]</b>.<span>")
 
 /obj/machinery/dna_scannernew/update_icon()
 
@@ -57,7 +57,7 @@
 
 /obj/machinery/dna_scannernew/proc/toggle_open(mob/user)
 	if(panel_open)
-		to_chat(user, "<span_class='notice'>Close the maintenance panel first.</span>")
+		to_chat(user, "<span class='notice'>Close the maintenance panel first.</span>")
 		return
 
 	if(state_open)
@@ -65,7 +65,7 @@
 		return
 
 	else if(locked)
-		to_chat(user, "<span_class='notice'>The bolts are locked down, securing the door shut.</span>")
+		to_chat(user, "<span class='notice'>The bolts are locked down, securing the door shut.</span>")
 		return
 
 	open_machine()
@@ -76,15 +76,15 @@
 		return
 	user.changeNext_move(CLICK_CD_BREAKOUT)
 	user.last_special = world.time + CLICK_CD_BREAKOUT
-	user.visible_message("<span_class='notice'>You see [user] kicking against the door of [src]!</span>", \
-		"<span_class='notice'>You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
-		"<span_class='italics'>You hear a metallic creaking from [src].</span>")
+	user.visible_message("<span class='notice'>You see [user] kicking against the door of [src]!</span>", \
+		"<span class='notice'>You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
+		"<span class='italics'>You hear a metallic creaking from [src].</span>")
 	if(do_after(user,(breakout_time), target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src || state_open || !locked)
 			return
 		locked = FALSE
-		user.visible_message("<span_class='warning'>[user] successfully broke out of [src]!</span>", \
-			"<span_class='notice'>You successfully break out of [src]!</span>")
+		user.visible_message("<span class='warning'>[user] successfully broke out of [src]!</span>", \
+			"<span class='notice'>You successfully break out of [src]!</span>")
 		open_machine()
 
 /obj/machinery/dna_scannernew/proc/locate_computer(type_)
@@ -120,7 +120,7 @@
 	if(user.stat || locked)
 		if(message_cooldown <= world.time)
 			message_cooldown = world.time + 50
-			to_chat(user, "<span_class='warning'>[src]'s door won't budge!</span>")
+			to_chat(user, "<span class='warning'>[src]'s door won't budge!</span>")
 		return
 	open_machine()
 

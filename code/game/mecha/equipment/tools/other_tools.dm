@@ -418,7 +418,7 @@
 			occupant_message("Unit is full.")
 			return 0
 	else
-		occupant_message("<span_class='warning'>[fuel] traces in target minimal! [P] cannot be used as fuel.</span>")
+		occupant_message("<span class='warning'>[fuel] traces in target minimal! [P] cannot be used as fuel.</span>")
 		return
 
 /obj/item/mecha_parts/mecha_equipment/generator/attackby(weapon,mob/user, params)

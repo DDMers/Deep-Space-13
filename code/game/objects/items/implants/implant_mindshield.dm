@@ -36,7 +36,7 @@
 
 		if(target.mind.has_antag_datum(/datum/antagonist/rev/head) || target.mind.has_antag_datum(/datum/antagonist/hivemind) || target.mind.unconvertable)
 			if(!silent)
-				target.visible_message("<span_class='warning'>[target] seems to resist the implant!</span>", "<span_class='warning'>You feel something interfering with your mental conditioning, but you resist it!</span>")
+				target.visible_message("<span class='warning'>[target] seems to resist the implant!</span>", "<span class='warning'>You feel something interfering with your mental conditioning, but you resist it!</span>")
 			removed(target, 1)
 			qdel(src)
 			return FALSE
@@ -48,7 +48,7 @@
 					var/hive_name = hive.get_real_name()
 					if(hive_name)
 						warning += "[hive_name]. "
-			to_chat(target, "<span_class='warning'>You hear supernatural wailing echo throughout your mind. If you listen closely you can hear... [warning]Are those... names?</span>")
+			to_chat(target, "<span class='warning'>You hear supernatural wailing echo throughout your mind. If you listen closely you can hear... [warning]Are those... names?</span>")
 			remove_hivemember(target)
 
 		var/datum/antagonist/rev/rev = target.mind.has_antag_datum(/datum/antagonist/rev)
@@ -56,9 +56,9 @@
 			rev.remove_revolutionary(FALSE, user)
 		if(!silent)
 			if(target.mind in SSticker.mode.cult)
-				to_chat(target, "<span_class='warning'>You feel something interfering with your mental conditioning, but you resist it!</span>")
+				to_chat(target, "<span class='warning'>You feel something interfering with your mental conditioning, but you resist it!</span>")
 			else
-				to_chat(target, "<span_class='notice'>You feel a sense of peace and security. You are now protected from brainwashing.</span>")
+				to_chat(target, "<span class='notice'>You feel a sense of peace and security. You are now protected from brainwashing.</span>")
 		target.add_trait(TRAIT_MINDSHIELD, "implant")
 		target.sec_hud_set_implants()
 		return TRUE
@@ -71,7 +71,7 @@
 			L.remove_trait(TRAIT_MINDSHIELD, "implant")
 			L.sec_hud_set_implants()
 		if(target.stat != DEAD && !silent)
-			to_chat(target, "<span_class='boldnotice'>Your mind suddenly feels terribly vulnerable. You are no longer safe from brainwashing.</span>")
+			to_chat(target, "<span class='boldnotice'>Your mind suddenly feels terribly vulnerable. You are no longer safe from brainwashing.</span>")
 		return 1
 	return 0
 

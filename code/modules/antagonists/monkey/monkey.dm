@@ -115,7 +115,7 @@
 	. = ..()
 
 /datum/antagonist/monkey/leader/greet()
-	to_chat(owner, "<B><span_class='notice'>You are the Jungle Fever patient zero!!</B></span>")
+	to_chat(owner, "<B><span class='notice'>You are the Jungle Fever patient zero!!</B></span>")
 	to_chat(owner, "<b>You have been planted onto this station by the Animal Rights Consortium.</b>")
 	to_chat(owner, "<b>Soon the disease will transform you into an ape. Afterwards, you will be able spread the infection to others with a bite.</b>")
 	to_chat(owner, "<b>While your infection strain is undetectable by scanners, any other infectees will show up on medical equipment.</b>")
@@ -189,24 +189,24 @@
 	var/list/parts = list()
 	switch(get_result())
 		if(MONKEYS_ESCAPED)
-			parts += "<span_class='greentext big'><B>Monkey Major Victory!</B></span>"
-			parts += "<span_class='greentext'><B>Central Command and [station_name()] were taken over by the monkeys! Ook ook!</B></span>"
+			parts += "<span class='greentext big'><B>Monkey Major Victory!</B></span>"
+			parts += "<span class='greentext'><B>Central Command and [station_name()] were taken over by the monkeys! Ook ook!</B></span>"
 		if(MONKEYS_LIVED)
 			parts += "<FONT size = 3><B>Monkey Minor Victory!</B></FONT>"
-			parts += "<span_class='greentext'><B>[station_name()] was taken over by the monkeys! Ook ook!</B></span>"
+			parts += "<span class='greentext'><B>[station_name()] was taken over by the monkeys! Ook ook!</B></span>"
 		if(DISEASE_LIVED)
-			parts += "<span_class='redtext big'><B>Monkey Minor Defeat!</B></span>"
-			parts += "<span_class='redtext'><B>All the monkeys died, but the disease lives on! The future is uncertain.</B></span>"
+			parts += "<span class='redtext big'><B>Monkey Minor Defeat!</B></span>"
+			parts += "<span class='redtext'><B>All the monkeys died, but the disease lives on! The future is uncertain.</B></span>"
 		if(MONKEYS_DIED)
-			parts += "<span_class='redtext big'><B>Monkey Major Defeat!</B></span>"
-			parts += "<span_class='redtext'><B>All the monkeys died, and Jungle Fever was wiped out!</B></span>"
+			parts += "<span class='redtext big'><B>Monkey Major Defeat!</B></span>"
+			parts += "<span class='redtext'><B>All the monkeys died, and Jungle Fever was wiped out!</B></span>"
 	var/list/leaders = get_antag_minds(/datum/antagonist/monkey/leader, TRUE)
 	var/list/monkeys = get_antag_minds(/datum/antagonist/monkey, TRUE)
 
 	if(LAZYLEN(leaders))
-		parts += "<span_class='header'>The monkey leaders were:</span>"
+		parts += "<span class='header'>The monkey leaders were:</span>"
 		parts += printplayerlist(SSticker.mode.ape_leaders)
 	if(LAZYLEN(monkeys))
-		parts += "<span_class='header'>The monkeys were:</span>"
+		parts += "<span class='header'>The monkeys were:</span>"
 		parts += printplayerlist(SSticker.mode.ape_infectees)
 	return "<div class='panel redborder'>[parts.Join("<br>")]</div>"

@@ -302,7 +302,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	verbs.Remove(/client/proc/hide_most_verbs, GLOB.admin_verbs_hideable)
 	verbs += /client/proc/show_verbs
 
-	to_chat(src, "<span_class='interface'>Most of your adminverbs have been hidden.</span>")
+	to_chat(src, "<span class='interface'>Most of your adminverbs have been hidden.</span>")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Hide Most Adminverbs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
@@ -313,7 +313,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	remove_admin_verbs()
 	verbs += /client/proc/show_verbs
 
-	to_chat(src, "<span_class='interface'>Almost all of your adminverbs have been hidden.</span>")
+	to_chat(src, "<span class='interface'>Almost all of your adminverbs have been hidden.</span>")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Hide All Adminverbs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
@@ -324,7 +324,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	verbs -= /client/proc/show_verbs
 	add_admin_verbs()
 
-	to_chat(src, "<span_class='interface'>All of your adminverbs are now visible.</span>")
+	to_chat(src, "<span class='interface'>All of your adminverbs are now visible.</span>")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Adminverbs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
@@ -365,10 +365,10 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	if(holder && mob)
 		if(mob.invisibility == INVISIBILITY_OBSERVER)
 			mob.invisibility = initial(mob.invisibility)
-			to_chat(mob, "<span_class='boldannounce'>Invisimin off. Invisibility reset.</span>")
+			to_chat(mob, "<span class='boldannounce'>Invisimin off. Invisibility reset.</span>")
 		else
 			mob.invisibility = INVISIBILITY_OBSERVER
-			to_chat(mob, "<span_class='adminnotice'><b>Invisimin on. You are now as invisible as a ghost.</b></span>")
+			to_chat(mob, "<span class='adminnotice'><b>Invisimin on. You are now as invisible as a ghost.</b></span>")
 
 /client/proc/check_antagonists()
 	set name = "Check Antagonists"
@@ -562,14 +562,14 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Give Spell") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_admin("[key_name(usr)] gave [key_name(T)] the spell [S].")
-	message_admins("<span_class='adminnotice'>[key_name_admin(usr)] gave [key_name_admin(T)] the spell [S].</span>")
+	message_admins("<span class='adminnotice'>[key_name_admin(usr)] gave [key_name_admin(T)] the spell [S].</span>")
 
 	S = spell_list[S]
 	if(T.mind)
 		T.mind.AddSpell(new S)
 	else
 		T.AddSpell(new S)
-		message_admins("<span_class='danger'>Spells given to mindless mobs will not be transferred in mindswap or cloning!</span>")
+		message_admins("<span class='danger'>Spells given to mindless mobs will not be transferred in mindswap or cloning!</span>")
 
 /client/proc/remove_spell(mob/T in GLOB.mob_list)
 	set category = "Fun"
@@ -581,7 +581,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 		if(S)
 			T.mind.RemoveSpell(S)
 			log_admin("[key_name(usr)] removed the spell [S] from [key_name(T)].")
-			message_admins("<span_class='adminnotice'>[key_name_admin(usr)] removed the spell [S] from [key_name_admin(T)].</span>")
+			message_admins("<span class='adminnotice'>[key_name_admin(usr)] removed the spell [S] from [key_name_admin(T)].</span>")
 			SSblackbox.record_feedback("tally", "admin_verb", 1, "Remove Spell") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/give_disease(mob/living/T in GLOB.mob_living_list)
@@ -589,7 +589,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	set name = "Give Disease"
 	set desc = "Gives a Disease to a mob."
 	if(!istype(T))
-		to_chat(src, "<span_class='notice'>You can only give a disease to a mob of type /mob/living.</span>")
+		to_chat(src, "<span class='notice'>You can only give a disease to a mob of type /mob/living.</span>")
 		return
 	var/datum/disease/D = input("Choose the disease to give to that guy", "ACHOO") as null|anything in SSdisease.diseases
 	if(!D)
@@ -597,7 +597,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	T.ForceContractDisease(new D, FALSE, TRUE)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Give Disease") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_admin("[key_name(usr)] gave [key_name(T)] the disease [D].")
-	message_admins("<span_class='adminnotice'>[key_name_admin(usr)] gave [key_name_admin(T)] the disease [D].</span>")
+	message_admins("<span class='adminnotice'>[key_name_admin(usr)] gave [key_name_admin(T)] the disease [D].</span>")
 
 /client/proc/object_say(obj/O in world)
 	set category = "Special Verbs"
@@ -608,7 +608,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 		return
 	O.say(message)
 	log_admin("[key_name(usr)] made [O] at [AREACOORD(O)] say \"[message]\"")
-	message_admins("<span_class='adminnotice'>[key_name_admin(usr)] made [O] at [AREACOORD(O)]. say \"[message]\"</span>")
+	message_admins("<span class='adminnotice'>[key_name_admin(usr)] made [O] at [AREACOORD(O)]. say \"[message]\"</span>")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Object Say") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 /client/proc/togglebuildmodeself()
 	set name = "Toggle Build Mode Self"
@@ -638,7 +638,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 
 	holder.deactivate()
 
-	to_chat(src, "<span_class='interface'>You are now a normal player.</span>")
+	to_chat(src, "<span class='interface'>You are now a normal player.</span>")
 	log_admin("[src] deadmined themself.")
 	message_admins("[src] deadmined themself.")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Deadmin")
@@ -663,7 +663,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	if (!holder)
 		return //This can happen if an admin attempts to vv themself into somebody elses's deadmin datum by getting ref via brute force
 
-	to_chat(src, "<span_class='interface'>You are now an admin.</span>")
+	to_chat(src, "<span class='interface'>You are now an admin.</span>")
 	message_admins("[src] re-adminned themselves.")
 	log_admin("[src] re-adminned themselves.")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Readmin")

@@ -23,7 +23,7 @@ Slimecrossing Items
 			disk.forceMove(user.drop_location())
 	else
 		text += "!"
-	to_chat(user,"<span_class='notice'>[text]</span>")
+	to_chat(user,"<span class='notice'>[text]</span>")
 	qdel(src)
 
 //Hypercharged slime cell - Charged Yellow
@@ -44,11 +44,11 @@ Slimecrossing Items
 
 /obj/item/barriercube/attack_self(mob/user)
 	if(locate(/obj/structure/barricade/slime) in get_turf(loc))
-		to_chat(user, "<span_class='warning'>You can't fit more than one barrier in the same space!</span>")
+		to_chat(user, "<span class='warning'>You can't fit more than one barrier in the same space!</span>")
 		return
-	to_chat(user, "<span_class='notice'>You squeeze [src].</span>")
+	to_chat(user, "<span class='notice'>You squeeze [src].</span>")
 	var/obj/B = new /obj/structure/barricade/slime(get_turf(loc))
-	B.visible_message("<span_class='warning'>[src] suddenly grows into a large, gelatinous barrier!</span>")
+	B.visible_message("<span class='warning'>[src] suddenly grows into a large, gelatinous barrier!</span>")
 	qdel(src)
 
 //Slime barricade - Chilling Grey
@@ -93,7 +93,7 @@ Slimecrossing Items
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			if(H.mind && !H.has_trait(TRAIT_AGEUSIA))
-				to_chat(H,"<span_class='notice'>That didn't taste very good...</span>") //No disgust, though. It's just not good tasting.
+				to_chat(H,"<span class='notice'>That didn't taste very good...</span>") //No disgust, though. It's just not good tasting.
 				GET_COMPONENT_FROM(mood, /datum/component/mood, H)
 				if(mood)
 					mood.add_event(null,"gross_food", /datum/mood_event/gross_food)
@@ -131,37 +131,37 @@ Slimecrossing Items
 
 /obj/item/capturedevice/attack(mob/living/M, mob/user)
 	if(length(contents))
-		to_chat(user, "<span_class='warning'>The device already has something inside.</span>")
+		to_chat(user, "<span class='warning'>The device already has something inside.</span>")
 		return
 	if(!isanimal(M))
-		to_chat(user, "<span_class='warning'>The capture device only works on simple creatures.</span>")
+		to_chat(user, "<span class='warning'>The capture device only works on simple creatures.</span>")
 		return
 	if(M.mind)
-		to_chat(user, "<span_class='notice'>You offer the device to [M].</span>")
+		to_chat(user, "<span class='notice'>You offer the device to [M].</span>")
 		if(alert(M, "Would you like to enter [user]'s capture device?", "Gold Capture Device", "Yes", "No") == "Yes")
 			if(user.canUseTopic(src, BE_CLOSE) && user.canUseTopic(M, BE_CLOSE))
-				to_chat(user, "<span_class='notice'>You store [M] in the capture device.</span>")
-				to_chat(M, "<span_class='notice'>The world warps around you, and you're suddenly in an endless void, with a window to the outside floating in front of you.</span>")
+				to_chat(user, "<span class='notice'>You store [M] in the capture device.</span>")
+				to_chat(M, "<span class='notice'>The world warps around you, and you're suddenly in an endless void, with a window to the outside floating in front of you.</span>")
 				store(M, user)
 			else
-				to_chat(user, "<span_class='warning'>You were too far away from [M].</span>")
-				to_chat(M, "<span_class='warning'>You were too far away from [user].</span>")
+				to_chat(user, "<span class='warning'>You were too far away from [M].</span>")
+				to_chat(M, "<span class='warning'>You were too far away from [user].</span>")
 		else
-			to_chat(user, "<span_class='warning'>[M] refused to enter the device.</span>")
+			to_chat(user, "<span class='warning'>[M] refused to enter the device.</span>")
 			return
 	else
 		if(istype(M, /mob/living/simple_animal/hostile) && !("neutral" in M.faction))
-			to_chat(user, "<span_class='warning'>This creature is too aggressive to capture.</span>")
+			to_chat(user, "<span class='warning'>This creature is too aggressive to capture.</span>")
 			return
-	to_chat(user, "<span_class='notice'>You store [M] in the capture device.</span>")
+	to_chat(user, "<span class='notice'>You store [M] in the capture device.</span>")
 	store(M)
 
 /obj/item/capturedevice/attack_self(mob/user)
 	if(contents.len)
-		to_chat(user, "<span_class='notice'>You open the capture device!</span>")
+		to_chat(user, "<span class='notice'>You open the capture device!</span>")
 		release()
 	else
-		to_chat(user, "<span_class='warning'>The device is empty...</span>")
+		to_chat(user, "<span class='warning'>The device is empty...</span>")
 
 /obj/item/capturedevice/proc/store(var/mob/living/M)
 	M.forceMove(src)

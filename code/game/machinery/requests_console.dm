@@ -179,11 +179,11 @@ GLOBAL_LIST_EMPTY(allConsoles)
 				dat += "<BR><A href='?src=[REF(src)];setScreen=0'><< Back</A><BR>"
 
 			if(6)	//sent successfully
-				dat += "<span_class='good'>Message sent.</span><BR><BR>"
+				dat += "<span class='good'>Message sent.</span><BR><BR>"
 				dat += "<A href='?src=[REF(src)];setScreen=0'>Continue</A><BR>"
 
 			if(7)	//unsuccessful; not sent
-				dat += "<span_class='bad'>An error occurred.</span><BR><BR>"
+				dat += "<span class='bad'>An error occurred.</span><BR><BR>"
 				dat += "<A href='?src=[REF(src)];setScreen=0'>Continue</A><BR>"
 
 			if(8)	//view messages
@@ -220,7 +220,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 				if ((announceAuth || IsAdminGhost(user)) && message)
 					dat += "<A href='?src=[REF(src)];sendAnnouncement=1'>Announce Message</A><BR>"
 				else
-					dat += "<span_class='linkOff'>Announce Message</span><BR>"
+					dat += "<span class='linkOff'>Announce Message</span><BR>"
 				dat += "<BR><A href='?src=[REF(src)];setScreen=0'><< Back</A><BR>"
 
 			else	//main menu
@@ -386,7 +386,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 
 				switch(priority)
 					if(2)
-						messages += "<span_class='bad'>High Priority</span><BR><b>To:</b> [dpt]<BR>[sending]"
+						messages += "<span class='bad'>High Priority</span><BR><b>To:</b> [dpt]<BR>[sending]"
 					else
 						messages += "<b>To: [dpt]</b><BR>[sending]"
 			else
@@ -465,7 +465,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 			if(!silent)
 				playsound(src, 'sound/machines/twobeep.ogg', 50, 1)
 				say(title)
-				messages += "<span_class='bad'>High Priority</span><BR><b>From:</b> [linkedsender]<BR>[message]"
+				messages += "<span class='bad'>High Priority</span><BR><b>From:</b> [linkedsender]<BR>[message]"
 
 		if(3)		// Extreme Priority
 			if(newmessagepriority < EXTREME_MESSAGE_PRIORITY)
@@ -474,7 +474,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 			if(1)
 				playsound(src, 'sound/machines/twobeep.ogg', 50, 1)
 				say(title)
-			messages += "<span_class='bad'>!!!Extreme Priority!!!</span><BR><b>From:</b> [linkedsender]<BR>[message]"
+			messages += "<span class='bad'>!!!Extreme Priority!!!</span><BR><b>From:</b> [linkedsender]<BR>[message]"
 
 		else		// Normal priority
 			if(newmessagepriority < NORMAL_MESSAGE_PRIORITY)
@@ -488,10 +488,10 @@ GLOBAL_LIST_EMPTY(allConsoles)
 /obj/machinery/requests_console/attackby(obj/item/O, mob/user, params)
 	if(O.tool_behaviour == TOOL_CROWBAR)
 		if(open)
-			to_chat(user, "<span_class='notice'>You close the maintenance panel.</span>")
+			to_chat(user, "<span class='notice'>You close the maintenance panel.</span>")
 			open = FALSE
 		else
-			to_chat(user, "<span_class='notice'>You open the maintenance panel.</span>")
+			to_chat(user, "<span class='notice'>You open the maintenance panel.</span>")
 			open = TRUE
 		update_icon()
 		return
@@ -499,12 +499,12 @@ GLOBAL_LIST_EMPTY(allConsoles)
 		if(open)
 			hackState = !hackState
 			if(hackState)
-				to_chat(user, "<span_class='notice'>You modify the wiring.</span>")
+				to_chat(user, "<span class='notice'>You modify the wiring.</span>")
 			else
-				to_chat(user, "<span_class='notice'>You reset the wiring.</span>")
+				to_chat(user, "<span class='notice'>You reset the wiring.</span>")
 			update_icon()
 		else
-			to_chat(user, "<span_class='warning'>You must open the maintenance panel first!</span>")
+			to_chat(user, "<span class='warning'>You must open the maintenance panel first!</span>")
 		return
 
 	var/obj/item/card/id/ID = O.GetID()
@@ -517,13 +517,13 @@ GLOBAL_LIST_EMPTY(allConsoles)
 				announceAuth = TRUE
 			else
 				announceAuth = FALSE
-				to_chat(user, "<span_class='warning'>You are not authorized to send announcements!</span>")
+				to_chat(user, "<span class='warning'>You are not authorized to send announcements!</span>")
 			updateUsrDialog()
 		return
 	if (istype(O, /obj/item/stamp))
 		if(screen == 9)
 			var/obj/item/stamp/T = O
-			msgStamped = "<span_class='boldnotice'>Stamped with the [T.name]</span>"
+			msgStamped = "<span class='boldnotice'>Stamped with the [T.name]</span>"
 			updateUsrDialog()
 		return
 	return ..()

@@ -22,10 +22,10 @@
 				return FALSE
 
 			user.visible_message("[user] is slicing apart the [name].", \
-								"<span_class='notice'>You are slicing apart the [name]...</span>")
+								"<span class='notice'>You are slicing apart the [name]...</span>")
 			if(W.use_tool(src, user, 40, volume=50))
 				user.visible_message("[user] slices apart the [name].", \
-									"<span_class='notice'>You slice apart the [name]!</span>")
+									"<span class='notice'>You slice apart the [name]!</span>")
 				deconstruct(TRUE)
 			return
 	return ..()
@@ -37,7 +37,7 @@
 	user.changeNext_move(CLICK_CD_MELEE)
 	add_fingerprint(user)
 	user.visible_message("[user] rubs some dust off from the [name]'s surface.", \
-						 "<span_class='notice'>You rub some dust off from the [name]'s surface.</span>")
+						 "<span class='notice'>You rub some dust off from the [name]'s surface.</span>")
 
 /obj/structure/statue/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))

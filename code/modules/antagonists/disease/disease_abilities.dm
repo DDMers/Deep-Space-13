@@ -95,7 +95,7 @@ new /datum/disease_ability/symptom/powerful/heal/youth
 
 /datum/disease_ability/proc/Buy(mob/camera/disease/D, silent = FALSE, trigger_cooldown = TRUE)
 	if(!silent)
-		to_chat(D, "<span_class='notice'>Purchased [name].</span>")
+		to_chat(D, "<span class='notice'>Purchased [name].</span>")
 	D.points -= cost
 	D.unpurchased_abilities -= src
 	if(trigger_cooldown)
@@ -122,7 +122,7 @@ new /datum/disease_ability/symptom/powerful/heal/youth
 
 /datum/disease_ability/proc/Refund(mob/camera/disease/D, silent = FALSE, trigger_cooldown = TRUE)
 	if(!silent)
-		to_chat(D, "<span_class='notice'>Refunded [name].</span>")
+		to_chat(D, "<span class='notice'>Refunded [name].</span>")
 	D.points += cost
 	D.unpurchased_abilities[src] = TRUE
 	if(trigger_cooldown)
@@ -178,9 +178,9 @@ new /datum/disease_ability/symptom/powerful/heal/youth
 	if(!L)
 		return FALSE
 	if(L.stat != CONSCIOUS)
-		to_chat(D, "<span_class='warning'>Your host must be conscious to cough.</span>")
+		to_chat(D, "<span class='warning'>Your host must be conscious to cough.</span>")
 		return FALSE
-	to_chat(D, "<span_class='notice'>You force [L.real_name] to cough.</span>")
+	to_chat(D, "<span class='notice'>You force [L.real_name] to cough.</span>")
 	L.emote("cough")
 	if(L.CanSpreadAirborneDisease()) //don't spread germs if they covered their mouth
 		var/datum/disease/advance/sentient_disease/SD = D.hosts[L]
@@ -212,9 +212,9 @@ new /datum/disease_ability/symptom/powerful/heal/youth
 	if(!L)
 		return FALSE
 	if(L.stat != CONSCIOUS)
-		to_chat(D, "<span_class='warning'>Your host must be conscious to sneeze.</span>")
+		to_chat(D, "<span class='warning'>Your host must be conscious to sneeze.</span>")
 		return FALSE
-	to_chat(D, "<span_class='notice'>You force [L.real_name] to sneeze.</span>")
+	to_chat(D, "<span class='notice'>You force [L.real_name] to sneeze.</span>")
 	L.emote("sneeze")
 	if(L.CanSpreadAirborneDisease()) //don't spread germs if they covered their mouth
 		var/datum/disease/advance/sentient_disease/SD = D.hosts[L]

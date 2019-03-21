@@ -51,7 +51,7 @@
 
 	SSticker.mode.traitors -= owner
 	if(!silent && owner.current)
-		to_chat(owner.current,"<span_class='userdanger'> You are no longer the [special_role]! </span>")
+		to_chat(owner.current,"<span class='userdanger'> You are no longer the [special_role]! </span>")
 	owner.special_role = null
 	..()
 
@@ -243,8 +243,8 @@
 	var/mob/traitor_mob=owner.current
 
 	to_chat(traitor_mob, "<U><B>The Syndicate provided you with the following information on how to identify their agents:</B></U>")
-	to_chat(traitor_mob, "<B>Code Phrase</B>: <span_class='danger'>[GLOB.syndicate_code_phrase]</span>")
-	to_chat(traitor_mob, "<B>Code Response</B>: <span_class='danger'>[GLOB.syndicate_code_response]</span>")
+	to_chat(traitor_mob, "<B>Code Phrase</B>: <span class='danger'>[GLOB.syndicate_code_phrase]</span>")
+	to_chat(traitor_mob, "<B>Code Response</B>: <span class='danger'>[GLOB.syndicate_code_response]</span>")
 
 	antag_memory += "<b>Code Phrase</b>: [GLOB.syndicate_code_phrase]<br>"
 	antag_memory += "<b>Code Response</b>: [GLOB.syndicate_code_response]<br>"
@@ -303,7 +303,7 @@
 	var/equipped_slot = mob.equip_in_one_of_slots(folder, slots)
 	if (equipped_slot)
 		where = "In your [equipped_slot]"
-	to_chat(mob, "<BR><BR><span_class='info'>[where] is a folder containing <b>secret documents</b> that another Syndicate group wants. We have set up a meeting with one of their agents on station to make an exchange. Exercise extreme caution as they cannot be trusted and may be hostile.</span><BR>")
+	to_chat(mob, "<BR><BR><span class='info'>[where] is a folder containing <b>secret documents</b> that another Syndicate group wants. We have set up a meeting with one of their agents on station to make an exchange. Exercise extreme caution as they cannot be trusted and may be hostile.</span><BR>")
 
 //TODO Collate
 /datum/antagonist/traitor/roundend_report()
@@ -328,9 +328,9 @@
 		var/count = 1
 		for(var/datum/objective/objective in objectives)
 			if(objective.check_completion())
-				objectives_text += "<br><B>Objective #[count]</B>: [objective.explanation_text] <span_class='greentext'>Success!</span>"
+				objectives_text += "<br><B>Objective #[count]</B>: [objective.explanation_text] <span class='greentext'>Success!</span>"
 			else
-				objectives_text += "<br><B>Objective #[count]</B>: [objective.explanation_text] <span_class='redtext'>Fail.</span>"
+				objectives_text += "<br><B>Objective #[count]</B>: [objective.explanation_text] <span class='redtext'>Fail.</span>"
 				traitorwin = FALSE
 			count++
 
@@ -346,16 +346,16 @@
 	var/special_role_text = lowertext(name)
 
 	if(traitorwin)
-		result += "<span_class='greentext'>The [special_role_text] was successful!</span>"
+		result += "<span class='greentext'>The [special_role_text] was successful!</span>"
 	else
-		result += "<span_class='redtext'>The [special_role_text] has failed!</span>"
+		result += "<span class='redtext'>The [special_role_text] has failed!</span>"
 		SEND_SOUND(owner.current, 'sound/ambience/ambifailure.ogg')
 
 	return result.Join("<br>")
 
 /datum/antagonist/traitor/roundend_report_footer()
-	return "<br><b>The code phrases were:</b> <span_class='codephrase'>[GLOB.syndicate_code_phrase]</span><br>\
-		<b>The code responses were:</b> <span_class='codephrase'>[GLOB.syndicate_code_response]</span><br>"
+	return "<br><b>The code phrases were:</b> <span class='codephrase'>[GLOB.syndicate_code_phrase]</span><br>\
+		<b>The code responses were:</b> <span class='codephrase'>[GLOB.syndicate_code_response]</span><br>"
 
 /datum/antagonist/traitor/is_gamemode_hero()
 	return SSticker.mode.name == "traitor"

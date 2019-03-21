@@ -23,7 +23,7 @@
 	dangerous_existence = TRUE
 	limbs_id = "golem"
 	fixed_mut_color = "aaa"
-	var/info_text = "As an <span_class='danger'>Iron Golem</span>, you don't have any special traits."
+	var/info_text = "As an <span class='danger'>Iron Golem</span>, you don't have any special traits."
 	var/random_eligible = TRUE //If false, the golem subtype can't be made through golem mutation toxin
 
 	var/prefix = "Iron"
@@ -68,7 +68,7 @@
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/golem/adamantine
 	mutant_organs = list(/obj/item/organ/adamantine_resonator, /obj/item/organ/vocal_cords/adamantine)
 	fixed_mut_color = "4ed"
-	info_text = "As an <span_class='danger'>Adamantine Golem</span>, you possess special vocal cords allowing you to \"resonate\" messages to all golems. Your unique mineral makeup makes you immune to most types of magic."
+	info_text = "As an <span class='danger'>Adamantine Golem</span>, you possess special vocal cords allowing you to \"resonate\" messages to all golems. Your unique mineral makeup makes you immune to most types of magic."
 	prefix = "Adamantine"
 	special_names = null
 
@@ -88,7 +88,7 @@
 	meat = /obj/item/stack/ore/plasma
 	//Can burn and takes damage from heat
 	inherent_traits = list(TRAIT_NOBREATH, TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_NOGUNS,TRAIT_RADIMMUNE,TRAIT_PIERCEIMMUNE,TRAIT_NODISMEMBER) //no RESISTHEAT, NOFIRE
-	info_text = "As a <span_class='danger'>Plasma Golem</span>, you burn easily. Be careful, if you get hot enough while burning, you'll blow up!"
+	info_text = "As a <span class='danger'>Plasma Golem</span>, you burn easily. Be careful, if you get hot enough while burning, you'll blow up!"
 	heatmod = 0 //fine until they blow up
 	prefix = "Plasma"
 	special_names = list("Flood","Fire","Bar","Man")
@@ -98,11 +98,11 @@
 /datum/species/golem/plasma/spec_life(mob/living/carbon/human/H)
 	if(H.bodytemperature > 750)
 		if(!boom_warning && H.on_fire)
-			to_chat(H, "<span_class='userdanger'>You feel like you could blow up at any moment!</span>")
+			to_chat(H, "<span class='userdanger'>You feel like you could blow up at any moment!</span>")
 			boom_warning = TRUE
 	else
 		if(boom_warning)
-			to_chat(H, "<span_class='notice'>You feel more stable.</span>")
+			to_chat(H, "<span class='notice'>You feel more stable.</span>")
 			boom_warning = FALSE
 
 	if(H.bodytemperature > 850 && H.on_fire && prob(25))
@@ -134,9 +134,9 @@
 	if(ishuman(owner))
 		var/mob/living/carbon/human/H = owner
 		if(H.fire_stacks)
-			to_chat(owner, "<span_class='notice'>You ignite yourself!</span>")
+			to_chat(owner, "<span class='notice'>You ignite yourself!</span>")
 		else
-			to_chat(owner, "<span_class='warning'>You try to ignite yourself, but fail!</span>")
+			to_chat(owner, "<span class='warning'>You try to ignite yourself, but fail!</span>")
 		H.IgniteMob() //firestacks are already there passively
 
 //Harder to hurt
@@ -146,7 +146,7 @@
 	fixed_mut_color = "0ff"
 	armor = 70 //up from 55
 	meat = /obj/item/stack/ore/diamond
-	info_text = "As a <span_class='danger'>Diamond Golem</span>, you are more resistant than the average golem."
+	info_text = "As a <span class='danger'>Diamond Golem</span>, you are more resistant than the average golem."
 	prefix = "Diamond"
 	special_names = list("Back")
 
@@ -158,7 +158,7 @@
 	speedmod = 1
 	armor = 25 //down from 55
 	meat = /obj/item/stack/ore/gold
-	info_text = "As a <span_class='danger'>Gold Golem</span>, you are faster but less resistant than the average golem."
+	info_text = "As a <span class='danger'>Gold Golem</span>, you are faster but less resistant than the average golem."
 	prefix = "Golden"
 	special_names = list("Boy")
 
@@ -169,7 +169,7 @@
 	fixed_mut_color = "ddd"
 	punchstunthreshold = 9 //60% chance, from 40%
 	meat = /obj/item/stack/ore/silver
-	info_text = "As a <span_class='danger'>Silver Golem</span>, your attacks have a higher chance of stunning. Being made of silver, your body is immune to most types of magic."
+	info_text = "As a <span class='danger'>Silver Golem</span>, your attacks have a higher chance of stunning. Being made of silver, your body is immune to most types of magic."
 	prefix = "Silver"
 	special_names = list("Surfer", "Chariot", "Lining")
 
@@ -192,7 +192,7 @@
 	punchstunthreshold = 18 //still 40% stun chance
 	speedmod = 4 //pretty fucking slow
 	meat = /obj/item/stack/ore/iron
-	info_text = "As a <span_class='danger'>Plasteel Golem</span>, you are slower, but harder to stun, and hit very hard when punching."
+	info_text = "As a <span class='danger'>Plasteel Golem</span>, you are slower, but harder to stun, and hit very hard when punching."
 	attack_verb = "smash"
 	attack_sound = 'sound/effects/meteorimpact.ogg' //hits pretty hard
 	prefix = "Plasteel"
@@ -204,7 +204,7 @@
 	id = "titanium golem"
 	fixed_mut_color = "fff"
 	meat = /obj/item/stack/ore/titanium
-	info_text = "As a <span_class='danger'>Titanium Golem</span>, you are immune to ash storms, and slightly more resistant to burn damage."
+	info_text = "As a <span class='danger'>Titanium Golem</span>, you are immune to ash storms, and slightly more resistant to burn damage."
 	burnmod = 0.9
 	prefix = "Titanium"
 	special_names = list("Dioxide")
@@ -223,7 +223,7 @@
 	id = "plastitanium golem"
 	fixed_mut_color = "888"
 	meat = /obj/item/stack/ore/titanium
-	info_text = "As a <span_class='danger'>Plastitanium Golem</span>, you are immune to both ash storms and lava, and slightly more resistant to burn damage."
+	info_text = "As a <span class='danger'>Plastitanium Golem</span>, you are immune to both ash storms and lava, and slightly more resistant to burn damage."
 	burnmod = 0.8
 	prefix = "Plastitanium"
 	special_names = null
@@ -246,7 +246,7 @@
 	meat = /obj/item/stack/sheet/mineral/abductor
 	mutanttongue = /obj/item/organ/tongue/abductor
 	speedmod = 1 //faster
-	info_text = "As an <span_class='danger'>Alloy Golem</span>, you are made of advanced alien materials: you are faster and regenerate over time. You are, however, only able to be heard by other alloy golems."
+	info_text = "As an <span class='danger'>Alloy Golem</span>, you are made of advanced alien materials: you are faster and regenerate over time. You are, however, only able to be heard by other alloy golems."
 	prefix = "Alien"
 	special_names = list("Outsider", "Technology", "Watcher", "Stranger") //ominous and unknown
 
@@ -269,7 +269,7 @@
 	armor = 30
 	burnmod = 1.25
 	heatmod = 1.5
-	info_text = "As a <span_class='danger'>Wooden Golem</span>, you have plant-like traits: you take damage from extreme temperatures, can be set on fire, and have lower armor than a normal golem. You regenerate when in the light and wither in the darkness."
+	info_text = "As a <span class='danger'>Wooden Golem</span>, you have plant-like traits: you take damage from extreme temperatures, can be set on fire, and have lower armor than a normal golem. You regenerate when in the light and wither in the darkness."
 	prefix = "Wooden"
 	special_names = list("Bark", "Willow", "Catalpa", "Woody", "Oak", "Sap", "Twig", "Branch", "Maple", "Birch", "Elm", "Basswood", "Cottonwood", "Larch", "Aspen", "Ash", "Beech", "Buckeye", "Cedar", "Chestnut", "Cypress", "Fir", "Hawthorn", "Hazel", "Hickory", "Ironwood", "Juniper", "Leaf", "Mangrove", "Palm", "Pawpaw", "Pine", "Poplar", "Redwood", "Redbud", "Sassafras", "Spruce", "Sumac", "Trunk", "Walnut", "Yew")
 	human_surname_chance = 0
@@ -315,7 +315,7 @@
 	id = "uranium golem"
 	fixed_mut_color = "7f0"
 	meat = /obj/item/stack/ore/uranium
-	info_text = "As an <span_class='danger'>Uranium Golem</span>, you emit radiation pulses every once in a while. It won't harm fellow golems, but organic lifeforms will be affected."
+	info_text = "As an <span class='danger'>Uranium Golem</span>, you emit radiation pulses every once in a while. It won't harm fellow golems, but organic lifeforms will be affected."
 
 	var/last_event = 0
 	var/active = null
@@ -340,13 +340,13 @@
 	armor = 0
 	burnmod = 3 //melts easily
 	brutemod = 0.25
-	info_text = "As a <span_class='danger'>Sand Golem</span>, you are immune to physical bullets and take very little brute damage, but are extremely vulnerable to burn damage and energy weapons. You will also turn to sand when dying, preventing any form of recovery."
+	info_text = "As a <span class='danger'>Sand Golem</span>, you are immune to physical bullets and take very little brute damage, but are extremely vulnerable to burn damage and energy weapons. You will also turn to sand when dying, preventing any form of recovery."
 	attack_sound = 'sound/effects/shovel_dig.ogg'
 	prefix = "Sand"
 	special_names = list("Castle", "Bag", "Dune", "Worm", "Storm")
 
 /datum/species/golem/sand/spec_death(gibbed, mob/living/carbon/human/H)
-	H.visible_message("<span_class='danger'>[H] turns into a pile of sand!</span>")
+	H.visible_message("<span class='danger'>[H] turns into a pile of sand!</span>")
 	for(var/obj/item/W in H)
 		H.dropItemToGround(W)
 	for(var/i=1, i <= rand(3,5), i++)
@@ -357,8 +357,8 @@
 	if(!(P.original == H && P.firer == H))
 		if(P.flag == "bullet" || P.flag == "bomb")
 			playsound(H, 'sound/effects/shovel_dig.ogg', 70, 1)
-			H.visible_message("<span_class='danger'>The [P.name] sinks harmlessly in [H]'s sandy body!</span>", \
-			"<span_class='userdanger'>The [P.name] sinks harmlessly in [H]'s sandy body!</span>")
+			H.visible_message("<span class='danger'>The [P.name] sinks harmlessly in [H]'s sandy body!</span>", \
+			"<span class='userdanger'>The [P.name] sinks harmlessly in [H]'s sandy body!</span>")
 			return 2
 	return 0
 
@@ -371,14 +371,14 @@
 	armor = 0
 	brutemod = 3 //very fragile
 	burnmod = 0.25
-	info_text = "As a <span_class='danger'>Glass Golem</span>, you reflect lasers and energy weapons, and are very resistant to burn damage. However, you are extremely vulnerable to brute damage. On death, you'll shatter beyond any hope of recovery."
+	info_text = "As a <span class='danger'>Glass Golem</span>, you reflect lasers and energy weapons, and are very resistant to burn damage. However, you are extremely vulnerable to brute damage. On death, you'll shatter beyond any hope of recovery."
 	attack_sound = 'sound/effects/glassbr2.ogg'
 	prefix = "Glass"
 	special_names = list("Lens", "Prism", "Fiber", "Bead")
 
 /datum/species/golem/glass/spec_death(gibbed, mob/living/carbon/human/H)
 	playsound(H, "shatter", 70, 1)
-	H.visible_message("<span_class='danger'>[H] shatters!</span>")
+	H.visible_message("<span class='danger'>[H] shatters!</span>")
 	for(var/obj/item/W in H)
 		H.dropItemToGround(W)
 	for(var/i=1, i <= rand(3,5), i++)
@@ -388,8 +388,8 @@
 /datum/species/golem/glass/bullet_act(obj/item/projectile/P, mob/living/carbon/human/H)
 	if(!(P.original == H && P.firer == H)) //self-shots don't reflect
 		if(P.flag == "laser" || P.flag == "energy")
-			H.visible_message("<span_class='danger'>The [P.name] gets reflected by [H]'s glass skin!</span>", \
-			"<span_class='userdanger'>The [P.name] gets reflected by [H]'s glass skin!</span>")
+			H.visible_message("<span class='danger'>The [P.name] gets reflected by [H]'s glass skin!</span>", \
+			"<span class='userdanger'>The [P.name] gets reflected by [H]'s glass skin!</span>")
 			if(P.starting)
 				var/new_x = P.starting.x + pick(0, 0, 0, 0, 0, -1, 1, -2, 2)
 				var/new_y = P.starting.y + pick(0, 0, 0, 0, 0, -1, 1, -2, 2)
@@ -405,7 +405,7 @@
 	id = "bluespace golem"
 	fixed_mut_color = "33f"
 	meat = /obj/item/stack/ore/bluespace_crystal
-	info_text = "As a <span_class='danger'>Bluespace Golem</span>, you are spatially unstable: You will teleport when hit, and you can teleport manually at a long distance."
+	info_text = "As a <span class='danger'>Bluespace Golem</span>, you are spatially unstable: You will teleport when hit, and you can teleport manually at a long distance."
 	attack_verb = "bluespace punch"
 	attack_sound = 'sound/effects/phasein.ogg'
 	prefix = "Bluespace"
@@ -416,7 +416,7 @@
 	var/last_teleport = 0
 
 /datum/species/golem/bluespace/proc/reactive_teleport(mob/living/carbon/human/H)
-	H.visible_message("<span_class='warning'>[H] teleports!</span>", "<span_class='danger'>You destabilize and teleport!</span>")
+	H.visible_message("<span class='warning'>[H] teleports!</span>", "<span class='danger'>You destabilize and teleport!</span>")
 	new /obj/effect/particle_effect/sparks(get_turf(H))
 	playsound(get_turf(H), "sparks", 50, 1)
 	do_teleport(H, get_turf(H), 6, asoundin = 'sound/weapons/emitter2.ogg', channel = TELEPORT_CHANNEL_BLUESPACE)
@@ -475,12 +475,12 @@
 
 /datum/action/innate/unstable_teleport/Activate()
 	var/mob/living/carbon/human/H = owner
-	H.visible_message("<span_class='warning'>[H] starts vibrating!</span>", "<span_class='danger'>You start charging your bluespace core...</span>")
+	H.visible_message("<span class='warning'>[H] starts vibrating!</span>", "<span class='danger'>You start charging your bluespace core...</span>")
 	playsound(get_turf(H), 'sound/weapons/flash.ogg', 25, 1)
 	addtimer(CALLBACK(src, .proc/teleport, H), 15)
 
 /datum/action/innate/unstable_teleport/proc/teleport(mob/living/carbon/human/H)
-	H.visible_message("<span_class='warning'>[H] disappears in a shower of sparks!</span>", "<span_class='danger'>You teleport!</span>")
+	H.visible_message("<span class='warning'>[H] disappears in a shower of sparks!</span>", "<span class='danger'>You teleport!</span>")
 	var/datum/effect_system/spark_spread/spark_system = new /datum/effect_system/spark_spread
 	spark_system.set_up(10, 0, src)
 	spark_system.attach(H)
@@ -502,7 +502,7 @@
 	punchdamagehigh = 1
 	punchstunthreshold = 2 //Harmless and can't stun
 	meat = /obj/item/stack/ore/bananium
-	info_text = "As a <span_class='danger'>Bananium Golem</span>, you are made for pranking. Your body emits natural honks, and you can barely even hurt people when punching them. Your skin also bleeds banana peels when damaged."
+	info_text = "As a <span class='danger'>Bananium Golem</span>, you are made for pranking. Your body emits natural honks, and you can barely even hurt people when punching them. Your skin also bleeds banana peels when damaged."
 	attack_verb = "honk"
 	attack_sound = 'sound/items/airhorn2.ogg'
 	prefix = "Bananium"
@@ -575,7 +575,7 @@
 	id = "runic golem"
 	limbs_id = "cultgolem"
 	sexes = FALSE
-	info_text = "As a <span_class='danger'>Runic Golem</span>, you possess eldritch powers granted by the Elder Goddess Nar'Sie."
+	info_text = "As a <span class='danger'>Runic Golem</span>, you possess eldritch powers granted by the Elder Goddess Nar'Sie."
 	species_traits = list(NOBLOOD,NO_UNDERWEAR,NOEYES) //no mutcolors
 	prefix = "Runic"
 	special_names = null
@@ -629,7 +629,7 @@
 	id = "clockwork golem"
 	say_mod = "clicks"
 	limbs_id = "clockgolem"
-	info_text = "<span_class='bold alloy'>As a </span><span_class='bold brass'>Clockwork Golem</span><span_class='bold alloy'>, you are faster than other types of golems. On death, you will break down into scrap.</span>"
+	info_text = "<span class='bold alloy'>As a </span><span class='bold brass'>Clockwork Golem</span><span class='bold alloy'>, you are faster than other types of golems. On death, you will break down into scrap.</span>"
 	species_traits = list(NOBLOOD,NO_UNDERWEAR,NOEYES)
 	inherent_biotypes = list(MOB_ROBOTIC, MOB_HUMANOID)
 	armor = 20 //Reinforced, but much less so to allow for fast movement
@@ -659,7 +659,7 @@
 	. = ..()
 	if(!has_corpse)
 		var/turf/T = get_turf(H)
-		H.visible_message("<span_class='warning'>[H]'s exoskeleton shatters, collapsing into a heap of scrap!</span>")
+		H.visible_message("<span class='warning'>[H]'s exoskeleton shatters, collapsing into a heap of scrap!</span>")
 		playsound(H, 'sound/magic/clockwork/anima_fragment_death.ogg', 62, TRUE)
 		for(var/i in 1 to rand(3, 5))
 			new/obj/item/clockwork/alloy_shards/small(T)
@@ -675,14 +675,14 @@
 	blacklisted = TRUE
 	dangerous_existence = TRUE
 	random_eligible = FALSE
-	info_text = "<span_class='bold alloy'>As a </span><span_class='bold brass'>Clockwork Golem Servant</span><span_class='bold alloy'>, you are faster than other types of golems.</span>" //warcult golems leave a corpse
+	info_text = "<span class='bold alloy'>As a </span><span class='bold brass'>Clockwork Golem Servant</span><span class='bold alloy'>, you are faster than other types of golems.</span>" //warcult golems leave a corpse
 
 /datum/species/golem/cloth
 	name = "Cloth Golem"
 	id = "cloth golem"
 	limbs_id = "clothgolem"
 	sexes = FALSE
-	info_text = "As a <span_class='danger'>Cloth Golem</span>, you are able to reform yourself after death, provided your remains aren't burned or destroyed. You are, of course, very flammable. \
+	info_text = "As a <span class='danger'>Cloth Golem</span>, you are able to reform yourself after death, provided your remains aren't burned or destroyed. You are, of course, very flammable. \
 	Being made of cloth, your body is magic resistant and faster than that of other golems, but weaker and less resilient."
 	species_traits = list(NOBLOOD,NO_UNDERWEAR) //no mutcolors, and can burn
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_NOBREATH,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,TRAIT_PIERCEIMMUNE,TRAIT_NODISMEMBER,TRAIT_NOGUNS)
@@ -724,11 +724,11 @@
 	if(gibbed)
 		return
 	if(H.on_fire)
-		H.visible_message("<span_class='danger'>[H] burns into ash!</span>")
+		H.visible_message("<span class='danger'>[H] burns into ash!</span>")
 		H.dust(just_ash = TRUE)
 		return
 
-	H.visible_message("<span_class='danger'>[H] falls apart into a pile of bandages!</span>")
+	H.visible_message("<span class='danger'>[H] falls apart into a pile of bandages!</span>")
 	new /obj/structure/cloth_pile(get_turf(H), H)
 	..()
 
@@ -750,7 +750,7 @@
 		H.unequip_everything()
 		H.forceMove(src)
 		cloth_golem = H
-		to_chat(cloth_golem, "<span_class='notice'>You start gathering your life energy, preparing to rise again...</span>")
+		to_chat(cloth_golem, "<span class='notice'>You start gathering your life energy, preparing to rise again...</span>")
 		addtimer(CALLBACK(src, .proc/revive), revive_time)
 	else
 		return INITIALIZE_HINT_QDEL
@@ -761,7 +761,7 @@
 	return ..()
 
 /obj/structure/cloth_pile/burn()
-	visible_message("<span_class='danger'>[src] burns into ash!</span>")
+	visible_message("<span class='danger'>[src] burns into ash!</span>")
 	new /obj/effect/decal/cleanable/ash(get_turf(src))
 	..()
 
@@ -778,7 +778,7 @@
 		cloth_golem.grab_ghost() //won't pull if it's a suicide
 	sleep(20)
 	cloth_golem.forceMove(get_turf(src))
-	cloth_golem.visible_message("<span_class='danger'>[src] rises and reforms into [cloth_golem]!</span>","<span_class='userdanger'>You reform into yourself!</span>")
+	cloth_golem.visible_message("<span class='danger'>[src] rises and reforms into [cloth_golem]!</span>","<span class='userdanger'>You reform into yourself!</span>")
 	cloth_golem = null
 	qdel(src)
 
@@ -789,7 +789,7 @@
 		return
 
 	if(P.is_hot())
-		visible_message("<span_class='danger'>[src] bursts into flames!</span>")
+		visible_message("<span class='danger'>[src] bursts into flames!</span>")
 		fire_act()
 
 /datum/species/golem/plastic
@@ -798,7 +798,7 @@
 	prefix = "Plastic"
 	special_names = null
 	fixed_mut_color = "fff"
-	info_text = "As a <span_class='danger'>Plastic Golem</span>, you are capable of ventcrawling and passing through plastic flaps as long as you are naked."
+	info_text = "As a <span class='danger'>Plastic Golem</span>, you are capable of ventcrawling and passing through plastic flaps as long as you are naked."
 
 /datum/species/golem/plastic/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	. = ..()

@@ -30,7 +30,7 @@
 		if(!user.transferItemToLoc(O, src))
 			return
 		scan = O
-		to_chat(user, "<span_class='notice'>You insert [O].</span>")
+		to_chat(user, "<span class='notice'>You insert [O].</span>")
 	else
 		return ..()
 

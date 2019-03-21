@@ -20,8 +20,8 @@ GLOBAL_VAR(changeling_team_objective_type) //If this is not null, we hand our th
 
 	announce_span = "green"
 	announce_text = "Alien changelings have infiltrated the crew!\n\
-	<span_class='green'>Changelings</span>: Accomplish the objectives assigned to you.\n\
-	<span_class='notice'>Crew</span>: Root out and eliminate the changeling menace."
+	<span class='green'>Changelings</span>: Accomplish the objectives assigned to you.\n\
+	<span class='notice'>Crew</span>: Root out and eliminate the changeling menace."
 
 	var/const/changeling_amount = 4 //hard limit on changelings if scaling is turned off
 	var/list/changelings = list()

@@ -137,7 +137,7 @@
 			if (!user.transferItemToLoc(W,src))
 				return
 			diskette = W
-			to_chat(user, "<span_class='notice'>You insert [W].</span>")
+			to_chat(user, "<span class='notice'>You insert [W].</span>")
 			playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, 0)
 			updateUsrDialog()
 	else if(W.tool_behaviour == TOOL_MULTITOOL)
@@ -176,7 +176,7 @@
 		else
 			dat += "<a href='byond://?src=[REF(src)];task=stopautoprocess'>Stop autoprocess</a>"
 	else
-		dat += "<span_class='linkOff'>Autoprocess</span>"
+		dat += "<span class='linkOff'>Autoprocess</span>"
 	dat += "<h3>Cloning Pod Status</h3>"
 	dat += "<div class='statusDisplay'>[temp]&nbsp;</div>"
 	switch(menu)
@@ -212,14 +212,14 @@
 					dat += "<a href='byond://?src=[REF(src)];scan=1'>Start Scan</a>"
 					dat += "<br><a href='byond://?src=[REF(src)];lock=1'>[scanner.locked ? "Unlock Scanner" : "Lock Scanner"]</a>"
 				else
-					dat += "<span_class='linkOff'>Start Scan</span>"
+					dat += "<span class='linkOff'>Start Scan</span>"
 
 			// Database
 			dat += "<h3>Database Functions</h3>"
 			if (records.len && records.len > 0)
 				dat += "<a href='byond://?src=[REF(src)];menu=2'>View Records ([records.len])</a><br>"
 			else
-				dat += "<span_class='linkOff'>View Records (0)</span><br>"
+				dat += "<span class='linkOff'>View Records (0)</span><br>"
 			if (diskette)
 				dat += "<a href='byond://?src=[REF(src)];disk=eject'>Eject Disk</a><br>"
 
@@ -247,8 +247,8 @@
 				else
 					dat += "<font class='bad'>Unable to locate Health Implant.</font><br /><br />"
 
-				dat += "<b>Unique Identifier:</b><br /><span_class='highlight'>[active_record.fields["UI"]]</span><br>"
-				dat += "<b>Structural Enzymes:</b><br /><span_class='highlight'>"
+				dat += "<b>Unique Identifier:</b><br /><span class='highlight'>[active_record.fields["UI"]]</span><br>"
+				dat += "<b>Structural Enzymes:</b><br /><span class='highlight'>"
 				for(var/key in active_record.fields["SE"])
 					if(key != RACEMUT)
 						var/val = active_record.fields["SE"][key]
@@ -277,7 +277,7 @@
 					if(can_load)
 						dat += "<br /><a href='byond://?src=[REF(src)];disk=load'>Load From Disk</a>"
 					else
-						dat += "<span_class='linkOff'>Cannot Load From Disk: Access Denied</span>"
+						dat += "<span class='linkOff'>Cannot Load From Disk: Access Denied</span>"
 					if(diskette.fields["SE"])
 						if(!include_se)
 							dat += "<br /><a href='byond://?src=[REF(src)];task=include_se'>Currently Excluding SE</a>"

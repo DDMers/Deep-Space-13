@@ -7,8 +7,8 @@
 	name = "Godwoken Syndrome"
 	desc = "Patient occasionally and uncontrollably channels an eldritch god when speaking."
 	scan_desc = "god delusion"
-	gain_text = "<span_class='notice'>You feel a higher power inside your mind...</span>"
-	lose_text = "<span_class='warning'>The divine presence leaves your head, no longer interested.</span>"
+	gain_text = "<span class='notice'>You feel a higher power inside your mind...</span>"
+	lose_text = "<span class='warning'>The divine presence leaves your head, no longer interested.</span>"
 
 /datum/brain_trauma/special/godwoken/on_life()
 	..()
@@ -51,8 +51,8 @@
 	name = "Bluespace Prophecy"
 	desc = "Patient can sense the bob and weave of bluespace around them, showing them passageways no one else can see."
 	scan_desc = "bluespace attunement"
-	gain_text = "<span_class='notice'>You feel the bluespace pulsing around you...</span>"
-	lose_text = "<span_class='warning'>The faint pulsing of bluespace fades into silence.</span>"
+	gain_text = "<span class='notice'>You feel the bluespace pulsing around you...</span>"
+	lose_text = "<span class='warning'>The faint pulsing of bluespace fades into silence.</span>"
 	var/next_portal = 0
 
 /datum/brain_trauma/special/bluespace_prophet/on_life()
@@ -112,27 +112,27 @@
 		"is pulled into an invisible vortex, vanishing from sight")
 	var/slip_out_message = pick("silently fades in", "leaps out of thin air","appears", "walks out of an invisible doorway",\
 		"slides out of a fold in spacetime")
-	to_chat(user, "<span_class='notice'>You try to align with the bluespace stream...</span>")
+	to_chat(user, "<span class='notice'>You try to align with the bluespace stream...</span>")
 	if(do_after(user, 20, target = src))
 		new /obj/effect/temp_visual/bluespace_fissure(get_turf(src))
 		new /obj/effect/temp_visual/bluespace_fissure(get_turf(linked_to))
 		user.forceMove(get_turf(linked_to))
-		user.visible_message("<span_class='warning'>[user] [slip_in_message].</span>", null, null, null, user)
-		user.visible_message("<span_class='warning'>[user] [slip_out_message].</span>", "<span_class='notice'>...and find your way to the other side.</span>")
+		user.visible_message("<span class='warning'>[user] [slip_in_message].</span>", null, null, null, user)
+		user.visible_message("<span class='warning'>[user] [slip_out_message].</span>", "<span class='notice'>...and find your way to the other side.</span>")
 
 /datum/brain_trauma/special/psychotic_brawling
 	name = "Violent Psychosis"
 	desc = "Patient fights in unpredictable ways, ranging from helping his target to hitting them with brutal strength."
 	scan_desc = "violent psychosis"
-	gain_text = "<span_class='warning'>You feel unhinged...</span>"
-	lose_text = "<span_class='notice'>You feel more balanced.</span>"
+	gain_text = "<span class='warning'>You feel unhinged...</span>"
+	lose_text = "<span class='notice'>You feel more balanced.</span>"
 	var/datum/martial_art/psychotic_brawling/psychotic_brawling
 
 /datum/brain_trauma/special/psychotic_brawling/on_gain()
 	..()
 	psychotic_brawling = new(null)
 	if(!psychotic_brawling.teach(owner, TRUE))
-		to_chat(owner, "<span_class='notice'>But your martial knowledge keeps you grounded.</span>")
+		to_chat(owner, "<span class='notice'>But your martial knowledge keeps you grounded.</span>")
 		qdel(src)
 
 /datum/brain_trauma/special/psychotic_brawling/on_lose()
@@ -147,8 +147,8 @@
 	name = "Tenacity"
 	desc = "Patient is psychologically unaffected by pain and injuries, and can remain standing far longer than a normal person."
 	scan_desc = "traumatic neuropathy"
-	gain_text = "<span_class='warning'>You suddenly stop feeling pain.</span>"
-	lose_text = "<span_class='warning'>You realize you can feel pain again.</span>"
+	gain_text = "<span class='warning'>You suddenly stop feeling pain.</span>"
+	lose_text = "<span class='warning'>You realize you can feel pain again.</span>"
 
 /datum/brain_trauma/special/tenacity/on_gain()
 	owner.add_trait(TRAIT_NOSOFTCRIT, TRAUMA_TRAIT)
@@ -164,8 +164,8 @@
 	name = "Functional Cerebral Necrosis"
 	desc = "Patient's brain is stuck in a functional near-death state, causing occasional moments of lucid hallucinations, which are often interpreted as the voices of the dead."
 	scan_desc = "chronic functional necrosis"
-	gain_text = "<span_class='warning'>You feel dead inside.</span>"
-	lose_text = "<span_class='notice'>You feel alive again.</span>"
+	gain_text = "<span class='warning'>You feel dead inside.</span>"
+	lose_text = "<span class='notice'>You feel alive again.</span>"
 	var/active = FALSE
 
 /datum/brain_trauma/special/death_whispers/on_life()

@@ -24,7 +24,7 @@
 /obj/machinery/recharger/examine(mob/user)
 	..()
 	if(in_range(user, src) || isobserver(user))
-		to_chat(user, "<span_class='notice'>The status display reads: Recharging <b>[recharge_coeff*10]%</b> cell charge per cycle.<span>")
+		to_chat(user, "<span class='notice'>The status display reads: Recharging <b>[recharge_coeff*10]%</b> cell charge per cycle.<span>")
 
 /obj/machinery/recharger/proc/setCharging(new_charging)
 	charging = new_charging
@@ -39,11 +39,11 @@
 /obj/machinery/recharger/attackby(obj/item/G, mob/user, params)
 	if(G.tool_behaviour == TOOL_WRENCH)
 		if(charging)
-			to_chat(user, "<span_class='notice'>Remove the charging item first!</span>")
+			to_chat(user, "<span class='notice'>Remove the charging item first!</span>")
 			return
 		setAnchored(!anchored)
 		power_change()
-		to_chat(user, "<span_class='notice'>You [anchored ? "attached" : "detached"] [src].</span>")
+		to_chat(user, "<span class='notice'>You [anchored ? "attached" : "detached"] [src].</span>")
 		G.play_tool_sound(src)
 		return
 
@@ -57,13 +57,13 @@
 			//Checks to make sure he's not in space doing it, and that the area got proper power.
 			var/area/a = get_area(src)
 			if(!isarea(a) || a.power_equip == 0)
-				to_chat(user, "<span_class='notice'>[src] blinks red as you try to insert [G].</span>")
+				to_chat(user, "<span class='notice'>[src] blinks red as you try to insert [G].</span>")
 				return 1
 
 			if (istype(G, /obj/item/gun/energy))
 				var/obj/item/gun/energy/E = G
 				if(!E.can_charge)
-					to_chat(user, "<span_class='notice'>Your gun has no external power connector.</span>")
+					to_chat(user, "<span class='notice'>Your gun has no external power connector.</span>")
 					return 1
 
 			if(!user.transferItemToLoc(G, src))
@@ -71,7 +71,7 @@
 			setCharging(G)
 
 		else
-			to_chat(user, "<span_class='notice'>[src] isn't connected to anything!</span>")
+			to_chat(user, "<span class='notice'>[src] isn't connected to anything!</span>")
 		return 1
 
 	if(anchored && !charging)

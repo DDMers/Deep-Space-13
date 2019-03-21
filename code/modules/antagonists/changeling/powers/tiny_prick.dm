@@ -17,7 +17,7 @@
 	return
 
 /datum/action/changeling/sting/proc/set_sting(mob/user)
-	to_chat(user, "<span_class='notice'>We prepare our sting. Alt+click or click the middle mouse button on a target to sting them.</span>")
+	to_chat(user, "<span class='notice'>We prepare our sting. Alt+click or click the middle mouse button on a target to sting them.</span>")
 	var/datum/antagonist/changeling/changeling = user.mind.has_antag_datum(/datum/antagonist/changeling)
 	changeling.chosen_sting = src
 
@@ -25,7 +25,7 @@
 	user.hud_used.lingstingdisplay.invisibility = 0
 
 /datum/action/changeling/sting/proc/unset_sting(mob/user)
-	to_chat(user, "<span_class='warning'>We retract our sting, we can't sting anyone for now.</span>")
+	to_chat(user, "<span class='warning'>We retract our sting, we can't sting anyone for now.</span>")
 	var/datum/antagonist/changeling/changeling = user.mind.has_antag_datum(/datum/antagonist/changeling)
 	changeling.chosen_sting = null
 
@@ -58,9 +58,9 @@
 /datum/action/changeling/sting/sting_feedback(mob/user, mob/target)
 	if(!target)
 		return
-	to_chat(user, "<span_class='notice'>We stealthily sting [target.name].</span>")
+	to_chat(user, "<span class='notice'>We stealthily sting [target.name].</span>")
 	if(target.mind && target.mind.has_antag_datum(/datum/antagonist/changeling))
-		to_chat(target, "<span_class='warning'>You feel a tiny prick.</span>")
+		to_chat(target, "<span class='warning'>You feel a tiny prick.</span>")
 	return 1
 
 
@@ -84,7 +84,7 @@
 	if(!selected_dna)
 		return
 	if(NOTRANSSTING in selected_dna.dna.species.species_traits)
-		to_chat(user, "<span_class = 'notice'>That DNA is not compatible with changeling retrovirus!</span>")
+		to_chat(user, "<span class = 'notice'>That DNA is not compatible with changeling retrovirus!</span>")
 		return
 	..()
 
@@ -92,7 +92,7 @@
 	if(!..())
 		return
 	if((target.has_trait(TRAIT_HUSK)) || !iscarbon(target) || (NOTRANSSTING in target.dna.species.species_traits))
-		to_chat(user, "<span_class='warning'>Our sting appears ineffective against its DNA.</span>")
+		to_chat(user, "<span class='warning'>Our sting appears ineffective against its DNA.</span>")
 		return 0
 	return 1
 
@@ -100,7 +100,7 @@
 	log_combat(user, target, "stung", "transformation sting", " new identity is '[selected_dna.dna.real_name]'")
 	var/datum/dna/NewDNA = selected_dna.dna
 	if(ismonkey(target))
-		to_chat(user, "<span_class='notice'>Our genes cry out as we sting [target.name]!</span>")
+		to_chat(user, "<span class='notice'>Our genes cry out as we sting [target.name]!</span>")
 
 	var/mob/living/carbon/C = target
 	. = TRUE
@@ -132,7 +132,7 @@
 	if(isliving(target))
 		var/mob/living/L = target
 		if((L.has_trait(TRAIT_HUSK)) || !L.has_dna())
-			to_chat(user, "<span_class='warning'>Our sting appears ineffective against its DNA.</span>")
+			to_chat(user, "<span class='warning'>Our sting appears ineffective against its DNA.</span>")
 			return 0
 	return 1
 
@@ -141,15 +141,15 @@
 
 	var/obj/item/held = target.get_active_held_item()
 	if(held && !target.dropItemToGround(held))
-		to_chat(user, "<span_class='warning'>[held] is stuck to [target.p_their()] hand, you cannot grow a false armblade over it!</span>")
+		to_chat(user, "<span class='warning'>[held] is stuck to [target.p_their()] hand, you cannot grow a false armblade over it!</span>")
 		return
 	..()
 	if(ismonkey(target))
-		to_chat(user, "<span_class='notice'>Our genes cry out as we sting [target.name]!</span>")
+		to_chat(user, "<span class='notice'>Our genes cry out as we sting [target.name]!</span>")
 
 	var/obj/item/melee/arm_blade/false/blade = new(target,1)
 	target.put_in_hands(blade)
-	target.visible_message("<span_class='warning'>A grotesque blade forms around [target.name]\'s arm!</span>", "<span_class='userdanger'>Your arm twists and mutates, transforming into a horrific monstrosity!</span>", "<span_class='italics'>You hear organic matter ripping and tearing!</span>")
+	target.visible_message("<span class='warning'>A grotesque blade forms around [target.name]\'s arm!</span>", "<span class='userdanger'>Your arm twists and mutates, transforming into a horrific monstrosity!</span>", "<span class='italics'>You hear organic matter ripping and tearing!</span>")
 	playsound(target, 'sound/effects/blobattack.ogg', 30, 1)
 
 	addtimer(CALLBACK(src, .proc/remove_fake, target, blade), 600)
@@ -157,10 +157,10 @@
 
 /datum/action/changeling/sting/false_armblade/proc/remove_fake(mob/target, obj/item/melee/arm_blade/false/blade)
 	playsound(target, 'sound/effects/blobattack.ogg', 30, 1)
-	target.visible_message("<span_class='warning'>With a sickening crunch, \
+	target.visible_message("<span class='warning'>With a sickening crunch, \
 	[target] reforms [target.p_their()] [blade.name] into an arm!</span>",
-	"<span_class='warning'>[blade] reforms back to normal.</span>",
-	"<span_class='italics>You hear organic matter ripping and tearing!</span>")
+	"<span class='warning'>[blade] reforms back to normal.</span>",
+	"<span class='italics>You hear organic matter ripping and tearing!</span>")
 
 	qdel(blade)
 	target.update_inv_hands()
@@ -211,7 +211,7 @@
 
 /datum/action/changeling/sting/blind/sting_action(mob/user, mob/living/carbon/target)
 	log_combat(user, target, "stung", "blind sting")
-	to_chat(target, "<span_class='danger'>Your eyes burn horrifically!</span>")
+	to_chat(target, "<span class='danger'>Your eyes burn horrifically!</span>")
 	target.become_nearsighted(EYE_DAMAGE)
 	target.blind_eyes(20)
 	target.blur_eyes(40)

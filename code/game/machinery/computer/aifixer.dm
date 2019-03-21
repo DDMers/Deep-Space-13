@@ -12,9 +12,9 @@
 /obj/machinery/computer/aifixer/attackby(obj/item/I, mob/user, params)
 	if(occupier && I.tool_behaviour == TOOL_SCREWDRIVER)
 		if(stat & (NOPOWER|BROKEN))
-			to_chat(user, "<span_class='warning'>The screws on [name]'s screen won't budge.</span>")
+			to_chat(user, "<span class='warning'>The screws on [name]'s screen won't budge.</span>")
 		else
-			to_chat(user, "<span_class='warning'>The screws on [name]'s screen won't budge and it emits a warning beep.</span>")
+			to_chat(user, "<span class='warning'>The screws on [name]'s screen won't budge and it emits a warning beep.</span>")
 	else
 		return ..()
 
@@ -59,9 +59,9 @@
 		dat += "<b>Laws:</b><br>[laws]<br>"
 
 		if (src.occupier.stat == DEAD)
-			dat += "<span_class='bad'>AI non-functional</span>"
+			dat += "<span class='bad'>AI non-functional</span>"
 		else
-			dat += "<span_class='good'>AI functional</span>"
+			dat += "<span class='good'>AI functional</span>"
 		if (!src.active)
 			dat += {"<br><br><A href='byond://?src=[REF(src)];fix=1'>Begin Reconstruction</A>"}
 		else
@@ -97,7 +97,7 @@
 	if(..())
 		return
 	if(href_list["fix"])
-		to_chat(usr, "<span_class='notice'>Reconstruction in progress. This will take several minutes.</span>")
+		to_chat(usr, "<span class='notice'>Reconstruction in progress. This will take several minutes.</span>")
 		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 25, 0)
 		active = TRUE
 		add_fingerprint(usr)
@@ -132,19 +132,19 @@
 		AI.control_disabled = TRUE
 		AI.radio_enabled = FALSE
 		to_chat(AI, "You have been uploaded to a stationary terminal. Sadly, there is no remote access from here.")
-		to_chat(user, "<span_class='boldnotice'>Transfer successful</span>: [AI.name] ([rand(1000,9999)].exe) installed and executed successfully. Local copy has been removed.")
+		to_chat(user, "<span class='boldnotice'>Transfer successful</span>: [AI.name] ([rand(1000,9999)].exe) installed and executed successfully. Local copy has been removed.")
 		card.AI = null
 		update_icon()
 
 	else //Uploading AI from terminal to card
 		if(occupier && !active)
 			to_chat(occupier, "You have been downloaded to a mobile storage device. Still no remote access.")
-			to_chat(user, "<span_class='boldnotice'>Transfer successful</span>: [occupier.name] ([rand(1000,9999)].exe) removed from host terminal and stored within local memory.")
+			to_chat(user, "<span class='boldnotice'>Transfer successful</span>: [occupier.name] ([rand(1000,9999)].exe) removed from host terminal and stored within local memory.")
 			occupier.forceMove(card)
 			card.AI = occupier
 			occupier = null
 			update_icon()
 		else if (active)
-			to_chat(user, "<span_class='boldannounce'>ERROR</span>: Reconstruction in progress.")
+			to_chat(user, "<span class='boldannounce'>ERROR</span>: Reconstruction in progress.")
 		else if (!occupier)
-			to_chat(user, "<span_class='boldannounce'>ERROR</span>: Unable to locate artificial intelligence.")
+			to_chat(user, "<span class='boldannounce'>ERROR</span>: Unable to locate artificial intelligence.")

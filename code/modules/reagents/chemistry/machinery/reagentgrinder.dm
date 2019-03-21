@@ -54,26 +54,26 @@
 /obj/machinery/reagentgrinder/examine(mob/user)
 	..()
 	if(!in_range(user, src) && !issilicon(user) && !isobserver(user))
-		to_chat(user, "<span_class='warning'>You're too far away to examine [src]'s contents and display!</span>")
+		to_chat(user, "<span class='warning'>You're too far away to examine [src]'s contents and display!</span>")
 		return
 
 	if(operating)
-		to_chat(user, "<span_class='warning'>\The [src] is operating.</span>")
+		to_chat(user, "<span class='warning'>\The [src] is operating.</span>")
 		return
 
 	if(beaker || length(holdingitems))
-		to_chat(user, "<span_class='notice'>\The [src] contains:</span>")
+		to_chat(user, "<span class='notice'>\The [src] contains:</span>")
 		if(beaker)
-			to_chat(user, "<span_class='notice'>- \A [beaker].</span>")
+			to_chat(user, "<span class='notice'>- \A [beaker].</span>")
 		for(var/i in holdingitems)
 			var/obj/item/O = i
-			to_chat(user, "<span_class='notice'>- \A [O.name].</span>")
+			to_chat(user, "<span class='notice'>- \A [O.name].</span>")
 
 	if(!(stat & (NOPOWER|BROKEN)))
-		to_chat(user, "<span_class='notice'>The status display reads:</span>")
-		to_chat(user, "<span_class='notice'>- Grinding reagents at <b>[speed*100]%</b>.<span>")
+		to_chat(user, "<span class='notice'>The status display reads:</span>")
+		to_chat(user, "<span class='notice'>- Grinding reagents at <b>[speed*100]%</b>.<span>")
 		for(var/datum/reagent/R in beaker.reagents.reagent_list)
-			to_chat(user, "<span_class='notice'>- [R.volume] units of [R.name].</span>")
+			to_chat(user, "<span class='notice'>- [R.volume] units of [R.name].</span>")
 
 /obj/machinery/reagentgrinder/handle_atom_del(atom/A)
 	. = ..()
@@ -127,13 +127,13 @@
 		if(!user.transferItemToLoc(B, src))
 			return
 		replace_beaker(user, B)
-		to_chat(user, "<span_class='notice'>You add [B] to [src].</span>")
+		to_chat(user, "<span class='notice'>You add [B] to [src].</span>")
 		updateUsrDialog()
 		update_icon()
 		return TRUE //no afterattack
 
 	if(holdingitems.len >= limit)
-		to_chat(user, "<span_class='warning'>[src] is filled to capacity!</span>")
+		to_chat(user, "<span class='warning'>[src] is filled to capacity!</span>")
 		return TRUE
 
 	//Fill machine with a bag!
@@ -143,23 +143,23 @@
 			for(var/i in inserted)
 				holdingitems[i] = TRUE
 			if(!I.contents.len)
-				to_chat(user, "<span_class='notice'>You empty [I] into [src].</span>")
+				to_chat(user, "<span class='notice'>You empty [I] into [src].</span>")
 			else
-				to_chat(user, "<span_class='notice'>You fill [src] to the brim.</span>")
+				to_chat(user, "<span class='notice'>You fill [src] to the brim.</span>")
 		return TRUE
 
 	if(!I.grind_results && !I.juice_results)
 		if(user.a_intent == INTENT_HARM)
 			return ..()
 		else
-			to_chat(user, "<span_class='warning'>You cannot grind [I] into reagents!</span>")
+			to_chat(user, "<span class='warning'>You cannot grind [I] into reagents!</span>")
 			return TRUE
 
 	if(!I.grind_requirements(src)) //Error messages should be in the objects' definitions
 		return
 
 	if(user.transferItemToLoc(I, src))
-		to_chat(user, "<span_class='notice'>You add [I] to [src].</span>")
+		to_chat(user, "<span class='notice'>You add [I] to [src].</span>")
 		holdingitems[I] = TRUE
 		return FALSE
 
@@ -261,7 +261,7 @@
 
 /obj/machinery/reagentgrinder/proc/juice_item(obj/item/I) //Juicing results can be found in respective object definitions
 	if(I.on_juice(src) == -1)
-		to_chat(usr, "<span_class='danger'>[src] shorts out as it tries to juice up [I], and transfers it back to storage.</span>")
+		to_chat(usr, "<span class='danger'>[src] shorts out as it tries to juice up [I], and transfers it back to storage.</span>")
 		return
 	beaker.reagents.add_reagent_list(I.juice_results)
 	remove_object(I)
@@ -280,7 +280,7 @@
 
 /obj/machinery/reagentgrinder/proc/grind_item(obj/item/I, mob/user) //Grind results can be found in respective object definitions
 	if(I.on_grind(src) == -1) //Call on_grind() to change amount as needed, and stop grinding the item if it returns -1
-		to_chat(usr, "<span_class='danger'>[src] shorts out as it tries to grind up [I], and transfers it back to storage.</span>")
+		to_chat(usr, "<span class='danger'>[src] shorts out as it tries to grind up [I], and transfers it back to storage.</span>")
 		return
 	beaker.reagents.add_reagent_list(I.grind_results)
 	if(I.reagents)

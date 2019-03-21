@@ -261,13 +261,13 @@
 	if(theship.power_slots > 0) //Looks like we do!
 		add_power()
 	else
-		to_chat(usr, "<span_class='boldnotice'>Unable to comply</span> - <span_class='warning'>power transfer failed! divert power from another system first.</span>")
+		to_chat(usr, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>power transfer failed! divert power from another system first.</span>")
 	theship.check_power(TRUE) //Now check the power after we're done modifying
 
 /obj/structure/overmap/proc/route_controls() //Demo purposes. This means you can shoot, move, and manage all at the same time!
 	if(!pilot)
 		return
-	to_chat(pilot, "<span_class='boldnotice'>Emergency override engaged</span> - <span_class='warning'>routing full controls to your station.</span>")
+	to_chat(pilot, "<span class='boldnotice'>Emergency override engaged</span> - <span class='warning'>routing full controls to your station.</span>")
 	if(tactical)
 		exit(tactical)
 	if(science)

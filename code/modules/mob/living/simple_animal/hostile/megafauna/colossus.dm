@@ -51,7 +51,7 @@ Difficulty: Very Hard
 	deathsound = 'sound/magic/demon_dies.ogg'
 
 /mob/living/simple_animal/hostile/megafauna/colossus/devour(mob/living/L)
-	visible_message("<span_class='colossus'>[src] disintegrates [L]!</span>")
+	visible_message("<span class='colossus'>[src] disintegrates [L]!</span>")
 	L.dust()
 
 /mob/living/simple_animal/hostile/megafauna/colossus/OpenFire()
@@ -60,7 +60,7 @@ Difficulty: Very Hard
 
 	if(enrage(target))
 		if(move_to_delay == initial(move_to_delay))
-			visible_message("<span_class='colossus'>\"<b>You can't dodge.</b>\"</span>")
+			visible_message("<span class='colossus'>\"<b>You can't dodge.</b>\"</span>")
 		ranged_cooldown = world.time + 30
 		telegraph()
 		dir_shots(GLOB.alldirs)
@@ -75,7 +75,7 @@ Difficulty: Very Hard
 		if(health < maxHealth/3)
 			double_spiral()
 		else
-			visible_message("<span_class='colossus'>\"<b>Judgement.</b>\"</span>")
+			visible_message("<span class='colossus'>\"<b>Judgement.</b>\"</span>")
 			INVOKE_ASYNC(src, .proc/spiral_shoot, pick(TRUE, FALSE))
 
 	else if(prob(20))
@@ -136,7 +136,7 @@ Difficulty: Very Hard
 	dir_shots(GLOB.cardinals)
 
 /mob/living/simple_animal/hostile/megafauna/colossus/proc/double_spiral()
-	visible_message("<span_class='colossus'>\"<b>Die.</b>\"</span>")
+	visible_message("<span class='colossus'>\"<b>Die.</b>\"</span>")
 
 	sleep(10)
 	INVOKE_ASYNC(src, .proc/spiral_shoot)
@@ -251,7 +251,7 @@ Difficulty: Very Hard
 	if(!istype(O))
 		return FALSE
 	if(blacklist[O])
-		visible_message("<span_class='boldwarning'>[src] ripples as it rejects [O]. The device will not accept items that have been removed from it.</span>")
+		visible_message("<span class='boldwarning'>[src] ripples as it rejects [O]. The device will not accept items that have been removed from it.</span>")
 		return FALSE
 	return TRUE
 

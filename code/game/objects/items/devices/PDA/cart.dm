@@ -273,7 +273,7 @@ Code:
 
 
 			if(!powercount)
-				menu += "<span_class='danger'>No connection<BR></span>"
+				menu += "<span class='danger'>No connection<BR></span>"
 			else
 
 				menu += "<FONT SIZE=-1>"
@@ -287,7 +287,7 @@ Code:
 		if (433)
 			menu = "<h4>[PDAIMG(power)] Power Monitor </h4><BR>"
 			if(!powmonitor || !powmonitor.get_powernet())
-				menu += "<span_class='danger'>No connection<BR></span>"
+				menu += "<span class='danger'>No connection<BR></span>"
 			else
 				var/list/L = list()
 				var/datum/powernet/connected_powernet = powmonitor.get_powernet()
