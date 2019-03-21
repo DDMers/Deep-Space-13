@@ -57,9 +57,12 @@
 
 /obj/machinery/door/airlock/trek/goon/turbolift
 	name = "Turbolift airlock"
-	icon = 'DS13/goonstation/glass_airlock.dmi'
-	desc = "A sleek airlock for walking through. This one looks extremely strong."
+	icon = 'DS13/icons/obj/machinery/doors/standard.dmi'
+	desc = "A sleek airlock for walking through."
 	icon_state = "closed"
+	doorOpen = 'DS13/sound/effects/tng_airlock.ogg'
+	doorClose = 'DS13/sound/effects/tng_airlock.ogg'
+	doorDeni = 'DS13/sound/effects/denybeep.ogg'
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 
 /turf/closed/wall/trek_smooth/indestructible

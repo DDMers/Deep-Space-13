@@ -28,6 +28,31 @@
 	name = "USS Sisko"
 	desc = "A starship that's been to hell and back but is still somehow in one piece and is the veteran of countless battles. \n This ship is a testament to the crews that have staffed her over the years and despite her state, she'll get you where you need to go. Despite its aging design, it has a modest armament."
 
+/obj/structure/overmap/constitution
+	name = "Constitution class light cruiser"
+	desc = "A design that is instantly recognisable by most species in the alpha quadrant. This aging ship class was largely responsible for the federation's survival in the early Klingon wars."
+	icon = 'DS13/icons/overmap/constitution.dmi'
+	icon_state = "constitution"
+	main_overmap = FALSE
+	damage = 10 //Will turn into 20 assuming weapons powered
+	class = "constitution"
+	damage_states = FALSE
+
+/obj/structure/overmap/constitution/wrecked
+	damage = 0
+	icon_state = "constitution_wrecked"
+	max_shield_health = 0
+
+/obj/structure/overmap/constitution/wrecked/OvermapInitialize()
+	. = ..()
+	engine_power = 0
+	weapon_power = 0
+	shield_power = 0
+	max_engine_power = 0
+	max_shield_power = 0
+	max_weapon_power = 0
+	check_power()
+
 /obj/structure/trek_decor/plaque
 	name = "Dedication plaque" //Right where it belongs
 	desc = "A large, bronze plaque with a dedication: \n <b>USS Sisko. <b>Miranda-class <> Starfleet registry: NCC-2503 <>\n  Launched stardate: 0000.00 <> Utopia Planetia ShipYards <> United Federation Of Planets. \n</b>" //This ship has not yet been christened.

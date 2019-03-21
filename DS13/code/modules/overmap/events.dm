@@ -237,6 +237,86 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 			succeed()
 			return
 
+
+/datum/outfit/retro_trek
+	name = "Retro captain"
+	uniform = /obj/item/clothing/under/trek/command
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = null
+	gloves = /obj/item/clothing/gloves/color/black
+	l_pocket = /obj/item/pda
+	belt = /obj/item/gun/energy/phaser
+
+/datum/outfit/retro_trek/eng
+	name = "Retro engineer"
+	uniform = /obj/item/clothing/under/trek/engsec
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = null
+	l_pocket = /obj/item/pda
+	belt = /obj/item/storage/belt/utility/full
+
+/datum/outfit/retro_trek/medsci
+	name = "Retro doctor"
+	uniform = /obj/item/clothing/under/trek/medsci
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = null
+	l_pocket = /obj/item/pda
+	belt = /obj/item/storage/belt/utility/full
+
+/obj/effect/mob_spawn/human/alive/trek/retro
+	name = "Stranded crewman"
+	assignedrole = "stranded crewman"
+	outfit = /datum/outfit/retro_trek
+	flavour_text = "<span class='big bold'>You are a stranded crewman!</span> <b> Your ship went wildly off course and your crew were knocked out. You have been hurled hundreds of years into the future, and should be confused by the new technology. <br> Your ship has sustained irreperable damage, and you should seek help from whoever's still around..."
+
+/obj/effect/mob_spawn/human/alive/trek/retro/eng
+	name = "Stranded crewman"
+	assignedrole = "stranded crewman"
+	outfit = /datum/outfit/retro_trek/eng
+	flavour_text = "<span class='big bold'>You are a stranded crewman!</span> <b> Your ship went wildly off course and your crew were knocked out. You have been hurled hundreds of years into the future, and should be confused by the new technology. <br> Your ship has sustained irreperable damage, and you should seek help from whoever's still around..."
+
+/obj/effect/mob_spawn/human/alive/trek/retro/doctor
+	name = "Stranded crewman"
+	assignedrole = "stranded crewman"
+	outfit = /datum/outfit/retro_trek/medsci
+	flavour_text = "<span class='big bold'>You are a stranded crewman!</span> <b> Your ship went wildly off course and your crew were knocked out. You have been hurled hundreds of years into the future, and should be confused by the new technology. <br> Your ship has sustained irreperable damage, and you should seek help from whoever's still around..."
+
+/datum/overmap_event/tos_stranded //Star trekkin' a...wait where the fuck are we?
+	name = "Kirk era ship (spawns available on spawners menu!)"
+	desc = "Where are we?"
+	fail_text = "The distress call has terminated"
+	succeed_text = "The distress call has terminated"
+	reward = 5000
+
+/datum/overmap_event/tos_stranded/start() //Now we have a spawn. Let's do whatever this mission is supposed to. Override this when you make new missions
+	target = new /obj/structure/overmap/constitution/wrecked(get_turf(spawner))
+	priority_announce("Short range telemetry just detected a tachyon surge in your system, a ship appears to have materialized out of it. It appears to match archival designs but its transponder code is several hundred years out of date... Proceed to the ship and investigate.","Intercepted subspace transmission:",'sound/ai/commandreport.ogg')
+	elements += target
+
+/datum/overmap_event/tos_stranded/succeed()
+	return //Impossible to succeed, or fail.
+
+/datum/overmap_event/tos_stranded/fail()
+	return //Impossible to succeed, or fail.
+
+/area/ship/bridge/tos
+	name = "Retro ship"
+	class = "constitution"
+
+/area/ship/bridge/tos/Entered(atom/movable/M)
+	set waitfor = FALSE
+	SEND_SIGNAL(src, COMSIG_AREA_ENTERED, M)
+	SEND_SIGNAL(M, COMSIG_ENTER_AREA, src) //The atom that enters the area
+	if(!isliving(M))
+		return
+
+	var/mob/living/L = M
+	if(!L.ckey)
+		return
+	if(L.client && L.client.prefs.toggles & SOUND_SHIP_AMBIENCE)
+		L.client.ambience_playing = 1
+		SEND_SOUND(L, sound('DS13/sound/ambience/tos_bridge.ogg', repeat = 1, wait = 0, volume = 100, channel = CHANNEL_BUZZ)) //DeepSpace13 - engine hum
+
 /*
 
 /datum/overmap_event/defend_colony

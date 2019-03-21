@@ -7,6 +7,27 @@
 	doorClose = 'DS13/sound/effects/tng_airlock.ogg'
 	doorDeni = 'DS13/sound/effects/denybeep.ogg'
 
+/obj/machinery/door/airlock/trek/ship/cargo
+	name = "Cargo bay"
+	icon = 'DS13/icons/obj/machinery/doors/standard.dmi'
+	desc = "A sleek airlock for walking through. This one looks extra secure"
+	icon_state = "closed"
+	req_one_access = list(ACCESS_CARGO)
+
+/obj/machinery/door/airlock/trek/ship/maint
+	name = "Jefferies tubes"
+	desc = "A low hanging hatch allowing you to crawl into the jefferies tubes."
+	icon = 'DS13/icons/obj/machinery/doors/maint.dmi'
+	icon_state = "closed"
+	doorOpen = 'DS13/sound/effects/jeffries.ogg'
+	doorClose = 'DS13/sound/effects/jeffries.ogg'
+	req_one_access = list(ACCESS_MAINT_TUNNELS)
+
+/obj/machinery/door/airlock/trek/ship/hydro
+	name = "Airponics bay"
+	icon_state = "closed"
+	req_one_access = list(ACCESS_HYDROPONICS)
+
 /obj/machinery/door/airlock/trek/ship/sec
 	name = "Brig"
 	icon = 'DS13/icons/obj/machinery/doors/security.dmi'
@@ -62,3 +83,10 @@
 	desc = "A sleek airlock for walking through. This one looks extra secure"
 	icon_state = "closed"
 	req_one_access = list(ACCESS_CE)
+
+/obj/machinery/door/airlock/trek/ship/command/qm
+	name = "Quartermaster's office"
+	icon = 'DS13/goonstation/engineering_airlock.dmi'
+	desc = "A sleek airlock for walking through. This one looks extra secure"
+	icon_state = "closed"
+	req_one_access = list(ACCESS_QM)
