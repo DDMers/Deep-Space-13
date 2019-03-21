@@ -324,5 +324,4 @@
 	l_pocket = /obj/item/pda
 
 MAP_REMOVE_JOB(roboticist)
-MAP_REMOVE_JOB(AI) //Do I have to even explain why
 MAP_REMOVE_JOB(cyborg)
