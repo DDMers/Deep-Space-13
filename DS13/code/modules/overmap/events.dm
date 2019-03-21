@@ -188,6 +188,55 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	class = "comet"
 	noteleport = FALSE
 
+/datum/overmap_event/crashed_borg //Not so harmless borg
+	name = "Ominous broadcast (spawns available on spawners menu!)"
+	desc = "Something about this doesn't seem right..."
+	fail_text = "The distress call has terminated"
+	succeed_text = "The distress call has terminated"
+	reward = 5000
+
+/datum/overmap_event/crashed_borg/start() //Now we have a spawn. Let's do whatever this mission is supposed to. Override this when you make new missions
+	target = new /obj/structure/overmap/moon(get_turf(spawner))
+	priority_announce("Attention [station_name()]. Long range telemetry picked up the following broadcast approximately 5 minutes ago: \n41-20-62-6f-72-67-20-70-72-6f-78-69-6d-69-74-79-20-73-69-67-6e-61-6c-20-68-61-73-20-62-65-65-6e-20-64-65-74-65-63-74-65-64-2e-20-44-72-6f-6e-65-73-20-64-61-6d-61-67-65-64-2e-20-52-65-70-61-69-72-73-20-69-72-72-65-6c-65-76-65-6e-74-2e-20-44-6f-20-6e-6f-74-20-61-6c-74-65-72-20-63-6f-75-72-73-65 \n It appears to lead to a small moon.","Intercepted subspace transmission:",'sound/ai/commandreport.ogg')
+	elements += target
+
+/area/ship/crashed_borg
+	name = "Unimatrix wreck"
+	class = "crashed_borg"
+
+/obj/structure/overmap/moon
+	name = "Small Moon"
+	icon = 'DS13/icons/overmap/planets.dmi'
+	icon_state = "moon"
+	class = "crashed_borg"
+	max_shield_health = 0
+
+/datum/overmap_event/crashed_borg/succeed()
+	return //Impossible to succeed, or fail.
+
+/datum/overmap_event/crashed_borg/fail()
+	return //Impossible to succeed, or fail.
+
+
+/datum/overmap_event/assimilated_miranda //Bossfight!
+	name = "Assimilated ship"
+	desc = "Red alert! A miranda class vessel is transmitting borg transponder codes. Eliminate it before it can upgrade itself!"
+	fail_text = "All hands, set condition 1 throughout the fleet. This is not a drill."
+	succeed_text = "It seems the vessel was assimilated by the borg. Excellent work dispatching it, crew. We'll notify their families."
+	reward = 20000
+
+/datum/overmap_event/assimilated_miranda/start() //Now we have a spawn. Let's do whatever this mission is supposed to. Override this when you make new missions
+	target = new /obj/structure/overmap/ai/assimilated(get_turf(spawner))
+	priority_announce("Attention [station_name()]. We just lost contact with one of our patrol frigates, they're not responding to hails and their transponder code has changed. You are ordered to investigate as soon as possible, we recommend you go to red alert.","Intercepted subspace transmission:",'sound/ai/commandreport.ogg')
+	elements += target
+	target.linked_event = src
+
+/datum/overmap_event/assimilated_miranda/check_completion(var/obj/structure/overmap/what)
+	if(target)
+		if(what == target) //This is the default one. If this is being called, the freighter has been destroyed and you fail!
+			succeed()
+			return
+
 /*
 
 /datum/overmap_event/defend_colony

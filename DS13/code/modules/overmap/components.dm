@@ -53,9 +53,10 @@
 
 /obj/structure/overmap_component/viewscreen
 	name = "Viewscreen"
-	desc = "Allows you to see your ship."
+	desc = "You can't help but feel excited at the opportunity that space has to offer as you stare out a small porthole..."
 	icon_state = "viewscreen"
 	icon = 'DS13/icons/obj/decor/viewscreen.dmi'
+	mouse_over_pointer = MOUSE_HAND_POINTER
 
 /obj/structure/overmap_component/viewscreen/miranda
 	name = "Viewscreen"

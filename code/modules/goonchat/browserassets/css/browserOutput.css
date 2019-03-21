@@ -97,16 +97,16 @@ a.popt {text-decoration: none;}
     font-variant: small-caps;
     font-size: 1.1em;
     font-weight: bold;
-	color: #333;
+	color: #8ba5c4;
 }
-#newMessages:hover {background: #ccc;}
+#newMessages:hover {background: #171717;}
 #newMessages i {vertical-align: middle; padding-left: 3px;}
 #ping {
 	position: fixed;
 	top: 0;
 	right: 115px;
 	width: 45px;
-	background: #ddd;
+	background: #202020;
 	height: 30px;
 	padding: 8px 0 2px 0;
 }
@@ -123,19 +123,19 @@ a.popt {text-decoration: none;}
 	right: 0;
 }
 #userBar .subCell {
-	background: #ddd;
+	background: #202020;
     height: 30px;
 	padding: 5px 0;
 	display: block;
-	color: #333;
+	color: #8ba5c4;
 	text-decoration: none;
     line-height: 28px;
     border-top: 1px solid #b4b4b4;
 }
-#userBar .subCell:hover {background: #ccc;}
+#userBar .subCell:hover {background: #202020;}
 #userBar .toggle {
 	width: 40px;
-    background: #ccc;
+    background: #202020;
     border-top: 0;
     float: right;
     text-align: center;
@@ -263,7 +263,7 @@ h1.alert, h2.alert		{color: #99aab5;}
 
 em						{font-style: normal;	font-weight: bold;}
 
-.ooc					{					font-weight: bold;}
+.ooc					{color: #3366ff;				font-weight: bold;}
 .adminobserverooc		{color: #0099cc;	font-weight: bold;}
 .adminooc				{color: #3d5bc3;	font-weight: bold;}
 
@@ -382,7 +382,7 @@ h1.alert, h2.alert		{color: #99aab5;}
 
 .spider					{color: #7c00e6;}
 
-.interface				{color: #330033;}
+.interface				{color: #650065;}
 
 .sans					{font-family: "Comic Sans MS", cursive, sans-serif;}
 .papyrus				{font-family: "Papyrus", cursive, sans-serif;}

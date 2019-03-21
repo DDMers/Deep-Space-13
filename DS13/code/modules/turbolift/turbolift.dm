@@ -40,9 +40,9 @@
 	can_be_unanchored = FALSE
 	mouse_over_pointer = MOUSE_HAND_POINTER
 	desc = "Starfleet's decision to replace the iconic turboladder was not met with unanimous praise, experts citing increased obesity figures from crewmen no longer needing to climb vertically through several miles of deck to reach their target. However this is undoubtedly much faster."
-	var/floor_directory = "<font color=blue>Deck 1: Bridge <br>\
+	var/floor_directory = "Deck 1: Bridge <br>\
 		Deck 2: Promenade<br>\
-		Deck 3: Engineering<br></font>" //Change this if you intend to make a new map. Helps players know where they're going.
+		Deck 3: Engineering<br>" //Change this if you intend to make a new map. Helps players know where they're going.
 	var/list/turbolift_turfs = list()
 	var/floor = 0 //This gets assigned on init(). Allows us to calculate where the lift needs to go next.
 	var/list/destinations = list() //Any elevator that's on our path.
@@ -297,9 +297,9 @@
 
 /obj/structure/turbolift/manual //These are manually set and used for ships, as the maps themselves aren't actually multiZ enabled
 	var/height = 1
-	floor_directory = "<font color=blue>Deck 1: Bridge | Officers' Quarters.<br>\
+	floor_directory = "Deck 1: Bridge | Officers' Quarters.<br>\
 		Deck 2: Bar | Brig | Transporter Room 1.<br>\
-		Deck 3: Engineering.<br></font>" //Change this if you intend to make a new map. Helps players know where they're going.
+		Deck 3: Engineering.<br>" //Change this if you intend to make a new map. Helps players know where they're going.
 
 /obj/structure/turbolift/manual/height1
 	height = 2
@@ -312,9 +312,9 @@
 
 /obj/structure/turbolift/manual/romulan //These are manually set and used for ships, as the maps themselves aren't actually multiZ enabled
 	height = 1
-	floor_directory = "<font color=blue>Deck 1: Bridge | Officers' Quarters.<br>\
+	floor_directory = "<span_class='notice'>Deck 1: Bridge | Officers' Quarters.<br>\
 		Deck 2: Engineering | Brig | Transporter<br>\
-		Deck 3: Mess hall | Crew Quarters<br></font>" //Change this if you intend to make a new map. Helps players know where they're going.
+		Deck 3: Mess hall | Crew Quarters<br></span>" //Change this if you intend to make a new map. Helps players know where they're going.
 
 /obj/structure/turbolift/manual/romulan/height1
 	height = 2

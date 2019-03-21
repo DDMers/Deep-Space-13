@@ -53,6 +53,16 @@
 	max_shield_health = 0
 	max_health = 400
 
+/obj/structure/overmap/ai/assimilated
+	name = "Unimatrix"
+	desc = "Her crew must have suffered a terrible fate..."
+	icon = 'DS13/icons/overmap/miranda_assimilated.dmi'
+	icon_state = "assimilated2"
+	max_shield_health = 300
+	max_health = 550
+	class = "borg-miranda"
+	damage_states = FALSE
+
 /obj/structure/overmap/ai/miranda/take_control()
 	. = ..()
 	engine_power = 0
