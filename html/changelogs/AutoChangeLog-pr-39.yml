@@ -1,0 +1,6 @@
+author: "Kmc2000"
+delete-after: True
+changes: 
+  - rscadd: "You can now play as Vulcans and Andorians"
+  - rscadd: "The clown is now more lore friendly"
+  - rscadd: "Circuitboards were resprited to be isolinear chips"

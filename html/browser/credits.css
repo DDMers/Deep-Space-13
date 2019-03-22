@@ -1,0 +1,37 @@
+.scroll-left {
+height: 280px;	
+overflow: hidden;
+position: relative;
+}
+.scroll-left p {
+position: absolute;
+width: 100%;
+height: 100%;
+margin: 0;
+line-height: 50px;
+text-align: center;
+color: #ADD8E6;
+font: 15px Arial Black, sans-serif;
+font-family: 'Arial Black'
+/* Starting position */
+-webkit-transform:translateY(100%);	
+transform:translateY(100%);
+/* Apply animation to this element */	
+-webkit-animation: scroll-left 40s linear infinite;
+animation: scroll-left 40s linear infinite;
+}
+/* Move it (define the animation) */
+@-webkit-keyframes scroll-left {
+0%   { -webkit-transform: translateY(100%); }
+100% { -webkit-transform: translateY(-100%); }
+}
+@keyframes scroll-left {
+0%   { 
+-webkit-transform: translateY(100%); /* Browser bug fix */
+transform: translateY(100%); 		
+}
+100% { 
+-webkit-transform: translateY(-100%); /* Browser bug fix */
+transform: translateY(-100%); 
+}
+}

@@ -30,8 +30,8 @@ Clown
 	jobtype = /datum/job/clown
 
 	belt = /obj/item/pda/clown
-	uniform = /obj/item/clothing/under/rank/clown
-	shoes = /obj/item/clothing/shoes/clown_shoes
+	uniform = /obj/item/clothing/under/trek/neelix //Deep Space 13. Deep clown lore change :)
+	shoes = /obj/item/clothing/shoes/sneakers/black
 	mask = /obj/item/clothing/mask/gas/clown_hat
 	l_pocket = /obj/item/bikehorn
 	backpack_contents = list(

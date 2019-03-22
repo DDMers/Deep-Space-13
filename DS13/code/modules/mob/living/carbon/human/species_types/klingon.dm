@@ -3,7 +3,7 @@
 	id = "klingon"
 	default_color = "FFFFFF"
 	exotic_blood = null
-	species_traits = list(EYECOLOR,FACEHAIR,LIPS)
+	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS)
 	default_features = list("mcolor" = "FFF", "tail_human" = "None", "ears" = "None", "wings" = "None")
 	use_skintones = 1
 	skinned_type = /obj/item/stack/sheet/animalhide/human
@@ -11,6 +11,7 @@
 	liked_food = GROSS | RAW
 	attack_verb = "smash"
 	armor = 1 //Klingons strong
+	hair_color = "110909" //They have black / dark brown hair.
 
 /mob/living/carbon/human/species/klingon
 	race = /datum/species/klingon
