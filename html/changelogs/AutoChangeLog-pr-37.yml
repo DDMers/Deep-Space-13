@@ -1,0 +1,4 @@
+author: "AbsurdlyLudicrous & Kmc2000"
+delete-after: True
+changes: 
+  - rscadd: "Added replicators which convert power and biomatter into edible foods."
