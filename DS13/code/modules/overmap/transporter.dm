@@ -16,7 +16,7 @@
 	var/datum/action/innate/changearea/changearea = new
 	var/mob/living/carbon/operator
 //	var/confinement_beam = ANNULAR_CONFINEMENT_NARROW //Narrow = only pickup humans, wide = pick up everything that isnt bolted to the ground
-	req_access = list(ACCESS_SEC_DOORS)
+	req_one_access = list(ACCESS_SEC_DOORS)
 
 /obj/machinery/computer/camera_advanced/transporter_control/GrantActions(mob/living/user)
 	//dont need jump cam action
