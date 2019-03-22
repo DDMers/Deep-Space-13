@@ -11,7 +11,9 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	"Plasmafire" = 'icons/mob/screen_plasmafire.dmi',
 	"Slimecore" = 'icons/mob/screen_slimecore.dmi',
 	"Operative" = 'icons/mob/screen_operative.dmi',
-	"Clockwork" = 'icons/mob/screen_clockwork.dmi'
+	"Clockwork" = 'icons/mob/screen_clockwork.dmi',
+	"Lcars" = 'icons/mob/screen_lcars.dmi', //DeepSpace 13 - Custom UI. This one is a modified version of my modified version of Eris' UI. Credit to them!
+	"Eris" = 'icons/mob/screen_eris.dmi' //DeepSpace 13 - Custom UI
 ))
 
 /proc/ui_style2icon(ui_style)
