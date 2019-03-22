@@ -46,10 +46,12 @@
 	var/area/AR = get_area(src)
 	if(AR.linked_overmap)
 		linked = AR.linked_overmap //Saves me a bit of a headache with all these damn subtypes :)
+		linked.components += src
 		return
 	for(var/obj/structure/overmap/OM in GLOB.overmap_ships)
 		if(OM.class == id)
 			linked = OM
+			OM.components += src
 
 /obj/structure/overmap_component/viewscreen
 	name = "Viewscreen"

@@ -231,17 +231,20 @@
 	var/area/target = GLOB.teleportlocs[area] //Pick a station area and yeet it.
 	for(var/mob/player in GLOB.player_list)
 		if(is_station_level(player.z))
-			shake_camera(player, 1,3)
+			if(prob(50))
+				shake_camera(player, 1,3)
+			else
+				shake_camera(player, 2,2)
 			if(shields_absorbed)
-				if(prob(50))
-					var/sound/shieldhit = pick('DS13/sound/effects/damage/shield_hit.ogg','DS13/sound/effects/damage/shield_hit2.ogg')
-					SEND_SOUND(player, shieldhit)
+				var/sound/shieldhit = pick('DS13/sound/effects/damage/shield_hit.ogg','DS13/sound/effects/damage/shield_hit2.ogg')
+				SEND_SOUND(player, shieldhit)
 				continue
 			var/sound/S = pick('DS13/sound/effects/damage/shiphit.ogg','DS13/sound/effects/damage/shiphit2.ogg','DS13/sound/effects/damage/shiphit3.ogg','DS13/sound/effects/damage/shiphit4.ogg','DS13/sound/effects/damage/FTL/explosionfar_2.ogg','DS13/sound/effects/damage/FTL/explosionfar_3.ogg','DS13/sound/effects/damage/FTL/explosionfar_4.ogg','DS13/sound/effects/damage/FTL/explosionfar_5.ogg','DS13/sound/effects/damage/FTL/explosionfar_6.ogg')
 			SEND_SOUND(player, S)
 	for(0 to rand(1,5))
-		var/obj/machinery/X = pick(GLOB.machines)
-		X.explode_effect()
+		if(components.len)
+			var/obj/structure/X = pick(components)
+			X.explode_effect()
 	if(shields_absorbed)
 		return
 	if(prob(40))
