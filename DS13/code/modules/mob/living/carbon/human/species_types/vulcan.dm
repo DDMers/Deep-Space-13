@@ -19,7 +19,7 @@ GLOBAL_LIST_INIT(vulcan_names, world.file2list("strings/names/vulcan.txt"))
 
 /datum/species/vulcan/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	. = ..()
-	addtimer(CALLBACK(src, .proc/special_after_spawn, C), 3)
+	addtimer(CALLBACK(src, .proc/special_after_spawn, C), 30)
 
 /datum/species/vulcan/proc/special_after_spawn(mob/living/carbon/C)
 	to_chat(C, "<font size=3 color=green>You are playing a roleplay heavy race! As a vulcan you must show no emotion at all.</font>")

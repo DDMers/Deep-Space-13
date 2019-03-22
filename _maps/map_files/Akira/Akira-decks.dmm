@@ -106,6 +106,10 @@
 /obj/machinery/door/airlock/trek/ship/maint,
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"av" = (
+/obj/machinery/replicator,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/bar)
 "aw" = (
 /turf/open/floor/engine,
 /area/maintenance/department/engine)
@@ -3131,6 +3135,7 @@
 /area/crew_quarters/kitchen)
 "iz" = (
 /obj/effect/turf_decal/loading_area,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/plasteel/showroomfloor,
 /area/crew_quarters/kitchen)
 "iA" = (
@@ -3156,8 +3161,9 @@
 /turf/closed/wall/trek_smooth/room,
 /area/crew_quarters/kitchen)
 "iE" = (
-/obj/machinery/door/airlock/trek/goon/glass,
-/turf/open/floor/carpet/trek,
+/obj/effect/turf_decal/loading_area,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/turf/open/floor/plasteel/showroomfloor,
 /area/crew_quarters/kitchen)
 "iF" = (
 /obj/structure/trek_catwalk,
@@ -3206,6 +3212,10 @@
 /area/crew_quarters/kitchen)
 "iL" = (
 /obj/machinery/vending/dinnerware,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -5;
+	pixel_y = 30
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/kitchen)
 "iM" = (
@@ -3216,9 +3226,8 @@
 /turf/open/floor/plating,
 /area/maintenance/central)
 "iN" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/machinery/door/airlock/trek/goon/glass,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/kitchen)
 "iO" = (
@@ -3243,8 +3252,10 @@
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/kitchen)
 "iR" = (
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/machinery/door/airlock/trek/goon/glass,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 1
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/kitchen)
@@ -3297,11 +3308,7 @@
 /turf/closed/wall/trek_smooth/room,
 /area/crew_quarters/bar)
 "jb" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/kitchen)
 "jc" = (
@@ -3366,10 +3373,6 @@
 /area/crew_quarters/bar)
 "jk" = (
 /obj/structure/table/glass,
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -5;
-	pixel_y = 30
-	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
@@ -3384,7 +3387,7 @@
 /area/crew_quarters/bar)
 "jm" = (
 /obj/machinery/vending/boozeomat,
-/turf/open/floor/carpet/trek,
+/turf/closed/wall/trek_smooth/room,
 /area/crew_quarters/bar)
 "jn" = (
 /obj/structure/trek_catwalk,
@@ -3444,10 +3447,12 @@
 /obj/structure/table/glass,
 /obj/item/reagent_containers/glass/rag,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
+/obj/item/reagent_containers/food/drinks/drinkingglass,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/bar)
 "jx" = (
 /obj/structure/table/glass,
+/obj/item/reagent_containers/food/drinks/drinkingglass,
 /obj/item/reagent_containers/food/drinks/drinkingglass,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/bar)
@@ -3467,46 +3472,49 @@
 /turf/open/floor/plating,
 /area/maintenance/central)
 "jB" = (
-/obj/structure/closet/secure_closet/brig{
-	id = "Cell 1";
-	name = "Cell 1 Locker"
+/obj/machinery/light{
+	dir = 8
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/obj/machinery/computer/secure_data{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
 /area/security/brig)
 "jC" = (
-/obj/structure/bed,
-/obj/item/bedsheet,
-/obj/machinery/light{
-	dir = 1
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/carpet/trek,
 /area/security/brig)
 "jD" = (
-/obj/structure/window/reinforced/fulltile/trek/middle,
-/obj/structure/grille,
-/turf/open/floor/plasteel/showroomfloor,
+/obj/structure/table/reinforced,
+/obj/item/storage/fancy/donut_box,
+/turf/open/floor/carpet/trek,
 /area/security/brig)
 "jE" = (
 /turf/open/floor/carpet/trek,
 /area/security/brig)
 "jF" = (
 /obj/machinery/suit_storage_unit/trek,
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/carpet/trek,
 /area/security/brig)
 "jG" = (
 /obj/structure/closet/secure_closet/security/sec,
-/turf/open/floor/plasteel/showroomfloor,
+/obj/item/restraints/handcuffs,
+/turf/open/floor/carpet/trek,
 /area/security/brig)
 "jH" = (
 /obj/structure/closet/secure_closet/security/sec,
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/plasteel/showroomfloor,
+/obj/item/restraints/handcuffs,
+/turf/open/floor/carpet/trek,
 /area/security/brig)
 "jI" = (
 /obj/machinery/vending/wardrobe/sec_wardrobe,
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/carpet/trek,
 /area/security/brig)
 "jJ" = (
 /turf/closed/wall/trek_smooth/room,
@@ -3587,29 +3595,22 @@
 /turf/open/floor/plasteel/dark,
 /area/science/xenobiology)
 "jW" = (
-/obj/structure/trek_catwalk,
-/obj/structure/railing{
-	icon_state = "railing0";
+/obj/machinery/power/apc/auto_name/ds13,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"jX" = (
+/obj/machinery/chem_dispenser/drinks/beer{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/maintenance/central)
-"jX" = (
-/turf/open/floor/plasteel/showroomfloor,
-/area/security/brig)
-"jY" = (
-/obj/machinery/door/airlock/trek/ship/sec{
-	icon_state = "closed";
-	dir = 4
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/security/brig)
+/obj/structure/table/glass,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/bar)
 "jZ" = (
 /obj/effect/landmark/start/security_officer,
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/carpet/trek,
 /area/security/brig)
 "ka" = (
 /obj/structure/bed,
@@ -3816,7 +3817,7 @@
 /area/science/xenobiology)
 "kG" = (
 /obj/effect/landmark/start/detective,
-/turf/open/floor/plasteel/showroomfloor,
+/turf/open/floor/carpet/trek,
 /area/security/brig)
 "kH" = (
 /obj/structure/table/glass,
@@ -3925,17 +3926,9 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/trek,
 /area/security/brig)
-"lc" = (
-/obj/structure/reagent_dispensers/peppertank{
-	pixel_x = 30
-	},
-/turf/open/floor/carpet/trek,
-/area/security/brig)
 "ld" = (
-/obj/machinery/iv_drip,
-/obj/item/reagent_containers/blood,
-/obj/machinery/light,
-/turf/open/floor/plasteel/showroomfloor,
+/obj/machinery/door/airlock/trek/ship/sec/armoury,
+/turf/open/floor/carpet/trek,
 /area/security/brig)
 "le" = (
 /obj/item/twohanded/required/kirbyplants{
@@ -4107,40 +4100,6 @@
 "lA" = (
 /turf/open/floor/engine,
 /area/science/xenobiology)
-"lB" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/security/brig)
-"lC" = (
-/obj/structure/extinguisher_cabinet,
-/turf/closed/wall/trek_smooth/room,
-/area/security/brig)
-"lD" = (
-/obj/machinery/vending/security,
-/turf/open/floor/plasteel/showroomfloor,
-/area/security/brig)
-"lE" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door/window/southleft{
-	name = "Brig Desk";
-	req_access_txt = "1"
-	},
-/obj/item/storage/firstaid/regular{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/spray/cleaner,
-/turf/open/floor/carpet/trek,
-/area/security/brig)
 "lF" = (
 /obj/structure/window/reinforced/fulltile/trek/viewport,
 /turf/open/floor/carpet/trek,
@@ -4223,73 +4182,9 @@
 	},
 /turf/open/floor/engine,
 /area/science/xenobiology)
-"lQ" = (
-/obj/structure/chair{
-	dir = 4
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/security/brig)
 "lR" = (
 /obj/machinery/light{
 	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/security/brig)
-"lS" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/turf/open/floor/carpet/trek,
-/area/security/brig)
-"lT" = (
-/obj/machinery/camera/trek,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/security/brig)
-"lU" = (
-/obj/structure/window/reinforced/fulltile/trek/middle,
-/obj/structure/grille,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 8
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/security/brig)
-"lV" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/security/brig)
-"lW" = (
-/obj/machinery/power/apc/auto_name/ds13,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 8
 	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
@@ -4491,34 +4386,6 @@
 	},
 /turf/open/floor/engine,
 /area/science/xenobiology)
-"mo" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 1
-	},
-/obj/machinery/door/airlock/trek/ship/sec,
-/turf/open/floor/carpet/trek,
-/area/security/brig)
-"mp" = (
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
-	icon_state = "manifold-1";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/security/brig)
-"mq" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/security/brig)
 "mr" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -4604,12 +4471,6 @@
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
-"mC" = (
-/obj/structure/rack,
-/obj/item/restraints/handcuffs,
-/obj/item/restraints/handcuffs,
-/turf/open/floor/plasteel/showroomfloor,
-/area/security/brig)
 "mD" = (
 /obj/machinery/door/airlock/trek/goon/research{
 	icon_state = "closed";
@@ -4617,31 +4478,15 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
-"mE" = (
-/turf/closed/wall/trek_smooth/room,
-/area/security/warden)
-"mF" = (
-/obj/structure/window/reinforced/fulltile/trek/viewport,
-/turf/open/floor/carpet/trek,
-/area/security/warden)
-"mG" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door/window/southleft{
-	name = "Brig Desk";
-	req_access_txt = "1"
-	},
-/turf/open/floor/carpet/trek,
-/area/security/warden)
-"mH" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/trek/ship/sec/armoury,
-/turf/open/floor/carpet/trek,
-/area/security/warden)
 "mI" = (
-/turf/closed/wall/trek_smooth/corridor,
-/area/security/warden)
+/obj/machinery/flasher{
+	id = "Cell 1"
+	},
+/obj/structure/trek_decor/brig{
+	layer = 2.1
+	},
+/turf/closed/wall/trek_smooth/room,
+/area/security/brig)
 "mJ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
@@ -4674,45 +4519,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
-"mO" = (
-/obj/machinery/computer/prisoner{
-	icon_state = "computer";
-	dir = 4
-	},
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 5
-	},
-/turf/open/floor/carpet/trek,
-/area/security/warden)
-"mP" = (
-/obj/structure/chair/trek{
-	icon_state = "comfy";
-	dir = 1
-	},
-/obj/effect/landmark/start/warden,
-/turf/open/floor/carpet/trek,
-/area/security/warden)
-"mQ" = (
-/obj/machinery/computer/secure_data{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/security/warden)
-"mR" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/turf/open/floor/carpet/trek,
-/area/security/brig)
-"mS" = (
-/obj/structure/rack,
-/obj/item/restraints/handcuffs,
-/obj/item/restraints/handcuffs,
-/obj/item/restraints/handcuffs,
-/turf/open/floor/carpet/trek,
-/area/security/warden)
 "mT" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -4783,29 +4589,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
-"mZ" = (
-/turf/open/floor/carpet/trek,
-/area/security/warden)
-"na" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/carpet/trek,
-/area/security/warden)
-"nb" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/security/warden)
-"nc" = (
-/obj/machinery/computer/med_data/laptop{
-	icon_state = "laptop";
-	dir = 8
-	},
-/obj/structure/table/reinforced,
-/turf/open/floor/carpet/trek,
-/area/security/warden)
 "nd" = (
 /obj/machinery/camera/trek{
 	icon_state = "camera";
@@ -4957,27 +4740,15 @@
 /obj/structure/railing,
 /turf/open/floor/plating,
 /area/maintenance/central)
-"ny" = (
-/obj/item/gun/energy/phaser/rifle,
-/obj/structure/table/reinforced,
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 5
-	},
-/turf/open/floor/carpet/trek,
-/area/security/warden)
 "nz" = (
-/obj/structure/cable{
-	icon_state = "1-8"
+/obj/machinery/computer/secure_data{
+	dir = 4
 	},
-/obj/effect/baseturf_helper/open_space,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/carpet/trek,
-/area/security/warden)
-"nA" = (
-/obj/item/gun/energy/phaser,
-/obj/structure/table/reinforced,
-/turf/open/floor/carpet/trek,
-/area/security/warden)
+/area/security/brig)
 "nB" = (
 /obj/machinery/light,
 /turf/open/floor/carpet/trek,
@@ -5079,46 +4850,6 @@
 /obj/machinery/rnd/production/circuit_imprinter/department/science,
 /turf/open/floor/carpet/trek,
 /area/science/research)
-"nN" = (
-/obj/machinery/power/apc/auto_name,
-/obj/structure/cable,
-/turf/open/floor/carpet/trek,
-/area/security/warden)
-"nO" = (
-/obj/machinery/light,
-/turf/open/floor/carpet/trek,
-/area/security/warden)
-"nP" = (
-/obj/item/clothing/suit/armor/riot{
-	pixel_x = -3;
-	pixel_y = 3
-	},
-/obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/suit/armor/riot{
-	pixel_x = 3;
-	pixel_y = -3
-	},
-/obj/item/clothing/head/helmet/riot{
-	pixel_x = -3;
-	pixel_y = 3
-	},
-/obj/item/clothing/head/helmet/riot,
-/obj/item/clothing/head/helmet/riot{
-	pixel_x = 3;
-	pixel_y = -3
-	},
-/obj/item/shield/riot{
-	pixel_x = -3;
-	pixel_y = 3
-	},
-/obj/item/shield/riot,
-/obj/item/shield/riot{
-	pixel_x = 3;
-	pixel_y = -3
-	},
-/obj/structure/table/reinforced,
-/turf/open/floor/carpet/trek,
-/area/security/warden)
 "nQ" = (
 /obj/structure/trek_catwalk,
 /obj/structure/cable{
@@ -5211,10 +4942,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/science/research)
-"ob" = (
-/obj/structure/trek_decor/rack,
-/turf/closed/wall/trek_smooth/room,
-/area/security/warden)
 "oc" = (
 /obj/structure/trek_catwalk,
 /obj/structure/cable{
@@ -6231,7 +5958,8 @@
 /area/crew_quarters/heads/cmo)
 "qL" = (
 /obj/structure/table/wood/poker,
-/turf/open/floor/carpet/trek,
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating,
 /area/maintenance/central)
 "qM" = (
 /obj/structure/chair/trek/standard{
@@ -6571,9 +6299,9 @@
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "ry" = (
-/obj/machinery/door/airlock/trek/goon/engi,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/door/airlock/trek/ship,
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "rz" = (
@@ -6588,9 +6316,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/trek/goon/engi,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/door/airlock/trek/ship,
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "rC" = (
@@ -9170,7 +8898,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/trek_catwalk,
+/obj/machinery/ai_slipper,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "ym" = (
@@ -9223,30 +8951,6 @@
 /obj/machinery/camera/trek,
 /turf/open/floor/plating,
 /area/maintenance/central)
-"yr" = (
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/security/brig)
-"ys" = (
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 5
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/security/brig)
-"yt" = (
-/obj/structure/chair{
-	dir = 4
-	},
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 5
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/security/brig)
 "yu" = (
 /obj/machinery/camera/trek{
 	icon_state = "camera";
@@ -9457,19 +9161,6 @@
 /obj/structure/trek_decor/viewscreen,
 /turf/closed/wall/trek_smooth/room,
 /area/ai_monitored/turret_protected/ai)
-"yV" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/security/brig)
 "yW" = (
 /obj/machinery/camera/trek{
 	icon_state = "camera";
@@ -9518,17 +9209,27 @@
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zd" = (
-/obj/structure/trek_catwalk,
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/ai_slipper,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "ze" = (
 /obj/structure/table,
 /obj/structure/trek_catwalk,
 /obj/item/aiModule/supplied/quarantine,
+/obj/machinery/door/window{
+	base_state = "right";
+	dir = 4;
+	icon_state = "right";
+	name = "Core Modules";
+	req_access_txt = "20"
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "zf" = (
@@ -9545,6 +9246,16 @@
 /obj/structure/table,
 /obj/structure/trek_catwalk,
 /obj/item/aiModule/reset,
+/obj/machinery/door/window{
+	base_state = "left";
+	dir = 8;
+	icon_state = "left";
+	name = "High-Risk Modules";
+	req_access_txt = "20"
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "zi" = (
@@ -9913,12 +9624,6 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
-"Aj" = (
-/obj/effect/landmark/start/lawyer,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
-/turf/open/floor/carpet/trek,
-/area/security/brig)
 "Ak" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -10216,6 +9921,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plating,
 /area/maintenance/central)
+"AW" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/kitchen)
 "AX" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -10304,11 +10016,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
-"Be" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/door/airlock/trek/ship/sec,
-/turf/open/floor/carpet/trek,
-/area/security/brig)
 "Bf" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -10493,18 +10200,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
-"BA" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 1
-	},
-/obj/machinery/door/airlock/trek/ship/sec/armoury,
-/turf/open/floor/carpet/trek,
-/area/security/warden)
 "BB" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -10560,32 +10255,22 @@
 /turf/open/floor/carpet/trek,
 /area/hydroponics)
 "BH" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
-/turf/open/floor/plasteel/showroomfloor,
-/area/security/brig)
-"BI" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	icon_state = "vent_map_on-1";
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/security/warden)
-"BJ" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/security/brig)
-"BK" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/button/door{
+	id = "Secure Gate";
+	name = "Cell Lockdown";
+	pixel_x = 26;
+	pixel_y = -26;
+	req_access_txt = "3"
 	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
@@ -10593,15 +10278,6 @@
 /obj/machinery/airalarm,
 /turf/closed/wall/trek_smooth/room,
 /area/crew_quarters/locker)
-"BM" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/security/brig)
 "BN" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -10688,13 +10364,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
-"BY" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	icon_state = "vent_map_on-1";
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/security/brig)
 "BZ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	icon_state = "vent_map_on-1";
@@ -10770,34 +10439,6 @@
 /obj/machinery/door/airlock/trek/ship/maint,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
-"Cj" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
-/turf/open/floor/carpet/trek,
-/area/security/brig)
-"Ck" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	icon_state = "vent_map_on-1";
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/security/brig)
-"Cl" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	icon_state = "vent_map_on-1";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/security/brig)
-"Cm" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/security/brig)
 "Cn" = (
 /obj/structure/trek_catwalk,
 /obj/structure/cable{
@@ -10833,6 +10474,10 @@
 /obj/machinery/airalarm,
 /turf/closed/wall/trek_smooth/room,
 /area/janitor)
+"Ct" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/kitchen)
 "Cu" = (
 /obj/machinery/airalarm{
 	dir = 8;
@@ -10923,6 +10568,16 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/bridge)
+"CH" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/kitchen)
 "CI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -11086,6 +10741,13 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
+"Db" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/kitchen)
 "Dc" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -11273,6 +10935,17 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/trek/tile,
 /area/quartermaster/storage)
+"Dv" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	icon_state = "pipe11-2";
+	dir = 10
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/kitchen)
 "Dw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/trek,
@@ -11355,6 +11028,10 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
+"DF" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/kitchen)
 "DG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -11607,6 +11284,40 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
+"Ek" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/kitchen)
+"El" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/kitchen)
+"Em" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/kitchen)
+"En" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	icon_state = "vent_map_on-1";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/kitchen)
+"Eo" = (
+/obj/structure/table/wood/poker,
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/carpet/trek,
+/area/maintenance/central)
 "Eq" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -11674,6 +11385,156 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/engine/atmos)
+"ED" = (
+/obj/structure/trek_decor/brig,
+/turf/closed/wall/trek_smooth/room,
+/area/security/brig)
+"EE" = (
+/obj/structure/closet/secure_closet/brig{
+	id = "Cell 3";
+	name = "Cell 3 Locker"
+	},
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 5
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"EF" = (
+/obj/structure/closet/secure_closet/brig{
+	id = "Cell 4";
+	name = "Cell 4 Locker"
+	},
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"EG" = (
+/obj/structure/curtain,
+/obj/machinery/shower,
+/turf/open/floor/plasteel/white,
+/area/security/brig)
+"EH" = (
+/obj/structure/curtain,
+/obj/machinery/shower{
+	icon_state = "shower";
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/security/brig)
+"EI" = (
+/obj/structure/closet/secure_closet/brig{
+	id = "Cell 1";
+	name = "Cell 1 Locker"
+	},
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 5
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"EJ" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/southleft{
+	name = "Brig Desk";
+	icon_state = "left";
+	dir = 4;
+	req_access_txt = "1"
+	},
+/obj/item/pen,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"EK" = (
+/obj/machinery/door_timer{
+	id = "Cell 1"
+	},
+/obj/structure/trek_decor/brig{
+	layer = 2.1
+	},
+/turf/closed/wall/trek_smooth/room,
+/area/security/brig)
+"EL" = (
+/obj/machinery/door_timer{
+	id = "Cell 2"
+	},
+/obj/structure/trek_decor/brig{
+	layer = 2.1
+	},
+/turf/closed/wall/trek_smooth/room,
+/area/security/brig)
+"EM" = (
+/obj/machinery/door_timer{
+	id = "Cell 3"
+	},
+/obj/structure/trek_decor/brig{
+	layer = 2.1
+	},
+/turf/closed/wall/trek_smooth/room,
+/area/security/brig)
+"EN" = (
+/obj/machinery/door_timer{
+	id = "Cell 4"
+	},
+/obj/structure/trek_decor/brig{
+	layer = 2.1
+	},
+/turf/closed/wall/trek_smooth/room,
+/area/security/brig)
+"EO" = (
+/obj/machinery/flasher{
+	id = "Cell 2"
+	},
+/obj/structure/trek_decor/brig{
+	layer = 2.1
+	},
+/turf/closed/wall/trek_smooth/room,
+/area/security/brig)
+"EP" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	icon_state = "vent_map_on-1";
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"EQ" = (
+/obj/machinery/door/airlock/trek/ship,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"ER" = (
+/obj/structure/bed,
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 5
+	},
+/obj/item/bedsheet,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"ES" = (
+/obj/machinery/flasher{
+	id = "Cell 3"
+	},
+/obj/structure/trek_decor/brig{
+	layer = 2.1
+	},
+/turf/closed/wall/trek_smooth/room,
+/area/security/brig)
+"ET" = (
+/obj/machinery/flasher{
+	id = "Cell 4"
+	},
+/obj/structure/trek_decor/brig{
+	layer = 2.1
+	},
+/turf/closed/wall/trek_smooth/room,
+/area/security/brig)
 "EU" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	icon_state = "pipe11-2";
@@ -11681,6 +11542,26 @@
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
+"EV" = (
+/obj/machinery/airalarm{
+	dir = 1;
+	pixel_y = -22
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"EW" = (
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"EX" = (
+/obj/structure/bed,
+/obj/item/bedsheet,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
 "EY" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 4
@@ -11688,6 +11569,117 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /turf/open/floor/plating,
 /area/engine/atmos)
+"EZ" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/southleft{
+	name = "Brig Desk";
+	req_access_txt = "1"
+	},
+/obj/machinery/recharger,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fa" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fb" = (
+/obj/machinery/computer/prisoner{
+	icon_state = "computer";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fc" = (
+/obj/machinery/computer/security{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fd" = (
+/obj/structure/chair/trek{
+	icon_state = "comfy";
+	dir = 1
+	},
+/obj/effect/landmark/start/warden,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fe" = (
+/obj/item/gun/energy/phaser,
+/obj/structure/rack,
+/obj/item/storage/firstaid/regular{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/spray/cleaner,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Ff" = (
+/obj/item/clothing/suit/armor/riot{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/suit/armor/riot{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/item/clothing/head/helmet/riot{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/clothing/head/helmet/riot,
+/obj/item/clothing/head/helmet/riot{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/item/shield/riot{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/shield/riot,
+/obj/item/shield/riot{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/structure/rack,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fg" = (
+/obj/machinery/door/airlock/trek/ship/sec,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fh" = (
+/obj/structure/closet/secure_closet/brig{
+	id = "Cell 2";
+	name = "Cell 2 Locker"
+	},
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fi" = (
+/obj/structure/bed,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/item/bedsheet,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
 "Fj" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	icon_state = "pipe11-2";
@@ -11695,6 +11687,163 @@
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
+"Fk" = (
+/obj/structure/bed,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/item/bedsheet,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fl" = (
+/obj/machinery/door/airlock/trek/ship/sec{
+	icon_state = "closed";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fm" = (
+/obj/machinery/vending/security,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fn" = (
+/obj/item/gun/energy/phaser/rifle,
+/obj/structure/rack,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fo" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fq" = (
+/obj/item/gun/energy/phaser,
+/obj/structure/rack,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fr" = (
+/obj/effect/landmark/start/security_officer,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Ft" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fu" = (
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 5
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fv" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	icon_state = "vent_map_on-1";
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fw" = (
+/obj/structure/trek_decor/brig,
+/obj/machinery/airalarm,
+/turf/closed/wall/trek_smooth/room,
+/area/security/brig)
+"Fx" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fy" = (
+/obj/machinery/door/airlock/trek/ship/sec,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"Fz" = (
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 5
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	icon_state = "vent_map_on-1";
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"FL" = (
+/obj/machinery/door/window/brigdoor/security/cell/trek,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/door/poddoor/preopen{
+	id = "Secure Gate";
+	name = "brig shutters"
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"FM" = (
+/obj/machinery/door/window/brigdoor/security/cell/trek/cell2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/door/poddoor/preopen{
+	id = "Secure Gate";
+	name = "brig shutters"
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"FN" = (
+/obj/machinery/door/window/brigdoor/security/cell/trek/cell3,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/door/poddoor/preopen{
+	id = "Secure Gate";
+	name = "brig shutters"
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"FO" = (
+/obj/machinery/door/window/brigdoor/security/cell/trek/cell4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/door/poddoor/preopen{
+	id = "Secure Gate";
+	name = "brig shutters"
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
+"FP" = (
+/obj/machinery/iv_drip,
+/obj/item/reagent_containers/blood,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
 "Gk" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8;
@@ -97793,19 +97942,19 @@ iU
 jd
 iV
 iV
-jW
 iV
 iV
 iV
 iV
 iV
-jW
 iV
 iV
 iV
 iV
 iV
-jW
+iV
+iV
+iV
 iV
 iV
 og
@@ -98048,23 +98197,23 @@ aa
 io
 iU
 je
-jo
-jo
-jo
-jo
-jo
-jo
-jo
-jo
-jo
-jo
-jo
-jo
-jo
-jo
-jo
-jo
-jo
+iq
+iF
+iq
+iq
+iq
+iq
+iq
+iq
+iF
+iq
+iq
+iq
+iq
+iq
+iq
+iF
+iq
 nw
 iU
 io
@@ -98305,23 +98454,23 @@ aa
 io
 iU
 je
-jo
-jB
-ys
-jo
-jB
-ys
-jo
-lQ
-yt
-mC
-jo
-jB
-ys
-jo
-jB
-ys
-jo
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
+jp
 nw
 iU
 io
@@ -98562,23 +98711,23 @@ aa
 io
 iU
 je
-jo
-jC
-jX
-jo
-jC
-jX
-jo
-jX
-jX
-jX
-jo
-jC
-jX
-jo
-jC
-jX
-jo
+jq
+jF
+jE
+yu
+jE
+jE
+jp
+jW
+jB
+jD
+lF
+Fb
+nz
+ED
+Fn
+Fe
+jq
 nw
 iU
 io
@@ -98819,23 +98968,23 @@ aa
 io
 iU
 je
-jp
-jD
-jY
-jp
-jD
-jY
-jp
-jD
-Av
-jD
-jp
-jD
-jY
-jp
-jD
-jY
-jp
+jq
+jG
+jZ
+jG
+kG
+jE
+Fm
+EP
+jC
+jE
+EZ
+Fd
+jE
+ED
+jE
+jE
+jq
 nw
 iU
 io
@@ -99077,19 +99226,19 @@ io
 iU
 je
 jq
-jE
-jE
-yu
-jE
-lb
-jp
-BM
-BY
-lb
-jp
-lR
-jE
-yu
+jH
+jZ
+jG
+Fr
+Fx
+Fg
+EW
+Fx
+Fx
+Fy
+Fx
+Fv
+ld
 jE
 jE
 jq
@@ -99334,20 +99483,20 @@ io
 iU
 je
 jq
+jG
+jZ
+jG
+jZ
 jE
-mR
-Cj
-Cm
-Cm
-mo
-mp
-Aj
-Cm
-mo
-Cm
-Cm
-Ck
-BJ
+ED
+Fa
+jE
+jE
+ED
+jE
+jE
+ED
+jE
 jE
 jq
 nw
@@ -99591,21 +99740,21 @@ io
 iU
 je
 jq
+jI
 jE
 jE
 jE
 jE
-lc
-lC
-lT
-Cl
+lF
+BH
+Fo
 jE
-lC
-jE
-lc
-jE
-jE
-jE
+lF
+FP
+Fc
+ED
+Fq
+Ff
 jq
 nw
 iU
@@ -99847,23 +99996,23 @@ aa
 io
 iU
 je
-jq
 jp
 jp
 jp
 jp
 jp
 jp
-lU
+jp
+Fl
+EJ
 Av
-jD
-mE
-mE
-mE
-mE
-mE
-mE
-ob
+jp
+jp
+jp
+jp
+jp
+jp
+jp
 nw
 iU
 io
@@ -100104,23 +100253,23 @@ aa
 io
 iU
 je
-jp
-jF
-jX
-ys
-jX
-jX
-lD
-lV
+ED
+EG
+EI
+mI
+ER
+Fi
+EK
+Fa
 jE
 jE
-mF
-mO
-mZ
-mE
-ny
-nA
-mE
+EM
+ER
+Fi
+ES
+EE
+EH
+ED
 nw
 iU
 io
@@ -100361,23 +100510,23 @@ aa
 io
 iU
 je
-jq
-jG
-jZ
-jG
-kG
-jX
-lE
-lV
+ED
+lR
 jE
+EQ
+Ft
+Fx
+FL
+EW
+Fx
+Fx
+FN
+Fv
 jE
-mG
-mP
-mZ
-mF
-na
-nN
-mE
+EQ
+jE
+lb
+ED
 nw
 iU
 io
@@ -100618,23 +100767,23 @@ aa
 io
 iU
 je
-jq
-jH
-jZ
-jG
-jZ
-ld
-lF
-yV
-BK
-lb
-mF
-mQ
-na
-mH
-nz
-nO
-ob
+jp
+jp
+jp
+jp
+jp
+jp
+Fw
+Fa
+jE
+EV
+jp
+jp
+jp
+jp
+jp
+jp
+ED
 nw
 iU
 io
@@ -100875,23 +101024,23 @@ aa
 io
 iU
 je
-jq
-jG
-jZ
-jG
-jZ
-BH
-Be
-lS
-lB
-mq
-BA
-BI
-nb
-mF
-mZ
-mZ
-mE
+ED
+lR
+jE
+EQ
+Fu
+Fx
+FM
+EW
+Fx
+Fx
+FO
+Fz
+jE
+EQ
+jE
+lb
+ED
 nw
 iU
 io
@@ -101132,23 +101281,23 @@ aa
 io
 iU
 je
-jq
-jI
-jX
-jX
-jX
-jX
-jp
-lW
-yr
+ED
+EG
+Fh
+EO
+EX
+Fk
+EL
+Fa
 jE
-mE
-mS
-nc
-mE
-nA
-nP
-mE
+jE
+EN
+EX
+Fk
+ET
+EF
+EH
+ED
 nw
 iU
 io
@@ -101399,13 +101548,13 @@ jo
 lX
 jo
 Av
-mI
-mE
-mE
-mE
-mE
-mE
-mE
+jo
+jp
+jp
+jp
+jp
+jp
+jp
 nw
 iU
 io
@@ -105757,7 +105906,7 @@ iD
 iD
 iD
 iW
-jf
+av
 js
 yo
 js
@@ -106010,7 +106159,7 @@ iy
 iy
 iD
 iG
-iH
+Em
 iO
 iT
 iY
@@ -106265,9 +106414,9 @@ ip
 is
 iy
 iz
-iE
-iH
-iH
+iN
+jb
+Ct
 iH
 iH
 iZ
@@ -106524,7 +106673,7 @@ iy
 iy
 iD
 iI
-iN
+CH
 iP
 iH
 iW
@@ -106781,7 +106930,7 @@ iy
 iA
 iD
 iJ
-iH
+Db
 iQ
 iH
 ja
@@ -107038,9 +107187,9 @@ iy
 iy
 iD
 iK
-iH
-iR
-jb
+Dv
+Ek
+El
 jj
 Bm
 Cg
@@ -107292,13 +107441,13 @@ aa
 ip
 iv
 iy
-iz
 iE
+iR
+AW
+DF
 iH
 iH
-iH
-iH
-iW
+jm
 jk
 jw
 jM
@@ -107552,7 +107701,7 @@ iy
 iB
 iD
 iL
-iH
+En
 iS
 iH
 BF
@@ -107813,8 +107962,8 @@ iD
 iD
 iD
 iW
-jm
-jx
+jX
+jt
 jM
 Cu
 jf
@@ -108359,7 +108508,7 @@ mu
 pe
 qA
 qG
-qL
+Eo
 qx
 qC
 iU
@@ -108615,7 +108764,7 @@ pT
 ll
 pe
 qB
-qH
+qL
 qH
 qx
 qC

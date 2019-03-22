@@ -28,6 +28,8 @@ SUBSYSTEM_DEF(overmap)
 
 /datum/controller/subsystem/overmap/proc/spawnEvent()
 	if(!events.len)
+		priority_announce("Excellent work [station_name()], you have completed your patrol for the day. We are sending a crew transfer shuttle","Incoming hail:",'sound/ai/commandreport.ogg')
+		SSshuttle.emergency.request()
 		return
 	var/datum/overmap_event/F = pick(events)
 	F.fire()

@@ -19,12 +19,6 @@
 
 /datum/species/andorian/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	. = ..()
-	if(C.client)
-		if(C.client.prefs.real_name == C.real_name) //Random name if this isnt their chosen name
-			return
-	var/new_name = random_name()
-	C.real_name = new_name
-	C.name = new_name
 	to_chat(C, "<font size=4 color=red>You are playing a roleplay heavy race! Andorians are suspicious and short tempered. Your race is militaristic and doesn't accept defeat.</font>")
 
 /datum/species/andorian/qualifies_for_rank(rank, list/features)

@@ -222,7 +222,27 @@
 	name = "biobed"
 	desc = "A bed with surgical facilities built in."
 	icon = 'DS13/icons/obj/decor/biobed.dmi'
-	icon_state = "biobed"
+	icon_state = "biobed" //X - 15, y - 7
+
+/obj/structure/table/optable/trek/tablepush(mob/living/user, mob/living/pushed_mob)
+	pushed_mob.forceMove(loc)
+	pushed_mob.set_resting(TRUE, TRUE)
+	visible_message("<span class='notice'>[user] has laid [pushed_mob] on [src].</span>")
+	check_patient()
+
+/obj/structure/table/optable/trek/check_patient()
+	var/mob/living/carbon/human/M = locate(/mob/living/carbon/human, loc)
+	if(M)
+		if(M.resting)
+			patient = M
+			patient.pixel_x = 15 //So they actually lie on the bed
+			patient.pixel_y = 7
+			return TRUE
+	else
+		patient.pixel_x = initial(patient.pixel_x)
+		patient.pixel_y = initial(patient.pixel_y)
+		patient = null
+		return FALSE
 
 /obj/effect/baseturf_helper/open_space //Put this on any deck that isn't the lowest deck so that explosions cause holes to open up and stuff to fall down from above!
 	name = "open space baseturf editor"
@@ -249,3 +269,65 @@
 	name = "Independant captain"
 	assignedrole = "saladin captain"
 	outfit = /datum/outfit/job/captain/DS13
+
+/obj/machinery/door/window/brigdoor/security/cell/trek
+	name = "brig force field"
+	desc = "For keeping in criminal scum."
+	req_access = list(ACCESS_BRIG)
+	id = "Cell 1"
+	icon = 'DS13/icons/obj/decor/wall_decor.dmi'
+
+/obj/machinery/door/window/brigdoor/security/cell/trek/cell2
+	id = "Cell 2"
+
+/obj/machinery/door/window/brigdoor/security/cell/trek/cell3
+	id = "Cell 3"
+
+/obj/machinery/door/window/brigdoor/security/cell/trek/cell4
+	id = "Cell 4"
+
+/obj/machinery/door/window/brigdoor/security/cell/trek/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
+	switch(damage_type)
+		if(BRUTE)
+			playsound(loc, 'DS13/sound/effects/brigfield.ogg', 90, 1)
+		if(BURN)
+			playsound(src.loc, 'DS13/sound/effects/brigfield.ogg', 100, 1)
+
+/obj/machinery/door/window/brigdoor/security/cell/trek/open(forced=0)
+	if (src.operating == 1) //doors can still open when emag-disabled
+		return 0
+	if(!src.operating) //in case of emag
+		operating = TRUE
+	do_animate("opening")
+	playsound(src.loc, 'DS13/sound/effects/brigfield.ogg', 100, 1)
+	src.icon_state ="[src.base_state]open"
+	sleep(10)
+
+	density = FALSE
+//	src.sd_set_opacity(0)	//TODO: why is this here? Opaque windoors? ~Carn
+	air_update_turf(1)
+	update_freelook_sight()
+
+	if(operating == 1) //emag again
+		operating = FALSE
+	return 1
+
+/obj/machinery/door/window/brigdoor/security/cell/trek/close(forced=0)
+	if (src.operating)
+		return 0
+	operating = TRUE
+	do_animate("closing")
+	playsound(src.loc, 'DS13/sound/effects/brigfield.ogg', 100, 1)
+	src.icon_state = src.base_state
+	density = TRUE
+	air_update_turf(1)
+	update_freelook_sight()
+	sleep(10)
+	operating = FALSE
+	return 1
+
+/obj/structure/trek_decor/brig
+	name = "Cell padding"
+	desc = "Heavyset foam based padding designed to stop inmates from hurting themselves by accident."
+	icon_state = "brigpadding"
+	layer = 2.1
