@@ -26,10 +26,11 @@ SUBSYSTEM_DEF(overmap)
 		spawnEvent()
 		schedule()
 
-/datum/controller/subsystem/overmap/proc/spawnEvent()
+/datum/controller/subsystem/overmap/proc/spawnEvent() //This means that the shuttle gets called 10-15 minutes after the last event fired, giving them enough time to complete it.
 	if(!events.len)
-		priority_announce("Excellent work [station_name()], you have completed your patrol for the day. We are sending a crew transfer shuttle","Incoming hail:",'sound/ai/commandreport.ogg')
-		SSshuttle.emergency.request()
+		priority_announce("Excellent work [station_name()], you have completed your patrol for the day. We are sending a crew transfer shuttle to relieve you.","Incoming hail:",'sound/ai/commandreport.ogg')
+		SSshuttle.emergency.request(null, set_coefficient = 0.6)
+		SSshuttle.emergencyNoRecall = TRUE //We want to end the round.
 		return
 	var/datum/overmap_event/F = pick(events)
 	F.fire()
