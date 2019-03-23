@@ -9,6 +9,7 @@ GLOBAL_DATUM_INIT(borg_collective, /datum/borg_collective, new)
 	var/drone_count = 0 //Increments by one every conversion. Shows which drone was assimilated first and so on. "First of three, tertiary adjunct of unimatrix 115"
 	var/teleporters_allowed = FALSE //Give the crew a bit of prep time
 	var/list/teleporters = list() //which borg teleporters are in the world currently
+	var/finished = FALSE //Is the round over? Have the borg won?
 
 /datum/borg_collective/proc/activate_teleporters()//In case admins want to force this.
 	for(var/obj/structure/borg_teleporter/BT in teleporters)
@@ -59,7 +60,7 @@ GLOBAL_DATUM_INIT(borg_collective, /datum/borg_collective, new)
 	return TRUE
 
 /datum/borg_collective/proc/check_completion()
-	if(world.time <= 100 || GLOB.player_list.len <= 1) //Round literally just started or it's a lone person testing, so don't instantly end the round!
+	if(world.time <= 100 || GLOB.player_list.len <= 1 || finished) //Round literally just started or it's a lone person testing, so don't instantly end the round!
 		return
 	var/converted = drones.len //How many people are borg?
 	var/targets = 0
@@ -98,5 +99,6 @@ GLOBAL_DATUM_INIT(borg_collective, /datum/borg_collective, new)
 		if(81 to 100)//80% of the station converted is a win
 			SSticker.mode.check_finished(TRUE)
 			SSticker.force_ending = 1
-			to_chat(world, "<span class='ratvar'>The borg have assimilated the station!</span>")
+			to_chat(world, "<span class='ratvar'>The borg have assimilated [station_name()]!</span>")
 			SEND_SOUND(world,'DS13/sound/effects/borg/progress/victory.ogg')
+			finished = TRUE

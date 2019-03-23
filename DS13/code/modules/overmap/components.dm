@@ -26,6 +26,9 @@
 	to_chat(L, "You require a high level access card to use this console!.")
 	return
 
+/obj/structure/overmap_component/attack_ai(mob/user)
+	return linked.enter(user, position)
+
 /obj/structure/overmap_component/take_damage(amount)
 	if(obj_integrity <= amount)
 		obj_integrity = 10 //Don't want them to actually be destroyed until we make them buildable. But you can bash the shit out of them for now
@@ -75,6 +78,14 @@
 		return
 	linked.enter(user, "observer",TRUE) //Enter them as an observer
 	. = ..()
+
+/obj/structure/overmap_component/viewscreen/attack_ai(mob/user)
+	if(!linked || QDELETED(linked))
+		find_overmap()
+	if(isobserver(user) && linked)
+		user.forceMove(get_turf(linked))
+		return
+	return linked.enter(user, "observer",TRUE) //Enter them as an observer
 
 /obj/structure/overmap_component/helm
 	name = "Piloting station"
@@ -178,14 +189,14 @@
 	desc = "This console gives you the power to control a starship."
 	icon_state = "science"
 	position = "science"
-	req_access = list(ACCESS_RESEARCH)
+	req_access = list(ACCESS_HEADS)
 
 /obj/structure/overmap_component/tactical
 	name = "Weapons station"
 	desc = "This console gives you the power to control a starship."
 	icon_state = "tactical"
 	position = "tactical"
-	req_access = list(ACCESS_SECURITY)
+	req_access = list(ACCESS_HEADS)
 
 /obj/structure/overmap_component/helm/miranda
 	name = "Piloting station"

@@ -139,7 +139,7 @@
 		if(TS.floor == S)
 			user.say("Deck [S], fore.")
 			send_sound_lift('DS13/sound/effects/turbolift/turbolift.ogg', TRUE)
-			addtimer(CALLBACK(src, .proc/lift, TS), 90)
+			addtimer(CALLBACK(src, .proc/lift, TS, TRUE), 90)
 			icon_state = "lift-on"
 			return
 
@@ -153,7 +153,11 @@
 				shake_camera(AM, 2, 2)
 
 
-/obj/structure/turbolift/proc/lift(var/obj/structure/turbolift/target)
+/obj/structure/turbolift/proc/lift(var/obj/structure/turbolift/target, var/affects_others = FALSE)
+	if(destinations.len && affects_others)//only one lift needs to tell the others to teleport people.
+		for(var/X in destinations)
+			var/obj/structure/turbolift/TS = X
+			TS.lift(target, FALSE)//Just in case someone got stuck in the lift.
 	in_use = FALSE
 	icon_state = "lift-off"
 	if(!target)
@@ -163,8 +167,7 @@
 	for(var/turf/T in turbolift_turfs)
 		for(var/atom/movable/AM in T)
 			if(AM.anchored) //Don't teleport things that shouldn't go through
-				if(istype(AM, /obj/structure/turbolift) || istype(AM, /obj/machinery/light) || istype(AM, /obj/machinery/door/airlock)) //Allow things that aren't part of the lift up
-					continue
+				continue
 			if(isobserver(AM)) //Don't teleport ghosts
 				continue
 			if(isliving(AM))

@@ -15,7 +15,7 @@ SUBSYSTEM_DEF(overmap)
 		if(!E)
 			continue				//don't want this one! leave it for the garbage collector
 		events += E				//add it to the list of all events (controls)
-	schedule()
+	scheduled = world.time + 9000 //Give them about 20 minutes of prep time before we start throwing shit at them.
 	return
 
 /datum/controller/subsystem/overmap/proc/schedule()

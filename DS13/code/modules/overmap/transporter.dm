@@ -163,15 +163,11 @@
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/L = user
-	if(L.wear_id)
-		var/obj/item/card/id/ID = L.wear_id
-		if(ID && istype(ID))
-			if(!check_access(ID))
-				to_chat(L, "You require a security level access card to use this console!.")
-				return
-		else
+	var/obj/item/card/id/ID = L.get_idcard(FALSE)
+	if(ID && istype(ID))
+		if(!check_access(ID))
 			to_chat(L, "You require a security level access card to use this console!.")
-			return
+			return FALSE
 	else
 		to_chat(L, "You require a security level access card to use this console!.")
 		return
@@ -195,7 +191,7 @@
 	for(var/obj/structure/overmap/S in GLOB.overmap_ships)
 		if(get_dist(S, thearea.linked_overmap) > thearea.linked_overmap.transporter_range) //Is it in range for transport?
 			continue
-		if(S.shields.check_vulnerability() && S != thearea.linked_overmap)
+		if(S.shields.check_vulnerability() || thearea.linked_overmap.main_overmap) //If they don't have shields, or you want to site to site transport.
 			ships += S
 	if(!ships.len)
 		to_chat(user, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>there are no suitable ships nearby. Target shields must be weakened to initiate transport</span>")

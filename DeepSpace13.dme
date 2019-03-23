@@ -2776,6 +2776,7 @@
 #include "DS13\code\modules\clothing\under\trek.dm"
 #include "DS13\code\modules\EMH\EMH.dm"
 #include "DS13\code\modules\goonchat\darkmode-pref.dm"
+#include "DS13\code\modules\jobs\job_types\bridge.dm"
 #include "DS13\code\modules\jobs\job_types\cadet.dm"
 #include "DS13\code\modules\mob\living\carbon\human\species_types\Andorian.dm"
 #include "DS13\code\modules\mob\living\carbon\human\species_types\klingon.dm"

@@ -7,8 +7,8 @@ Cadet
 	flag = CADET
 	department_flag = CIVILIAN
 	faction = "Station"
-	total_positions = 5
-	spawn_positions = 5
+	total_positions = -1
+	spawn_positions = -1
 	supervisors = "all members of the crew"
 	selection_color = "#dddddd"
 	access = list()
@@ -34,4 +34,9 @@ Cadet
 
 /datum/outfit/job/cadet/post_equip(mob/living/carbon/human/H)
 	. = ..()
-	to_chat(H, "<span_class='nicegreen'><b>Welcome to starfleet! As a cadet you have no responsibilities and are free to roam the ship. Other crewmembers will assist / teach you if you ask them, or you can ask our admin team for more information.</b></span>")
+	to_chat(H, "<span class='nicegreen'><b>Welcome to starfleet! As a cadet you have no responsibilities and are free to roam the ship. Other crewmembers will assist / teach you if you ask them, or you can ask our admin team for more information.</b></span>")
+
+/obj/effect/landmark/start/cadet
+	name = "Cadet"
+	icon_state = "Cadet"
+	icon = 'DS13/icons/effects/landmarks_static.dmi'

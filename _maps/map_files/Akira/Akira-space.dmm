@@ -344,6 +344,10 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/space)
+"BM" = (
+/obj/structure/mirror,
+/turf/closed/wall/trek_smooth/room,
+/area/ship/bridge/tos)
 
 (1,1,1) = {"
 ab
@@ -69148,7 +69152,7 @@ aC
 au
 bw
 aC
-au
+BM
 bh
 bp
 bp
