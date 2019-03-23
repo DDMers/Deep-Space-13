@@ -5,8 +5,9 @@
 		return
 	if(alert(user,"Open a starfleet command priority channel with the crew?","Robust hologram creator","Yes","No") != "Yes")
 		return
-	var/mob/living/communicator/admin/C = new(get_turf(src))
+	var/mob/living/carbon/human/communicator/admin/C = new(get_turf(src))
 	C.alpha = 0
+	C.emitter = src
 	C.original_ghost = C
 	C.admin_select_appearance()
 	C.ckey = user.ckey
@@ -16,45 +17,34 @@
 // This is basically a communications hologram mob. It can exist in nullspace
 // or it can be manifested on a communications holopad. It usually controls a
 // ship, unless it's adminspawned, then it's just a CC hologram or something.
-/mob/living/communicator
+/mob/living/carbon/human/communicator
 	name = "Communicator"
 	desc = "A communications hologram. This person is somewhere else, but they're being projected here via a communications device."
 	var/mob/original_ghost
 	density = FALSE
 	status_flags = GODMODE  // You can't damage it.
+	var/obj/machinery/holopad/emitter
 
-/mob/living/communicator/New()
+/mob/living/carbon/human/communicator/New()
 	gender = pick(MALE,FEMALE)
 	name = random_unique_name(gender)
 	..()
 
-/mob/living/communicator/admin/ClickOn(target)
-	. = ..()
+/mob/living/carbon/human/communicator/admin/ClickOn(target)
 	if(alert(src,"End communications?","Admin hologram panel","Yes","No") == "Yes")
 		if(original_ghost && ckey)
 			original_ghost.ckey = ckey
 			qdel(src)
 
-/mob/living/communicator/proc/update_hologram_to_outfit(datum/outfit/O)
-	if(!O)
-		return
-	var/mob/living/carbon/human/dummy/mannequin = new(get_turf(pick(GLOB.prisonwarp)))
-	mannequin.equipOutfit(O)
-	CHECK_TICK
-	var/icon/mob_icon = icon('icons/effects/effects.dmi', "nothing")
-	CHECK_TICK
-	// This is a bit of extra work, but I find it really annoying when sprites
-	// permanently face south (I'm looking at you, Paradise)
-	for(var/cdir in GLOB.cardinals)
-		mannequin.setDir(cdir)
-		mob_icon.Insert(getFlatIcon(mannequin), dir=cdir)
-		CHECK_TICK
-	icon = getHologramIcon(mob_icon, 1, "green")
-	alpha = 255
-	qdel(mannequin)
+/mob/living/carbon/human/communicator/proc/update_hologram_to_outfit(datum/outfit/O)
+	if(O)
+		equipOutfit(O)
+	alpha = 150
+	add_atom_colour("#77abff", FIXED_COLOUR_PRIORITY)
 
-/mob/living/communicator/proc/admin_select_appearance()
-	name = input("Select a name for your communications hologram", "Robust hologram creator") as text
+/mob/living/carbon/human/communicator/proc/admin_select_appearance()
+	real_name = input("Select a name for your communications hologram", "Robust hologram creator") as text
+	name = real_name
 	var/list/outfits = list("Naked","Custom","As Job...")
 	var/list/paths = subtypesof(/datum/outfit) - typesof(/datum/outfit/job)
 	for(var/path in paths)

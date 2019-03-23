@@ -17,6 +17,17 @@
 	var/mob/living/carbon/operator
 //	var/confinement_beam = ANNULAR_CONFINEMENT_NARROW //Narrow = only pickup humans, wide = pick up everything that isnt bolted to the ground
 	req_one_access = list(ACCESS_SEC_DOORS)
+	var/list/log = list() //Logging to check if anyone's marooned.
+
+/obj/machinery/computer/camera_advanced/transporter_control/examine(mob/user)
+	. = ..()
+	var/dat
+	dat += "<br><h1>Transporter operation log:</h1> "
+	for(var/x in log)
+		dat += "<br>[x]"
+	var/datum/browser/popup = new(user, "transporter log", name, 450, 520)
+	popup.set_content(dat)
+	popup.open()
 
 /obj/machinery/computer/camera_advanced/transporter_control/GrantActions(mob/living/user)
 	//dont need jump cam action
@@ -105,6 +116,7 @@
 	for(var/obj/machinery/transporter_pad/A in orange(10,src))
 		if(istype(A, /obj/machinery/transporter_pad))
 			linked += A
+			A.transporter_controller = src
 
 /obj/machinery/computer/camera_advanced/transporter_control/proc/activate_pads()
 //	if(!powered())
@@ -258,6 +270,8 @@
 			target.forceMove(teleport_target)
 			new /obj/effect/temp_visual/transporter/mob(get_turf(target))
 			playsound(target.loc, 'DS13/sound/effects/transporter/retrieve.ogg', 100, 4)
+	if(target && transporter_controller)
+		transporter_controller.log += "[station_time_timestamp()] : [transporter_controller.operator] beamed <b>[target]</b> to [get_area(teleport_target)]."
 
 /obj/machinery/transporter_pad/proc/retrieve(mob/living/target)
 //	if(!powered())
@@ -268,6 +282,8 @@
 		playsound(target.loc, 'DS13/sound/effects/transporter/retrieve.ogg', 100, 4)
 		target.forceMove(get_turf(src))
 		new /obj/effect/temp_visual/transporter/mob(get_turf(target))
+	if(target && transporter_controller)
+		transporter_controller.log += "[station_time_timestamp()] : [transporter_controller.operator] beamed <b>[target]</b> back onto the ship."
 
 /obj/machinery/transporter_pad/proc/retrieve_obj(obj/target)
 	if(!powered())
