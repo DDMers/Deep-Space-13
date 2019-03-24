@@ -42,6 +42,13 @@
 	icon_state = "closed"
 	req_one_access = list(ACCESS_ARMORY)
 
+/obj/machinery/door/airlock/trek/ship/sec/torpedo
+	name = "Torpedo bay"
+	icon = 'DS13/icons/obj/machinery/doors/security.dmi'
+	desc = "The torpedo bay, where you load ammo for the ship's photonic launchers or say goodbye to dead crewmates. Doctors and counselors have access to this too."
+	icon_state = "closed"
+	req_one_access = list(ACCESS_MORGUE) //Doctors and chaplain can conduct funerals.
+
 /obj/machinery/door/airlock/trek/ship/command
 	name = "Command"
 	icon = 'DS13/icons/obj/machinery/doors/command.dmi'

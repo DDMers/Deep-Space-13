@@ -58,6 +58,7 @@
 
 /datum/job/warden
 	outfit = /datum/outfit/job/warden/DS13
+	title = "Master at arms"
 
 /datum/outfit/job/warden/DS13
 	name = "Trek-Warden"
@@ -66,6 +67,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 	belt = /obj/item/gun/energy/phaser
+	suit = null
 
 /datum/job/officer
 	outfit = /datum/outfit/job/officer/DS13

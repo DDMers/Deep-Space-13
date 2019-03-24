@@ -34,6 +34,7 @@
 		if(M.occupant == src)
 			M.go_out()
 
+	to_chat(src, "<span class='warning'>You have perished!<br> You must now wait until your character is properly buried (shot out the torpedo tube). Once you are laid to rest you will be able to respawn.</span>")
 	dna.species.spec_death(gibbed, src)
 
 	if(SSticker.HasRoundStarted())

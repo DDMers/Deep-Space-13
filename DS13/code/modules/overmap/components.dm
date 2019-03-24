@@ -27,7 +27,7 @@
 	return
 
 /obj/structure/overmap_component/attack_ai(mob/user)
-	return linked.enter(user, position)
+	return attack_hand(user)
 
 /obj/structure/overmap_component/take_damage(amount)
 	if(obj_integrity <= amount)
@@ -260,16 +260,17 @@
 	var/locked = FALSE
 
 /obj/structure/overmap_component/plasma_injector/attack_hand(mob/user)
-	var/mob/living/carbon/human/L = user
-	var/obj/item/card/id/ID = L.get_idcard(FALSE)
-	if(ID && istype(ID))
-		if(!check_access(ID))
-			to_chat(user, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>you are not authorized to execute this command.</span>")
+	if(ishuman(user))
+		var/mob/living/carbon/human/L = user
+		var/obj/item/card/id/ID = L.get_idcard(FALSE)
+		if(ID && istype(ID))
+			if(!check_access(ID))
+				to_chat(user, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>you are not authorized to execute this command.</span>")
+				return
+		else
+			to_chat(user, "You need to be wearing an ID to use this machine.")
 			return
-	else
-		to_chat(user, "You need to be wearing an ID to use this machine.")
-		return
-	eject()
+		eject()
 
 /obj/structure/overmap_component/plasma_injector/examine(mob/user)
 	. = ..()
@@ -681,23 +682,22 @@
 
 
 /obj/structure/overmap_component/system_control/attack_hand(mob/user)
-	if(!linked || QDELETED(linked))
-		find_overmap()
-	if(!controlling)
-		find_system()
-		return
-	if(!ishuman(user))
-		return
-	var/mob/living/carbon/human/L = user
-	if(!hacked)
-		var/obj/item/card/id/ID = L.get_idcard(FALSE)
-		if(ID && istype(ID))
-			if(!check_access(ID))
-				to_chat(user, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>you are not authorized to execute this command.</span>")
-				return
-		else
-			to_chat(user, "You need to be wearing an ID to use this machine.")
+	if(ishuman(user))
+		if(!linked || QDELETED(linked))
+			find_overmap()
+		if(!controlling)
+			find_system()
 			return
+		var/mob/living/carbon/human/L = user
+		if(!hacked)
+			var/obj/item/card/id/ID = L.get_idcard(FALSE)
+			if(ID && istype(ID))
+				if(!check_access(ID))
+					to_chat(user, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>you are not authorized to execute this command.</span>")
+					return
+			else
+				to_chat(user, "You need to be wearing an ID to use this machine.")
+				return
 	var/Q = alert(user,"[active ? "deactivate" : "activate"] [controlling] subsystem?","[src]","yes","no")
 	if(Q == "yes")
 		to_chat(user, "You [active ? "deactivate" : "activate"] all ODN relays connected to the [controlling] subsystem.")

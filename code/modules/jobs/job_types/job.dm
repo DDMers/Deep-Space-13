@@ -66,6 +66,12 @@
 	if(mind_traits)
 		for(var/t in mind_traits)
 			H.mind.add_trait(t, JOB_TRAIT)
+	if(GLOB.used_names.len) //If we've had people get laid to rest. We need to make sure this character respects NLR. DeepSpace13 - Respawn.
+		if(H.real_name in GLOB.used_names)
+			var/mob/living/carbon/human/S = H
+			to_chat(S, "<b>Your name has been randomized to respect NLR. Remember that you're playing a new character now!</b>")
+			var/newname = S.dna.species.random_name()
+			S.fully_replace_character_name(S.real_name, newname)
 
 /datum/job/proc/announce(mob/living/carbon/human/H)
 	if(head_announce)

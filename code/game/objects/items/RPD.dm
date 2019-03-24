@@ -21,6 +21,7 @@ GLOBAL_LIST_INIT(atmos_pipe_recipes, list(
 		new /datum/pipe_info/pipe("Digital Valve",		/obj/machinery/atmospherics/components/binary/valve/digital),
 		new /datum/pipe_info/pipe("4-Way Manifold",		/obj/machinery/atmospherics/pipe/manifold4w),
 		new /datum/pipe_info/pipe("Layer Manifold",		/obj/machinery/atmospherics/pipe/layer_manifold),
+		new /datum/pipe_info/pipe("Multi deck adapter",		/obj/machinery/atmospherics/pipe/simple/multiz),
 	),
 	"Devices" = list(
 		new /datum/pipe_info/pipe("Connector",			/obj/machinery/atmospherics/components/unary/portables_connector),
@@ -239,7 +240,7 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 		var/datum/asset/assets = get_asset_datum(/datum/asset/spritesheet/pipes)
 		assets.send(user)
 
-		ui = new(user, src, ui_key, "rpd", name, 300, 550, master_ui, state)
+		ui = new(user, src, ui_key, "rpd", name, 400, 550, master_ui, state) //DeepSpace13 - Makes the RPD ui a bit wider
 		ui.open()
 
 /obj/item/pipe_dispenser/ui_data(mob/user)

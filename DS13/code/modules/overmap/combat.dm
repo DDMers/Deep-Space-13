@@ -12,7 +12,7 @@
 	var/damage = 0 //How much damage do we do? This is +10'd assuming weapons are powered!
 	var/charging = FALSE //charging weapons? if so, we can't fire
 	var/fire_mode = "phaser"
-	var/photons = 4 //How many torpedoes do we have?
+	var/photons = 0 //How many torpedoes do we have? We need this to start empty, as sci must load torps.
 	var/list/weapon_sounds = list('DS13/sound/effects/weapons/phaser.ogg','DS13/sound/effects/weapons/phaser2.ogg','DS13/sound/effects/weapons/phaser3.ogg','DS13/sound/effects/weapons/phaser4.ogg')
 	var/obj/structure/overmap/tractor_target = null //Are we tractoring a target? This forces it to move towards us.
 	var/datum/beam/tractor_beam = null
@@ -21,6 +21,7 @@
 	var/area/linked_area = null
 	var/destroyed = FALSE
 	var/damage_sector = "shields" //Tactical can change this! What system are we targeting?
+	var/list/torpedo_damage_list = list() //Keeps track of the damage that each torpedo that's been loaded will do. Science can upgrade the torpedoes for even more damage.
 
 /obj/structure/overmap/proc/send_sound_crew(var/sound/S)
 	for(var/mob/M in operators)
@@ -161,7 +162,10 @@
 			A.preparePixelProjectile(target,src)
 			A.pixel_x = rand(0, 5)
 			A.fire()
-			target.take_damage(src, torpedo_damage)
+			var/next_torp_damage = torpedo_damage
+			if(torpedo_damage_list.len)
+				next_torp_damage = pick_n_take(torpedo_damage_list) //Pick from the photons we've got loaded.
+			target.take_damage(src, next_torp_damage)
 		else
 			if(tactical)
 				voice_alert('DS13/sound/effects/voice/OutOfTorpedoes.ogg')
