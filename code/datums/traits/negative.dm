@@ -370,3 +370,20 @@
 		if(prob(1))
 			new/obj/item/reagent_containers/food/snacks/spaghetti/pastatomato(get_turf(H)) //now that's what I call spaghetti code
 
+/datum/quirk/replicant_eat_that
+	name = "Replicant Snob"
+	desc = "You find yourself greatly disliking anything made by a replicator. It's the Old Fashion way, or no way!"
+	value = -1
+	gain_text = "<span class='notice'>You crave something real.</span>"
+	lose_text = "<span class='notice'>You no longer dislike replicated foods.</span>"
+
+/datum/quirk/replicant_eat_that/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.disliked_food |= REPLICATED
+
+/datum/quirk/replicant_eat_that/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		var/datum/species/species = H.dna.species
+		species.disliked_food &= ~REPLICATED

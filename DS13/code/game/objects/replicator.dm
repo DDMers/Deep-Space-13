@@ -12,12 +12,21 @@
 	anchored = TRUE
 	flags_1 = HEAR_1 //So it can hear you order your food
 	circuit = /obj/item/circuitboard/machine/replicator
-	var/list/menutier1 = list("rice", "egg", "ration pack", "glass") //It starts off terribly so the chef isn't replaced. You can then upgrade it via RnD to give actual food.
-	var/list/menutier2 = list("burger", "steak", "tea earl grey", "coffee", "fries","onion rings", "pancakes")
-	var/list/menutier3 = list("cheese pizza", "meat pizza", "mushroom pizza", "meat pizza", "pineapple pizza", "donkpocket pizza", "vegetable pizza")
-	var/list/menutier4 = list("cake batter", "dough","egg box", "flour", "milk", "enzymes", "cheese wheel", "meat slab","an insult to pizza")
+	var/list/menutier1 = list("rice", "boiled egg", "ration pack", "raw egg", "glass") //It starts off terribly so the chef isn't replaced. You can then upgrade it via RnD to give actual food.
+	//Tier 1 should be reserved for bland unappetizing foods. --AbsurdlyLudicrous
+	var/list/menutier2 = list("burger", "steak", "tea earl grey", "coffee", "fries","onion rings", "pancakes",
+	"meat slab", "flour", "dough", "fried eggs", "tofu burger", "milk", "soy milk")
+	//Tier 2 should be reserved for cheap diner foods. --AbsurdlyLudicrous
+	var/list/menutier3 = list("cake batter","cheese pizza", "enzymes", "cheese wheel", "meat pizza",
+	"mushroom pizza", "meat pizza", "pineapple pizza", "donkpocket pizza", "vegetable pizza")
+	//Tier 3 should be reserved for proper restraunt foods. --AbsurdlyLudicrous
+	var/list/menutier4 = list("honkdae","wing fang chu", "clown's tears","mime burger", "clown burger",
+	"spell burger")
+	//Tier 4 should be reserved for exotic foods. --AbsurdlyLudicrous
 	var/list/all_menus = list() //All the menu items. Built on init(). We scan for menu items that've been ordered here.
-	var/list/menualtnames = list("nutrients", "donk pizza", "veggie pizza", "surprise me", "you choose", "something", "i dont care","slab of meat","nutritional supplement")
+	var/list/menualtnames = list("nutrients", "egg rp", "donk pizza", "veggie pizza", "surprise me",
+	"you choose", "something", "i dont care","slab of meat","nutritional supplement","an insult to pizza",
+	"clown sundae","something that tastes funny","wizard burger","magic burger", "ei nath")
 	var/list/temps = list("cold", "warm", "hot", "extra hot")
 	var/activator = "computer"
 	var/menutype = READY //Tracks what stage the machine's at. If it's replicating the UI pops up with "please wait!"
@@ -190,7 +199,7 @@
 /obj/machinery/replicator/proc/replicate(var/what, var/temp, var/mob/living/user)
 	var/atom/food
 	switch(what)
-		if("egg")
+		if("boiled egg")
 			food = new /obj/item/reagent_containers/food/snacks/boiledegg(get_turf(src))
 		if("rice")
 			food = new /obj/item/reagent_containers/food/snacks/salad/boiledrice(get_turf(src))
@@ -198,6 +207,8 @@
 			food = new /obj/item/reagent_containers/food/snacks/rationpack(get_turf(src))
 		if("glass")
 			food = new /obj/item/reagent_containers/food/drinks/drinkingglass(get_turf(src))
+		if("raw egg","egg rp")
+			food = new /obj/item/reagent_containers/food/snacks/egg(get_turf(src))
 		if("surprise me","you choose","something","i dont care")
 			if(emagged)
 				switch(rand(1,6))
@@ -223,14 +234,26 @@
 				food = new /obj/item/reagent_containers/food/snacks/soup/mystery(get_turf(src))
 	if(menu_grade >= 2) //SCANNER GRADE 2 (or above)!
 		switch(what)
+			if("dough")
+				food = new /obj/item/reagent_containers/food/snacks/dough(get_turf(src))
+			if("milk")
+				food = new /obj/item/reagent_containers/food/condiment/milk(get_turf(src))
+			if("soy milk")
+				food = new /obj/item/reagent_containers/food/condiment/soymilk(get_turf(src))
 			if("burger")
 				food = new /obj/item/reagent_containers/food/snacks/burger/plain(get_turf(src))
+			if("tofu burger")
+				food = new /obj/item/reagent_containers/food/snacks/burger/tofu(get_turf(src))
+			if("flour")
+				food = new /obj/item/reagent_containers/food/condiment/flour(get_turf(src))
 			if("steak")
 				food = new /obj/item/reagent_containers/food/snacks/meat/steak/plain(get_turf(src))
 			if("fries")
 				food = new /obj/item/reagent_containers/food/snacks/fries(get_turf(src))
 			if("onion rings")
 				food = new /obj/item/reagent_containers/food/snacks/onionrings(get_turf(src))
+			if("fried eggs")
+				food = new /obj/item/reagent_containers/food/snacks/friedegg(get_turf(src))
 			if("pancakes")
 				food = new /obj/item/reagent_containers/food/snacks/pancakes(get_turf(src))
 			if("tea earl grey")
@@ -239,18 +262,22 @@
 				food.desc = "Just how Captain Picard likes it."
 				if(emagged)
 					var/tea = food.reagents.get_reagent_amount("tea")
-					food.reagents.add_reagent("chloralhydrate", tea)
-					food.reagents.remove_reagent("coffee",tea)
+					food.reagents.add_reagent("ethanol", tea)
+					food.reagents.remove_reagent("tea",tea)
 			if("coffee")
 				food = new /obj/item/reagent_containers/food/drinks/coffee(get_turf(src))
 				food.name = "coffee"
 				food.desc = "A wise woman once said that coffee keeps you sane in deep space."
 				if(emagged)
 					var/coffee = food.reagents.get_reagent_amount("coffee")
-					food.reagents.add_reagent("ethanol", coffee)
+					food.reagents.add_reagent("chloralhydrate", coffee)
 					food.reagents.remove_reagent("coffee",coffee)
+			if("meat slab","slab of meat")
+				food = new /obj/item/reagent_containers/food/snacks/meat/slab(get_turf(src))
 	if(menu_grade >= 3) //SCANNER GRADE 3 (or above)!
 		switch(what)
+			if("cake batter")
+				food = new /obj/item/reagent_containers/food/snacks/cakebatter(get_turf(src))
 			if("cheese pizza")
 				food = new /obj/item/reagent_containers/food/snacks/pizzaslice/margherita(get_turf(src))
 			if("meat pizza")
@@ -263,24 +290,24 @@
 				food = new /obj/item/reagent_containers/food/snacks/pizzaslice/pineapple(get_turf(src))
 			if("donk pizza","donkpocket pizza")
 				food = new /obj/item/reagent_containers/food/snacks/pizzaslice/donkpocket(get_turf(src))
-	if(menu_grade >= 4)
-		switch(what)
-			if("cake batter")
-				food = new /obj/item/reagent_containers/food/snacks/cakebatter(get_turf(src))
-			if("dough")
-				food = new /obj/item/reagent_containers/food/snacks/dough(get_turf(src))
-			if("egg box")
-				food = new /obj/item/storage/fancy/egg_box(get_turf(src))
-			if("flour")
-				food = new /obj/item/reagent_containers/food/condiment/flour(get_turf(src))
-			if("milk")
-				food = new /obj/item/reagent_containers/food/condiment/milk(get_turf(src))
 			if("enzymes")
 				food = new /obj/item/reagent_containers/food/condiment/enzyme(get_turf(src))
 			if("cheese wheel")
 				food = new /obj/item/reagent_containers/food/snacks/store/cheesewheel(get_turf(src))
-			if("meat slab","slab of meat")
-				food = new /obj/item/reagent_containers/food/snacks/meat/slab(get_turf(src))
+	if(menu_grade >= 4)
+		switch(what)
+			if("honkdae","clown sundae","something that tastes funny")
+				food = new /obj/item/reagent_containers/food/snacks/honkdae(get_turf(src))
+			if("wing fang chu")
+				food = new /obj/item/reagent_containers/food/snacks/soup/wingfangchu(get_turf(src))
+			if("clown's tears")
+				food = new /obj/item/reagent_containers/food/snacks/soup/clownstears(get_turf(src))
+			if("mime burger")
+				food = new /obj/item/reagent_containers/food/snacks/burger/mime(get_turf(src))
+			if("clown burger")
+				food = new /obj/item/reagent_containers/food/snacks/burger/clown(get_turf(src))
+			if("spell burger","wizard burger","magic burger","ei nath")
+				food = new /obj/item/reagent_containers/food/snacks/burger/spell(get_turf(src))
 
 	if(food)
 		var/nutriment = food.reagents.get_reagent_amount("nutriment")
@@ -305,6 +332,9 @@
 					food.reagents.remove_reagent("nutriment",nutriment)
 				var/currentHandIndex = user.get_held_index_of_item(food)
 				user.put_in_hand(food,currentHandIndex)
+				if(istype(food, /obj/item/reagent_containers/food/snacks)) //make it replicator food.
+					var/obj/item/reagent_containers/food/snacks/modified = food
+					modified.foodtype |= REPLICATED
 
 		else
 			visible_message("<span_class='warning'> Insufficient fuel to create [food]. [src] requires [nutriment] U of biomatter.</span>")
