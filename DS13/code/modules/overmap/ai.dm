@@ -58,8 +58,7 @@
 	desc = "Her crew must have suffered a terrible fate..."
 	icon = 'DS13/icons/overmap/miranda_assimilated.dmi'
 	icon_state = "assimilated2"
-	max_shield_health = 300
-	max_health = 550
+	max_health = 200
 	class = "borg-miranda"
 	damage_states = FALSE
 
