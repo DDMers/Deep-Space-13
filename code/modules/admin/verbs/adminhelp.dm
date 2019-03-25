@@ -190,8 +190,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	_interactions = list()
 
 	if(is_bwoink)
-		AddInteraction("<span_class='notice'>[key_name_admin(usr)] PM'd [LinkedReplyName()]</span>")
-		message_admins("<span_class='notice'>Ticket [TicketHref("#[id]")] created</span>")
+		AddInteraction("<span class='notice'>[key_name_admin(usr)] PM'd [LinkedReplyName()]</span>")
+		message_admins("<span class='notice'>Ticket [TicketHref("#[id]")] created</span>")
 	else
 		MessageNoRecipient(msg)
 

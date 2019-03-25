@@ -61,7 +61,7 @@
 		express_console.beacon = null
 		express_console = null
 	update_status(SP_UNLINK)
-	update_status(SP_UNREADY) 
+	update_status(SP_UNREADY)
 
 /obj/item/supplypod_beacon/proc/link_console(obj/machinery/computer/cargo/express/C, mob/living/user)
 	if (C.beacon)//if new console has a beacon, then...
@@ -91,5 +91,5 @@
 		if(new_beacon_name)
 			name += " ([tag])"
 		return
-	else	
+	else
 		return ..()

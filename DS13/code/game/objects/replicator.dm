@@ -263,7 +263,7 @@
 				if(emagged)
 					var/tea = food.reagents.get_reagent_amount("tea")
 					food.reagents.add_reagent("ethanol", tea)
-					food.reagents.remove_reagent("tea",tea)
+					food.reagents.remove_reagent("tea",tea) //seriously, this caused conflict? ONLY this?
 			if("coffee")
 				food = new /obj/item/reagent_containers/food/drinks/coffee(get_turf(src))
 				food.name = "coffee"

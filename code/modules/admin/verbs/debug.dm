@@ -213,7 +213,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 	. = ""
 	if(islist(returnval))
 		var/list/returnedlist = returnval
-		. = "<span_class='notice'>"
+		. = "<span class='notice'>"
 		if(returnedlist.len)
 			var/assoc_check = returnedlist[1]
 			if(istext(assoc_check) && (returnedlist[assoc_check] != null))
@@ -230,7 +230,7 @@ GLOBAL_PROTECT(AdminProcCallSpamPrevention)
 		. += "</span>"
 
 	else
-		. = "<span_class='notice'>[procname] returned: [!isnull(returnval) ? returnval : "null"]</span>"
+		. = "<span class='notice'>[procname] returned: [!isnull(returnval) ? returnval : "null"]</span>"
 
 
 /client/proc/Cell()

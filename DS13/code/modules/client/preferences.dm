@@ -116,7 +116,7 @@
 		to_chat(src, "<b>Your backstorystory:</b> <br> [output]")
 
 /datum/preferences/proc/compile_backstory()
-	return "<span_class='notice'>[backstory_reason][backstory_academy][backstory_experience][backstory_parents][backstory_upbringing][backstory_accepted][backstory_ambition]</span>"
+	return "<span class='notice'>[backstory_reason][backstory_academy][backstory_experience][backstory_parents][backstory_upbringing][backstory_accepted][backstory_ambition]</span>"
 
 /datum/preferences/proc/create_job_description(var/mob/user) //Adapted from CEV-Eris
 	var/datum/job/previewJob //For what job will we show a description?

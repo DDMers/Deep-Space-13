@@ -10,7 +10,7 @@ Applications: 8 servants, 3 caches, and 100 CV
 GLOBAL_LIST_INIT(scripture_states,scripture_states_init_value()) //list of clockcult scripture states for announcements
 
 /proc/scripture_states_init_value()
-	return list(SCRIPTURE_DRIVER = TRUE, SCRIPTURE_SCRIPT = FALSE, SCRIPTURE_APPLICATION = FALSE) 
+	return list(SCRIPTURE_DRIVER = TRUE, SCRIPTURE_SCRIPT = FALSE, SCRIPTURE_APPLICATION = FALSE)
 
 /datum/clockwork_scripture
 	var/descname = "useless" //a simple name for the scripture's effect

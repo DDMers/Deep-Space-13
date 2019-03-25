@@ -19,7 +19,7 @@
 
 /obj/structure/lavaland/ash_walker/Initialize()
 	.=..()
-	START_PROCESSING(SSprocessing, src)	
+	START_PROCESSING(SSprocessing, src)
 
 /obj/structure/lavaland/ash_walker/deconstruct(disassembled)
 	new /obj/item/assembly/signaler/anomaly (get_step(loc, pick(GLOB.alldirs)))

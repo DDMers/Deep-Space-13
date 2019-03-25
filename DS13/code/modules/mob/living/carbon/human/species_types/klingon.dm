@@ -20,7 +20,8 @@
 	. = ..()
 	addtimer(CALLBACK(src, .proc/give_language, C), 15)
 	if(C.client)
-		if(C.client.prefs.real_name == C.real_name) //Random name if this isnt their chosen name
+		if(C.client.prefs.real_name) //Random name if this isnt their chosen name
+			C.real_name = C.client.prefs.real_name
 			return
 	var/new_name = random_name()
 	C.real_name = new_name

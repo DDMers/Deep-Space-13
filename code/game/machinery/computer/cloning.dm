@@ -63,7 +63,7 @@
 				. = pod
 
 /proc/grow_clone_from_record(obj/machinery/clonepod/pod, datum/data/record/R)
-	return pod.growclone(R.fields["name"], R.fields["UI"], R.fields["SE"], R.fields["mind"], R.fields["last_death"], R.fields["mrace"], R.fields["features"], R.fields["factions"], R.fields["quirks"], R.fields["bank_account"]) 	
+	return pod.growclone(R.fields["name"], R.fields["UI"], R.fields["SE"], R.fields["mind"], R.fields["last_death"], R.fields["mrace"], R.fields["features"], R.fields["factions"], R.fields["quirks"], R.fields["bank_account"])
 
 /obj/machinery/computer/cloning/process()
 	if(!(scanner && LAZYLEN(pods) && autoprocess))
@@ -86,7 +86,7 @@
 			temp = "[R.fields["name"]] => <font class='good'>Cloning cycle in progress...</font>"
 		if(result & CLONING_DELETE_RECORD)
 			records -= R
-			
+
 
 /obj/machinery/computer/cloning/proc/updatemodules(findfirstcloner)
 	scanner = findscanner()
@@ -354,7 +354,7 @@
 
 		spawn(20)
 			scan_occupant(scanner.occupant)
-				
+
 			loading = FALSE
 			updateUsrDialog()
 			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, 0)
@@ -394,9 +394,9 @@
 				playsound(src, 'sound/machines/terminal_prompt.ogg', 50, 0)
 			else
 				temp = "Access Denied"
-				menu = 2 
+				menu = 2
 				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
-				
+
 
 		else if (menu == 4)
 			temp = "[active_record.fields["name"]] => Record deleted."
@@ -408,7 +408,7 @@
 	else if (href_list["disk"]) //Load or eject.
 		switch(href_list["disk"])
 			if("load")
-						
+
 
 				if (!diskette || !istype(diskette.fields))
 					temp = "<font class='bad'>Load error.</font>"
@@ -430,7 +430,7 @@
 					overwrite_field_if_available(active_record, diskette, "UI")
 				if(include_se)
 					overwrite_field_if_available(active_record, diskette, "SE")
-					
+
 				temp = "Load successful."
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, 0)
 
@@ -474,7 +474,7 @@
 			else if(pod.occupant)
 				temp = "<font class='bad'>Cloning cycle already in progress.</font>"
 				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
-			else 
+			else
 				var/result = grow_clone_from_record(pod, C)
 				if(result & CLONING_SUCCESS)
 					temp = "[C.fields["name"]] => <font class='good'>Cloning cycle in progress...</font>"
@@ -488,7 +488,7 @@
 						active_record = null
 					menu = 1
 					records -= C
-					
+
 			if(!success)
 				temp = "[C.fields["name"]] => <font class='bad'>Initialisation failure.</font>"
 				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)

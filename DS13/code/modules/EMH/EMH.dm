@@ -2,23 +2,42 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 
 //EMITTER
 
+/obj/item/circuitboard/machine/emh_emitter
+	name = "EMH emitter (Machine Board)"
+	build_path = /obj/machinery/emh_emitter
+	req_components = list(
+		/obj/item/stock_parts/matter_bin = 1,
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stock_parts/scanning_module = 2,
+		/obj/item/stock_parts/micro_laser = 3)
+
 /obj/machinery/emh_emitter
 	name = "Emergency medical hologram emitter"
-	desc = "Simply click this device and an emergency medical hologram will be summoned. Swipe it with a high level ID to terminate the current EMH if it's misbehaving."
+	desc = "Simply click this device and an emergency medical hologram will be summoned. Swipe it with a medical level ID to terminate the current EMH if it's misbehaving."
 	icon = 'DS13/icons/obj/decor/wall_decor.dmi'
 	icon_state = "emh-off"
 	anchored = TRUE
 	density = FALSE
 	pixel_y = 32 //Put on the tile below a wall etc etc modular fun time mapping mayhem
-	var/range = 10 //10 tiles? Pretty damn generous.
 	var/mob/living/carbon/human/species/holographic/emh
-	req_access = list(ACCESS_HEADS)
+	req_one_access = list(ACCESS_MEDICAL)
 	var/locked = FALSE //Cooldown to prevent spam
+	mouse_over_pointer = MOUSE_HAND_POINTER
+	var/spawning_emh = FALSE //are we making an EMH? if yes, then ignore the process()
+	var/obj/item/radio/Radio
+
+/obj/machinery/emh_emitter/attack_ghost(mob/dead/observer/user)
+	attack_hand(user)
+
+/obj/machinery/emh_emitter/attack_ai(mob/user)
+	attack_hand(user)
 
 /obj/machinery/emh_emitter/Initialize()
 	. = ..()
 	var/area/A = get_area(src) //Unmovable
 	name = "EMH emitter ([A])"
+	Radio = new /obj/item/radio(src)
+	Radio.listening = 0
 
 /obj/machinery/emh_emitter/proc/EMH_present()
 	var/mob/living/carbon/human/species/holographic/S = locate(/mob/living/carbon/human/species/holographic) in GLOB.alive_mob_list
@@ -55,10 +74,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	. = ..()
 	if(!user.client)
 		return
-	var/obj/item/card/id/ID = I
-	if(!istype(ID))
-		return
-	if(check_access(ID))
+	if(allowed(user))
 		var/question = alert("Terminate the current EMH? (this kills the current EMH)",name,"yes","no")
 		if(question == "no" || !question)
 			return
@@ -67,7 +83,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 			emh = locate(/mob/living/carbon/human/species/holographic) in GLOB.alive_mob_list
 		if(emh.client && emh.client.key && blacklist == "yes")
 			GLOB.EMH_blacklist += emh.client.key
-			to_chat(emh, "<span_class='boldnotice'>[user] has blacklisted you from becoming an EMH for the duration of this round! If you feel this was in error, please ahelp immediately.")
+			to_chat(emh, "<span class='boldnotice'>[user] has blacklisted you from becoming an EMH for the duration of this round! If you feel this was in error, please ahelp immediately.")
 			log_game("[user] just blacklisted [emh.client.key] from becoming an EMH for the rest of the round")
 		if(emh)
 			emh.death()//Kill the emh.
@@ -76,6 +92,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 			to_chat(user, "Unable to locate an EMH on the network.")
 
 /obj/machinery/emh_emitter/Destroy()
+	QDEL_NULL(Radio)
 	if(emh)
 		var/obj/machinery/emh_emitter/saveme = locate(/obj/machinery/emh_emitter) in GLOB.machines
 		if(saveme)
@@ -122,7 +139,8 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	if(emh)
 		emh.death()
 	if(user)
-		user.say("Computer, activate emergency medical hologram")
+		if(ishuman(user))
+			user.say("Computer, activate emergency medical hologram")
 		to_chat(user, "Attempting to activate EMH ((This requires a ghost willing to control it...))")
 	activate(null) //No EMH present, try to make one!
 
@@ -146,36 +164,31 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 
 
 /obj/machinery/emh_emitter/process()
-	if(!emh || !is_occupied()) //If we don't have an EMH, no need to process
-		STOP_PROCESSING(SSfastprocess, src)
-		return
-	if(QDELETED(emh)) //Same goes here
+	if(QDELETED(emh))
 		emh = null
+	if(!emh && !spawning_emh) //If we don't have an EMH, no need to process
+		STOP_PROCESSING(SSfastprocess, src)
 		icon_state = "emh-off"
 		return
 	icon_state = "emh-on" //Well we have an EMH, let's check if he's nearby
-	if(get_dist(emh, src) <= range || emh.z == z) //In range, so return early.
+	var/area/ourarea = get_area(src)
+	var/area/emharea = get_area(emh)
+	var/obj/machinery/emh_emitter/target //If the EMH goes out of range, locate the next emitter.
+	if(emharea == ourarea) //EMH is in our area, so no need to snap him back.
 		return
-	var/obj/machinery/emh_emitter/closest = null //Out of range, try find the EMH another emitter or tele him back to us.
-	var/closest_dist = 10 //Distance of closest emitter. We'll compare this to other emitters we find near it.
 	for(var/obj/machinery/emh_emitter/em in GLOB.machines)
-		if(em == src || !emh in orange(em, em.range))
-			return
-		if(get_dist(emh, em) <= closest_dist && em.z == emh.z)
-			closest = em
-			closest_dist = get_dist(emh, em)
-	if(closest)
-		if(get_dist(emh, closest) >= closest.range || emh.z != closest.z) //if he's moved since the last process cycle.
-			to_chat(emh, "You cannot move beyond the range of your holo-emitters!")
-			emh.forceMove(get_turf(closest))
-			return
-		closest.emh = emh //Transfer his program seamlessly
+		if(em == src)
+			continue
+		if(get_area(em) == emharea)
+			target = em
+	if(target)
+		target.emh = emh //Transfer his program seamlessly
 		emh = null
-		closest.icon_state = "emh-on"
+		target.icon_state = "emh-on"
 		icon_state = "emh-off"
-		START_PROCESSING(SSfastprocess, closest)
+		START_PROCESSING(SSfastprocess, target)
 	else
-		to_chat(emh, "You cannot move beyond the range of your holo-emitters!")
+		to_chat(emh, "That room doesn't have an EMH emitter in it!")
 		emh.forceMove(get_turf(src))
 
 /obj/machinery/emh_emitter/proc/activate(var/mob/living/carbon/human/species/holographic/transferred = null) //Activate, if we're not transferring an existing EMH over, then make a new one!
@@ -193,25 +206,31 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		return
 	if(emh) //AFK emh can get replaced with a live one!
 		qdel(emh)
+	spawning_emh = TRUE
 	emh = new /mob/living/carbon/human/species/holographic(get_turf(src)) //Please state th-
 	emh.name = "Emergency Medical Hologram"
 	emh.real_name = "Emergency Medical Hologram"
 	emh.alpha = 0 //So that it "pops" out of nowhere with a mind in it, or else it deletes
 	emh.equipOutfit(/datum/outfit/emh)
-	offer_control_emh(emh)
-	if(!emh.client || !emh.mind)
+	if(offer_control_emh(emh))
+		Radio.set_frequency(FREQ_MEDICAL)
+		Radio.talk_into(src,"An [emh] has just been activated in [get_area(src)]. Swipe an EMH emitter with a medical ID to terminate it if it misbehaves.",FREQ_MEDICAL,get_spans(),get_default_language())
+		emh.on_spawn()
+		emh.alpha = 255
+		spawning_emh = FALSE
+		START_PROCESSING(SSfastprocess,src)
+	else
 		qdel(emh)
 		say("Unable to comply, could not activate EMH")
+		spawning_emh = FALSE
 		return
-	emh.on_spawn()
-	emh.alpha = 255
-	START_PROCESSING(SSfastprocess,src)
-
 
 /proc/offer_control_emh(mob/M) //Specialist proc to check they've not been blacklisted by the captain from being an EMH
 	var/poll_message = "Do you want to play as an emergency medical hologram?"
 	var/list/mob/dead/observer/candidates = pollCandidatesForMob(poll_message, ROLE_EMH, null, FALSE, 100, M)
 	for(var/mob/dead/observer/S in candidates)
+		if(!S.client)
+			candidates -= S
 		if(S.key in GLOB.EMH_blacklist)
 			candidates -= S
 	if(LAZYLEN(candidates))
@@ -221,7 +240,8 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		M.ghostize(0)
 		M.key = C.key
 		return TRUE
-
+	else
+		return FALSE
 
 /obj/machinery/emh_emitter/proc/is_occupied()
 	var/mob/living/global_emh = null //For deactivation of AFK EMHs
@@ -263,6 +283,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 
 /mob/living/carbon/human/species/holographic/proc/on_spawn()
 	var/mob/living/carbon/human/C = src
+	C.status_flags |= GODMODE
 	C.say("Please state the nature of the medical emergency.")
 	C.hair_style = random_hair_style(C.gender)
 	playsound(C.loc, 'DS13/sound/effects/medicalemergency.ogg', 50, 0)
@@ -279,6 +300,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	<li> You must not put the security of the ship / station in danger, you are free to take reasonable risk </li>\
 	<li> If you have any further questions, please ahelp! </li>\
 	</ul>"
+	to_chat(C, "<span class='notice'>You can transfer your program between rooms by clicking any EMH emitter</span>")
 	popup.set_title_image(C.browse_rsc_icon(C.icon, C.icon_state))
 	popup.set_content(s)
 	popup.open()

@@ -23,7 +23,7 @@
 
 	Initialize()
 		. = ..()
-		set_light(6)
+		set_light(2)
 		if(connect_universally)
 			connects_to += typecacheof(/turf/closed/wall/trek_smooth)
 			canSmoothWith += typecacheof(/turf/closed/wall/trek_smooth)
@@ -82,6 +82,15 @@
 	mod = null
 	sheet_type = /obj/item/stack/sheet/duotanium
 	sheet_amount = 1
+
+/turf/closed/wall/trek_smooth/romulan
+	name = "Romulan hull"
+	icon = 'DS13/icons/turf/romulan_wall.dmi'
+	desc = "A wall of strange construction, it's covered in romulan symbols."
+	mod = null
+	sheet_type = /obj/item/stack/sheet/mineral/silver
+	sheet_amount = 1
+	light_color = LIGHT_COLOR_GREEN
 
 /turf/closed/wall/trek_smooth/reinforced
 	name = "Reinforced tritanium hull"
