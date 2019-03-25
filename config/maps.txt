@@ -13,6 +13,10 @@ Format:
 endmap
 
 map DeepSpace13
+	#voteweight 1.5
+endmap
+
+map Akira
 	default
 	#voteweight 1.5
 endmap

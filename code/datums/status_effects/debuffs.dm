@@ -89,11 +89,11 @@
 	tick_interval = 1
 	duration = 100
 	alert_type = null
-	
+
 /datum/status_effect/pacify/on_creation(mob/living/new_owner, set_duration)
 	if(isnum(set_duration))
 		duration = set_duration
-	. = ..()	
+	. = ..()
 
 /datum/status_effect/pacify/on_apply()
 	owner.add_trait(TRAIT_PACIFISM, "status_effect")
@@ -555,7 +555,7 @@
 	examine_text = "<span class='warning'>SUBJECTPRONOUN seems slow and unfocused.</span>"
 	var/stun = TRUE
 	alert_type = /obj/screen/alert/status_effect/trance
-	
+
 /obj/screen/alert/status_effect/trance
 	name = "Trance"
 	desc = "Everything feels so distant, and you can feel your thoughts forming loops inside your head..."

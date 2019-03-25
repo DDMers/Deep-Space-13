@@ -239,7 +239,7 @@
 				food.desc = "Just how Captain Picard likes it."
 				if(emagged)
 					var/tea = food.reagents.get_reagent_amount("tea")
-					food.reagents.add_reagent("chloralhydrate", tea)
+					food.reagents.add_reagent("ethanol", tea)
 					food.reagents.remove_reagent("coffee",tea)
 			if("coffee")
 				food = new /obj/item/reagent_containers/food/drinks/coffee(get_turf(src))
@@ -247,7 +247,7 @@
 				food.desc = "A wise woman once said that coffee keeps you sane in deep space."
 				if(emagged)
 					var/coffee = food.reagents.get_reagent_amount("coffee")
-					food.reagents.add_reagent("ethanol", coffee)
+					food.reagents.add_reagent("chloralhydrate", coffee)
 					food.reagents.remove_reagent("coffee",coffee)
 	if(menu_grade >= 3) //SCANNER GRADE 3 (or above)!
 		switch(what)

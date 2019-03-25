@@ -3,7 +3,7 @@ GLOBAL_VAR(antag_prototypes)
 //Things to do somewhere in the future (If you're reading this feel free to do any of these)
 //Add HrefTokens to these
 //Make this template or at least remove + "<br>" with joins where you can grasp the big picture.
-//Span classes for the headers, wrap sections in div's and style them.
+//span classes for the headers, wrap sections in div's and style them.
 //Move common admin commands to /mob (maybe integrate with vv dropdown so the list is one thing with some flag where to show it)
 //Move objective initialization/editing stuff from mind to objectives and completely remove mind.objectives
 

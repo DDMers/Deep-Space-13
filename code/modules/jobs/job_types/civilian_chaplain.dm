@@ -12,7 +12,7 @@ Chaplain
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
-	description = "As a counselor you are responsible for hearing the crew's troubles and offering spiritual guidance. Your main duties will be purging evil spirits if the crew encounters them in their travels."
+	description = "As a counselor you are responsible for hearing the crew's troubles and ensuring the dead are buried properly. This role is extremely important burials allow crew to respawn."
 
 	outfit = /datum/outfit/job/chaplain
 

@@ -1,0 +1,8 @@
+{
+    "map_name": "Akira Class Heavy Cruiser",
+    "map_path": "map_files/Akira",
+    "map_file": ["Akira-decks.dmm","Akira-space.dmm"], 
+	"traits": [{"Up": 1}, {"Up": 1, "Down": -1}, {"Down": -1}, {"Down": -1}, {"Down": -1}],
+	"space_ruin_levels": 0
+	}
+

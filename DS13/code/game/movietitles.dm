@@ -16,22 +16,22 @@
 /proc/start_credits_global()
 	var/text = names2credits()
 	SEND_SOUND(world, 'DS13/sound/effects/endcredits.ogg')
+	var/content = "<p><b><i>Star Trek Episode [rand(1,100)]: The [pick("Phantom of", "Scar of", "Chalice of", "Deception of", "Planet of", "Downfall of", "Rise of", "Search for", "Trial of", "Discovery of", "First contact with")] [pick("Spock", "Vulcan", "Romulus", "Qu'on os", "The borg", "Space", "the USS Kobayashi Maru", "Rixx", "Orion Slave Girls", "the warp 10 barrier", "Captain Jean Luc Picard", "Cargonia", "a bunch of spiders in a swat suit", "the destroyer of worlds", "Captain Proton", "Lieutenant Barclay", "crippling holodeck addiction", "the fully functional android")] </b><br>[text]</p></i></font>"
 	for(var/X in GLOB.clients)
 		var/client/C = X
 		if(C.mob)
-			C.mob.roll_credits(text)
+			C.mob.roll_credits(content)
 
-/mob/proc/roll_credits(var/credits_list)
+/mob/proc/roll_credits(var/content)
 	if(!client)
 		return
 	var/datum/asset/assets = get_asset_datum(/datum/asset/simple/credits)
 	assets.send(client)
-	var/thing = credits_list
 	var/credits = "\
 	<body bgcolor='#000000'>\
 	<body background='credits.gif'>\
 	<div class='scroll-left'>\
-	<p><b><i>Star Trek Episode [pick(1,50)]: The [pick("Phantom of", "Scar of", "Chalice of", "Deception of", "Planet of", "Downfall of", "Rise of", "Search for", "Trial of", "Discovery of", "First contact with")] [pick("Spock", "Vulcan", "Romulus", "Qu'on os", "The borg", "Space", "the USS Kobayashi Maru", "Rixx", "Orion Slave Girls", "the warp 10 barrier", "Captain Jean Luc Picard", "Cargonia", "a bunch of spiders in a swat suit", "the destroyer of worlds", "Captain Proton", "Lieutenant Barclay", "crippling holodeck addiction", "the fully functional android")] </b><br>[thing]</p></i></font>\
+	<p><b><i>[content]\
 	\
 	</div>"
 	var/datum/browser/popup = new(src, "Credits", "Credits", 600, 320)

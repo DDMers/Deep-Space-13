@@ -25,7 +25,7 @@
 	var/b1
 	var/static/r2 = 237
 	var/static/g2 = 164
-	var/static/b2 = 149	
+	var/static/b2 = 149
 	//this is shit but how do i fix it? no clue.
 
 

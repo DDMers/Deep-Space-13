@@ -81,6 +81,10 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 
 		if("setMusicVolume")
 			data = setMusicVolume(arglist(params))
+		if("swaptodarkmode")
+			swaptodarkmode()
+		if("swaptolightmode")
+			swaptolightmode()
 
 	if(data)
 		ehjax_send(data = data)

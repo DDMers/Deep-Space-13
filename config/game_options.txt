@@ -466,7 +466,7 @@ ROUNDSTART_RACES vulcan
 #JOIN_WITH_MUTANT_HUMANS
 
 ##Overflow job. Default is assistant
-OVERFLOW_JOB Assistant
+OVERFLOW_JOB Ensign
 
 ## Overflow slot cap. Set to -1 for unlimited. If limited, it will still open up if every other job is full.
 OVERFLOW_CAP -1
