@@ -251,9 +251,10 @@
 	desc = "This sturdy device will inject supplied plasma into the ship's ODN relays, allowing for massive power transference. Simply load it with a plasma canister, or click it with an empty hand to remove a canister"
 	icon_state = "injector"
 	req_access = list(ACCESS_ENGINE_EQUIP)
-	var/obj/item/tank/internals/plasma/loaded_tank = null //Nicked from rad collector code, see there for documentation (collector.dm)
 	max_integrity = 350
 	integrity_failure = 50
+	density = FALSE
+	var/obj/item/tank/internals/plasma/loaded_tank = null //Nicked from rad collector code, see there for documentation (collector.dm)
 	var/powerproduction_drain = 0.015 //Relatively high drain on the plasma tanks.
 	var/drainratio = 1
 	var/supplying = FALSE //Are we supplying plasma to another object?

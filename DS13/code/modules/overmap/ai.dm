@@ -19,8 +19,9 @@
 	AI_enabled = TRUE //Start with an AI by default
 	faction = "romulan" //Placeholder
 	var/datum/overmap_event/linked_event
-	turnspeed = 3
+	turnspeed = 1.2
 	max_health = 130
+	max_speed = 2 //Slower than every ship.
 
 /obj/structure/overmap/ai/explode()
 	if(linked_event)

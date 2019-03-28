@@ -106,6 +106,16 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 
+/datum/job/atmos
+	outfit = /datum/outfit/job/atmos/DS13
+
+/datum/outfit/job/atmos/DS13
+	name = "Trek-Atmospheric Technician"
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+
+
 /datum/job/qm
 	outfit = /datum/outfit/job/qm/DS13
 

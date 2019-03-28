@@ -7,6 +7,8 @@ When making a new ship, please include its directional shields in the SAME ICON 
 */
 GLOBAL_LIST_INIT(overmap_ships, list())
 
+#define WARP_5 15 //FAST
+
 /area
 	var/obj/structure/overmap/linked_overmap
 	var/class = "none" //Make sure this matches the "class" of an overmap if you want them to autolink.
@@ -24,6 +26,10 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	var/list/attackers = list() //Which ships have attacked us? for AI mode.
 	var/list/components = list() //stuff that's linked to us
 	var/obj/machinery/power/warp_core/warp_core
+	var/warp_ready = TRUE //Are we ready to warp?
+	var/warping = FALSE //Are we mid warp? This tells movement code to do the special FX for when we exit warp if we slow down too much.
+	var/datum/action/innate/warp/warp_action = new
+	var/max_warp = WARP_5
 
 /obj/shield_overlay
 	name = ""
@@ -69,3 +75,88 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 		if(AR.class == class)
 			AR.linked_overmap = src
 			linked_area = AR
+
+/datum/action/innate/warp
+	name = "Engage warp"
+	icon_icon = 'DS13/icons/actions/actions_ship.dmi'
+	button_icon_state = "warp"
+	var/obj/structure/overmap/our_ship
+
+/datum/action/innate/warp/Activate()
+	our_ship.try_warp()
+
+/obj/structure/overmap/proc/GrantActions(mob/living/user)
+	if(warp_action)
+		warp_action.target = user
+		warp_action.Grant(user)
+		warp_action.our_ship = src
+
+/obj/structure/overmap/proc/RemoveActions(mob/living/user)
+	if(warp_action)
+		warp_action.target = null
+		warp_action.Remove(user)
+		warp_action.our_ship = null
+
+/obj/structure/overmap/proc/try_warp()
+	if(warping)
+		if(pilot)
+			to_chat(pilot, "<span class='notice'>Disengaging warp engines.</span>")
+		vel = 0.5
+		stop_warping()
+		return
+	if(!warp_core || !warp_ready || engine_power <= 0)
+		if(pilot)
+			to_chat(pilot, "<span class='notice'>Warp engines are recharging.</span>")
+		return
+	if(!warp_core.try_warp() || !main_overmap)
+		if(pilot)
+			to_chat(pilot, "<span class='notice'>Insufficient power. Ensure the warp core is active, and that the warp coils are charged.</span>")
+		return
+	addtimer(CALLBACK(src, .proc/reset_warp_cooldown), 300)//One warp per 30 seconds.
+	warp_ready = FALSE
+	if(pilot)
+		to_chat(pilot, "<span class='notice'>Charging warp engines. Please stand by.</span>")
+	addtimer(CALLBACK(src, .proc/finish_warp), 45)
+	var/list/areas = list()
+	areas = GLOB.teleportlocs.Copy()
+	for(var/AR in areas)
+		var/area/ARR = areas[AR]
+		if(istype(ARR, /area/space))
+			continue
+		ARR.parallax_movedir = NORTH
+	for(var/mob/player in GLOB.player_list)
+		if(is_station_level(player.z))
+			if(prob(50))
+				shake_camera(player, 1,3)
+			else
+				shake_camera(player, 2,2)
+			if(ishuman(player))
+				var/mob/living/carbon/human/H = player
+				if(H.buckled)
+					to_chat(H, "<span_class='notice'><b>Acceleration presses you into your seat!</b></span>")
+			SEND_SOUND(player, 'DS13/sound/effects/warpcore/warp.ogg')
+
+/obj/structure/overmap/proc/stop_warping()
+	warping = FALSE
+	var/list/areas = list()
+	areas = GLOB.teleportlocs.Copy()
+	for(var/AR in areas)
+		var/area/ARR = areas[AR]
+		ARR.parallax_movedir = null
+	for(var/mob/player in GLOB.player_list)
+		if(is_station_level(player.z))
+			if(prob(50))
+				shake_camera(player, 1,3)
+			else
+				shake_camera(player, 2,2)
+			to_chat(player, "<span_class='notice'><b>You can feel a jolt as the ship slows down.</b></span>")
+			SEND_SOUND(player, 'DS13/sound/effects/warpcore/warp_exit.ogg')
+
+/obj/structure/overmap/proc/reset_warp_cooldown()
+	warp_ready = TRUE
+
+/obj/structure/overmap/proc/finish_warp()
+	warping = TRUE
+	vel = max_warp
+
+#undef WARP_5

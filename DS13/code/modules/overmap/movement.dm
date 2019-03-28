@@ -20,8 +20,8 @@
 /obj/structure/overmap
 	var/angle = 0 //This replaces DIR with pixel move
 	var/vel = 0 //How fast are we travelling? This behaves like a vector.
-	var/turnspeed = 2 //Rate of turning. This can be a decimal
-	var/max_speed = 6 //Maximum velocity
+	var/turnspeed = 0.8 //Rate of turning. This can be a decimal
+	var/max_speed = 3 //Maximum velocity
 	var/acceleration = 0.5 //How quickly do you put on speed?
 	var/obj/structure/overmap/nav_target
 	var/process = FALSE
@@ -68,6 +68,8 @@
 	for(var/mob/M in operators)
 		if(M.client)
 			M.client.AdjustView()
+	if(vel < 9 && warping)//Are we warping and have slowed down? Trigger the exiting warp sound effect!
+		stop_warping()
 	if(nav_target)
 		if(nav_target in orange(src, 1)) //if we're near our navigational target, slam on the brakes
 			if(vel > 0)
@@ -153,6 +155,7 @@
 						to_chat(user, "you kick [pilot] off the ship controls!")
 						exit(pilot)
 				pilot = user
+				GrantActions(user)
 			if("tactical")
 				if(tactical)
 					if(alert("Kick [tactical] off of the ship controls?","[name]","Yes","No") == "Yes")
@@ -207,6 +210,7 @@
 		user.reset_perspective(null)
 	operators -= user
 	if(user == pilot)
+		RemoveActions(user)
 		pilot = null
 	if(user == tactical)
 		tactical = null

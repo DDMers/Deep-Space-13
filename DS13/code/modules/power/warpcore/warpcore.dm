@@ -180,6 +180,8 @@ Monitor the reaction for instability
 	combocount ++
 	to_chat(user, "<span class='warning'>You inputted [dowhat] into the command sequence.</span>")
 	playsound(src, 'sound/machines/sm/supermatter3.ogg', 20, 1)
+	if(combocount <= 4)
+		addtimer(CALLBACK(src, .proc/attack_self, user), 2)
 	if(combocount >= 5) //Completed the sequence
 		if(combo == combo_target)
 			to_chat(user, "<span class='warning'>Realignment of dilithium matrix complete.</span>")
@@ -228,6 +230,11 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	var/ejected = FALSE //B'ELANNA, EJECT THE CORE
 	var/ejecting = FALSE
 	var/obj/structure/overmap/linked
+	var/obj/item/radio/Radio
+	var/voice_ready = FALSE //radio announcement
+	var/voice_cooldown = 600
+	var/radio_key = /obj/item/encryptionkey/headset_eng
+	var/list/coils = list() //fuck I burnt my coil cyka
 	//Performance penalty vars. If you don't look after your warp core, your crystal will burn out faster (if you leave this too long, you risk a core breach)
 
 /obj/structure/ejected_core
@@ -238,11 +245,22 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	pixel_x = -29
 	layer = 4
 
+/obj/machinery/power/warp_core/proc/try_warp()
+	if(!coils.len)
+		return FALSE
+	for(var/X in coils)
+		var/obj/machinery/power/warp_coil/V = X
+		if(!V.active())
+			return FALSE
+	return TRUE
+
 /obj/machinery/power/warp_core/crowbar_act(mob/user, obj/item/I)
 	if(toggleable && dilithium_matrix)
 		playsound(loc,I.usesound,100,1)
 		to_chat(user, "<span class='notice'>You start to prize out [src]'s dilithium matrix.</span>")
 		if(do_after(user, 50, target = src))
+			log_game("[key_name(user)] removed a dilithium matrix from a warp core at [get_area(src)]. (Core integrity: [containment]%, Alignment:[dilithium_matrix.alignment]%")
+			message_admins("[key_name_admin(user)] removed a dilithium matrix from a warp core at [get_area(src)]. (Core integrity: [containment]%, Alignment:[dilithium_matrix.alignment]%")
 			to_chat(user, "<span class='notice'>You remove [src]'s dilithium matrix.</span>")
 			icon_state = "core-empty"
 			dilithium_matrix.forceMove(get_step(src, SOUTH))
@@ -270,8 +288,10 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	switch(dowhat)
 		if("on")
 			set_active(TRUE)
+			log_game("[key_name(user)] activated a warp core")
 		if("off")
 			set_active(FALSE)
+			log_game("[key_name(user)] deactivated a warp core")
 		if("eject")
 			eject(user)
 		if("cancel_eject")
@@ -284,6 +304,8 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	if(!allowed(user))
 		visible_message("<span class='notice'>Unable to comply. You do not have sufficient access to cancel a core ejection.</span>")
 		return
+	log_game("[key_name(user)] cancelled a warp core ejection")
+	message_admins("[key_name_admin(user)] cancelled a warp core ejection")
 	visible_message("<span class='notice'>Warp core ejection sequence cancelled!</span>")
 	ejecting = FALSE
 
@@ -294,6 +316,8 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	if(ejecting)
 		visible_message("<span class='notice'>Unable to comply. Core ejection already in progress!</span>")
 		return
+	log_game("[key_name(user)] triggered a warp core ejection")
+	message_admins("[key_name_admin(user)] triggered a warp core ejection")
 	visible_message("<span class='notice'>Warp core ejection sequence activated!</span>")
 	ejecting = TRUE
 	addtimer(CALLBACK(src, .proc/eject_finish), 120)
@@ -336,6 +360,14 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	. = ..()
 	soundloop = new(list(src), FALSE)
 	find_overmap()
+	Radio = new /obj/item/radio(src)
+	Radio.keyslot = new radio_key
+	Radio.listening = 0
+	Radio.recalculateChannels()
+	for(var/X in get_area(src))
+		if(istype(X, /obj/machinery/power/warp_coil))
+			var/obj/machinery/power/warp_coil/V = X
+			coils += V
 
 /obj/machinery/power/warp_core/proc/find_overmap()
 	var/area/A = get_area(src)
@@ -387,6 +419,7 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 
 /obj/machinery/power/warp_core/Destroy()
 	QDEL_NULL(soundloop)
+	QDEL_NULL(Radio)
 	. = ..()
 
 /obj/machinery/power/warp_core/proc/start()
@@ -421,14 +454,44 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	if(!outlet.airs || !active())
 		stop()
 		return
-	if(dilithium_matrix)
-		var/penalty = 0.1 //You need to realign every 30 minutes or so.
-		dilithium_matrix.absorb_damage(penalty)
 	check_failure()
+	if(!dilithium_matrix)
+		return
+	if(containment <= 50 || dilithium_matrix.alignment <= 30)//Engis need to know this.
+		voice_alert()
+	var/penalty = 0.1 //You need to realign every 30 minutes or so.
+	dilithium_matrix.absorb_damage(penalty)
 	for(var/datum/gas_mixture/S in outlet.airs)
 		S.temperature += 500
 	var/power = 500000
 	add_avail(power)
+
+/obj/machinery/power/warp_core/proc/voice_alert() //Play voice alerts for things like hull damage, shields breaking etc.
+	if(!voice_ready)
+		return FALSE
+	addtimer(CALLBACK(src, .proc/reset_voice), voice_cooldown)
+	voice_ready = FALSE
+	announce_radio()
+
+/obj/machinery/power/warp_core/proc/reset_voice()
+	voice_ready = TRUE
+
+/obj/machinery/power/warp_core/proc/announce_radio() //Warn the engis of specific events.
+	if(!Radio || QDELETED(Radio))
+		return
+	if(containment <= 20) //When it hits 20%. The engis need to know it's almost the point of no return.
+		Radio.talk_into(src,"WARNING: Antimatter containment failure imminent! Evacuate engineering immediately!. Containment is at [containment]%.","Engineering",get_spans(),get_default_language())
+		return
+	if(containment <= 50) //When it hits 50%. Warn the engineers. It's outside of the switch so it isn't spammed.
+		Radio.talk_into(src,"WARNING: Antimatter containment failing. Containment is at [containment]%.","Engineering",get_spans(),get_default_language())
+		return
+	if(dilithium_matrix)
+		if(dilithium_matrix.alignment <= 10) //When it hits 10%. The engis need to know so they can save the crystal.
+			Radio.talk_into(src,"WARNING: Dilithium matrix destabilization imminent!. Matrix alignment: [dilithium_matrix.alignment]%.","Engineering",get_spans(),get_default_language())
+			return
+		if(dilithium_matrix.alignment <= 30) //When it hits 50%. Warn the engineers. It's outside of the switch so it isn't spammed.
+			Radio.talk_into(src,"WARNING: Dilithium matrix is poorly aligned. Matrix alignment: [dilithium_matrix.alignment]%.","Engineering",get_spans(),get_default_language())
+			return
 
 /obj/machinery/power/warp_core/proc/check_failure() //In other words. They've turned it on, but it's not got anything to regulate the reaction, so it'll fail quickly
 	if(!dilithium_matrix || QDELETED(dilithium_matrix) || !dilithium_matrix.stored)
@@ -507,9 +570,13 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	addtimer(CALLBACK(src, .proc/core_breach_finish), 450)
 
 /obj/machinery/power/warp_core/proc/core_breach_finish()
-	if(linked)
-		linked.core_breach_finish() //End them.
-	return
+	if(containment <= 0)
+		if(linked)
+			linked.core_breach_finish() //End them.
+		return
+	else //They survived the core breach! Stop the ship from being 0 HP so it doesn't just breach again instantly.
+		if(linked)
+			linked.health = 25
 
 /obj/machinery/atmospherics/components/binary/pump/on/warp
 	name = "Plasma outlet manifold"
@@ -533,3 +600,38 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	desc = "An extremely rare and valuable element which the whole of society is completely dependant on. It allows for faster than light travel."
 	icon = 'DS13/icons/obj/power/warpcore/machines.dmi'
 	icon_state = "dilithium"
+
+/obj/machinery/power/warp_coil
+	name = "warp coil"
+	desc = "A huge ring of verterium cortenide which when provided with high energy warp plasma, will produce a subspace distortion field rated to a maximum of 300 cochranes, you shouldn't get too close when it's active."
+	icon = 'DS13/icons/obj/machinery/warpcoil.dmi'
+	icon_state = "warpcoil"
+	pixel_x = -32
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+	anchored = TRUE
+	density = FALSE
+	obj_integrity = 300
+	use_power = 20000
+	var/drain = 10 //Moles. How quickly it eats plasma from the air.
+
+/obj/machinery/power/warp_coil/Initialize()
+	. = ..()
+
+/obj/machinery/power/warp_coil/process()
+	active()
+
+/obj/machinery/power/warp_coil/proc/active() //So our plasma provides the energy for the cochranes, then these beauties sap it all out for warp energy
+	icon_state = "warpcoil"
+	if(!anchored || !powered())
+		return FALSE
+	var/turf/T = get_turf(src)
+	var/datum/gas_mixture/air = T.return_air()
+	if(air.temperature >= 350) //It needs to be HOT
+		icon_state = "warpcoil-hot"
+		if(air.gases[/datum/gas/plasma])
+			var/gasdrained = min(drain,air.gases[/datum/gas/plasma][MOLES])
+			air.gases[/datum/gas/plasma][MOLES] -= gasdrained
+			air.garbage_collect()
+			radiation_pulse(src, 150, 4)
+			return TRUE
+	return FALSE

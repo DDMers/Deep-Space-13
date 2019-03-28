@@ -186,8 +186,6 @@
 	damage_states = TRUE //Damage FX
 	damage = 15 //Will turn into 25 assuming weapons powered
 	max_shield_health = 175 //It's tough so it can take on multiple enemies at once
-	turnspeed = 2 //Rate of turning. This can be a decimal
-	max_speed = 6 //Maximum velocity before engine power
 	acceleration = 0.7 //How quickly do you put on speed?
 	power_slots = 5 //She's a strong ship
 	sprite_size = 128
