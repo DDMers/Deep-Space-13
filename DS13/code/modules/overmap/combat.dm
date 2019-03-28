@@ -357,6 +357,13 @@
 				PS.take_damage(mod)
 
 /obj/structure/overmap/proc/explode()
+	send_sound_crew('DS13/sound/effects/damage/ship_explode.ogg')
+	if(warp_core && !QDELETED(warp_core)) //They have a core. So give them a chance to save the ship.
+		warp_core.containment = 0//Force a warp core breach. No matter if it's on or not. They'll then have 45 seconds to haul ass to engi and eject the core.
+		warp_core.breach()
+		for(var/mob/A in operators)
+			to_chat(A, "<span class='cult'><font size=3>Antimatter containment failing, evacuate the ship!</font></span>")
+		return
 	qdel(shield_overlay)
 	qdel(shields)
 	SpinAnimation(1000,1000)
@@ -366,10 +373,9 @@
 	power_slots = 0
 	movement_block = TRUE
 	remove_control()
-	send_sound_crew('DS13/sound/effects/damage/ship_explode.ogg')
 	addtimer(CALLBACK(src, .proc/core_breach_finish), 450)
 	for(var/mob/A in operators)
-		to_chat(A, "<span class='cult'><font size=3>Your ship has been destroyed!")
+		to_chat(A, "<span class='cult'><font size=3>Your ship has been destroyed!</font></span>")
 		if(A.remote_control)
 			A.remote_control.forceMove(get_turf(A))
 	core_breach()
@@ -393,8 +399,9 @@
 		qdel(src)
 		return
 	for(var/I = 0, I <= 11, I++) //If it's not a game-ender. Blow the shit out of the ship map
-		var/turf/T = pick(get_area_turfs(linked_area))
-		explosion(T,10,10,10)
+		if(linked_area)
+			var/turf/T = pick(get_area_turfs(linked_area))
+			explosion(T,10,10,10)
 	qdel(src)
 
 /obj/structure/overmap/proc/special_fx_targeted(var/shields_absorbed) //This ship isn't the main overmap, so find the area we want and apply damage to it

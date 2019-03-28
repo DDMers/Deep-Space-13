@@ -9,6 +9,8 @@
 	var/position = null //Set this to either "pilot", "tactical" or "science"
 
 /obj/structure/overmap_component/attack_hand(mob/user) //this doesnt work!!
+	if(!isliving(user))
+		return
 	if(!linked || QDELETED(linked))
 		find_overmap()
 	if(!ishuman(user))
@@ -259,6 +261,10 @@
 	var/obj/structure/overmap_component/integrity_field_generator/generator
 	var/locked = FALSE
 
+/obj/structure/overmap_component/plasma_injector/Initialize()
+	. = ..()
+	START_PROCESSING(SSobj,src)
+
 /obj/structure/overmap_component/plasma_injector/attack_hand(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/L = user
@@ -289,7 +295,6 @@
 		if(!user.transferItemToLoc(W, src))
 			return
 		loaded_tank = W
-		START_PROCESSING(SSobj,src)
 	else if(W.GetID())
 		if(allowed(user))
 			locked = !locked
@@ -305,12 +310,27 @@
 	. = ..()
 
 /obj/structure/overmap_component/plasma_injector/process()
-	if(!loaded_tank || !linked || !linked.powered_components.len)
+	if(!linked || !linked.powered_components.len)
 		icon_state = "injector"
 		return
 	if(!supply_to || QDELETED(supply_to))
 		supplying = FALSE
 		find_supply_to()
+		return
+	if(!loaded_tank) //No tank, so draw from the enviornment
+		var/turf/T = get_turf(src)
+		var/datum/gas_mixture/air = T.return_air()
+		if(air.gases[/datum/gas/plasma])
+			icon_state = "injector-on"
+			var/gasdrained = min(powerproduction_drain*drainratio,air.gases[/datum/gas/plasma][MOLES])
+			air.gases[/datum/gas/plasma][MOLES] -= gasdrained
+			air.garbage_collect()
+			if(supply_to)
+				supply_to.plasma_volume += powerproduction_drain
+			if(generator)
+				generator.plasma_volume += powerproduction_drain
+		else
+			icon_state = "injector"
 		return
 	if(!loaded_tank.air_contents.gases[/datum/gas/plasma])
 		playsound(src, 'DS13/sound/effects/computer/alert2.ogg', 100, 1)
@@ -376,6 +396,8 @@
 
 /obj/structure/overmap_component/plasma_relay/attack_hand(mob/user)
 	. = ..()
+	if(!isliving(user))
+		return
 	if(!linked || QDELETED(linked))
 		find_overmap()
 	var/Q = alert(user,"Redirect power to what system?","[src]","shields","weapons", "engines")
@@ -682,6 +704,8 @@
 
 
 /obj/structure/overmap_component/system_control/attack_hand(mob/user)
+	if(!isliving(user))
+		return
 	if(ishuman(user))
 		if(!linked || QDELETED(linked))
 			find_overmap()

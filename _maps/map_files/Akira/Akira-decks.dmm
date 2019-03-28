@@ -1031,6 +1031,11 @@
 /area/engine/atmos)
 "dh" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
+	icon_state = "pipe11-2";
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
 	dir = 10
 	},
 /turf/open/floor/plating,
@@ -1814,27 +1819,24 @@
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "fD" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
+/obj/machinery/camera/trek,
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "fE" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"fF" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"fF" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
 "fG" = (
-/obj/machinery/light{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
 /turf/open/floor/carpet/trek,
@@ -1856,12 +1858,59 @@
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
 "fJ" = (
+/obj/machinery/camera/trek,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"fK" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"fL" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"fM" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"fN" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"fO" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"fP" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"fQ" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"fK" = (
+"fR" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
 	},
@@ -1870,7 +1919,16 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"fL" = (
+"fS" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/door/airlock/trek/ship/command/captain,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/heads/captain)
+"fT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	icon_state = "pipe11-2";
 	dir = 8
@@ -1880,7 +1938,34 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"fM" = (
+"fU" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"fV" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"fW" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"fX" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1900,7 +1985,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"fN" = (
+"fY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	icon_state = "pipe11-2";
 	dir = 8
@@ -1911,7 +1996,7 @@
 /obj/machinery/holopad,
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"fO" = (
+"fZ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1927,371 +2012,190 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"fP" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+"ga" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"gb" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"fQ" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	icon_state = "pipe11-1";
 	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"fR" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"fS" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/machinery/door/airlock/trek/ship/command/captain,
-/turf/open/floor/carpet/trek,
-/area/crew_quarters/heads/captain)
-"fT" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"fU" = (
-/obj/machinery/light,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"fV" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"fW" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"fX" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"fY" = (
-/turf/closed/wall/trek_smooth/room,
-/area/engine/engine_smes)
-"fZ" = (
-/obj/machinery/door/airlock/trek/goon/engi,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/carpet/trek,
-/area/engine/engine_smes)
-"ga" = (
-/obj/structure/overmap_component/plasma_injector,
-/turf/closed/wall/trek_smooth/corridor,
-/area/ship/engineering/akira)
-"gb" = (
-/obj/machinery/door/airlock/trek/goon/engi,
-/obj/structure/cable{
-	icon_state = "1-2"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "gc" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"gd" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"ge" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"gf" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/light,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"gg" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"gh" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"gi" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"gj" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"gk" = (
+/obj/structure/window/reinforced/fulltile/trek/viewport,
+/obj/structure/grille,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/open/floor/plating,
+/area/ship/engineering/akira)
+"gl" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 5
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"gm" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/structure/overmap_component/system_control,
+/turf/closed/wall/trek_smooth/room,
+/area/ship/engineering/akira)
+"gn" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"go" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/overmap_component/integrity_field_generator{
+	pixel_x = -9
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"gp" = (
+/obj/machinery/atmospherics/components/unary/portables_connector,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"gq" = (
 /obj/machinery/door/airlock/trek/goon/engi,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"gd" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"ge" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"gf" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
+"gr" = (
+/obj/structure/tank_dispenser,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"gs" = (
+/obj/structure/overmap_component/plasma_injector,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/open/floor/plating,
+/area/ship/engineering/akira)
+"gt" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	icon_state = "inje_map-2";
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"gg" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/power/apc/auto_name/ds13,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"gh" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"gi" = (
+/turf/open/floor/plating,
+/area/ship/engineering/akira)
+"gu" = (
+/obj/machinery/suit_storage_unit/trek,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"gv" = (
+/obj/structure/overmap_component/plasma_injector,
+/obj/machinery/light,
+/turf/open/floor/plating,
+/area/ship/engineering/akira)
+"gw" = (
 /obj/structure/closet/secure_closet/engineering_welding,
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"gj" = (
+"gx" = (
+/turf/open/floor/carpet/trek,
+/area/space)
+"gy" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"gk" = (
-/obj/structure/closet/secure_closet/engineering_personal,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"gl" = (
-/obj/machinery/rnd/production/techfab/department/engineering,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/akira)
-"gm" = (
-/obj/machinery/computer/station_alert,
-/obj/item/radio/intercom{
-	pixel_y = 20
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/akira)
-"gn" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/akira)
-"go" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/spawner/lootdrop/techstorage/rnd,
-/obj/structure/rack,
-/obj/item/analyzer,
-/obj/item/stock_parts/micro_laser,
-/obj/item/stock_parts/micro_laser,
-/obj/item/stock_parts/manipulator,
-/obj/item/stock_parts/manipulator,
-/obj/item/stock_parts/micro_laser/high,
-/obj/item/stock_parts/micro_laser/high,
-/obj/item/electronics/apc,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/akira)
-"gp" = (
-/obj/machinery/rnd/production/protolathe/department/engineering,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/akira)
-"gq" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"gr" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/power/smes/engineering,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"gs" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"gt" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/smes/engineering,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"gu" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"gv" = (
-/obj/structure/table/glass,
-/obj/item/stack/sheet/duotanium/fifty,
-/obj/item/stack/sheet/duranium/fifty,
-/obj/item/stack/sheet/duotanium/fifty,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"gw" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/landmark/start/station_engineer,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"gx" = (
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"gy" = (
-/obj/structure/table/glass,
-/obj/item/storage/toolbox/mechanical,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
 "gz" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/ship/engineering/akira)
 "gA" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 9
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/engine,
 /area/ship/engineering/akira)
 "gB" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/dark,
+/obj/machinery/atmospherics/components/binary/valve/digital,
+/turf/open/floor/engine,
 /area/ship/engineering/akira)
 "gC" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 5
-	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	icon_state = "inje_map-2";
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/engine,
 /area/ship/engineering/akira)
 "gD" = (
 /obj/structure/cable{
-	icon_state = "2-8"
+	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/akira)
+/obj/structure/trek_catwalk,
+/turf/open/floor/plating,
+/area/maintenance/central)
 "gE" = (
 /obj/machinery/light{
 	dir = 4
@@ -2299,196 +2203,121 @@
 /turf/open/floor/engine,
 /area/maintenance/department/engine)
 "gF" = (
+/obj/machinery/door/airlock/trek/goon/engi,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/airalarm{
-	dir = 4;
-	pixel_x = -22
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 "gG" = (
-/obj/machinery/power/terminal{
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"gH" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"gH" = (
-/obj/structure/cable/yellow{
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"gI" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"gI" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"gJ" = (
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "1-4"
 	},
-/obj/machinery/light{
-	dir = 4
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"gJ" = (
+/obj/machinery/atmospherics/components/binary/pump/on/warp{
+	icon_state = "pump_on_map-2";
+	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 "gK" = (
-/obj/structure/table/glass,
-/obj/item/storage/toolbox/electrical,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/rods/twentyfive,
-/obj/machinery/airalarm{
-	dir = 4;
-	pixel_x = -23
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "gL" = (
-/obj/structure/overmap_component/integrity_field_generator{
-	pixel_x = -9
-	},
+/obj/machinery/suit_storage_unit/trek,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "gM" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/airalarm{
-	dir = 4;
-	pixel_x = -22
-	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/table/glass,
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "gN" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 10
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit/trek,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/akira)
+/turf/open/floor/engine,
+/area/maintenance/department/engine)
 "gO" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/ladder,
+/turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "gP" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 6
-	},
-/obj/machinery/light{
+/obj/structure/railing{
+	icon_state = "railing0";
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/structure/ladder,
+/turf/open/floor/carpet/trek,
+/area/maintenance/central)
+"gQ" = (
+/obj/structure/railing{
+	icon_state = "railing0";
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit/trek,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/akira)
-"gQ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/akira)
+/obj/structure/ladder,
+/turf/open/floor/carpet/trek,
+/area/maintenance/central)
 "gR" = (
 /obj/structure/cable/yellow{
-	icon_state = "1-2"
+	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 "gS" = (
-/obj/structure/table/glass,
-/obj/item/stack/tile/carpet/trek/fifty,
-/obj/item/stack/tile/carpet/trek/fifty,
-/obj/item/stack/tile/carpet/trek/fifty,
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 5
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 1
 	},
+/obj/machinery/light,
 /turf/open/floor/carpet/trek,
+/area/maintenance/central)
+"gZ" = (
+/obj/structure/trek_catwalk,
+/turf/open/floor/plating,
 /area/ship/engineering/akira)
-"gT" = (
-/obj/structure/tank_dispenser/plasma,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"gU" = (
+"hb" = (
 /obj/structure/table/glass,
 /obj/item/storage/toolbox/electrical,
 /obj/item/clothing/gloves/color/yellow,
@@ -2503,169 +2332,47 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"gV" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+"hk" = (
+/obj/structure/trek_catwalk,
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
 	},
-/turf/open/floor/plasteel/dark,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/plating,
+/area/space)
+"hl" = (
+/obj/structure/table/glass,
+/obj/item/storage/toolbox/electrical,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/rods/twentyfive,
+/obj/machinery/airalarm{
+	dir = 4;
+	pixel_x = -23
+	},
+/turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"gW" = (
-/obj/effect/turf_decal/bot{
-	dir = 1
+"ho" = (
+/obj/structure/table/glass,
+/obj/item/stack/tile/carpet/trek/fifty,
+/obj/item/stack/tile/carpet/trek/fifty,
+/obj/item/stack/tile/carpet/trek/fifty,
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 5
 	},
-/obj/machinery/suit_storage_unit/trek,
-/turf/open/floor/plasteel,
+/turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"gX" = (
-/obj/structure/tank_dispenser,
-/obj/effect/turf_decal/bot{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ship/engineering/akira)
-"gY" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/window/reinforced,
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"gZ" = (
-/obj/structure/window/reinforced,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"ha" = (
-/obj/machinery/door/window{
-	name = "SMES Chamber";
-	req_access_txt = "32"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"hb" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/window/reinforced,
+"hp" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/power/apc/auto_name/ds13,
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"hc" = (
-/obj/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"hd" = (
-/obj/structure/closet/secure_closet/engineering_electrical,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"he" = (
-/obj/machinery/suit_storage_unit/trek,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/akira)
-"hf" = (
-/obj/machinery/modular_computer/console/preset/engineering,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/akira)
-"hg" = (
-/obj/structure/tank_dispenser,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"hh" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"hi" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
-"hj" = (
-/obj/machinery/vending/engivend,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"hk" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/akira)
-"hl" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/akira)
-"hm" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/akira)
-"hn" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/akira)
-"ho" = (
-/obj/machinery/door/airlock/trek/goon/engi,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/carpet/trek,
-/area/engine/engine_smes)
-"hp" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
+/turf/open/floor/plating,
+/area/space)
 "hq" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -2679,42 +2386,6 @@
 /obj/machinery/door/airlock/trek/ship/maint{
 	icon_state = "closed";
 	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"hs" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"ht" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"hu" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 9
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"hv" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
@@ -2734,9 +2405,6 @@
 	},
 /turf/open/floor/engine,
 /area/maintenance/department/engine)
-"hy" = (
-/turf/closed/wall/trek_smooth,
-/area/ship/engineering/akira)
 "hz" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2746,10 +2414,6 @@
 /obj/machinery/door/airlock/trek/ship/command/hop,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
-"hA" = (
-/obj/structure/overmap_component/system_control,
-/turf/closed/wall/trek_smooth,
-/area/ship/engineering/akira)
 "hB" = (
 /obj/structure/trek_catwalk,
 /obj/structure/cable/yellow{
@@ -2785,55 +2449,9 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
-"hF" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/closed/wall/trek_smooth,
-/area/ship/engineering/akira)
-"hG" = (
-/obj/structure/trek_catwalk,
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/plating,
-/area/ship/engineering/akira)
-"hH" = (
-/obj/structure/trek_catwalk,
-/obj/machinery/power/apc/auto_name/ds13,
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/akira)
-"hI" = (
-/obj/item/am_containment,
-/obj/item/am_containment,
-/obj/structure/rack,
-/obj/structure/trek_catwalk,
-/turf/open/floor/plating,
-/area/ship/engineering/akira)
 "hJ" = (
-/obj/structure/trek_catwalk,
-/turf/open/floor/plating,
-/area/ship/engineering/akira)
-"hK" = (
-/obj/structure/trek_catwalk,
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/plating,
-/area/ship/engineering/akira)
-"hL" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/closed/wall/trek_smooth,
+/obj/structure/closet/secure_closet/engineering_electrical,
+/turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "hM" = (
 /obj/structure/trek_catwalk,
@@ -2845,115 +2463,31 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
-"hN" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
-/obj/structure/trek_catwalk,
+"hR" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/airalarm{
-	dir = 4;
-	pixel_x = -22
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/plating,
-/area/ship/engineering/akira)
-"hO" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/trek_catwalk,
-/turf/open/floor/plating,
-/area/ship/engineering/akira)
-"hP" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/obj/structure/trek_catwalk,
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/akira)
-"hQ" = (
-/obj/structure/trek_catwalk,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/akira)
-"hR" = (
-/obj/structure/trek_catwalk,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/plating,
+/turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "hS" = (
-/obj/structure/trek_catwalk,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/akira)
-"hT" = (
-/obj/structure/trek_catwalk,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/effect/landmark/start/station_engineer,
-/turf/open/floor/plating,
+/obj/machinery/light,
+/turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "hU" = (
 /turf/closed/wall/trek_smooth/reinforced,
 /area/ship/engineering/akira)
-"hV" = (
-/obj/structure/trek_catwalk,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/akira)
-"hW" = (
-/obj/machinery/am_shielding,
-/turf/open/floor/plating,
-/area/ship/engineering/akira)
-"hX" = (
-/obj/structure/trek_catwalk,
-/obj/machinery/power/am_control_unit{
-	icon_state = "control";
-	dir = 1;
-	anchored = 1
-	},
-/obj/structure/cable/yellow,
-/turf/open/floor/plating,
-/area/ship/engineering/akira)
 "hY" = (
-/obj/structure/trek_catwalk,
-/obj/machinery/light{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
 	},
-/turf/open/floor/plating,
-/area/ship/engineering/akira)
-"hZ" = (
-/obj/structure/trek_catwalk,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/plating,
+/turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "ia" = (
-/obj/structure/trek_catwalk,
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
 	},
-/turf/open/floor/plating,
+/turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "ib" = (
 /turf/closed/wall/trek_smooth/reinforced,
@@ -2968,13 +2502,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/akira)
-"id" = (
-/obj/machinery/power/apc/auto_name/ds13,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/gravity_generator)
 "ie" = (
 /obj/effect/turf_decal/bot_white/right,
 /obj/effect/turf_decal/tile/neutral{
@@ -2990,22 +2517,14 @@
 /turf/open/floor/plasteel/dark,
 /area/engine/gravity_generator)
 "if" = (
-/obj/effect/turf_decal/bot_white,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/dark,
-/area/engine/gravity_generator)
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 "ig" = (
 /obj/effect/turf_decal/bot_white/left,
 /obj/effect/turf_decal/tile/neutral{
@@ -3024,42 +2543,23 @@
 /turf/open/floor/plasteel/dark,
 /area/engine/gravity_generator)
 "ii" = (
-/obj/machinery/airalarm{
-	dir = 4;
-	pixel_x = -22
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 5
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/gravity_generator)
-"ij" = (
-/obj/effect/turf_decal/bot_white,
-/obj/effect/turf_decal/tile/neutral{
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"ij" = (
 /obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"ik" = (
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/open/floor/plasteel/dark,
-/area/engine/gravity_generator)
-"ik" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/gravity_generator)
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 "il" = (
 /obj/effect/turf_decal/bot_white,
 /obj/effect/turf_decal/tile/neutral{
@@ -3075,12 +2575,14 @@
 /turf/open/floor/plasteel/dark,
 /area/engine/gravity_generator)
 "im" = (
-/obj/machinery/light{
-	dir = 4
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
 	},
-/obj/machinery/portable_atmospherics/scrubber,
-/turf/open/floor/plasteel/dark,
-/area/engine/gravity_generator)
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 "in" = (
 /obj/machinery/gravity_generator/main/station,
 /obj/effect/turf_decal/bot_white,
@@ -4642,6 +4144,15 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
+"nc" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 "nd" = (
 /obj/machinery/camera/trek{
 	icon_state = "camera";
@@ -4793,6 +4304,18 @@
 /obj/structure/railing,
 /turf/open/floor/plating,
 /area/maintenance/central)
+"ny" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 "nz" = (
 /obj/machinery/computer/secure_data{
 	dir = 4
@@ -4903,6 +4426,38 @@
 /obj/machinery/rnd/production/circuit_imprinter/department/science,
 /turf/open/floor/carpet/trek,
 /area/science/research)
+"nN" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"nO" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"nP" = (
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 10
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 "nQ" = (
 /obj/structure/trek_catwalk,
 /obj/structure/cable{
@@ -4995,6 +4550,12 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/science/research)
+"ob" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/trek_smooth/room,
+/area/ship/engineering/akira)
 "oc" = (
 /obj/structure/trek_catwalk,
 /obj/structure/cable{
@@ -5947,11 +5508,13 @@
 /turf/open/floor/carpet/trek,
 /area/maintenance/central)
 "qy" = (
-/obj/machinery/light{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/obj/machinery/power/warp_core,
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/carpet/trek,
-/area/maintenance/central)
+/area/ship/engineering/akira)
 "qz" = (
 /obj/machinery/door/airlock/trek/goon{
 	icon_state = "closed";
@@ -5980,7 +5543,10 @@
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "qF" = (
-/obj/machinery/power/floodlight,
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 1
+	},
 /turf/open/floor/carpet/trek,
 /area/maintenance/central)
 "qG" = (
@@ -6174,17 +5740,6 @@
 /obj/machinery/light,
 /obj/structure/cable{
 	icon_state = "1-4"
-	},
-/turf/open/floor/plating,
-/area/maintenance/central)
-"rb" = (
-/obj/structure/trek_catwalk,
-/obj/structure/railing{
-	icon_state = "railing0";
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
 	},
 /turf/open/floor/plating,
 /area/maintenance/central)
@@ -9003,6 +8558,17 @@
 /obj/machinery/camera/trek,
 /turf/open/floor/plating,
 /area/maintenance/central)
+"ys" = (
+/obj/item/am_containment,
+/obj/item/am_containment,
+/obj/structure/rack,
+/obj/structure/trek_catwalk,
+/turf/open/floor/plating,
+/area/space)
+"yt" = (
+/obj/structure/trek_catwalk,
+/turf/open/floor/plating,
+/area/space)
 "yu" = (
 /obj/machinery/camera/trek{
 	icon_state = "camera";
@@ -9057,15 +8623,13 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
 "yB" = (
+/obj/structure/trek_catwalk,
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "2-4"
 	},
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 5
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/akira)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/plating,
+/area/space)
 "yC" = (
 /obj/machinery/camera/trek{
 	icon_state = "camera";
@@ -9074,44 +8638,43 @@
 /turf/open/floor/plasteel/dark,
 /area/engine/gravity_generator)
 "yD" = (
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
+/obj/structure/trek_catwalk,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 5
+/obj/machinery/airalarm{
+	dir = 4;
+	pixel_x = -22
 	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/plating,
+/area/space)
 "yE" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /obj/structure/trek_catwalk,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 5
-	},
 /turf/open/floor/plating,
-/area/ship/engineering/akira)
+/area/space)
 "yF" = (
-/obj/structure/trek_catwalk,
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 9
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/turf/open/floor/plating,
+/turf/closed/wall/trek_smooth/room,
 /area/ship/engineering/akira)
 "yG" = (
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 10
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
 	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
+/obj/structure/trek_catwalk,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/space)
 "yH" = (
 /obj/machinery/camera/trek{
 	icon_state = "camera";
@@ -9120,12 +8683,12 @@
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "yI" = (
-/obj/machinery/light{
-	dir = 8
+/obj/structure/trek_catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
+/turf/open/floor/plating,
+/area/space)
 "yJ" = (
 /obj/machinery/portable_atmospherics/canister/toxins,
 /obj/effect/turf_decal/bot,
@@ -9182,9 +8745,13 @@
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "yQ" = (
-/obj/machinery/camera/trek,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
+/obj/structure/trek_catwalk,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/plating,
+/area/space)
 "yR" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 6
@@ -9212,6 +8779,16 @@
 /obj/structure/trek_decor/viewscreen,
 /turf/closed/wall/trek_smooth/room,
 /area/ai_monitored/turret_protected/ai)
+"yV" = (
+/obj/structure/trek_catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/space)
 "yW" = (
 /obj/machinery/camera/trek{
 	icon_state = "camera";
@@ -9248,6 +8825,14 @@
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
+"zb" = (
+/obj/structure/trek_catwalk,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/landmark/start/station_engineer,
+/turf/open/floor/plating,
+/area/space)
 "zc" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden,
 /turf/open/floor/plating,
@@ -9680,6 +9265,13 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
+"Aj" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/space)
 "Ak" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -9778,28 +9370,29 @@
 /turf/open/floor/carpet/trek,
 /area/security/brig)
 "Aw" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"Ax" = (
+/obj/structure/trek_catwalk,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
+/obj/machinery/light{
+	dir = 8
 	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
+/turf/open/floor/plating,
+/area/space)
+"Ax" = (
+/obj/machinery/am_shielding,
+/turf/open/floor/plating,
+/area/space)
 "Ay" = (
-/obj/machinery/camera/trek,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
+/obj/structure/trek_catwalk,
+/obj/machinery/power/am_control_unit{
+	icon_state = "control";
+	dir = 1;
+	anchored = 1
 	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
+/obj/structure/cable/yellow,
+/turf/open/floor/plating,
+/area/space)
 "Az" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/door/airlock/trek/ship/maint,
@@ -9817,9 +9410,12 @@
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "AC" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
+/obj/structure/trek_catwalk,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/space)
 "AD" = (
 /obj/structure/trek_catwalk,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -9870,12 +9466,16 @@
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
 "AK" = (
+/obj/structure/trek_catwalk,
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/space)
 "AL" = (
 /obj/structure/trek_catwalk,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -10074,6 +9674,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
+"Be" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/space)
 "Bf" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -10259,6 +9867,13 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
+"BA" = (
+/obj/structure/trek_catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/space)
 "BB" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -10333,11 +9948,33 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
+"BI" = (
+/obj/structure/trek_catwalk,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/space)
+"BJ" = (
+/obj/structure/trek_catwalk,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/space)
+"BK" = (
+/obj/structure/overmap_component/plasma_injector,
+/turf/open/floor/plating,
+/area/ship/engineering/akira)
 "BL" = (
 /obj/machinery/airalarm,
 /obj/structure/trek_decor/brig,
 /turf/closed/wall/trek_smooth/room,
 /area/hallway/primary/central)
+"BM" = (
+/obj/structure/closet/secure_closet/engineering_personal,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 "BN" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -10424,6 +10061,13 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
+"BY" = (
+/obj/machinery/power/apc/auto_name/ds13,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
 "BZ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	icon_state = "vent_map_on-1";
@@ -10499,6 +10143,37 @@
 /obj/machinery/door/airlock/trek/ship/maint,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
+"Cj" = (
+/obj/machinery/airalarm{
+	dir = 4;
+	pixel_x = -22
+	},
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 5
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
+"Ck" = (
+/obj/structure/trek_catwalk,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/engine)
+"Cl" = (
+/obj/structure/trek_catwalk,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/engine)
 "Cn" = (
 /obj/structure/trek_catwalk,
 /obj/structure/cable{
@@ -11312,35 +10987,18 @@
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hor)
 "Ef" = (
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 5
+/obj/machinery/light{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/plasteel/dark,
+/area/engine/gravity_generator)
 "Eg" = (
-/obj/machinery/camera/trek{
-	icon_state = "camera";
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"Eh" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"Ei" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
+/turf/closed/wall/trek_smooth/room,
 /area/ship/engineering/akira)
 "Ej" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -11801,6 +11459,10 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
+"Fp" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 "Fq" = (
 /obj/item/gun/energy/phaser,
 /obj/structure/rack,
@@ -11864,6 +11526,81 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
+"FC" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/maintenance/central)
+"FD" = (
+/obj/machinery/door/airlock/trek/goon/engi,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"FE" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"FF" = (
+/obj/machinery/power/matter_injector/antimatter,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"FG" = (
+/obj/machinery/door/airlock/trek/goon/engi,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"FH" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"FI" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"FJ" = (
+/obj/machinery/door/airlock/trek/goon/engi,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"FK" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 "FL" = (
 /obj/machinery/door/window/brigdoor/security/cell/trek,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -11910,6 +11647,18 @@
 /obj/item/storage/firstaid/brute,
 /turf/open/floor/carpet/trek,
 /area/security/brig)
+"FQ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 "FR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	icon_state = "pipe11-1";
@@ -11924,6 +11673,22 @@
 /obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
 /area/security/brig)
+"FS" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"FT" = (
+/obj/machinery/power/apc/auto_name/ds13,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 "FU" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -11937,6 +11702,110 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/maintenance/department/bridge)
+"FV" = (
+/obj/machinery/power/matter_injector,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"FW" = (
+/obj/machinery/vending/engivend,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"FX" = (
+/obj/machinery/rnd/production/techfab/department/engineering,
+/turf/open/floor/carpet/trek,
+/area/space)
+"FY" = (
+/obj/machinery/computer/station_alert,
+/turf/open/floor/carpet/trek,
+/area/space)
+"FZ" = (
+/obj/item/electronics/apc,
+/obj/item/stock_parts/micro_laser/high,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/micro_laser,
+/obj/item/stock_parts/micro_laser,
+/obj/item/stock_parts/manipulator,
+/obj/item/analyzer,
+/obj/structure/table/glass,
+/obj/item/stack/cable_coil/random,
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Ga" = (
+/obj/machinery/rnd/production/protolathe/department/engineering,
+/turf/open/floor/carpet/trek,
+/area/space)
+"Gb" = (
+/obj/machinery/suit_storage_unit/trek,
+/turf/open/floor/carpet/trek,
+/area/space)
+"Gc" = (
+/obj/machinery/rnd/production/techfab/department/engineering,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Gd" = (
+/obj/structure/table/glass,
+/obj/item/dilithium_matrix,
+/obj/item/dilithium,
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 5
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Ge" = (
+/obj/structure/tank_dispenser,
+/turf/open/floor/carpet/trek,
+/area/space)
+"Gf" = (
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Gg" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Gh" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Gi" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Gj" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 "Gk" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8;
@@ -11944,6 +11813,83 @@
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
+"Gl" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Gm" = (
+/obj/machinery/atmospherics/pipe/manifold/orange/hidden{
+	icon_state = "manifold-2";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Gn" = (
+/obj/structure/table/glass,
+/obj/item/stack/sheet/duotanium/fifty,
+/obj/item/stack/sheet/duranium/fifty,
+/obj/item/stack/sheet/duotanium/fifty,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Go" = (
+/obj/structure/table/glass,
+/obj/item/storage/toolbox/mechanical,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Gr" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 5
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Gs" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Gu" = (
+/obj/structure/window/reinforced/fulltile/trek/viewport,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/engineering/akira)
+"Gw" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/engine)
+"Gx" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/engine)
+"Gy" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/open/floor/plating,
+/area/maintenance/department/engine)
 "Gz" = (
 /obj/structure/railing{
 	icon_state = "railing0";
@@ -11956,6 +11902,43 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
+"GA" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/engine)
+"GB" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/engine)
+"GC" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/engine)
+"GD" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/open/floor/engine,
+/area/maintenance/department/engine)
+"GE" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/closed/wall/trek_smooth/reinforced,
+/area/maintenance/department/engine)
+"GF" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/open/floor/plating,
+/area/space)
 "GG" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
@@ -11964,19 +11947,182 @@
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
-"GW" = (
+"GL" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/maintenance/central)
+"GM" = (
+/obj/structure/table/glass,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"GO" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/open/floor/plating,
+/area/engine/atmos)
+"GP" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden,
+/turf/closed/wall/trek_smooth/room,
+/area/engine/atmos)
+"GQ" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/engine)
+"GR" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	icon_state = "manifoldlayer";
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/maintenance/department/engine)
+"GS" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 9
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
 	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"GT" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"GU" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"GV" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/trek/ship/maint{
+	icon_state = "closed";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/akira)
+"GW" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"GX" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "GY" = (
 /obj/structure/table,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hos)
+"GZ" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Ha" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Hb" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Hd" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 9
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"He" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Hf" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
 "Hg" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
@@ -11985,6 +12131,86 @@
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
+"Hh" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 6
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Hi" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Hj" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/light,
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Hl" = (
+/obj/machinery/rnd/production/protolathe/department/engineering,
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 5
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Hm" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Hn" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Ho" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/orange/hidden/layer1,
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/engineering/akira)
+"Hp" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/engine,
+/area/maintenance/department/engine)
+"Hq" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/engine,
+/area/maintenance/department/engine)
+"Hr" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/trek_smooth/reinforced,
+/area/engine/gravity_generator)
 "Hy" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
@@ -12016,22 +12242,6 @@
 	},
 /turf/closed/wall/trek_smooth/room,
 /area/engine/atmos)
-"Iy" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"IA" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
 "IE" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
@@ -12042,13 +12252,6 @@
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible,
 /turf/open/floor/plating,
 /area/engine/atmos)
-"Jo" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
 "Jv" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -12100,24 +12303,6 @@
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
-"KK" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 5
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"KL" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 10
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
 "Lh" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	icon_state = "pipe11-2";
@@ -12164,12 +12349,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/maintenance/department/bridge)
-"LN" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
 "LP" = (
 /obj/structure/sign/directions/supply{
 	desc = "This sign indicates you're standing near a lift";
@@ -12196,23 +12375,6 @@
 /obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/grass,
 /area/hydroponics)
-"MS" = (
-/obj/structure/trek_catwalk,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/akira)
-"MY" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
 "Nz" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -12243,18 +12405,6 @@
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
-"Ox" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"OC" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
 "OK" = (
 /obj/structure/trek_catwalk,
 /obj/structure/closet/crate,
@@ -12350,17 +12500,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/engine/atmos)
-"Rg" = (
-/obj/machinery/light,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"Rz" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/closed/wall/trek_smooth/room,
-/area/ship/engineering/akira)
 "RB" = (
 /obj/machinery/camera/trek{
 	icon_state = "camera";
@@ -12379,12 +12518,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/aft)
-"RM" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 6
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
 "RV" = (
 /obj/machinery/airalarm{
 	dir = 8;
@@ -12465,18 +12598,6 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/mix_input,
 /turf/open/floor/engine/air,
 /area/engine/atmos)
-"UT" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/engine/engine_smes)
 "Vb" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/carpet/trek,
@@ -12528,15 +12649,6 @@
 "WZ" = (
 /turf/open/floor/carpet/trek,
 /area/maintenance/department/bridge)
-"Xa" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 5
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
 "Xp" = (
 /obj/structure/bed,
 /obj/item/bedsheet/red,
@@ -12545,30 +12657,12 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/dorms)
-"Xv" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	icon_state = "pipe11-2";
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
 "Xx" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	icon_state = "pipe11-2";
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
-/turf/open/floor/plating,
-/area/engine/atmos)
-"Xz" = (
-/obj/machinery/atmospherics/pipe/simple/yellow/visible{
-	icon_state = "pipe11-2";
-	dir = 5
-	},
 /turf/open/floor/plating,
 /area/engine/atmos)
 "XG" = (
@@ -12639,31 +12733,6 @@
 /obj/structure/table,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hor)
-"YD" = (
-/obj/machinery/door/airlock/trek/goon/engi,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"YY" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
-"Zb" = (
-/obj/machinery/door/airlock/trek/goon/engi,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/carpet/trek,
-/area/ship/engineering/akira)
 "Zk" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	icon_state = "pipe11-2";
@@ -12682,17 +12751,6 @@
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
-"Zw" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/closed/wall/trek_smooth/room,
-/area/engine/engine_smes)
-"ZA" = (
-/obj/structure/trek_catwalk,
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/akira)
 
 (1,1,1) = {"
 aa
@@ -34708,12 +34766,12 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
+FX
+gx
+Gb
+Gb
+Gb
+Ge
 aa
 aa
 aa
@@ -34965,12 +35023,12 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
+FY
+gx
+gx
+gx
+gx
+gx
 aa
 aa
 aa
@@ -35222,12 +35280,12 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
+gx
+gx
+gx
+gx
+gx
+gx
 aa
 aa
 aa
@@ -35480,11 +35538,11 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
+gx
+gx
+gx
+gx
+gx
 aa
 aa
 aa
@@ -35736,12 +35794,12 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
+Ga
+gx
+Gb
+Gb
+Gb
+Ge
 aa
 aa
 aa
@@ -36764,13 +36822,13 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+hk
+yD
+yV
+Aw
+AK
+BA
+BI
 aa
 aa
 aa
@@ -37021,13 +37079,13 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+hp
+yE
+yt
+Ax
+Ax
+Ax
+yI
 aa
 aa
 aa
@@ -37278,13 +37336,13 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ys
+yG
+zb
+Ay
+Ax
+Ax
+BJ
 aa
 aa
 aa
@@ -37535,13 +37593,13 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+yt
+yI
+yt
+Ax
+Ax
+Ax
+yt
 aa
 aa
 aa
@@ -37792,13 +37850,13 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+yB
+yQ
+Aj
+AC
+Be
+yt
+yt
 aa
 aa
 aa
@@ -38014,18 +38072,18 @@ ao
 ao
 ao
 ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
+Gw
+Gy
+Gy
+Gy
+Gy
+Gy
+Gy
+Gy
+Gy
+Gy
+Gy
+GA
 eF
 ag
 aa
@@ -38271,7 +38329,7 @@ eS
 aw
 aw
 aw
-aw
+gN
 gE
 aw
 aw
@@ -38282,22 +38340,22 @@ hq
 hx
 hx
 hB
-ao
+GC
 eF
 ag
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
 aa
 aa
 aa
@@ -38526,35 +38584,35 @@ eV
 eV
 ic
 eV
-fY
-fY
-fY
-fY
-fY
-fY
-fY
-fY
+eV
+eV
+Eg
+eV
+eV
+eV
+eV
+eV
 eV
 hr
 eV
 eV
 hC
-ao
+GC
 eF
 ag
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+hU
+gA
+gA
+gA
+gA
+gA
+gA
+gA
+hU
 aa
 aa
 aa
@@ -38781,37 +38839,37 @@ fm
 fa
 eX
 fp
-fJ
+fQ
 fp
-fY
-gd
-gq
-gF
-yD
-gY
-hg
-fY
+eV
+Gf
+FV
+FZ
+Gd
+FF
+Gf
+eV
 fd
-hs
+ik
 fd
 eV
 hC
-ao
+GC
 eF
 ag
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+hU
+gA
+gA
+gA
+gA
+gA
+gA
+gA
+hU
 aa
 aa
 aa
@@ -39037,38 +39095,38 @@ fa
 fa
 fa
 eX
-yQ
-fJ
+fD
+fQ
 fd
-fY
-ge
-gr
-gG
-gr
-gZ
-ge
-fY
+eV
+gy
+Gg
 fd
-hs
-yG
+fd
+fd
+hS
+eV
+fd
+ik
+nP
 eV
 hC
-ao
-eF
-ag
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+Gx
+GD
+GE
+GF
+GF
+GF
+GF
+gz
+gB
+gC
+gA
+gA
+gA
+gA
+gA
+hU
 aa
 aa
 aa
@@ -39295,19 +39353,19 @@ fn
 ft
 fv
 fC
-fK
-fQ
-fZ
-gf
-gs
-gH
-gR
-ha
-hh
-ho
-hp
-ht
-fU
+fR
+gc
+gq
+fC
+FI
+Gh
+FH
+FK
+FQ
+FJ
+if
+im
+hS
 eV
 hD
 ao
@@ -39317,15 +39375,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+hU
+gA
+gA
+gA
+gA
+gA
+gA
+gA
+hU
 aa
 aa
 aa
@@ -39552,18 +39610,18 @@ fa
 fa
 fw
 fd
-fL
-fR
-fY
-gg
-gt
-gI
-gt
-hb
-ge
-fY
+fT
+gd
+eV
+FT
+Gi
+ik
 fd
-fJ
+fQ
+Hj
+eV
+fd
+fQ
 fd
 eV
 hE
@@ -39574,15 +39632,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
 aa
 aa
 aa
@@ -39808,19 +39866,19 @@ fc
 fo
 NP
 Yo
-Ox
-Xv
+fE
+fU
 AA
-Zw
-gh
-UT
-gJ
-gu
-hc
-hi
-fY
+eV
 fd
-fJ
+Gj
+FS
+fd
+FE
+FS
+eV
+fd
+fQ
 fd
 eV
 hC
@@ -40065,19 +40123,19 @@ eX
 eX
 eX
 eX
-fE
-fL
+fF
+fT
 fd
-fY
-fY
-fY
-fY
-fY
-fY
-fY
-fY
+eV
+eV
+Eg
+eV
+eV
+eV
+eV
+eV
 fd
-fJ
+fQ
 fd
 eV
 hC
@@ -40322,19 +40380,19 @@ fd
 fp
 fd
 fd
-fE
-Eh
+fF
+fV
 fC
 fC
+Hm
+Gl
 fC
+Gr
 fC
-yI
-Ef
-fC
-fC
+Hm
+gc
+ii
 fQ
-Ei
-fJ
 fd
 eV
 hC
@@ -40579,19 +40637,19 @@ fC
 AN
 fC
 fC
-Jo
-AK
-Aw
+fG
+fW
+ge
+fd
+fd
+Gg
 fd
 fd
 fd
 fd
-fd
-fd
-fd
-KL
+hY
 fC
-Xa
+nc
 fd
 eV
 hC
@@ -40836,31 +40894,31 @@ eX
 eX
 eX
 eX
-Ay
-fL
-fE
+fJ
+fT
+fF
 eV
 eV
-eV
+Eg
 eV
 eV
 eV
 eV
 eV
 fd
-YY
+ga
 fd
 eV
-hC
-ao
-aw
-an
-an
-an
-an
-an
-an
-an
+Cl
+Ck
+hx
+Hp
+Hp
+Hp
+Hp
+Hp
+Hp
+Hq
 an
 an
 eM
@@ -41093,31 +41151,31 @@ fe
 fe
 fe
 eX
-fE
-fL
-fE
-eV
-gi
-gv
-gK
-gS
-gk
-hj
+fF
+fT
+fF
 eV
 fd
-YY
+Gg
+gO
+Hl
+Gc
 fd
-hy
-hF
-hy
-hy
+eV
+fd
+ga
+fd
+eV
+ob
+eV
+eV
 hU
 hU
 hU
 hU
 ib
 ib
-ib
+Hr
 ib
 ib
 eF
@@ -41350,31 +41408,31 @@ eX
 eX
 eX
 An
-fE
-fL
-fE
-ga
+fF
+fT
+gf
+eV
+gy
+Gg
 fd
 fd
 fd
-fd
-fd
-fd
-ga
-fd
-Eh
-fC
-gc
-hG
-hN
-MS
-hV
-yE
 hS
-hZ
+eV
+gy
+fV
+fC
+gq
+gn
+fd
+gr
+hU
+gZ
+gZ
+gZ
 ib
-id
-ii
+BY
+Cj
 ih
 ib
 eF
@@ -41607,31 +41665,31 @@ dN
 yK
 dN
 fx
-fD
-fM
-fD
-YD
-fT
-gw
-gw
-gw
-MY
-IA
-Zb
-IA
-hu
-yG
-hy
-hH
-hO
-hJ
-hW
-hW
-hW
-hQ
+fK
+fX
+fK
+gF
+gG
+gH
+ij
+ij
+ij
+gI
+FD
+hR
+ny
+nP
+eV
+ik
+fd
+gu
+Gu
+BK
+fe
+BK
 ib
 ie
-ij
+il
 ig
 ib
 eF
@@ -41864,31 +41922,31 @@ ai
 ai
 aA
 fy
-fE
-fN
-Rg
-ga
-gj
-gx
-gL
-gT
+fF
+fY
+fF
+eV
 fd
-fU
-ga
-gj
-fJ
-fU
-hA
-hI
-hP
-hT
-hX
-hW
-hW
-ia
-rc
-if
-ik
+Gm
+Fp
+Fp
+qy
+gJ
+gm
+Hi
+gl
+hS
+eV
+gR
+gp
+gL
+gk
+gs
+gt
+gv
+ib
+il
+ih
 in
 ib
 eF
@@ -42121,28 +42179,28 @@ dO
 dO
 dO
 fz
-Ax
-fO
-Iy
-YD
-fT
-gw
-gw
-gw
-MY
-IA
-Zb
-IA
-KK
-yG
-hy
-hJ
-hQ
-hJ
-hW
-hW
-hW
-hJ
+fL
+fZ
+gg
+gF
+gG
+gH
+ij
+ij
+ij
+gK
+gq
+hR
+nN
+nP
+eV
+ik
+fd
+gu
+Gu
+BK
+fe
+BK
 ib
 ig
 il
@@ -42378,31 +42436,31 @@ eX
 eX
 eX
 eX
-fE
-fL
-fE
-ga
+fF
+fT
+gf
+eV
+gy
+Gg
 fd
 fd
 fd
-fd
-fd
-fd
-ga
-fd
-Eh
+hS
+eV
+gy
+Hb
 fC
-gc
-hK
-hR
-ZA
-hY
-yF
-hJ
-hJ
+gq
+gn
+fd
+gu
+hU
+gZ
+gZ
+gZ
 ib
 ih
-im
+Ef
 ih
 ib
 eF
@@ -42635,24 +42693,24 @@ fe
 fe
 fe
 eX
-fE
-fL
-fE
-eV
-gk
-gy
-gy
-gU
-hd
-hd
+fF
+fT
+fF
 eV
 fd
-YY
+Gg
+gO
+GM
+GM
 fd
-hy
-hL
-hy
-hy
+eV
+fd
+He
+fd
+eV
+yF
+eV
+eV
 hU
 hU
 hU
@@ -42892,19 +42950,19 @@ eX
 eX
 eX
 eX
-Ay
-fL
-fE
+fJ
+fT
+fF
 eV
 eV
-eV
+Eg
 eV
 eV
 eV
 eV
 eV
 fd
-YY
+He
 fd
 eV
 ey
@@ -43149,19 +43207,19 @@ AA
 AB
 AA
 AA
-AC
-YY
-OC
+fM
+ga
+gh
+fd
+fd
+Gg
 fd
 fd
 fd
 fd
-fd
-fd
-fd
-RM
+ia
 fC
-GW
+Hf
 fd
 eV
 ey
@@ -43406,19 +43464,19 @@ fd
 yP
 fd
 fd
-fE
-Eh
-fC
-fC
-fC
-fC
-fC
-Eg
-fC
-fC
-fX
-Ei
-fJ
+fF
+Hh
+GW
+GW
+Hn
+GX
+GW
+Ho
+GW
+Hn
+GZ
+Ha
+Hd
 fd
 eV
 ey
@@ -43663,19 +43721,19 @@ eX
 eX
 eX
 eX
-fE
-fL
+fF
+gb
 fd
 eV
 eV
-eV
+Eg
 eV
 eV
 eV
 eV
 eV
 fd
-fJ
+fQ
 fd
 eV
 ey
@@ -43920,19 +43978,19 @@ yH
 fd
 Vb
 Yo
-LN
-Xv
+fN
+GS
 AA
-Rz
-gl
-gz
-gM
-yB
-gV
-hk
+eV
+gw
+Gn
+hl
+ho
+BM
+FW
 eV
 fd
-fJ
+fQ
 fd
 eV
 ey
@@ -44178,18 +44236,18 @@ fq
 fd
 fw
 fd
-fL
-fW
+gb
+gi
 eV
-gm
-gA
-gN
-gW
-he
-hl
+gy
+Gg
+fd
+fd
+fd
+hS
 eV
 fd
-fJ
+fQ
 fd
 eV
 ey
@@ -44200,15 +44258,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
 aa
 aa
 aa
@@ -44434,20 +44492,20 @@ fl
 fr
 fu
 fA
-fF
-fP
-fX
-gc
-gn
-gB
-gO
-gX
-hf
-hm
-gb
-fV
-hv
-fU
+fO
+GT
+gj
+gq
+fC
+Gs
+go
+ii
+fd
+fd
+FG
+ij
+nO
+hS
 eV
 hM
 ao
@@ -44457,15 +44515,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+hU
+gA
+gA
+gA
+gA
+gA
+gA
+gA
+hU
 aa
 aa
 aa
@@ -44691,38 +44749,38 @@ fd
 fs
 fd
 eX
-yQ
-fJ
+fD
+GU
 fd
 eV
-go
-gC
-gP
-gW
-he
-hl
+gy
+Gg
+fd
+fd
+fd
+hS
 eV
 fd
-fJ
-yG
+fQ
+nP
 eV
 ey
-ao
-eF
-ag
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+Gw
+GD
+GE
+GF
+GF
+GF
+GF
+gz
+gB
+gC
+gA
+gA
+gA
+gA
+gA
+hU
 aa
 aa
 aa
@@ -44948,38 +45006,38 @@ fd
 fd
 fd
 eX
-fG
-fJ
-fG
+fP
+GU
+fP
 eV
-gp
-gD
-gQ
-gV
-gV
-hn
+BM
+Go
+gM
+hb
+hJ
+hJ
 eV
 fd
-fJ
+fQ
 fd
 eV
 ey
-ao
+GC
 eF
 ag
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+hU
+gA
+gA
+gA
+gA
+gA
+gA
+gA
+hU
 aa
 aa
 aa
@@ -45206,11 +45264,11 @@ eV
 eV
 eV
 eV
-ic
+GV
 eV
 eV
 eV
-eV
+Eg
 eV
 eV
 eV
@@ -45221,22 +45279,22 @@ hw
 eV
 eV
 ey
-ao
+GC
 eF
 ag
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+hU
+gA
+gA
+gA
+gA
+gA
+gA
+gA
+hU
 aa
 aa
 aa
@@ -45463,11 +45521,11 @@ eU
 eU
 eU
 fH
-eR
+GR
 aw
 aw
 aw
-aw
+gN
 cf
 aw
 aw
@@ -45478,22 +45536,22 @@ eT
 eU
 eU
 ez
-ao
+GC
 eF
 ag
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
+hU
 aa
 aa
 aa
@@ -45712,30 +45770,30 @@ dR
 zY
 zY
 aN
+Gw
+Gy
+Gy
+Gy
+Gy
+Gy
+Gy
+Gy
+GB
 ao
 ao
 ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
-ao
+Gx
+Gy
+Gy
+Gy
+Gy
+Gy
+Gy
+Gy
+Gy
+Gy
+Gy
+GB
 eF
 ag
 aa
@@ -45969,7 +46027,7 @@ aN
 aN
 aN
 aN
-ao
+GC
 ao
 ao
 ao
@@ -46226,7 +46284,7 @@ eb
 ed
 cE
 aN
-ao
+GC
 ao
 aw
 ar
@@ -46483,7 +46541,7 @@ bL
 ee
 cF
 aN
-ao
+GC
 ao
 eF
 ag
@@ -46740,7 +46798,7 @@ aN
 aN
 aN
 aN
-eO
+GQ
 ao
 eF
 ag
@@ -46997,7 +47055,7 @@ eb
 ef
 cG
 aN
-ao
+GC
 ao
 eF
 ag
@@ -47248,13 +47306,13 @@ XZ
 dy
 Lh
 zv
-dh
+Zv
 dx
 bL
 eg
 cH
 aN
-ao
+GC
 ao
 eF
 ag
@@ -47505,13 +47563,13 @@ Hg
 Xx
 da
 Hy
-Xz
-dD
-aN
-aN
-aN
-aN
-ao
+dh
+GO
+GP
+GP
+GP
+GP
+GB
 ao
 eF
 ag
@@ -106635,10 +106693,10 @@ pE
 pO
 qb
 oL
+gP
+FC
+FC
 qx
-qB
-qB
-qB
 qC
 iU
 qU
@@ -106892,10 +106950,10 @@ pj
 oW
 qc
 oL
-qx
-qx
-qx
-qB
+iU
+iU
+iU
+gS
 qC
 iU
 qU
@@ -106904,10 +106962,10 @@ qC
 nj
 nw
 iU
-iU
-iU
-iU
 je
+iq
+iq
+iq
 ib
 ih
 ih
@@ -107149,10 +107207,10 @@ oW
 oW
 qd
 oL
-qx
-qx
-qB
-qx
+iU
+iU
+iU
+qF
 qC
 iU
 qU
@@ -107161,10 +107219,10 @@ qC
 nj
 nw
 iU
-iU
-iU
-iU
 je
+iq
+iq
+iq
 rc
 ie
 il
@@ -107406,10 +107464,10 @@ MA
 pP
 qe
 oL
-qy
+iU
+iU
+iU
 qF
-qx
-qx
 qR
 qS
 iq
@@ -107418,9 +107476,9 @@ qC
 qX
 mW
 qZ
-qZ
-qZ
-qZ
+gD
+gD
+gD
 ra
 ib
 il
@@ -107663,10 +107721,10 @@ oW
 pQ
 qf
 oL
-qx
-qB
-qx
-qB
+iU
+iU
+iU
+qF
 qC
 iU
 qU
@@ -107675,10 +107733,10 @@ qC
 nj
 nw
 iU
-iU
-iU
-iU
-rb
+je
+iq
+iq
+nn
 vv
 rd
 il
@@ -107920,10 +107978,10 @@ pj
 pR
 qg
 oL
-qx
-qB
-qB
-qB
+iU
+iU
+iU
+gS
 qC
 iU
 qU
@@ -107932,10 +107990,10 @@ qC
 nj
 nw
 iU
-iU
-iU
-iU
 je
+iq
+iq
+iq
 ib
 re
 rh
@@ -108177,9 +108235,9 @@ oY
 pS
 qh
 oL
-qx
-qB
-qB
+gQ
+GL
+GL
 qx
 qC
 iU
@@ -108434,7 +108492,7 @@ oL
 oL
 oL
 oL
-qz
+qC
 qC
 qC
 qz

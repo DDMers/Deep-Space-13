@@ -2796,6 +2796,7 @@
 #include "DS13\code\modules\overmap\transporter.dm"
 #include "DS13\code\modules\overmap\visual_fx.dm"
 #include "DS13\code\modules\power\apc.dm"
+#include "DS13\code\modules\power\warpcore\warpcore.dm"
 #include "DS13\code\modules\turbolift\turbolift.dm"
 #include "DS13\goonstation\airlocks.dm"
 #include "DS13\goonstation\turf_autoalign.dm"

@@ -124,8 +124,12 @@
 	if(!L.ckey)
 		return
 	if(L.client && L.client.prefs.toggles & SOUND_SHIP_AMBIENCE)
-		L.client.ambience_playing = 1
-		SEND_SOUND(L, sound('DS13/sound/ambience/engineering.ogg', repeat = 1, wait = 0, volume = 80, channel = CHANNEL_BUZZ)) //DeepSpace13 - engine hum
+		var/obj/machinery/power/warp_core/W = locate(/obj/machinery/power/warp_core) in src
+		if(!W)
+			return
+		if(W && W.active())
+			L.client.ambience_playing = 1
+			SEND_SOUND(L, sound('DS13/sound/ambience/engineering.ogg', repeat = 1, wait = 0, volume = 80, channel = CHANNEL_BUZZ)) //DeepSpace13 - engine hum
 
 /area/ship/engineering/Exited(atom/movable/M)
 	SEND_SIGNAL(src, COMSIG_AREA_EXITED, M)

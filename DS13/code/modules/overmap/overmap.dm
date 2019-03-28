@@ -23,6 +23,7 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	var/list/linked_areas = list()
 	var/list/attackers = list() //Which ships have attacked us? for AI mode.
 	var/list/components = list() //stuff that's linked to us
+	var/obj/machinery/power/warp_core/warp_core
 
 /obj/shield_overlay
 	name = ""
