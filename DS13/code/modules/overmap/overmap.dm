@@ -104,7 +104,7 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 		vel = 0.5
 		stop_warping()
 		return
-	if(!warp_core || !warp_ready || engine_power <= 0)
+	if(!warp_core || !warp_ready && engine_power <= 0)
 		if(pilot)
 			to_chat(pilot, "<span class='notice'>Warp engines are recharging.</span>")
 		return
@@ -126,14 +126,6 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 		ARR.parallax_movedir = NORTH
 	for(var/mob/player in GLOB.player_list)
 		if(is_station_level(player.z))
-			if(prob(50))
-				shake_camera(player, 1,3)
-			else
-				shake_camera(player, 2,2)
-			if(ishuman(player))
-				var/mob/living/carbon/human/H = player
-				if(H.buckled)
-					to_chat(H, "<span_class='notice'><b>Acceleration presses you into your seat!</b></span>")
 			SEND_SOUND(player, 'DS13/sound/effects/warpcore/warp.ogg')
 
 /obj/structure/overmap/proc/stop_warping()
@@ -158,5 +150,16 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 /obj/structure/overmap/proc/finish_warp()
 	warping = TRUE
 	vel = max_warp
+	for(var/mob/player in GLOB.player_list)
+		if(is_station_level(player.z))
+			if(prob(50))
+				shake_camera(player, 1,3)
+			else
+				shake_camera(player, 2,2)
+			if(ishuman(player))
+				var/mob/living/carbon/human/H = player
+				if(H.buckled)
+					to_chat(H, "<span_class='notice'><b>Acceleration presses you into your seat!</b></span>")
+
 
 #undef WARP_5

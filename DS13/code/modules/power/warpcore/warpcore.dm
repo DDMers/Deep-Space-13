@@ -246,7 +246,7 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	layer = 4
 
 /obj/machinery/power/warp_core/proc/try_warp()
-	if(!coils.len)
+	if(!coils.len || !active())
 		return FALSE
 	for(var/X in coils)
 		var/obj/machinery/power/warp_coil/V = X
@@ -462,7 +462,9 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	var/penalty = 0.1 //You need to realign every 30 minutes or so.
 	dilithium_matrix.absorb_damage(penalty)
 	for(var/datum/gas_mixture/S in outlet.airs)
-		S.temperature += 500
+		if(S.gases[/datum/gas/plasma])
+			S.gases[/datum/gas/plasma][MOLES] += 5 //Add some extra plasma to it.
+			S.garbage_collect()
 	var/power = 500000
 	add_avail(power)
 
@@ -606,13 +608,13 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	desc = "A huge ring of verterium cortenide which when provided with high energy warp plasma, will produce a subspace distortion field rated to a maximum of 300 cochranes, you shouldn't get too close when it's active."
 	icon = 'DS13/icons/obj/machinery/warpcoil.dmi'
 	icon_state = "warpcoil"
-	pixel_x = -32
+	pixel_x = -30
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 	anchored = TRUE
 	density = FALSE
 	obj_integrity = 300
 	use_power = 20000
-	var/drain = 10 //Moles. How quickly it eats plasma from the air.
+	var/drain = 1.25 //Moles. How quickly it eats plasma from the air.
 
 /obj/machinery/power/warp_coil/Initialize()
 	. = ..()
@@ -626,12 +628,13 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 		return FALSE
 	var/turf/T = get_turf(src)
 	var/datum/gas_mixture/air = T.return_air()
-	if(air.temperature >= 350) //It needs to be HOT
+	if(air.gases[/datum/gas/plasma])
+		if(air.gases[/datum/gas/plasma][MOLES] < drain)
+			return FALSE
 		icon_state = "warpcoil-hot"
-		if(air.gases[/datum/gas/plasma])
-			var/gasdrained = min(drain,air.gases[/datum/gas/plasma][MOLES])
-			air.gases[/datum/gas/plasma][MOLES] -= gasdrained
-			air.garbage_collect()
-			radiation_pulse(src, 150, 4)
-			return TRUE
+		var/gasdrained = min(drain,air.gases[/datum/gas/plasma][MOLES])
+		air.gases[/datum/gas/plasma][MOLES] -= gasdrained
+		air.garbage_collect()
+		radiation_pulse(src, 1000, 5)
+		return TRUE
 	return FALSE

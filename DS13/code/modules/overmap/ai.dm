@@ -23,6 +23,21 @@
 	max_health = 130
 	max_speed = 2 //Slower than every ship.
 
+/obj/structure/overmap/ai/aggressive
+	behaviour = "aggressive"
+
+/obj/structure/overmap/ai/aggressive/miranda
+	name = "Miranda Class Light Cruiser"
+	desc = "An all purpose, reliable starship. It's a tried and tested design that has served the federation for hundreds of years. Despite its aging design, it has a modest armament."
+	icon = 'DS13/icons/overmap/miranda.dmi'
+	icon_state = "miranda"
+	main_overmap = FALSE
+	class = "starfleet-miranda" //Feel free to add overmap controls for AIs later, future me.
+	damage_states = TRUE
+	damage = 10
+	faction = "starfleet"
+	behaviour = "aggressive"
+
 /obj/structure/overmap/ai/explode()
 	if(linked_event)
 		linked_event.check_completion(src)
@@ -59,7 +74,7 @@
 	desc = "Her crew must have suffered a terrible fate..."
 	icon = 'DS13/icons/overmap/miranda_assimilated.dmi'
 	icon_state = "assimilated2"
-	max_health = 200
+	max_health = 250
 	class = "borg-miranda"
 	damage_states = FALSE
 
@@ -120,16 +135,17 @@
 
 /obj/structure/overmap/proc/pick_target()
 	for(var/obj/structure/overmap/OM in GLOB.overmap_ships)
-		if(istype(OM) && OM.z == z && get_dist(src, OM) <= range)
+		if(get_dist(src, OM) > range)
+			continue
+		if(istype(OM, /obj/structure/overmap))
 			if(OM in attackers)
 				target = OM
 				nav_target = OM
 				return
-			else
-				if(behaviour == "aggressive" && OM.faction != faction)
-					target = OM
-					nav_target = OM
-					return
+			if(behaviour == "aggressive" && OM.faction != faction)
+				target = OM
+				nav_target = OM
+				return
 	return
 
 /obj/structure/overmap/take_damage(var/atom/source, var/amount = 10)

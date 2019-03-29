@@ -361,6 +361,7 @@
 	if(warp_core && !QDELETED(warp_core)) //They have a core. So give them a chance to save the ship.
 		warp_core.containment = 0//Force a warp core breach. No matter if it's on or not. They'll then have 45 seconds to haul ass to engi and eject the core.
 		warp_core.breach()
+		addtimer(CALLBACK(src, .proc/check_breach), 450)
 		for(var/mob/A in operators)
 			to_chat(A, "<span class='cult'><font size=3>Antimatter containment failing, evacuate the ship!</font></span>")
 		return
@@ -373,23 +374,35 @@
 	power_slots = 0
 	movement_block = TRUE
 	remove_control()
-	addtimer(CALLBACK(src, .proc/core_breach_finish), 450)
+	addtimer(CALLBACK(src, .proc/core_breach_finish), 100)
 	for(var/mob/A in operators)
 		to_chat(A, "<span class='cult'><font size=3>Your ship has been destroyed!</font></span>")
 		if(A.remote_control)
 			A.remote_control.forceMove(get_turf(A))
 	core_breach()
 
+
+/obj/structure/overmap/proc/check_breach()
+	if(!warp_core || QDELETED(warp_core))
+		warp_core = null
+		health = 50 //Second wind! Gives them time to run, because the next core breach will actually destroy them.
+		return FALSE
+	else
+		if(warp_core.containment <= 0) //They saved it.
+			health = 50 //Second wind! Gives them time to run, because the next core breach will actually destroy them.
+			return TRUE
+		return FALSE
+
 /obj/structure/overmap/proc/core_breach()
 	if(!main_overmap)
 		if(!linked_area)
 			find_area()
 		for(var/mob/player in linked_area)
-			SEND_SOUND(player, 'DS13/sound/effects/damage/corebreach.ogg')
+			SEND_SOUND(player, 'DS13/sound/effects/damage/ship_explode.ogg')
 		return
 	for(var/mob/player in GLOB.player_list)
 		if(is_station_level(player.z))
-			SEND_SOUND(player, 'DS13/sound/effects/damage/corebreach.ogg')
+			SEND_SOUND(player, 'DS13/sound/effects/damage/ship_explode.ogg')
 
 /obj/structure/overmap/proc/core_breach_finish()
 	if(main_overmap)
@@ -402,6 +415,10 @@
 		if(linked_area)
 			var/turf/T = pick(get_area_turfs(linked_area))
 			explosion(T,10,10,10)
+		else
+			var/mob/i = pick(GLOB.player_list)
+			var/turf/T = get_turf(i)
+			explosion(T,10,10,10) //Unlucky sod
 	qdel(src)
 
 /obj/structure/overmap/proc/special_fx_targeted(var/shields_absorbed) //This ship isn't the main overmap, so find the area we want and apply damage to it

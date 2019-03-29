@@ -261,6 +261,7 @@
 	var/obj/structure/overmap_component/plasma_relay/supply_to
 	var/obj/structure/overmap_component/integrity_field_generator/generator
 	var/locked = FALSE
+	resistance_flags = FIRE_PROOF
 
 /obj/structure/overmap_component/plasma_injector/Initialize()
 	. = ..()
