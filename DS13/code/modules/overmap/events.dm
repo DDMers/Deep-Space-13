@@ -352,3 +352,106 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 		warbird.linked_event = src
 		elements += warbird
 */
+
+
+
+
+//----------------------
+//ITEM DELIVERY AKA SPACE UPS
+//----------------------
+
+//LANDMARK
+
+GLOBAL_DATUM(sealedcratespawn,/obj/effect/landmark/sealedcrate)
+
+/obj/effect/landmark/sealedcrate
+	invisibility = 0
+
+/obj/effect/landmark/Initialize()
+	. = ..()
+	GLOB.sealedcratespawn = src //going to personally kill you if you add more than on without refactoring this to support it
+
+//CRATE
+
+/obj/structure/sealedcrate
+	name = "Sealed crate"
+	desc = "Very important crate that contains very important stuff that starfleet holds dear to them. \
+			Better not mess this up or you are going to end up scrubbing plasma conduits."
+	icon = 'icons/obj/crates.dmi'
+	icon_state = "sealedcrate"
+	var/datum/overmap_event/linked_event
+	max_integrity = 120
+	density = TRUE
+
+/obj/structure/sealedcrate/attack_hand(mob/user)
+	. = ..()
+	if(.)
+		return
+	to_chat(user,"<span class='warning'>This crate is locked and sealed,you can't open it.</span>") //HEY LEAVE THIS ALONE OR YOUR SCRUBBING PLASMA CONDUITS
+
+/obj/structure/sealedcrate/Destroy()
+	. = ..()
+	linked_event.fail()
+	linked_event = null
+
+//DESTINATION_PORTAL
+
+/obj/structure/crate_receiver
+	name = "Delivery point"
+	desc = "Deliver sealed crate here"
+	icon = 'DS13/icons/obj/cratereceiver.dmi'
+	icon_state = "delivery_point"
+	density = FALSE
+	opacity = FALSE
+
+/obj/structure/crate_receiver/Crossed(atom/movable/AM, oldloc)
+	. = ..()
+	if(istype(AM,/obj/structure/sealedcrate))
+		var/obj/structure/sealedcrate/SC = AM
+		SC.linked_event.succeed()
+		while(SC.alpha != 0)
+			SC.alpha = min(SC.alpha-1,0)
+		qdel(SC)
+
+//DATUM
+
+/datum/overmap_event/deliver_item
+	name = "Item delivery"
+	desc = "YEEEEEET,CALL A CODER AT 1800-CODERRRRRRRRRRRRR.var/desc not set,check new() proc for runtimes."
+	var/sourceoutpostid = "YEEEEEET,CALL A CODER AT 1800-CODERRRRRRRRRRRRR.var/sourceoutpostid not set,check new() proc for runtimes"
+	var/destinationoutpostid = "YEEEEEET,CALL A CODER AT 1800-CODERRRRRRRRRRRRR.var/destinationoutpostid not set,check new() proc for runtimes"
+	var/obj/structure/overmap/delivery_source/sourceoutpost
+	var/obj/structure/overmap/delivery_destination/destinationoutpost
+	fail_text = "The crate has been destroyed."
+	succeed_text = "Excellent work, the items were succesfully delivered."
+	reward = 10000
+	var/obj/structure/sealedcrate/to_deliver
+
+/datum/overmap_event/deliver_item/New()
+	. = ..()
+	sourceoutpostid = rand(150,265)
+	destinationoutpostid = rand(1,3)
+	desc = "Star fleet needs you to fetch an important crate containing important items from Outpost [sourceoutpostid] to Secure Station [destinationoutpostid]."
+
+/datum/overmap_event/deliver_item/start()
+	to_deliver = new /obj/structure/sealedcrate(get_turf(GLOB.sealedcratespawn))
+	to_deliver.linked_event = src //yeeeeeet,this circular reference wont break anything at all ofc Spoilers: it will
+	sourceoutpost = new /obj/structure/overmap/delivery_source(get_turf(spawner))
+	sourceoutpost.name = "Outpost [sourceoutpostid]"
+	var/newx = CLAMP(spawner.x + rand(-10,25),world.maxx,0)
+	var/newy = CLAMP(spawner.y + rand(-10,25),world.maxy,0)
+	var/turf/other_spawn = locate(newx,newy,spawner.z)
+	destinationoutpost = new /obj/structure/overmap/delivery_destination(get_turf(other_spawn))
+	destinationoutpost.name = "Secure Station [destinationoutpostid]"
+
+/datum/overmap_event/deliver_item/fail()
+	priority_announce("You have failed to deliver the crate.")
+	qdel(to_deliver)
+
+/datum/overmap_event/deliver_item/check_completion(obj/structure/overmap/what)
+	if(what == destinationoutpost|what == sourceoutpost)
+		fail()
+
+/datum/overmap_event/deliver_item/Destroy(force, ...)
+	. = ..()
+	QDEL_NULL(to_deliver)

@@ -100,6 +100,48 @@
 	pixel_x = -32
 	pixel_y = -32
 
+/obj/structure/overmap/station_generic
+	name = "Space Station"
+	desc = "A space station"
+	icon = 'DS13/icons/overmap/station.dmi'
+	icon_state = "station"
+	main_overmap = FALSE
+	damage = 10 //Will turn into 20 assuming weapons powered //what does this var even do?who cares.
+	class = "station_generic"
+	max_speed = 0
+	turnspeed = 0
+	movement_block = TRUE //You can't turn a station :) //YES YOU CAN! YOU JUST CANT SEE IT!
+	pixel_x = -32
+	pixel_y = -32
+
+/obj/structure/overmap/delivery_source
+	name = "Space Station this isnt supposed to be here"
+	desc = "A space station"
+	icon = 'DS13/icons/overmap/station.dmi'
+	icon_state = "station"
+	main_overmap = FALSE
+	damage = 10 //Will turn into 20 assuming weapons powered //what does this var even do?who cares.
+	class = "delivery_source"
+	max_speed = 0
+	turnspeed = 0
+	movement_block = TRUE //You can't turn a station :) //YES YOU CAN! YOU JUST CANT SEE IT!
+	pixel_x = -32
+	pixel_y = -32
+
+/obj/structure/overmap/delivery_destination
+	name = "Space Station this isnt supposed to be here"
+	desc = "A space station"
+	icon = 'DS13/icons/overmap/station.dmi'
+	icon_state = "delivery_destination"
+	main_overmap = FALSE
+	damage = 10 //Will turn into 20 assuming weapons powered //what does this var even do?who cares.
+	class = "delivery_destination"
+	max_speed = 0
+	turnspeed = 0
+	movement_block = TRUE //You can't turn a station :) //YES YOU CAN! YOU JUST CANT SEE IT!
+	pixel_x = -32
+	pixel_y = -32
+
 /obj/structure/overmap/shuttle
 	name = "Shuttlepod"
 	desc = "A small, self contained starship. It has minimal shields and weapons"

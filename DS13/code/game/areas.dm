@@ -45,6 +45,16 @@
 	class = "akira"
 	noteleport = FALSE
 
+/area/ship/station/delivery_destination
+	name = "Supply Outpost"
+	class = "delivery_destination"
+	noteleport = TRUE
+
+/area/ship/station/delivery_source
+	name = "Secure Station"
+	class = "delivery_source"
+	noteleport = TRUE
+
 /area/maintenance
 	looping_ambience = 'DS13/sound/ambience/jeffries_hum.ogg'
 
