@@ -27,7 +27,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	var/obj/item/radio/Radio
 
 /obj/machinery/emh_emitter/attack_ghost(mob/dead/observer/user)
-	attack_hand(user)
+	return
 
 /obj/machinery/emh_emitter/attack_ai(mob/user)
 	attack_hand(user)

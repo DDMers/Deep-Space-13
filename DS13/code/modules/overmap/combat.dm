@@ -410,15 +410,15 @@
 		SSticker.mode.check_finished(TRUE)
 		SSticker.force_ending = 1
 		qdel(src)
+		for(var/I = 0, I <= 11, I++) //If it's not a game-ender. Blow the shit out of the ship map
+			var/mob/i = pick(GLOB.player_list)
+			var/turf/T = get_turf(i)
+			explosion(T,10,10,10) //Unlucky sod
 		return
 	for(var/I = 0, I <= 11, I++) //If it's not a game-ender. Blow the shit out of the ship map
 		if(linked_area)
 			var/turf/T = pick(get_area_turfs(linked_area))
 			explosion(T,10,10,10)
-		else
-			var/mob/i = pick(GLOB.player_list)
-			var/turf/T = get_turf(i)
-			explosion(T,10,10,10) //Unlucky sod
 	qdel(src)
 
 /obj/structure/overmap/proc/special_fx_targeted(var/shields_absorbed) //This ship isn't the main overmap, so find the area we want and apply damage to it
