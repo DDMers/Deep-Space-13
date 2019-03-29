@@ -13,6 +13,9 @@ Monitor the reaction for instability
 
 */
 /obj/machinery/proc/default_radial_toggle(var/mob/user)
+	if(!allowed(user))
+		visible_message("<span class='notice'>You need an engineering level ID to access this machine.</span>")
+		return
 	var/list/options = list("on", "off")
 	for(var/option in options)
 		options[option] = image(icon = 'DS13/icons/actions/engine_actions.dmi', icon_state = "[option]")
@@ -21,7 +24,7 @@ Monitor the reaction for instability
 		return
 	return dowhat
 
-/obj/machinery/power/matter_injector //TODO. Make it start off deconstructed so you gotta finish it.
+/obj/machinery/power/matter_injector
 	name = "matter stream injector"
 	desc = "A huge device used to inject matter into a controlled antimatter reaction system for the purpose of power generation."
 	icon = 'DS13/icons/obj/power/warpcore/injectors.dmi'
