@@ -35,6 +35,7 @@ Monitor the reaction for instability
 	var/can_activate = FALSE //Are we built and ready?
 	var/toggleable = TRUE //Is the core about to breach? Block them from turning us off.
 	obj_integrity = 300 //Super tough.
+	req_access = list(ACCESS_ENGINE_EQUIP)
 
 /obj/machinery/power/matter_injector/attackby(obj/item/W, mob/user, params) //Steps: Cables, screwdriver, crowbar
 	if(istype(W, /obj/item/stack/cable_coil))
@@ -206,11 +207,11 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 
 /datum/supply_pack/engine/dilithium_matrix
 	name = "Dilithium Matrix Crate"
-	desc = "The power of the heavens condensed into a single crystal. Requires CE access to open."
+	desc = "A replacement dilithium matrix and crystal sample for repairing warp cores. Requires engineering access to open."
 	cost = 10000
-	access = ACCESS_CE
-	contains = list(/obj/machinery/power/supermatter_crystal/shard)
-	crate_name = "supermatter shard crate"
+	access = ACCESS_ENGINE_EQUIP
+	contains = list(/obj/item/dilithium_matrix,/obj/item/dilithium)
+	crate_name = "Dilithium Matrix Crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 	dangerous = TRUE
 
@@ -245,6 +246,7 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	var/voice_cooldown = 300
 	var/radio_key = /obj/item/encryptionkey/headset_eng
 	var/list/coils = list() //fuck I burnt my coil cyka
+	req_access = list(ACCESS_ENGINE_EQUIP)
 	//Performance penalty vars. If you don't look after your warp core, your crystal will burn out faster (if you leave this too long, you risk a core breach)
 
 /obj/structure/ejected_core
@@ -282,6 +284,9 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 		return TRUE
 
 /obj/machinery/power/warp_core/default_radial_toggle(var/mob/user) //Overriding to allow core ejection.
+	if(!allowed(user))
+		visible_message("<span class='notice'>You need an engineering level ID to access this machine.</span>")
+		return
 	var/list/options = list("on", "off", "eject","cancel_eject")
 	for(var/option in options)
 		options[option] = image(icon = 'DS13/icons/actions/engine_actions.dmi', icon_state = "[option]")
@@ -294,6 +299,9 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	return attack_hand(user)
 
 /obj/machinery/power/warp_core/attack_hand(mob/user)
+	if(!allowed(user))
+		visible_message("<span class='notice'>You need an engineering level ID to access this machine.</span>")
+		return
 	var/dowhat = default_radial_toggle(user)
 	switch(dowhat)
 		if("on")
