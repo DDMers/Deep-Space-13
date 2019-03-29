@@ -204,6 +204,16 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 
 */
 
+/datum/supply_pack/engine/dilithium_matrix
+	name = "Dilithium Matrix Crate"
+	desc = "The power of the heavens condensed into a single crystal. Requires CE access to open."
+	cost = 10000
+	access = ACCESS_CE
+	contains = list(/obj/machinery/power/supermatter_crystal/shard)
+	crate_name = "supermatter shard crate"
+	crate_type = /obj/structure/closet/crate/secure/engineering
+	dangerous = TRUE
+
 /obj/machinery/power/warp_core //here's where the magic happens. This thing takes matter and antimatter. The ratio at which theyre supplied determines the power output and chance of EXPLODING
 	name = "warp core"
 	desc = "A gigantic machine that amounts to a reaction chamber. It is fitted with magnetic constrictors for the containment of highly volatile antimatter while also being linked to the ship's matter and antimatter injectors which provide a reaction substrate."
@@ -231,8 +241,8 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	var/ejecting = FALSE
 	var/obj/structure/overmap/linked
 	var/obj/item/radio/Radio
-	var/voice_ready = FALSE //radio announcement
-	var/voice_cooldown = 600
+	var/voice_ready = TRUE //radio announcement
+	var/voice_cooldown = 300
 	var/radio_key = /obj/item/encryptionkey/headset_eng
 	var/list/coils = list() //fuck I burnt my coil cyka
 	//Performance penalty vars. If you don't look after your warp core, your crystal will burn out faster (if you leave this too long, you risk a core breach)
@@ -455,10 +465,9 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 		stop()
 		return
 	check_failure()
+	announce_radio()
 	if(!dilithium_matrix)
 		return
-	if(containment <= 50 || dilithium_matrix.alignment <= 30)//Engis need to know this.
-		voice_alert()
 	var/penalty = 0.1 //You need to realign every 30 minutes or so.
 	dilithium_matrix.absorb_damage(penalty)
 	for(var/datum/gas_mixture/S in outlet.airs)
@@ -468,32 +477,40 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	var/power = 500000
 	add_avail(power)
 
-/obj/machinery/power/warp_core/proc/voice_alert() //Play voice alerts for things like hull damage, shields breaking etc.
-	if(!voice_ready)
-		return FALSE
-	addtimer(CALLBACK(src, .proc/reset_voice), voice_cooldown)
-	voice_ready = FALSE
-	announce_radio()
-
 /obj/machinery/power/warp_core/proc/reset_voice()
 	voice_ready = TRUE
 
 /obj/machinery/power/warp_core/proc/announce_radio() //Warn the engis of specific events.
-	if(!Radio || QDELETED(Radio))
-		return
-	if(containment <= 20) //When it hits 20%. The engis need to know it's almost the point of no return.
-		Radio.talk_into(src,"WARNING: Antimatter containment failure imminent! Evacuate engineering immediately!. Containment is at [containment]%.","Engineering",get_spans(),get_default_language())
-		return
-	if(containment <= 50) //When it hits 50%. Warn the engineers. It's outside of the switch so it isn't spammed.
-		Radio.talk_into(src,"WARNING: Antimatter containment failing. Containment is at [containment]%.","Engineering",get_spans(),get_default_language())
-		return
+	if(!voice_ready)
+		return FALSE
+	switch(containment)
+		if(0 to 20) //When it hits 20%. The engis need to know it's almost the point of no return.
+			Radio.talk_into(src,"WARNING: Antimatter containment failure imminent! Evacuate engineering immediately!. Containment is at [containment]%.","Engineering",get_spans(),get_default_language())
+			say("WARNING: Antimatter containment failure imminent! Evacuate engineering immediately!. Containment is at [containment]%.")
+			addtimer(CALLBACK(src, .proc/reset_voice), voice_cooldown)
+			voice_ready = FALSE
+			return TRUE
+		if(21 to 50) //When it hits 50%. Warn the engineers. It's outside of the switch so it isn't spammed.
+			Radio.talk_into(src,"WARNING: Antimatter containment failing. Containment is at [containment]%.","Engineering",get_spans(),get_default_language())
+			say("WARNING: Antimatter containment failing. Containment is at [containment]%.")
+			addtimer(CALLBACK(src, .proc/reset_voice), voice_cooldown)
+			voice_ready = FALSE
+			return TRUE
 	if(dilithium_matrix)
-		if(dilithium_matrix.alignment <= 10) //When it hits 10%. The engis need to know so they can save the crystal.
-			Radio.talk_into(src,"WARNING: Dilithium matrix destabilization imminent!. Matrix alignment: [dilithium_matrix.alignment]%.","Engineering",get_spans(),get_default_language())
-			return
-		if(dilithium_matrix.alignment <= 30) //When it hits 50%. Warn the engineers. It's outside of the switch so it isn't spammed.
-			Radio.talk_into(src,"WARNING: Dilithium matrix is poorly aligned. Matrix alignment: [dilithium_matrix.alignment]%.","Engineering",get_spans(),get_default_language())
-			return
+		switch(dilithium_matrix.alignment)
+			if(0 to 10)
+				Radio.talk_into(src,"WARNING: Dilithium matrix destabilization imminent!. Matrix alignment: [dilithium_matrix.alignment]%.","Engineering",get_spans(),get_default_language())
+				say("WARNING: Dilithium matrix destabilization imminent!. Matrix alignment: [dilithium_matrix.alignment]%.")
+				addtimer(CALLBACK(src, .proc/reset_voice), voice_cooldown)
+				voice_ready = FALSE
+				return TRUE
+			if(11 to 30)
+				Radio.talk_into(src,"WARNING: Dilithium matrix is poorly aligned. Matrix alignment: [dilithium_matrix.alignment]%.","Engineering",get_spans(),get_default_language())
+				say("WARNING: Dilithium matrix is poorly aligned. Matrix alignment: [dilithium_matrix.alignment]%.")
+				addtimer(CALLBACK(src, .proc/reset_voice), voice_cooldown)
+				voice_ready = FALSE
+				return TRUE
+	return FALSE
 
 /obj/machinery/power/warp_core/proc/check_failure() //In other words. They've turned it on, but it's not got anything to regulate the reaction, so it'll fail quickly
 	if(!dilithium_matrix || QDELETED(dilithium_matrix) || !dilithium_matrix.stored)
@@ -517,6 +534,8 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 			if(1 to 9)
 				playsound(loc, 'DS13/sound/effects/warpcore/warpcore_collapse_warning.ogg', 100, 0)
 				icon_state = "core-fast"
+				toggleable = FALSE //No going back. You're facing a warp core breach. By this point you need to eject the core
+				overload_injectors(TRUE)
 			if(10 to 19)
 				playsound(loc, 'DS13/sound/effects/warpcore/finalalert.ogg', 100, 1)
 				icon_state = "core-fast"
