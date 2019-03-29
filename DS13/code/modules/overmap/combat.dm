@@ -276,7 +276,7 @@
 				continue
 			var/sound/S = pick('DS13/sound/effects/damage/shiphit.ogg','DS13/sound/effects/damage/shiphit2.ogg','DS13/sound/effects/damage/shiphit3.ogg','DS13/sound/effects/damage/shiphit4.ogg','DS13/sound/effects/damage/FTL/explosionfar_2.ogg','DS13/sound/effects/damage/FTL/explosionfar_3.ogg','DS13/sound/effects/damage/FTL/explosionfar_4.ogg','DS13/sound/effects/damage/FTL/explosionfar_5.ogg','DS13/sound/effects/damage/FTL/explosionfar_6.ogg')
 			SEND_SOUND(player, S)
-	for(0 to rand(1,5))
+	for(var/i = 0 to rand(1,5))
 		if(components.len)
 			var/obj/structure/X = pick(components)
 			X.explode_effect()
