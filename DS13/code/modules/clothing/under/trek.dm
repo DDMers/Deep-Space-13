@@ -56,6 +56,48 @@
 	item_state = "bl_suit"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 
+/obj/item/clothing/under/trek/command/khan
+	name = "Antique command uniform"
+	desc = "An old uniform worn in the golden era of starfleet by legends such as Admiral James T. Kirk. It is extremely comfortable and shows that you're in charge. Owning one of these means you're in a high place."
+	icon = 'DS13/icons/obj/clothing/uniforms.dmi'
+	alternate_worn_icon = 'DS13/icons/mob/uniform.dmi'
+	icon_state = "trek_command_khan"
+	item_color = "trek_command_khan"
+	item_state = "bl_suit"
+
+/obj/item/clothing/under/trek/admiral
+	name = "Admiral's uniform"
+	desc = "One of the highest ranks one can achieve in starfleet, the admirals coordinate the fleets of earth and her allies. This uniform is worn by those same people, and is made of extremely comfortable materials."
+	icon = 'DS13/icons/obj/clothing/uniforms.dmi'
+	alternate_worn_icon = 'DS13/icons/mob/uniform.dmi'
+	icon_state = "trek_admiral"
+	item_color = "trek_admiral"
+	item_state = "bl_suit"
+
+/datum/outfit/admiral
+	name = "Admiral"
+	uniform = /obj/item/clothing/under/trek/admiral
+	accessory = null
+	l_pocket = /obj/item/pda
+	belt = /obj/item/gun/energy/phaser
+	shoes = /obj/item/clothing/shoes/jackboots
+	suit = null
+	gloves = /obj/item/clothing/gloves/color/black
+	head = null
+	id = /obj/item/card/id
+
+/datum/outfit/admiral/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	if(visualsOnly)
+		return
+
+	var/obj/item/card/id/W = H.wear_id
+	W.icon_state = "centcom"
+	W.access = get_all_accesses()
+	W.access += get_centcom_access("Admiral")
+	W.assignment = "Admiral"
+	W.registered_name = H.real_name
+	W.update_label()
+
 /obj/item/clothing/suit/DS13
 	name = "Placeholder"
 	icon = 'DS13/icons/obj/suits.dmi'
