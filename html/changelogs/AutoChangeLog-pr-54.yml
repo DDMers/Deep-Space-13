@@ -1,0 +1,4 @@
+author: "soryy708"
+delete-after: True
+changes: 
+  - config: "Now impossible to join as: Roboticist, Geneticist, Virologist, Curator, Lawyer, Counselor, Detective"

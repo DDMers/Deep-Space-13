@@ -148,9 +148,9 @@
 	class = "saladin"
 
 /obj/structure/turbolift/akira
-	floor_directory = "<font color=blue>Deck 1: Bridge, Cargo, Offices, Escapes<br>\
-		Deck 2: Civilian Sector, Transporter, Brig, Science<br>\
-		Deck 3: Engineering, Hangar Bay, Atmospherics, Telecomms<br></font>" //Change this if you intend to make a new map. Helps players know where they're going.
+	floor_directory = "<span class='notice'>Deck 1: Bridge, Cargo, Offices, Escapes<br>\
+		Deck 2: Civilian Sector, Transporter, Brig, Sick Bay, Science<br>\
+		Deck 3: Engineering, Hangar Bay, Atmospherics, Telecomms<br></span>" //Change this if you intend to make a new map. Helps players know where they're going.
 
 /obj/structure/trek_decor/plaque/akira
 	name = "Dedication plaque"
