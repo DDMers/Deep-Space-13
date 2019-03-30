@@ -214,6 +214,9 @@
 	assignedrole = "borg drone"
 	outfit = /datum/outfit/borg
 
+/obj/effect/mob_spawn/human/alive/trek/borg/special(mob/M)
+	if(M.mind)
+		M.mind.make_borg()
 
 /obj/structure/chair/borg
 	name = "If you see this, tell a coder"

@@ -287,3 +287,47 @@
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
+
+/datum/job/ai
+	title = "Ship Computer"
+
+// START LANDMARKS FOLLOW. We change this shit because we changed their names o7
+/obj/effect/landmark/start/assistant
+	name = "Ensign"
+	icon_state = "Assistant"
+
+/obj/effect/landmark/start/clown
+	name = "Morale Officer"
+	icon_state = "Clown"
+
+/obj/effect/landmark/start/head_of_security
+	name = "Security Chief"
+	icon_state = "Head of Security"
+
+/obj/effect/landmark/start/warden
+	name = "Master at arms"
+	icon_state = "Warden"
+
+/obj/effect/landmark/start/head_of_personnel
+	name = "First Officer"
+	icon_state = "Head of Personnel"
+
+/obj/effect/landmark/start/medical_doctor
+	name = "Medical Doctor"
+	icon_state = "Medical Doctor"
+
+/obj/effect/landmark/start/scientist
+	name = "Science Officer"
+	icon_state = "Scientist"
+
+/obj/effect/landmark/start/research_director
+	name = "Chief Science Officer"
+	icon_state = "Research Director"
+
+/obj/effect/landmark/start/chaplain
+	name = "Counselor"
+	icon_state = "Chaplain"
+
+/obj/effect/landmark/start/ai
+	name = "Ship Computer"
+	icon_state = "AI"

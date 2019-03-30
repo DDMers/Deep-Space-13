@@ -21,58 +21,57 @@
 	smooth = TRUE
 	var/connect_universally = TRUE //Connect to every subtype of the walls?
 
-	Initialize()
-		. = ..()
-		set_light(2)
-		if(connect_universally)
-			connects_to += typecacheof(/turf/closed/wall/trek_smooth)
-			canSmoothWith += typecacheof(/turf/closed/wall/trek_smooth)
-			canSmoothWith += typecacheof(/obj/structure/window)
-			canSmoothWith += typecacheof(/obj/machinery/door) //tg smoothing is finnicky
+/turf/closed/wall/trek_smooth/Initialize()
+	. = ..()
+	if(connect_universally)
+		connects_to += typecacheof(/turf/closed/wall/trek_smooth)
+		canSmoothWith += typecacheof(/turf/closed/wall/trek_smooth)
+		canSmoothWith += typecacheof(/obj/structure/window)
+		canSmoothWith += typecacheof(/obj/machinery/door) //tg smoothing is finnicky
 
 	// ty to somepotato for assistance with making this proc actually work right :I
 
-	legacy_smooth() //overwrite the smoothing to use icon smooth SS
-		var/builtdir = 0
-		var/overlaydir = 0
-		for (var/dir in GLOB.cardinals)
-			var/turf/T = get_step(src, dir)
-			if (T.type == src.type || (T.type in connects_to))
-				builtdir |= dir
-			else if (connects_to)
-				for (var/i=1, i <= connects_to.len, i++)
-					var/atom/A = locate(connects_to[i]) in T
+/turf/closed/wall/trek_smooth/legacy_smooth() //overwrite the smoothing to use icon smooth SS
+	var/builtdir = 0
+	var/overlaydir = 0
+	for (var/dir in GLOB.cardinals)
+		var/turf/T = get_step(src, dir)
+		if (T.type == src.type || (T.type in connects_to))
+			builtdir |= dir
+		else if (connects_to)
+			for (var/i=1, i <= connects_to.len, i++)
+				var/atom/A = locate(connects_to[i]) in T
+				if (!isnull(A))
+					if (istype(A, /atom/movable))
+						var/atom/movable/M = A
+						if (!M.anchored)
+							continue
+					builtdir |= dir
+					break
+		if (connect_overlay && connects_with_overlay)
+			if (T.type in connects_with_overlay)
+				overlaydir |= dir
+			else
+				for (var/i=1, i <= connects_with_overlay.len, i++)
+					var/atom/A = locate(connects_with_overlay[i]) in T
 					if (!isnull(A))
 						if (istype(A, /atom/movable))
 							var/atom/movable/M = A
 							if (!M.anchored)
 								continue
-						builtdir |= dir
-						break
-			if (connect_overlay && connects_with_overlay)
-				if (T.type in connects_with_overlay)
-					overlaydir |= dir
-				else
-					for (var/i=1, i <= connects_with_overlay.len, i++)
-						var/atom/A = locate(connects_with_overlay[i]) in T
-						if (!isnull(A))
-							if (istype(A, /atom/movable))
-								var/atom/movable/M = A
-								if (!M.anchored)
-									continue
-							overlaydir |= dir
+						overlaydir |= dir
 
-		src.icon_state = "[mod][builtdir][src.d_state ? "C" : null]"
+	src.icon_state = "[mod][builtdir][src.d_state ? "C" : null]"
 
-		if (connect_overlay)
-			if (overlaydir)
-				if (!src.connect_image)
-					add_overlay(connect_image)
-				else
-					src.connect_image.icon_state = "connect[overlaydir]"
+	if (connect_overlay)
+		if (overlaydir)
+			if (!src.connect_image)
 				add_overlay(connect_image)
 			else
-				cut_overlays()
+				src.connect_image.icon_state = "connect[overlaydir]"
+			add_overlay(connect_image)
+		else
+			cut_overlays()
 
 //END OF GOON STUFF
 

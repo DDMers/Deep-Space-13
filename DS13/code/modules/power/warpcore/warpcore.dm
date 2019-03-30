@@ -53,8 +53,10 @@ Monitor the reaction for instability
 				construction_state = "screwdriver"
 	. = ..()
 
-/obj/machinery/power/matter_injector/wrench_act(mob/user, obj/item/I)
-	default_unfasten_wrench(user, I)
+/obj/machinery/power/matter_injector/attackby(obj/item/I,mob/user)
+	if(default_unfasten_wrench(user, I))
+		return FALSE
+	. = ..()
 
 /obj/machinery/power/matter_injector/screwdriver_act(mob/user, obj/item/I)
 	if(construction_state == "screwdriver")
@@ -337,11 +339,14 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	if(ejecting)
 		visible_message("<span class='notice'>Unable to comply. Core ejection already in progress!</span>")
 		return
+	var/question = alert("Eject the warp core? This can have serious consequences if done outside of an emergency.",name,"yes","no")
+	if(question == "no" || !question)
+		return
 	log_game("[key_name(user)] triggered a warp core ejection")
 	message_admins("[key_name_admin(user)] triggered a warp core ejection")
 	visible_message("<span class='notice'>Warp core ejection sequence activated!</span>")
 	ejecting = TRUE
-	addtimer(CALLBACK(src, .proc/eject_finish), 120)
+	addtimer(CALLBACK(src, .proc/eject_finish), 115)
 	var/area/A = get_area(src)
 	var/obj/structure/overmap/F
 	if(A.linked_overmap)
@@ -615,7 +620,7 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	desc = "This regulator serves as an outlet for heated warp plasma from the warp core"
 	icon = 'DS13/icons/obj/power/warpcore/machines.dmi'
 	anchored = TRUE
-	density = TRUE
+	density = FALSE
 	layer = 2.35 //Hidden
 
 /obj/machinery/power/eps_conduit

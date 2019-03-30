@@ -13,7 +13,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 
 /obj/machinery/emh_emitter
 	name = "Emergency medical hologram emitter"
-	desc = "Simply click this device and an emergency medical hologram will be summoned. Swipe it with a medical level ID to terminate the current EMH if it's misbehaving."
+	desc = "Simply click this device and an emergency medical hologram will be summoned. Swipe it with a medical level ID to terminate the current EMH if it's misbehaving. (EMH only) drag yourself onto the emitter to store yourself safely pending reactivation."
 	icon = 'DS13/icons/obj/decor/wall_decor.dmi'
 	icon_state = "emh-off"
 	anchored = TRUE
@@ -27,10 +27,24 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	var/obj/item/radio/Radio
 
 /obj/machinery/emh_emitter/attack_ghost(mob/dead/observer/user)
+	if(is_occupied())
+		to_chat(user, "<span class='notice'>There is already another player controlling the EMH.</span>")
+		return
+	activate_ghost(user) //Skips democracy and makes you the EMH.
 	return
 
 /obj/machinery/emh_emitter/attack_ai(mob/user)
 	attack_hand(user)
+
+/obj/machinery/emh_emitter/MouseDrop_T(mob/living/target, mob/living/user)
+	if(!istype(user, /mob/living/carbon/human/species/holographic))
+		return
+	to_chat(user, "<span class='notice'>You're now stored in [src]. You can transfer your program if summoned or you can move / walk to exit this emitter as you wish. If you go AFK now other ghosts will be able to take you over!</span>")
+	user.forceMove(src)
+
+/obj/machinery/emh_emitter/relaymove(mob/living/user, direction)
+	user.forceMove(get_turf(src))
+	return FALSE
 
 /obj/machinery/emh_emitter/Initialize()
 	. = ..()
@@ -174,7 +188,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	var/area/ourarea = get_area(src)
 	var/area/emharea = get_area(emh)
 	var/obj/machinery/emh_emitter/target //If the EMH goes out of range, locate the next emitter.
-	if(emharea == ourarea) //EMH is in our area, so no need to snap him back.
+	if(emharea == ourarea || emh.loc == src) //EMH is in our area or is stored inside us, so no need to snap him back.
 		return
 	for(var/obj/machinery/emh_emitter/em in GLOB.machines)
 		if(em == src)
@@ -224,6 +238,31 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		say("Unable to comply, could not activate EMH")
 		spawning_emh = FALSE
 		return
+
+/obj/machinery/emh_emitter/proc/activate_ghost(var/mob/user) //Forcibly makes an EMH for a ghost to inhabit.
+	if(!user || !user.client || spawning_emh)
+		return
+	if(locked)
+		to_chat(user, "Unable to comply, interface cooldown in effect.")
+		return
+	locked = TRUE
+	addtimer(CALLBACK(src, .proc/remove_cooldown), 30) //Stops you from annoying the crew too much.
+	if(emh) //AFK emh can get replaced with a live one!
+		qdel(emh)
+	spawning_emh = TRUE
+	emh = new /mob/living/carbon/human/species/holographic(get_turf(src)) //Please state th-
+	emh.name = "Emergency Medical Hologram"
+	emh.real_name = "Emergency Medical Hologram"
+	emh.alpha = 0 //So that it "pops" out of nowhere with a mind in it, or else it deletes
+	emh.equipOutfit(/datum/outfit/emh)
+	Radio.set_frequency(FREQ_MEDICAL)
+	Radio.talk_into(src,"An [emh] has self-activated in [get_area(src)]. Swipe an EMH emitter with a medical ID to terminate it if it misbehaves.",FREQ_MEDICAL,get_spans(),get_default_language())
+	emh.alpha = 255
+	emh.ckey = user.client.ckey
+	emh.on_spawn()
+	spawning_emh = FALSE
+	qdel(user)
+	START_PROCESSING(SSfastprocess,src)
 
 /proc/offer_control_emh(mob/M) //Specialist proc to check they've not been blacklisted by the captain from being an EMH
 	var/poll_message = "Do you want to play as an emergency medical hologram?"
@@ -281,6 +320,30 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	breathid = null //You don't need air, you're a hologram.
 	damage_overlay_type = ""//You're a hologram, you don't bleed.
 
+/mob/living/carbon/human/species/holographic
+	race = /datum/species/holographic
+	var/voice_ready = TRUE //PLEASE STATE THE NATURE
+	var/voice_cooldown = 300
+
+/mob/living/carbon/human/species/holographic/proc/reset_voice()
+	voice_ready = TRUE
+
+/mob/living/carbon/human/species/holographic/verb/deactivate()
+	set name = "Deactivate"
+	set category = "IC"
+	death()
+
+/mob/living/carbon/human/species/holographic/verb/voice_line()
+	set name = "Voice emitter"
+	set category = "IC"
+	if(!voice_ready)
+		to_chat(src, "<span class='notice'>Your vocal emitters are recharging.</span>")
+		return
+	addtimer(CALLBACK(src, .proc/reset_voice), voice_cooldown)
+	voice_ready = FALSE
+	say("Please state the nature of the medical emergency.")
+	playsound(loc, 'DS13/sound/effects/medicalemergency.ogg', 50, 0)
+
 /mob/living/carbon/human/species/holographic/proc/on_spawn()
 	var/mob/living/carbon/human/C = src
 	C.status_flags |= GODMODE
@@ -298,6 +361,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	<li> The captain has the power to delete you and blacklist you from being an EMH for the duration of the shift if you misbehave!</li>\
 	<li> You are a hologram, not a person! Do not expect the same rights as people. If you must die to save a life, you must sacrifice yourself </li>\
 	<li> You must not put the security of the ship / station in danger, you are free to take reasonable risk </li>\
+	<li> You have two special verbs, voice emitter and deactivate. Voice emitter will play your catchphrase and deactivate will switch you off.</li>\
 	<li> If you have any further questions, please ahelp! </li>\
 	</ul>"
 	to_chat(C, "<span class='notice'>You can transfer your program between rooms by clicking any EMH emitter</span>")
@@ -311,9 +375,6 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	H.visible_message("[H] fizzles away quietly...")
 	qdel(H)
 	. = ..()
-
-/mob/living/carbon/human/species/holographic
-	race = /datum/species/holographic
 
 /datum/outfit/emh //This gives him some NODROP items so he doesn't spawn naked like the EMHs of yore. The ID has preset access and cannot be removed. If they're being a little shit and greytiding, then ban them / execute them.
 	name = "Emergency Medical Hologram"
