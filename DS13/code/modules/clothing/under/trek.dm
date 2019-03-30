@@ -64,6 +64,7 @@
 	icon_state = "trek_command_khan"
 	item_color = "trek_command_khan"
 	item_state = "bl_suit"
+	can_adjust = TRUE
 
 /obj/item/clothing/under/trek/admiral
 	name = "Admiral's uniform"
