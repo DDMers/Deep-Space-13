@@ -509,7 +509,7 @@
 		parts_list -= G
 		qdel(src)
 	..()
-	
+
 
 /obj/item/twohanded/spear/explosive
 	name = "explosive lance"
@@ -538,7 +538,7 @@
 	..()
 	to_chat(user, "<span class='notice'>Alt-click to set your war cry.</span>")
 
-/obj/item/twohanded/spear/explosive/update_icon()	
+/obj/item/twohanded/spear/explosive/update_icon()
 	icon_state = "spearbomb[wielded]"
 
  //THIS MIGHT BE UNBALANCED SO I DUNNO // it totally is.
@@ -872,6 +872,6 @@
 	if(user && user.client)
 		user.regenerate_icons()
 		var/client/C = user.client
-		C.change_view(CONFIG_GET(string/default_view))
+		C.check_view() //Deep Space 13 - Widescreen mode
 		user.client.pixel_x = 0
 		user.client.pixel_y = 0

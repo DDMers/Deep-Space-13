@@ -160,6 +160,13 @@
 	update_icon()
 	return
 
+
+/obj/structure/railing/do_climb(var/mob/living/user)
+	if(get_turf(user) == get_turf(src))
+		usr.forceMove(get_step(src, src.dir))
+	else
+		usr.forceMove(get_turf(src))
+
 /obj/structure/railing/CheckExit(atom/movable/O as mob|obj, target as turf)
 	if(get_dir(O.loc, target) == dir)
 		return 0

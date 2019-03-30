@@ -619,7 +619,7 @@
 					eth_species.adjust_charge(5)
 					return
 				return
-				
+
 			if(H.gloves)
 				var/obj/item/clothing/gloves/G = H.gloves
 				if(G.max_heat_protection_temperature)

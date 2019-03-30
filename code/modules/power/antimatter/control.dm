@@ -74,7 +74,7 @@
 
 
 /obj/machinery/power/am_control_unit/proc/produce_power()
-	playsound(src.loc, 'sound/effects/bang.ogg', 25, 1)
+	playsound(src.loc, 'DS13/sound/effects/warp_hum.ogg', 50, 1)
 	var/core_power = reported_core_efficiency//Effectively how much fuel we can safely deal with
 	if(core_power <= 0)
 		return 0//Something is wrong
@@ -95,7 +95,7 @@
 		for(var/obj/machinery/am_shielding/AMS in linked_cores)
 			AMS.stability -= core_damage
 			AMS.check_stability(1)
-		playsound(src.loc, 'sound/effects/bang.ogg', 50, 1)
+		playsound(src.loc, 'DS13/sound/effects/warp_hum.ogg', 80, 1)
 	return
 
 

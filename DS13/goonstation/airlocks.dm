@@ -61,7 +61,7 @@
 	req_one_access = list(ACCESS_RESEARCH)
 
 /obj/machinery/door/airlock/trek/goon/medical
-	name = "Airlock"
+	name = "Medbay"
 	icon = 'DS13/goonstation/medical_airlock.dmi'
 	desc = "A sleek airlock for walking through. This one looks extra secure"
 	icon_state = "closed"

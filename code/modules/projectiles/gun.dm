@@ -585,7 +585,7 @@
 		user.client.pixel_x = world.icon_size*_x
 		user.client.pixel_y = world.icon_size*_y
 	else
-		user.client.change_view(CONFIG_GET(string/default_view))
+		user.client.check_view() //Deep Space 13 - Widescreen mode
 		user.client.pixel_x = 0
 		user.client.pixel_y = 0
 	return zoomed

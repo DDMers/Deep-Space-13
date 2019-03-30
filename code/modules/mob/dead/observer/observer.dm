@@ -333,7 +333,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(mind.current.key && copytext(mind.current.key,1,2)!="@")	//makes sure we don't accidentally kick any clients
 		to_chat(usr, "<span class='warning'>Another consciousness is in your body...It is resisting you.</span>")
 		return
-	client.change_view(CONFIG_GET(string/default_view))
+	client.check_view() //Deep Space 13 - Widescreen mode
 	SStgui.on_transfer(src, mind.current) // Transfer NanoUIs.
 	mind.current.key = key
 	return 1
@@ -503,7 +503,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		if(new_view)
 			client.change_view(CLAMP(new_view, 7, max_view))
 	else
-		client.change_view(CONFIG_GET(string/default_view))
+		client.check_view() //Deep Space 13 - Widescreen mode
 
 /mob/dead/observer/verb/add_view_range(input as num)
 	set name = "Add View Range"
@@ -678,6 +678,9 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 				return
 		if(href_list["reenter"])
 			reenter_corpse()
+			return
+		if(href_list["respawnrandom"]) //DeepSpace13 - Respawn mechanic.
+			respawn_random()
 			return
 
 //We don't want to update the current var

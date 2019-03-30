@@ -336,7 +336,7 @@ field_generator power level display
 					message_admins("A singulo exists and a containment field has failed at [ADMIN_VERBOSEJMP(T)].")
 					investigate_log("has <font color='red'>failed</font> whilst a singulo exists at [AREACOORD(T)].", INVESTIGATE_SINGULO)
 			O.last_warning = world.time
-	
+
 	move_resist = initial(move_resist)
 
 /obj/machinery/field/generator/shock(mob/living/user)

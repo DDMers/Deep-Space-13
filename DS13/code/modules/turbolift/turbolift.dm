@@ -15,6 +15,7 @@
 /area/turbolift
 	name = "Primary turbolift"
 	requires_power = FALSE //no APCS in the lifts please
+	noteleport = TRUE
 
 /area/turbolift/secondary
 	name = "Secondary turbolift"
@@ -39,9 +40,9 @@
 	can_be_unanchored = FALSE
 	mouse_over_pointer = MOUSE_HAND_POINTER
 	desc = "Starfleet's decision to replace the iconic turboladder was not met with unanimous praise, experts citing increased obesity figures from crewmen no longer needing to climb vertically through several miles of deck to reach their target. However this is undoubtedly much faster."
-	var/floor_directory = "<font color=blue>Deck 1: Engineering <br>\
+	var/floor_directory = "Deck 1: Bridge <br>\
 		Deck 2: Promenade<br>\
-		Deck 3: Bridge<br></font>" //Change this if you intend to make a new map. Helps players know where they're going.
+		Deck 3: Engineering<br>" //Change this if you intend to make a new map. Helps players know where they're going.
 	var/list/turbolift_turfs = list()
 	var/floor = 0 //This gets assigned on init(). Allows us to calculate where the lift needs to go next.
 	var/list/destinations = list() //Any elevator that's on our path.
@@ -56,9 +57,12 @@
 
 /obj/machinery/door/airlock/trek/goon/turbolift
 	name = "Turbolift airlock"
-	icon = 'DS13/goonstation/glass_airlock.dmi'
-	desc = "A sleek airlock for walking through. This one looks extremely strong."
+	icon = 'DS13/icons/obj/machinery/doors/standard.dmi'
+	desc = "A sleek airlock for walking through."
 	icon_state = "closed"
+	doorOpen = 'DS13/sound/effects/tng_airlock.ogg'
+	doorClose = 'DS13/sound/effects/tng_airlock.ogg'
+	doorDeni = 'DS13/sound/effects/denybeep.ogg'
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 
 /turf/closed/wall/trek_smooth/indestructible
@@ -86,12 +90,18 @@
 	if(loc_check())
 		bolt_other_doors()
 		return
-	unbolt_door()
+	if(!in_use)
+		unbolt_door()
 	for(var/obj/structure/turbolift/S in destinations)
 		if(S.loc_check()) //Someone's standing in the lift
 			S.bolt_other_doors() //So bolt the other lifts
 			return
-		S.unbolt_door() //No one's in the lift, and the lift is not moving, so allow entrance
+		if(!S.in_use)
+			S.unbolt_door() //No one's in the lift, and the lift is not moving, so allow entrance
+	if(!loc_check()) //If we've gotten this far, there's no one in the lift. We're not moving, so let's unbolt.
+		unbolt_other_doors()
+		in_use = FALSE
+		unbolt_door()
 
 /obj/structure/turbolift/proc/loc_check() //Is there someone in the lift? if so, we need to stop other lifts from being used.
 	for(var/turf/T in turbolift_turfs)
@@ -110,7 +120,11 @@
 		to_chat(user, "The turbolift is already moving!")
 		return FALSE
 	send_sound_lift('DS13/sound/effects/turbolift/turbolift-close.ogg')
-	bolt_door()
+	if(!bolt_door())
+		to_chat(user, "<span class='notice'> The door cannot close when someone is standing in it.</span>")
+		bolted = FALSE
+		in_use = FALSE
+		return
 	in_use = TRUE
 	to_chat(user, floor_directory)
 	icon_state = "lift-off"
@@ -125,7 +139,7 @@
 		if(TS.floor == S)
 			user.say("Deck [S], fore.")
 			send_sound_lift('DS13/sound/effects/turbolift/turbolift.ogg', TRUE)
-			addtimer(CALLBACK(src, .proc/lift, TS), 90)
+			addtimer(CALLBACK(src, .proc/lift, TS, TRUE), 90)
 			icon_state = "lift-on"
 			return
 
@@ -139,7 +153,11 @@
 				shake_camera(AM, 2, 2)
 
 
-/obj/structure/turbolift/proc/lift(var/obj/structure/turbolift/target)
+/obj/structure/turbolift/proc/lift(var/obj/structure/turbolift/target, var/affects_others = FALSE)
+	if(destinations.len && affects_others)//only one lift needs to tell the others to teleport people.
+		for(var/X in destinations)
+			var/obj/structure/turbolift/TS = X
+			TS.lift(target, FALSE)//Just in case someone got stuck in the lift.
 	in_use = FALSE
 	icon_state = "lift-off"
 	if(!target)
@@ -149,8 +167,7 @@
 	for(var/turf/T in turbolift_turfs)
 		for(var/atom/movable/AM in T)
 			if(AM.anchored) //Don't teleport things that shouldn't go through
-				if(istype(AM, /obj/structure/turbolift) || istype(AM, /obj/machinery/light) || istype(AM, /obj/machinery/door/airlock)) //Allow things that aren't part of the lift up
-					continue
+				continue
 			if(isobserver(AM)) //Don't teleport ghosts
 				continue
 			if(isliving(AM))
@@ -163,47 +180,53 @@
 
 /obj/structure/turbolift/proc/bolt_other_doors()
 	for(var/obj/structure/turbolift/SS in destinations)
-		if(SS.bolted)
-			continue
-		SS.bolt_door()
 		SS.in_use = TRUE
+		SS.bolt_door(TRUE)
 
 /obj/structure/turbolift/proc/unbolt_other_doors()
 	for(var/obj/structure/turbolift/SS in destinations)
-		if(!SS.bolted)
-			continue
-		SS.unbolt_door()
 		SS.in_use = FALSE
+		SS.unbolt_door()
 
-/obj/structure/turbolift/proc/bolt_door()
+/obj/structure/turbolift/proc/bolt_door(var/forced = FALSE) //if we really need some people to get out the FUCKING WAY
 	if(bolted)
-		return
+		return FALSE
+	bolted = TRUE//Tones down the processing use
 	if(!in_use)
 		in_use = TRUE //so no one can ride the lift when it's locked
 	if(!linked_door)
-		linked_door = locate(/obj/machinery/door/airlock) in get_step(src, SOUTH)
-		if(!linked_door || !istype(linked_door, /obj/machinery/door))
-			for(var/obj/machinery/door/airlock/AS in get_area(src))  //If you have a big turbolift with multiple airlocks
-				if(AS.z == z)
-					linked_door = AS
-	bolted = TRUE//Tones down the processing use
-	linked_door.close()
-	linked_door.bolt()
+		find_door()
+	if(linked_door)
+		if(forced) //Forced means get out the FUCKING WAY.
+			for(var/atom/movable/M in get_turf(linked_door))
+				if(M.density && M != linked_door) //something is blocking the door
+					to_chat(M, "<span class='warning'>You step away from [linked_door] to avoid getting crushed.</span>")
+					M.forceMove(get_step(M, NORTH)) //get them out of my way, REEE
+		if(linked_door.close())
+			linked_door.bolt()
+			return TRUE
+		else
+			bolted = FALSE
+			in_use = FALSE
+			return FALSE
 
 /obj/structure/turbolift/proc/unbolt_door()
 	if(!bolted)
 		return
+	bolted = FALSE//Tones down the processing use
 	if(in_use)
 		in_use = FALSE
 	if(!linked_door)
-		linked_door = locate(/obj/machinery/door/airlock) in get_step(src, SOUTH)
-		if(!linked_door || !istype(linked_door, /obj/machinery/door))
-			for(var/obj/machinery/door/airlock/AS in get_area(src))  //If you have a big turbolift with multiple airlocks
-				if(AS.z == z)
-					linked_door = AS
-	bolted = FALSE//Tones down the processing use
-	linked_door.unbolt()
+		find_door()
+	if(linked_door)
+		linked_door.unbolt()
 
+/obj/structure/turbolift/proc/find_door()
+	linked_door = locate(/obj/machinery/door/airlock) in get_step(src, SOUTH)
+	if(!linked_door || !istype(linked_door, /obj/machinery/door))
+		for(var/obj/machinery/door/airlock/AS in get_area(src))  //If you have a big turbolift with multiple airlocks
+			if(AS.z == z)
+				linked_door = AS
 
 /obj/structure/turbolift/Initialize()
 	. = ..()
@@ -219,8 +242,8 @@
 			turbolift_turfs += T
 
 /obj/structure/turbolift/proc/get_position() //Let's see where I am in this world...
-	var/obj/structure/turbolift/below = locate(/obj/structure/turbolift) in SSmapping.get_turf_below(get_turf(src))
-	if(below) //We need to be the bottom lift for this to work.
+	var/obj/structure/turbolift/above = locate(/obj/structure/turbolift) in SSmapping.get_turf_above(get_turf(src))
+	if(above) //We need to be the top lift for this to work.
 		return
 	START_PROCESSING(SSobj, src)
 	floor = 1
@@ -230,12 +253,12 @@
 	var/obj/structure/turbolift/next
 	for(var/II = 0 to world.maxz) //AKA 1 to 6 for example
 		if(!previous)
-			var/turf/T = SSmapping.get_turf_above(get_turf(src))
+			var/turf/T = SSmapping.get_turf_below(get_turf(src))
 			var/obj/structure/turbolift/target = locate(/obj/structure/turbolift) in T
 			next = target
 
 		else
-			var/turf/T = SSmapping.get_turf_above(get_turf(previous))
+			var/turf/T = SSmapping.get_turf_below(get_turf(previous))
 			var/obj/structure/turbolift/target = locate(/obj/structure/turbolift) in T
 			next = target
 		if(next)
@@ -254,4 +277,163 @@
 				SSS.destinations -= SSS
 			break //No more lifts, no need to loop again.
 
+/area/turbolift/ship //These areas MUST be unique if youre using manuals lifts!
+	name = "Ship turbolift"
+
+/area/turbolift/ship/secondary
+	name = "Ship secondary turbolift"
+
+/area/turbolift/ship/romulan //These areas MUST be unique if youre using manuals lifts!
+	name = "Romulan ascendior"
+
+/area/turbolift/ship/romulan/secondary
+	name = "Romulan secondary ascendior"
+
+/area/turbolift/ship/saladin //These areas MUST be unique if youre using manuals lifts!
+	name = "Saladin class elevator"
+
+/area/turbolift/ship/saladin/secondary
+	name = "Saladin class elevator (2)"
+
+//////////////////////////////////
+// These lifts work differently!//
+// Put all lift objects in the same area//
+// Set height manually//
+// These ones ignore multiZ and are used for ships only!//
+
+/obj/structure/turbolift/manual //These are manually set and used for ships, as the maps themselves aren't actually multiZ enabled
+	var/height = 1
+	floor_directory = "Deck 1: Bridge | Officers' Quarters.<br>\
+		Deck 2: Bar | Brig | Transporter Room 1.<br>\
+		Deck 3: Engineering.<br>" //Change this if you intend to make a new map. Helps players know where they're going.
+
+/obj/structure/turbolift/manual/height1
+	height = 2
+
+/obj/structure/turbolift/manual/height2
+	height = 3
+
+/obj/structure/turbolift/manual/height3
+	height = 4
+
+/obj/structure/turbolift/manual/romulan //These are manually set and used for ships, as the maps themselves aren't actually multiZ enabled
+	height = 1
+	floor_directory = "<span class='notice'>Deck 1: Bridge | Officers' Quarters.<br>\
+		Deck 2: Engineering | Brig | Transporter<br>\
+		Deck 3: Mess hall | Crew Quarters<br></span>" //Change this if you intend to make a new map. Helps players know where they're going.
+
+/obj/structure/turbolift/manual/romulan/height1
+	height = 2
+
+/obj/structure/turbolift/manual/romulan/height2
+	height = 3
+
+/obj/structure/turbolift/manual/get_position()
+	if(height > 1) //We need to be the bottom lift for this to work.
+		return
+	START_PROCESSING(SSobj, src)
+	floor = 1
+	name = "[initial(name)] (Deck [floor])"
+	is_controller = TRUE
+	var/last_height = 1 //Store this one
+	for(var/obj/structure/turbolift/manual/X in get_area(src))
+		if(X && X != src && X.height == last_height + 1)
+			X.master = src
+			last_height ++
+			X.floor = height+1
+			X.name = "[initial(X.name)] (Deck [X.floor])"
+			destinations += X
+			if(max_floor < 2)
+				max_floor = height+1
+		if(X && X != src && X.height == last_height + 2)
+			X.master = src
+			X.floor = height+2
+			X.name = "[initial(X.name)] (Deck [X.floor])"
+			destinations += X
+			max_floor = X.height
+
+	for(var/obj/structure/turbolift/SSS in destinations)
+		SSS.max_floor = max_floor
+		SSS.destinations = destinations.Copy()
+		SSS.destinations += src
+		SSS.destinations -= SSS
+
+/obj/structure/turbolift/manual/get_turfs()
+	for(var/turf/T in orange(src, 3))
+		if(!istype(T,/turf/open/space/basic))
+			var/area/A = get_area(T)
+			var/area/AA = get_area(src)
+			if(A == AA)
+				turbolift_turfs += T
+
+/obj/structure/turbolift/manual/lift(var/obj/structure/turbolift/target)
+	in_use = FALSE
+	icon_state = "lift-off"
+	if(!target)
+		return
+	target.in_use = FALSE
+	target.unbolt_door()
+	for(var/turf/T in turbolift_turfs)
+		for(var/atom/movable/AM in T)
+			if(AM.anchored) //Don't teleport things that shouldn't go through
+				if(istype(AM, /obj/structure/turbolift) || istype(AM, /obj/machinery/light) || istype(AM, /obj/machinery/door/airlock)) //Allow things that aren't part of the lift up
+					continue
+			if(isobserver(AM)) //Don't teleport ghosts
+				continue
+			if(isliving(AM))
+				var/mob/living/M = AM
+				if(M.client)
+					shake_camera(M, 2,2)
+			AM.forceMove(safepick(target.turbolift_turfs)) //Avoids the teleportation effect of zooming to random tiles
+
+
+/obj/machinery/door/airlock/close(forced=0)
+	if(operating || welded || locked)
+		return
+	if(density)
+		return TRUE
+	if(!forced)
+		if(!hasPower() || wires.is_cut(WIRE_BOLTS))
+			return FALSE
+	if(safe)
+		for(var/atom/movable/M in get_turf(src))
+			if(M.density && M != src) //something is blocking the door
+				autoclose_in(60)
+				return FALSE //So elevator code can refuse to start the lift.
+
+	if(forced < 2)
+		if(obj_flags & EMAGGED)
+			return
+		use_power(50)
+		playsound(src, doorClose, 30, TRUE)
+	else
+		playsound(src, 'sound/machines/airlockforced.ogg', 30, TRUE)
+
+	var/obj/structure/window/killthis = (locate(/obj/structure/window) in get_turf(src))
+	if(killthis)
+		killthis.ex_act(EXPLODE_HEAVY)//Smashin windows
+
+	operating = TRUE
+	update_icon(2, 1)
+	layer = CLOSED_DOOR_LAYER
+	if(air_tight)
+		density = TRUE
+		air_update_turf(1)
+	sleep(1)
+	if(!air_tight)
+		density = TRUE
+		air_update_turf(1)
+	sleep(4)
+	if(!safe)
+		crush()
+	if(visible && !glass)
+		set_opacity(1)
+	update_freelook_sight()
+	sleep(1)
+	update_icon(1, 1)
+	operating = FALSE
+	delayed_close_requested = FALSE
+	if(safe)
+		CheckForMobs()
+	return TRUE
 //end//

@@ -11,6 +11,7 @@ Quartermaster
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#d7b088"
+	description = "'MOVE FREIGHT!' Cargo is your domain and its technicians are your servants. You are responsible for importing anything the other crewmembers need as well as overseeing the miners where possible."
 
 	outfit = /datum/outfit/job/quartermaster
 
@@ -45,6 +46,7 @@ Cargo Technician
 	spawn_positions = 2
 	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#dcba97"
+	description = "'Hail Cargonia!' As a cargo technician, you are responsible for getting the items people need to them in finest starfleet tradition. You may not be at the helm of a starship but this job is a fantastic way to gain experience before tackling more crucial roles."
 
 	outfit = /datum/outfit/job/cargo_tech
 
@@ -74,6 +76,7 @@ Shaft Miner
 	spawn_positions = 3
 	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#dcba97"
+	description = "As a miner, your job is simple but crucial as you chip away ores in finest starfleet tradition. Perhaps you're only interested in your job, or maybe you'll end up assisting research more closely. The choice is yours. <br><b>A miner should be physically tough and comfortable with heavy machinery</b>"
 
 	outfit = /datum/outfit/job/miner
 

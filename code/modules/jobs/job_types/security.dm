@@ -23,6 +23,7 @@ Head of Security
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SECURITY
+	description = "The toughest man on the ship. As a Chief Of Security, you will oversee away missions and coordinate your team in repelling boarders as you shoot and stun your way through anything space throws at you. <br><b>A Security Chief is expected to be proficient in combat and generally tough.</b>"
 
 	outfit = /datum/outfit/job/hos
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
@@ -88,11 +89,12 @@ Warden
 	minimal_player_age = 7
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
+	description = "'Strip him and put him in the orange, this one will be here for some time...' As the master at arms, your job comes in two parts: You've got to keep an eye on the prison population, but you are also responsible for reloading the ship's torpedo bays.<br> Primary roles: Manage the prisoner population, manage the ship's torpedo inventory."
 
 	outfit = /datum/outfit/job/warden
 
-	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_COURT, ACCESS_MECH_SECURITY, ACCESS_MAINT_TUNNELS, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS, ACCESS_MINERAL_STOREROOM)
-	minimal_access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_MECH_SECURITY, ACCESS_COURT, ACCESS_WEAPONS, ACCESS_MINERAL_STOREROOM) //SEE /DATUM/JOB/WARDEN/GET_ACCESS()
+	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_COURT, ACCESS_MECH_SECURITY, ACCESS_MAINT_TUNNELS, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS, ACCESS_MINERAL_STOREROOM,ACCESS_MORGUE)
+	minimal_access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_MECH_SECURITY, ACCESS_COURT, ACCESS_WEAPONS, ACCESS_MINERAL_STOREROOM,ACCESS_MORGUE) //SEE /DATUM/JOB/WARDEN/GET_ACCESS()
 	paycheck = PAYCHECK_HARD
 	paycheck_department = ACCOUNT_SEC
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
@@ -144,6 +146,7 @@ Detective
 	minimal_player_age = 7
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
+	description = "'There's something fishy in the air, these marks are clearly not from a phaser....' Officers have the skill but you have the wits, you were choosen for your years of experience uncovering mysteries and crimes.<br> Primary roles: Solve internal crimes, Accompany away teams."
 
 	outfit = /datum/outfit/job/detective
 
@@ -200,6 +203,7 @@ Security Officer
 	minimal_player_age = 7
 	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
+	description = "'They're breaching the hull captain!, we cant hold the- AURGH!' You were choosen becuse of your skills and training to protect the ship, to enforce peace and harmony between the departaments at best of your skill. Serve proudly and with distinction.<br> Primary roles: Participate in away missions, repel boarders, keep the peace."
 
 	outfit = /datum/outfit/job/security
 

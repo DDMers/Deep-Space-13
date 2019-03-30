@@ -112,7 +112,7 @@
 				new /obj/effect/decal/cleanable/vomit/old(src)
 		return
 
-		//Science messes. Mostly green glowy stuff -WHICH YOU SHOULD NOT INJEST-.
+		//Science messes. Mostly green glowy stuff -WHICH YOU SHOULD NOT INGEST-.
 	var/static/list/science_dirt_areas = typecacheof(list(/area/science,
 														/area/crew_quarters/heads/hor))
 	if(is_type_in_typecache(A, science_dirt_areas))

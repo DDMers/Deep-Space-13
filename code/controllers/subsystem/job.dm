@@ -12,7 +12,7 @@ SUBSYSTEM_DEF(job)
 	var/list/prioritized_jobs = list()
 	var/list/latejoin_trackers = list()	//Don't read this list, use GetLateJoinTurfs() instead
 
-	var/overflow_role = "Assistant"
+	var/overflow_role = "Ensign"
 
 /datum/controller/subsystem/job/Initialize(timeofday)
 	SSmapping.HACK_LoadMapConfig()
@@ -26,6 +26,9 @@ SUBSYSTEM_DEF(job)
 
 /datum/controller/subsystem/job/proc/set_overflow_role(new_overflow_role)
 	var/datum/job/new_overflow = GetJob(new_overflow_role)
+	if(!new_overflow)
+		new_overflow_role = overflow_role
+		new_overflow = GetJob(overflow_role)//Failsafe incase the config'd overflow role doesn't exist.
 	var/cap = CONFIG_GET(number/overflow_cap)
 
 	new_overflow.spawn_positions = cap
@@ -33,8 +36,9 @@ SUBSYSTEM_DEF(job)
 
 	if(new_overflow_role != overflow_role)
 		var/datum/job/old_overflow = GetJob(overflow_role)
-		old_overflow.spawn_positions = initial(old_overflow.spawn_positions)
-		old_overflow.total_positions = initial(old_overflow.total_positions)
+		if(old_overflow)	//DeepSpace13 - Stop ensign breaking this for travis
+			old_overflow.spawn_positions = initial(old_overflow.spawn_positions)
+			old_overflow.total_positions = initial(old_overflow.total_positions)
 		overflow_role = new_overflow_role
 		JobDebug("Overflow role set to : [new_overflow_role]")
 
@@ -433,14 +437,13 @@ SUBSYSTEM_DEF(job)
 		if(job.req_admin_notify)
 			to_chat(M, "<b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b>")
 		if(CONFIG_GET(number/minimal_access_threshold))
-			to_chat(M, "<FONT color='blue'><B>As this station was initially staffed with a [CONFIG_GET(flag/jobs_have_minimal_access) ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B></font>")
+			to_chat(M, "<span class='notice'><B>As this station was initially staffed with a [CONFIG_GET(flag/jobs_have_minimal_access) ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B></span>")
 	if(ishuman(H))
 		var/mob/living/carbon/human/wageslave = H
 		to_chat(M, "<b>Your account ID is [wageslave.account_id].</b>")
 		H.add_memory("Your account ID is [wageslave.account_id].")
 	if(job && H)
 		job.after_spawn(H, M, joined_late) // note: this happens before the mob has a key! M will always have a client, H might not.
-
 	return H
 
 

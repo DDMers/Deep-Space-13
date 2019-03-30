@@ -1,0 +1,4 @@
+author: "Kmc2000"
+delete-after: True
+changes: 
+  - rscadd: "The server now takes place on a ship instead of a station."

@@ -11,6 +11,7 @@ Clown
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
+	description = "The morale officer is responsible for the wellbeing of the crew as much as the counselor. You bring joy and brighten up their lives by slipping and honking in finest starfleet tradition. <br> Primary roles: Make terrible jokes, keep the crew entertained."
 
 	outfit = /datum/outfit/job/clown
 
@@ -29,8 +30,8 @@ Clown
 	jobtype = /datum/job/clown
 
 	belt = /obj/item/pda/clown
-	uniform = /obj/item/clothing/under/rank/clown
-	shoes = /obj/item/clothing/shoes/clown_shoes
+	uniform = /obj/item/clothing/under/trek/neelix //Deep Space 13. Deep clown lore change :)
+	shoes = /obj/item/clothing/shoes/sneakers/black
 	mask = /obj/item/clothing/mask/gas/clown_hat
 	l_pocket = /obj/item/bikehorn
 	backpack_contents = list(
@@ -71,6 +72,7 @@ Mime
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
+	description = ".... --- ...... .... ...?"
 
 	outfit = /datum/outfit/job/mime
 
@@ -171,6 +173,7 @@ Lawyer
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
 	var/lawyers = 0 //Counts lawyer amount
+	description = "'This is clearly against protocol officer, my defendant demands this fault be corrected!' Every person deserves a defense, no matter how horrible the crime, was the academy's teacher motto. You honor it by coming aboard here, to protect the unprotectable, to defend the undefendable, that is your task. <br> This role is heavily roleplay oriented and must defend criminals from miscarriages of justice."
 
 	outfit = /datum/outfit/job/lawyer
 

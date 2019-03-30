@@ -36,7 +36,7 @@
 	// THESE OVERRIDE THE HIDEHAIR FLAGS
 	var/dynamic_hair_suffix = ""//head > mask for head hair
 	var/dynamic_fhair_suffix = ""//mask > head for facial hair
-	
+
 
 /obj/item/clothing/Initialize()
 	. = ..()

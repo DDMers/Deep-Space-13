@@ -23,7 +23,7 @@
 
 	Initialize()
 		. = ..()
-		set_light(6)
+		set_light(2)
 		if(connect_universally)
 			connects_to += typecacheof(/turf/closed/wall/trek_smooth)
 			canSmoothWith += typecacheof(/turf/closed/wall/trek_smooth)
@@ -83,8 +83,17 @@
 	sheet_type = /obj/item/stack/sheet/duotanium
 	sheet_amount = 1
 
+/turf/closed/wall/trek_smooth/romulan
+	name = "Romulan hull"
+	icon = 'DS13/icons/turf/romulan_wall.dmi'
+	desc = "A wall of strange construction, it's covered in romulan symbols."
+	mod = null
+	sheet_type = /obj/item/stack/sheet/mineral/silver
+	sheet_amount = 1
+	light_color = LIGHT_COLOR_GREEN
+
 /turf/closed/wall/trek_smooth/reinforced
-	name = "Reinforeced tritanium hull"
+	name = "Reinforced tritanium hull"
 	mod = "R"
 	icon_state = "R0"
 	sheet_type = /obj/item/stack/sheet/plasteel
@@ -103,7 +112,7 @@
 	id = "duranium"
 	build_type = SMELTER | PROTOLATHE
 	materials = list(MAT_METAL = MINERAL_MATERIAL_AMOUNT, MAT_SILVER = MINERAL_MATERIAL_AMOUNT)
-	build_path = /obj/item/stack/sheet/plasteel
+	build_path = /obj/item/stack/sheet/duranium
 	category = list("initial", "Stock Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 	maxstack = 50
@@ -135,7 +144,7 @@
 	id = "duotanium"
 	build_type = SMELTER | PROTOLATHE
 	materials = list(MAT_WOOD = MINERAL_MATERIAL_AMOUNT, MAT_SILVER = MINERAL_MATERIAL_AMOUNT)
-	build_path = /obj/item/stack/sheet/plasteel
+	build_path = /obj/item/stack/sheet/duotanium
 	category = list("initial", "Stock Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 	maxstack = 50
@@ -152,7 +161,7 @@
 	flags_1 = CONDUCT_1
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 80)
 	resistance_flags = FIRE_PROOF
-	merge_type = /obj/item/stack/sheet/plasteel
+	merge_type = /obj/item/stack/sheet/duotanium
 	grind_results = list("iron" = 20, "plasma" = 20)
 	point_value = 10
 
@@ -168,7 +177,7 @@
 		var/obj/item/stack/sheet/S = W
 		if(istype(S, /obj/item/stack/sheet/duranium))
 			if(S.get_amount() < 2)
-				to_chat(user, "<span class='warning'>You need two sheets of metal to finish a wall!</span>")
+				to_chat(user, "<span class='warning'>You need two sheets of duranium to finish a wall!</span>")
 				return
 			if (do_after(user, 40, target = src))
 				if(S.get_amount() < 2)

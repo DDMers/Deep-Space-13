@@ -1,0 +1,4 @@
+author: "Kmc2000"
+delete-after: True
+changes: 
+  - rscadd: "Added a widescreen option, use the \"toggle widescreen\" verb to access this."

@@ -77,7 +77,7 @@
 		else
 			to_chat(user, "<span class='warning'>There is no quantum pad data saved in [I]'s buffer!</span>")
 			return TRUE
-			
+
 	else if(istype(I, /obj/item/quantum_keycard))
 		var/obj/item/quantum_keycard/K = I
 		if(K.qpad)
@@ -165,7 +165,7 @@
 			for(var/atom/movable/ROI in get_turf(src))
 				if(QDELETED(ROI))
 					continue //sleeps in CHECK_TICK
-				   
+
 				// if is anchored, don't let through
 				if(ROI.anchored)
 					if(isliving(ROI))

@@ -1,0 +1,4 @@
+author: "Kmc2000"
+delete-after: True
+changes: 
+  - rscadd: "Added two new UI options! Eris style UI and star trek LCARS style UI."

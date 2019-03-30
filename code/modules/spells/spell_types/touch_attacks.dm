@@ -23,7 +23,7 @@
 		remove_hand(TRUE)
 		to_chat(user, "<span class='notice'>You draw the power out of your hand.</span>")
 		return
-	
+
 	for(var/mob/living/carbon/C in targets)
 		if(!attached_hand)
 			if(ChargeHand(C))

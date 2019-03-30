@@ -104,6 +104,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["tip_delay"]			>> tip_delay
 	S["pda_style"]			>> pda_style
 	S["pda_color"]			>> pda_color
+	S["backstory_reason"]			>> backstory_reason //DeepSpace13 - Backstory
+	S["backstory_academy"]			>> backstory_academy
+	S["backstory_experience"]			>> backstory_experience
+	S["backstory_upbringing"]			>> backstory_upbringing
+	S["backstory_parents"]			>> backstory_parents
+	S["backstory_accepted"]			>> backstory_accepted
+	S["backstory_ambition"]			>> backstory_ambition
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -178,6 +185,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["tip_delay"], tip_delay)
 	WRITE_FILE(S["pda_style"], pda_style)
 	WRITE_FILE(S["pda_color"], pda_color)
+	WRITE_FILE(S["backstory_reason"],backstory_reason) //DeepSpace 13 - Backstory
+	WRITE_FILE(S["backstory_academy"],backstory_academy)
+	WRITE_FILE(S["backstory_experience"],backstory_experience)
+	WRITE_FILE(S["backstory_upbringing"],backstory_upbringing)
+	WRITE_FILE(S["backstory_parents"],backstory_parents)
+	WRITE_FILE(S["backstory_accepted"],backstory_accepted)
+	WRITE_FILE(S["backstory_ambition"],backstory_ambition)
 
 	return 1
 
@@ -212,7 +226,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	if(!S["features["mcolor"]"] || S["features["mcolor"]"] == "#000")
 		WRITE_FILE(S["features["mcolor"]"]	, "#FFF")
-	
+
 	if(!S["feature_ethcolor"] || S["feature_ethcolor"] == "#000")
 		WRITE_FILE(S["feature_ethcolor"]	, "#9c3030")
 
@@ -243,6 +257,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_lizard_body_markings"]	>> features["body_markings"]
 	S["feature_lizard_legs"]			>> features["legs"]
 	S["feature_moth_wings"]				>> features["moth_wings"]
+
 	if(!CONFIG_GET(flag/join_with_mutant_humans))
 		features["tail_human"] = "none"
 		features["ears"] = "none"
@@ -295,7 +310,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	if(!features["mcolor"] || features["mcolor"] == "#000")
 		features["mcolor"] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
-	
+
 	if(!features["ethcolor"] || features["ethcolor"] == "#000")
 		features["ethcolor"] = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)]
 
