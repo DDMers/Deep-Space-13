@@ -294,7 +294,7 @@
 // START LANDMARKS FOLLOW. We change this shit because we changed their names o7
 /obj/effect/landmark/start/assistant
 	name = "Ensign"
-	icon_state = "Assistant"
+	icon_state = "Ensign"
 
 /obj/effect/landmark/start/clown
 	name = "Morale Officer"
@@ -302,15 +302,15 @@
 
 /obj/effect/landmark/start/head_of_security
 	name = "Security Chief"
-	icon_state = "Head of Security"
+	icon_state = "Security Chief"
 
 /obj/effect/landmark/start/warden
 	name = "Master at arms"
-	icon_state = "Warden"
+	icon_state = "Master at arms"
 
 /obj/effect/landmark/start/head_of_personnel
 	name = "First Officer"
-	icon_state = "Head of Personnel"
+	icon_state = "First Officer"
 
 /obj/effect/landmark/start/medical_doctor
 	name = "Medical Doctor"
@@ -318,16 +318,16 @@
 
 /obj/effect/landmark/start/scientist
 	name = "Science Officer"
-	icon_state = "Scientist"
+	icon_state = "Science Officer"
 
 /obj/effect/landmark/start/research_director
 	name = "Chief Science Officer"
-	icon_state = "Research Director"
+	icon_state = "Chief Science Officer"
 
 /obj/effect/landmark/start/chaplain
 	name = "Counselor"
-	icon_state = "Chaplain"
+	icon_state = "Counselor"
 
 /obj/effect/landmark/start/ai
 	name = "Ship Computer"
-	icon_state = "AI"
+	icon_state = "Ship Computer"

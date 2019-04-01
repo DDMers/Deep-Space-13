@@ -186,10 +186,7 @@
 			var/area/AR = get_area(player)
 			if(is_station_level(player.z) && !AR.noteleport) //Player on station and not on another random ship.
 				if(player.client)
-					SEND_SOUND(player, sound(null))
-					var/client/C = player.client
-					if(C && C.chatOutput && !C.chatOutput.broken && C.chatOutput.loaded)
-						C.chatOutput.stopMusic()
+					SEND_SOUND(player, sound(null, repeat = 0, wait = 0, volume = 100, channel = CHANNEL_REDALERT))
 
 /obj/structure/overmap_component/science
 	name = "Science station"

@@ -43,4 +43,4 @@ Detective=0,0
 Security Officer=5,5
 
 AI=0,1
-Cyborg=0,1
+Cyborg=0,0

@@ -24,6 +24,9 @@ GLOBAL_VAR_INIT(pods_armed, FALSE) //Are the escape pods armed and ready to laun
 	req_access = null
 	flags_1 = HEAR_1
 
+/obj/structure/overmap_component/helm/escape_pod/attack_ai(mob/user)
+	return attack_hand(user)
+
 /obj/structure/overmap_component/helm/escape_pod/attack_hand(mob/user)
 	if(!GLOB.pods_armed)
 		to_chat(user, "<span class='notice'>Unable to comply. Escape pod not armed.</span>")
@@ -98,6 +101,9 @@ GLOBAL_VAR_INIT(pods_armed, FALSE) //Are the escape pods armed and ready to laun
 		qdel(linked)
 	qdel(src)
 
+/obj/structure/escape_pod_ladder/attack_ghost(mob/user)
+	return attack_hand(user)
+
 /obj/structure/escape_pod_ladder/attack_hand(mob/user)
 	if(!linked)
 		link_up()
@@ -107,8 +113,19 @@ GLOBAL_VAR_INIT(pods_armed, FALSE) //Are the escape pods armed and ready to laun
 		var/mob/living/carbon/human/F = user
 		if(F.pulling)
 			F.pulling.forceMove(get_turf(linked))
+	if(user.client)
+		SEND_SOUND(user, sound(null, repeat = 0, wait = 0, volume = 100, channel = CHANNEL_REDALERT)) //Shuts up the red alert sound when you enter a pod.
 	user.forceMove(get_turf(linked))
 	playsound(src, 'sound/effects/footstep/catwalk5.ogg', 100, 1)
+
+/obj/structure/escape_pod_ladder/attack_ai(mob/user)
+	if(!linked)
+		link_up()
+		return
+	var/mob/living/silicon/ai/A = user
+	if(A.eyeobj)
+		to_chat(user, "<span class='notice'>You move your camera down [src].</span>")
+		A.eyeobj.forceMove(get_turf(linked))
 
 /obj/structure/escape_pod_ladder/exit
 	name = "Escape pod exit hatch"
@@ -176,6 +193,9 @@ GLOBAL_VAR_INIT(pods_armed, FALSE) //Are the escape pods armed and ready to laun
 			return
 		GLOB.pods_armed = FALSE
 		priority_announce("Escape pods have been disarmed. All hands should return to their stations.","Escape pods disarmed",'sound/ai/commandreport.ogg')
+		var/obj/structure/overmap_component/helm/HH = locate(/obj/structure/overmap_component/helm) in get_area(src)
+		if(HH)
+			HH.redalert_end()
 		return
 	var/question = alert("Arm the escape pods for emergency evacuation?.",name,"Yes","No")
 	if(question == "No" || !question)

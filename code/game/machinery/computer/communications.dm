@@ -640,6 +640,7 @@
 			dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=ai-messagelist'>Message List</A> \]"
 			if(SSshuttle.emergency.mode == SHUTTLE_IDLE)
 				dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=ai-callshuttle'>Call Emergency Shuttle</A> \]"
+			dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=arm_pods'>Arm escape pods</A> \]"
 			dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=ai-status'>Set Status Display</A> \]"
 			dat += "<BR><BR><B>Special Functions</B>"
 			dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=ai-announce'>Make an Announcement</A> \]"
