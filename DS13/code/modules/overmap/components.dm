@@ -563,7 +563,6 @@
 				linked.max_engine_power -= benefit
 		linked.check_power()
 
-
 /obj/structure/overmap_component/plasma_relay/proc/find_supplying()
 	if(!linked)
 		find_overmap()
@@ -585,7 +584,6 @@
 	. = ..()
 	if(linked)
 		linked.powered_components += src
-	find_supplying()
 	START_PROCESSING(SSobj,src)
 
 /obj/structure/overmap_component/plasma_relay/Destroy()
