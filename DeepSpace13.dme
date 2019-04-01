@@ -14,6 +14,7 @@
 
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
+#include "_maps\Akira.dm"
 #include "code\_compile_options.dm"
 #include "code\world.dm"
 #include "code\__DEFINES\_globals.dm"
@@ -2785,6 +2786,7 @@
 #include "DS13\code\modules\overmap\ai.dm"
 #include "DS13\code\modules\overmap\combat.dm"
 #include "DS13\code\modules\overmap\components.dm"
+#include "DS13\code\modules\overmap\escape_pod.dm"
 #include "DS13\code\modules\overmap\events.dm"
 #include "DS13\code\modules\overmap\movement.dm"
 #include "DS13\code\modules\overmap\music.dm"

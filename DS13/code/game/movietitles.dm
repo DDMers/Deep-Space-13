@@ -10,13 +10,18 @@
 		var/name = t.fields["name"]
 		var/rank = t.fields["rank"]
 		credits += "[rank] [name]<br>"
-	credits += "Directed by: Kmc2000 <br> Executive producer: Francinum <br> Technical supervisor: Bass-ic <br>"
+	credits += "Directed by: Kmc2000 <br> Executive producer: ChaplainOfGod <br> Technical supervisor: Francinum <br> Technical supervisor: Bass-ic <br>"
 	return credits
 
 /proc/start_credits_global()
 	var/text = names2credits()
+	var/episode = "1"
 	SEND_SOUND(world, 'DS13/sound/effects/endcredits.ogg')
-	var/content = "<p><b><i>Star Trek Episode [rand(1,100)]: The [pick("Phantom of", "Scar of", "Chalice of", "Deception of", "Planet of", "Downfall of", "Rise of", "Search for", "Trial of", "Discovery of", "First contact with")] [pick("Spock", "Vulcan", "Romulus", "Qu'on os", "The borg", "Space", "the USS Kobayashi Maru", "Rixx", "Orion Slave Girls", "the warp 10 barrier", "Captain Jean Luc Picard", "Cargonia", "a bunch of spiders in a swat suit", "the destroyer of worlds", "Captain Proton", "Lieutenant Barclay", "crippling holodeck addiction", "the fully functional android")] </b><br>[text]</p></i></font>"
+	if(GLOB.round_id)
+		episode = GLOB.round_id
+	else
+		episode = rand(0,1000)
+	var/content = "<p><b><i>Star Trek Episode [episode]: The [pick("Phantom of", "Scar of", "Chalice of", "Deception of", "Planet of", "Downfall of", "Rise of", "Search for", "Trial of", "Discovery of", "First contact with")] [pick("Spock", "Vulcan", "Romulus", "Qu'on os", "The borg", "Space", "the USS Kobayashi Maru", "Rixx", "Orion Slave Girls", "the warp 10 barrier", "Captain Jean Luc Picard", "Cargonia", "a bunch of spiders in a swat suit", "the destroyer of worlds", "Captain Proton", "Lieutenant Barclay", "crippling holodeck addiction", "the fully functional android")] </b><br>[text]</p></i></font>"
 	for(var/X in GLOB.clients)
 		var/client/C = X
 		if(C.mob)

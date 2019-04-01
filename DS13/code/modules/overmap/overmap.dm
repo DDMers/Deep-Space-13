@@ -98,13 +98,17 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 		warp_action.our_ship = null
 
 /obj/structure/overmap/proc/try_warp()
+	if(engine_power <= 0)
+		if(pilot)
+			to_chat(pilot, "<span class='notice'>Unable to comply, engine subsystem is disabled.</span>")
+		return
 	if(warping)
 		if(pilot)
 			to_chat(pilot, "<span class='notice'>Disengaging warp engines.</span>")
 		vel = 0.5
 		stop_warping()
 		return
-	if(!warp_core || !warp_ready && engine_power <= 0)
+	if(!warp_core || !warp_ready)
 		if(pilot)
 			to_chat(pilot, "<span class='notice'>Warp engines are recharging.</span>")
 		return

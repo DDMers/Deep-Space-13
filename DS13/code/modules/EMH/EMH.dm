@@ -415,3 +415,6 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	item_color = "trek_medsci_ds9"
 	item_state = "bl_suit"
 	item_flags = NODROP
+
+/mob/living/carbon/human/species/holographic/adjust_hygiene(amount)
+	return //Fuck off stinky EMH

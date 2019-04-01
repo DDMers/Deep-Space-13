@@ -233,6 +233,11 @@
 		return
 	var/area = pick(GLOB.teleportlocs)
 	var/area/target = GLOB.teleportlocs[area] //Pick a station area and yeet it.
+	if(target.explosion_exempt)
+		area = pick(GLOB.teleportlocs)
+		target = GLOB.teleportlocs[area]
+		if(target.explosion_exempt)
+			return //Welp, we tried.
 	for(var/mob/player in GLOB.player_list)
 		if(is_station_level(player.z))
 			if(prob(50))
@@ -353,7 +358,7 @@
 	for(var/obj/structure/overmap_component/XX in powered_components)
 		if(istype(XX, /obj/structure/overmap_component/plasma_relay))
 			var/obj/structure/overmap_component/plasma_relay/PS = XX
-			if(PS.supplying == OM.damage_sector && PS.obj_integrity >= 40)
+			if(PS.supplying == OM.damage_sector && PS.obj_integrity > 0)
 				PS.take_damage(mod)
 
 /obj/structure/overmap/proc/explode()
@@ -401,7 +406,8 @@
 			SEND_SOUND(player, 'DS13/sound/effects/damage/ship_explode.ogg')
 		return
 	for(var/mob/player in GLOB.player_list)
-		if(is_station_level(player.z))
+		var/area/A = get_area(player)
+		if(is_station_level(player.z) && GLOB.teleportlocs[A.name])
 			SEND_SOUND(player, 'DS13/sound/effects/damage/ship_explode.ogg')
 
 /obj/structure/overmap/proc/core_breach_finish()
@@ -409,16 +415,15 @@
 		Cinematic(CINEMATIC_NUKE_WIN,world)
 		SSticker.mode.check_finished(TRUE)
 		SSticker.force_ending = 1
-		for(var/I = 0, I <= 11, I++) //If it's not a game-ender. Blow the shit out of the ship map
-			var/mob/i = pick(GLOB.player_list)
-			var/turf/T = get_turf(i)
+		for(var/X in GLOB.teleportlocs) //If it's not a game-ender. Blow the shit out of the ship map
+			var/area/target = GLOB.teleportlocs[X] //Pick a station area and yeet it.
+			var/turf/T = pick(get_area_turfs(target))
 			explosion(T,10,10,10) //Unlucky sod
-		qdel(src)
-		return
-	for(var/I = 0, I <= 11, I++) //If it's not a game-ender. Blow the shit out of the ship map
-		if(linked_area)
-			var/turf/T = pick(get_area_turfs(linked_area))
-			explosion(T,10,10,10)
+	else
+		for(var/I = 0, I <= 11, I++) //If it's not a game-ender. Blow the shit out of the ship map
+			if(linked_area)
+				var/turf/T = pick(get_area_turfs(linked_area))
+				explosion(T,10,10,10)
 	qdel(src)
 
 /obj/structure/overmap/proc/special_fx_targeted(var/shields_absorbed) //This ship isn't the main overmap, so find the area we want and apply damage to it

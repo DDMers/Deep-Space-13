@@ -600,7 +600,8 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 		F = A.linked_overmap //relay some sounds to the crew.
 	if(F && F.main_overmap)
 		for(var/mob/player in GLOB.player_list)
-			if(is_station_level(player.z))
+			var/area/AA = get_area(player)
+			if(is_station_level(player.z) && GLOB.teleportlocs[AA.name])
 				SEND_SOUND(player, 'DS13/sound/effects/damage/corebreach.ogg')
 	var/turf/T = get_turf(src)//Shit out some plasma for good measure.
 	T.atmos_spawn_air("plasma=20;TEMP=1000")

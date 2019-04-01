@@ -7,8 +7,6 @@
 /obj/structure/overmap
 	animate_movement = 0
 	appearance_flags = PIXEL_SCALE //Makes the sprite look smooth when rotating
-	pixel_collision_size_x = 48
-	pixel_collision_size_y = 48
 	var/list/crew = list()
 	var/mob/living/pilot
 	var/mob/living/tactical
@@ -238,11 +236,12 @@
 /atom/movable
 	var/real_pixel_x = 0 //variables for the real pixel_x
 	var/real_pixel_y = 0 //variables for shit
-	var/pixel_collision_size_x = 0
-	var/pixel_collision_size_y = 0
 
 /atom/movable/proc/PixelMove(var/x_to_move,var/y_to_move) //Don't ask. It just works
 	var/obj/structure/overmap/O = src
+	var/icon/I = icon(icon,icon_state,SOUTH) //SOUTH because all overmaps only ever face right, no other dirs.
+	var/pixel_collision_size_x = I.Width()
+	var/pixel_collision_size_y = I.Height()
 	for(var/atom/e in obounds(src, real_pixel_x + x_to_move + pixel_collision_size_x/4, real_pixel_y + y_to_move + pixel_collision_size_y/4, real_pixel_x + x_to_move + -pixel_collision_size_x/4, real_pixel_y + y_to_move + -pixel_collision_size_x/4) )//Basic block collision
 		if(e.density == 1) //We can change this so the ship takes damage later
 			if(istype(e, /obj/structure/meteor))
@@ -260,16 +259,24 @@
 	real_pixel_y = real_pixel_y + y_to_move
 	while(real_pixel_x > 32) //Modulo doesn't work with this kind of stuff, don't know if there's a better method.
 		real_pixel_x = real_pixel_x - 32
-		x = x + 1
+		var/turf/T = get_step(src, EAST)
+		if(T)
+			forceMove(T)
 	while(real_pixel_x < -32)
 		real_pixel_x = real_pixel_x + 32
-		x = x - 1
+		var/turf/T = get_step(src, WEST)
+		if(T)
+			forceMove(T)
 	while(real_pixel_y > 32) //Modulo doesn't work with this kind of stuff, don't know if there's a better method.
 		real_pixel_y = real_pixel_y - 32
-		y = y + 1
+		var/turf/T = get_step(src, NORTH)
+		if(T)
+			forceMove(T)
 	while(real_pixel_y < -32)
 		real_pixel_y = real_pixel_y + 32
-		y = y - 1
+		var/turf/T = get_step(src, SOUTH)
+		if(T)
+			forceMove(T)
 	pixel_x = real_pixel_x
 	pixel_y = real_pixel_y
 	if(istype(src, /obj/structure/overmap))

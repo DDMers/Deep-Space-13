@@ -97,7 +97,7 @@
 	siemens_coefficient = 0
 	item_flags = NODROP
 	clothing_flags = SHOWEROKAY | MASKINTERNALS
-	var/cooldown2 = 60 //6 second cooldown
+	var/cooldown2 = 300 //30 second cooldown
 	var/saved_time = 0
 	actions_types = list(/datum/action/item_action/futile, /datum/action/item_action/message_collective)
 
@@ -142,7 +142,7 @@
 		var/sound = pick('DS13/sound/effects/borg/withstandassault.ogg','DS13/sound/effects/borg/dontresist.ogg')
 		var/phrase_text = "Resistance is futile."
 		src.audible_message("<font color='green' size='4'><b>[phrase_text]</b></font>")
-		playsound(src.loc,sound, 100, 0, 4)
+		playsound(src.loc,sound, 85, 0, 4)
 
 /obj/item/clothing/suit/space/borg
 	name = "Borg exoskeleton"
@@ -267,7 +267,7 @@
 
 /obj/structure/chair/borg/charging
 	name = "Recharging alcove"
-	desc = "We must recharge to regain"
+	desc = "A device which can heal, revive and recharge members of the borg collective. It has several specialised anti bacterial nozzles to remove unpleasant smells from drones."
 	icon_state = "borgcharger"
 	icon = 'DS13/icons/borg/borg.dmi'
 	anchored = TRUE
@@ -287,6 +287,7 @@
 
 /obj/structure/chair/borg/charging/process()
 	if(user && user in get_turf(src))
+		user.set_hygiene(HYGIENE_LEVEL_CLEAN)
 		user.adjustBruteLoss(-3)
 		user.adjustFireLoss(-3)
 		user.adjustOxyLoss(-3)
@@ -495,6 +496,11 @@
 		return
 
 /obj/item/borg_tool/afterattack(atom/I, mob/living/user, proximity)
+	if(iscarbon(user))
+		var/mob/living/carbon/thecarbon = user
+		if(thecarbon.handcuffed)
+			to_chat(thecarbon, "<span class='warning'>We cannot use our tool when handcuffed.</span>")
+			return
 	if(proximity)
 		if(mode == "assimilate") //assimilate
 			if(ishuman(I))
@@ -524,9 +530,9 @@
 				if(do_after(user, convert_time, target = A))
 					if(A.TerraformTurf(/turf/closed/wall/trek_smooth/borg, /turf/closed/wall/trek_smooth/borg)) //if it's indestructible, this will fail
 						for(var/turf/closed/TA in orange(A,1))
-							if(!istype(TA, /turf/open) && !istype(TA, /turf/closed/wall/trek_smooth/borg))
-								if(TA.TerraformTurf(/turf/closed/wall/trek_smooth/borg, /turf/closed/wall/trek_smooth/borg))
-									resource_amount += 5
+							if(!istype(TA, /turf/open) && !istype(TA, /turf/closed/wall/trek_smooth/borg) && !istype(TA, /turf/closed/indestructible))
+								TA.ChangeTurf(/turf/closed/wall/trek_smooth/borg)
+								resource_amount += 5
 						return TRUE
 					else
 						to_chat(user, "Conversion failed. This structure is resistant to nanoprobes.")

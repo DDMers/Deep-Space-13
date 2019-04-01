@@ -199,9 +199,15 @@ Dirs! (nicked from byond forum)
 /obj/structure/overmap/proc/center()
 	get_center(src)
 
-/proc/get_center(var/obj/structure/overmap/ship)
-	var/xx = ship.x + 1
-	var/yy = ship.y + 1
+/proc/get_center(var/obj/structure/overmap/ship)	//Ex: 64 x 64. Starts at bottom left of the ship.
+	var/turf/displaced = get_turf(ship) //First. Get our starting point, then add Xs and Ys onto it.
+	var/xx = displaced.x
+	var/yy = displaced.y//Offset time, based off of sprite size, we attempt to find the center of an overmap ship.
+	var/icon/I = icon(ship.icon,ship.icon_state,SOUTH) //Again, all our sprites are done in the "south" dir, facing right
+	var/target_x = I.Width()/2
+	var/target_y = I.Height()/2
+	xx += target_x / 32 //Now we have half the icon size, how many turfs of an offset do we need?
+	yy += target_y / 32
 	var/turf/T = locate(xx,yy,ship.z)
 	return T
 

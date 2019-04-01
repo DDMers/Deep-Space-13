@@ -13,6 +13,7 @@
 		return
 	if(!linked || QDELETED(linked))
 		find_overmap()
+		return
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/L = user
@@ -29,7 +30,9 @@
 	return
 
 /obj/structure/overmap_component/attack_ai(mob/user)
-	return attack_hand(user)
+	if(position)
+		return linked.enter(user, position)
+	return
 
 /obj/structure/overmap_component/take_damage(amount)
 	if(obj_integrity <= amount)
@@ -75,8 +78,10 @@
 /obj/structure/overmap_component/viewscreen/examine(mob/user)
 	if(!linked || QDELETED(linked))
 		find_overmap()
+		return
 	if(isobserver(user) && linked)
-		user.forceMove(get_turf(linked))
+		var/mob/dead/observer/O = user
+		O.ManualFollow(linked)
 		return
 	linked.enter(user, "observer",TRUE) //Enter them as an observer
 	. = ..()
@@ -354,6 +359,7 @@
 /obj/structure/overmap_component/plasma_injector/proc/find_supply_to()
 	if(!linked)
 		find_overmap()
+		return
 	for(var/obj/structure/overmap_component/integrity_field_generator/IFS in linked.powered_components)
 		if(!IFS.supplier)
 			generator = IFS
