@@ -22,10 +22,30 @@
 	var/destroyed = FALSE
 	var/damage_sector = "shields" //Tactical can change this! What system are we targeting?
 	var/list/torpedo_damage_list = list() //Keeps track of the damage that each torpedo that's been loaded will do. Science can upgrade the torpedoes for even more damage.
+	var/cloaked = FALSE //Used for rommies.
 
 /obj/structure/overmap/proc/send_sound_crew(var/sound/S)
 	for(var/mob/M in operators)
 		SEND_SOUND(M, S)
+
+/obj/structure/overmap/proc/send_sound_all(var/sound/sound, var/text) //Send a sound to anyone on a ship.
+	if(main_overmap)
+		for(var/mob/player in GLOB.player_list)
+			if(is_station_level(player.z))
+				if(text)
+					to_chat(player, "[text]")
+				if(sound)
+					SEND_SOUND(player, sound)
+	else
+		if(!linked_area)
+			return
+		for(var/X in linked_area)
+			if(ismob(X))
+				var/mob/player = X
+				if(text)
+					to_chat(player, "[text]")
+				if(sound)
+					SEND_SOUND(player, sound)
 
 /obj/structure/overmap/proc/send_text_crew(var/S)
 	to_chat(operators, S)
@@ -46,6 +66,9 @@
 	if(object == src)
 		return attack_hand(mob)
 	if(istype(object, /obj/screen) && !istype(object, /obj/screen/click_catcher))
+		return
+	if(cloaked)
+		to_chat(mob, "<span class='warning'> The controls flash a message: UNABLE TO MODIFY PARAMETERS WHILE CLOAKED.</span>")
 		return
 	if(mob != tactical)
 		if(science)

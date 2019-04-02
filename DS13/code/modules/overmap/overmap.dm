@@ -112,7 +112,7 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 		if(pilot)
 			to_chat(pilot, "<span class='notice'>Warp engines are recharging.</span>")
 		return
-	if(!warp_core.try_warp() || !main_overmap)
+	if(!warp_core.try_warp())
 		if(pilot)
 			to_chat(pilot, "<span class='notice'>Insufficient power. Ensure the warp core is active, and that the warp coils are charged.</span>")
 		return
@@ -121,32 +121,51 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	if(pilot)
 		to_chat(pilot, "<span class='notice'>Charging warp engines. Please stand by.</span>")
 	addtimer(CALLBACK(src, .proc/finish_warp), 45)
-	var/list/areas = list()
-	areas = GLOB.teleportlocs.Copy()
-	for(var/AR in areas)
-		var/area/ARR = areas[AR]
-		if(istype(ARR, /area/space))
-			continue
-		ARR.parallax_movedir = NORTH
-	for(var/mob/player in GLOB.player_list)
-		if(is_station_level(player.z))
-			SEND_SOUND(player, 'DS13/sound/effects/warpcore/warp.ogg')
+	if(main_overmap)
+		var/list/areas = list()
+		areas = GLOB.teleportlocs.Copy()
+		for(var/AR in areas)
+			var/area/ARR = areas[AR]
+			if(istype(ARR, /area/space))
+				continue
+			ARR.parallax_movedir = NORTH
+		for(var/mob/player in GLOB.player_list)
+			if(is_station_level(player.z))
+				SEND_SOUND(player, 'DS13/sound/effects/warpcore/warp.ogg')
+	else
+		if(!linked_area)
+			return
+		linked_area.parallax_movedir = NORTH
+		for(var/X in linked_area)
+			if(ismob(X))
+				var/mob/player = X
+				SEND_SOUND(player, 'DS13/sound/effects/warpcore/warp.ogg')
 
 /obj/structure/overmap/proc/stop_warping()
 	warping = FALSE
-	var/list/areas = list()
-	areas = GLOB.teleportlocs.Copy()
-	for(var/AR in areas)
-		var/area/ARR = areas[AR]
-		ARR.parallax_movedir = null
-	for(var/mob/player in GLOB.player_list)
-		if(is_station_level(player.z))
-			if(prob(50))
-				shake_camera(player, 1,3)
-			else
-				shake_camera(player, 2,2)
-			to_chat(player, "<span_class='notice'><b>You can feel a jolt as the ship slows down.</b></span>")
-			SEND_SOUND(player, 'DS13/sound/effects/warpcore/warp_exit.ogg')
+	if(main_overmap)
+		var/list/areas = list()
+		areas = GLOB.teleportlocs.Copy()
+		for(var/AR in areas)
+			var/area/ARR = areas[AR]
+			ARR.parallax_movedir = null
+		for(var/mob/player in GLOB.player_list)
+			if(is_station_level(player.z))
+				if(prob(50))
+					shake_camera(player, 1,3)
+				else
+					shake_camera(player, 2,2)
+				to_chat(player, "<span_class='notice'><b>You can feel a jolt as the ship slows down.</b></span>")
+				SEND_SOUND(player, 'DS13/sound/effects/warpcore/warp_exit.ogg')
+	else
+		if(!linked_area)
+			return
+		linked_area.parallax_movedir = null
+		for(var/X in linked_area)
+			if(ismob(X))
+				var/mob/player = X
+				to_chat(player, "<span_class='notice'><b>You can feel a jolt as the ship slows down.</b></span>")
+				SEND_SOUND(player, 'DS13/sound/effects/warpcore/warp_exit.ogg')
 
 /obj/structure/overmap/proc/reset_warp_cooldown()
 	warp_ready = TRUE
@@ -154,16 +173,17 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 /obj/structure/overmap/proc/finish_warp()
 	warping = TRUE
 	vel = max_warp
-	for(var/mob/player in GLOB.player_list)
-		if(is_station_level(player.z))
-			if(prob(50))
-				shake_camera(player, 1,3)
-			else
-				shake_camera(player, 2,2)
-			if(ishuman(player))
-				var/mob/living/carbon/human/H = player
-				if(H.buckled)
-					to_chat(H, "<span_class='notice'><b>Acceleration presses you into your seat!</b></span>")
+	if(main_overmap)
+		for(var/mob/player in GLOB.player_list)
+			if(is_station_level(player.z))
+				if(prob(50))
+					shake_camera(player, 1,3)
+				else
+					shake_camera(player, 2,2)
+				if(ishuman(player))
+					var/mob/living/carbon/human/H = player
+					if(H.buckled)
+						to_chat(H, "<span_class='notice'><b>Acceleration presses you into your seat!</b></span>")
 
 
 #undef WARP_5

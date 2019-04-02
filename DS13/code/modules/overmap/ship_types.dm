@@ -13,6 +13,7 @@
 	name = "Romulan warbird class light cruiser"
 	icon_state = "warbird"
 	class = "warbird"
+	has_gravity = STANDARD_GRAVITY
 
 /obj/structure/overmap/miranda
 	name = "Miranda class light cruiser"
@@ -109,17 +110,6 @@
 	max_speed = 6
 	turnspeed = 2
 
-/obj/structure/overmap/warbird
-	name = "Romulan warbird class light cruiser"
-	desc = "A dangerous ship which resembles a bird. It has a modest armament and is highly maneuverable."
-	icon = 'DS13/icons/overmap/warbird.dmi'
-	icon_state = "warbird"
-	main_overmap = FALSE
-	class = "warbird"
-	damage_states = FALSE //Damage FX
-	damage = 10 //Will turn into 20 assuming weapons powered
-	faction = "romulan"
-
 /obj/structure/overmap/saladin //A really underpowered destroyer / frying pan with a total of 4 power slots. Wow
 	name = "Uss Sherman"
 	desc = "An oddly designed ship featuring a saucer section applied directly onto a nacelle. It is extremely weak in battle, but posesses unusually high speed"
@@ -182,3 +172,41 @@
 /obj/structure/overmap/akira/starter/Initialize()
 	. = ..()
 	name = station_name()
+
+//Romulans and other antaggy ships//
+
+/obj/structure/overmap/warbird
+	name = "Romulan warbird class light cruiser"
+	desc = "A dangerous ship which resembles a bird. It has a modest armament and is highly maneuverable."
+	icon = 'DS13/icons/overmap/warbird.dmi'
+	icon_state = "warbird"
+	main_overmap = FALSE
+	class = "warbird"
+	damage_states = FALSE //Damage FX
+	damage = 10 //Will turn into 20 assuming weapons powered
+	faction = "romulan"
+
+/obj/structure/overmap/dderidex //ADMINS BEWARE, THIS SHIP IS EXTREMELY STRONG!
+	name = "Dderidex class heavy cruiser"
+	desc = "Vicious, huge, fast. The Dderidex class is the Romulan navy's most popular warship for a reason. It has an impressive armament and cloaking technology."
+	icon = 'DS13/icons/overmap/dderidex.dmi'
+	icon_state = "dderidex"
+	main_overmap = FALSE
+	class = "dderidex"
+	damage_states = FALSE //Damage FX
+	damage = 10 //Will turn into 20 assuming weapons powered
+	faction = "romulan"
+	max_shield_health = 230
+	max_health = 200 //Extremely fucking tanky
+	turnspeed = 0.5
+	acceleration = 0.3
+	max_health = 130
+	max_speed = 2 //Slower than every ship.
+	power_slots = 5
+	pixel_z = -128
+	pixel_w = -120
+
+/obj/structure/turbolift/dderidex
+	floor_directory = "<span class='notice'>Deck 1: Bridge, officer quarters, EVA & suit storage<br>\
+		Deck 2: Engineering, brig, transporter<br>\
+		Deck 3: Dorms, showers, mess hall, medical bay<br></span>" //Change this if you intend to make a new map. Helps players know where they're going.

@@ -104,6 +104,7 @@
 	var/redalert_activator = "red alert" //the activation message
 	var/redalert_deactivator = "stand down red alert" //the de-activation message
 	var/redalert = FALSE //Reduce processing usage.
+	var/redalert_sound = 'DS13/sound/effects/redalert-mid.ogg'
 
 /obj/structure/overmap_component/helm/examine(mob/user)
 	. = ..()
@@ -160,7 +161,7 @@
 		return FALSE
 
 /obj/structure/overmap_component/helm/proc/redalert_start()
-	if(redalert)
+	if(redalert || !linked)
 		return
 	redalert = TRUE
 	if(linked.main_overmap)
@@ -172,10 +173,19 @@
 		for(var/mob/player in GLOB.player_list)
 			var/area/AR = get_area(player)
 			if(is_station_level(player.z) && !AR.noteleport) //Player on station and not on another random ship.
-				SEND_SOUND(player, sound('DS13/sound/effects/redalert-mid.ogg', repeat = 1, wait = 0, volume = 100, channel = CHANNEL_REDALERT)) //Send them the redalert sound
+				SEND_SOUND(player, sound(redalert_sound, repeat = 1, wait = 0, volume = 100, channel = CHANNEL_REDALERT)) //Send them the redalert sound
+	else
+		if(!linked.linked_area)
+			return
+		linked.linked_area.fire = TRUE
+		for(var/obj/machinery/light/L in linked.linked_area)
+			L.update()
+		for(var/mob/player in linked.linked_area)
+			SEND_SOUND(player, sound(redalert_sound, repeat = 1, wait = 0, volume = 100, channel = CHANNEL_REDALERT)) //Send them the redalert sound
+
 
 /obj/structure/overmap_component/helm/proc/redalert_end()
-	if(!redalert)
+	if(!redalert || !linked)
 		return
 	redalert = FALSE
 	if(linked.main_overmap)
@@ -187,6 +197,12 @@
 			if(is_station_level(player.z) && !AR.noteleport) //Player on station and not on another random ship.
 				if(player.client)
 					SEND_SOUND(player, sound(null, repeat = 0, wait = 0, volume = 100, channel = CHANNEL_REDALERT))
+	else
+		if(!linked.linked_area)
+			return
+		linked.linked_area.unset_fire_alarm_effects()
+		for(var/mob/player in linked.linked_area)
+			SEND_SOUND(player, sound(null, repeat = 1, wait = 0, volume = 100, channel = CHANNEL_REDALERT)) //Send them the redalert sound
 
 /obj/structure/overmap_component/science
 	name = "Science station"

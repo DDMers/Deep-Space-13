@@ -488,7 +488,7 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	dilithium_matrix.absorb_damage(penalty)
 	for(var/datum/gas_mixture/S in outlet.airs)
 		if(S.gases[/datum/gas/plasma])
-			S.gases[/datum/gas/plasma][MOLES] += 5 //Add some extra plasma to it.
+			S.gases[/datum/gas/plasma][MOLES] += 10 //Add some extra plasma to it.
 			S.garbage_collect()
 	var/power = 500000
 	add_avail(power)

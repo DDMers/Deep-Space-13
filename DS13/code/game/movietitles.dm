@@ -10,7 +10,7 @@
 		var/name = t.fields["name"]
 		var/rank = t.fields["rank"]
 		credits += "[rank] [name]<br>"
-	credits += "Directed by: Kmc2000 <br> Executive producer: ChaplainOfGod <br> Executive producer: Rayford <br>  Technical supervisor: Francinum <br> Technical supervisor: Bass-ic <br>"
+	credits += "Directed by: Kmc2000 <br> Executive producer: ChaplainOfGod <br> Executive producer: Rayford <br> Technical supervisor: Francinum <br> Technical supervisor: Bass-ic <br>"
 	return credits
 
 /proc/start_credits_global()

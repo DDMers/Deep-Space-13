@@ -23,6 +23,21 @@
 	max_health = 130
 	max_speed = 2 //Slower than every ship.
 
+/obj/structure/overmap/ai/dderidex
+	name = "Dderidex class heavy cruiser"
+	desc = "Vicious, huge, fast. The Dderidex class is the Romulan navy's most popular warship for a reason. It has an impressive armament and cloaking technology."
+	icon = 'DS13/icons/overmap/dderidex.dmi'
+	icon_state = "dderidex"
+	main_overmap = FALSE
+	class = "dderidex"
+	damage_states = FALSE //Damage FX
+	damage = 10 //Will turn into 20 assuming weapons powered
+	faction = "romulan"
+	max_shield_health = 230
+	max_health = 200 //Extremely fucking tanky
+	pixel_z = -128
+	pixel_w = -120
+
 /obj/structure/overmap/ai/aggressive
 	behaviour = "aggressive"
 

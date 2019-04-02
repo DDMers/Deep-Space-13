@@ -99,7 +99,42 @@
 	W.registered_name = H.real_name
 	W.update_label()
 
+/obj/item/clothing/under/trek/romulan
+	name = "Romulan"
+	desc = "A padded jumpsuit laced with nanoweave armour which is typically worn by officers of the romulan navy."
+	icon = 'DS13/icons/obj/clothing/uniforms.dmi'
+	alternate_worn_icon = 'DS13/icons/mob/uniform.dmi'
+	icon_state = "romulan"
+	item_color = "romulan"
+	item_state = "bl_suit"
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+
 /obj/item/clothing/suit/DS13
 	name = "Placeholder"
 	icon = 'DS13/icons/obj/suits.dmi'
 	alternate_worn_icon = 'DS13/icons/mob/suit.dmi'
+
+/datum/outfit/romulan
+	name = "Romulan"
+	uniform = /obj/item/clothing/under/trek/romulan
+	accessory = null
+	l_pocket = /obj/item/pda
+	belt = /obj/item/gun/energy/phaser
+	shoes = /obj/item/clothing/shoes/jackboots
+	suit = null
+	gloves = /obj/item/clothing/gloves/color/black
+	head = null
+	id = /obj/item/card/id
+	back = /obj/item/storage/backpack/satchel
+
+/datum/outfit/romulan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	if(visualsOnly)
+		return
+
+	var/obj/item/card/id/W = H.wear_id
+	W.icon_state = "centcom"
+	W.access = get_all_accesses()
+	W.assignment = "Romulan naval officer"
+	W.registered_name = H.real_name
+	W.update_label()
+	H.set_species(/datum/species/vulcan) // :^)

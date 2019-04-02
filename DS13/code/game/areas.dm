@@ -13,6 +13,7 @@
 /area/ship/bridge/warbird
 	name = "Bridge (warbird)"
 	class = "warbird"
+	has_gravity = STANDARD_GRAVITY
 
 /area/ship/bridge/akira
 	name = "Bridge"

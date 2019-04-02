@@ -60,8 +60,9 @@ Dirs! (nicked from byond forum)
 	west = 0
 	generate_overlays()
 
-
 /datum/shield_controller/process()
+	if(!holder || holder.cloaked) //:^)
+		return
 	adjust_all_shields(chargerate)
 
 //Damage logic. This is a looot of finite state machines :b1:
