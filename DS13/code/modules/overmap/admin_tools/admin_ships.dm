@@ -32,16 +32,16 @@
 		send_sound_all('DS13/sound/effects/cloak.ogg', "<span class='notice'> You can feel the deck fade slightly as the ship cloaks. </span>")
 		icon_state = "cloak"
 		cloaked = TRUE //They can be fired at, but can't shoot or hail or do anything.
-		sleep(5) //Tiny sleeps are fine.
+		sleep(10) //Tiny sleeps are fine.
 		alpha = 0
 		mouse_opacity = 0 //You cannot hover over it.
 	else
 		send_sound_all('DS13/sound/effects/decloak.ogg', "<span class='notice'> You can feel the deck fade slightly as the ship decloaks. </span>")
 		icon_state = "decloak"
-		mouse_opacity = 1 //You can fire at a decloaking ship, but they can't shoot you.
-		sleep(5) //Tiny sleeps are fine.
-		cloaked = FALSE
 		alpha = 255
+		mouse_opacity = 1 //You can fire at a decloaking ship, but they can't shoot you.
+		sleep(10) //Tiny sleeps are fine.
+		cloaked = FALSE
 		icon_state = initial(icon_state)
 
 /obj/structure/overmap_component/cloaking //WARNING: PROBABLY OP :b1:

@@ -14,6 +14,7 @@
 	icon_state = "warbird"
 	class = "warbird"
 	has_gravity = STANDARD_GRAVITY
+	looping_ambience = 'DS13/sound/ambience/romulan.ogg'
 
 /obj/structure/overmap/miranda
 	name = "Miranda class light cruiser"
