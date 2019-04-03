@@ -187,25 +187,27 @@
 	damage = 10 //Will turn into 20 assuming weapons powered
 	faction = "romulan"
 
-/obj/structure/overmap/dderidex //ADMINS BEWARE, THIS SHIP IS EXTREMELY STRONG!
+/obj/structure/overmap/dderidex //This ship has been balanced to be slightly more powerful than the main player ship, because the map is small and it's designed to be crewed by a couple people only. (~5 people). It can cloak though, which is an extremely powerful ability.
 	name = "Dderidex class heavy cruiser"
 	desc = "Vicious, huge, fast. The Dderidex class is the Romulan navy's most popular warship for a reason. It has an impressive armament and cloaking technology."
 	icon = 'DS13/icons/overmap/dderidex.dmi'
 	icon_state = "dderidex"
 	main_overmap = FALSE
 	class = "dderidex"
-	damage_states = FALSE //Damage FX
+	damage_states = TRUE //Damage FX
 	damage = 10 //Will turn into 20 assuming weapons powered
 	faction = "romulan"
-	max_shield_health = 230
-	max_health = 200 //Extremely fucking tanky
-	turnspeed = 0.5
+	max_shield_health = 150 //Slightly worse than the Akira class
+	turnspeed = 0.5 //Very slow
 	acceleration = 0.3
-	max_health = 130
+	max_health = 170 //Slightly less health due to the fact it has a cloak so it can run away from a fight instantly and repair.
 	max_speed = 2 //Slower than every ship.
-	power_slots = 5
+	power_slots = 5 //Same as Akira
 	pixel_z = -128
 	pixel_w = -120
+
+/obj/structure/overmap/dderidex/get_beep() //Override this to change the SFX that play when you click stuff
+	return pick(GLOB.romulan_bleeps)
 
 /obj/structure/turbolift/dderidex
 	floor_directory = "<span class='notice'>Deck 1: Bridge, officer quarters, EVA & suit storage<br>\

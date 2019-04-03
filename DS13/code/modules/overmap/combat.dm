@@ -60,8 +60,11 @@
 	pixel_x = rand(0,10)
 	pixel_y = rand(0,10)
 
+/obj/structure/overmap/proc/get_beep() //Override this to change the SFX that play when you click stuff
+	return pick(GLOB.bleeps)
+
 /obj/structure/overmap/proc/onMouseDown(object, location, params, mob/mob)
-	var/sound/thesound = pick(GLOB.bleeps)
+	var/sound/thesound = get_beep()
 	SEND_SOUND(mob, thesound)
 	if(object == src)
 		return attack_hand(mob)

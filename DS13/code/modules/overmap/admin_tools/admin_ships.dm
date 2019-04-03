@@ -43,6 +43,7 @@
 		sleep(10) //Tiny sleeps are fine.
 		cloaked = FALSE
 		icon_state = initial(icon_state)
+		visual_damage()
 
 /obj/structure/overmap_component/cloaking //WARNING: PROBABLY OP :b1:
 	name = "Cloaking device control console."

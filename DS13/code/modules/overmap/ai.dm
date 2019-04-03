@@ -23,17 +23,17 @@
 	max_health = 130
 	max_speed = 2 //Slower than every ship.
 
-/obj/structure/overmap/ai/dderidex
+/obj/structure/overmap/ai/dderidex //AI version can't cloak.
 	name = "Dderidex class heavy cruiser"
 	desc = "Vicious, huge, fast. The Dderidex class is the Romulan navy's most popular warship for a reason. It has an impressive armament and cloaking technology."
 	icon = 'DS13/icons/overmap/dderidex.dmi'
 	icon_state = "dderidex"
 	main_overmap = FALSE
 	class = "dderidex"
-	damage_states = FALSE //Damage FX
+	damage_states = TRUE //Damage FX
 	damage = 10 //Will turn into 20 assuming weapons powered
 	faction = "romulan"
-	max_shield_health = 230
+	max_shield_health = 200
 	max_health = 200 //Extremely fucking tanky
 	pixel_z = -128
 	pixel_w = -120
@@ -130,7 +130,7 @@
 		process = TRUE
 		start_process()
 	if(target) //We have a target locked in
-		if(get_dist(src, target) > range) //Target ran away. Move on.
+		if(get_dist(src, target) > range || target.cloaked) //Target ran away. Move on.
 			if(force_target)
 				if(QDELETED(force_target))
 					force_target = null
@@ -150,7 +150,7 @@
 
 /obj/structure/overmap/proc/pick_target()
 	for(var/obj/structure/overmap/OM in GLOB.overmap_ships)
-		if(get_dist(src, OM) > range)
+		if(get_dist(src, OM) > range || OM.cloaked)
 			continue
 		if(istype(OM, /obj/structure/overmap))
 			if(OM in attackers)
