@@ -17,6 +17,8 @@
 		<a href='?src=[REF(src)];[HrefToken()];makeAntag=cult'>Make Cult</a><br>
 		<a href='?src=[REF(src)];[HrefToken()];makeAntag=clockcult'>Make Clockwork Cult</a><br>
 		<a href='?src=[REF(src)];[HrefToken()];makeAntag=blob'>Make Blob</a><br>
+		<a href='?src=[REF(src)];[HrefToken()];makeAntag=borg'>Make Borg</a><br>
+		<a href='?src=[REF(src)];[HrefToken()];makeAntag=section31'>Make Section 31 Agent</a><br>
 		<a href='?src=[REF(src)];[HrefToken()];makeAntag=wizard'>Make Wizard (Requires Ghosts)</a><br>
 		<a href='?src=[REF(src)];[HrefToken()];makeAntag=nukeops'>Make Nuke Team (Requires Ghosts)</a><br>
 		<a href='?src=[REF(src)];[HrefToken()];makeAntag=centcom'>Make CentCom Response Team (Requires Ghosts)</a><br>
