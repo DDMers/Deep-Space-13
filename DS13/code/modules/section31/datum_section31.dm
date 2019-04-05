@@ -72,14 +72,6 @@
 		is_hijacker = prob(10)
 	var/martyr_chance = prob(20)
 	var/objective_count = is_hijacker 			//Hijacking counts towards number of objectives
-	if(!SSticker.mode.exchange_blue && SSticker.mode.traitors.len >= 8) 	//Set up an exchange if there are enough traitors
-		if(!SSticker.mode.exchange_red)
-			SSticker.mode.exchange_red = owner
-		else
-			SSticker.mode.exchange_blue = owner
-			assign_exchange_role(SSticker.mode.exchange_red)
-			assign_exchange_role(SSticker.mode.exchange_blue)
-		objective_count += 1					//Exchange counts towards number of objectives
 	var/toa = CONFIG_GET(number/traitor_objectives_amount)
 	for(var/i = objective_count, i < toa, i++)
 		forge_single_objective()
@@ -268,46 +260,6 @@
 	if(section31_kind == SECTION31_HUMAN)
 		owner.equip_traitor(employer, silent, src)
 
-/datum/antagonist/section31/proc/assign_exchange_role()
-	//set faction
-	var/faction = "blue"
-	if(owner == SSticker.mode.exchange_red)
-		faction = "red"
-
-	//Assign objectives
-	var/datum/objective/steal/exchange/exchange_objective = new
-	exchange_objective.set_faction(faction,((faction == "blue") ? SSticker.mode.exchange_red : SSticker.mode.exchange_blue))
-	exchange_objective.owner = owner
-	add_objective(exchange_objective)
-
-	if(prob(20))
-		var/datum/objective/steal/exchange/backstab/backstab_objective = new
-		backstab_objective.set_faction(faction)
-		backstab_objective.owner = owner
-		add_objective(backstab_objective)
-
-	//Spawn and equip documents
-	var/mob/living/carbon/human/mob = owner.current
-
-	var/obj/item/folder/syndicate/folder
-	if(owner == SSticker.mode.exchange_red)
-		folder = new/obj/item/folder/syndicate/red(mob.loc)
-	else
-		folder = new/obj/item/folder/syndicate/blue(mob.loc)
-
-	var/list/slots = list (
-		"backpack" = SLOT_IN_BACKPACK,
-		"left pocket" = SLOT_L_STORE,
-		"right pocket" = SLOT_R_STORE
-	)
-
-	var/where = "At your feet"
-	var/equipped_slot = mob.equip_in_one_of_slots(folder, slots)
-	if (equipped_slot)
-		where = "In your [equipped_slot]"
-	to_chat(mob, "<BR><BR><span class='info'>[where] is a folder containing <b>secret documents</b> that another agent group wants. We have set up a meeting with one of our agents on station to make an exchange. Exercise extreme caution as they cannot be trusted and may be hostile.</span><BR>")
-
-//TODO Collate
 /datum/antagonist/section31/roundend_report()
 	var/list/result = list()
 
