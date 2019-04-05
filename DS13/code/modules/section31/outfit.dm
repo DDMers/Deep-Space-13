@@ -2,7 +2,7 @@
 	name = "Section 31 Agent"
 	uniform = /obj/item/clothing/under/trek/command/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
-	r_hand = /obj/item/gun/energy/phaser=1
+	r_hand = /obj/item/gun/energy/phaser
 	l_pocket = /obj/item/pda
 	r_pocket = /obj/item/melee/classic_baton/telescopic
 	ears = /obj/item/radio/headset
