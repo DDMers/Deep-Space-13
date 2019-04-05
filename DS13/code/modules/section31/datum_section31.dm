@@ -28,20 +28,6 @@
 	finalize_section31()
 	..()
 
-/datum/antagonist/section31/apply_innate_effects()
-	if(owner.assigned_role == "Clown")
-		var/mob/living/carbon/human/section31_mob = owner.current
-		if(section31_mob && istype(section31_mob))
-			if(!silent)
-				to_chat(section31_mob, "Your training has allowed you to overcome your clownish nature, allowing you to wield weapons without harming yourself.")
-			section31_mob.dna.remove_mutation(CLOWNMUT)
-
-/datum/antagonist/section31/remove_innate_effects()
-	if(owner.assigned_role == "Clown")
-		var/mob/living/carbon/human/section31_mob = owner.current
-		if(section31_mob && istype(section31_mob))
-			section31_mob.dna.add_mutation(CLOWNMUT)
-
 /datum/antagonist/section31/proc/equip_op()
 	if(!ishuman(owner.current))
 		return
@@ -210,9 +196,10 @@
 
 /datum/antagonist/section31/greet()
 	SEND_SOUND(owner.current, 'DS13/sound/effects/section31/section31.ogg')
-	to_chat(owner.current, "<B><font size=3 color=red>You are the [owner.special_role].</font></B>")
-	to_chat(owner.current, "<span class='danger'>We are here under best interests of the higher echelons of Federation Command, we are the never blinking eye.</span>")
-	to_chat(owner.current, "<span class='danger'>No one of any authority is permitted to interfere with your objectives, complete them at all costs. Do not allow yourself to be captured, you are armed with a cyanide pill and various implants of explosives. Remove all nuisances and potential threats to yourself and the Federation by all means necessary.</span>")
+	to_chat(owner.current, "<B><font size=3 color=blue>You are the [owner.special_role].</font></B>")
+	to_chat(owner.current, "<font size=2 color=cyan>https://en.wikipedia.org/wiki/Section_31</font>")
+	to_chat(owner.current, "<font size=2 color=cyan>We are here under best interests of the higher echelons of Federation Command, we operate under what is known as Section 31.</font>")
+	to_chat(owner.current, "<font size=2 color=cyan>No one of any authority is permitted to interfere with your objectives, complete them at all costs. Do not allow yourself to be captured, you are armed with a cyanide pill and various implants of explosives. Remove all nuisances and potential threats to yourself and the Federation by all means necessary.</font>")
 	owner.announce_objectives()
 	if(should_give_codewords)
 		give_codewords()
@@ -274,7 +261,7 @@
 	var/law_borg = "Accomplish your AI's objectives at all costs."
 	killer.set_zeroth_law(law, law_borg)
 	killer.set_syndie_radio()
-	to_chat(killer, "Your radio has been upgraded! Use :t to speak on an encrypted channel with Syndicate Agents!")
+	to_chat(killer, "Your radio has been upgraded! Use :t to speak on an encrypted channel with Section 31 Agents!")
 	killer.add_malf_picker()
 
 /datum/antagonist/section31/proc/equip(var/silent = FALSE)
@@ -283,13 +270,13 @@
 
 /datum/antagonist/section31/proc/assign_exchange_role()
 	//set faction
-	var/faction = "red"
-	if(owner == SSticker.mode.exchange_blue)
-		faction = "blue"
+	var/faction = "blue"
+	if(owner == SSticker.mode.exchange_red)
+		faction = "red"
 
 	//Assign objectives
 	var/datum/objective/steal/exchange/exchange_objective = new
-	exchange_objective.set_faction(faction,((faction == "red") ? SSticker.mode.exchange_blue : SSticker.mode.exchange_red))
+	exchange_objective.set_faction(faction,((faction == "blue") ? SSticker.mode.exchange_red : SSticker.mode.exchange_blue))
 	exchange_objective.owner = owner
 	add_objective(exchange_objective)
 
