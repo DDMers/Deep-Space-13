@@ -1,5 +1,5 @@
 /datum/dog_fashion/head/fake_horns
-	name = "Alien-REAL_NAME"
+	name = "Goof-REAL_NAME"
 	desc = "Looks like the Propmaster's getting fired."
 
 /obj/item/clothing/head/fake_horns
