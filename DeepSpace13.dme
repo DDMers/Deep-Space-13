@@ -2774,6 +2774,7 @@
 #include "DS13\code\modules\client\preferences.dm"
 #include "DS13\code\modules\client\preferences_toggles.dm"
 #include "DS13\code\modules\client\verbs\looc.dm"
+#include "DS13\code\modules\clothing\head\homosuck.dm"
 #include "DS13\code\modules\clothing\suits\trek.dm"
 #include "DS13\code\modules\clothing\under\trek.dm"
 #include "DS13\code\modules\EMH\EMH.dm"
