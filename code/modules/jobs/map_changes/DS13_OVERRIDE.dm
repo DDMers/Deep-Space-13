@@ -106,6 +106,16 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 
+/datum/job/atmos
+	outfit = /datum/outfit/job/atmos/DS13
+
+/datum/outfit/job/atmos/DS13
+	name = "Trek-Atmospheric Technician"
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+
+
 /datum/job/qm
 	outfit = /datum/outfit/job/qm/DS13
 
@@ -277,3 +287,47 @@
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
+
+/datum/job/ai
+	title = "Ship Computer"
+
+// START LANDMARKS FOLLOW. We change this shit because we changed their names o7
+/obj/effect/landmark/start/assistant
+	name = "Ensign"
+	icon_state = "Ensign"
+
+/obj/effect/landmark/start/clown
+	name = "Morale Officer"
+	icon_state = "Clown"
+
+/obj/effect/landmark/start/head_of_security
+	name = "Security Chief"
+	icon_state = "Security Chief"
+
+/obj/effect/landmark/start/warden
+	name = "Master at arms"
+	icon_state = "Master at arms"
+
+/obj/effect/landmark/start/head_of_personnel
+	name = "First Officer"
+	icon_state = "First Officer"
+
+/obj/effect/landmark/start/medical_doctor
+	name = "Medical Doctor"
+	icon_state = "Medical Doctor"
+
+/obj/effect/landmark/start/scientist
+	name = "Science Officer"
+	icon_state = "Science Officer"
+
+/obj/effect/landmark/start/research_director
+	name = "Chief Science Officer"
+	icon_state = "Chief Science Officer"
+
+/obj/effect/landmark/start/chaplain
+	name = "Counselor"
+	icon_state = "Counselor"
+
+/obj/effect/landmark/start/ai
+	name = "Ship Computer"
+	icon_state = "Ship Computer"

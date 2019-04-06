@@ -7,8 +7,6 @@
 /obj/structure/overmap
 	animate_movement = 0
 	appearance_flags = PIXEL_SCALE //Makes the sprite look smooth when rotating
-	pixel_collision_size_x = 48
-	pixel_collision_size_y = 48
 	var/list/crew = list()
 	var/mob/living/pilot
 	var/mob/living/tactical
@@ -20,8 +18,8 @@
 /obj/structure/overmap
 	var/angle = 0 //This replaces DIR with pixel move
 	var/vel = 0 //How fast are we travelling? This behaves like a vector.
-	var/turnspeed = 2 //Rate of turning. This can be a decimal
-	var/max_speed = 6 //Maximum velocity
+	var/turnspeed = 0.8 //Rate of turning. This can be a decimal
+	var/max_speed = 3 //Maximum velocity
 	var/acceleration = 0.5 //How quickly do you put on speed?
 	var/obj/structure/overmap/nav_target
 	var/process = FALSE
@@ -68,6 +66,8 @@
 	for(var/mob/M in operators)
 		if(M.client)
 			M.client.AdjustView()
+	if(vel < 9 && warping)//Are we warping and have slowed down? Trigger the exiting warp sound effect!
+		stop_warping()
 	if(nav_target)
 		if(nav_target in orange(src, 1)) //if we're near our navigational target, slam on the brakes
 			if(vel > 0)
@@ -153,6 +153,7 @@
 						to_chat(user, "you kick [pilot] off the ship controls!")
 						exit(pilot)
 				pilot = user
+				GrantActions(user)
 			if("tactical")
 				if(tactical)
 					if(alert("Kick [tactical] off of the ship controls?","[name]","Yes","No") == "Yes")
@@ -199,14 +200,15 @@
 	after_exit(user)
 	user.sight = initial(user.sight)
 	user.update_sight()
-	qdel(user.remote_control)
 	user.overmap_ship = null
 	user.update_sight()
+	user.cancel_camera()
 	if(user.client)
 		user.client.AdjustView()
 		user.reset_perspective(null)
 	operators -= user
 	if(user == pilot)
+		RemoveActions(user)
 		pilot = null
 	if(user == tactical)
 		tactical = null
@@ -234,11 +236,12 @@
 /atom/movable
 	var/real_pixel_x = 0 //variables for the real pixel_x
 	var/real_pixel_y = 0 //variables for shit
-	var/pixel_collision_size_x = 0
-	var/pixel_collision_size_y = 0
 
 /atom/movable/proc/PixelMove(var/x_to_move,var/y_to_move) //Don't ask. It just works
 	var/obj/structure/overmap/O = src
+	var/icon/I = icon(icon,icon_state,SOUTH) //SOUTH because all overmaps only ever face right, no other dirs.
+	var/pixel_collision_size_x = I.Width()
+	var/pixel_collision_size_y = I.Height()
 	for(var/atom/e in obounds(src, real_pixel_x + x_to_move + pixel_collision_size_x/4, real_pixel_y + y_to_move + pixel_collision_size_y/4, real_pixel_x + x_to_move + -pixel_collision_size_x/4, real_pixel_y + y_to_move + -pixel_collision_size_x/4) )//Basic block collision
 		if(e.density == 1) //We can change this so the ship takes damage later
 			if(istype(e, /obj/structure/meteor))
@@ -256,16 +259,24 @@
 	real_pixel_y = real_pixel_y + y_to_move
 	while(real_pixel_x > 32) //Modulo doesn't work with this kind of stuff, don't know if there's a better method.
 		real_pixel_x = real_pixel_x - 32
-		x = x + 1
+		var/turf/T = get_step(src, EAST)
+		if(T)
+			forceMove(T)
 	while(real_pixel_x < -32)
 		real_pixel_x = real_pixel_x + 32
-		x = x - 1
+		var/turf/T = get_step(src, WEST)
+		if(T)
+			forceMove(T)
 	while(real_pixel_y > 32) //Modulo doesn't work with this kind of stuff, don't know if there's a better method.
 		real_pixel_y = real_pixel_y - 32
-		y = y + 1
+		var/turf/T = get_step(src, NORTH)
+		if(T)
+			forceMove(T)
 	while(real_pixel_y < -32)
 		real_pixel_y = real_pixel_y + 32
-		y = y - 1
+		var/turf/T = get_step(src, SOUTH)
+		if(T)
+			forceMove(T)
 	pixel_x = real_pixel_x
 	pixel_y = real_pixel_y
 	if(istype(src, /obj/structure/overmap))

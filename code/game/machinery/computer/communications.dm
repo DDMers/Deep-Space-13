@@ -131,6 +131,8 @@
 			if(authenticated==2)
 				playsound(src, 'sound/machines/terminal_prompt.ogg', 50, 0)
 				make_announcement(usr)
+		if("arm_pods")
+			arm_pods(usr)
 
 		if("crossserver")
 			if(authenticated==2)
@@ -476,6 +478,7 @@
 					else
 						dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=cancelshuttle'>Cancel Shuttle Call</A> \]"
 
+				dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=arm_pods'>Arm escape pods</A> \]"
 				dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=status'>Set Status Display</A> \]"
 				if (authenticated==2)
 					dat += "<BR><BR><B>Captain Functions</B>"
@@ -637,6 +640,7 @@
 			dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=ai-messagelist'>Message List</A> \]"
 			if(SSshuttle.emergency.mode == SHUTTLE_IDLE)
 				dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=ai-callshuttle'>Call Emergency Shuttle</A> \]"
+			dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=arm_pods'>Arm escape pods</A> \]"
 			dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=ai-status'>Set Status Display</A> \]"
 			dat += "<BR><BR><B>Special Functions</B>"
 			dat += "<BR>\[ <A HREF='?src=[REF(src)];operation=ai-announce'>Make an Announcement</A> \]"

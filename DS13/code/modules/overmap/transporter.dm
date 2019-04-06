@@ -14,10 +14,13 @@
 	var/datum/action/innate/beamdown/down_action = new
 	var/datum/action/innate/beamup/up_action = new
 	var/datum/action/innate/changearea/changearea = new
-	var/mob/living/carbon/operator
+	var/datum/action/innate/transporterlock/lock = new
+	var/datum/action/innate/cleartransporterlock/clearlock = new
+	var/mob/living/operator
 //	var/confinement_beam = ANNULAR_CONFINEMENT_NARROW //Narrow = only pickup humans, wide = pick up everything that isnt bolted to the ground
-	req_one_access = list(ACCESS_SEC_DOORS)
+	req_one_access = list(ACCESS_SEC_DOORS,ACCESS_ENGINE_EQUIP)
 	var/list/log = list() //Logging to check if anyone's marooned.
+	var/list/locked_on = list() //Who have we locked onto?
 
 /obj/machinery/computer/camera_advanced/transporter_control/examine(mob/user)
 	. = ..()
@@ -56,6 +59,16 @@
 		changearea.Grant(user)
 		changearea.console = src
 		actions += changearea
+	if(lock)
+		lock.target = user
+		lock.Grant(user)
+		lock.console = src
+		actions += lock
+	if(clearlock)
+		clearlock.target = user
+		clearlock.Grant(user)
+		clearlock.console = src
+		actions += clearlock
 
 /datum/action/innate/beamup
 	name = "Beam Up"
@@ -83,6 +96,25 @@
 
 /datum/action/innate/changearea/Activate()
 	console.choose_area(console.operator)
+
+/datum/action/innate/transporterlock
+	name = "Lock on"
+	icon_icon = 'DS13/icons/actions/actions_transporter.dmi'
+	button_icon_state = "lock"
+	var/obj/machinery/computer/camera_advanced/transporter_control/console
+
+/datum/action/innate/transporterlock/Activate()
+	console.transporters_lock()
+
+/datum/action/innate/cleartransporterlock
+	name = "Clear pattern buffer"
+	icon_icon = 'DS13/icons/actions/actions_transporter.dmi'
+	button_icon_state = "clearlock"
+	var/obj/machinery/computer/camera_advanced/transporter_control/console
+
+/datum/action/innate/cleartransporterlock/Activate()
+	console.locked_on = list()
+	to_chat(console.operator, "<span class='warning'>Pattern buffer cleared. All locked on signatures ignored.</span>")
 
 /obj/effect/transporter_block
 	name = "transporter interference"
@@ -128,6 +160,19 @@
 			var/turf/open/Tu = get_turf(pick(orange(1, get_turf(eyeobj))))
 			T.send(Tu)
 		playsound(loc, 'DS13/sound/effects/transporter/send.ogg', 100, 4)
+	if(locked_on.len)
+		for(var/mob/living/H in locked_on)
+			var/area/AR = get_area(H)
+			if(!AR.linked_overmap)
+				continue
+			if(AR.linked_overmap.shields.check_vulnerability() || AR.linked_overmap.main_overmap) //If they don't have shields, or you want to site to site transport.
+				var/obj/machinery/transporter_pad/T = pick(linked)
+				T.retrieve(H)
+				var/turf/open/Tu = get_turf(pick(orange(1, get_turf(eyeobj))))
+				T.send(Tu)
+				locked_on -= H
+			else
+				locked_on -= H
 
 /obj/machinery/computer/camera_advanced/transporter_control/proc/transporters_retrieve()
 //	if(!powered())
@@ -144,6 +189,30 @@
 		var/obj/machinery/transporter_pad/T = pick(linked)
 		T.retrieve(thehewmon)
 	playsound(loc, 'DS13/sound/effects/transporter/retrieve.ogg', 100, 4)
+
+/obj/machinery/computer/camera_advanced/transporter_control/proc/transporters_lock()
+	var/list/mobs = list() //mobs near the eyeobj.
+	for(var/mob/living/inrange in orange(eyeobj,3))
+		if(isliving(inrange))
+			mobs += inrange
+	if(!mobs.len)
+		to_chat(operator, "There is no one to lock onto!")
+		return
+	var/question = alert("Lock onto a specific person? or everyone nearby?",name,"Specific person","Nearby")
+	if(!question)
+		return
+	if(question == "Specific person")
+		var/A
+		A = input("To whom shall we lock on?", "Transporter pattern buffer", A) as null|anything in mobs//overmap_objects
+		if(!A)
+			return
+		locked_on += A
+		log += "[station_time_timestamp()] : [operator] locked onto <b>[A]</b>."
+	else
+		for(var/X in mobs)
+			locked_on += X
+			log += "[station_time_timestamp()] : [operator] locked onto <b>[X]</b>."
+	to_chat(operator, "Pattern buffer ready. Use the down option to transfer pattern buffer contents to designated turfs.")
 
 /obj/machinery/computer/camera_advanced/transporter_control/CreateEye(var/turf/T)
 	if(eyeobj)
@@ -171,20 +240,18 @@
 	else
 		to_chat(user, "This is already in use!")
 
+/obj/machinery/computer/camera_advanced/transporter_control/attack_ai(mob/user)
+	return attack_hand(user)
+
 /obj/machinery/computer/camera_advanced/transporter_control/attack_hand(mob/user)
-	if(!ishuman(user))
+	if(!isliving(user))
 		return
-	var/mob/living/carbon/human/L = user
-	var/obj/item/card/id/ID = L.get_idcard(FALSE)
-	if(ID && istype(ID))
-		if(!check_access(ID))
-			to_chat(L, "You require a security level access card to use this console!.")
-			return FALSE
-	else
-		to_chat(L, "You require a security level access card to use this console!.")
-		return
+	if(!allowed(user))
+		to_chat(user, "You require a security level access card to use this console!.")
+		return FALSE
 	if(operator)
 		remove_eye_control(operator)
+		operator.cancel_camera()
 	choose_area(user)
 
 /obj/machinery/computer/camera_advanced/transporter_control/proc/choose_area(mob/user)

@@ -8,6 +8,7 @@
 	layer = TURF_LAYER + 0.5
 	smooth = TRUE
 	canSmoothWith = list(/obj/structure/trek_catwalk, /turf/closed/wall)
+	mouse_opacity = 0
 
 /obj/structure/trek_catwalk/attack_hand(mob/user)
 	var/turf/T = get_turf(src)

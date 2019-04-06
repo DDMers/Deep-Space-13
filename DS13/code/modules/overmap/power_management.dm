@@ -45,6 +45,7 @@
 	var/new_damage = initial(damage)+(weapon_power*10)
 	var/new_speed = initial(max_speed)+engine_power
 	var/new_turnspeed = initial(turnspeed)+(engine_power/4) //Slight buff to turnspeed, maximum of 0.6 which does make a decent difference
+	max_warp = initial(max_warp)+engine_power
 	shields.chargerate = new_chargerate //A slight buff to shields can really help
 	damage = new_damage
 	max_speed = new_speed
