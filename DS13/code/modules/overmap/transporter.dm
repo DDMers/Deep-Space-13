@@ -18,7 +18,7 @@
 	var/datum/action/innate/cleartransporterlock/clearlock = new
 	var/mob/living/operator
 //	var/confinement_beam = ANNULAR_CONFINEMENT_NARROW //Narrow = only pickup humans, wide = pick up everything that isnt bolted to the ground
-	req_one_access = list(ACCESS_SEC_DOORS)
+	req_one_access = list(ACCESS_SEC_DOORS,ACCESS_ENGINE_EQUIP)
 	var/list/log = list() //Logging to check if anyone's marooned.
 	var/list/locked_on = list() //Who have we locked onto?
 
@@ -192,14 +192,16 @@
 
 /obj/machinery/computer/camera_advanced/transporter_control/proc/transporters_lock()
 	var/list/mobs = list() //mobs near the eyeobj.
-	for(var/mob/living/thehewmon in orange(eyeobj,3))
-		if(isliving(thehewmon))
-			mobs += thehewmon
+	for(var/mob/living/inrange in orange(eyeobj,3))
+		if(isliving(inrange))
+			mobs += inrange
 	if(!mobs.len)
 		to_chat(operator, "There is no one to lock onto!")
 		return
 	var/question = alert("Lock onto a specific person? or everyone nearby?",name,"Specific person","Nearby")
-	if(question == "Specific person" || !question)
+	if(!question)
+		return
+	if(question == "Specific person")
 		var/A
 		A = input("To whom shall we lock on?", "Transporter pattern buffer", A) as null|anything in mobs//overmap_objects
 		if(!A)
@@ -249,6 +251,7 @@
 		return FALSE
 	if(operator)
 		remove_eye_control(operator)
+		operator.cancel_camera()
 	choose_area(user)
 
 /obj/machinery/computer/camera_advanced/transporter_control/proc/choose_area(mob/user)

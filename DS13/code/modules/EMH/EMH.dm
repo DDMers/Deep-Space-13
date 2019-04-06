@@ -39,7 +39,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 /obj/machinery/emh_emitter/MouseDrop_T(mob/living/target, mob/living/user)
 	if(!istype(user, /mob/living/carbon/human/species/holographic))
 		return
-	to_chat(user, "<span class='notice'>You're now stored in [src]. You can transfer your program if summoned or you can move / walk to exit this emitter as you wish. If you go AFK now other ghosts will be able to take you over!</span>")
+	to_chat(user, "<span class='notice'>You're now stored in [src]. You can transfer your program if summoned or you can move / walk to exit this emitter as you wish. If you go AFK now other ghosts will be able to replace you!</span>")
 	user.forceMove(src)
 
 /obj/machinery/emh_emitter/relaymove(mob/living/user, direction)
@@ -322,7 +322,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 
 /mob/living/carbon/human/species/holographic
 	race = /datum/species/holographic
-	var/voice_ready = TRUE //PLEASE STATE THE NATURE
+	var/voice_ready = TRUE //Allows them to do a voiceline
 	var/voice_cooldown = 300
 
 /mob/living/carbon/human/species/holographic/proc/reset_voice()

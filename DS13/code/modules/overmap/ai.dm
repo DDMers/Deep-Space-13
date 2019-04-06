@@ -143,6 +143,8 @@
 		if(behaviour == "peaceful") //Peaceful means never retaliate, so return
 			return
 		nav_target = target
+		if(cloaked) //No firing while cloaked, please!
+			return
 		fire(target, damage)//Shoot the target. This can either be us shooting on aggressive mode, or us being hit by the attacker.
 		return //No need to pick another target if we have one and theyre in range
 	else

@@ -20,8 +20,8 @@
 			for(var/obj/structure/overmap_component/XR in A) //We call this to update the components with our new ship object, as it wasn't created at runtime!
 				XR.find_overmap()
 			to_chat(user, "<span class='notice>Ship successfully spawned in a random location!</span>")
-			log_game("[key_name(user)] created a [ship_type].")
-			message_admins("[key_name(user)] created a [ship_type].")
+			log_game("[key_name(user)] created a [linked].")
+			message_admins("[key_name(user)] created a [linked].")
 		else
 			to_chat(user, "<span class='notice'>The console doesn't respond to anyone lower than an a fleet admiral in rank (contact the admins).</span>")
 		return
@@ -47,7 +47,7 @@
 
 /obj/structure/overmap_component/cloaking //WARNING: PROBABLY OP :b1:
 	name = "Cloaking device control console."
-	desc = "A console with romulan writing flashing all over it, when clicked with an open hand this console will let you cloak or decloak the ship. Fancy..."
+	desc = "A console with Romulan writing flashing all over it, when clicked with an open hand this console will let you cloak or decloak the ship. Fancy..."
 	icon_state = "cloaking"
 
 /obj/structure/overmap_component/cloaking/attack_hand()

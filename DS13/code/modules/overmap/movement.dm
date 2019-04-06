@@ -200,9 +200,9 @@
 	after_exit(user)
 	user.sight = initial(user.sight)
 	user.update_sight()
-	qdel(user.remote_control)
 	user.overmap_ship = null
 	user.update_sight()
+	user.cancel_camera()
 	if(user.client)
 		user.client.AdjustView()
 		user.reset_perspective(null)

@@ -32,8 +32,8 @@ GLOBAL_VAR_INIT(pods_armed, FALSE) //Are the escape pods armed and ready to laun
 		to_chat(user, "<span class='notice'>Unable to comply. Escape pod not armed.</span>")
 		return
 	if(!linked || !istype(linked, /obj/structure/overmap/escape_pod))
-		var/question = alert("Launch escape pod and abandon ship?",name,"Yes","No")
-		if(question == "No" || !question)
+		var/answer = alert("Launch escape pod and abandon ship?",name,"Yes","No")
+		if(answer == "No" || !answer)
 			return
 		create_pod()
 	. = ..()
@@ -186,6 +186,9 @@ GLOBAL_VAR_INIT(pods_armed, FALSE) //Are the escape pods armed and ready to laun
 	req_access = list(ACCESS_HEADS)
 	flags_1 = HEAR_1
 
+/obj/machinery/computer/communications
+	var/max_timer = 600 //Avoids infinitely big escape pods timers.
+
 /obj/machinery/computer/communications/proc/arm_pods(var/mob/living/carbon/user)
 	if(GLOB.pods_armed)
 		var/question = alert("The escape pods are already armed. Disarm them?",name,"Yes","No")
@@ -193,9 +196,6 @@ GLOBAL_VAR_INIT(pods_armed, FALSE) //Are the escape pods armed and ready to laun
 			return
 		GLOB.pods_armed = FALSE
 		priority_announce("Escape pods have been disarmed. All hands should return to their stations.","Escape pods disarmed",'sound/ai/commandreport.ogg')
-		var/obj/structure/overmap_component/helm/HH = locate(/obj/structure/overmap_component/helm) in get_area(src)
-		if(HH)
-			HH.redalert_end()
 		return
 	var/question = alert("Arm the escape pods for emergency evacuation?.",name,"Yes","No")
 	if(question == "No" || !question)
@@ -205,6 +205,8 @@ GLOBAL_VAR_INIT(pods_armed, FALSE) //Are the escape pods armed and ready to laun
 		return
 	message_admins("[key_name(user)] has armed the escape pods for launch in [timer] seconds.")
 	priority_announce("All hands, prepare to abandon ship. The escape pods will be armed for launch in [timer] seconds.","Escape pods armed",'sound/ai/commandreport.ogg')
+	if(timer >= max_timer)
+		to_chat(user, "<span class='warning'>The maximum timer you can set is: [max_timer].")
 	if(timer > 0)
 		timer *= 10
 		addtimer(CALLBACK(src, .proc/set_pods_armed), timer)

@@ -4,7 +4,7 @@
 Activation sequence:
 Complete the deuterium + anti deuterium injectors (they start semi finished)
 Open deut + anti deut transmission manifolds to feed the injectors
-Set transmission ratio such that it’s 0.5 : 0.5 for a stable reaction
+Set transmission ratio such that itï¿½s 0.5 : 0.5 for a stable reaction
 Add dilithium to dilithium matrix
 Realign dilithium matrix to your desired spec
 Insert dilithium matrix into core
@@ -117,7 +117,7 @@ Monitor the reaction for instability
 			else
 				core.antimatter_stream = FALSE
 
-/obj/machinery/power/matter_injector/antimatter //TODO. Make it start off deconstructed so you gotta finish it.
+/obj/machinery/power/matter_injector/antimatter
 	name = "Anti-Matter stream injector"
 	desc = "A huge device used to inject antimatter into a controlled antimatter reaction system for the purpose of power generation."
 	injects_matter = FALSE
@@ -194,7 +194,7 @@ Monitor the reaction for instability
 			playsound(src, 'sound/machines/sm/supermatter1.ogg', 30, 1)
 			alignment = max_alignment
 		else
-			to_chat(user, "<span class='warning'>Realignment failed continued failure risks damage to dilithium crystal sample. Rotating command sequence.</span>")
+			to_chat(user, "<span class='warning'>Realignment failed. Continued failure risks damage to dilithium crystal sample. Rotating command sequence.</span>")
 			playsound(src, 'DS13/sound/effects/warpcore/overload.ogg', 100, 1)
 			combo_target = "[pick(letters)][pick(letters)][pick(letters)][pick(letters)][pick(letters)]"
 			absorb_damage(5) //Penalty for fucking it up. You risk destroying the crystal...
@@ -252,7 +252,6 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 	var/radio_key = /obj/item/encryptionkey/headset_eng
 	var/list/coils = list() //fuck I burnt my coil cyka
 	req_access = list(ACCESS_ENGINE_EQUIP)
-	//Performance penalty vars. If you don't look after your warp core, your crystal will burn out faster (if you leave this too long, you risk a core breach)
 
 /obj/structure/ejected_core
 	name = "Warp core frame"
