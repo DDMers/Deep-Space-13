@@ -1,6 +1,6 @@
 /datum/dog_fashion/head/fake_horns
-	name = "Troll-REAL_NAME"
-	desc = "It's... some kind of alien."
+	name = "Alien-REAL_NAME"
+	desc = "Looks like the Propmaster's getting fired."
 
 /obj/item/clothing/head/fake_horns
 	name = "pair of fake horns"
