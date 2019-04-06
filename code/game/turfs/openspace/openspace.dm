@@ -80,6 +80,7 @@
 			if(R.use(1))
 				to_chat(user, "<span class='notice'>You construct a catwalk.</span>")
 				playsound(src, 'sound/weapons/genhit.ogg', 50, 1)
+				PlaceOnTop(/turf/open/floor/plating) //DeepSpace13 - Catwalks shouldnt fall down when placed on openspace
 				new/obj/structure/lattice/catwalk(src)
 			else
 				to_chat(user, "<span class='warning'>You need two rods to build a catwalk!</span>")

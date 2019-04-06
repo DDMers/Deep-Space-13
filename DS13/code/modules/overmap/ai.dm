@@ -19,8 +19,39 @@
 	AI_enabled = TRUE //Start with an AI by default
 	faction = "romulan" //Placeholder
 	var/datum/overmap_event/linked_event
-	turnspeed = 3
+	turnspeed = 1.2
 	max_health = 130
+	max_speed = 2 //Slower than every ship.
+
+/obj/structure/overmap/ai/dderidex //AI version can't cloak.
+	name = "Dderidex class heavy cruiser"
+	desc = "Vicious, huge, fast. The Dderidex class is the Romulan navy's most popular warship for a reason. It has an impressive armament and cloaking technology."
+	icon = 'DS13/icons/overmap/dderidex.dmi'
+	icon_state = "dderidex"
+	main_overmap = FALSE
+	class = "dderidex"
+	damage_states = TRUE //Damage FX
+	damage = 10 //Will turn into 20 assuming weapons powered
+	faction = "romulan"
+	max_shield_health = 200
+	max_health = 200 //Extremely fucking tanky
+	pixel_z = -128
+	pixel_w = -120
+
+/obj/structure/overmap/ai/aggressive
+	behaviour = "aggressive"
+
+/obj/structure/overmap/ai/aggressive/miranda
+	name = "Miranda Class Light Cruiser"
+	desc = "An all purpose, reliable starship. It's a tried and tested design that has served the federation for hundreds of years. Despite its aging design, it has a modest armament."
+	icon = 'DS13/icons/overmap/miranda.dmi'
+	icon_state = "miranda"
+	main_overmap = FALSE
+	class = "starfleet-miranda" //Feel free to add overmap controls for AIs later, future me.
+	damage_states = TRUE
+	damage = 10
+	faction = "starfleet"
+	behaviour = "aggressive"
 
 /obj/structure/overmap/ai/explode()
 	if(linked_event)
@@ -58,7 +89,7 @@
 	desc = "Her crew must have suffered a terrible fate..."
 	icon = 'DS13/icons/overmap/miranda_assimilated.dmi'
 	icon_state = "assimilated2"
-	max_health = 200
+	max_health = 250
 	class = "borg-miranda"
 	damage_states = FALSE
 
@@ -99,7 +130,7 @@
 		process = TRUE
 		start_process()
 	if(target) //We have a target locked in
-		if(get_dist(src, target) > range) //Target ran away. Move on.
+		if(get_dist(src, target) > range || target.cloaked) //Target ran away. Move on.
 			if(force_target)
 				if(QDELETED(force_target))
 					force_target = null
@@ -112,6 +143,8 @@
 		if(behaviour == "peaceful") //Peaceful means never retaliate, so return
 			return
 		nav_target = target
+		if(cloaked) //No firing while cloaked, please!
+			return
 		fire(target, damage)//Shoot the target. This can either be us shooting on aggressive mode, or us being hit by the attacker.
 		return //No need to pick another target if we have one and theyre in range
 	else
@@ -119,16 +152,17 @@
 
 /obj/structure/overmap/proc/pick_target()
 	for(var/obj/structure/overmap/OM in GLOB.overmap_ships)
-		if(istype(OM) && OM.z == z && get_dist(src, OM) <= range)
+		if(get_dist(src, OM) > range || OM.cloaked)
+			continue
+		if(istype(OM, /obj/structure/overmap))
 			if(OM in attackers)
 				target = OM
 				nav_target = OM
 				return
-			else
-				if(behaviour == "aggressive" && OM.faction != faction)
-					target = OM
-					nav_target = OM
-					return
+			if(behaviour == "aggressive" && OM.faction != faction)
+				target = OM
+				nav_target = OM
+				return
 	return
 
 /obj/structure/overmap/take_damage(var/atom/source, var/amount = 10)

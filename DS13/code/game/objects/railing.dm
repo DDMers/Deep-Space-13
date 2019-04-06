@@ -1,23 +1,38 @@
 //Port from CEV eris
 /obj/structure/railing
 	name = "railing"
-	desc = "A standard steel railing.  Play stupid games, win stupid prizes."
+	desc = "A standard steel railing. Prevents stupid people from falling to their doom. Drag yourself onto it to climb over, or click it with an open hand whilst pulling something to dump it over the edge."
 	icon = 'DS13/icons/obj/railing.dmi'
 	density = TRUE
 	climbable = TRUE
 	anchored = TRUE
 	icon_state = "railing0"
-	smooth = FALSE
-	name = "railing"
-	desc = "A standard steel railing. Prevents stupid people from falling to their doom."
-	icon = 'DS13/icons/obj/railing.dmi'
-	density = TRUE
-	climbable = TRUE
 	layer = 3.2//Just above doors
-	anchored = TRUE
-	icon_state = "railing0"
 	var/check = FALSE
 	smooth = FALSE
+
+/obj/structure/railing/attack_hand(mob/user)
+	. = ..()
+	if(user.pulling)
+		to_chat(user, "<span class='warning'>You start to dump [user.pulling] over [src]!</span>")
+		if(do_after(user, 50, target = src))
+			if(!user.pulling || QDELETED(user.pulling))
+				return
+			visible_message("<span class='warning'>[user] dumps [user.pulling] over [src]!</span>")
+			user.pulling.forceMove(get_step(src, src.dir))
+
+/obj/structure/railing/built //Player constructed
+	anchored = FALSE
+
+/obj/structure/railing/attackby(obj/item/I,mob/user)
+	if(default_unfasten_wrench(user, I))
+		update_icon()
+		return FALSE
+	. = ..()
+
+/obj/structure/railing/AltClick(mob/user)
+	. = ..()
+	revrotate() //Rotate clockwise
 
 /obj/structure/railing/Initialize(constructed=0)
 	. = ..()
@@ -136,7 +151,7 @@
 		return 0
 
 	if(anchored)
-		to_chat(usr,"It is fastened to the floor therefore you can't rotate it!")
+		to_chat(usr,"It's fastened to the floor!")
 		return 0
 
 	setDir(turn(dir, -90))

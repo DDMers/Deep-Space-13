@@ -374,16 +374,34 @@
 /mob/verb/up()
 	set name = "Move Upwards"
 	set category = "IC"
+	if(isAI(src)) //We dont want the physical fracking ai core to move down.
+		var/mob/living/silicon/ai/AI = src
+		if(AI.eyeobj)
+			var/turf/T = SSmapping.get_turf_above(get_turf(AI.eyeobj))
+			var/area/X = get_area(T) //Check theyre ON THE STATION and not trying to move down into the overmap
+			if(T && !istype(X, /area/space) && !istype(T, /turf/open/space/basic))
+				AI.eyeobj.forceMove(T)
+			else
+				to_chat(AI, "<span class='warning'>You cannot move here</span>")
+	else
+		if(zMove(UP, TRUE))
+			to_chat(src, "<span class='notice'>You move upwards.</span>")
 
-	if(zMove(UP, TRUE))
-		to_chat(src, "<span class='notice'>You move upwards.</span>")
-
-/mob/verb/down()
+/mob/verb/down() //DeepSpace 13 - Fix this shit for AIs
 	set name = "Move Down"
 	set category = "IC"
-
-	if(zMove(DOWN, TRUE))
-		to_chat(src, "<span class='notice'>You move down.</span>")
+	if(isAI(src)) //We dont want the physical fracking ai core to move down.
+		var/mob/living/silicon/ai/AI = src
+		if(AI.eyeobj)
+			var/turf/T = SSmapping.get_turf_below(get_turf(AI.eyeobj))
+			var/area/X = get_area(T) //Check theyre ON THE STATION and not trying to move down into the overmap
+			if(T && !istype(X, /area/space) && !istype(T, /turf/open/space/basic))
+				AI.eyeobj.forceMove(T)
+			else
+				to_chat(AI, "<span class='warning'>You cannot move here</span>")
+	else
+		if(zMove(DOWN, TRUE))
+			to_chat(src, "<span class='notice'>You move down.</span>")
 
 /mob/proc/zMove(dir, feedback = FALSE)
 	if(dir != UP && dir != DOWN)

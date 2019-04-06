@@ -9,8 +9,11 @@
 	var/position = null //Set this to either "pilot", "tactical" or "science"
 
 /obj/structure/overmap_component/attack_hand(mob/user) //this doesnt work!!
+	if(!isliving(user))
+		return
 	if(!linked || QDELETED(linked))
 		find_overmap()
+		return
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/L = user
@@ -27,7 +30,9 @@
 	return
 
 /obj/structure/overmap_component/attack_ai(mob/user)
-	return attack_hand(user)
+	if(position)
+		return linked.enter(user, position)
+	return
 
 /obj/structure/overmap_component/take_damage(amount)
 	if(obj_integrity <= amount)
@@ -73,8 +78,10 @@
 /obj/structure/overmap_component/viewscreen/examine(mob/user)
 	if(!linked || QDELETED(linked))
 		find_overmap()
+		return
 	if(isobserver(user) && linked)
-		user.forceMove(get_turf(linked))
+		var/mob/dead/observer/O = user
+		O.ManualFollow(linked)
 		return
 	linked.enter(user, "observer",TRUE) //Enter them as an observer
 	. = ..()
@@ -97,6 +104,7 @@
 	var/redalert_activator = "red alert" //the activation message
 	var/redalert_deactivator = "stand down red alert" //the de-activation message
 	var/redalert = FALSE //Reduce processing usage.
+	var/redalert_sound = 'DS13/sound/effects/redalert-mid.ogg'
 
 /obj/structure/overmap_component/helm/examine(mob/user)
 	. = ..()
@@ -153,7 +161,7 @@
 		return FALSE
 
 /obj/structure/overmap_component/helm/proc/redalert_start()
-	if(redalert)
+	if(redalert || !linked)
 		return
 	redalert = TRUE
 	if(linked.main_overmap)
@@ -165,10 +173,19 @@
 		for(var/mob/player in GLOB.player_list)
 			var/area/AR = get_area(player)
 			if(is_station_level(player.z) && !AR.noteleport) //Player on station and not on another random ship.
-				SEND_SOUND(player, sound('DS13/sound/effects/redalert-mid.ogg', repeat = 1, wait = 0, volume = 100, channel = CHANNEL_REDALERT)) //Send them the redalert sound
+				SEND_SOUND(player, sound(redalert_sound, repeat = 1, wait = 0, volume = 100, channel = CHANNEL_REDALERT)) //Send them the redalert sound
+	else
+		if(!linked.linked_area)
+			return
+		linked.linked_area.fire = TRUE
+		for(var/obj/machinery/light/L in linked.linked_area)
+			L.update()
+		for(var/mob/player in linked.linked_area)
+			SEND_SOUND(player, sound(redalert_sound, repeat = 1, wait = 0, volume = 100, channel = CHANNEL_REDALERT)) //Send them the redalert sound
+
 
 /obj/structure/overmap_component/helm/proc/redalert_end()
-	if(!redalert)
+	if(!redalert || !linked)
 		return
 	redalert = FALSE
 	if(linked.main_overmap)
@@ -179,10 +196,13 @@
 			var/area/AR = get_area(player)
 			if(is_station_level(player.z) && !AR.noteleport) //Player on station and not on another random ship.
 				if(player.client)
-					SEND_SOUND(player, sound(null))
-					var/client/C = player.client
-					if(C && C.chatOutput && !C.chatOutput.broken && C.chatOutput.loaded)
-						C.chatOutput.stopMusic()
+					SEND_SOUND(player, sound(null, repeat = 0, wait = 0, volume = 100, channel = CHANNEL_REDALERT))
+	else
+		if(!linked.linked_area)
+			return
+		linked.linked_area.unset_fire_alarm_effects()
+		for(var/mob/player in linked.linked_area)
+			SEND_SOUND(player, sound(null, repeat = 1, wait = 0, volume = 100, channel = CHANNEL_REDALERT)) //Send them the redalert sound
 
 /obj/structure/overmap_component/science
 	name = "Science station"
@@ -249,15 +269,21 @@
 	desc = "This sturdy device will inject supplied plasma into the ship's ODN relays, allowing for massive power transference. Simply load it with a plasma canister, or click it with an empty hand to remove a canister"
 	icon_state = "injector"
 	req_access = list(ACCESS_ENGINE_EQUIP)
-	var/obj/item/tank/internals/plasma/loaded_tank = null //Nicked from rad collector code, see there for documentation (collector.dm)
 	max_integrity = 350
 	integrity_failure = 50
+	density = FALSE
+	var/obj/item/tank/internals/plasma/loaded_tank = null //Nicked from rad collector code, see there for documentation (collector.dm)
 	var/powerproduction_drain = 0.015 //Relatively high drain on the plasma tanks.
 	var/drainratio = 1
 	var/supplying = FALSE //Are we supplying plasma to another object?
 	var/obj/structure/overmap_component/plasma_relay/supply_to
 	var/obj/structure/overmap_component/integrity_field_generator/generator
 	var/locked = FALSE
+	resistance_flags = FIRE_PROOF
+
+/obj/structure/overmap_component/plasma_injector/Initialize()
+	. = ..()
+	START_PROCESSING(SSobj,src)
 
 /obj/structure/overmap_component/plasma_injector/attack_hand(mob/user)
 	if(ishuman(user))
@@ -289,7 +315,6 @@
 		if(!user.transferItemToLoc(W, src))
 			return
 		loaded_tank = W
-		START_PROCESSING(SSobj,src)
 	else if(W.GetID())
 		if(allowed(user))
 			locked = !locked
@@ -305,12 +330,27 @@
 	. = ..()
 
 /obj/structure/overmap_component/plasma_injector/process()
-	if(!loaded_tank || !linked || !linked.powered_components.len)
+	if(!linked || !linked.powered_components.len)
 		icon_state = "injector"
 		return
 	if(!supply_to || QDELETED(supply_to))
 		supplying = FALSE
 		find_supply_to()
+		return
+	if(!loaded_tank) //No tank, so draw from the enviornment
+		var/turf/T = get_turf(src)
+		var/datum/gas_mixture/air = T.return_air()
+		if(air.gases[/datum/gas/plasma])
+			icon_state = "injector-on"
+			var/gasdrained = min(powerproduction_drain*drainratio,air.gases[/datum/gas/plasma][MOLES])
+			air.gases[/datum/gas/plasma][MOLES] -= gasdrained
+			air.garbage_collect()
+			if(supply_to)
+				supply_to.plasma_volume += powerproduction_drain
+			if(generator)
+				generator.plasma_volume += powerproduction_drain
+		else
+			icon_state = "injector"
 		return
 	if(!loaded_tank.air_contents.gases[/datum/gas/plasma])
 		playsound(src, 'DS13/sound/effects/computer/alert2.ogg', 100, 1)
@@ -332,6 +372,7 @@
 /obj/structure/overmap_component/plasma_injector/proc/find_supply_to()
 	if(!linked)
 		find_overmap()
+		return
 	for(var/obj/structure/overmap_component/integrity_field_generator/IFS in linked.powered_components)
 		if(!IFS.supplier)
 			generator = IFS
@@ -376,6 +417,8 @@
 
 /obj/structure/overmap_component/plasma_relay/attack_hand(mob/user)
 	. = ..()
+	if(!isliving(user))
+		return
 	if(!linked || QDELETED(linked))
 		find_overmap()
 	var/Q = alert(user,"Redirect power to what system?","[src]","shields","weapons", "engines")
@@ -536,7 +579,6 @@
 				linked.max_engine_power -= benefit
 		linked.check_power()
 
-
 /obj/structure/overmap_component/plasma_relay/proc/find_supplying()
 	if(!linked)
 		find_overmap()
@@ -558,7 +600,6 @@
 	. = ..()
 	if(linked)
 		linked.powered_components += src
-	find_supplying()
 	START_PROCESSING(SSobj,src)
 
 /obj/structure/overmap_component/plasma_relay/Destroy()
@@ -682,6 +723,8 @@
 
 
 /obj/structure/overmap_component/system_control/attack_hand(mob/user)
+	if(!isliving(user))
+		return
 	if(ishuman(user))
 		if(!linked || QDELETED(linked))
 			find_overmap()

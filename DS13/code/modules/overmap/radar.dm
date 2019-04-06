@@ -28,6 +28,8 @@
 	for(var/obj/structure/overmap/OM in GLOB.overmap_ships)
 		if(OM == theship)
 			continue
+		if(OM.cloaked)
+			continue
 		if(OM.z == theship.z)
 			targets += OM
 	A = input("Track a ship", "Ship navigation", A) as null|anything in targets//overmap_objects
@@ -51,6 +53,8 @@
 		if(OM == theship)
 			continue //No need to show ourselves on the radar!
 		if(OM.z == theship.z)
+			if(OM.cloaked)
+				continue
 			if(get_dist(theship, OM) <= 1)
 				var/image/blip = image('DS13/icons/actions/radar.dmi',icon_state = "center") //They're right on top of you
 				add_overlay(blip)

@@ -22,10 +22,30 @@
 	var/destroyed = FALSE
 	var/damage_sector = "shields" //Tactical can change this! What system are we targeting?
 	var/list/torpedo_damage_list = list() //Keeps track of the damage that each torpedo that's been loaded will do. Science can upgrade the torpedoes for even more damage.
+	var/cloaked = FALSE //Used for rommies.
 
 /obj/structure/overmap/proc/send_sound_crew(var/sound/S)
 	for(var/mob/M in operators)
 		SEND_SOUND(M, S)
+
+/obj/structure/overmap/proc/send_sound_all(var/sound/sound, var/text) //Send a sound to anyone on a ship.
+	if(main_overmap)
+		for(var/mob/player in GLOB.player_list)
+			if(is_station_level(player.z))
+				if(text)
+					to_chat(player, "[text]")
+				if(sound)
+					SEND_SOUND(player, sound)
+	else
+		if(!linked_area)
+			return
+		for(var/X in linked_area)
+			if(ismob(X))
+				var/mob/player = X
+				if(text)
+					to_chat(player, "[text]")
+				if(sound)
+					SEND_SOUND(player, sound)
 
 /obj/structure/overmap/proc/send_text_crew(var/S)
 	to_chat(operators, S)
@@ -40,12 +60,18 @@
 	pixel_x = rand(0,10)
 	pixel_y = rand(0,10)
 
+/obj/structure/overmap/proc/get_beep() //Override this to change the SFX that play when you click stuff
+	return pick(GLOB.bleeps)
+
 /obj/structure/overmap/proc/onMouseDown(object, location, params, mob/mob)
-	var/sound/thesound = pick(GLOB.bleeps)
+	var/sound/thesound = get_beep()
 	SEND_SOUND(mob, thesound)
 	if(object == src)
 		return attack_hand(mob)
 	if(istype(object, /obj/screen) && !istype(object, /obj/screen/click_catcher))
+		return
+	if(cloaked)
+		to_chat(mob, "<span class='warning'> The controls flash a message: UNABLE TO MODIFY PARAMETERS WHILE CLOAKED.</span>")
 		return
 	if(mob != tactical)
 		if(science)
@@ -233,6 +259,11 @@
 		return
 	var/area = pick(GLOB.teleportlocs)
 	var/area/target = GLOB.teleportlocs[area] //Pick a station area and yeet it.
+	if(target.explosion_exempt)
+		area = pick(GLOB.teleportlocs)
+		target = GLOB.teleportlocs[area]
+		if(target.explosion_exempt)
+			return //Welp, we tried.
 	for(var/mob/player in GLOB.player_list)
 		if(is_station_level(player.z))
 			if(prob(50))
@@ -353,10 +384,18 @@
 	for(var/obj/structure/overmap_component/XX in powered_components)
 		if(istype(XX, /obj/structure/overmap_component/plasma_relay))
 			var/obj/structure/overmap_component/plasma_relay/PS = XX
-			if(PS.supplying == OM.damage_sector && PS.obj_integrity >= 40)
+			if(PS.supplying == OM.damage_sector && PS.obj_integrity > 0)
 				PS.take_damage(mod)
 
 /obj/structure/overmap/proc/explode()
+	send_sound_crew('DS13/sound/effects/damage/ship_explode.ogg')
+	if(warp_core && !QDELETED(warp_core)) //They have a core. So give them a chance to save the ship.
+		warp_core.containment = 0//Force a warp core breach. No matter if it's on or not. They'll then have 45 seconds to haul ass to engi and eject the core.
+		warp_core.breach()
+		addtimer(CALLBACK(src, .proc/check_breach), 450)
+		for(var/mob/A in operators)
+			to_chat(A, "<span class='cult'><font size=3>Antimatter containment failing, evacuate the ship!</font></span>")
+		return
 	qdel(shield_overlay)
 	qdel(shields)
 	SpinAnimation(1000,1000)
@@ -366,35 +405,51 @@
 	power_slots = 0
 	movement_block = TRUE
 	remove_control()
-	send_sound_crew('DS13/sound/effects/damage/ship_explode.ogg')
-	addtimer(CALLBACK(src, .proc/core_breach_finish), 450)
+	addtimer(CALLBACK(src, .proc/core_breach_finish), 100)
 	for(var/mob/A in operators)
-		to_chat(A, "<span class='cult'><font size=3>Your ship has been destroyed!")
+		to_chat(A, "<span class='cult'><font size=3>Your ship has been destroyed!</font></span>")
 		if(A.remote_control)
 			A.remote_control.forceMove(get_turf(A))
 	core_breach()
+
+
+/obj/structure/overmap/proc/check_breach()
+	if(!warp_core || QDELETED(warp_core))
+		warp_core = null
+		health = 50 //Second wind! Gives them time to run, because the next core breach will actually destroy them.
+		return FALSE
+	else
+		if(warp_core.containment <= 0) //They saved it.
+			health = 50 //Second wind! Gives them time to run, because the next core breach will actually destroy them.
+			return TRUE
+		return FALSE
 
 /obj/structure/overmap/proc/core_breach()
 	if(!main_overmap)
 		if(!linked_area)
 			find_area()
 		for(var/mob/player in linked_area)
-			SEND_SOUND(player, 'DS13/sound/effects/damage/corebreach.ogg')
+			SEND_SOUND(player, 'DS13/sound/effects/damage/ship_explode.ogg')
 		return
 	for(var/mob/player in GLOB.player_list)
-		if(is_station_level(player.z))
-			SEND_SOUND(player, 'DS13/sound/effects/damage/corebreach.ogg')
+		var/area/A = get_area(player)
+		if(is_station_level(player.z) && GLOB.teleportlocs[A.name])
+			SEND_SOUND(player, 'DS13/sound/effects/damage/ship_explode.ogg')
 
 /obj/structure/overmap/proc/core_breach_finish()
 	if(main_overmap)
 		Cinematic(CINEMATIC_NUKE_WIN,world)
 		SSticker.mode.check_finished(TRUE)
 		SSticker.force_ending = 1
-		qdel(src)
-		return
-	for(var/I = 0, I <= 11, I++) //If it's not a game-ender. Blow the shit out of the ship map
-		var/turf/T = pick(get_area_turfs(linked_area))
-		explosion(T,10,10,10)
+		for(var/X in GLOB.teleportlocs) //If it's not a game-ender. Blow the shit out of the ship map
+			var/area/target = GLOB.teleportlocs[X] //Pick a station area and yeet it.
+			var/turf/T = pick(get_area_turfs(target))
+			explosion(T,10,10,10) //Unlucky sod
+	else
+		for(var/I = 0, I <= 11, I++) //If it's not a game-ender. Blow the shit out of the ship map
+			if(linked_area)
+				var/turf/T = pick(get_area_turfs(linked_area))
+				explosion(T,10,10,10)
 	qdel(src)
 
 /obj/structure/overmap/proc/special_fx_targeted(var/shields_absorbed) //This ship isn't the main overmap, so find the area we want and apply damage to it

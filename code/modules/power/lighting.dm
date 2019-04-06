@@ -282,12 +282,12 @@
 		switch(fitting)
 			if("tube")
 				brightness = 8
-				if(prob(2))
-					break_light_tube(1)
+		//		if(prob(2))		DeepSpace 13 start - This is a well maintained ship
+			//		break_light_tube(1)
 			if("bulb")
 				brightness = 4
-				if(prob(5))
-					break_light_tube(1)
+			//	if(prob(5))
+				//	break_light_tube(1)		DeepSpace 13 end - This is a well maintained ship
 		spawn(1)
 			update(0)
 
