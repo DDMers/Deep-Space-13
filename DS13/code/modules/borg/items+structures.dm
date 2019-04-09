@@ -29,6 +29,18 @@
 		qdel(x)
 	return TRUE
 
+/obj/item/organ/body_egg/borgNanites
+	name = "nanite cluster"
+	desc = "A metal lattice..every part of it moves and swims at its own will."
+	zone = BODY_ZONE_CHEST
+	slot = "borg_infection"
+	icon_state = "heart-c-on"
+	color = "#008000"
+
+/obj/item/organ/body_egg/borgNanites/Remove(mob/living/carbon/M, special = 0) //Allows for deborging
+	if(owner && owner.mind)
+		owner.mind.remove_antag_datum(/datum/antagonist/borg_drone)
+
 /datum/outfit/borg/proc/augment_organs(var/mob/living/carbon/human/H) //Give them the organs. Used for roundstart borg and admin borg too!
 	delete_organs(H)
 	var/obj/item/organ/eyes/robotic/thermals/blinkingisfutile = new(get_turf(H))
@@ -37,6 +49,9 @@
 	faithoftheheart.Insert(H)
 	var/obj/item/organ/lungs/cybernetic/borg/breathingisfutile = new(get_turf(H))
 	breathingisfutile.Insert(H)
+	if(!locate(/obj/item/organ/body_egg/borgNanites) in H.internal_organs) //For the borg that spawn, we need a way for them to be deconverted.
+		var/obj/item/organ/body_egg/borgNanites/nanitelattice = new(get_turf(H))
+		nanitelattice.Insert(H)
 	insert_upgrades(H)
 
 /datum/outfit/borg/proc/insert_upgrades(var/mob/living/carbon/human/H) //Give them feeding tube and toolset
@@ -493,6 +508,8 @@
 	playsound(M.loc, 'sound/weapons/pierce.ogg', 100,1)
 	if(do_after(user, 50, target = M)) //5 seconds
 		M.mind.make_borg()
+		var/obj/item/organ/body_egg/borgNanites/nanitelattice = new(get_turf(M))
+		nanitelattice.Insert(M)
 		return
 
 /obj/item/borg_tool/afterattack(atom/I, mob/living/user, proximity)

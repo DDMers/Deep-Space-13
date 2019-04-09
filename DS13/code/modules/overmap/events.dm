@@ -197,7 +197,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 
 /datum/overmap_event/crashed_borg/start() //Now we have a spawn. Let's do whatever this mission is supposed to. Override this when you make new missions
 	target = new /obj/structure/overmap/moon(get_turf(spawner))
-	priority_announce("Attention [station_name()]. Long range telemetry picked up the following broadcast approximately 5 minutes ago: \n41-20-62-6f-72-67-20-70-72-6f-78-69-6d-69-74-79-20-73-69-67-6e-61-6c-20-68-61-73-20-62-65-65-6e-20-64-65-74-65-63-74-65-64-2e-20-44-72-6f-6e-65-73-20-64-61-6d-61-67-65-64-2e-20-52-65-70-61-69-72-73-20-69-72-72-65-6c-65-76-65-6e-74-2e-20-44-6f-20-6e-6f-74-20-61-6c-74-65-72-20-63-6f-75-72-73-65 \n It appears to lead to a small moon.","Intercepted subspace transmission:",'sound/ai/commandreport.ogg')
+	priority_announce("Attention [station_name()]. We have received a priority one distress call from a prison transport vessel. We believe the vessel had to make an emergency landing, check for any survivors. The transmission appears to lead to a small moon","Priority one distress signal:",'sound/ai/commandreport.ogg')
 	elements += target
 
 /area/ship/crashed_borg

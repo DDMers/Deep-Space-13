@@ -17,11 +17,13 @@
 	O.owner = owner
 	objectives += O
 	borgify(owner.current)
+	to_chat(owner.current, "<span class='cult'><font size=3>We are a <B>borg drone</B>! We must help our fellow drones at all costs, and convert 70% of [station_name()]'s crew.</font></span>")
 
 /datum/antagonist/borg_drone/on_removal()
 	to_chat(owner.current,  "We are no longer a <font color='red'><B>borg drone</B></font>")
 	unborgify(owner.current)
 	GLOB.borg_collective.drones -= owner.current //They're in the collective, but need the conversion table for all their upgrades like the tool etc.
+	owner.current.visible_message("[owner.current] looks slightly dazed, as if they've woken up from a bad dream..", "<span class='notice'>You feel disoriented as the voices in your head finally stop.</span>")
 	. = ..()
 
 /datum/antagonist/borg_drone/greet()

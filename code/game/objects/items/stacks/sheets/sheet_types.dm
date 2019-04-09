@@ -22,6 +22,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("bed", /obj/structure/bed, 2, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("torpedo casing", /obj/structure/torpedo_casing, 5, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("railing", /obj/structure/railing/built, 2, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("deck to deck power relay", /obj/machinery/power/deck_relay, 5, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe_list("office chairs", list( \
 		new/datum/stack_recipe("dark office chair", /obj/structure/chair/office/dark, 5, one_per_turf = TRUE, on_floor = TRUE), \
