@@ -146,8 +146,8 @@
 		if(cloaked) //No firing while cloaked, please!
 			return
 		
-		var/shouldSwitchWeapons = rand(0, 100)
-		if(shouldSwitchWeapons > 66) // 1 in 3 chance of switching weapons every 2 seconds
+		var/shouldSwitchWeapons = prob(33) // 1 in 3 chance of switching weapons every 2 seconds
+		if(shouldSwitchWeapons)
 			if(fire_mode == "phaser")
 				if(photons > 0)
 					fire_mode = "torpedo"
