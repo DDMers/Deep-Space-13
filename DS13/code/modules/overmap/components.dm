@@ -415,6 +415,19 @@
 	var/benefit = 2 //2 of these per subsystem, or build more thru RnD
 	var/force_shutdown = FALSE //Are we being forced to turn off?
 
+/obj/structure/overmap_component/plasma_relay/examine(mob/user)
+	. = ..()
+	if(!panel_open)
+		to_chat(user, "It looks like its panel is closed, you could probably <b> crowbar </b> it off.")
+		return
+	switch(repair_step)
+		if("wrench","wrench2")
+			to_chat(user, "You notice that its couplings are a bit loose. Perhaps a <b>wrench</b> would fix that?")
+		if("screwdriver","screwdriver2")
+			to_chat(user, "[src] could probably be repaired with a <b>screwdriver</b> ")
+		if("wirecutters")
+			to_chat(user, "A pair of <b>wirecutters</b> could help you remove [src]'s fused relays...'")
+
 /obj/structure/overmap_component/plasma_relay/attack_hand(mob/user)
 	. = ..()
 	if(!isliving(user))
