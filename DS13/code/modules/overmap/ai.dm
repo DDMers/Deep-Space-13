@@ -149,7 +149,8 @@
 		var/shouldSwitchWeapons = rand(0, 100)
 		if(shouldSwitchWeapons > 66) // 1 in 3 chance of switching weapons every 2 seconds
 			if(fire_mode == "phaser")
-				fire_mode = "torpedo"
+				if(photons > 0)
+					fire_mode = "torpedo"
 			else
 				fire_mode = "phaser"
 
