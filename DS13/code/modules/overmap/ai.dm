@@ -22,6 +22,7 @@
 	turnspeed = 1.2
 	max_health = 130
 	max_speed = 2 //Slower than every ship.
+	photons = 3
 
 /obj/structure/overmap/ai/dderidex //AI version can't cloak.
 	name = "Dderidex class heavy cruiser"
