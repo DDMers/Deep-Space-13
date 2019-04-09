@@ -145,7 +145,16 @@
 		nav_target = target
 		if(cloaked) //No firing while cloaked, please!
 			return
+		
+		var/shouldSwitchWeapons = rand(0, 100)
+		if(shouldSwitchWeapons > 66) // 1 in 3 chance of switching weapons every 2 seconds
+			if(fire_mode == "phaser")
+				fire_mode = "torpedo"
+			else
+				fire_mode = "phaser"
+
 		fire(target, damage)//Shoot the target. This can either be us shooting on aggressive mode, or us being hit by the attacker.
+
 		return //No need to pick another target if we have one and theyre in range
 	else
 		pick_target()
