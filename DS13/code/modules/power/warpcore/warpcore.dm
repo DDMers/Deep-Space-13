@@ -489,7 +489,7 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 		if(S.gases[/datum/gas/plasma])
 			S.gases[/datum/gas/plasma][MOLES] += 10 //Add some extra plasma to it.
 			S.garbage_collect()
-	var/power = 500000
+	var/power = 800000
 	add_avail(power)
 
 /obj/machinery/power/warp_core/proc/reset_voice()

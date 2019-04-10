@@ -196,8 +196,13 @@
 	name = "Optronic data relay"
 	icon_state = "ai_panel"
 
+/obj/structure/trek_decor/cargo
+	name = "Shuttle bay wall covering"
+	desc = "A panel which is glued over a wall, giving it extra protection"
+	icon_state = "cargo"
+
 /obj/structure/table/trek
-	name = "Epic sci fi space table"
+	name = "Futuristic table"
 	desc = "In the 24th century, people still need tables."
 	icon = 'DS13/icons/obj/decor/tables.dmi'
 	icon_state = "table1"
@@ -223,6 +228,15 @@
 	desc = "A bed with surgical facilities built in."
 	icon = 'DS13/icons/obj/decor/biobed.dmi'
 	icon_state = "biobed" //X - 15, y - 7
+
+/obj/structure/table/trek/desk
+	name = "Desk"
+	desc = "A sleek, glass panelled desk"
+	icon_state = "desk"
+	anchored = TRUE
+	density = FALSE
+	smooth = FALSE
+	layer = 3
 
 /obj/structure/table/optable/trek/tablepush(mob/living/user, mob/living/pushed_mob)
 	pushed_mob.forceMove(loc)
