@@ -17,6 +17,10 @@ map DeepSpace13
 endmap
 
 map Akira
+	#voteweight 1.5
+endmap
+
+map Sovereign
 	default
 	#voteweight 1.5
 endmap

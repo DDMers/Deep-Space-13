@@ -164,6 +164,7 @@
 	acceleration = 0.7 //How quickly do you put on speed?
 	power_slots = 5 //She's a strong ship
 	sprite_size = 128
+	max_speed = 4.5
 
 /obj/structure/overmap/akira/starter
 	name = "USS Inquisitor"
@@ -215,17 +216,17 @@
 
 /obj/structure/turbolift/sovereign
 	floor_directory = "<span class='notice'>Deck 1: Bridge, officers' quarters, EVA<br>\
-		Deck 2: Torpedo launcher, brig, weapons locker 1, cargonia, transporter<br>\
+		Deck 2: Torpedo launcher, brig, weapons locker 1, cargo, transporter<br>\
 		Deck 3: Quarters, holodeck, ten forward, theatre, airponics, science labs, weapons locker 2, arrivals<br>\
 		Deck 4: Engineering, Atmospherics, Telecomms, Stardrive section, warp nacelles<br></span>" //Change this if you intend to make a new map. Helps players know where they're going.
 
 /obj/structure/trek_decor/plaque/sovereign
 	name = "Dedication plaque"
-	desc = "A large, bronze plaque with a dedication: \n <b>USS NULL. <b>Sovereign-class <> Starfleet registry: NCC-74730 <>\n  Launched stardate: NULL <> Utopia Planetia ShipYards <> United Federation Of Planets. \n</b>"
+	desc = "A large, bronze plaque with a dedication: \n <b>USS Paramount. <b>Sovereign-class <> Starfleet registry: NCC-74730 <>\n  Launched stardate: NULL <> Utopia Planetia ShipYards <> United Federation Of Planets. \n</b>"
 	icon_state = "plaque"
 	supervisors = list("Declan Reade, Shreen Val")
-	engineers = list("Declan Reade, Shreen Val,  Alex Riggle")
-	inscription = "Invincibility lies int he defense; the possibility of victory in the attack."
+	engineers = list("Declan Reade, Shreen Val,  Alex Riggle, Dayton Basinger")
+	inscription = "Invincibility lies in the defense; the possibility of victory in the attack."
 
 /obj/structure/overmap/sovereign //Some might say it's op. They're probably right.
 	name = "Sovereign class heavy cruiser"
@@ -238,12 +239,14 @@
 	damage = 20 //Will turn into 30 assuming weapons powered
 	max_shield_health = 200
 	acceleration = 0.5 //How quickly do you put on speed?
+	turnspeed = 0.5 //Slow to turn
 	power_slots = 6 //She's a strong ship
 	pixel_z = -128
 	pixel_w = -120
+	max_speed = 4
 
 /obj/structure/overmap/sovereign/starter
-	name = "USS NULL"
+	name = "USS Paramount"
 	main_overmap = TRUE
 
 /obj/structure/overmap/sovereign/starter/Initialize()

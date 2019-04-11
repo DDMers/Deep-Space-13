@@ -1,6 +1,6 @@
 /turf/open/floor/carpet/trek
 	name = "90s space carpet"
-	desc = "Who said that structural components couldn't be stylish?."
+	desc = "The merits of having a static charge generating material on every surface of the ship are questionable, but you can't deny how cool it looks."
 	icon = 'DS13/icons/turf/beige_trek_carpet.dmi'
 	icon_state = "beige"
 	smooth = TRUE
@@ -345,3 +345,26 @@
 	desc = "Heavyset foam based padding designed to stop inmates from hurting themselves by accident."
 	icon_state = "brigpadding"
 	layer = 2.1
+
+/obj/structure/curtain/black
+	name = "black curtain"
+	desc = "A sleek set of drapes which can block out irritating ambient light from space."
+	icon = 'icons/obj/watercloset.dmi'
+	icon_state = "open"
+	color = "#696969"
+	alpha = 255
+
+/obj/structure/curtain/black/update_icon() //Non transparent curtains that actually block light.
+	if(!open)
+		icon_state = "closed"
+		layer = WALL_OBJ_LAYER
+		density = TRUE
+		open = FALSE
+		opacity = TRUE
+
+	else
+		icon_state = "open"
+		layer = SIGN_LAYER
+		density = FALSE
+		open = TRUE
+		opacity = FALSE
