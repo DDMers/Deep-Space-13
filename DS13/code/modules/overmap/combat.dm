@@ -177,6 +177,7 @@
 			S.Start()
 		var/sound/SS = pick(weapon_sounds)
 		send_sound_crew(SS)
+		target.send_sound_crew(SS)
 		target.take_damage(src, damage)
 	else
 		if(photons > 0)
@@ -223,9 +224,7 @@
 		return
 	hail_ready = FALSE
 	var/new_message = "<span class='boldnotice'>Narrow band transmission:[src] ([science])</span> - <span class='warning'>[message]</span>"
-	target.send_sound_crew('sound/ai/commandreport.ogg')
-	target.send_text_crew(new_message)
-	send_text_crew(new_message)
+	send_sound_all('sound/ai/commandreport.ogg', new_message)
 	addtimer(CALLBACK(src, .proc/ready_hail), 25)
 
 /obj/structure/overmap/proc/ready_hail()

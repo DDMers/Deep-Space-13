@@ -6,8 +6,11 @@
 /turf/closed/wall/trek_smooth/room,
 /area/space)
 "ac" = (
-/obj/structure/overmap_component/viewscreen/miranda,
-/turf/closed/wall/trek_smooth/room,
+/obj/structure/closet/secure_closet/personal,
+/obj/structure/overmap_component/viewscreen/miranda{
+	pixel_y = 32
+	},
+/turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
 "ad" = (
 /obj/machinery/shower{
@@ -22,6 +25,9 @@
 /area/hallway/secondary/command)
 "ae" = (
 /obj/machinery/suit_storage_unit/ce,
+/obj/structure/overmap_component/viewscreen/miranda{
+	pixel_y = 32
+	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
 "af" = (
@@ -1006,10 +1012,6 @@
 /turf/open/floor/carpet/trek,
 /area/turbolift)
 "di" = (
-/obj/structure/chair/trek/standard{
-	icon_state = "chair";
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
@@ -1285,7 +1287,6 @@
 	},
 /area/crew_quarters/dorms)
 "eb" = (
-/obj/machinery/computer/holodeck,
 /obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/dorms)
@@ -2009,10 +2010,13 @@
 /turf/open/floor/carpet/trek,
 /area/science/research)
 "gj" = (
-/obj/machinery/door/airlock/trek/goon/research,
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/closed/wall/trek_smooth/room,
-/area/science/research)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/item/storage/box/drinkingglasses,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/bar)
 "gk" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -5946,22 +5950,24 @@
 /turf/open/floor/trek/tile,
 /area/engine/atmos)
 "re" = (
-/obj/structure/window/reinforced/fulltile/trek/viewport,
-/obj/structure/grille,
-/obj/machinery/atmospherics/pipe/simple/green/visible{
-	dir = 6
-	},
-/turf/open/floor/plating,
-/area/engine/atmos)
-"rf" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/trek/viewport,
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
-/obj/machinery/atmospherics/pipe/simple/green/visible{
+/turf/open/floor/plating,
+/area/engine/atmos)
+"rf" = (
+/obj/machinery/door/airlock/trek/ship/maint{
+	icon_state = "closed";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/engine/atmos)
+/area/maintenance/department/bridge)
 "rg" = (
 /turf/open/floor/engine/plasma,
 /area/engine/atmos)
@@ -7444,13 +7450,11 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "uL" = (
-/obj/item/twohanded/required/kirbyplants{
-	icon_state = "plant-21"
-	},
 /obj/machinery/power/apc/auto_name/ds13/highcap,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/computer/holodeck,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/dorms)
 "uM" = (
@@ -7643,12 +7647,12 @@
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/bar)
 "vk" = (
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 11
+	},
 /turf/open/floor/carpet/trek,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "vl" = (
 /obj/machinery/door/airlock/trek/ship{
 	name = "Ten Forward"
@@ -9568,12 +9572,13 @@
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/bar)
 "zV" = (
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 10
+	},
 /obj/structure/table/reinforced,
-/obj/machinery/reagentgrinder,
-/obj/item/kitchen/rollingpin,
-/obj/item/kitchen/knife,
 /obj/item/reagent_containers/glass/beaker/large,
-/obj/machinery/light,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/kitchen)
 "zW" = (
@@ -14340,10 +14345,11 @@
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/bar)
 "Lu" = (
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 10
-	},
+/obj/structure/table/reinforced,
+/obj/machinery/reagentgrinder,
+/obj/item/kitchen/knife,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/machinery/light,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/kitchen)
 "Lv" = (
@@ -15820,6 +15826,12 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
+"Pk" = (
+/obj/structure/overmap_component/viewscreen/miranda{
+	pixel_y = 32
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
 
 (1,1,1) = {"
 aa
@@ -48314,7 +48326,7 @@ ns
 oN
 pF
 qN
-re
+qY
 sY
 NN
 Ke
@@ -48571,7 +48583,7 @@ oC
 oO
 qJ
 KC
-rf
+re
 sZ
 rK
 Ke
@@ -110227,7 +110239,7 @@ eQ
 Mg
 fM
 sh
-vk
+gj
 vH
 zH
 Ls
@@ -114599,7 +114611,7 @@ gX
 By
 Bz
 AH
-Lu
+zV
 el
 vt
 zl
@@ -114854,9 +114866,9 @@ fB
 gY
 eo
 ev
-fL
+vk
 BA
-zV
+Lu
 el
 ze
 zf
@@ -115365,7 +115377,7 @@ sv
 ey
 eo
 di
-eP
+eo
 eo
 el
 zM
@@ -117171,7 +117183,7 @@ fm
 fu
 fZ
 gi
-gj
+yb
 gi
 gz
 ys
@@ -239795,7 +239807,7 @@ dU
 dU
 tc
 dU
-Jd
+rf
 dU
 dU
 dU
@@ -240820,7 +240832,7 @@ JQ
 Ok
 JM
 JM
-ac
+EG
 ae
 Iv
 Eu
@@ -241081,8 +241093,8 @@ EG
 ah
 IE
 aJ
-ac
-aS
+EG
+Pk
 Iv
 Eu
 EG
@@ -241092,8 +241104,8 @@ HQ
 LC
 dU
 sv
-ac
-aS
+EG
+Pk
 Iv
 Eu
 EG
@@ -245707,8 +245719,8 @@ EG
 ad
 IF
 aL
-ac
-aS
+EG
+Pk
 Iw
 Eu
 EG
@@ -245718,8 +245730,8 @@ HQ
 LC
 dU
 sv
+EG
 ac
-kr
 Iw
 Eu
 EG
@@ -245960,8 +245972,8 @@ Kb
 Ol
 JZ
 JZ
-ac
-aS
+EG
+Pk
 Iw
 Eu
 EG

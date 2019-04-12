@@ -86,6 +86,7 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	head = null
 	id = /obj/item/card/id
+	ears = /obj/item/radio/headset
 
 /datum/outfit/admiral/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -126,6 +127,7 @@
 	head = null
 	id = /obj/item/card/id
 	back = /obj/item/storage/backpack/satchel
+	ears = /obj/item/radio/headset/syndicate/alt
 
 /datum/outfit/romulan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
