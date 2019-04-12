@@ -783,6 +783,11 @@
 "ch" = (
 /obj/structure/cable,
 /obj/machinery/power/port_gen/pacman,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
 /turf/open/floor/carpet/trek,
 /area/ship/escape_pod)
 "ci" = (
@@ -832,6 +837,11 @@
 "co" = (
 /obj/structure/cable,
 /obj/machinery/power/port_gen/pacman,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
 /turf/open/floor/carpet/trek,
 /area/ship/escape_pod/two)
 "cp" = (

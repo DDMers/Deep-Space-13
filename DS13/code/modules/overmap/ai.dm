@@ -132,23 +132,42 @@
 	if(target) //We have a target locked in
 		if(get_dist(src, target) > range || target.cloaked) //Target ran away. Move on.
 			if(force_target)
-				if(QDELETED(force_target))
+				if(QDELETED(force_target) || !force_target)
 					force_target = null
 					return
 				target = force_target
 				nav_target = force_target //If we have a force target, we're an actor in a mission and NEED to return to hunt down our quarray after shooting at the players.
 				return
+			nav_target = target
 			target = null //Don't shoot them, but keep chasing them UNLESS we're being forced to chase another.
 			pick_target()
+			return
 		if(behaviour == "peaceful") //Peaceful means never retaliate, so return
 			return
-		nav_target = target
+		if(get_dist(src, target) >= 7) //if theyre far away, head towards them again
+			nav_target = target
+			orbit = FALSE
+		else //Go for an orbit.
+			nav_target = null
+			orbit = TRUE
 		if(cloaked) //No firing while cloaked, please!
 			return
-		fire(target, damage)//Shoot the target. This can either be us shooting on aggressive mode, or us being hit by the attacker.
+		special_fire(target, damage)//Shoot the target. This can either be us shooting on aggressive mode, or us being hit by the attacker.
 		return //No need to pick another target if we have one and theyre in range
 	else
 		pick_target()
+
+/obj/structure/overmap/proc/special_fire(var/obj/structure/overmap/target, var/damage) //Allows us to randomly pick photon torps or phasers
+	if(prob(70))
+		fire(target, damage)
+	else
+		target.send_sound_crew('DS13/sound/effects/weapons/torpedo.ogg')
+		var/obj/item/projectile/beam/laser/photon_torpedo/A = new /obj/item/projectile/beam/laser/photon_torpedo(loc)
+		A.starting = loc
+		A.preparePixelProjectile(target,src)
+		A.pixel_x = rand(0, 5)
+		A.fire()
+		target.take_damage(src, damage)
 
 /obj/structure/overmap/proc/pick_target()
 	for(var/obj/structure/overmap/OM in GLOB.overmap_ships)

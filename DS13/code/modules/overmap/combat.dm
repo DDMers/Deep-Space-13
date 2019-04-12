@@ -111,14 +111,15 @@
 	return ..()
 
 /obj/structure/overmap/proc/fire_tractor(var/obj/structure/overmap/target) //Fire a tractor beam, not a literal tractor!
-	if(charging || !weapons_ready) //So you can't spam it infinitely
+	if(charging || !weapons_ready || !target) //So you can't spam it infinitely
+		release_tractor()
 		return
 	if(!target.process)
 		target.process = TRUE
 		target.start_process() //In case it's an inactive ship. We still need to tow it!
 	addtimer(CALLBACK(src, .proc/recharge_weapons), weapons_cooldown)
 	weapons_ready = FALSE
-	if(target.shields.check_vulnerability()) //Are their shields above 50% strength?
+	if(target.shields.check_vulnerability() || target.faction == faction) //Are their shields above 50% strength? Or if theyre a friendly, and being towed to safety.
 		tractor_target = target
 		send_sound_crew('DS13/sound/effects/weapons/tractor.ogg')
 		target.send_sound_crew('DS13/sound/effects/weapons/tractor.ogg')
@@ -133,7 +134,8 @@
 		to_chat(science, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>target shield strength is above 50%.</span>")
 
 /obj/structure/overmap/proc/release_tractor()
-	if(!tractor_target)
+	if(!tractor_target || QDELETED(tractor_target))
+		tractor_target = null
 		return
 	tractor_target.nav_target = null
 	tractor_target.vel = 0
@@ -144,7 +146,7 @@
 /obj/structure/overmap/proc/tractor_pull() //Force the target to turn to us and move towards us.
 	if(!tractor_target)
 		return
-	if(tractor_target.shields.check_vulnerability())
+	if(tractor_target.shields.check_vulnerability() || tractor_target.faction == faction)
 		tractor_target.nav_target = src
 		tractor_target.vel = 1
 		if(get_dist(src, tractor_target) > 1) //To stop it glitching out when it reaches us
