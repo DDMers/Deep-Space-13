@@ -8,6 +8,7 @@ SUBSYSTEM_DEF(redbot)
 	if(config && bot_ip)
 		var/query = "http://[bot_ip]/?serverStart=1&key=[comms_key]"
 		world.Export(query)
+	return ..()
 
 /datum/controller/subsystem/redbot/proc/send_discord_message(var/channel, var/message, var/priority_type)
 	var/bot_ip = CONFIG_GET(string/bot_ip)
