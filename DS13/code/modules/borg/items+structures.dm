@@ -30,8 +30,8 @@
 	return TRUE
 
 /obj/item/organ/body_egg/borgNanites
-	name = "nanite cluster"
-	desc = "A metal lattice..every part of it moves and swims at its own will."
+	name = "Nanite cluster"
+	desc = "A metal lattice, every part of it moves and swims at its own will."
 	zone = BODY_ZONE_CHEST
 	slot = "borg_infection"
 	icon_state = "heart-c-on"
@@ -40,6 +40,7 @@
 /obj/item/organ/body_egg/borgNanites/Remove(mob/living/carbon/M, special = 0) //Allows for deborging
 	if(owner && owner.mind)
 		owner.mind.remove_antag_datum(/datum/antagonist/borg_drone)
+	qdel(src)
 
 /datum/outfit/borg/proc/augment_organs(var/mob/living/carbon/human/H) //Give them the organs. Used for roundstart borg and admin borg too!
 	delete_organs(H)
