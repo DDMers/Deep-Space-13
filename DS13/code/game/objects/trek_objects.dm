@@ -331,3 +331,9 @@
 	desc = "Heavyset foam based padding designed to stop inmates from hurting themselves by accident."
 	icon_state = "brigpadding"
 	layer = 2.1
+
+/obj/effect/mob_spawn/human/alive/trek/borg_guard
+	name = "Starfleet security detail"
+	assignedrole = "crashed security"
+	outfit = /datum/outfit/job/officer/DS13
+	flavour_text = "<span class='big bold'>You are a stranded starfleet security officer! Your ship was carrying experiments of questionable legality for starfleet intelligence but your ship has crashed. Make sure that the borg you were transporting remain contained at all costs.</span>"

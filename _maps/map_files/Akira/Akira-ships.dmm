@@ -68,10 +68,10 @@
 /turf/open/floor/carpet/trek,
 /area/ship/escape_pod)
 "ar" = (
-/obj/machinery/power/apc/auto_name/ds13,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/ds13/highcap,
 /turf/open/floor/carpet/trek,
 /area/ship/escape_pod)
 "as" = (
@@ -105,10 +105,10 @@
 /turf/open/floor/carpet/trek,
 /area/ship/escape_pod/two)
 "ay" = (
-/obj/machinery/power/apc/auto_name/ds13,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/ds13/highcap,
 /turf/open/floor/carpet/trek,
 /area/ship/escape_pod/two)
 "az" = (
@@ -783,6 +783,12 @@
 "ch" = (
 /obj/structure/cable,
 /obj/machinery/power/port_gen/pacman,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
 /turf/open/floor/carpet/trek,
 /area/ship/escape_pod)
 "ci" = (
@@ -832,6 +838,9 @@
 "co" = (
 /obj/structure/cable,
 /obj/machinery/power/port_gen/pacman,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
 /turf/open/floor/carpet/trek,
 /area/ship/escape_pod/two)
 "cp" = (
@@ -4201,6 +4210,10 @@
 "lv" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
 /turf/open/floor/carpet/trek/romulan,
+/area/ship/warbird)
+"lw" = (
+/obj/machinery/telecomms/relay/preset/station,
+/turf/open/floor/engine,
 /area/ship/warbird)
 
 (1,1,1) = {"
@@ -140685,7 +140698,7 @@ aa
 is
 eS
 cZ
-eS
+lw
 is
 ew
 eh
