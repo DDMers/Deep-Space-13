@@ -168,7 +168,22 @@
 	anchored = TRUE
 	density = FALSE
 
+/obj/machinery/power/deck_relay/attackby(obj/item/I,mob/user)
+	if(default_unfasten_wrench(user, I))
+		return FALSE
+	. = ..()
+
 /obj/machinery/power/deck_relay/process()
+	if(!anchored)
+		icon_state = "cablerelay-off"
+		if(above) //Lose connections
+			above.below = null
+			above.relays -= src
+		if(below)
+			below.above = null
+			below.relays -= src
+		relays = list()
+		return
 	refresh() //Sometimes the powernets get lost, so we need to keep checking.
 	if(powernet && (powernet.avail <= 0))		// is it powered?
 		icon_state = "cablerelay-off"

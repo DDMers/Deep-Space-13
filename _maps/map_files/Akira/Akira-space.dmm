@@ -2,6 +2,10 @@
 "aa" = (
 /turf/open/space/basic,
 /area/space)
+"ab" = (
+/obj/machinery/telecomms/relay/preset/station,
+/turf/open/floor/plating/airless,
+/area/ship/bridge/tos)
 "ac" = (
 /obj/effect/landmark/overmap_event_spawn,
 /turf/open/space/basic,
@@ -87,10 +91,10 @@
 /turf/closed/mineral/random/high_chance,
 /area/space)
 "aA" = (
-/turf/closed/mineral/ash_rock,
+/turf/open/floor/carpet/trek,
 /area/ship/crashed_borg)
 "aB" = (
-/turf/open/floor/grass/snow/basalt,
+/turf/closed/mineral/ash_rock,
 /area/ship/crashed_borg)
 "aC" = (
 /turf/open/floor/carpet/trek,
@@ -101,14 +105,10 @@
 /area/ship/crashed_borg)
 "aE" = (
 /obj/structure/chair/borg/charging,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/turf/open/floor/carpet/trek,
 /area/ship/crashed_borg)
 "aF" = (
-/obj/effect/mob_spawn/human/alive/trek/borg{
-	icon_state = "sleeper";
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/turf/closed/wall/trek_smooth/room,
 /area/ship/crashed_borg)
 "aG" = (
 /obj/structure/chair/trek/dark{
@@ -126,8 +126,9 @@
 /turf/closed/mineral,
 /area/ship/crashed_borg)
 "aJ" = (
-/obj/structure/chair/borg/conversion,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/obj/machinery/door/airlock/trek/goon/sec,
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/carpet/trek,
 /area/ship/crashed_borg)
 "aK" = (
 /obj/machinery/modular_computer/console/preset/civilian{
@@ -136,8 +137,8 @@
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/tos)
 "aL" = (
-/obj/item/organ/brain/nightmare,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/obj/machinery/door/airlock/trek/goon/external,
+/turf/open/floor/carpet/trek,
 /area/ship/crashed_borg)
 "aM" = (
 /obj/effect/transporter_block,
@@ -159,8 +160,11 @@
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/tos)
 "aP" = (
-/obj/item/organ/heart/cybernetic,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/obj/effect/mob_spawn/human/alive/trek/borg{
+	icon_state = "sleeper";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
 /area/ship/crashed_borg)
 "aQ" = (
 /obj/structure/chair/trek/dark{
@@ -177,18 +181,20 @@
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/tos)
 "aT" = (
-/turf/open/floor/plating/asteroid/snow,
-/area/ship/crashed_borg)
+/obj/effect/transporter_block,
+/turf/closed/indestructible/rock,
+/area/space)
 "aU" = (
-/obj/item/pickaxe,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/obj/structure/showcase/horrific_experiment,
+/turf/open/floor/carpet/trek,
 /area/ship/crashed_borg)
 "aV" = (
 /turf/closed/indestructible/rock,
 /area/space)
 "aW" = (
-/turf/closed/wall/ice,
-/area/ship/crashed_borg)
+/obj/effect/transporter_block,
+/turf/open/space/basic,
+/area/space)
 "aX" = (
 /obj/machinery/computer/atmos_alert{
 	dir = 8
@@ -203,7 +209,8 @@
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/tos)
 "aZ" = (
-/turf/open/floor/plating/asteroid/snow,
+/obj/effect/transporter_block,
+/turf/closed/indestructible/rock/snow,
 /area/space)
 "ba" = (
 /obj/structure/overmap_component/science/miranda,
@@ -277,6 +284,10 @@
 /obj/structure/table,
 /turf/open/floor/plating/airless,
 /area/ship/bridge/tos)
+"bn" = (
+/obj/item/pickaxe,
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
 "bo" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ship/crashed_borg)
@@ -350,6 +361,270 @@
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating/airless,
 /area/ship/bridge/tos)
+"bD" = (
+/obj/item/organ/brain/nightmare,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"bE" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"bF" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/showcase/horrific_experiment,
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"bG" = (
+/obj/structure/chair/borg/conversion,
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"bH" = (
+/obj/machinery/door/airlock/trek/goon/sec{
+	icon_state = "closed";
+	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"bI" = (
+/obj/machinery/door/airlock/trek/goon{
+	icon_state = "closed";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"bJ" = (
+/obj/machinery/gravity_generator/main,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"bK" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"bL" = (
+/obj/structure/table/glass,
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"bM" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"bN" = (
+/obj/machinery/light,
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"bO" = (
+/obj/machinery/door/airlock/trek/goon/sec,
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"bP" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/wall/trek_smooth/room,
+/area/ship/crashed_borg)
+"bQ" = (
+/obj/item/pickaxe,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"bR" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/ds13,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"bS" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"bT" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/port_gen/pacman,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"bU" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"bV" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"bW" = (
+/obj/machinery/power/smes,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"bX" = (
+/obj/machinery/door/airlock/trek/goon/external,
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"bY" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"bZ" = (
+/obj/item/organ/heart/cybernetic,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"ca" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"cb" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"cc" = (
+/obj/item/stack/sheet/duotanium/fifty,
+/obj/item/stack/sheet/duranium/fifty,
+/obj/structure/table/glass,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"cd" = (
+/obj/machinery/telecomms/relay/preset/station,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"ce" = (
+/obj/machinery/holopad,
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"cf" = (
+/obj/effect/mob_spawn/human/alive/trek/borg_guard{
+	icon_state = "sleeper";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"cg" = (
+/obj/machinery/door/airlock/trek/goon/external{
+	icon_state = "closed";
+	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"ch" = (
+/obj/structure/window/reinforced/fulltile/trek/porthole,
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"ci" = (
+/obj/structure/fluff/empty_sleeper{
+	icon_state = "sleeper-open";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"cj" = (
+/obj/item/stack/sheet/metal/fifty,
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"ck" = (
+/obj/item/storage/toolbox/mechanical,
+/obj/structure/table/glass,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"cl" = (
+/obj/item/stack/sheet/duotanium/fifty,
+/obj/structure/table/glass,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"cm" = (
+/obj/machinery/light,
+/obj/item/stack/tile/carpet/trek/fifty,
+/obj/item/stack/tile/carpet/trek/fifty,
+/obj/structure/table/glass,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"cn" = (
+/obj/effect/mob_spawn/human/corpse,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"co" = (
+/obj/effect/decal/remains/human,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ship/crashed_borg)
+"cp" = (
+/obj/item/pickaxe,
+/obj/structure/table/glass,
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"cq" = (
+/obj/machinery/suit_storage_unit/trek,
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"cr" = (
+/obj/structure/table/glass,
+/obj/item/tank/internals/oxygen,
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"cs" = (
+/obj/machinery/computer,
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"ct" = (
+/obj/machinery/computer{
+	icon_state = "computer";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"cu" = (
+/obj/machinery/computer{
+	icon_state = "computer";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"cv" = (
+/obj/structure/chair/trek{
+	icon_state = "comfy";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
+"cw" = (
+/obj/structure/chair/trek,
+/turf/open/floor/carpet/trek,
+/area/ship/crashed_borg)
 "BM" = (
 /obj/structure/mirror,
 /turf/closed/wall/trek_smooth/room,
@@ -66060,93 +66335,93 @@ aa
 aa
 aa
 aa
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aa
-aa
-aa
-aa
-aV
-am
-am
-am
-am
-am
-am
-am
-am
-am
-am
-am
-am
-am
-am
-am
-am
-am
-am
-aV
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aW
+aW
+aW
+aW
+aT
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+aT
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
 "}
 (2,1,2) = {"
 aa
@@ -66317,7 +66592,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -66344,7 +66619,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -66368,7 +66643,7 @@ am
 am
 am
 am
-aV
+aT
 ae
 ae
 ae
@@ -66403,7 +66678,7 @@ ae
 ae
 ae
 ae
-ae
+aZ
 "}
 (3,1,2) = {"
 aa
@@ -66574,7 +66849,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -66601,7 +66876,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -66612,8 +66887,8 @@ al
 ap
 bo
 bo
-aT
-aT
+bo
+bo
 aD
 ap
 aR
@@ -66625,7 +66900,7 @@ bo
 bo
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -66660,7 +66935,7 @@ ae
 ae
 ae
 ae
-ae
+aZ
 "}
 (4,1,2) = {"
 aa
@@ -66831,7 +67106,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -66858,7 +67133,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -66866,11 +67141,11 @@ aa
 aV
 am
 al
-aW
 bo
 bo
 bo
-aT
+bo
+bo
 aD
 bo
 bo
@@ -66882,7 +67157,7 @@ ap
 bo
 bo
 am
-aV
+aT
 ae
 ae
 ae
@@ -66917,7 +67192,7 @@ ag
 ai
 ae
 ae
-ae
+aZ
 "}
 (5,1,2) = {"
 aa
@@ -67088,7 +67363,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -67115,7 +67390,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -67136,10 +67411,10 @@ bo
 bo
 bo
 bo
-bo
+cn
 bo
 am
-aV
+aT
 ae
 ae
 ae
@@ -67174,7 +67449,7 @@ ag
 ai
 ae
 ae
-ae
+aZ
 "}
 (6,1,2) = {"
 aa
@@ -67345,7 +67620,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -67360,7 +67635,7 @@ aa
 aa
 au
 bz
-an
+ab
 bz
 an
 bC
@@ -67372,7 +67647,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -67392,11 +67667,11 @@ bo
 bo
 ap
 bo
-bo
+bD
 bo
 bo
 am
-aV
+aT
 ae
 ae
 ae
@@ -67431,7 +67706,7 @@ ak
 ai
 ae
 ae
-ae
+aZ
 "}
 (7,1,2) = {"
 aa
@@ -67602,7 +67877,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -67629,7 +67904,7 @@ bl
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -67639,7 +67914,7 @@ am
 as
 bo
 bo
-aT
+bo
 bo
 bo
 at
@@ -67653,7 +67928,7 @@ bo
 bo
 bo
 am
-aV
+aT
 ae
 ae
 ae
@@ -67688,7 +67963,7 @@ ai
 ai
 ae
 ae
-ae
+aZ
 "}
 (8,1,2) = {"
 aa
@@ -67859,7 +68134,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -67886,7 +68161,7 @@ an
 an
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -67894,23 +68169,23 @@ aa
 aV
 am
 al
-aW
 bo
 bo
 bo
 bo
-aI
+bo
+aD
+ap
+bo
 ap
 ap
 ap
-ap
-ap
 bo
-bo
+cn
 bo
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -67945,7 +68220,7 @@ ak
 ai
 ae
 ae
-ae
+aZ
 "}
 (9,1,2) = {"
 aa
@@ -68116,7 +68391,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aq
@@ -68143,7 +68418,7 @@ an
 an
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -68155,9 +68430,9 @@ bo
 bo
 bo
 bo
-aT
+bo
 aI
-ap
+bo
 ap
 ap
 ap
@@ -68167,7 +68442,7 @@ bo
 bo
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -68202,7 +68477,7 @@ ai
 ai
 ae
 ae
-ae
+aZ
 "}
 (10,1,2) = {"
 aa
@@ -68373,7 +68648,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 au
@@ -68400,7 +68675,7 @@ an
 au
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -68413,9 +68688,9 @@ bo
 bo
 bo
 bo
-aI
+aD
 ap
-ap
+bo
 ap
 ap
 ap
@@ -68424,7 +68699,7 @@ bo
 ap
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -68459,7 +68734,7 @@ ak
 ai
 ae
 ae
-ae
+aZ
 "}
 (11,1,2) = {"
 aa
@@ -68630,7 +68905,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 au
@@ -68657,7 +68932,7 @@ au
 au
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -68668,20 +68943,20 @@ al
 aI
 aI
 aI
-aI
+aD
 aI
 aI
 ap
 ap
 ap
-bo
-bo
+ap
+ap
 bo
 bo
 aR
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -68716,7 +68991,7 @@ ak
 ai
 ae
 ae
-ae
+aZ
 "}
 (12,1,2) = {"
 aa
@@ -68887,7 +69162,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 au
@@ -68914,31 +69189,31 @@ bp
 au
 aa
 aa
-aV
+aT
 aa
 aa
-ar
+aa
 aa
 aV
 am
 al
 ap
-ap
-ap
-ap
-ap
-ap
-ap
 bo
 bo
 bo
 bo
 bo
+ap
+ap
+ap
+ap
+ap
+ap
 bo
 aR
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -68973,7 +69248,7 @@ ai
 ai
 ae
 ae
-ae
+aZ
 "}
 (13,1,2) = {"
 aa
@@ -69144,7 +69419,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 av
@@ -69171,31 +69446,31 @@ bB
 au
 aa
 aa
-aV
+aT
 aa
 aa
-aZ
+aa
 aa
 aV
 am
 al
 ap
 ap
+bo
+bo
+bo
+ap
+ap
 ap
 ap
 ap
 ap
 ap
 bo
-bo
-bo
-bo
-bo
-ap
 ap
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -69230,7 +69505,7 @@ aj
 ai
 ae
 ae
-ae
+aZ
 "}
 (14,1,2) = {"
 aa
@@ -69401,7 +69676,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 au
@@ -69428,7 +69703,7 @@ bp
 au
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -69438,21 +69713,21 @@ am
 am
 ap
 ap
+ap
+ap
+ap
+ap
 bo
+ap
 bo
 ap
 ap
 ap
 bo
 bo
-bo
-bo
-bo
-ap
-ap
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -69487,7 +69762,7 @@ ai
 ai
 ae
 ae
-ae
+aZ
 "}
 (15,1,2) = {"
 aa
@@ -69658,7 +69933,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 au
@@ -69685,7 +69960,7 @@ au
 au
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -69696,20 +69971,20 @@ am
 bo
 bo
 ap
-bo
 ap
 ap
-ap
-bo
 ap
 ap
 bo
+ap
+ap
+ap
+ap
 bo
-ap
-ap
-ap
+bo
+bo
 am
-aV
+aT
 ae
 ae
 ae
@@ -69744,7 +70019,7 @@ ak
 ai
 ae
 ae
-ae
+aZ
 "}
 (16,1,2) = {"
 aa
@@ -69915,7 +70190,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 au
@@ -69942,7 +70217,7 @@ aC
 au
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -69951,22 +70226,22 @@ aV
 am
 ar
 bo
+aA
+aE
+aP
+aP
+bG
+aP
+ci
+aE
+ap
+ap
+ap
+ap
 bo
-ap
-ap
-ap
-ap
-ap
-bo
-bo
-ap
-ap
-ap
-ap
-ap
-ap
+co
 am
-aV
+aT
 ae
 ae
 ae
@@ -70001,7 +70276,7 @@ ai
 ai
 ae
 ae
-ae
+aZ
 "}
 (17,1,2) = {"
 aa
@@ -70172,7 +70447,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aq
@@ -70199,7 +70474,7 @@ bf
 bf
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -70208,22 +70483,22 @@ aV
 am
 am
 bo
+aA
+aA
+aA
+bn
+aA
+aA
+aA
+aA
+ap
+ap
+ap
+ap
 bo
-ap
-ap
-ap
 bo
-bo
-bo
-bo
-ap
-ap
-ap
-ap
-ap
-ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -70258,7 +70533,7 @@ ai
 ai
 ae
 ae
-ae
+aZ
 "}
 (18,1,2) = {"
 aa
@@ -70429,7 +70704,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -70456,7 +70731,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -70466,21 +70741,21 @@ am
 am
 bo
 bo
-bo
-ap
-ap
-bo
-bo
-bo
-bo
-bo
+aA
+aA
+aA
+aA
+aA
+aA
+aF
+bQ
 aR
 ap
 aR
 ap
-ap
+bo
 am
-aV
+aT
 ae
 ae
 ae
@@ -70515,7 +70790,7 @@ ai
 ai
 ae
 ae
-ae
+aZ
 "}
 (19,1,2) = {"
 aa
@@ -70686,7 +70961,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -70713,7 +70988,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -70723,21 +70998,21 @@ am
 am
 bo
 bo
-ap
-ap
-ap
-ap
-ap
-aL
+aF
+aA
+aA
+bn
+aA
+aA
+aF
 bo
 bo
-bo
-bo
-aP
 ap
+bZ
 ap
+bo
 am
-aV
+aT
 ae
 ae
 ae
@@ -70772,7 +71047,7 @@ ak
 ai
 ae
 ae
-ae
+aZ
 "}
 (20,1,2) = {"
 aa
@@ -70943,7 +71218,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -70970,7 +71245,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -70979,22 +71254,22 @@ aV
 am
 ar
 bo
-bo
-ap
-bo
-ap
-ap
-bo
-bo
-ap
-bo
+aA
+aJ
+aA
+aA
+aA
+aA
+aA
+bO
+aA
 bo
 bo
 bo
 bo
 bo
 am
-aV
+aT
 ae
 ae
 ae
@@ -71029,7 +71304,7 @@ ak
 ai
 ae
 ae
-ae
+aZ
 "}
 (21,1,2) = {"
 aa
@@ -71200,7 +71475,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -71227,7 +71502,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -71237,21 +71512,21 @@ am
 am
 bo
 bo
-ap
+aF
+aU
+bF
+aA
+bF
+aU
+aF
 bo
-ap
-ap
-ap
+aF
 bo
 bo
-ap
-bo
-bo
-bo
-bo
+aF
 bo
 am
-aV
+aT
 ae
 ae
 ae
@@ -71286,7 +71561,7 @@ ai
 ai
 ae
 ae
-ae
+aZ
 "}
 (22,1,2) = {"
 aa
@@ -71457,7 +71732,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -71484,7 +71759,7 @@ bl
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -71492,23 +71767,23 @@ aa
 aV
 am
 am
+aA
 bo
+aF
+aF
+aF
+bH
+aF
+aF
+aF
 bo
-ap
+aF
 bo
-ap
-ap
-ap
-ap
-bo
-ap
-bo
-bo
-bo
-bo
+aF
+aF
 bo
 az
-aV
+aT
 ae
 ae
 ae
@@ -71543,7 +71818,7 @@ ai
 ag
 ae
 ae
-ae
+aZ
 "}
 (23,1,2) = {"
 aa
@@ -71714,7 +71989,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -71741,7 +72016,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -71750,22 +72025,22 @@ aV
 am
 am
 bo
-bo
-aB
-aU
+aA
 aF
+cp
+ct
+aA
+ct
+bL
 aF
-ap
-ap
-ap
-ap
+bo
+aF
 bo
 bo
-bo
-bo
+aF
 bo
 am
-aV
+aT
 ae
 ae
 ae
@@ -71800,7 +72075,7 @@ ag
 ai
 ae
 ae
-ae
+aZ
 "}
 (24,1,2) = {"
 aa
@@ -71971,7 +72246,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -71998,7 +72273,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -72008,21 +72283,21 @@ am
 ar
 bo
 bo
-bo
-bo
-bo
-aJ
 aF
-ap
-ap
-ap
-ap
+cs
+cv
+aA
+cw
+cu
+aF
+bo
+bo
 bo
 bo
 bo
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -72057,7 +72332,7 @@ ai
 ag
 ae
 ae
-ae
+aZ
 "}
 (25,1,2) = {"
 aa
@@ -72228,7 +72503,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -72255,7 +72530,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -72265,21 +72540,21 @@ am
 am
 bo
 bo
-bo
-aE
-bo
-bo
-bo
-bo
-ap
-ap
-ap
-ap
-bo
-bo
+aF
+cs
+aA
+aA
+aA
+cu
+aF
+aF
+aF
+cg
+aF
+aF
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -72314,7 +72589,7 @@ ag
 ag
 ae
 ae
-ae
+aZ
 "}
 (26,1,2) = {"
 aa
@@ -72485,7 +72760,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -72512,7 +72787,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -72522,21 +72797,21 @@ am
 am
 bo
 bo
+ch
+bE
+aA
+ce
+aA
+bN
+ch
 bo
-aE
+bT
+aA
 bo
-bo
-bo
-bo
-bo
-ap
-ap
-ap
-bo
-bo
+cc
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -72571,7 +72846,7 @@ ag
 ag
 ae
 ae
-ae
+aZ
 "}
 (27,1,2) = {"
 aa
@@ -72742,7 +73017,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -72769,7 +73044,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -72778,22 +73053,22 @@ aV
 ax
 ax
 ap
-ap
+aA
+bX
+aA
+aA
+aA
+aA
+aA
+aL
 bo
-aE
-bo
-bo
-bo
-bo
-bo
-ap
-ap
-ap
-bo
-bo
+bU
+aA
+aA
+ck
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -72828,7 +73103,7 @@ ai
 ag
 ae
 ae
-ae
+aZ
 "}
 (28,1,2) = {"
 aa
@@ -72999,7 +73274,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -73026,7 +73301,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -73034,23 +73309,23 @@ aa
 aV
 ax
 ax
+aB
+ap
+aF
+cq
 aA
-ap
+aA
+cf
+cr
+aF
 bo
-bo
-bo
-bo
-bo
-bo
-bo
-bo
-ap
-ap
-bo
-bo
+bU
+aA
+cj
+cl
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -73085,7 +73360,7 @@ ag
 ag
 ae
 ae
-ae
+aZ
 "}
 (29,1,2) = {"
 aa
@@ -73256,7 +73531,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -73283,7 +73558,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -73291,23 +73566,23 @@ aa
 aV
 ax
 ax
+aB
+ap
+aF
+aF
+aF
+bI
+aF
+aF
+aF
+bo
+bV
+bo
 aA
-ap
-ap
-bo
-bo
-bo
-bo
-bo
-bo
-bo
-bo
-bo
-bo
-bo
+cm
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -73342,7 +73617,7 @@ ag
 ag
 ae
 ae
-ae
+aZ
 "}
 (30,1,2) = {"
 aa
@@ -73513,7 +73788,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -73540,7 +73815,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -73551,20 +73826,20 @@ ax
 ap
 ap
 ap
-bo
-bo
-bo
-bo
-bo
-bo
-bo
-bo
-bo
-bo
-bo
+aA
+aA
+aA
+aA
+aA
+aF
+bR
+bW
+bM
+ca
+cd
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -73599,7 +73874,7 @@ ai
 ai
 ae
 ae
-ae
+aZ
 "}
 (31,1,2) = {"
 aa
@@ -73770,7 +74045,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -73797,7 +74072,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -73805,23 +74080,23 @@ aa
 aV
 ax
 ax
+aB
+ap
+ap
 aA
-ap
-ap
-ap
-bo
-bo
-bo
-ap
-bo
-bo
-bo
-bo
-bo
+aA
+bJ
+bM
+bM
+bP
+bS
+bM
+bY
+cb
 bo
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -73856,7 +74131,7 @@ ai
 ai
 ae
 ae
-ae
+aZ
 "}
 (32,1,2) = {"
 aa
@@ -74027,7 +74302,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -74054,7 +74329,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -74062,14 +74337,14 @@ aa
 aV
 ax
 ax
+aB
+aB
+ap
 aA
 aA
-ap
-ap
-bo
-ap
-ap
-ap
+bK
+aA
+aA
 ap
 ap
 bo
@@ -74078,7 +74353,7 @@ bo
 ap
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -74113,7 +74388,7 @@ ai
 ai
 ae
 ae
-ae
+aZ
 "}
 (33,1,2) = {"
 aa
@@ -74284,7 +74559,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -74311,7 +74586,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -74319,8 +74594,8 @@ aa
 aV
 ax
 ax
-aA
-aA
+aB
+aB
 ap
 ap
 ap
@@ -74335,7 +74610,7 @@ ap
 ap
 ap
 am
-aV
+aT
 ae
 ae
 ae
@@ -74370,7 +74645,7 @@ ai
 ai
 ae
 ae
-ae
+aZ
 "}
 (34,1,2) = {"
 aa
@@ -74541,39 +74816,39 @@ aa
 aa
 aa
 aa
+aT
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aT
+aa
+aa
+aa
+aa
 aV
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aV
-aa
-aa
-aa
-aa
-aV
 ax
 ax
 ax
@@ -74592,7 +74867,7 @@ ax
 am
 am
 am
-aV
+aT
 ae
 ae
 ae
@@ -74627,7 +74902,7 @@ ae
 ae
 ae
 ae
-ae
+aZ
 "}
 (35,1,2) = {"
 aa
@@ -74798,7 +75073,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -74825,7 +75100,7 @@ aa
 aa
 aa
 aa
-aV
+aT
 aa
 aa
 aa
@@ -74849,7 +75124,7 @@ ax
 am
 am
 am
-aV
+aT
 ae
 ae
 ae
@@ -74884,7 +75159,7 @@ ae
 ae
 ae
 ae
-ae
+aZ
 "}
 (36,1,2) = {"
 aa
@@ -75055,93 +75330,93 @@ aa
 aa
 aa
 aa
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aa
-aa
-aa
-aa
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-aV
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
-ae
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aW
+aW
+aW
+aW
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aT
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
 "}
 (37,1,2) = {"
 aa
