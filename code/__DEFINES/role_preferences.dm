@@ -38,6 +38,7 @@
 #define ROLE_LAVALAND			"Lavaland"
 #define ROLE_INTERNAL_AFFAIRS	"Internal Affairs Agent"
 #define ROLE_BORG_DRONE			"Borg Drone"
+#define ROLE_SECTION31			"Section 31 Agent"
 
 //Missing assignment means it's not a gamemode specific role, IT'S NOT A BUG OR ERROR.
 //The gamemode specific ones are just so the gamemodes can query whether a player is old enough
@@ -66,6 +67,7 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_HIVE = /datum/game_mode/hivemind,
 	ROLE_INTERNAL_AFFAIRS = /datum/game_mode/traitor/internal_affairs,
 	ROLE_BORG_DRONE	= /datum/game_mode/borg_assimilation, //DeepSpace13 - Borg mode
+	ROLE_SECTION31, // DeepSpace13 - Section 31 Mode
 	ROLE_SENTIENCE
 ))
 

@@ -2765,6 +2765,7 @@
 #include "DS13\code\game\objects\items\devices\radio\headset_changes.dm"
 #include "DS13\code\modules\admin\admin.dm"
 #include "DS13\code\modules\admin\custom_verbs.dm"
+#include "DS13\code\modules\antagonists\section31.dm"
 #include "DS13\code\modules\atmospherics\multiz_pipe.dm"
 #include "DS13\code\modules\borg\antag_datum.dm"
 #include "DS13\code\modules\borg\collective.dm"
