@@ -1229,9 +1229,6 @@
 /turf/open/floor/carpet/trek,
 /area/turbolift)
 "dM" = (
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -2285,6 +2282,9 @@
 	icon_state = "cablerelay-off";
 	dir = 1
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
 "gO" = (
@@ -3098,9 +3098,12 @@
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/kitchen)
 "iS" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
 /obj/structure/sink{
-	dir = 4;
-	pixel_x = 11
+	dir = 8;
+	pixel_x = -12
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/kitchen)
@@ -5300,6 +5303,10 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
+"ou" = (
+/obj/machinery/door/airlock/trek/ship/maint,
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/aft)
 "ov" = (
 /obj/structure/trek_catwalk,
 /obj/structure/extinguisher_cabinet{
@@ -5889,6 +5896,8 @@
 /area/hallway/primary/central)
 "pY" = (
 /obj/machinery/chem_dispenser,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker/large,
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "pZ" = (
@@ -10184,6 +10193,20 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/kitchen)
+"AX" = (
+/obj/structure/trek_catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/power/deck_relay{
+	icon_state = "cablerelay-off";
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/engine)
 "AY" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -11627,9 +11650,7 @@
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/kitchen)
 "Em" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 4
-	},
+/obj/machinery/processor,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/kitchen)
 "En" = (
@@ -41578,7 +41599,7 @@ ad
 ad
 cy
 cV
-ad
+ou
 dM
 dZ
 gN
@@ -43120,10 +43141,10 @@ ad
 ad
 cy
 cV
-ad
+ou
 dM
 dZ
-gN
+AX
 eA
 AH
 AE
@@ -107100,7 +107121,7 @@ iy
 iy
 iD
 iG
-Em
+iS
 iO
 iT
 iY
@@ -108643,7 +108664,7 @@ iB
 iD
 iL
 En
-iS
+Em
 iH
 BF
 jl
