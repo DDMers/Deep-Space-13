@@ -68,20 +68,28 @@
 	to_chat(section31_mob, "Use the code words in the order provided, during regular conversation, to identify other agents. Proceed with caution, however, as everyone is a potential foe.")
 
 /obj/item/storage/box/section31
-	name = "Nondescript box"
-	desc = "This box looks extra normal."
+	name = "box of syringes"
+	desc = "A box full of syringes."
+	illustration = "syringe"
+
+/obj/item/storage/box/section31/combat
+	name = "box of spare silver IDs"
+	desc = "Shiny IDs for important people."
+	illustration = "id"
 
 /obj/item/storage/box/section31/PopulateContents()
-	new /obj/item/clothing/under/trek/section31(src)
+	new /obj/item/reagent_containers/pill/cyanide(src)
+	new /obj/item/reagent_containers/glass/bottle/chloralhydrate(src)
 	new /obj/item/reagent_containers/hypospray(src)
 	new /obj/item/reagent_containers/syringe/mulligan(src)
 	new /obj/item/reagent_containers/syringe/mulligan(src)
-	new /obj/item/book/granter/martial/cqc(src)
-	new /obj/item/reagent_containers/pill/cyanide(src)
-	new /obj/item/reagent_containers/glass/bottle/chloralhydrate(src)
+
+/obj/item/storage/box/section31/combat/PopulateContents()
 	new /obj/item/card/emag(src)
 	new /obj/item/kitchen/knife/combat(src)
 	new /obj/item/chameleon(src)
+	new /obj/item/clothing/under/trek/section31(src)
+	new /obj/item/book/granter/martial/cqc(src)
 
 /datum/outfit/section31
 	name = "Section 31 Agent"
@@ -94,7 +102,7 @@
 	ears = /obj/item/radio/headset
 	shoes = /obj/item/clothing/shoes/jackboots
 	back = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/storage/box/syndie_kit/chameleon=1,/obj/item/storage/box/section31=1)
+	backpack_contents = list(/obj/item/storage/box/syndie_kit/chameleon=1,/obj/item/storage/box/section31=1, /obj/item/storage/box/section31/combat=1)
 	implants = list(/obj/item/implant/explosive, /obj/item/implant/mindshield, /obj/item/implant/freedom)
 
 /obj/item/clothing/under/chameleon/section31
