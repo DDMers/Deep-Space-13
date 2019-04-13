@@ -4,13 +4,10 @@
 	antagpanel_category = "Section 31 Agent"
 	job_rank = ROLE_SECTION31
 	antag_moodlet = /datum/mood_event/focused
-	var/special_role = ROLE_SECTION31
-	var/section31_outfit = /datum/outfit/section31
 	can_hijack = HIJACK_HIJACKER
 
 /datum/antagonist/section31/on_gain()
-	SSticker.mode.traitors += owner
-	owner.special_role = special_role
+	owner.special_role = ROLE_SECTION31
 	equip_op()
 	..()
 
@@ -21,20 +18,21 @@
 
 	H.set_species(/datum/species/human) // All Section 31 members seen so far are human.
 	H.grant_language(/datum/language/codespeak)
-	H.equipOutfit(section31_outfit)
-	give_codewords()
+	H.equipOutfit(/datum/outfit/section31)
 	return TRUE
 
 /datum/antagonist/section31/on_removal()
-	//Remove malf powers.
-	SSticker.mode.traitors -= owner
-	if(!silent && owner.current)
-		to_chat(owner.current,"<span class='userdanger'>You have been deactivated, and are no longer a [special_role]!</span>")
+	if(!owner.current)
+		return ..()
+	to_chat(owner.current,"<span class='userdanger'>You have been deactivated, and are no longer a section 31 agent!</span>")
+	var/mob/living/carbon/human/H = owner.current
 	owner.special_role = null
+	H.remove_language(/datum/language/codespeak)
 	..()
 
 /datum/antagonist/section31/greet()
-	SEND_SOUND(owner.current, 'DS13/sound/effects/section31_anthem.ogg')
+	SEND_SOUND(owner.current, 'DS13/sound/effects/section31_anthem.ogg') //Sound by Revkor on youtube: https://www.youtube.com/watch?v=xUkSVM6tc6M
+	give_codewords()
 	to_chat(owner.current, "<B><font size=3 color=cyan>You are a [owner.special_role]! A highly trained agent operating in absolute secrecy.</font></B>")
 	to_chat(owner.current, "<font size=2 color=cyan>https://en.wikipedia.org/wiki/Section_31</font>")
 	to_chat(owner.current, "<font size=2 color=cyan>You are here under best interests of the higher echelons of Starfleet Command, we operate under what is known as Section 31.</font>")
@@ -44,7 +42,6 @@
 	O.owner = owner
 	objectives += O
 	owner.announce_objectives()
-	give_codewords()
 
 /datum/antagonist/section31/proc/update_section31_icons_added(datum/mind/section31_mind)
 	var/datum/atom_hud/antag/section31hud = GLOB.huds[ANTAG_HUD_TRAITOR]
@@ -70,9 +67,25 @@
 
 	to_chat(section31_mob, "Use the code words in the order provided, during regular conversation, to identify other agents. Proceed with caution, however, as everyone is a potential foe.")
 
+/obj/item/storage/box/section31
+	name = "Nondescript box"
+	desc = "This box looks extra normal."
+
+/obj/item/storage/box/section31/PopulateContents()
+	new /obj/item/clothing/under/trek/section31(src)
+	new /obj/item/reagent_containers/hypospray(src)
+	new /obj/item/reagent_containers/syringe/mulligan(src)
+	new /obj/item/reagent_containers/syringe/mulligan(src)
+	new /obj/item/book/granter/martial/cqc(src)
+	new /obj/item/reagent_containers/pill/cyanide(src)
+	new /obj/item/reagent_containers/glass/bottle/chloralhydrate(src)
+	new /obj/item/card/emag(src)
+	new /obj/item/kitchen/knife/combat(src)
+	new /obj/item/chameleon(src)
+
 /datum/outfit/section31
 	name = "Section 31 Agent"
-	uniform = /obj/item/clothing/under/trek/command/ds9
+	uniform = /obj/item/clothing/under/chameleon/section31
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	id = /obj/item/card/id/syndicate
 	belt = /obj/item/gun/energy/phaser
@@ -80,9 +93,19 @@
 	r_pocket = /obj/item/melee/classic_baton/telescopic
 	ears = /obj/item/radio/headset
 	shoes = /obj/item/clothing/shoes/jackboots
-	back = /obj/item/storage/backpack/duffelbag/syndie
-	backpack_contents = list(/obj/item/clothing/under/trek/section31=1,/obj/item/reagent_containers/hypospray=1, /obj/item/book/granter/martial/cqc=1, /obj/item/reagent_containers/pill/cyanide=1, /obj/item/reagent_containers/glass/bottle/chloralhydrate=1, /obj/item/card/emag=1, /obj/item/kitchen/knife/combat=1, /obj/item/clothing/glasses/night=1)
+	back = /obj/item/storage/backpack/satchel
+	backpack_contents = list(/obj/item/storage/box/syndie_kit/chameleon=1,/obj/item/storage/box/section31=1)
 	implants = list(/obj/item/implant/explosive, /obj/item/implant/mindshield, /obj/item/implant/freedom)
+
+/obj/item/clothing/under/chameleon/section31
+	name = "Black leather turtleneck"
+	desc = "A armour laced black turtleneck made of leather. It bears no inscriptions or markings whatsoever"
+	icon = 'DS13/icons/obj/clothing/uniforms.dmi'
+	alternate_worn_icon = 'DS13/icons/mob/uniform.dmi'
+	icon_state = "section31"
+	item_color = "section31"
+	item_state = "bl_suit"
+	armor = list("melee" = 20, "bullet" = 10, "laser" = 20,"energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 
 /datum/outfit/section31/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
