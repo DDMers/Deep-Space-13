@@ -110,6 +110,16 @@
 	item_state = "bl_suit"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 
+/obj/item/clothing/under/trek/section31
+	name = "Black leather turtleneck"
+	desc = "A armour laced black turtleneck made of leather. It bears no inscriptions or markings whatsoever"
+	icon = 'DS13/icons/obj/clothing/uniforms.dmi'
+	alternate_worn_icon = 'DS13/icons/mob/uniform.dmi'
+	icon_state = "section31"
+	item_color = "section31"
+	item_state = "bl_suit"
+	armor = list("melee" = 20, "bullet" = 10, "laser" = 20,"energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+
 /obj/item/clothing/suit/DS13
 	name = "Placeholder"
 	icon = 'DS13/icons/obj/suits.dmi'
