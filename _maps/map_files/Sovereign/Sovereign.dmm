@@ -279,7 +279,7 @@
 "aW" = (
 /obj/structure/overmap_component/helm/miranda,
 /obj/structure/cable{
-	icon_state = "0-8"
+	icon_state = "4-8"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
@@ -1510,7 +1510,8 @@
 /area/security/brig)
 "eL" = (
 /obj/machinery/door/airlock/trek/ship{
-	name = "Janitorial supplies"
+	name = "Janitorial supplies";
+	req_access_txt = "26"
 	},
 /turf/open/floor/carpet/trek,
 /area/janitor)
@@ -1580,6 +1581,13 @@
 "eX" = (
 /obj/machinery/computer/communications,
 /obj/machinery/camera/trek,
+/obj/machinery/button/door{
+	id = "weaponslocker";
+	name = "Open weapons lockers";
+	pixel_x = 0;
+	pixel_y = 25;
+	req_one_access = list(63)
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
 "eY" = (
@@ -3316,6 +3324,13 @@
 /area/security/brig)
 "jT" = (
 /obj/machinery/computer/prisoner,
+/obj/machinery/button/door{
+	id = "weaponslocker";
+	name = "Open weapons lockers";
+	pixel_x = 0;
+	pixel_y = 25;
+	req_one_access = list(63)
+	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
 "jU" = (
@@ -3588,7 +3603,8 @@
 "kB" = (
 /obj/machinery/door/airlock/trek/ship{
 	dir = 4;
-	name = "Janitorial supplies"
+	name = "Janitorial supplies";
+	req_access_txt = "26"
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/fore)
@@ -5311,12 +5327,12 @@
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/ship/engineering/akira)
 "pw" = (
-/obj/effect/turf_decal/arrows/white,
-/turf/open/floor/mineral/titanium/airless,
-/area/ship{
-	name = "exterior";
-	noteleport = 0
-	})
+/obj/structure/torpedo_casing{
+	desc = "A photon torpedo casing with some paint haphazardly scrawled over it to make it resemble a traditional HE round.";
+	name = "MAC Shell"
+	},
+/turf/open/floor/carpet/trek,
+/area/maintenance/starboard/fore)
 "px" = (
 /obj/machinery/telecomms/bus/preset_three,
 /turf/open/floor/plasteel/dark/telecomms,
@@ -5445,7 +5461,10 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/airless,
-/area/ship/engineering/akira)
+/area/ship{
+	name = "exterior";
+	noteleport = 0
+	})
 "pN" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	icon_state = "inje_map-2";
@@ -5536,7 +5555,10 @@
 	layer = 2.4
 	},
 /turf/open/floor/mineral/titanium/airless,
-/area/ship/engineering/akira)
+/area/ship{
+	name = "exterior";
+	noteleport = 0
+	})
 "pZ" = (
 /obj/structure/railing{
 	icon_state = "railing0";
@@ -5591,7 +5613,10 @@
 	},
 /obj/machinery/camera/trek,
 /turf/open/floor/mineral/titanium/airless,
-/area/ship/engineering/akira)
+/area/ship{
+	name = "exterior";
+	noteleport = 0
+	})
 "qg" = (
 /obj/item/twohanded/required/kirbyplants{
 	icon_state = "plant-21"
@@ -8459,8 +8484,9 @@
 /turf/closed/wall/trek_smooth/corridor,
 /area/hallway/primary/central)
 "xf" = (
-/obj/machinery/door/airlock/trek/ship/sec/armoury{
-	name = "Weapons locker"
+/obj/machinery/door/poddoor/shutters{
+	id = "weaponslocker";
+	name = "Weapons Locker"
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
@@ -8625,7 +8651,7 @@
 /turf/open/floor/carpet/trek,
 /area/janitor)
 "xB" = (
-/obj/structure/table/glass,
+/obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
 "xC" = (
@@ -8641,12 +8667,6 @@
 /area/janitor)
 "xF" = (
 /turf/closed/wall/trek_smooth/room,
-/area/janitor)
-"xG" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Standard quarters"
-	},
-/turf/open/floor/carpet/trek,
 /area/janitor)
 "xH" = (
 /obj/structure/chair/trek/standard{
@@ -9723,10 +9743,12 @@
 /obj/item/cultivator,
 /obj/structure/table,
 /obj/item/reagent_containers/glass/bottle/nutrient/ez,
+/obj/item/storage/backpack/botany,
 /turf/open/floor/grass,
 /area/maintenance/starboard/fore)
 "At" = (
 /obj/machinery/light,
+/obj/machinery/seed_extractor,
 /turf/open/floor/grass,
 /area/maintenance/starboard/fore)
 "Au" = (
@@ -10367,11 +10389,12 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/crew_quarters/kitchen)
 "BR" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Janitorial supplies"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/trek/ship{
+	name = "Janitorial supplies";
+	req_access_txt = "26"
 	},
 /turf/open/floor/carpet/trek,
 /area/janitor)
@@ -11536,6 +11559,13 @@
 "EU" = (
 /obj/machinery/computer/card,
 /obj/machinery/camera/trek,
+/obj/machinery/button/door{
+	id = "weaponslocker";
+	name = "Open weapons lockers";
+	pixel_x = 0;
+	pixel_y = 25;
+	req_one_access = list(63)
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
 "EV" = (
@@ -13395,6 +13425,9 @@
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/ds13/highcap,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "IZ" = (
@@ -13414,6 +13447,9 @@
 "Jb" = (
 /obj/machinery/suit_storage_unit/trek,
 /obj/machinery/power/apc/auto_name/ds13/highcap,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
 "Jc" = (
@@ -14648,6 +14684,9 @@
 	icon_state = "2-4"
 	},
 /obj/effect/landmark/start/assistant,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/bar)
 "Mi" = (
@@ -15832,6 +15871,68 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
+"Pl" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/command)
+"Pm" = (
+/obj/structure/bodycontainer/morgue{
+	desc = "If your imagination was good enough, you could probably pretend this was the magnetic accelerator cannon used by the USS Astreus all those years ago...";
+	dir = 1;
+	icon_state = "morgue1";
+	name = "MAC gun"
+	},
+/turf/open/floor/plating,
+/area/maintenance/starboard/fore)
+"Pn" = (
+/obj/structure/table,
+/obj/item/seeds/potato,
+/obj/item/seeds/potato,
+/turf/open/floor/grass,
+/area/maintenance/starboard/fore)
+"Po" = (
+/obj/machinery/button/door{
+	id = "weaponslocker";
+	name = "Open weapons lockers";
+	pixel_x = 0;
+	pixel_y = 25;
+	req_one_access = list(63)
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/central)
+"Pp" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/button/door{
+	id = "weaponslocker";
+	name = "Open weapons lockers";
+	pixel_x = 0;
+	pixel_y = 25;
+	req_one_access = list(63)
+	},
+/turf/open/floor/trek/tile,
+/area/ai_monitored/turret_protected/ai)
+"Pq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "weaponslocker";
+	name = "Open weapons lockers";
+	pixel_x = 0;
+	pixel_y = -25;
+	req_one_access = list(63)
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/central)
 
 (1,1,1) = {"
 aa
@@ -45551,7 +45652,7 @@ pg
 CJ
 CJ
 CJ
-pw
+sx
 sx
 sx
 sy
@@ -48121,7 +48222,7 @@ pg
 CJ
 CJ
 CJ
-pw
+sx
 sx
 sx
 Ds
@@ -110005,9 +110106,9 @@ zn
 zp
 gS
 AW
-vv
-xe
-gS
+Pq
+bQ
+Po
 eT
 gS
 bU
@@ -111547,9 +111648,9 @@ zx
 zA
 ub
 AW
-vv
-xe
-gS
+Pq
+bQ
+Po
 gS
 gS
 xB
@@ -111572,8 +111673,8 @@ aI
 al
 vM
 Av
-vM
-bd
+pw
+Pm
 vd
 AJ
 wg
@@ -113372,7 +113473,7 @@ al
 wU
 Ar
 Ar
-Ar
+Pn
 vd
 BJ
 HJ
@@ -114636,7 +114737,7 @@ cg
 xr
 Lm
 xn
-xG
+eL
 xn
 xn
 Kb
@@ -242903,7 +243004,7 @@ Jo
 Jj
 Jj
 Jo
-Jp
+Pl
 Jp
 Jq
 EK
@@ -243924,7 +244025,7 @@ aO
 Ia
 cX
 db
-eD
+Pp
 eD
 eD
 iU
