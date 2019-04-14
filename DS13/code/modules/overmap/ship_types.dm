@@ -222,9 +222,9 @@
 
 /obj/structure/trek_decor/plaque/sovereign
 	name = "Dedication plaque"
-	desc = "A large, bronze plaque with a dedication: \n <b>USS Paramount. <b>Sovereign-class <> Starfleet registry: NCC-74730 <>\n  Launched stardate: NULL <> Utopia Planetia ShipYards <> United Federation Of Planets. \n</b>"
+	desc = "A large, bronze plaque with a dedication: \n <b>USS Paramount. <b>Sovereign-class <> Starfleet registry: NCC-74730 <>\n  Launched stardate: 47634.44 <> Utopia Planetia ShipYards <> United Federation Of Planets. \n</b>"
 	icon_state = "plaque"
-	supervisors = list("Declan Reade, Shreen Val")
+	supervisors = list("Albert 'Charles' Emmanuel","Alex Riggle","Lessie Stern","Donny Candles","Five of one","Elrod Trevisard","Steve Cook","Donovan Yeskey","Enrique Webb","Shreen Val","Terell Parker","Drek","Jimmy Jowers","Eric Jameson","Rina Hugslibington","Angus McFife","Sizia Shkyrras","Ash Noble","Solid Honk","Caitlyn Sidower","Elena Cypress","Ana Anlyatov","Lorde Rathens","Chance Batten","Jeff Lebowki","Ramon Bluetenberger","Tom Tombadil","Ashrov Chraathass","Randolph P. Checkers Esq","Sherie Dugmore","Lorenzo Richards","Dragos Andriciuc","Elias Janssen","Anos Fisher","Bryan Cowart","Dayton Basinger","Konrad Wolf","Crisco Chang","Dot Dot Dot","Amaya Bynum","Jeb Hutton","Arthur Sturgeon","Angus McFife","Cameron 'Lucky' Richard")
 	engineers = list("Declan Reade, Shreen Val,  Alex Riggle, Dayton Basinger")
 	inscription = "Invincibility lies in the defense; the possibility of victory in the attack."
 

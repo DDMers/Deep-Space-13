@@ -167,9 +167,12 @@
 	if(linked.main_overmap)
 		for(var/X in GLOB.teleportlocs) //Strip out shit that shouldn't be there
 			var/area/AR = GLOB.teleportlocs[X]
-			AR.fire = TRUE
-			for(var/obj/machinery/light/L in AR)
-				L.update()
+			AR.redalert = TRUE
+			spawn(0) //We're branching here so that looping through the areas doesnt depend on the lighting loop finishing. Makes me wish for multithreading :(
+			for(var/thing in AR)
+				if(istype(thing, /obj/machinery/light))
+					var/obj/machinery/light/L = thing
+					L.update()
 		for(var/mob/player in GLOB.player_list)
 			var/area/AR = get_area(player)
 			if(is_station_level(player.z) && !AR.noteleport) //Player on station and not on another random ship.
@@ -177,20 +180,23 @@
 	else
 		if(!linked.linked_area)
 			return
-		linked.linked_area.fire = TRUE
+		linked.linked_area.redalert = TRUE
 		for(var/obj/machinery/light/L in linked.linked_area)
 			L.update()
 		for(var/mob/player in linked.linked_area)
 			SEND_SOUND(player, sound(redalert_sound, repeat = 1, wait = 0, volume = 100, channel = CHANNEL_REDALERT)) //Send them the redalert sound
+	set_security_level(SEC_LEVEL_RED)
 
 
 /obj/structure/overmap_component/helm/proc/redalert_end()
 	if(!redalert || !linked)
 		return
 	redalert = FALSE
+	set_security_level(SEC_LEVEL_GREEN)
 	if(linked.main_overmap)
 		for(var/X in GLOB.teleportlocs) //Strip out shit that shouldn't be there
 			var/area/AR = GLOB.teleportlocs[X]
+			AR.redalert = FALSE
 			AR.unset_fire_alarm_effects()
 		for(var/mob/player in GLOB.player_list)
 			var/area/AR = get_area(player)
@@ -200,10 +206,10 @@
 	else
 		if(!linked.linked_area)
 			return
+		linked.linked_area.redalert = FALSE
 		linked.linked_area.unset_fire_alarm_effects()
 		for(var/mob/player in linked.linked_area)
 			SEND_SOUND(player, sound(null, repeat = 1, wait = 0, volume = 100, channel = CHANNEL_REDALERT)) //Send them the redalert sound
-
 /obj/structure/overmap_component/science
 	name = "Science station"
 	desc = "This console gives you the power to control a starship."

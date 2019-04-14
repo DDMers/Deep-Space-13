@@ -222,6 +222,7 @@
 	var/no_emergency = FALSE	// if true, this light cannot ever have an emergency mode
 	var/bulb_emergency_brightness_mul = 0.25	// multiplier for this light's base brightness in emergency power mode
 	var/bulb_emergency_colour = "#FF3232"	// determines the colour of the light while it's in emergency mode
+	var/bulb_redalert_colour = "#e17f7f"	// DeepSpace13 - Determines the colour of the light while the ship is at red alert
 	var/bulb_emergency_pow_mul = 0.75	// the multiplier for determining the light's power in emergency mode
 	var/bulb_emergency_pow_min = 0.5	// the minimum value for the light's power in emergency mode
 
@@ -304,7 +305,7 @@
 	switch(status)		// set icon_states
 		if(LIGHT_OK)
 			var/area/A = get_area(src)
-			if(emergency_mode || (A && A.fire))
+			if(emergency_mode || (A && A.fire) || (A && A.redalert))
 				icon_state = "[base_state]_emergency"
 			else
 				icon_state = "[base_state]"
@@ -331,9 +332,11 @@
 		var/PO = bulb_power
 		var/CO = bulb_colour
 		var/area/A = get_area(src)
-		if (A && A.fire)
+		if(A.fire)
 			CO = bulb_emergency_colour
-		else if (nightshift_enabled)
+		if(A.redalert)
+			CO = bulb_redalert_colour
+		if (nightshift_enabled)
 			BR = nightshift_brightness
 			PO = nightshift_light_power
 			CO = nightshift_light_color
