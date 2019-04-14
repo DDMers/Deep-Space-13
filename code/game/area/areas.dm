@@ -19,6 +19,7 @@
 	var/clockwork_warp_fail = "The structure there is too dense for warping to pierce. (This is normal in high-security areas.)"
 
 	var/fire = null
+	var/redalert = FALSE //Are we in red alert?
 	var/atmos = TRUE
 	var/atmosalm = FALSE
 	var/poweralm = TRUE

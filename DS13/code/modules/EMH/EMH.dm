@@ -188,7 +188,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	var/area/ourarea = get_area(src)
 	var/area/emharea = get_area(emh)
 	var/obj/machinery/emh_emitter/target //If the EMH goes out of range, locate the next emitter.
-	if(emharea == ourarea || emh.loc == src) //EMH is in our area or is stored inside us, so no need to snap him back.
+	if(emharea == ourarea || emh.loc == src || istype(emharea, /area/holodeck)) //EMH is in our area or is stored inside us, so no need to snap him back. Alternatively he's taken a trip to the holodeck.
 		return
 	for(var/obj/machinery/emh_emitter/em in GLOB.machines)
 		if(em == src)

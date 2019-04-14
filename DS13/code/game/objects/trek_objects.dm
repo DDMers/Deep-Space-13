@@ -1,6 +1,6 @@
 /turf/open/floor/carpet/trek
 	name = "90s space carpet"
-	desc = "Who said that structural components couldn't be stylish?."
+	desc = "The merits of having a static charge generating material on every surface of the ship are questionable, but you can't deny how cool it looks."
 	icon = 'DS13/icons/turf/beige_trek_carpet.dmi'
 	icon_state = "beige"
 	smooth = TRUE
@@ -196,8 +196,13 @@
 	name = "Optronic data relay"
 	icon_state = "ai_panel"
 
+/obj/structure/trek_decor/cargo
+	name = "Shuttle bay wall covering"
+	desc = "A panel which is glued over a wall, giving it extra protection"
+	icon_state = "cargo"
+
 /obj/structure/table/trek
-	name = "Epic sci fi space table"
+	name = "Futuristic table"
 	desc = "In the 24th century, people still need tables."
 	icon = 'DS13/icons/obj/decor/tables.dmi'
 	icon_state = "table1"
@@ -223,6 +228,15 @@
 	desc = "A bed with surgical facilities built in."
 	icon = 'DS13/icons/obj/decor/biobed.dmi'
 	icon_state = "biobed" //X - 15, y - 7
+
+/obj/structure/table/trek/desk
+	name = "Desk"
+	desc = "A sleek, glass panelled desk"
+	icon_state = "desk"
+	anchored = TRUE
+	density = FALSE
+	smooth = FALSE
+	layer = 3
 
 /obj/structure/table/optable/trek/tablepush(mob/living/user, mob/living/pushed_mob)
 	pushed_mob.forceMove(loc)
@@ -337,3 +351,27 @@
 	assignedrole = "crashed security"
 	outfit = /datum/outfit/job/officer/DS13
 	flavour_text = "<span class='big bold'>You are a stranded starfleet security officer! Your ship was carrying experiments of questionable legality for starfleet intelligence but your ship has crashed. Make sure that the borg you were transporting remain contained at all costs.</span>"
+	layer = 2.1
+
+/obj/structure/curtain/black
+	name = "black curtain"
+	desc = "A sleek set of drapes which can block out irritating ambient light from space."
+	icon = 'icons/obj/watercloset.dmi'
+	icon_state = "open"
+	color = "#696969"
+	alpha = 255
+
+/obj/structure/curtain/black/update_icon() //Non transparent curtains that actually block light.
+	if(!open)
+		icon_state = "closed"
+		layer = WALL_OBJ_LAYER
+		density = TRUE
+		open = FALSE
+		opacity = TRUE
+
+	else
+		icon_state = "open"
+		layer = SIGN_LAYER
+		density = FALSE
+		open = TRUE
+		opacity = FALSE
