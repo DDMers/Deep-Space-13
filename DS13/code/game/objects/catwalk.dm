@@ -24,3 +24,12 @@
 	else
 		var/turf/T = get_turf(src)
 		return T.attack_hand(C, user)
+
+/obj/structure/trek_catwalk/cargo
+	icon_state = "cargo"
+	smooth = FALSE
+
+/obj/structure/trek_catwalk/cargo/pad
+	icon = 'DS13/icons/obj/decor/cargopad.dmi'
+	icon_state = "0,0"
+	smooth = FALSE

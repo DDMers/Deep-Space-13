@@ -80,7 +80,7 @@
 	icon = 'DS13/icons/turf/smooth_trek_walls.dmi'
 	mod = null
 	sheet_type = /obj/item/stack/sheet/duotanium
-	sheet_amount = 1
+	sheet_amount = 2
 
 /turf/closed/wall/trek_smooth/romulan
 	name = "Romulan hull"
@@ -88,7 +88,7 @@
 	desc = "A wall of strange construction, it's covered in romulan symbols."
 	mod = null
 	sheet_type = /obj/item/stack/sheet/mineral/silver
-	sheet_amount = 1
+	sheet_amount = 2
 	light_color = LIGHT_COLOR_GREEN
 
 /turf/closed/wall/trek_smooth/reinforced
@@ -102,7 +102,14 @@
 	icon = 'DS13/icons/turf/trek_wall_bright.dmi'
 	mod = null
 	sheet_type = /obj/item/stack/sheet/duranium
-	sheet_amount = 1
+	sheet_amount = 2
+
+/turf/closed/wall/trek_smooth/jeffries
+	name = "Tritanium alloy hull"
+	icon = 'DS13/icons/turf/trek_wall_jeffries.dmi'
+	mod = null
+	sheet_type = /obj/item/stack/sheet/tritanium
+	sheet_amount = 2
 
 //Mats to make new walls:
 
@@ -203,3 +210,35 @@
 				transfer_fingerprints_to(T)
 				qdel(src)
 			return
+
+/datum/design/tritanium_alloy
+	name = "Tritanium alloy"
+	id = "tritanium"
+	build_type = SMELTER | PROTOLATHE
+	materials = list(MAT_METAL = (MINERAL_MATERIAL_AMOUNT*2), MAT_SILVER = MINERAL_MATERIAL_AMOUNT)
+	build_path = /obj/item/stack/sheet/tritanium
+	category = list("initial", "Stock Parts")
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
+	maxstack = 50
+
+/obj/item/stack/sheet/tritanium
+	name = "tritanium alloy"
+	singular_name = "tritanium alloy sheet"
+	desc = "This sheet is an alloy of a lot of iron and silver."
+	icon = 'DS13/icons/obj/stack_objects.dmi'
+	icon_state = "sheet-tritanium"
+	item_state = "sheet-metal"
+	materials = list(MAT_METAL=4000, MAT_SILVER=2000)
+	throwforce = 5
+	flags_1 = CONDUCT_1
+	armor = list("melee" = 0, "bullet" = 20, "laser" = 20, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 80)
+	resistance_flags = FIRE_PROOF
+	merge_type = /obj/item/stack/sheet/tritanium
+	grind_results = list("iron" = 20, "silver" = 20)
+	point_value = 10
+
+/obj/item/stack/sheet/tritanium/twenty
+	amount = 20
+
+/obj/item/stack/sheet/tritanium/fifty
+	amount = 50

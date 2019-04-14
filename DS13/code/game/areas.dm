@@ -51,6 +51,9 @@
 /area/medical
 	looping_ambience = 'DS13/sound/ambience/sickbay.ogg'
 
+/area/science
+	looping_ambience = 'DS13/sound/ambience/science.ogg'
+
 /area/Entered(atom/movable/M)
 	// Ambience goes down here -- make sure to list each area separately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch
 	set waitfor = FALSE
