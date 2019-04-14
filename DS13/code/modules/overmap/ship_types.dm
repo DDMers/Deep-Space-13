@@ -128,11 +128,24 @@
 	pixel_x = -32
 	pixel_y = -32
 
+/obj/structure/overmap/delivery_source/OvermapInitialize()
+	. = ..()
+	engine_power = 0
+	weapon_power = 0
+	shield_power = 0
+	max_engine_power = 0
+	max_shield_power = 0
+	max_weapon_power = 0
+	check_power()
+
+/obj/structure/overmap/delivery_source/take_control()
+	return
+
 /obj/structure/overmap/delivery_destination
 	name = "Space Station this isnt supposed to be here"
 	desc = "A space station"
 	icon = 'DS13/icons/overmap/station.dmi'
-	icon_state = "delivery_destination"
+	icon_state = "station"
 	main_overmap = FALSE
 	damage = 10 //Will turn into 20 assuming weapons powered //what does this var even do?who cares.
 	class = "delivery_destination"
@@ -141,6 +154,19 @@
 	movement_block = TRUE //You can't turn a station :) //YES YOU CAN! YOU JUST CANT SEE IT!
 	pixel_x = -32
 	pixel_y = -32
+
+/obj/structure/overmap/delivery_destination/OvermapInitialize()
+	. = ..()
+	engine_power = 0
+	weapon_power = 0
+	shield_power = 0
+	max_engine_power = 0
+	max_shield_power = 0
+	max_weapon_power = 0
+	check_power()
+
+/obj/structure/overmap/delivery_destination/take_control()
+	return
 
 /obj/structure/overmap/shuttle
 	name = "Shuttlepod"

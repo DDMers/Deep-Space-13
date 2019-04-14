@@ -335,6 +335,10 @@
 		if(target != src)
 			new /obj/effect/temp_visual/transporter(get_turf(target))
 			target.forceMove(teleport_target)
+			if(ishuman(target))
+				var/mob/living/carbon/human/H = target
+				if(H.pulling)
+					H.pulling.forceMove(teleport_target)
 			new /obj/effect/temp_visual/transporter/mob(get_turf(target))
 			playsound(target.loc, 'DS13/sound/effects/transporter/retrieve.ogg', 100, 4)
 	if(target && transporter_controller)
@@ -348,6 +352,10 @@
 		new /obj/effect/temp_visual/transporter(get_turf(target))
 		playsound(target.loc, 'DS13/sound/effects/transporter/retrieve.ogg', 100, 4)
 		target.forceMove(get_turf(src))
+		if(ishuman(target))
+			var/mob/living/carbon/human/H = target
+			if(H.pulling)
+				H.pulling.forceMove(get_turf(src))
 		new /obj/effect/temp_visual/transporter/mob(get_turf(target))
 	if(target && transporter_controller)
 		transporter_controller.log += "[station_time_timestamp()] : [transporter_controller.operator] beamed <b>[target]</b> back onto the ship."

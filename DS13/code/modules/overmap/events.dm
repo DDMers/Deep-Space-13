@@ -365,11 +365,13 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 GLOBAL_DATUM(sealedcratespawn,/obj/effect/landmark/sealedcrate)
 
 /obj/effect/landmark/sealedcrate
-	invisibility = 0
 
-/obj/effect/landmark/Initialize()
+/obj/effect/landmark/sealedcrate/New()
 	. = ..()
+	world.log << "Landmark new called,setting GLOB"
 	GLOB.sealedcratespawn = src //going to personally kill you if you add more than on without refactoring this to support it
+	world.log << "Glob sealedcratespawn is now [GLOB.sealedcratespawn]"
+
 
 //CRATE
 
@@ -409,8 +411,6 @@ GLOBAL_DATUM(sealedcratespawn,/obj/effect/landmark/sealedcrate)
 	if(istype(AM,/obj/structure/sealedcrate))
 		var/obj/structure/sealedcrate/SC = AM
 		SC.linked_event.succeed()
-		while(SC.alpha != 0)
-			SC.alpha = min(SC.alpha-1,0)
 		qdel(SC)
 
 //DATUM
@@ -426,6 +426,7 @@ GLOBAL_DATUM(sealedcratespawn,/obj/effect/landmark/sealedcrate)
 	succeed_text = "Excellent work, the items were succesfully delivered."
 	reward = 10000
 	var/obj/structure/sealedcrate/to_deliver
+	var/completed = FALSE
 
 /datum/overmap_event/deliver_item/New()
 	. = ..()
@@ -438,15 +439,24 @@ GLOBAL_DATUM(sealedcratespawn,/obj/effect/landmark/sealedcrate)
 	to_deliver.linked_event = src //yeeeeeet,this circular reference wont break anything at all ofc Spoilers: it will
 	sourceoutpost = new /obj/structure/overmap/delivery_source(get_turf(spawner))
 	sourceoutpost.name = "Outpost [sourceoutpostid]"
-	var/newx = CLAMP(spawner.x + rand(-10,25),world.maxx,0)
-	var/newy = CLAMP(spawner.y + rand(-10,25),world.maxy,0)
+	var/newx = CLAMP(spawner.x + rand(-10,25),world.maxx - 10,0)
+	var/newy = CLAMP(spawner.y + rand(-10,25),world.maxy - 10,0)
 	var/turf/other_spawn = locate(newx,newy,spawner.z)
 	destinationoutpost = new /obj/structure/overmap/delivery_destination(get_turf(other_spawn))
 	destinationoutpost.name = "Secure Station [destinationoutpostid]"
+	priority_announce(desc)
+
 
 /datum/overmap_event/deliver_item/fail()
-	priority_announce("You have failed to deliver the crate.")
+	if(completed)
+		return FALSE
+	priority_announce("You have failed to deliver the crate.Crate self destruct activated.")
+	completed = TRUE
 	qdel(to_deliver)
+
+/datum/overmap_event/deliver_item/succeed()
+	completed = TRUE
+	..()
 
 /datum/overmap_event/deliver_item/check_completion(obj/structure/overmap/what)
 	if(what == destinationoutpost|what == sourceoutpost)

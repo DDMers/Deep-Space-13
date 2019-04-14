@@ -46,14 +46,18 @@
 	noteleport = FALSE
 
 /area/ship/station/delivery_destination
-	name = "Supply Outpost"
+	name = "Secure Station"
 	class = "delivery_destination"
 	noteleport = TRUE
+	requires_power = FALSE
+	has_gravity = TRUE
 
 /area/ship/station/delivery_source
-	name = "Secure Station"
+	name = "Supply Outpost"
 	class = "delivery_source"
 	noteleport = TRUE
+	requires_power = FALSE
+	has_gravity = TRUE
 
 /area/maintenance
 	looping_ambience = 'DS13/sound/ambience/jeffries_hum.ogg'
