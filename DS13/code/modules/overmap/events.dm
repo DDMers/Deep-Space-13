@@ -317,6 +317,119 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 		L.client.ambience_playing = 1
 		SEND_SOUND(L, sound('DS13/sound/ambience/tos_bridge.ogg', repeat = 1, wait = 0, volume = 100, channel = CHANNEL_BUZZ)) //DeepSpace13 - engine hum
 
+/area/ship/borg_cube
+	name = "Borg cube"
+	class = "borg-cube"
+	ambientsounds = list('DS13/sound/ambience/ambiborg1.ogg','DS13/sound/ambience/ambiborg2.ogg','DS13/sound/ambience/ambiborg3.ogg')
+	requires_power = FALSE
+	has_gravity = TRUE
+	looping_ambience = 'DS13/sound/ambience/jeffries_hum.ogg'
+
+/obj/effect/mob_spawn/human/corpse/borg_drone
+	name = "Deactivated borg drone"
+	suit = /obj/item/clothing/suit/space/borg
+
+/mob/living/simple_animal/hostile/retaliate/borg_drone
+	name = "Tactical drone"
+	desc = "A mindless drone. It will not attack unless provoked"
+	icon = 'DS13/icons/mob/simple_human.dmi'
+	icon_state = "borg_drone"
+	icon_living = "borg_drone"
+	icon_dead = "borg_drone_dead"
+	icon_gib = "borg_drone_gib"
+	mob_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
+	turns_per_move = 5
+	response_help = "probes"
+	response_disarm = "wrestles aside"
+	response_harm = "assimilates"
+	speak = list("Priority alert received: Grid. 235. Subjunction 4-beta", "Moving to intercept", "Tertiary subprocessor confirmed", "We are the borg")
+	emote_see = list("processes its surroundings", "points its laser at something")
+	speak_chance = 1
+	a_intent = INTENT_HARM
+	maxHealth = 105
+	health = 105
+	speed = 1
+	harm_intent_damage = 12
+	melee_damage_lower = 15
+	melee_damage_upper = 15
+	attacktext = "attacks"
+	attack_sound = 'DS13/sound/effects/borg/grab.ogg'
+	obj_damage = 0
+	environment_smash = ENVIRONMENT_SMASH_NONE
+	del_on_death = TRUE
+	loot = list(/obj/effect/mob_spawn/human/corpse/borg_drone)
+
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	minbodytemp = 0
+	maxbodytemp = 500
+	unsuitable_atmos_damage = 0
+
+/mob/living/simple_animal/hostile/retaliate/borg_drone/AttackingTarget()
+	. = ..()
+	if(ishuman(target))
+		var/mob/living/carbon/human/M = target
+		M.Jitter(3)
+		M.visible_message("<span class='warning'>[src] pierces [M] with their assimilation tubules!</span>")
+		playsound(M.loc, 'sound/weapons/pierce.ogg', 100,1)
+		if(do_after(src, 50, target = M)) //5 seconds
+			M.mind.make_borg()
+			var/obj/item/organ/body_egg/borgNanites/nanitelattice = new(get_turf(M))
+			nanitelattice.Insert(M)
+			playsound(src.loc, 'DS13/sound/effects/borg/resistanceisfutile.ogg', 100, 0)
+			enemies -= M
+			return
+
+/obj/structure/overmap_component/borg_relay
+	name = "Auxiliary processor subjunction"
+	desc = "A machine of inordinate parts which helps to coordinate the thousands of drones present on borg ships... It would probably weaken the borg considerably if you destroyed this."
+	icon_state = "subjunction"
+	pixel_y = 32
+	density = FALSE
+
+/obj/structure/overmap_component/borg_relay/take_damage(amount)
+	if(!linked)
+		find_overmap()
+	if(obj_integrity <= amount)
+		Destroy()
+		return
+	. = ..()
+
+/obj/structure/overmap_component/borg_relay/Destroy()
+	if(!linked)
+		find_overmap()
+	obj_integrity = 1000
+	alpha = 0
+	mouse_opacity = FALSE
+	if(linked.health >= 300)
+		linked.health -= 100
+		linked.max_health -= 100
+	if(linked.weapon_power >= 3)
+		linked.weapon_power -= 1
+	say("Subprocessor inoperative. Unable to coordinate weapon systems. Maneuver drones to subjunction [rand(0-100)] to compensate.")
+	. = ..()
+
+/datum/overmap_event/borg_cube //This is a challenge. You SERIOUSLY need to board the cube and weaken it first, or youre in for a bad time.
+	name = "Borg cube"
+	desc = "Board the borg cube to weaken it, then blast it!"
+	fail_text = "All hands, set condition 1 throughout the fleet. This is not a drill."
+	succeed_text = "Thank god. It's gone... We'll send some ships to pick through the debris."
+	reward = 20000
+
+/datum/overmap_event/borg_cube/start()
+	target = new /obj/structure/overmap/ai/assimilated/cube(get_turf(spawner))
+	priority_announce("Attention all ships. Set condition RED throughout the fleet. A damaged borg cube has been sighted in your system. Stand-by for instructions","Intercepted subspace transmission:",'DS13/sound/effects/borg/borg_flyby.ogg')
+	elements += target
+	target.linked_event = src
+	sleep(60)
+	priority_announce("Long range scans have detected structural weak points in the borg cube. You need to destroy the borg processor subjunctions in order to stand any chance of facing the borg cube. Good luck, and godspeed. You're all that we can spare, [station_name()].","Starfleet critical priority comminication:",'sound/ai/commandreport.ogg')
+
+/datum/overmap_event/borg_cube/check_completion(var/obj/structure/overmap/what)
+	if(target)
+		if(what == target) //This is the default one. If this is being called, the freighter has been destroyed and you fail!
+			succeed()
+			return
+
+
 /*
 
 /datum/overmap_event/defend_colony
