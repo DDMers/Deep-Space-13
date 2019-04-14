@@ -24,6 +24,7 @@
 	var/obj/structure/overmap/nav_target
 	var/process = FALSE
 	var/movement_block = FALSE //If you make a planet, station etc. Set this to TRUE or it'll be movable!
+	var/orbit = FALSE //are we an AI that wants to orbit?
 
 /obj/structure/overmap/Initialize()
 	. = ..()
@@ -43,6 +44,11 @@
 			TurnTo(nav_target)
 		if(tractor_target)
 			tractor_pull()
+		if(orbit)
+			overmap_orbit()
+
+/obj/structure/overmap/proc/overmap_orbit() //Ultra simple orbit proc. This is used so that AIs can kite around
+	angle -= turnspeed
 
 //Procs
 /obj/structure/overmap/proc/EditAngle() //Visibly rotate the sprite

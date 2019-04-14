@@ -2,7 +2,7 @@
 Clown
 */
 /datum/job/clown
-	title = "Clown"
+	title = "Morale Officer"
 	flag = CLOWN
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
@@ -26,26 +26,21 @@ Clown
 	H.apply_pref_name("clown", M.client)
 
 /datum/outfit/job/clown
-	name = "Clown"
+	name = "Morale Officer"
 	jobtype = /datum/job/clown
 
 	belt = /obj/item/pda/clown
 	uniform = /obj/item/clothing/under/trek/neelix //Deep Space 13. Deep clown lore change :)
 	shoes = /obj/item/clothing/shoes/sneakers/black
-	mask = /obj/item/clothing/mask/gas/clown_hat
 	l_pocket = /obj/item/bikehorn
 	backpack_contents = list(
 		/obj/item/stamp/clown = 1,
 		/obj/item/reagent_containers/spray/waterflower = 1,
 		/obj/item/reagent_containers/food/snacks/grown/banana = 1,
-		/obj/item/instrument/bikehorn = 1,
+		/obj/item/clothing/mask/gas/clown_hat = 1
 		)
 
 	implants = list(/obj/item/implant/sad_trombone)
-
-	backpack = /obj/item/storage/backpack/clown
-	satchel = /obj/item/storage/backpack/clown
-	duffelbag = /obj/item/storage/backpack/duffelbag/clown //strangely has a duffel
 
 	box = /obj/item/storage/box/hug/survival
 
@@ -58,6 +53,7 @@ Clown
 
 	H.fully_replace_character_name(H.real_name, pick(GLOB.clown_names)) //rename the mob AFTER they're equipped so their ID gets updated properly.
 	H.dna.add_mutation(CLOWNMUT)
+	to_chat(H, "<span class='warning'>You've picked morale officer! This role is different from the traditional clown, so here's a few rules:<br>-You must not interfere with the ship during red alert.<br>-You must make a legitimate attempt at being funny<br>-While you have your clown mask, remember that you're still a crewman and are working for the good of the ship.</span>")
 
 /*
 Mime
