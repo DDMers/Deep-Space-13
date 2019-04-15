@@ -86,7 +86,8 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	head = null
 	id = /obj/item/card/id
-	ears = /obj/item/radio/headset
+	ears = /obj/item/radio/headset/heads/captain
+	back = /obj/item/storage/backpack/satchel
 
 /datum/outfit/admiral/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -138,6 +139,8 @@
 	id = /obj/item/card/id
 	back = /obj/item/storage/backpack/satchel
 	ears = /obj/item/radio/headset/syndicate/alt
+	back = /obj/item/storage/backpack/satchel
+	backpack_contents = list(/obj/item/book/granter/martial/cqc=1)
 
 /datum/outfit/romulan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)

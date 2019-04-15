@@ -23,7 +23,7 @@ Bridge crew
 	uniform = /obj/item/clothing/under/trek/command/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
-	ears = /obj/item/radio/headset
+	ears = /obj/item/radio/headset/heads/hop
 	id = /obj/item/card/id
 
 /obj/effect/landmark/start/bridge_officer

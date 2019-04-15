@@ -302,20 +302,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 /area/ship/bridge/tos
 	name = "Retro ship"
 	class = "constitution"
-
-/area/ship/bridge/tos/Entered(atom/movable/M)
-	set waitfor = FALSE
-	SEND_SIGNAL(src, COMSIG_AREA_ENTERED, M)
-	SEND_SIGNAL(M, COMSIG_ENTER_AREA, src) //The atom that enters the area
-	if(!isliving(M))
-		return
-
-	var/mob/living/L = M
-	if(!L.ckey)
-		return
-	if(L.client && L.client.prefs.toggles & SOUND_SHIP_AMBIENCE)
-		L.client.ambience_playing = 1
-		SEND_SOUND(L, sound('DS13/sound/ambience/tos_bridge.ogg', repeat = 1, wait = 0, volume = 100, channel = CHANNEL_BUZZ)) //DeepSpace13 - engine hum
+	looping_ambience = 'DS13/sound/ambience/tos_bridge.ogg'
 
 /area/ship/borg_cube
 	name = "Borg cube"
@@ -429,6 +416,52 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 			succeed()
 			return
 
+/obj/effect/mob_spawn/human/alive/trek/museum
+	name = "Tal shiar agent"
+	assignedrole = "romulan"
+	outfit = /datum/outfit/talshiar
+	flavour_text = "<span class='big bold'>You are a tal shiar agent!</span><br> You and your comrades have been dispatched to the museum ship Enterprise under the guise of starfleet inspectors. You're equipped with state of the art stealth tech, so you can assume any identity you need but be careful, and be subtle.<br> It is an incredibly weak ship, but it should provide enough cover for you to complete your true goal: <b>Capture</b> the main ship for the romulan empire!"
+
+/datum/outfit/talshiar
+	name = "Tal shiar agent"
+	uniform = /obj/item/clothing/under/trek/romulan
+	accessory = null
+	l_pocket = /obj/item/pda
+	belt = /obj/item/gun/energy/phaser
+	shoes = /obj/item/clothing/shoes/jackboots
+	suit = null
+	gloves = /obj/item/clothing/gloves/color/black
+	head = null
+	id = /obj/item/card/id
+	back = /obj/item/storage/backpack/satchel
+	ears = /obj/item/radio/headset/syndicate/alt
+	back = /obj/item/storage/backpack/satchel
+	backpack_contents = list(/obj/item/storage/box/syndie_kit/chameleon=1,/obj/item/book/granter/martial/cqc=1,/obj/item/reagent_containers/syringe/mulligan=1)
+
+/area/ship/bridge/museum
+	name = "USS Enterprise (NX-01)"
+	class = "nx01"
+	looping_ambience = 'DS13/sound/ambience/nx01.ogg'
+	has_gravity = TRUE
+
+/datum/overmap_event/museum_hijack //Star trekkin' a...wait where the fuck are we?
+	name = "Hijacked museum ship (spawns available on spawners menu!)"
+	desc = "Capture the main ship"
+	fail_text = "You just let one of the most historically important ships in starfleet history be destroyed! You'll be lucky to wear a starfleet uniform ever again after the inquiry's over!."
+	succeed_text = "The distress call has terminated"
+	reward = 5000
+
+/datum/overmap_event/museum_hijack/start() //Now we have a spawn. Let's do whatever this mission is supposed to. Override this when you make new missions
+	target = new /obj/structure/overmap/nx01(get_turf(spawner))
+	priority_announce("[station_name()]. We've just received a report from the NX01-Enterprise exhibit. It appears the enterprise is missing.... Recapture the ship at all costs, and do NOT allow it to be destroyed.","Intercepted subspace transmission:",'sound/ai/commandreport.ogg')
+	elements += target
+	sleep(20)//Give it a chance to link.
+	if(target.linked_area)
+		for(var/obj/structure/overmap_component/XR in target.linked_area) //We call this to update the components with our new ship object, as it wasn't created at runtime!
+			XR.find_overmap()
+
+/datum/overmap_event/museum_hijack/succeed()
+	return //This is an open ended objective, really. It's designed for RP
 
 /*
 

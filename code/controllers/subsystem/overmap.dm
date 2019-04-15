@@ -7,6 +7,7 @@ SUBSYSTEM_DEF(overmap)
 	var/frequency_lower = 6000	//10 minutes lower bound.
 	var/frequency_upper = 9000	//15 minutes upper bound. Basically an event will happen every 10 to 15 minutes.
 	var/scheduled = 0 //When are we scheduling a event for?
+	var/missions_per_rotation = 6 //Change this if you want a longer round, admins.
 
 /datum/controller/subsystem/overmap/Initialize(time, zlevel)
 	. = ..()
