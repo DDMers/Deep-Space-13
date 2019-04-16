@@ -145,6 +145,8 @@
 		if(!isturf(eye_user.loc))
 			return
 		T = get_turf(T)
+		if(istype(T, /turf/closed/indestructible))
+			return FALSE
 		if(T)
 			if(locate(/obj/effect/transporter_block) in T) //To define borders of ships
 				return FALSE
@@ -207,6 +209,14 @@
 	for(var/mob/living/thehewmon in orange(eyeobj,1))
 		var/obj/machinery/transporter_pad/T = pick(linked)
 		T.retrieve(thehewmon)
+	var/obj/item/pattern_enhancer/PE = locate(/obj/item/pattern_enhancer) in orange(eyeobj,3)
+	if(PE && PE.active) //Enhancer. Is it active? If so, allow them to teleport objects.
+		for(var/X in orange(eyeobj,1))
+			if(isobj(X))
+				var/obj/Y = X
+				if(!Y.anchored)
+					var/obj/machinery/transporter_pad/T = pick(linked)
+					T.retrieve(Y)
 	playsound(loc, 'DS13/sound/effects/transporter/retrieve.ogg', 100, 4)
 
 /obj/machinery/computer/camera_advanced/transporter_control/proc/transporters_lock()
@@ -268,7 +278,6 @@
 		user.remote_control = eyeobj
 		user.reset_perspective(eyeobj)
 		eyeobj.loc = pick(L)
-		user.sight = 60 //see through walls
 		//user.lighting_alpha = 0 //night vision (doesn't work for some reason)
 	else
 		to_chat(user, "This is already in use!")
@@ -360,6 +369,7 @@
 	icon_state = "1" //use generate instances by icon_state
 	anchored = TRUE
 	var/obj/machinery/computer/camera_advanced/transporter_control/transporter_controller = null
+	layer = 2.7
 
 /obj/machinery/transporter_pad/proc/send(turf/open/teleport_target)
 //	if(!powered())
