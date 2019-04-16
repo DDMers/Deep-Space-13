@@ -9,6 +9,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	var/list/elements = list() //All the shit we're gonna spawn, yeah.
 	var/obj/structure/overmap/ai/target //In this case, the freighter. If this dies then fail the mission!
 	var/reward = 10000 //10 K Credits? Sheesh what a rip off!
+	var/completed = FALSE //stop repeat confirmation of completion.
 
 /datum/overmap_event/proc/check_completion(var/obj/structure/overmap/what)
 	if(target)
@@ -21,6 +22,8 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 		return
 
 /datum/overmap_event/proc/succeed()
+	if(completed)
+		return
 	to_chat(world, "<span class='notice'>Starfleet command has issued a commendation to the crew of [station_name()]. The ship has been allocated extra operational budget ([reward]) by Starfleet command.</span>")
 	priority_announce(succeed_text,"Incoming hail:",'sound/ai/commandreport.ogg')
 	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
@@ -28,6 +31,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 		D.adjust_money(reward)
 	spawner.used = FALSE
 	target.vel = 10 //Make them warp away
+	completed = TRUE
 	addtimer(CALLBACK(src, .proc/clear_elements), 60) //Clear up everything after 6 seconds
 
 /datum/overmap_event/proc/clear_elements()
@@ -37,9 +41,12 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 		qdel(saved)
 
 /datum/overmap_event/proc/fail()
+	if(completed)
+		return
 	to_chat(world, "<span class='warning'>Starfleet command has issued an official reprimand on [station_name()]'s permanent record.</span>")
 	priority_announce(fail_text)
 	spawner.used = FALSE
+	completed = TRUE
 
 /datum/overmap_event/proc/fire()
 	for(var/x in GLOB.overmap_event_spawns)
@@ -145,6 +152,8 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 		new /obj/structure/meteor(get_turf(pick(orange(spawner, 6))))
 
 /datum/overmap_event/freighter_stuck/succeed()
+	if(completed)
+		return
 	target.engine_power = 4 //Let her move again
 	target.max_shield_health = 100
 	target.shields.max_health = 100
@@ -158,6 +167,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	target = null
 	MS.freighter = null
 	MS.linked_event = null
+	completed = TRUE
 
 /datum/overmap_event/comet //A harmless comet
 	name = "Comet flyby"
@@ -462,6 +472,163 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 
 /datum/overmap_event/museum_hijack/succeed()
 	return //This is an open ended objective, really. It's designed for RP
+
+
+//Space UPS. Originally coded by alexkar, fixed by kmc//
+
+/area/ship/station/delivery_destination
+	name = "Relief Station"
+	class = "delivery_destination"
+	noteleport = TRUE
+	requires_power = FALSE
+	has_gravity = TRUE
+
+/area/ship/station/delivery_source
+	name = "Supply Outpost"
+	class = "delivery_source"
+	noteleport = TRUE
+	requires_power = FALSE
+	has_gravity = TRUE
+
+/obj/structure/sealedcrate
+	name = "Relief supplies crate"
+	desc = "A crate filled with relief supplies for the people of betazed, it'd be best to not touch it.."
+	icon = 'icons/obj/crates.dmi'
+	icon_state = "reliefsupplies"
+	var/datum/overmap_event/linked_event
+	max_integrity = 120
+	density = TRUE
+
+/obj/structure/sealedcrate/attack_hand(mob/user)
+	. = ..()
+	to_chat(user,"<span class='warning'>An indicator flashes on [src]: ACCESS DENIED</span>") //HEY LEAVE THIS ALONE OR YOUR SCRUBBING PLASMA CONDUITS
+
+/obj/structure/sealedcrate/Destroy()
+	if(linked_event)
+		linked_event.fail()
+	if(prob(30))
+		new /obj/item/storage/firstaid/regular(get_turf(src)) //Yes. You can totally steal food and medical supplies from a dying planet
+		new /obj/item/storage/firstaid/toxin(get_turf(src))
+	else
+		new /obj/item/reagent_containers/food/snacks/rationpack(get_turf(src))
+		new /obj/item/reagent_containers/food/snacks/rationpack(get_turf(src))
+		new /obj/item/reagent_containers/food/snacks/rationpack(get_turf(src))
+	. = ..()
+
+/obj/structure/overmap_component/crate_receiver
+	name = "Crate delivery point"
+	desc = "A storage device which automatically sorts crates for planetary delivery."
+	icon_state = "cratepad"
+	density = FALSE
+	anchored = TRUE
+	opacity = FALSE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+	var/busy = FALSE //Stops crossed firing over and over
+	layer = 2.7
+
+/obj/structure/overmap_component/crate_receiver/Crossed(atom/movable/AM)
+	. = ..()
+	if(busy)
+		return
+	if(istype(AM,/obj/structure/sealedcrate))
+		say("Scanning crate..")
+		busy = TRUE
+		var/obj/structure/sealedcrate/SC = AM
+		if(SC.linked_event)
+			var/datum/overmap_event/deliver_item/DI = SC.linked_event
+			DI.crate_amount --
+			DI.check_completion(SC)
+			say("Crate receipt: CONFIRMED!")
+			AM.forceMove(src)
+		busy = FALSE
+
+/obj/effect/landmark/sealed_crate_spawn
+	name = "Sealed crate spawn point"
+
+/datum/overmap_event/deliver_item
+	name = "Relief supplies delivery"
+	desc = "There's been a massive natural disaster on Betazed! We need you to transfer some humanitarian supplies to a nearby relief outpost so they can be circulated amongst the population."
+	fail_text = "The relief supplies have been destroyed..."
+	succeed_text = "Excellent work, the items were succesfully delivered. Our humanitarian teams will work on distributing them now."
+	reward = 10000
+	var/crate_amount = 0 //How many crates do they have to deliver?
+	var/obj/structure/overmap/delivery_source/source
+	var/obj/structure/overmap/delivery_destination/destination
+	var/sourceoutpostid = 2
+	var/destinationoutpostid = 1
+
+/datum/overmap_event/deliver_item/New()
+	. = ..()
+	sourceoutpostid = rand(150,265)
+	destinationoutpostid = rand(1,3)
+	desc = "[station_name()]. There's been a massive natural disaster on Betazed! We need you to transfer some humanitarian supplies from Outpost [sourceoutpostid] to Relief Station [destinationoutpostid]. To help them recover. We can't afford to lose any of the supplies..."
+
+/datum/overmap_event/deliver_item/start()
+	var/obj/effect/landmark/sealed_crate_spawn/CS
+	for(var/X in GLOB.landmarks_list)
+		if(istype(X, /obj/effect/landmark/sealed_crate_spawn))
+			CS = X
+	if(!CS)
+		message_admins("[name] tried to spawn, but there's no crate spawners in your map!")
+		return
+	for(var/i = 0 to rand(10,15)) //Need to make it at least somewhat challenging eh?
+		var/obj/structure/sealedcrate/supplies = new /obj/structure/sealedcrate(get_turf(pick(orange(CS,3))))
+		supplies.linked_event = src
+		crate_amount ++
+	source = new /obj/structure/overmap/delivery_source(get_turf(spawner))
+	source.name = "Outpost [sourceoutpostid]"
+	var/newx = CLAMP(spawner.x + rand(-10,25),world.maxx - 10,0)
+	var/newy = CLAMP(spawner.y + rand(-10,25),world.maxy - 10,0)
+	var/turf/other_spawn = locate(newx,newy,spawner.z)
+	destination = new /obj/structure/overmap/delivery_destination(get_turf(other_spawn))
+	destination.name = "Relief Station [destinationoutpostid]"
+	priority_announce(desc)
+
+/datum/overmap_event/deliver_item/succeed()
+	if(completed)
+		return
+	to_chat(world, "<span class='notice'>Starfleet command has issued a commendation to the crew of [station_name()]. The ship has been allocated extra operational budget ([reward]) by Starfleet command.</span>")
+	priority_announce(succeed_text,"Incoming hail:",'sound/ai/commandreport.ogg')
+	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
+	if(D)
+		D.adjust_money(reward)
+	spawner.used = FALSE
+	completed = TRUE
+
+/datum/overmap_event/deliver_item/check_completion(var/atom/what)
+	if(what == destination || what == source)
+		fail()
+	if(crate_amount <= 0)
+		succeed()
+
+/obj/structure/overmap/delivery_source
+	name = "Delivery source"
+	desc = "A secure outpost said to house humanitarian supplies"
+	icon = 'DS13/icons/overmap/station.dmi'
+	icon_state = "station"
+	main_overmap = FALSE
+	damage = 10 //Will turn into 20 assuming weapons powered //what does this var even do?who cares.
+	class = "delivery_source"
+	max_speed = 0
+	turnspeed = 0
+	movement_block = TRUE //You can't turn a station :) //YES YOU CAN! YOU JUST CANT SEE IT!
+	pixel_x = -32
+	pixel_y = -32
+	max_shield_power = 0
+
+/obj/structure/overmap/delivery_destination
+	name = "Delivery destination"
+	desc = "A humanitarian outpost which can distribute relief supplies"
+	icon = 'DS13/icons/overmap/station.dmi'
+	icon_state = "station"
+	main_overmap = FALSE
+	damage = 10 //Will turn into 20 assuming weapons powered //what does this var even do?who cares.
+	class = "delivery_destination"
+	max_speed = 0
+	turnspeed = 0
+	movement_block = TRUE //You can't turn a station :) //YES YOU CAN! YOU JUST CANT SEE IT!
+	pixel_x = -32
+	pixel_y = -32
 
 /*
 
