@@ -224,6 +224,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	icon_state = "moon"
 	class = "crashed_borg"
 	max_shield_health = 0
+	layer = 2.9
 
 /datum/overmap_event/crashed_borg/succeed()
 	return //Impossible to succeed, or fail.
@@ -576,6 +577,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 			CS = X
 	if(!CS)
 		message_admins("[name] tried to spawn, but there's no crate spawners in your map!")
+		completed = TRUE
 		return
 	for(var/i = 0 to rand(10,15)) //Need to make it at least somewhat challenging eh?
 		var/obj/structure/sealedcrate/supplies = new /obj/structure/sealedcrate(get_turf(pick(orange(CS,3))))
@@ -645,6 +647,122 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	if(linked_event)
 		linked_event.fail()
 	. = ..()
+
+/area/ship/m_class
+	name = "Minshara class planet"
+	class = "mclass"
+	noteleport = TRUE
+	requires_power = FALSE
+	has_gravity = TRUE
+	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
+	looping_ambience = 'DS13/sound/ambience/m_class.ogg' //Credit: https://www.youtube.com/watch?v=FFtrUH4sdNI
+
+/obj/structure/overmap/mclass
+	name = "M class planet"
+	icon = 'DS13/icons/overmap/planets.dmi'
+	icon_state = "mclass"
+	class = "mclass"
+	max_shield_health = 0
+	layer = 2.9
+
+/datum/mood_event/shoreleave
+	description = "<span class='nicegreen'>What a lovely day.</span>\n"
+	mood_change = 4
+	timeout = 4000
+
+/area/ship/m_class/Entered(atom/movable/M)
+	. = ..()
+	to_chat(M, "<span class'nicegreen'>You feel the sun shining down on your back, what a lovely day.</span>")
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "shoreleave", /datum/mood_event/shoreleave)
+
+/datum/overmap_event/m_class
+	name = "M-class planet"
+	desc = "Long range scans have detected an M-class planet near your location. We'd like you to beam down and perform some botanical surveys by scanning any interesting plants with a botany tricorder. We'd also like you to dig up a few soil samples with a shovel, there's some nice dense mud which seems to be teeming with life. If nothing else, this should be a great shore leave opportunity."
+	fail_text = "Did you just destroy an entire planet..!?"
+	succeed_text = "Good work crew, take those botanical specimens with you when you rotate back to earth."
+	reward = 10000
+	var/plant_amount = 0 //How many plants do they have to scan?
+
+
+/datum/overmap_event/m_class/start()
+	var/obj/effect/landmark/plant_spawn/PS
+	for(var/X in GLOB.landmarks_list)
+		if(istype(X, /obj/effect/landmark/plant_spawn))
+			PS = X
+	if(!PS)
+		message_admins("[name] tried to spawn, but there's no plant spawners in your map!")
+		completed = TRUE
+		return
+	for(var/i = 0 to rand(5,10)) //Need to make it at least somewhat challenging eh?
+		var/obj/item/twohanded/required/kirbyplants/random/obvious_plant = new /obj/item/twohanded/required/kirbyplants/random(get_turf(pick(orange(PS,12))))
+		obvious_plant.linked_event = src
+		obvious_plant.name = "Botanically interesting plant"
+		plant_amount ++
+	for(var/i = 0 to rand(2,4))
+		var/obj/machinery/hydroponics/soil/dirt = new /obj/machinery/hydroponics/soil(get_turf(pick(orange(PS,12))))
+		dirt.linked_event = src
+		dirt.name = "Botanically interesting soil"
+		dirt.desc = "A densely packed piece of earth, it should make for a great soil sample if you <b>dig it up</b> with a spade or shovel."
+		plant_amount ++
+	target = new /obj/structure/overmap/mclass(get_turf(spawner))
+	priority_announce("[desc]","Incoming hail:",'sound/ai/commandreport.ogg')
+
+/datum/overmap_event/m_class/check_completion(var/atom/what)
+	if(what == target)
+		fail()
+	if(plant_amount <= 0)
+		succeed()
+
+/obj/item/twohanded/required/kirbyplants
+	var/datum/overmap_event/m_class/linked_event
+	var/scanned = FALSE //Sanity check
+
+/obj/machinery/hydroponics/soil
+	var/datum/overmap_event/m_class/linked_event
+	var/scanned = FALSE //Sanity check
+
+/obj/item/twohanded/required/kirbyplants/attackby(obj/item/I, mob/user)
+	. = ..()
+	if(!linked_event)
+		return
+	if(scanned)
+		to_chat(user, "You've already scanned [src], what more could you possibly want to know?")
+		return
+	if(istype(I, /obj/item/plant_analyzer))
+		playsound(loc, 'DS13/sound/effects/items/tricorder.ogg',100)
+		to_chat(user, "<span class='notice>You start to analyze [src].</span>")
+		if(do_after(user,50, target=src))
+			to_chat(user, "<span class='notice'>You've finished analyzing [src], what a fascinating plant!</span>")
+			scanned = TRUE
+			linked_event.plant_amount --
+			linked_event.check_completion(src)
+			playsound(loc, 'DS13/sound/effects/items/tricorder_open.ogg',100)
+
+/obj/machinery/hydroponics/soil/attackby(obj/item/I, mob/user)
+	if(scanned)
+		to_chat(user, "You've already collected a soil sample from here...")
+		return ..()
+	if(istype(I, /obj/item/shovel/spade) || istype(I, /obj/item/shovel))
+		if(!linked_event)
+			return ..()
+		playsound(loc, 'sound/effects/shovel_dig.ogg',100)
+		to_chat(user, "<span class='notice>You start to collect a soil sample from [src].</span>")
+		if(do_after(user,50, target=src))
+			playsound(loc, 'sound/effects/shovel_dig.ogg',100)
+			to_chat(user, "<span class='notice'>You collect a soil sample from [src].</span>")
+			scanned = TRUE
+			linked_event.plant_amount --
+			linked_event.check_completion(src)
+	. = ..()
+
+/obj/effect/landmark/plant_spawn
+	name = "Interesting plant spawner (away mission)"
+
+/obj/effect/mob_spawn/human/alive/trek/m_class
+	name = "M class planet tribesman"
+	assignedrole = "stranded crewman"
+	outfit = /datum/outfit/ashwalker
+	flavour_text = "<span class='big bold'>You are a tribesman!</span> <b> The stories tell of a great voyage by your ancestors, but several generations have caused your origins to become unclear... <br> You are a peaceful tribe, but you may attack outsiders if provoked."
 
 /*
 
