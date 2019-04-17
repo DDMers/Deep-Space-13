@@ -1,5 +1,8 @@
 GLOBAL_LIST_INIT(overmap_event_spawns, list())
 
+//NOTES:
+// IF YOU ARE MAKING AN OPEN ENDED MISSION, SET ITS COMPLETED TO TRUE SO IT DOESNT HOLD UP OTHER MISSIONS!//
+
 /datum/overmap_event
 	var/name = "Romulan freighter attack"
 	var/desc = "DISTRESS CALL: A fortunate class freighter is under attack by a Romulan battle group! Requesting immediate assistance."
@@ -100,7 +103,6 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	icon = 'DS13/icons/obj/meteor_storm.dmi'
 	icon_state = "storm"
 	var/meteor_damage = 20 //She's takin' a beating captain!
-	var/datum/overmap_event/linked_event
 	var/obj/structure/overmap/freighter
 
 /obj/structure/meteor
@@ -175,6 +177,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	fail_text = "The comet has been destroyed."
 	succeed_text = "Good work. That should allow for some nice upgrades."
 	reward = 5000
+	completed = TRUE //Open ended mission that you can't complete traditionally
 
 /datum/overmap_event/comet/start() //Now we have a spawn. Let's do whatever this mission is supposed to. Override this when you make new missions
 	target = new /obj/structure/overmap/comet(get_turf(spawner))
@@ -204,6 +207,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	fail_text = "The distress call has terminated"
 	succeed_text = "The distress call has terminated"
 	reward = 5000
+	completed = TRUE //Open ended mission that you can't complete traditionally
 
 /datum/overmap_event/crashed_borg/start() //Now we have a spawn. Let's do whatever this mission is supposed to. Override this when you make new missions
 	target = new /obj/structure/overmap/moon(get_turf(spawner))
@@ -297,6 +301,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	fail_text = "The distress call has terminated"
 	succeed_text = "The distress call has terminated"
 	reward = 5000
+	completed = TRUE //Open ended mission that you can't complete traditionally
 
 /datum/overmap_event/tos_stranded/start() //Now we have a spawn. Let's do whatever this mission is supposed to. Override this when you make new missions
 	target = new /obj/structure/overmap/constitution/wrecked(get_turf(spawner))
@@ -460,6 +465,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	fail_text = "You just let one of the most historically important ships in starfleet history be destroyed! You'll be lucky to wear a starfleet uniform ever again after the inquiry's over!."
 	succeed_text = "The distress call has terminated"
 	reward = 5000
+	completed = TRUE //Open ended mission that you can't complete traditionally
 
 /datum/overmap_event/museum_hijack/start() //Now we have a spawn. Let's do whatever this mission is supposed to. Override this when you make new missions
 	target = new /obj/structure/overmap/nx01(get_turf(spawner))
@@ -629,6 +635,16 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	movement_block = TRUE //You can't turn a station :) //YES YOU CAN! YOU JUST CANT SEE IT!
 	pixel_x = -32
 	pixel_y = -32
+
+/obj/structure/overmap/delivery_destination/Destroy()
+	if(linked_event)
+		linked_event.fail()
+	. = ..()
+
+/obj/structure/overmap/delivery_source/Destroy()
+	if(linked_event)
+		linked_event.fail()
+	. = ..()
 
 /*
 

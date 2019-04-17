@@ -8,6 +8,7 @@
 	var/range = 15 //Firing range.
 	var/list/taunts = list("You will meet your end!", "Death awaits you!", "Fools! How dare you challenge our might!", "We will crush you!", "For the empire!", "Your death will be swift.", "Surrender now, or be destroyed!", "Fools! You will feel our wrath!")
 	var/list/taunt_sounds = list()
+	var/datum/overmap_event/linked_event
 
 /obj/structure/overmap/ai
 	name = "Romulan warbird class light cruiser"
@@ -20,7 +21,6 @@
 	damage = 10 //Will turn into 20 assuming weapons powered
 	AI_enabled = TRUE //Start with an AI by default
 	faction = "romulan" //Placeholder
-	var/datum/overmap_event/linked_event
 	turnspeed = 1.2
 	max_health = 130
 	max_speed = 2 //Slower than every ship.
