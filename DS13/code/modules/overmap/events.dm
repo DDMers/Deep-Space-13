@@ -563,6 +563,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	var/obj/structure/overmap/delivery_destination/destination
 	var/sourceoutpostid = 2
 	var/destinationoutpostid = 1
+	var/list/crates = list()
 
 /datum/overmap_event/deliver_item/New()
 	. = ..()
@@ -581,8 +582,9 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 		return
 	for(var/i = 0 to rand(10,15)) //Need to make it at least somewhat challenging eh?
 		var/obj/structure/sealedcrate/supplies = new /obj/structure/sealedcrate(get_turf(pick(orange(CS,3))))
+		crates += supplies
 		supplies.linked_event = src
-		crate_amount ++
+	crate_amount = crates.len
 	source = new /obj/structure/overmap/delivery_source(get_turf(spawner))
 	source.name = "Outpost [sourceoutpostid]"
 	var/newx = CLAMP(spawner.x + rand(-10,25),world.maxx - 10,0)
@@ -682,6 +684,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	succeed_text = "Good work crew, take those botanical specimens with you when you rotate back to earth."
 	reward = 10000
 	var/plant_amount = 0 //How many plants do they have to scan?
+	var/list/plants = list()
 
 
 /datum/overmap_event/m_class/start()
@@ -697,13 +700,14 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 		var/obj/item/twohanded/required/kirbyplants/random/obvious_plant = new /obj/item/twohanded/required/kirbyplants/random(get_turf(pick(orange(PS,12))))
 		obvious_plant.linked_event = src
 		obvious_plant.name = "Botanically interesting plant"
-		plant_amount ++
+		plants += obvious_plant
 	for(var/i = 0 to rand(2,4))
 		var/obj/machinery/hydroponics/soil/dirt = new /obj/machinery/hydroponics/soil(get_turf(pick(orange(PS,12))))
 		dirt.linked_event = src
 		dirt.name = "Botanically interesting soil"
 		dirt.desc = "A densely packed piece of earth, it should make for a great soil sample if you <b>dig it up</b> with a spade or shovel."
-		plant_amount ++
+		plants += dirt
+	plant_amount = plants.len
 	target = new /obj/structure/overmap/mclass(get_turf(spawner))
 	priority_announce("[desc]","Incoming hail:",'sound/ai/commandreport.ogg')
 
