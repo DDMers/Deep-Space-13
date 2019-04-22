@@ -1535,6 +1535,7 @@
 /area/crew_quarters/bar)
 "eR" = (
 /obj/structure/closet/secure_closet/medical_trek,
+/obj/item/radio/headset/headset_med,
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "eS" = (
@@ -2114,6 +2115,8 @@
 /area/medical/medbay/central)
 "gv" = (
 /obj/structure/closet/secure_closet/personal,
+/obj/item/radio/headset/headset_sci,
+/obj/item/radio/headset/headset_sci,
 /turf/open/floor/carpet/trek,
 /area/science/research)
 "gw" = (
@@ -2483,6 +2486,7 @@
 "hE" = (
 /obj/structure/closet/secure_closet/security/sec,
 /obj/item/restraints/handcuffs,
+/obj/item/radio/headset/headset_sec/alt,
 /turf/open/floor/carpet/trek,
 /area/security/brig)
 "hF" = (
@@ -2872,6 +2876,7 @@
 	id = "QMLoaddoor2";
 	name = "supply dock loading door"
 	},
+/obj/structure/plasticflaps,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/warehouse)
 "iF" = (
@@ -3988,14 +3993,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
-"lG" = (
-/obj/structure/plasticflaps,
-/obj/machinery/conveyor{
-	dir = 4;
-	id = "QMLoad2"
-	},
-/turf/open/floor/carpet/trek,
-/area/quartermaster/warehouse)
 "lH" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
 	icon_state = "scrub_map_on-1";
@@ -8185,6 +8182,7 @@
 /area/hallway/secondary/entry)
 "wu" = (
 /obj/machinery/door/airlock/trek/goon/external/public,
+/obj/structure/fans/tiny,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/entry)
 "wv" = (
@@ -8396,12 +8394,12 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/entry)
 "wU" = (
-/obj/machinery/hydroponics/constructable,
 /obj/structure/overmap_component/viewscreen{
 	pixel_y = 32
 	},
-/turf/open/floor/grass,
-/area/maintenance/starboard/fore)
+/obj/machinery/washing_machine,
+/turf/open/floor/plasteel/white,
+/area/hallway/secondary/entry)
 "wV" = (
 /obj/structure/sign/directions/medical{
 	dir = 1;
@@ -9725,38 +9723,58 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "Ap" = (
-/obj/machinery/hydroponics/constructable,
-/turf/open/floor/grass,
-/area/maintenance/starboard/fore)
+/obj/machinery/washing_machine,
+/obj/machinery/camera/trek,
+/turf/open/floor/plasteel/white,
+/area/hallway/secondary/entry)
 "Aq" = (
-/obj/structure/sink,
-/obj/item/reagent_containers/glass/bucket,
-/turf/open/floor/grass,
-/area/maintenance/starboard/fore)
-"Ar" = (
-/turf/open/floor/grass,
-/area/maintenance/starboard/fore)
-"As" = (
-/obj/item/shovel/spade,
-/obj/item/cultivator,
-/obj/structure/table,
-/obj/item/reagent_containers/glass/bottle/nutrient/ez,
-/obj/item/storage/backpack/botany,
-/turf/open/floor/grass,
-/area/maintenance/starboard/fore)
-"At" = (
-/obj/machinery/light,
-/obj/machinery/seed_extractor,
-/turf/open/floor/grass,
-/area/maintenance/starboard/fore)
-"Au" = (
-/obj/structure/barricade/wooden/crude,
-/obj/machinery/door/airlock/trek/goon{
-	icon_state = "closed";
-	dir = 4
+/obj/structure/closet{
+	name = "Alternate / surplus uniforms"
 	},
-/turf/open/floor/plating,
-/area/maintenance/starboard/fore)
+/obj/item/clothing/under/trek/medsci,
+/obj/item/clothing/under/trek/engsec,
+/obj/item/clothing/under/trek/command,
+/obj/item/clothing/under/trek/command/ent,
+/obj/item/clothing/under/trek/command/next,
+/obj/item/clothing/under/trek/engsec/ent,
+/obj/item/clothing/under/trek/engsec/next,
+/obj/item/clothing/under/trek/medsci/ent,
+/obj/item/clothing/under/trek/medsci/next,
+/obj/item/clothing/under/trek/command/next,
+/turf/open/floor/plasteel/white,
+/area/hallway/secondary/entry)
+"Ar" = (
+/turf/open/floor/plasteel/white,
+/area/hallway/secondary/entry)
+"As" = (
+/obj/structure/closet{
+	name = "Spare command uniforms"
+	},
+/obj/item/clothing/under/trek/command/ds9,
+/obj/item/clothing/under/trek/command/ds9,
+/obj/item/clothing/under/trek/command/ds9,
+/obj/item/clothing/under/trek/command/ds9,
+/obj/item/clothing/under/trek/command/ds9,
+/obj/item/clothing/under/trek/command/ds9,
+/obj/item/clothing/under/trek/command/ds9,
+/obj/item/clothing/under/trek/command/ds9,
+/turf/open/floor/plasteel/white,
+/area/hallway/secondary/entry)
+"At" = (
+/obj/structure/closet{
+	name = "Spare medical / science uniforms"
+	},
+/obj/item/clothing/under/trek/medsci/ds9,
+/obj/item/clothing/under/trek/medsci/ds9,
+/obj/item/clothing/under/trek/medsci/ds9,
+/obj/item/clothing/under/trek/medsci/ds9,
+/obj/item/clothing/under/trek/medsci/ds9,
+/obj/item/clothing/under/trek/medsci/ds9,
+/obj/item/clothing/under/trek/medsci/ds9,
+/obj/item/clothing/under/trek/medsci/ds9,
+/obj/machinery/light,
+/turf/open/floor/plasteel/white,
+/area/hallway/secondary/entry)
 "Av" = (
 /obj/machinery/computer/station_alert{
 	dir = 8
@@ -10898,6 +10916,7 @@
 /area/security/brig)
 "Dj" = (
 /obj/machinery/seed_extractor,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez,
 /turf/open/floor/carpet/trek,
 /area/security/brig)
 "Dk" = (
@@ -10916,6 +10935,8 @@
 /obj/machinery/hydroponics/constructable,
 /obj/item/plant_analyzer,
 /obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez,
 /turf/open/floor/carpet/trek,
 /area/security/brig)
 "Dn" = (
@@ -12170,6 +12191,7 @@
 	id = "QMLoaddoor";
 	name = "supply dock loading door"
 	},
+/obj/structure/plasticflaps,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/warehouse)
 "Gv" = (
@@ -13977,14 +13999,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
-"Ky" = (
-/obj/structure/plasticflaps,
-/obj/machinery/conveyor{
-	dir = 8;
-	id = "QMLoad"
-	},
-/turf/open/floor/carpet/trek,
-/area/quartermaster/warehouse)
 "Kz" = (
 /obj/structure/trek_catwalk/cargo,
 /obj/machinery/light{
@@ -15855,11 +15869,19 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "Pn" = (
-/obj/structure/table,
-/obj/item/seeds/potato,
-/obj/item/seeds/potato,
-/turf/open/floor/grass,
-/area/maintenance/starboard/fore)
+/obj/structure/closet{
+	name = "Spare engineering / security uniforms"
+	},
+/obj/item/clothing/under/trek/engsec/ds9,
+/obj/item/clothing/under/trek/engsec/ds9,
+/obj/item/clothing/under/trek/engsec/ds9,
+/obj/item/clothing/under/trek/engsec/ds9,
+/obj/item/clothing/under/trek/engsec/ds9,
+/obj/item/clothing/under/trek/engsec/ds9,
+/obj/item/clothing/under/trek/engsec/ds9,
+/obj/item/clothing/under/trek/engsec/ds9,
+/turf/open/floor/plasteel/white,
+/area/hallway/secondary/entry)
 "Po" = (
 /obj/machinery/button/door{
 	id = "weaponslocker";
@@ -16604,6 +16626,9 @@
 "QY" = (
 /obj/structure/table/glass,
 /obj/item/folder/yellow,
+/obj/item/radio/headset/headset_cargo,
+/obj/item/radio/headset/headset_cargo,
+/obj/item/radio/headset/headset_cargo,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
 "QZ" = (
@@ -16776,6 +16801,59 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
+"Sk" = (
+/obj/machinery/door/airlock/trek/goon{
+	dir = 4;
+	icon_state = "closed";
+	name = "FTL simulator"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/entry)
+"TR" = (
+/obj/structure/closet{
+	name = "Combadges"
+	},
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/item/radio/headset,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/hallway/secondary/entry)
+"Wm" = (
+/obj/machinery/door/airlock/trek/goon{
+	dir = 4;
+	icon_state = "closed";
+	name = "Laundry room"
+	},
+/turf/open/floor/plasteel/white,
+/area/hallway/secondary/entry)
+"Xk" = (
+/obj/item/clothing/under/trek/neelix,
+/obj/item/clothing/under/trek/neelix,
+/obj/structure/closet{
+	name = "Civilian clothes"
+	},
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/turf/open/floor/plasteel/white,
+/area/hallway/secondary/entry)
 
 (1,1,1) = {"
 aa
@@ -112773,7 +112851,7 @@ aI
 al
 al
 al
-al
+Sk
 al
 vd
 AI
@@ -113801,7 +113879,7 @@ aI
 al
 al
 al
-al
+Wm
 al
 vd
 AI
@@ -114570,7 +114648,7 @@ aI
 aI
 hW
 al
-Ap
+TR
 Ar
 Ar
 At
@@ -114830,7 +114908,7 @@ al
 Aq
 Ar
 Ar
-Ar
+Xk
 vd
 AL
 HJ
@@ -115087,7 +115165,7 @@ An
 An
 An
 An
-Au
+An
 vd
 aI
 HJ
@@ -174997,11 +175075,11 @@ La
 iF
 bN
 Qj
-lG
+mm
 hA
 Ef
 hA
-Ky
+Ej
 bN
 sv
 sv
@@ -177256,7 +177334,7 @@ kb
 bs
 bs
 bs
-JG
+jA
 bs
 bs
 jA
@@ -178027,7 +178105,7 @@ LI
 Mu
 Mu
 hD
-jA
+JG
 bs
 bs
 bs
@@ -179569,7 +179647,7 @@ LO
 Mv
 Mv
 hD
-jA
+JG
 bs
 bs
 bs
@@ -180340,7 +180418,7 @@ kb
 bs
 bs
 bs
-JG
+jA
 bs
 bs
 jA

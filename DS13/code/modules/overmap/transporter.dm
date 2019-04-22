@@ -22,6 +22,25 @@
 	var/list/log = list() //Logging to check if anyone's marooned.
 	var/list/locked_on = list() //Who have we locked onto?
 
+/obj/item/pattern_enhancer
+	name = "Pattern enhancer (inactive)"
+	desc = "A large rod which, when activated, will boost transporter confinement beams, allowing it to transport objects!"
+	icon = 'DS13/icons/overmap/components.dmi'
+	icon_state = "pattern_enhancer"
+	var/active = FALSE
+
+/obj/item/pattern_enhancer/attack_self(mob/user)
+	if(active)
+		to_chat(user, "You de-activate [src]")
+		icon_state = initial(icon_state)
+		name = initial(name)
+		active = FALSE
+	else
+		to_chat(user, "You activate [src]")
+		icon_state = "pattern_enhancer_active"
+		name = "Pattern enhancer (active)"
+		active = TRUE
+
 /obj/machinery/computer/camera_advanced/transporter_control/examine(mob/user)
 	. = ..()
 	var/dat
@@ -126,6 +145,8 @@
 		if(!isturf(eye_user.loc))
 			return
 		T = get_turf(T)
+		if(istype(T, /turf/closed/indestructible))
+			return FALSE
 		if(T)
 			if(locate(/obj/effect/transporter_block) in T) //To define borders of ships
 				return FALSE
@@ -161,7 +182,7 @@
 			T.send(Tu)
 		playsound(loc, 'DS13/sound/effects/transporter/send.ogg', 100, 4)
 	if(locked_on.len)
-		for(var/mob/living/H in locked_on)
+		for(var/atom/H in locked_on)
 			var/area/AR = get_area(H)
 			if(!AR.linked_overmap)
 				continue
@@ -188,17 +209,34 @@
 	for(var/mob/living/thehewmon in orange(eyeobj,1))
 		var/obj/machinery/transporter_pad/T = pick(linked)
 		T.retrieve(thehewmon)
+	var/obj/item/pattern_enhancer/PE = locate(/obj/item/pattern_enhancer) in orange(eyeobj,3)
+	if(PE && PE.active) //Enhancer. Is it active? If so, allow them to teleport objects.
+		for(var/X in orange(eyeobj,1))
+			if(isobj(X))
+				var/obj/Y = X
+				if(!Y.anchored)
+					var/obj/machinery/transporter_pad/T = pick(linked)
+					T.retrieve(Y)
 	playsound(loc, 'DS13/sound/effects/transporter/retrieve.ogg', 100, 4)
 
 /obj/machinery/computer/camera_advanced/transporter_control/proc/transporters_lock()
 	var/list/mobs = list() //mobs near the eyeobj.
+	var/list/objects = list() //objects near the eyeobj
 	for(var/mob/living/inrange in orange(eyeobj,3))
 		if(isliving(inrange))
 			mobs += inrange
-	if(!mobs.len)
-		to_chat(operator, "There is no one to lock onto!")
+	var/obj/item/pattern_enhancer/PE = locate(/obj/item/pattern_enhancer) in orange(eyeobj,3)
+	if(PE) //Enhancer. Is it active? If so, allow them to teleport objects.
+		if(PE.active)
+			for(var/X in orange(eyeobj,3))
+				if(isobj(X))
+					var/obj/Y = X
+					if(!Y.anchored)
+						objects += Y
+	if(!mobs.len && !objects.len)
+		to_chat(operator, "There is nothing to lock onto!")
 		return
-	var/question = alert("Lock onto a specific person? or everyone nearby?",name,"Specific person","Nearby")
+	var/question = alert("Lock onto a specific person? or everything nearby (including objects if there's an active pattern enhancer)?",name,"Specific person","Nearby")
 	if(!question)
 		return
 	if(question == "Specific person")
@@ -209,9 +247,14 @@
 		locked_on += A
 		log += "[station_time_timestamp()] : [operator] locked onto <b>[A]</b>."
 	else
-		for(var/X in mobs)
-			locked_on += X
-			log += "[station_time_timestamp()] : [operator] locked onto <b>[X]</b>."
+		if(mobs.len)
+			for(var/X in mobs)
+				locked_on += X
+				log += "[station_time_timestamp()] : [operator] locked onto <b>[X]</b>."
+		if(objects.len)
+			for(var/XR in objects)
+				locked_on += XR
+				log += "[station_time_timestamp()] : [operator] locked onto <b>[XR] with an active pattern enhancer.</b>."
 	to_chat(operator, "Pattern buffer ready. Use the down option to transfer pattern buffer contents to designated turfs.")
 
 /obj/machinery/computer/camera_advanced/transporter_control/CreateEye(var/turf/T)
@@ -235,7 +278,6 @@
 		user.remote_control = eyeobj
 		user.reset_perspective(eyeobj)
 		eyeobj.loc = pick(L)
-		user.sight = 60 //see through walls
 		//user.lighting_alpha = 0 //night vision (doesn't work for some reason)
 	else
 		to_chat(user, "This is already in use!")
@@ -276,6 +318,8 @@
 		to_chat(user, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>there are no suitable ships nearby. Target shields must be weakened to initiate transport</span>")
 		return
 	shipchoice = input(user, "Target", "Transporter Control", shipchoice) as null|anything in ships
+	if(!shipchoice)
+		return
 	var/obj/structure/overmap/selected = shipchoice
 	if(selected.main_overmap)
 		var/list/areas = list()
@@ -325,30 +369,43 @@
 	icon_state = "1" //use generate instances by icon_state
 	anchored = TRUE
 	var/obj/machinery/computer/camera_advanced/transporter_control/transporter_controller = null
+	layer = 2.7
 
 /obj/machinery/transporter_pad/proc/send(turf/open/teleport_target)
 //	if(!powered())
 	//	return
 	flick("alien-pad", src)
-	var/mob/living/target = locate(/mob/living) in loc
-	if(target)
-		if(target != src)
+	for(var/atom/movable/target in loc)
+		if(istype(target, /obj/effect) || istype(target, /atom/movable/lighting_object))
+			continue
+		if(target && target != src && !target.anchored)
 			new /obj/effect/temp_visual/transporter(get_turf(target))
 			target.forceMove(teleport_target)
+			if(ishuman(target))
+				var/mob/living/carbon/human/H = target
+				if(H.pulling)
+					H.pulling.forceMove(teleport_target)
 			new /obj/effect/temp_visual/transporter/mob(get_turf(target))
 			playsound(target.loc, 'DS13/sound/effects/transporter/retrieve.ogg', 100, 4)
-	if(target && transporter_controller)
-		transporter_controller.log += "[station_time_timestamp()] : [transporter_controller.operator] beamed <b>[target]</b> to [get_area(teleport_target)]."
+			if(transporter_controller)
+				transporter_controller.log += "[station_time_timestamp()] : [transporter_controller.operator] beamed <b>[target]</b> to [get_area(teleport_target)]."
 
-/obj/machinery/transporter_pad/proc/retrieve(mob/living/target)
+/obj/machinery/transporter_pad/proc/retrieve(atom/movable/target)
 //	if(!powered())
 //		return
 	flick("alien-pad", src)
-	if(!target.buckled)
-		new /obj/effect/temp_visual/transporter(get_turf(target))
-		playsound(target.loc, 'DS13/sound/effects/transporter/retrieve.ogg', 100, 4)
-		target.forceMove(get_turf(src))
-		new /obj/effect/temp_visual/transporter/mob(get_turf(target))
+	if(isliving(target))
+		var/mob/living/H = target
+		if(H.buckled)
+			return
+	new /obj/effect/temp_visual/transporter(get_turf(target))
+	playsound(target.loc, 'DS13/sound/effects/transporter/retrieve.ogg', 100, 4)
+	target.forceMove(get_turf(src))
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		if(H.pulling)
+			H.pulling.forceMove(get_turf(src))
+	new /obj/effect/temp_visual/transporter/mob(get_turf(target))
 	if(target && transporter_controller)
 		transporter_controller.log += "[station_time_timestamp()] : [transporter_controller.operator] beamed <b>[target]</b> back onto the ship."
 

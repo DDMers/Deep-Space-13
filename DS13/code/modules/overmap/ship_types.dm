@@ -252,3 +252,14 @@
 /obj/structure/overmap/sovereign/starter/Initialize()
 	. = ..()
 	name = station_name()
+
+/obj/structure/overmap/nx01
+	name = "USS Enterprise (NX-01)"
+	desc = "Humanity's first attempt at space exploration produced this ship. Now it's condemned to live its life in mothballs as a museum ship."
+	icon = 'DS13/icons/overmap/nx01.dmi'
+	icon_state = "enterprise"
+	main_overmap = FALSE
+	damage = 10 //Will turn into 20 assuming weapons powered
+	class = "nx01"
+	damage_states = FALSE //Damage FX
+	power_slots = 3

@@ -240,8 +240,8 @@
 	max_integrity = 100
 
 /obj/structure/chair/borg/conversion
-	name = "Assimilation bench"
-	desc = "Submit yourself to the collective"
+	name = "Assimilation chamber"
+	desc = "A horrifying machine used to rob people of their individuality."
 	icon_state = "borg_off"
 	icon = 'DS13/icons/borg/borg.dmi'
 	anchored = TRUE
@@ -273,6 +273,7 @@
 	playsound(loc, 'DS13/sound/effects/borg/machines/convert_table2.ogg', 50, 1, -1)
 	icon_state = "borg_off"
 	M.equipOutfit(/datum/outfit/borg, visualsOnly = FALSE) //Outfit handles name etc.
+	playsound(src.loc, 'DS13/sound/effects/borg/machines/assimilation_chamber.ogg', 100, 0)
 	cut_overlays()
 	overlays -= armoverlay
 	overlays -= armoroverlay

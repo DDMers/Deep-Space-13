@@ -8,6 +8,7 @@
 	var/range = 15 //Firing range.
 	var/list/taunts = list("You will meet your end!", "Death awaits you!", "Fools! How dare you challenge our might!", "We will crush you!", "For the empire!", "Your death will be swift.", "Surrender now, or be destroyed!", "Fools! You will feel our wrath!")
 	var/list/taunt_sounds = list()
+	var/datum/overmap_event/linked_event
 
 /obj/structure/overmap/ai
 	name = "Romulan warbird class light cruiser"
@@ -20,7 +21,6 @@
 	damage = 10 //Will turn into 20 assuming weapons powered
 	AI_enabled = TRUE //Start with an AI by default
 	faction = "romulan" //Placeholder
-	var/datum/overmap_event/linked_event
 	turnspeed = 1.2
 	max_health = 130
 	max_speed = 2 //Slower than every ship.
@@ -154,6 +154,29 @@
 	taunts = list("We are the borg. Lower your shields and surrender your ship.", "Your biological and technological distinctiveness will be added to our own", "Resistance is futile", "Existence as you know it is over", "You will adapt to service us")
 	taunt_sounds = list('DS13/sound/effects/borg/resistanceisfutile.ogg', 'DS13/sound/effects/borg/announce.ogg')
 	weapon_sounds = list('DS13/sound/effects/weapons/borg_cut.ogg')
+
+/obj/structure/overmap/ai/assimilated/cube
+	name = "Assimilation cube"
+	desc = "One of the most terrifying sights in the galaxy. A cube spanning hundreds of miles. It is highly inadvisable to attempt to fight one without weakening it first."
+	icon = 'DS13/icons/overmap/borg_cube.dmi'
+	icon_state = "cube"
+	max_health = 800 //These stats get weakened as people take down its nodes.
+	class = "borg-cube"
+	damage_states = FALSE
+	taunts = list("We are the borg. Lower your shields and surrender your ship.", "Your biological and technological distinctiveness will be added to our own", "Resistance is futile", "Existence as you know it is over", "You will adapt to service us")
+	taunt_sounds = list('DS13/sound/effects/borg/resistanceisfutile.ogg', 'DS13/sound/effects/borg/announce.ogg')
+	weapon_sounds = list('DS13/sound/effects/weapons/borg_cut.ogg')
+	turnspeed = 0.05
+	acceleration = 0.05
+	range = 13
+
+/obj/structure/overmap/ai/assimilated/cube/take_control()
+	. = ..()
+	shield_power = 0
+	engine_power = 1
+	max_weapon_power = 6
+	weapon_power = 6
+	check_power()
 
 /obj/structure/overmap/ai/miranda/take_control()
 	. = ..()
