@@ -114,6 +114,12 @@
 	STOP_PROCESSING(SSobj,src)
 	. = ..()
 
+/obj/structure/turbolift/attack_robot(mob/user)
+	return attack_hand(user)
+
+/obj/structure/turbolift/attack_animal(mob/user)
+	return attack_hand(user)
+
 /obj/structure/turbolift/attack_hand(mob/user)
 	. = ..()
 	if(in_use)
