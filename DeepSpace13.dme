@@ -2795,6 +2795,7 @@
 #include "DS13\code\modules\overmap\overmap.dm"
 #include "DS13\code\modules\overmap\power_management.dm"
 #include "DS13\code\modules\overmap\radar.dm"
+#include "DS13\code\modules\overmap\runabout.dm"
 #include "DS13\code\modules\overmap\shields.dm"
 #include "DS13\code\modules\overmap\ship_types.dm"
 #include "DS13\code\modules\overmap\torpedo.dm"

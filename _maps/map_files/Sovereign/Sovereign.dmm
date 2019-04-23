@@ -16728,6 +16728,7 @@
 	pixel_y = -2
 	},
 /obj/item/stamp/qm,
+/obj/item/carkey,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
 "Rl" = (
@@ -16801,7 +16802,15 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
-"Sk" = (
+"Tn" = (
+/obj/structure/trek_catwalk/cargo/pad{
+	icon_state = "3,8"
+	},
+/obj/effect/landmark/runabout_dock,
+/obj/structure/overmap/runabout,
+/turf/open/floor/carpet/trek,
+/area/quartermaster/storage)
+"Ud" = (
 /obj/machinery/door/airlock/trek/goon{
 	dir = 4;
 	icon_state = "closed";
@@ -16809,7 +16818,21 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/entry)
-"TR" = (
+"VH" = (
+/obj/item/clothing/under/trek/neelix,
+/obj/item/clothing/under/trek/neelix,
+/obj/structure/closet{
+	name = "Civilian clothes"
+	},
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/turf/open/floor/plasteel/white,
+/area/hallway/secondary/entry)
+"XU" = (
 /obj/structure/closet{
 	name = "Combadges"
 	},
@@ -16832,26 +16855,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/hallway/secondary/entry)
-"Wm" = (
+"Yw" = (
 /obj/machinery/door/airlock/trek/goon{
 	dir = 4;
 	icon_state = "closed";
 	name = "Laundry room"
 	},
-/turf/open/floor/plasteel/white,
-/area/hallway/secondary/entry)
-"Xk" = (
-/obj/item/clothing/under/trek/neelix,
-/obj/item/clothing/under/trek/neelix,
-/obj/structure/closet{
-	name = "Civilian clothes"
-	},
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
 /turf/open/floor/plasteel/white,
 /area/hallway/secondary/entry)
 
@@ -112851,7 +112860,7 @@ aI
 al
 al
 al
-Sk
+Ud
 al
 vd
 AI
@@ -113879,7 +113888,7 @@ aI
 al
 al
 al
-Wm
+Yw
 al
 vd
 AI
@@ -114648,7 +114657,7 @@ aI
 aI
 hW
 al
-TR
+XU
 Ar
 Ar
 At
@@ -114908,7 +114917,7 @@ al
 Aq
 Ar
 Ar
-Xk
+VH
 vd
 AL
 HJ
@@ -179185,7 +179194,7 @@ it
 iL
 iP
 iP
-iS
+Tn
 kt
 Qc
 kt

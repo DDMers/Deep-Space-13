@@ -250,6 +250,8 @@
 	var/pixel_collision_size_y = I.Height()
 	for(var/atom/e in obounds(src, real_pixel_x + x_to_move + pixel_collision_size_x/4, real_pixel_y + y_to_move + pixel_collision_size_y/4, real_pixel_x + x_to_move + -pixel_collision_size_x/4, real_pixel_y + y_to_move + -pixel_collision_size_x/4) )//Basic block collision
 		if(e.density == 1) //We can change this so the ship takes damage later
+			if(ismob(e))
+				return //Ignore mobs. Prevents the glitchy runabout behaviour
 			if(istype(e, /obj/structure/meteor))
 				var/obj/structure/meteor/S = e
 				S.crash(src)
