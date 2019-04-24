@@ -432,6 +432,10 @@
 /obj/structure/chair/borg/conversion,
 /turf/open/floor/carpet/trek,
 /area/ship/crashed_borg)
+"tM" = (
+/obj/structure/overmap/debris_field,
+/turf/open/space/basic,
+/area/space)
 "uw" = (
 /obj/item/pickaxe,
 /turf/open/floor/carpet/trek,
@@ -584,6 +588,10 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/crashed_borg)
+"PV" = (
+/obj/structure/overmap/debris_field/asteroid,
+/turf/open/space/basic,
+/area/space)
 "Qv" = (
 /obj/machinery/light{
 	dir = 4
@@ -623,6 +631,10 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/crashed_borg)
+"ZG" = (
+/obj/structure/overmap/lavaland,
+/turf/open/space/basic,
+/area/space)
 
 (1,1,1) = {"
 aa
@@ -4910,7 +4922,7 @@ aa
 aa
 aa
 aa
-aa
+tM
 aa
 aa
 aa
@@ -39747,7 +39759,7 @@ aa
 aa
 aa
 aa
-aa
+ZG
 aa
 aa
 aa
@@ -55745,7 +55757,7 @@ aa
 aa
 aa
 aa
-aa
+PV
 aa
 aa
 aa

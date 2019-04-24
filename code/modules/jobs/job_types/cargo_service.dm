@@ -11,7 +11,7 @@ Quartermaster
 	spawn_positions = 1
 	supervisors = "the head of personnel"
 	selection_color = "#d7b088"
-	description = "'MOVE FREIGHT!' Cargo is your domain and its technicians are your servants. You are responsible for importing anything the other crewmembers need as well as overseeing the miners where possible."
+	description = "'MOVE FREIGHT!' The quartermaster is responsible for the ship's runabout and oversees salvage + mining operations. This role is great if you want to get into command gameplay as you get your own small ship to manage."
 
 	outfit = /datum/outfit/job/quartermaster
 
@@ -46,7 +46,7 @@ Cargo Technician
 	spawn_positions = 2
 	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#dcba97"
-	description = "'Hail Cargonia!' As a cargo technician, you are responsible for getting the items people need to them in finest starfleet tradition. You may not be at the helm of a starship but this job is a fantastic way to gain experience before tackling more crucial roles."
+	description = "'Hail Cargonia!' As a cargo technician, your primary role is to order any supplies the crew needs, be it metal after a skirmish, or combat shotguns when boarded by the borg. The QM may call upon you to crew the runabout if there aren't many miners, but this isn't your primary focus. You may not be at the helm of a starship but this job is a fantastic way to gain experience before tackling more crucial roles."
 
 	outfit = /datum/outfit/job/cargo_tech
 
@@ -76,7 +76,7 @@ Shaft Miner
 	spawn_positions = 3
 	supervisors = "the quartermaster and the head of personnel"
 	selection_color = "#dcba97"
-	description = "As a miner, your job is simple but crucial as you chip away ores in finest starfleet tradition. Perhaps you're only interested in your job, or maybe you'll end up assisting research more closely. The choice is yours. <br><b>A miner should be physically tough and comfortable with heavy machinery</b>"
+	description = "As a miner you will either crew the cargo runabout or head off to lavaland to mine ores traditionally. If the crew calls on you for salvage operations, this will override your normal mining duties. <br><b>A miner should be physically tough and comfortable with heavy machinery</b>"
 
 	outfit = /datum/outfit/job/miner
 

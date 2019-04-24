@@ -186,13 +186,20 @@
 			var/area/AR = get_area(H)
 			if(!AR.linked_overmap)
 				continue
-			if(AR.linked_overmap.shields.check_vulnerability() || AR.linked_overmap.main_overmap) //If they don't have shields, or you want to site to site transport.
+			if(AR.linked_overmap.shields)
+				if(AR.linked_overmap.shields.check_vulnerability() || AR.linked_overmap.main_overmap) //If they don't have shields, or you want to site to site transport.
+					var/obj/machinery/transporter_pad/T = pick(linked)
+					T.retrieve(H)
+					var/turf/open/Tu = get_turf(pick(orange(1, get_turf(eyeobj))))
+					T.send(Tu)
+					locked_on -= H
+				else
+					locked_on -= H
+			else
 				var/obj/machinery/transporter_pad/T = pick(linked)
 				T.retrieve(H)
 				var/turf/open/Tu = get_turf(pick(orange(1, get_turf(eyeobj))))
 				T.send(Tu)
-				locked_on -= H
-			else
 				locked_on -= H
 
 /obj/machinery/computer/camera_advanced/transporter_control/proc/transporters_retrieve()
@@ -200,10 +207,11 @@
 //		return
 	var/area/A = get_area(eyeobj)
 	if(A.linked_overmap)
-		if(!A.linked_overmap.shields.check_vulnerability())
-			playsound(loc, 'DS13/sound/effects/transporter/malfunction.ogg', 100, 4)
-			to_chat(operator, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>unable to establish transporter lock.</span>")
-			return
+		if(A.linked_overmap.shields)
+			if(!A.linked_overmap.shields.check_vulnerability())
+				playsound(loc, 'DS13/sound/effects/transporter/malfunction.ogg', 100, 4)
+				to_chat(operator, "<span class='boldnotice'>Unable to comply</span> - <span class='warning'>unable to establish transporter lock.</span>")
+				return
 	var/sound/S = pick('DS13/sound/effects/transporter/transporter_beep.ogg','DS13/sound/effects/transporter/transporter_beep2.ogg')
 	playsound(loc, S, 100)
 	for(var/mob/living/thehewmon in orange(eyeobj,1))
@@ -309,9 +317,14 @@
 	if(!thearea.linked_overmap)
 		return
 	var/list/ships = list()
+	var/area/shiparea = get_area(thearea.linked_overmap)
+	if(!istype(shiparea, /area/space) && shiparea.linked_overmap) //If we're a runabout and are landed, let people beam to the current place we're landed on regardless of shield status
+		ships += shiparea.linked_overmap
 	for(var/obj/structure/overmap/S in GLOB.overmap_ships)
 		if(get_dist(S, thearea.linked_overmap) > thearea.linked_overmap.transporter_range) //Is it in range for transport?
 			continue
+		if(!S.shields)
+			ships += S
 		if(S.shields.check_vulnerability() || thearea.linked_overmap.main_overmap) //If they don't have shields, or you want to site to site transport.
 			ships += S
 	if(!ships.len)

@@ -117,7 +117,14 @@
 
 
 /datum/job/qm
-	outfit = /datum/outfit/job/qm/DS13
+	outfit = /datum/outfit/job/quartermaster
+
+/datum/outfit/job/quartermaster
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/pda
+	r_pocket = /obj/item/carkey
 
 /datum/outfit/job/qm/DS13
 	name = "Trek-Quartermaster"
@@ -125,13 +132,14 @@
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
+	r_pocket = /obj/item/carkey
 
 /datum/job/cargo_tech
 	outfit = /datum/outfit/job/cargo_tech/DS13
 
 
 /datum/outfit/job/cargo_tech/DS13
-	name = "Trek-Quartermaster"
+	name = "Trek-Cargo Technician"
 	uniform = /obj/item/clothing/under/trek/engsec/ds9
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots

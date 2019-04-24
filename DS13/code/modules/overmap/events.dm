@@ -79,6 +79,12 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 		warbird.target = target
 		warbird.linked_event = src
 		elements += warbird
+	var/obj/structure/overmap/ai/simulated/bigbird = new /obj/structure/overmap/ai/simulated(get_turf(pick(orange(spawner,6)))) //Make one warbird that can be salvaged / boarded.
+	bigbird.force_target = target //That freighter ain't no fortunate oneeeee n'aw lord IT AINT HEEEE IT AINT HEEEE
+	bigbird.nav_target = target
+	bigbird.target = target
+	bigbird.linked_event = src
+	elements += bigbird
 
 /obj/effect/landmark/overmap_event_spawn
 	name = "Overmap event spawner"
@@ -225,6 +231,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	class = "crashed_borg"
 	max_shield_health = 0
 	layer = 2.9
+	movement_block = TRUE
 
 /datum/overmap_event/crashed_borg/succeed()
 	return //Impossible to succeed, or fail.
@@ -605,6 +612,9 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	spawner.used = FALSE
 	completed = TRUE
 
+/datum/overmap_event/deliver_item/clear_elements()
+	return FALSE //Dont delete the stations!
+
 /datum/overmap_event/deliver_item/check_completion(var/atom/what)
 	if(what == destination || what == source)
 		fail()
@@ -716,6 +726,10 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 		fail()
 	if(plant_amount <= 0)
 		succeed()
+
+
+/datum/overmap_event/m_class/clear_elements()
+	return FALSE //Dont delete the M CLASS planet!
 
 /obj/item/twohanded/required/kirbyplants
 	var/datum/overmap_event/m_class/linked_event

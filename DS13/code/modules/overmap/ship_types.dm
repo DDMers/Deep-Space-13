@@ -263,10 +263,3 @@
 	class = "nx01"
 	damage_states = FALSE //Damage FX
 	power_slots = 3
-
-/area/ship/warbird/simulated
-	name = "Romulan warbird class light cruiser"
-	icon_state = "warbird"
-	class = "warbird"
-	has_gravity = STANDARD_GRAVITY
-	looping_ambience = 'DS13/sound/ambience/romulan.ogg'
