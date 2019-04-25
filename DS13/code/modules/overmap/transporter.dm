@@ -222,7 +222,7 @@
 		for(var/X in orange(eyeobj,1))
 			if(isobj(X))
 				var/obj/Y = X
-				if(!Y.anchored)
+				if(!Y.anchored && !istype(X, /obj/structure/overmap))
 					var/obj/machinery/transporter_pad/T = pick(linked)
 					T.retrieve(Y)
 	playsound(loc, 'DS13/sound/effects/transporter/retrieve.ogg', 100, 4)

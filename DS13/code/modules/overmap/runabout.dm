@@ -35,7 +35,7 @@
 	acceleration = 0.4
 	pixel_w = -120
 	pixel_z = -128
-	layer = 3.9
+	layer = LARGE_MOB_LAYER //3.9 -> Below mob. Change this if it becomes cancerous.
 	damage_states = TRUE
 	var/list/ladders = list() //Where can you board, where can you exit?
 	var/locked = FALSE //Allows the keyholder to prevent people entering the runabout. Use this if you park it in a dodgy neighbourhood!
@@ -187,11 +187,12 @@
 	if(ladders.len)
 		to_chat(user, "<span class='notice'>You start to enter [src]...</span>")
 		if(do_after(user, 50, target = src))
-			user.forceMove(get_turf(pick(ladders)))
+			var/turf/target = get_turf(pick(ladders))
 			if(ishuman(user))
 				var/mob/living/carbon/human/F = user
 				if(F.pulling)
-					F.pulling.forceMove(get_turf(user))
+					F.pulling.forceMove(target)
+			user.forceMove(target)
 			playsound(user, 'sound/effects/footstep/catwalk5.ogg', 100, 1)
 	else
 		to_chat(user, "<span class='notice'>You can't find a way to enter [src]...</span>")
@@ -308,7 +309,7 @@
 		linked.send_sound_all('DS13/sound/effects/pod_launch.ogg', "<span class='notice'>A huge force weighs down on you as the deck plating under you lurches downwards.</span>")
 		linked.pixel_w = -120
 		for(var/i = 0, i < 50, i++)
-			linked.pixel_z -= 5
+			linked.pixel_z -= 6
 			sleep(1)
 		linked.pixel_z = -128
 		linked.visible_message("<span class='danger'>[linked] lands!</span>")
@@ -317,7 +318,6 @@
 		if(question == "no" || !question)
 			return
 		var/stored_pixel_z = linked.pixel_z
-		linked.pixel_z = 0 //Take off!
 		linked.visible_message("<span class='danger'>[linked] starts to hover!</span>")
 		playsound(linked, 'DS13/sound/effects/docking_alarm.ogg', 100, FALSE)
 		playsound(linked, 'DS13/sound/effects/pod_launch.ogg', 100, 1)

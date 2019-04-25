@@ -255,12 +255,9 @@
 			if(istype(e, /obj/structure/meteor))
 				var/obj/structure/meteor/S = e
 				S.crash(src)
+				O.vel = 0
 			else
-				if(istype(src, /obj/structure/overmap))
-					O.angle -= 180
-					O.EditAngle()
-					O.vel = 1
-					sleep(10)
+				if(istype(src, /obj/structure/overmap) && isturf(e))
 					O.vel = 0
 				return FALSE
 	real_pixel_x = real_pixel_x + x_to_move
