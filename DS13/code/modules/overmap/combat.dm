@@ -146,6 +146,9 @@
 /obj/structure/overmap/proc/tractor_pull() //Force the target to turn to us and move towards us.
 	if(!tractor_target)
 		return
+	if(tractor_target.z != z) //Runabout safety check.
+		release_tractor()
+		return
 	if(tractor_target.shields.check_vulnerability() || tractor_target.faction == faction)
 		tractor_target.nav_target = src
 		tractor_target.vel = 1
