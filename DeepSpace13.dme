@@ -2786,6 +2786,7 @@
 #include "DS13\code\modules\mob\living\carbon\human\species_types\klingon.dm"
 #include "DS13\code\modules\mob\living\carbon\human\species_types\vulcan.dm"
 #include "DS13\code\modules\overmap\ai.dm"
+#include "DS13\code\modules\overmap\cinematics.dm"
 #include "DS13\code\modules\overmap\combat.dm"
 #include "DS13\code\modules\overmap\components.dm"
 #include "DS13\code\modules\overmap\escape_pod.dm"

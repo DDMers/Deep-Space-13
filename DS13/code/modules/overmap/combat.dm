@@ -448,7 +448,7 @@
 
 /obj/structure/overmap/proc/core_breach_finish()
 	if(main_overmap)
-		Cinematic(CINEMATIC_NUKE_WIN,world)
+		Cinematic(CINEMATIC_SHIPEXPLODE,world)
 		SSticker.mode.check_finished(TRUE)
 		SSticker.force_ending = 1
 		for(var/X in GLOB.teleportlocs) //If it's not a game-ender. Blow the shit out of the ship map

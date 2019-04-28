@@ -1067,6 +1067,9 @@
 /area/maintenance/department/bridge)
 "ds" = (
 /obj/structure/toilet,
+/obj/structure/mirror{
+	pixel_y = 26
+	},
 /turf/open/floor/plasteel/white,
 /area/crew_quarters/heads/captain)
 "dt" = (
@@ -1129,6 +1132,9 @@
 /area/crew_quarters/heads/hop)
 "dB" = (
 /obj/structure/toilet,
+/obj/structure/mirror{
+	pixel_y = 26
+	},
 /turf/open/floor/plasteel/white,
 /area/crew_quarters/heads/hop)
 "dC" = (
@@ -3522,6 +3528,9 @@
 	dir = 4
 	},
 /obj/machinery/door/window/survival_pod,
+/obj/structure/mirror{
+	pixel_y = 26
+	},
 /turf/open/floor/plasteel/white,
 /area/hallway/secondary/command)
 "kq" = (
@@ -9256,6 +9265,9 @@
 /area/medical/medbay/central)
 "ze" = (
 /obj/machinery/washing_machine,
+/obj/structure/mirror{
+	pixel_y = 26
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/dorms)
 "zf" = (
@@ -11144,6 +11156,9 @@
 /area/hallway/primary/fore)
 "DP" = (
 /obj/machinery/washing_machine,
+/obj/structure/mirror{
+	pixel_y = 26
+	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/fore)
 "DQ" = (
@@ -11243,10 +11258,6 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/carpet/trek,
-/area/quartermaster/warehouse)
-"Eg" = (
-/obj/structure/plasticflaps,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/warehouse)
 "Eh" = (
@@ -16802,15 +16813,7 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
-"St" = (
-/obj/machinery/door/airlock/trek/goon{
-	dir = 4;
-	icon_state = "closed";
-	name = "FTL simulator"
-	},
-/turf/open/floor/carpet/trek,
-/area/hallway/secondary/entry)
-"Wm" = (
+"Th" = (
 /obj/machinery/door/airlock/trek/goon{
 	dir = 4;
 	icon_state = "closed";
@@ -16818,7 +16821,7 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/hallway/secondary/entry)
-"WZ" = (
+"TD" = (
 /obj/item/clothing/under/trek/neelix,
 /obj/item/clothing/under/trek/neelix,
 /obj/structure/closet{
@@ -16832,7 +16835,7 @@
 /obj/item/clothing/under/trek/cadet,
 /turf/open/floor/plasteel/white,
 /area/hallway/secondary/entry)
-"Xb" = (
+"WP" = (
 /obj/structure/closet{
 	name = "Combadges"
 	},
@@ -16855,7 +16858,7 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/hallway/secondary/entry)
-"XA" = (
+"Xl" = (
 /obj/structure/trek_catwalk/cargo/pad{
 	icon_state = "3,8"
 	},
@@ -16863,6 +16866,32 @@
 /obj/structure/overmap/runabout,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
+"Ze" = (
+/obj/structure/rack,
+/turf/open/floor/carpet/trek,
+/area/quartermaster/miningdock)
+"ZA" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/machinery/door/window/survival_pod,
+/obj/structure/window/reinforced/survival_pod{
+	icon_state = "pwindow";
+	dir = 4
+	},
+/obj/structure/mirror{
+	pixel_y = 26
+	},
+/turf/open/floor/plasteel/white,
+/area/hallway/secondary/command)
+"ZW" = (
+/obj/machinery/door/airlock/trek/goon{
+	dir = 4;
+	icon_state = "closed";
+	name = "FTL simulator"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/entry)
 
 (1,1,1) = {"
 aa
@@ -112860,7 +112889,7 @@ aI
 al
 al
 al
-St
+ZW
 al
 vd
 AI
@@ -113888,7 +113917,7 @@ aI
 al
 al
 al
-Wm
+Th
 al
 vd
 AI
@@ -114657,7 +114686,7 @@ aI
 aI
 hW
 al
-Xb
+WP
 Ar
 Ar
 At
@@ -114917,7 +114946,7 @@ al
 Aq
 Ar
 Ar
-WZ
+TD
 vd
 AL
 HJ
@@ -177142,7 +177171,7 @@ bN
 bN
 Fz
 bN
-Eg
+bN
 PR
 bN
 bN
@@ -179194,7 +179223,7 @@ it
 iL
 iP
 iP
-XA
+Xl
 kt
 Qc
 kt
@@ -180740,7 +180769,7 @@ bO
 bO
 PA
 bO
-Hr
+bO
 Qq
 bO
 bO
@@ -180996,8 +181025,8 @@ PJ
 bO
 mt
 Qv
-hS
-hS
+Ze
+Hr
 hS
 hS
 bO
@@ -241607,7 +241636,7 @@ JQ
 JQ
 JQ
 EG
-ad
+ZA
 aS
 az
 EG
@@ -246494,7 +246523,7 @@ EG
 ax
 EG
 EG
-ad
+ZA
 IF
 az
 EG
@@ -246505,7 +246534,7 @@ Nc
 dU
 sv
 EG
-ad
+ZA
 IF
 EL
 EG
@@ -246747,7 +246776,7 @@ Kd
 JZ
 Kc
 EG
-ad
+ZA
 IF
 aL
 EG
