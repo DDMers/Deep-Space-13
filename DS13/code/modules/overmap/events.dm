@@ -39,9 +39,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 
 /datum/overmap_event/proc/clear_elements()
 	if(target)
-		var/obj/structure/overmap/saved = target
-		target = null //So that QDEL'ing it doesn't cause the mission to fail after it's already complete
-		qdel(saved)
+		qdel(target)
 
 /datum/overmap_event/proc/fail()
 	if(completed)

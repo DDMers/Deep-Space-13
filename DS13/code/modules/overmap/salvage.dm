@@ -52,6 +52,7 @@
 	icon_state = "[icon_state]-wrecked"
 	health = 100
 	check_power()
+	destroyed = TRUE
 	for(var/mob/A in operators)
 		to_chat(A, "<span class='cult'><font size=3>Your ship has been destroyed!</font></span>")
 		if(A.remote_control)

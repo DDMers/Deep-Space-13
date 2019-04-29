@@ -283,6 +283,9 @@
 		current_user = user
 		eyeobj.eye_user = user
 		eyeobj.name = "Camera Eye ([user.name])"
+		eyeobj.icon = icon
+		eyeobj.icon_state = "camera"
+		eyeobj.visible_icon = TRUE
 		user.remote_control = eyeobj
 		user.reset_perspective(eyeobj)
 		eyeobj.loc = pick(L)
