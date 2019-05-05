@@ -829,6 +829,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	to_chat(world, "<span class='notice'>Starfleet command has issued a commendation to the crew of [station_name()]. The ship has been allocated extra operational budget ([reward]) by Starfleet command.</span>")
 	priority_announce(succeed_text,"Incoming hail:",'sound/ai/commandreport.ogg')
 	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
+	completed = TRUE
 	if(D)
 		D.adjust_money(reward)
 	return
