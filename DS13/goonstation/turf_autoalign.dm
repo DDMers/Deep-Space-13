@@ -117,6 +117,7 @@
 	mod = null
 	sheet_type = /obj/item/stack/sheet/metal
 	sheet_amount = 2
+	canSmoothWith = list(/turf/closed/wall/trek_smooth)
 
 //Mats to make new walls:
 
