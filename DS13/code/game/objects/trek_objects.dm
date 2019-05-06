@@ -60,6 +60,25 @@
 	icon = 'DS13/icons/turf/trek_turfs.dmi'
 	icon_state = "trek_edge3"
 
+/turf/open/floor/trek/bsg
+	name = "Pressed steel hull plating"
+	desc = "A very militaristic looking hull segment"
+	icon = 'DS13/icons/turf/floors.dmi'
+	icon_state = "bsg1"
+	footstep = FOOTSTEP_PLATING
+	barefootstep = FOOTSTEP_PLATING
+	clawfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/trek/bsg/tile
+	name = "Padded steel tile"
+	icon = 'DS13/icons/turf/floors.dmi'
+	icon_state = "bsg2"
+
+/turf/open/floor/trek/bsg/corrugated
+	name = "Corrugated steel hull segment"
+	icon = 'DS13/icons/turf/floors.dmi'
+	icon_state = "corrugated"
+
 /obj/structure/chair/trek
 	name = "padded leather chair"
 	desc = "Just looking at this thing makes you feel comfy."
@@ -140,6 +159,19 @@
 	desc = "It's a pane of glass through which you look. It has a small certification stamp on it that reads 'Utopia Planetia shipyards'"
 	icon_state = "porthole"
 	smooth = FALSE
+
+/obj/structure/window/reinforced/fulltile/trek/bsg
+	name = "Viewport"
+	icon = 'DS13/icons/obj/window.dmi'
+	desc = "A heavyset window surrounded by thick steel."
+	icon_state = "bsg"
+	smooth = FALSE
+	dir = 2
+
+/obj/structure/window/reinforced/fulltile/trek/bsg/middle
+	icon_state = "bsg_mid"
+	smooth = FALSE
+	dir = 2
 
 /obj/machinery/door/airlock/trek
 	name = "Airlock"
