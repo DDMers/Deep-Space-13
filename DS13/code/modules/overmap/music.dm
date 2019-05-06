@@ -13,6 +13,12 @@ GLOBAL_DATUM_INIT(music_controller, /datum/music_controller, new)
 			var/client/CCE = M.client
 			CCE.chatOutput.stopMusic()
 
+/datum/music_controller/proc/force_stop() //When we're playing music and want it to STFU.
+	stop()
+	playing = TRUE
+	for(var/datum/X in active_timers)
+		qdel(X)
+
 /datum/music_controller/proc/play(var/danger = FALSE)
 	if(!playing) //no random switching to calm orchestral music mid fight!
 		stop()

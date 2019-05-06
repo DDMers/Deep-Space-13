@@ -30,6 +30,7 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	var/warping = FALSE //Are we mid warp? This tells movement code to do the special FX for when we exit warp if we slow down too much.
 	var/datum/action/innate/warp/warp_action = new
 	var/max_warp = WARP_5
+	var/capture_in_progress = FALSE //Is someone trying to hijack the ship?
 
 /obj/shield_overlay
 	name = ""

@@ -1992,13 +1992,6 @@
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
 "eS" = (
-/obj/machinery/airalarm{
-	dir = 1;
-	pixel_y = -22
-	},
-/obj/structure/closet/crate{
-	icon_state = "crateopen"
-	},
 /obj/effect/turf_decal/tile/purple,
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
@@ -2006,13 +1999,14 @@
 /turf/open/floor/plasteel,
 /area/mine/production)
 "eT" = (
-/obj/structure/closet/crate{
-	icon_state = "crateopen"
-	},
 /obj/machinery/light,
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
+	},
+/obj/machinery/airalarm{
+	dir = 1;
+	pixel_y = -22
 	},
 /turf/open/floor/plasteel,
 /area/mine/production)
@@ -2740,6 +2734,13 @@
 	dir = 1
 	},
 /turf/open/indestructible/boss,
+/area/lavaland/surface/outdoors)
+"hV" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 6
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "id" = (
 /obj/structure/stone_tile{
@@ -3753,6 +3754,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"sP" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 9
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"sU" = (
+/obj/structure/trek_catwalk,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "tI" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -3822,12 +3834,27 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/production)
+"Aq" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 10
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "AB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
+/area/mine/production)
+"AH" = (
+/obj/effect/landmark/runabout_dock,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"AP" = (
+/obj/structure/sign/warning,
+/turf/closed/wall,
 /area/mine/production)
 "BD" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -3911,6 +3938,16 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/mine/living_quarters)
+"Hx" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/external{
+	glass = 1;
+	name = "Mining External Airlock";
+	opacity = 0;
+	req_access_txt = "54"
+	},
+/turf/open/floor/plasteel,
+/area/mine/production)
 "HO" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply,
 /turf/open/floor/plasteel,
@@ -3956,8 +3993,15 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
+/obj/structure/closet/crate{
+	icon_state = "crateopen"
+	},
 /turf/open/floor/plasteel,
 /area/mine/production)
+"JO" = (
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "JZ" = (
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -3981,6 +4025,29 @@
 	},
 /turf/open/floor/plating,
 /area/mine/eva)
+"LP" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Mr" = (
+/obj/machinery/power/floodlight,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 10
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"Mt" = (
+/obj/machinery/power/floodlight,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 5
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Nj" = (
 /obj/machinery/door/airlock{
 	name = "Restroom"
@@ -3990,6 +4057,22 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/mine/living_quarters)
+"Nx" = (
+/obj/machinery/power/floodlight,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 9
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
+"OD" = (
+/obj/machinery/power/floodlight,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 6
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "OT" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4
@@ -4022,6 +4105,13 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/mine/living_quarters)
+"Sw" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 5
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "Tn" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -4169,6 +4259,13 @@
 	},
 /turf/open/floor/plating,
 /area/mine/living_quarters)
+"Xm" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "YA" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -4186,6 +4283,13 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/mine/living_quarters)
+"ZD" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 
 (1,1,1) = {"
 aa
@@ -17272,8 +17376,8 @@ ab
 aj
 aj
 aj
-aj
-aj
+ab
+ab
 aj
 aj
 aj
@@ -17529,10 +17633,10 @@ ab
 aj
 aj
 aj
+ab
+ab
 aj
-aj
-aj
-aj
+ab
 aj
 aj
 aj
@@ -17784,10 +17888,10 @@ ez
 br
 ab
 aj
+ab
+ab
 aj
-aj
-aj
-aj
+ab
 aj
 aj
 aj
@@ -18041,17 +18145,17 @@ ez
 br
 ab
 aj
+ab
+ab
+ab
+ab
 aj
+ab
 aj
+ab
 aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+ab
+ab
 aj
 aj
 aj
@@ -18299,25 +18403,25 @@ br
 ab
 aj
 aj
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aj
+ab
+ab
 aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+ab
 aj
 aj
 ab
 ab
 ab
 aj
-aj
+ab
 aj
 aj
 aj
@@ -18556,26 +18660,26 @@ br
 ab
 ab
 aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aj
 ab
 aj
 aj
+ab
+ab
 aj
+ab
 aj
 aj
 "}
@@ -18811,28 +18915,28 @@ br
 eA
 br
 br
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
 ab
 ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-ab
-aj
-aj
-aj
 aj
 aj
 "}
@@ -19069,28 +19173,28 @@ eB
 cD
 br
 bq
+bq
+AP
+sU
+Nx
+ZD
+ZD
+ZD
+ZD
+ZD
+Aq
+sU
+sP
+ZD
+ZD
+ZD
+ZD
+ZD
+Mr
+sU
 ab
+aj
 ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
 aj
 "}
 (59,1,1) = {"
@@ -19325,28 +19429,28 @@ rE
 Tp
 bP
 eS
-bq
+Hx
+bP
+Hx
+sU
+LP
 ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
 ab
-aj
-aj
-aj
+ab
+ab
+ab
+JO
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+ab
+ab
 aj
 aj
 "}
@@ -19583,28 +19687,28 @@ eC
 eP
 eT
 bq
+bq
+AP
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
 ab
 aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+ab
 aj
 "}
 (61,1,1) = {"
@@ -19840,28 +19944,28 @@ eD
 bP
 eU
 br
+sU
+sU
+sU
+LP
 ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+ab
+ab
+ab
+ab
+JO
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+ab
+ab
+ab
 aj
 "}
 (62,1,1) = {"
@@ -20098,26 +20202,26 @@ cn
 eV
 br
 ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+ab
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+ab
+ab
 aj
 aj
 "}
@@ -20356,25 +20460,25 @@ bq
 bq
 ab
 ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+ab
+ab
 aj
 aj
 "}
@@ -20613,25 +20717,25 @@ bP
 br
 ab
 ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+ab
+ab
 aj
 aj
 "}
@@ -20870,25 +20974,25 @@ eW
 bq
 ab
 ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+ab
+ab
 aj
 aj
 "}
@@ -21127,25 +21231,25 @@ eX
 bq
 ab
 ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+sU
+LP
 ab
-aj
-aj
-aj
+AH
+ab
+ab
+ab
+JO
+sU
+LP
+ab
+ab
+AH
+ab
+ab
+JO
+sU
+ab
+ab
 aj
 aj
 "}
@@ -21384,25 +21488,25 @@ eY
 bq
 ab
 ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+sU
+LP
 ab
-aj
-aj
-aj
+ab
+ab
+ab
+ab
+JO
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+ab
+ab
 aj
 aj
 "}
@@ -21641,25 +21745,25 @@ eY
 bq
 ab
 ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+sU
+LP
 ab
-aj
-aj
-aj
+ab
+ab
+ab
+ab
+JO
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+ab
+ab
 aj
 aj
 "}
@@ -21898,25 +22002,25 @@ eZ
 bq
 ab
 ab
+sU
+LP
 ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
 ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+ab
+ab
+ab
+JO
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+ab
+ab
 aj
 aj
 "}
@@ -22155,25 +22259,25 @@ bq
 bq
 ab
 ab
+sU
+LP
 ab
-aj
-aj
-aj
-aj
 ab
-aj
-aj
-aj
 ab
-aj
-aj
-aj
-aj
-aj
 ab
-aj
-aj
-aj
+ab
+JO
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+ab
+ab
 aj
 aj
 "}
@@ -22412,25 +22516,25 @@ ab
 ab
 ab
 ab
-ab
-aj
-aj
-ab
-aj
-aj
-aj
-aj
+sU
+LP
 ab
 ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+ab
+ab
+ab
+JO
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+ab
+ab
 aj
 aj
 "}
@@ -22669,24 +22773,24 @@ ab
 ab
 ab
 ab
-ab
-aj
-aj
-aj
-aj
-aj
-aj
-aj
+sU
+LP
 ab
 ab
-aj
-aj
-aj
-aj
-aj
 ab
-aj
-aj
+ab
+ab
+JO
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+ab
 aj
 aj
 aj
@@ -22926,25 +23030,25 @@ aj
 ab
 ab
 ab
-ab
-aj
-aj
-ab
-aj
-aj
-aj
-aj
-ab
-ab
-aj
-aj
-aj
-aj
+sU
+LP
 ab
 ab
 ab
-aj
-aj
+ab
+ab
+JO
+sU
+LP
+ab
+ab
+ab
+ab
+ab
+JO
+sU
+ab
+ab
 aj
 aj
 "}
@@ -23183,25 +23287,25 @@ aj
 aj
 ab
 ab
+sU
+Mt
+Xm
+Xm
+Xm
+Xm
+Xm
+hV
+sU
+Sw
+Xm
+Xm
+Xm
+Xm
+Xm
+OD
+sU
 ab
-aj
-aj
 ab
-aj
-aj
-aj
-aj
-ab
-ab
-aj
-aj
-aj
-aj
-ab
-ab
-ab
-aj
-aj
 aj
 aj
 "}
@@ -23440,25 +23544,25 @@ ai
 ai
 ab
 ab
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
+sU
 ab
-aj
 ab
-ab
-ab
-aj
-aj
-aj
-ab
-ab
-ab
-aj
-aj
-aj
-ab
-ab
-ab
-aj
-aj
 aj
 aj
 "}
@@ -23698,13 +23802,6 @@ ai
 ai
 ab
 ab
-aj
-ab
-ab
-ab
-aj
-aj
-aj
 ab
 ab
 ab
@@ -23714,7 +23811,14 @@ ab
 ab
 ab
 ab
-aj
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aj
 aj
 aj
@@ -23955,24 +24059,24 @@ ai
 ai
 ai
 ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aj
 ab
-ab
-ab
-ab
-ab
-aj
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-aj
-aj
 aj
 aj
 "}
@@ -24218,7 +24322,6 @@ ab
 ab
 ab
 ab
-aj
 ab
 ab
 ab
@@ -24228,7 +24331,8 @@ ab
 ab
 ab
 ab
-aj
+ab
+ab
 aj
 aj
 aj
@@ -24475,7 +24579,7 @@ ab
 ab
 ab
 ab
-aj
+ab
 ab
 ab
 ab
