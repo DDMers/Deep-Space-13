@@ -1067,6 +1067,9 @@
 /area/maintenance/department/bridge)
 "ds" = (
 /obj/structure/toilet,
+/obj/structure/mirror{
+	pixel_y = 26
+	},
 /turf/open/floor/plasteel/white,
 /area/crew_quarters/heads/captain)
 "dt" = (
@@ -1129,6 +1132,9 @@
 /area/crew_quarters/heads/hop)
 "dB" = (
 /obj/structure/toilet,
+/obj/structure/mirror{
+	pixel_y = 26
+	},
 /turf/open/floor/plasteel/white,
 /area/crew_quarters/heads/hop)
 "dC" = (
@@ -3522,10 +3528,14 @@
 	dir = 4
 	},
 /obj/machinery/door/window/survival_pod,
+/obj/structure/mirror{
+	pixel_y = 26
+	},
 /turf/open/floor/plasteel/white,
 /area/hallway/secondary/command)
 "kq" = (
 /obj/structure/closet/secure_closet/quartermaster,
+/obj/item/carkey,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
 "kr" = (
@@ -9255,6 +9265,9 @@
 /area/medical/medbay/central)
 "ze" = (
 /obj/machinery/washing_machine,
+/obj/structure/mirror{
+	pixel_y = 26
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/dorms)
 "zf" = (
@@ -11143,6 +11156,9 @@
 /area/hallway/primary/fore)
 "DP" = (
 /obj/machinery/washing_machine,
+/obj/structure/mirror{
+	pixel_y = 26
+	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/fore)
 "DQ" = (
@@ -11242,10 +11258,6 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/carpet/trek,
-/area/quartermaster/warehouse)
-"Eg" = (
-/obj/structure/plasticflaps,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/warehouse)
 "Eh" = (
@@ -16801,15 +16813,29 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
-"Sk" = (
+"Th" = (
 /obj/machinery/door/airlock/trek/goon{
 	dir = 4;
 	icon_state = "closed";
-	name = "FTL simulator"
+	name = "Laundry room"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/plasteel/white,
 /area/hallway/secondary/entry)
-"TR" = (
+"TD" = (
+/obj/item/clothing/under/trek/neelix,
+/obj/item/clothing/under/trek/neelix,
+/obj/structure/closet{
+	name = "Civilian clothes"
+	},
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/turf/open/floor/plasteel/white,
+/area/hallway/secondary/entry)
+"WP" = (
 /obj/structure/closet{
 	name = "Combadges"
 	},
@@ -16832,27 +16858,39 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/hallway/secondary/entry)
-"Wm" = (
+"Xl" = (
+/obj/structure/trek_catwalk/cargo/pad{
+	icon_state = "3,8"
+	},
+/obj/effect/landmark/runabout_dock,
+/obj/structure/overmap/runabout,
+/turf/open/floor/carpet/trek,
+/area/quartermaster/storage)
+"Ze" = (
+/obj/structure/rack,
+/turf/open/floor/carpet/trek,
+/area/quartermaster/miningdock)
+"ZA" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/machinery/door/window/survival_pod,
+/obj/structure/window/reinforced/survival_pod{
+	icon_state = "pwindow";
+	dir = 4
+	},
+/obj/structure/mirror{
+	pixel_y = 26
+	},
+/turf/open/floor/plasteel/white,
+/area/hallway/secondary/command)
+"ZW" = (
 /obj/machinery/door/airlock/trek/goon{
 	dir = 4;
 	icon_state = "closed";
-	name = "Laundry room"
+	name = "FTL simulator"
 	},
-/turf/open/floor/plasteel/white,
-/area/hallway/secondary/entry)
-"Xk" = (
-/obj/item/clothing/under/trek/neelix,
-/obj/item/clothing/under/trek/neelix,
-/obj/structure/closet{
-	name = "Civilian clothes"
-	},
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/carpet/trek,
 /area/hallway/secondary/entry)
 
 (1,1,1) = {"
@@ -112851,7 +112889,7 @@ aI
 al
 al
 al
-Sk
+ZW
 al
 vd
 AI
@@ -113879,7 +113917,7 @@ aI
 al
 al
 al
-Wm
+Th
 al
 vd
 AI
@@ -114648,7 +114686,7 @@ aI
 aI
 hW
 al
-TR
+WP
 Ar
 Ar
 At
@@ -114908,7 +114946,7 @@ al
 Aq
 Ar
 Ar
-Xk
+TD
 vd
 AL
 HJ
@@ -177133,7 +177171,7 @@ bN
 bN
 Fz
 bN
-Eg
+bN
 PR
 bN
 bN
@@ -177394,7 +177432,7 @@ it
 it
 it
 it
-hC
+bD
 sv
 sv
 sv
@@ -177651,7 +177689,7 @@ it
 it
 it
 it
-hC
+bD
 sv
 sv
 sv
@@ -177908,7 +177946,7 @@ it
 it
 it
 it
-hC
+bD
 sv
 sv
 sv
@@ -178165,7 +178203,7 @@ ks
 ku
 it
 KA
-hC
+bD
 sv
 sv
 sv
@@ -178422,7 +178460,7 @@ kt
 lF
 it
 it
-hC
+bD
 sv
 sv
 sv
@@ -178679,7 +178717,7 @@ kt
 mi
 it
 it
-hC
+bD
 sv
 sv
 sv
@@ -178936,7 +178974,7 @@ kt
 mi
 it
 On
-hC
+bD
 Oo
 sv
 sv
@@ -179185,7 +179223,7 @@ it
 iL
 iP
 iP
-iS
+Xl
 kt
 Qc
 kt
@@ -179193,7 +179231,7 @@ kt
 mi
 it
 it
-hC
+bD
 sv
 sv
 sv
@@ -179450,7 +179488,7 @@ kt
 mj
 it
 it
-hC
+bD
 sv
 sv
 sv
@@ -179707,7 +179745,7 @@ iT
 mk
 it
 KA
-hC
+bD
 sv
 sv
 sv
@@ -179964,7 +180002,7 @@ it
 it
 it
 it
-hC
+bD
 sv
 sv
 sv
@@ -180221,7 +180259,7 @@ it
 it
 it
 it
-hC
+bD
 sv
 sv
 sv
@@ -180478,7 +180516,7 @@ it
 it
 it
 it
-hC
+bD
 sv
 sv
 sv
@@ -180731,7 +180769,7 @@ bO
 bO
 PA
 bO
-Hr
+bO
 Qq
 bO
 bO
@@ -180987,8 +181025,8 @@ PJ
 bO
 mt
 Qv
-hS
-hS
+Ze
+Hr
 hS
 hS
 bO
@@ -241598,7 +241636,7 @@ JQ
 JQ
 JQ
 EG
-ad
+ZA
 aS
 az
 EG
@@ -246485,7 +246523,7 @@ EG
 ax
 EG
 EG
-ad
+ZA
 IF
 az
 EG
@@ -246496,7 +246534,7 @@ Nc
 dU
 sv
 EG
-ad
+ZA
 IF
 EL
 EG
@@ -246738,7 +246776,7 @@ Kd
 JZ
 Kc
 EG
-ad
+ZA
 IF
 aL
 EG

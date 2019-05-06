@@ -591,7 +591,9 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 			else
 				MI.icon_state = initial(AI.icon_state)
 
-/obj/machinery/power/warp_core/proc/breach() //You have 45 seconds to eject the core before you go up in flames.
+/obj/machinery/power/warp_core/proc/breach(var/forced = FALSE) //You have 45 seconds to eject the core before you go up in flames.
+	if(breaching)
+		return
 	breaching = TRUE
 	var/area/A = get_area(src)
 	var/obj/structure/overmap/F
@@ -604,16 +606,10 @@ The antimatter | matter ratio is preset and constant, if it's powered. It gives 
 				SEND_SOUND(player, 'DS13/sound/effects/damage/corebreach.ogg')
 	var/turf/T = get_turf(src)//Shit out some plasma for good measure.
 	T.atmos_spawn_air("plasma=20;TEMP=1000")
-	addtimer(CALLBACK(src, .proc/core_breach_finish), 450)
-
-/obj/machinery/power/warp_core/proc/core_breach_finish()
-	if(containment <= 0)
-		if(linked)
-			linked.core_breach_finish() //End them.
-		return
-	else //They survived the core breach! Stop the ship from being 0 HP so it doesn't just breach again instantly.
-		if(linked)
-			linked.health = 25
+	if(!forced)
+		if(!F.warp_core)
+			F.warp_core = src
+		F.explode()
 
 /obj/machinery/atmospherics/components/binary/pump/on/warp
 	name = "Plasma outlet manifold"

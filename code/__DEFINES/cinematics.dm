@@ -11,3 +11,5 @@
 #define CINEMATIC_NUKE_FAR 11
 #define CINEMATIC_NUKE_CLOWNOP 12
 #define CINEMATIC_CULT_NUKE 13
+#define CINEMATIC_ROMULAN 14 //DS13 - Tal shiar, see: overmap/events.dm
+#define CINEMATIC_SHIPEXPLODE 15 //DS13 - Ship explosion. See: Warp core breach, overmap/combat.dm

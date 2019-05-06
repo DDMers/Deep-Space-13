@@ -39,9 +39,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 
 /datum/overmap_event/proc/clear_elements()
 	if(target)
-		var/obj/structure/overmap/saved = target
-		target = null //So that QDEL'ing it doesn't cause the mission to fail after it's already complete
-		qdel(saved)
+		qdel(target)
 
 /datum/overmap_event/proc/fail()
 	if(completed)
@@ -79,6 +77,12 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 		warbird.target = target
 		warbird.linked_event = src
 		elements += warbird
+	var/obj/structure/overmap/ai/simulated/bigbird = new /obj/structure/overmap/ai/simulated(get_turf(pick(orange(spawner,6)))) //Make one warbird that can be salvaged / boarded.
+	bigbird.force_target = target //That freighter ain't no fortunate oneeeee n'aw lord IT AINT HEEEE IT AINT HEEEE
+	bigbird.nav_target = target
+	bigbird.target = target
+	bigbird.linked_event = src
+	elements += bigbird
 
 /obj/effect/landmark/overmap_event_spawn
 	name = "Overmap event spawner"
@@ -225,6 +229,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	class = "crashed_borg"
 	max_shield_health = 0
 	layer = 2.9
+	movement_block = TRUE
 
 /datum/overmap_event/crashed_borg/succeed()
 	return //Impossible to succeed, or fail.
@@ -436,7 +441,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	name = "Tal shiar agent"
 	assignedrole = "romulan"
 	outfit = /datum/outfit/talshiar
-	flavour_text = "<span class='big bold'>You are a tal shiar agent!</span><br> You and your comrades have been dispatched to the museum ship Enterprise under the guise of starfleet inspectors. You're equipped with state of the art stealth tech, so you can assume any identity you need but be careful, and be subtle.<br> It is an incredibly weak ship, but it should provide enough cover for you to complete your true goal: <b>Capture</b> the main ship for the romulan empire!"
+	flavour_text = "<span class='big bold'>You are a tal shiar agent!</span><br> You and your comrades have been dispatched to the museum ship Enterprise under the guise of starfleet inspectors. You're equipped with state of the art stealth tech, so you can assume any identity you need but be careful, and be subtle.<br> It is an incredibly weak ship, but it should provide enough cover for you to complete your true goal: <b>Capture the main ship for the romulan empire by using your ominous tricorder on the bridge!</b>"
 
 /datum/outfit/talshiar
 	name = "Tal shiar agent"
@@ -452,7 +457,105 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	back = /obj/item/storage/backpack/satchel
 	ears = /obj/item/radio/headset/syndicate/alt
 	back = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/storage/box/syndie_kit/chameleon=1,/obj/item/book/granter/martial/cqc=1,/obj/item/reagent_containers/syringe/mulligan=1)
+	backpack_contents = list(/obj/item/storage/box/syndie_kit/chameleon=1,/obj/item/book/granter/martial/cqc=1,/obj/item/reagent_containers/syringe/mulligan=1,/obj/item/ship_hijack_spawner=1)
+	implants = list(/obj/item/implant/storage) //Eases up on the meta a bit
+
+/obj/item/ship_hijack_spawner //Device used by tal shiar to formally take over the ship
+	name = "Ominous tricorder"
+	desc = "A device which allows you to summon a ship network hijacker, allowing one to take over a ship. ONCE YOU SPAWN THE HIJACKER, THERE IS NO TURNING BACK."
+	icon = 'DS13/icons/obj/device.dmi'
+	icon_state = "health"
+
+/obj/item/ship_hijack_spawner/attack_self(mob/user)
+	. = ..()
+	var/area/AR = get_area(src)
+	if(!AR.linked_overmap || !AR.linked_overmap.main_overmap)
+		to_chat(user, "<span class='warning'>This device can only be used to capture [station_name()], starfleet's main ship in this sector.</span>")
+		return
+	var/obj/structure/overmap_component/helm/helmcheck = locate(/obj/structure/overmap_component/helm) in AR
+	if(!helmcheck)
+		to_chat(user, "<span class='warning>You can only do this from the bridge!</span>")
+		return
+	if(AR.linked_overmap.capture_in_progress)
+		to_chat(user, "<span class='warning'>Someone else has already placed a capture device.</span>")
+		return
+	var/question = alert("Really spawn a ship capture device? THERE IS NO GOING BACK ONCE YOU DO THIS",name,"yes","no")
+	if(question == "no" || !question)
+		return
+	new /obj/effect/temp_visual/transporter/mob(get_turf(src))
+	playsound(src.loc, 'DS13/sound/effects/transporter/send.ogg', 100, 4)
+	to_chat(user, "A capture device has been transported in, Jolan Tru!")
+	new /obj/structure/ship_hijacker(get_turf(user))
+	qdel(src)
+
+/obj/structure/ship_hijacker
+	name = "Optronic data hijacker"
+	desc = "A huge device which will systematically purge pre-existing command codes from a ship's command subroutines while simultaneously plotting in a pre-programmed course for the ship to follow. <b> This can't be good...</b>"
+	icon = 'icons/obj/machines/dominator.dmi'
+	icon_state = "dominator"
+	obj_integrity = 250
+	max_integrity = 250 //Takes a beating to remove.
+	anchored = TRUE
+	density = TRUE
+	var/active = FALSE
+	var/start_time = 0
+	var/end_time = 0
+	var/domtime = 1480 //2 : 30 minutes to capture the ship ((when the anthem stops, you lose)).
+
+/obj/structure/ship_hijacker/examine(mob/user)
+	. = ..()
+	if(!active)
+		return
+	to_chat(user, "<span class='warning'>It is currently attempting to hijack [station_name()]!</span>")
+	var/timeleft = (end_time - world.time)/10
+	to_chat(user, "<span class='warning'>A display shows that there's [timeleft] seconds left until the takeover is complete!</span>")
+
+
+/obj/structure/ship_hijacker/attack_hand(mob/user)
+	if(active)
+		to_chat(user, "<span class='notice'>There is already an active system takeover in progress!</span>")
+		return
+	var/question = alert("Are you ready to begin a system takeover of [station_name()]?",name,"yes","no")
+	if(question == "no" || !question)
+		return
+	active = TRUE
+	var/area/AR = get_area(src)
+	if(AR.linked_overmap)
+		AR.linked_overmap.capture_in_progress = TRUE
+	priority_announce("WARNING: Optronic data pathway decription attempt detected in [AR]. Hostile takeover in progress!","LCARS computer subsystem:",'sound/ai/commandreport.ogg')
+	start_time = world.time
+	end_time = start_time + domtime
+	to_chat(user, "<span class='notice'>You have begun a system takeover, defend this device for the romulan empire!</span>")
+	light_color = LIGHT_COLOR_RED
+	set_light(5)
+	icon_state = "dominator-red"
+	sound_to_playing_players('DS13/sound/ambience/ship_takeover.ogg') //ALL CREDIT GOES TO: Volker400 https://www.youtube.com/watch?v=ooS0Hop_zhk
+	GLOB.music_controller.force_stop() //Avoids annoying overlapping music.
+	START_PROCESSING(SSobj,src)
+
+/obj/structure/ship_hijacker/process()
+	if(!active)
+		return
+	if(world.time >= end_time)
+		active = FALSE
+		priority_announce("Ieiuqh warp drive avaihh'etrehh-capable rrhiet khina 'hh ours. Temmehrr'dochai ch'rihan. Jolan Tru!","LCARS computer subsystem:",'sound/ai/commandreport.ogg')
+		Cinematic(CINEMATIC_ROMULAN,world)
+		SSticker.mode.check_finished(TRUE)
+		SSticker.force_ending = 1
+		STOP_PROCESSING(SSobj,src)
+		qdel(src)
+
+/obj/structure/ship_hijacker/Destroy()
+	if(active)
+		for(var/mob/M in GLOB.player_list) //Stop the romulan anthem.
+			if(M.client)
+				SEND_SOUND(M, sound(null))
+		priority_announce("Hostile takeover attempt ceased. Cycling encryption and command codes.","LCARS computer subsystem:",'sound/ai/commandreport.ogg')
+		GLOB.music_controller.reset()
+	var/area/AR = get_area(src)
+	if(AR.linked_overmap)
+		AR.linked_overmap.capture_in_progress = FALSE
+	. = ..()
 
 /area/ship/bridge/museum
 	name = "USS Enterprise (NX-01)"
@@ -470,7 +573,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 
 /datum/overmap_event/museum_hijack/start() //Now we have a spawn. Let's do whatever this mission is supposed to. Override this when you make new missions
 	target = new /obj/structure/overmap/nx01(get_turf(spawner))
-	priority_announce("[station_name()]. We've just received a report from the NX01-Enterprise exhibit. It appears the enterprise is missing.... Recapture the ship at all costs, and do NOT allow it to be destroyed.","Intercepted subspace transmission:",'sound/ai/commandreport.ogg')
+	priority_announce("[station_name()]. We've just received a report from the NX01-Enterprise exhibit. It appears the enterprise is missing...? You are ordered to investigate what has happened, but be advised that this could possibly just be a clerical error.","Intercepted subspace transmission:",'sound/ai/commandreport.ogg')
 	elements += target
 	sleep(20)//Give it a chance to link.
 	if(target.linked_area)
@@ -605,6 +708,9 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	spawner.used = FALSE
 	completed = TRUE
 
+/datum/overmap_event/deliver_item/clear_elements()
+	return FALSE //Dont delete the stations!
+
 /datum/overmap_event/deliver_item/check_completion(var/atom/what)
 	if(what == destination || what == source)
 		fail()
@@ -716,6 +822,20 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 		fail()
 	if(plant_amount <= 0)
 		succeed()
+
+/datum/overmap_event/m_class/succeed()
+	if(completed)
+		return
+	to_chat(world, "<span class='notice'>Starfleet command has issued a commendation to the crew of [station_name()]. The ship has been allocated extra operational budget ([reward]) by Starfleet command.</span>")
+	priority_announce(succeed_text,"Incoming hail:",'sound/ai/commandreport.ogg')
+	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
+	completed = TRUE
+	if(D)
+		D.adjust_money(reward)
+	return
+
+/datum/overmap_event/m_class/clear_elements()
+	return FALSE //Dont delete the M CLASS planet!
 
 /obj/item/twohanded/required/kirbyplants
 	var/datum/overmap_event/m_class/linked_event

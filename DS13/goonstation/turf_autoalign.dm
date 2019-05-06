@@ -111,6 +111,14 @@
 	sheet_type = /obj/item/stack/sheet/tritanium
 	sheet_amount = 2
 
+/turf/closed/wall/trek_smooth/bsg
+	name = "Durasteel hull"
+	icon = 'DS13/icons/turf/trek_wall_bsg.dmi'
+	mod = null
+	sheet_type = /obj/item/stack/sheet/metal
+	sheet_amount = 2
+	canSmoothWith = list(/turf/closed/wall/trek_smooth)
+
 //Mats to make new walls:
 
 /datum/design/duranium_alloy
