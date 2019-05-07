@@ -4215,6 +4215,12 @@
 /obj/machinery/telecomms/relay/preset/station,
 /turf/open/floor/engine,
 /area/ship/warbird)
+"lx" = (
+/turf/closed/wall/trek_smooth/bsg,
+/area/space)
+"ly" = (
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "lz" = (
 /obj/machinery/door/airlock/trek/ship{
 	name = "Engine bay"
@@ -4223,22 +4229,110 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
+"lA" = (
+/obj/structure/window/reinforced/fulltile/trek/bsg,
+/turf/open/floor/trek/bsg,
+/area/space)
 "lB" = (
 /obj/machinery/light,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_tertiary)
+"lC" = (
+/obj/structure/window/reinforced/fulltile/trek/bsg/middle,
+/turf/open/floor/trek/bsg,
+/area/space)
+"lD" = (
+/turf/open/floor/carpet,
+/area/space)
+"lE" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/carpet,
+/area/space)
 "lF" = (
 /obj/machinery/transporter_pad{
 	icon_state = "3,1"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"lG" = (
+/obj/structure/overmap_component/plasma_relay,
+/turf/closed/wall/trek_smooth/bsg,
+/area/space)
+"lH" = (
+/obj/machinery/vending/cola/pwr_game,
+/turf/open/floor/carpet,
+/area/space)
+"lI" = (
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"lJ" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"lK" = (
+/obj/structure/table/reinforced,
+/obj/item/dilithium_matrix,
+/obj/item/dilithium,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"lL" = (
+/obj/machinery/power/matter_injector/antimatter,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"lM" = (
+/obj/structure/closet/secure_closet/personal,
+/turf/open/floor/trek/bsg,
+/area/space)
+"lN" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/obj/machinery/vending/cigarette,
+/turf/open/floor/carpet,
+/area/space)
+"lO" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/obj/structure/disposalpipe/segment{
+	icon_state = "pipe";
+	dir = 6
+	},
+/obj/machinery/vending/cola/red,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "lP" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,4"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"lQ" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"lR" = (
+/obj/structure/table/reinforced,
+/obj/machinery/chem_dispenser/drinks/beer,
+/obj/machinery/button{
+	id = "whisp_diner";
+	name = "Shutters control";
+	pixel_x = -28;
+	step_x = 2
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "lS" = (
 /obj/machinery/transporter_pad{
 	icon_state = "1,0"
@@ -4251,6 +4345,47 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"lU" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"lV" = (
+/obj/structure/table/reinforced,
+/obj/machinery/chem_dispenser/drinks,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"lW" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/drinks/shaker,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"lX" = (
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"lY" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "whisp_diner"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"lZ" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"ma" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "mb" = (
 /obj/structure/trek_catwalk,
 /obj/structure/rack,
@@ -4261,6 +4396,21 @@
 /obj/structure/bed/abductor,
 /turf/open/floor/plasteel/dark,
 /area/ship/ai_simulated_secondary)
+"md" = (
+/obj/structure/sink/kitchen{
+	pixel_y = 32
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"me" = (
+/obj/structure/table/reinforced,
+/obj/machinery/reagentgrinder,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "mf" = (
 /obj/machinery/suit_storage_unit/trek,
 /turf/open/floor/carpet/trek,
@@ -4271,15 +4421,37 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"mh" = (
+/obj/machinery/vending/boozeomat/all_access,
+/turf/closed/wall/trek_smooth/bsg,
+/area/space)
+"mi" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/obj/structure/closet/secure_closet/personal,
+/turf/open/floor/trek/bsg,
+/area/space)
 "mj" = (
 /obj/structure/rack,
 /obj/machinery/microwave,
 /turf/open/floor/grass/fakebasalt,
 /area/ship/m_class)
+"mk" = (
+/turf/open/floor/trek/bsg,
+/area/space)
 "ml" = (
 /obj/item/stack/rods,
 /turf/open/space/basic,
 /area/ship/debrisfield)
+"mm" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "mn" = (
 /obj/structure/trek_catwalk,
 /obj/machinery/light,
@@ -4287,27 +4459,140 @@
 	icon_state = "platingdmg2"
 	},
 /area/ship/ai_simulated)
+"mo" = (
+/obj/structure/disposalpipe/segment{
+	icon_state = "pipe";
+	dir = 10
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"mp" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet,
+/area/space)
+"mq" = (
+/obj/structure/chair/trek/standard,
+/turf/open/floor/carpet,
+/area/space)
 "mr" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,3"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"ms" = (
+/obj/structure/disposalpipe/junction/flip,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "mt" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/rack,
 /obj/item/stack/sheet/mineral/gold,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"mu" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"mv" = (
+/obj/structure/disposalpipe/segment{
+	icon_state = "pipe";
+	dir = 9
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"mw" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"mx" = (
+/obj/structure/bookcase/random/adult,
+/turf/open/floor/carpet,
+/area/space)
+"my" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"mz" = (
+/obj/structure/chair/trek/standard,
+/obj/structure/trek_decor/viewscreen{
+	dir = 8;
+	icon_state = "viewscreen";
+	pixel_y = 32
+	},
+/turf/open/floor/carpet,
+/area/space)
+"mA" = (
+/obj/structure/chair/trek/standard,
+/obj/structure/trek_decor/viewscreen{
+	pixel_y = 32
+	},
+/turf/open/floor/carpet,
+/area/space)
+"mB" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"mC" = (
+/obj/structure/bookcase/random/religion,
+/turf/open/floor/carpet,
+/area/space)
 "mD" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
 /area/ship/debrisfield)
+"mE" = (
+/obj/item/twohanded/required/kirbyplants/random,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"mF" = (
+/obj/structure/table/wood/fancy,
+/obj/item/lighter,
+/turf/open/floor/carpet,
+/area/space)
+"mG" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "High security storage"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"mH" = (
+/obj/item/gun/ballistic/shotgun/automatic/combat,
+/obj/item/gun/energy/taser,
+/obj/item/storage/belt/security,
+/obj/item/storage/box/lethalshot,
+/obj/item/storage/box/lethalshot,
+/obj/item/storage/box/lethalshot,
+/obj/item/storage/box/rubbershot,
+/obj/item/storage/box/rubbershot,
+/obj/item/storage/box/beanbag,
+/obj/structure/closet/syndicate,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"mI" = (
+/obj/structure/chair/trek{
+	icon_state = "comfy";
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "mJ" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"mK" = (
+/obj/structure/overmap_component/science{
+	req_access = null
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "mL" = (
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
@@ -4324,6 +4609,17 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
+"mN" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/turf/open/floor/carpet,
+/area/space)
+"mO" = (
+/obj/structure/table/wood/fancy,
+/turf/open/floor/carpet,
+/area/space)
 "mP" = (
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
@@ -4332,10 +4628,22 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"mQ" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/turf/open/floor/carpet,
+/area/space)
 "mR" = (
 /obj/item/stack/sheet/mineral/silver,
 /turf/open/floor/plating/airless,
 /area/ship/asteroiddebris)
+"mS" = (
+/obj/machinery/recharger,
+/obj/structure/table/reinforced,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "mT" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/food/snacks/cakeslice/cheese,
@@ -4349,11 +4657,36 @@
 "mV" = (
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
+"mW" = (
+/obj/structure/overmap_component/tactical{
+	req_access = null
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"mX" = (
+/obj/item/twohanded/required/kirbyplants/random,
+/turf/open/floor/carpet,
+/area/space)
+"mY" = (
+/obj/structure/chair/trek,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "mZ" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/engine,
 /area/ship/bridge/museum)
+"na" = (
+/obj/item/gun/ballistic/automatic/sniper_rifle,
+/obj/item/ammo_box/magazine/sniper_rounds/penetrator,
+/obj/item/ammo_box/magazine/sniper_rounds/soporific,
+/obj/item/ammo_box/magazine/sniper_rounds,
+/obj/item/ammo_box/magazine/sniper_rounds,
+/obj/item/gun/energy/taser,
+/obj/item/storage/belt/security,
+/obj/structure/closet/syndicate,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "nb" = (
 /obj/structure/ladder,
 /obj/machinery/light{
@@ -4365,11 +4698,38 @@
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/ship/debrisfield)
+"nd" = (
+/obj/machinery/computer/security{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"ne" = (
+/obj/machinery/deepfryer,
+/turf/open/floor/trek/bsg,
+/area/space)
 "nf" = (
 /obj/effect/spawner/lootdrop/crate_spawner,
 /obj/effect/mob_spawn/human/corpse/assistant,
 /turf/open/floor/plating/airless,
 /area/ship/asteroiddebris)
+"ng" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk,
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"nh" = (
+/obj/structure/bookcase/random/fiction,
+/turf/open/floor/carpet,
+/area/space)
+"ni" = (
+/obj/structure/disposalpipe/junction,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "nj" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	icon_state = "pipe11-2";
@@ -4390,14 +4750,51 @@
 "nl" = (
 /turf/closed/wall/mineral/titanium/survival/pod,
 /area/ship/m_class)
+"nm" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 1
+	},
+/turf/open/floor/carpet,
+/area/space)
 "nn" = (
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/trek/tile,
 /area/ship/ai_simulated_tertiary)
+"no" = (
+/obj/structure/bookcase/random/nonfiction,
+/turf/open/floor/carpet,
+/area/space)
+"np" = (
+/obj/structure/mirror{
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"nq" = (
+/obj/structure/chair/trek{
+	icon_state = "comfy";
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"nr" = (
+/obj/structure/table/reinforced,
+/obj/machinery/microwave,
+/obj/machinery/light,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "ns" = (
 /obj/structure/bed,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"nt" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/turf/open/floor/carpet,
+/area/space)
 "nu" = (
 /obj/structure/chair/trek{
 	icon_state = "comfy";
@@ -4415,15 +4812,95 @@
 /obj/structure/fluff/broken_flooring,
 /turf/open/space/basic,
 /area/ship/ai_simulated_tertiary)
+"nx" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 11
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"ny" = (
+/obj/structure/disposalpipe/segment{
+	icon_state = "pipe";
+	dir = 6
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"nz" = (
+/obj/structure/disposalpipe/junction{
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"nA" = (
+/obj/machinery/gibber,
+/turf/open/floor/trek/bsg,
+/area/space)
+"nB" = (
+/obj/structure/disposalpipe/segment{
+	icon_state = "pipe";
+	dir = 10
+	},
+/turf/open/floor/carpet,
+/area/space)
 "nC" = (
 /obj/structure/closet/crate{
 	icon_state = "crateopen"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
+"nD" = (
+/obj/item/gun/ballistic/automatic/wt550,
+/obj/item/ammo_box/magazine/wt550m9/wtap,
+/obj/item/ammo_box/magazine/wt550m9/wtap,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/ammo_box/magazine/wt550m9/wtic,
+/obj/item/gun/energy/taser,
+/obj/item/suppressor,
+/obj/item/storage/belt/security,
+/obj/item/gun/ballistic/automatic/pistol,
+/obj/item/ammo_box/magazine/m10mm/hp,
+/obj/structure/closet/syndicate,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"nE" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"nF" = (
+/obj/structure/disposalpipe/junction/flip{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"nG" = (
+/obj/structure/overmap_component/helm{
+	req_access = null
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"nH" = (
+/obj/machinery/light,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"nI" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
 "nJ" = (
 /turf/closed/wall/trek_smooth/romulan,
 /area/ship/ai_simulated)
+"nK" = (
+/obj/structure/bed,
+/obj/item/bedsheet/patriot,
+/turf/open/floor/carpet,
+/area/space)
 "nL" = (
 /obj/machinery/smartfridge/survival_pod,
 /turf/open/floor/pod/dark,
@@ -4438,10 +4915,45 @@
 "nN" = (
 /turf/open/floor/plating,
 /area/ship/m_class)
+"nO" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/obj/structure/closet/wardrobe/grey,
+/turf/open/floor/carpet,
+/area/space)
+"nP" = (
+/obj/structure/dresser,
+/turf/open/floor/carpet,
+/area/space)
+"nQ" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Diner workspace"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "nR" = (
 /obj/effect/mob_spawn/human/corpse/assistant,
 /turf/open/floor/plasteel/airless,
 /area/ship/debrisfield)
+"nS" = (
+/obj/machinery/vending/tool,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"nT" = (
+/obj/machinery/vending/engivend{
+	req_access = null
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"nU" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/trek/ship{
+	name = "Smoking room"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "nV" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/dark,
@@ -4452,37 +4964,208 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge/museum)
+"nX" = (
+/obj/structure/bed,
+/obj/item/bedsheet/centcom,
+/turf/open/floor/carpet,
+/area/space)
+"nY" = (
+/obj/machinery/nuclearbomb/beer,
+/turf/open/floor/trek/bsg,
+/area/space)
 "nZ" = (
 /obj/structure/window/reinforced/fulltile/trek/viewport,
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
+"oa" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	icon_state = "pipe-t";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"ob" = (
+/obj/machinery/vending/dinnerware,
+/turf/open/floor/trek/bsg,
+/area/space)
+"oc" = (
+/obj/machinery/conveyor_switch/oneway{
+	id = "whisp_disposals"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"od" = (
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/trek/bsg,
+/area/space)
+"oe" = (
+/obj/structure/chair/trek{
+	icon_state = "comfy";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"of" = (
+/obj/machinery/button/massdriver{
+	id = "whisp_mass";
+	pixel_x = -28;
+	pixel_y = -6
+	},
+/obj/structure/disposalpipe/segment{
+	icon_state = "pipe";
+	dir = 6
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"og" = (
+/obj/structure/disposalpipe/segment{
+	icon_state = "pipe";
+	dir = 9
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
 "oh" = (
 /obj/item/vending_refill,
 /obj/structure/rack,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
+"oi" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
 "oj" = (
 /obj/effect/turf_decal/bot_red,
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
+"ok" = (
+/obj/structure/closet/secure_closet/freezer/kitchen{
+	req_access = null
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"ol" = (
+/obj/structure/closet/secure_closet/freezer/meat{
+	req_access = null
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
 "om" = (
 /turf/open/floor/engine,
 /area/ship/bridge/museum)
+"on" = (
+/obj/structure/disposaloutlet{
+	dir = 4
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"oo" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "whisp_disposals"
+	},
+/obj/machinery/recycler,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"op" = (
+/obj/machinery/door/window/northright,
+/obj/machinery/conveyor{
+	dir = 6;
+	icon_state = "conveyor_map";
+	id = "whisp_disposals"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
 "oq" = (
 /obj/machinery/camera/trek,
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
+"or" = (
+/obj/structure/overmap_component/torpedo_tube,
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "whisp_torpedo"
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"os" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Armoury"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"ot" = (
+/obj/machinery/mass_driver{
+	dir = 8;
+	id = "whisp_mass"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"ou" = (
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "whisp_disposals"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
 "ov" = (
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},
 /area/ship/debrisfield)
+"ow" = (
+/obj/machinery/conveyor{
+	dir = 10;
+	icon_state = "conveyor_map";
+	id = "whisp_disposals"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"ox" = (
+/obj/structure/rack,
+/obj/item/clothing/head/helmet,
+/obj/item/clothing/head/helmet,
+/obj/item/clothing/suit/armor/vest/alt,
+/obj/item/clothing/suit/armor/vest/alt,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"oy" = (
+/obj/structure/closet/secure_closet/engineering_welding{
+	req_access = null
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"oz" = (
+/obj/structure/closet/secure_closet/engineering_electrical{
+	req_access = null
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "oA" = (
 /obj/item/stack/sheet/mineral/plasma,
 /turf/open/floor/plating/airless,
 /area/ship/asteroiddebris)
+"oB" = (
+/obj/machinery/light,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "oC" = (
 /obj/structure/glowshroom/single,
 /turf/open/floor/grass/fakebasalt,
@@ -4493,6 +5176,105 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"oE" = (
+/obj/structure/closet/toolcloset,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"oF" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"oG" = (
+/obj/structure/plasticflaps,
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "whisp_torpedo"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"oH" = (
+/obj/structure/toilet{
+	step_y = 12
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"oI" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/item/storage/wallet/random,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"oJ" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"oK" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/trek/ship{
+	name = "Bridge"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"oL" = (
+/obj/machinery/conveyor_switch/oneway{
+	id = "whisp_torpedo"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"oM" = (
+/obj/structure/table/reinforced,
+/obj/item/stock_parts/matter_bin/adv,
+/obj/item/stock_parts/matter_bin/adv,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/scanning_module,
+/obj/item/stock_parts/scanning_module,
+/obj/item/stock_parts/scanning_module,
+/obj/item/stock_parts/scanning_module,
+/obj/item/stock_parts/scanning_module,
+/obj/item/stock_parts/scanning_module,
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"oN" = (
+/obj/machinery/sleeper{
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"oO" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"oP" = (
+/obj/structure/table/wood/fancy,
+/obj/item/paper_bin,
+/obj/item/pen/fountain,
+/obj/item/pen/fourcolor{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/turf/open/floor/carpet,
+/area/space)
 "oQ" = (
 /obj/item/pattern_enhancer,
 /obj/structure/overmap_component/plasma_injector{
@@ -4502,6 +5284,26 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
+"oR" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Private unit"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"oS" = (
+/obj/structure/torpedo_casing{
+	desc = "A photon torpedo casing with some paint haphazardly scrawled over it to make it resemble a traditional HE round.";
+	name = "MAC Shell"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"oT" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "oU" = (
 /obj/effect/spawner/lootdrop/crate_spawner,
 /obj/machinery/light,
@@ -4524,9 +5326,56 @@
 /obj/item/stack/sheet/metal,
 /turf/open/floor/plating/asteroid/airless,
 /area/ship/debrisfield)
+"oX" = (
+/obj/structure/bed,
+/obj/item/bedsheet/ian,
+/turf/open/floor/carpet,
+/area/space)
+"oY" = (
+/obj/structure/closet/wardrobe/grey,
+/turf/open/floor/carpet,
+/area/space)
+"oZ" = (
+/obj/machinery/light/small,
+/obj/structure/dresser,
+/turf/open/floor/carpet,
+/area/space)
+"pa" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"pb" = (
+/obj/structure/bed,
+/obj/item/bedsheet/clown,
+/turf/open/floor/carpet,
+/area/space)
+"pc" = (
+/obj/structure/torpedo_casing{
+	desc = "A photon torpedo casing with some paint haphazardly scrawled over it to make it resemble a traditional HE round.";
+	name = "MAC Shell"
+	},
+/obj/machinery/light,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"pd" = (
+/obj/machinery/door/airlock/trek/ship/sec/torpedo{
+	dir = 4;
+	name = "Munitions";
+	req_one_access = null
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "pe" = (
 /turf/open/floor/plating/asteroid/airless,
 /area/ship/asteroiddebris)
+"pf" = (
+/obj/machinery/light/small{
+	icon_state = "bulb";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
 "pg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -4536,6 +5385,25 @@
 "ph" = (
 /turf/closed/wall/trek_smooth/room,
 /area/ship/station/delivery_destination)
+"pi" = (
+/obj/structure/closet/emcloset,
+/turf/open/floor/trek/bsg,
+/area/space)
+"pj" = (
+/obj/structure/closet/firecloset/full,
+/turf/open/floor/trek/bsg,
+/area/space)
+"pk" = (
+/obj/structure/ladder,
+/turf/open/floor/trek/bsg,
+/area/space)
+"pl" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Ladder access"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
 "pm" = (
 /obj/structure/bodycontainer/morgue{
 	icon_state = "morgue1";
@@ -4547,6 +5415,18 @@
 /obj/machinery/light,
 /turf/open/floor/trek/tile,
 /area/ship/ai_simulated_tertiary)
+"po" = (
+/obj/machinery/washing_machine,
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"pp" = (
+/obj/machinery/atmospherics/components/unary/tank/air,
+/turf/open/floor/trek/bsg,
+/area/space)
 "pq" = (
 /obj/structure/chair/borg/charging,
 /obj/machinery/light{
@@ -4554,6 +5434,52 @@
 	},
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
+"pr" = (
+/obj/machinery/suit_storage_unit/trek,
+/turf/open/floor/trek/bsg,
+/area/space)
+"ps" = (
+/obj/machinery/suit_storage_unit/trek,
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"pt" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Bridge"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"pu" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Diner storage"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"pv" = (
+/obj/structure/bedsheetbin,
+/obj/structure/table,
+/turf/open/floor/trek/bsg,
+/area/space)
+"pw" = (
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden,
+/obj/structure/rack,
+/obj/item/wrench,
+/turf/open/floor/trek/bsg,
+/area/space)
+"px" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "EVA"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
 "py" = (
 /obj/item/bedsheet/green,
 /obj/structure/bed,
@@ -4564,6 +5490,13 @@
 /obj/structure/rack,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"pA" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/item/twohanded/required/kirbyplants/random,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "pB" = (
 /obj/machinery/computer/camera_advanced/transporter_control{
 	icon_state = "control";
@@ -4577,6 +5510,21 @@
 	},
 /turf/open/floor/grass/fakebasalt,
 /area/ship/m_class)
+"pD" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/item/twohanded/required/kirbyplants/random,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"pE" = (
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+	icon_state = "manifold-2";
+	dir = 8
+	},
+/obj/machinery/meter/atmos,
+/turf/open/floor/trek/bsg,
+/area/space)
 "pF" = (
 /obj/structure/overmap_component/helm/spawner/dderidex,
 /obj/machinery/light{
@@ -4593,6 +5541,24 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
+"pH" = (
+/obj/machinery/light/small,
+/turf/open/floor/carpet,
+/area/space)
+"pI" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Crew Living Quarter"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"pJ" = (
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+	icon_state = "manifold-2";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
 "pK" = (
 /obj/structure/trek_decor/romulan,
 /obj/structure/overmap_component/viewscreen,
@@ -4602,38 +5568,185 @@
 /obj/structure/chair/office/dark,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"pM" = (
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	icon_state = "pipe11-2";
+	dir = 10
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"pN" = (
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	icon_state = "connector_map-2";
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/pump,
+/turf/open/floor/trek/bsg,
+/area/space)
 "pO" = (
 /obj/machinery/transporter_pad{
 	icon_state = "1,1"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"pP" = (
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	icon_state = "connector_map-2";
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/pump,
+/obj/machinery/light,
+/turf/open/floor/trek/bsg,
+/area/space)
 "pQ" = (
 /obj/machinery/replicator,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"pR" = (
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/trek/bsg,
+/area/space)
+"pS" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Crew conference room"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "pT" = (
 /obj/machinery/transporter_pad{
 	icon_state = "4,0"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"pU" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Crew conference room"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"pV" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Rest room"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "pW" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
+"pX" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"pY" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"pZ" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/trek/bsg,
+/area/space)
+"qa" = (
+/obj/structure/disposalpipe/junction/flip,
+/turf/open/floor/trek/bsg,
+/area/space)
 "qb" = (
 /obj/machinery/door/airlock/trek/ship{
 	name = "Medical bay"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
+"qc" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/mob/living/simple_animal/parrot{
+	name = "Exterminatus"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"qd" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/trek/ship{
+	name = "Washing room"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"qe" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/trek/ship{
+	name = "Engineering"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"qf" = (
+/obj/machinery/power/warp_core,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"qg" = (
+/obj/machinery/power/matter_injector,
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "qh" = (
 /obj/structure/displaycase/trophy,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"qi" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"qj" = (
+/obj/machinery/cell_charger,
+/obj/structure/table/reinforced,
+/obj/item/multitool,
+/obj/item/storage/belt/utility,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"qk" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"ql" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/trek/ship{
+	name = "Disposals"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"qm" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"qn" = (
+/obj/structure/overmap_component/integrity_field_generator,
+/obj/machinery/atmospherics/components/binary/pump/on/warp,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "qo" = (
 /obj/structure/lattice,
 /turf/open/space/basic,
@@ -4646,6 +5759,10 @@
 	},
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
+"qq" = (
+/obj/item/twohanded/required/kirbyplants/random,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "qr" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/grass,
@@ -4659,18 +5776,52 @@
 /obj/machinery/door/airlock/trek/ship,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge/museum)
+"qu" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"qv" = (
+/obj/machinery/autolathe,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"qw" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "qx" = (
 /obj/structure/chair/borg/charging,
 /obj/structure/overmap_component/borg_relay,
 /mob/living/simple_animal/hostile/retaliate/borg_drone,
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
+"qy" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"qz" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "qA" = (
 /obj/machinery/light{
 	dir = 4
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"qB" = (
+/obj/machinery/power/apc/auto_name/ds13/highcap,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "qC" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	icon_state = "pipe11-1";
@@ -4689,12 +5840,48 @@
 /obj/machinery/door/airlock/trek/ship,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
+"qF" = (
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "qG" = (
 /obj/machinery/transporter_pad{
 	icon_state = "4,3"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_destination)
+"qH" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Injector room"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"qI" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"qJ" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/obj/machinery/autolathe,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "qK" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer1,
@@ -4706,6 +5893,12 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"qM" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "qN" = (
 /obj/machinery/transporter_pad{
 	icon_state = "4,3"
@@ -4723,6 +5916,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"qP" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
 "qQ" = (
 /obj/item/twohanded/required/kirbyplants/photosynthetic,
 /turf/open/floor/carpet/trek/romulan,
@@ -4737,6 +5937,18 @@
 /obj/structure/flora/ausbushes/pointybush,
 /turf/open/floor/grass,
 /area/ship/m_class)
+"qT" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Power storage"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"qU" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "qV" = (
 /obj/structure/overmap_component/torpedo_tube,
 /obj/structure/torpedo_casing{
@@ -4744,6 +5956,49 @@
 	},
 /turf/open/floor/engine,
 /area/ship/bridge/museum)
+"qW" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Engine core"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"qX" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Engine core"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"qY" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Tool storage"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"qZ" = (
+/obj/machinery/door/poddoor{
+	id = "whisp_mass";
+	layer = 2.95
+	},
+/obj/structure/plasticflaps/opaque,
+/obj/structure/fans/tiny,
+/turf/open/floor/trek/bsg,
+/area/space)
+"ra" = (
+/obj/structure/closet/secure_closet/engineering_personal{
+	req_access = null
+	},
+/obj/machinery/light,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "rb" = (
 /obj/structure/janitorialcart,
 /turf/open/floor/plasteel/dark,
@@ -4752,10 +6007,25 @@
 /obj/machinery/atmospherics/components/binary/valve,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"rd" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "re" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/grass,
 /area/ship/m_class)
+"rf" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "rg" = (
 /obj/structure/fluff/broken_flooring{
 	dir = 2;
@@ -4767,15 +6037,63 @@
 /obj/structure/overmap_component/science/warbird,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"ri" = (
+/obj/machinery/meter/atmos,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "rj" = (
 /obj/structure/overmap_component/viewscreen,
 /turf/closed/wall/trek_smooth,
 /area/ship/bridge/museum)
+"rk" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"rl" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "rm" = (
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/disposal/bin,
 /turf/open/floor/plasteel/dark,
 /area/ship/ai_simulated_secondary)
+"rn" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"ro" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"rp" = (
+/obj/structure/closet/firecloset/full,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "rq" = (
 /obj/structure/ladder,
 /turf/open/floor/plating/borg,
@@ -4794,34 +6112,209 @@
 	name = "dirt"
 	},
 /area/ship/m_class)
+"rt" = (
+/obj/structure/closet/secure_closet/engineering_electrical{
+	req_access = null
+	},
+/obj/item/inducer,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "ru" = (
 /obj/structure/closet/crate,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
+"rv" = (
+/obj/machinery/power/smes,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"rw" = (
+/obj/machinery/light,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"rx" = (
+/obj/machinery/power/smes,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"ry" = (
+/obj/structure/overmap_component/plasma_injector{
+	pixel_x = -32
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"rz" = (
+/obj/machinery/computer/monitor{
+	icon_state = "computer";
+	dir = 4
+	},
+/obj/structure/cable/yellow,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "rA" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
+"rB" = (
+/obj/structure/overmap_component/plasma_injector{
+	pixel_x = 32
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"rC" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/machinery/door/airlock/trek/ship{
+	name = "Plasma storage"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"rD" = (
+/obj/structure/table/reinforced,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "rE" = (
 /obj/machinery/transporter_pad{
 	icon_state = "2,4"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"rF" = (
+/obj/machinery/computer/operating,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"rG" = (
+/obj/structure/table/optable,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "rH" = (
 /obj/item/twohanded/required/kirbyplants{
 	icon_state = "plant-10"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"rI" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/obj/structure/table/reinforced,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"rJ" = (
+/obj/machinery/vending/medical,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"rK" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/regular{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/storage/firstaid/regular{
+	step_x = 0;
+	step_y = 0
+	},
+/obj/item/storage/firstaid/regular{
+	pixel_x = -4;
+	pixel_y = -4;
+	step_x = 0;
+	step_y = 0
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"rL" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/toxin{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/storage/firstaid/toxin,
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"rM" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/fire{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/fire{
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
 "rN" = (
 /obj/machinery/transporter_pad{
 	icon_state = "2,0"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"rO" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Transporter room"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"rP" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Medical"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/space)
+"rQ" = (
+/obj/machinery/atmospherics/components/unary/tank/toxins,
+/turf/open/floor/trek/bsg,
+/area/space)
+"rR" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"rS" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	icon_state = "pipe11-2";
+	dir = 6
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"rT" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
 "rU" = (
 /obj/structure/railing{
 	icon_state = "railing0";
@@ -4829,6 +6322,33 @@
 	},
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
+"rV" = (
+/obj/machinery/atmospherics/pipe/manifold/purple/hidden{
+	icon_state = "manifold-2";
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"rW" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Warp coil ODN access"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
 "rX" = (
 /obj/structure/trek_catwalk,
 /obj/machinery/door/airlock/trek/ship/maint{
@@ -4837,18 +6357,131 @@
 	},
 /turf/open/floor/plating,
 /area/ship/ai_simulated)
+"rY" = (
+/obj/machinery/atmospherics/pipe/manifold/purple/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"rZ" = (
+/obj/machinery/atmospherics/pipe/manifold/purple/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"sa" = (
+/obj/machinery/atmospherics/pipe/manifold/purple/hidden{
+	icon_state = "manifold-2";
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
+"sb" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	icon_state = "pipe11-2";
+	dir = 10
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
 "sc" = (
 /obj/structure/overmap_component/runabout_ladder,
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
+"sd" = (
+/obj/machinery/light,
+/turf/open/floor/trek/bsg,
+/area/space)
 "se" = (
 /turf/open/floor/plasteel/airless{
 	icon_state = "damaged2"
 	},
 /area/ship/debrisfield)
+"sf" = (
+/obj/machinery/light/small,
+/turf/open/floor/trek/bsg,
+/area/space)
+"sg" = (
+/obj/structure/fans/tiny,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/machinery/door/airlock/trek/ship{
+	name = "Warp coil bay"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
 "sh" = (
 /turf/open/floor/plating,
 /area/ship/ai_simulated_tertiary)
+"si" = (
+/obj/machinery/power/warp_coil,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sj" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	icon_state = "inje_map-2";
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sk" = (
+/obj/machinery/power/warp_coil,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sl" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sm" = (
+/obj/machinery/power/warp_coil,
+/obj/structure/cable/yellow,
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sn" = (
+/obj/structure/shuttle/engine/propulsion,
+/obj/structure/lattice/catwalk,
+/turf/open/space/basic,
+/area/space)
+"so" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/shuttle/engine/propulsion,
+/turf/open/space/basic,
+/area/space)
+"sp" = (
+/obj/machinery/transporter_pad{
+	icon_state = "0,4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "sq" = (
 /obj/structure/fluff/broken_flooring{
 	icon_state = "pile";
@@ -4872,6 +6505,12 @@
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_tertiary)
+"su" = (
+/obj/machinery/transporter_pad{
+	icon_state = "1,4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "sv" = (
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
@@ -4883,6 +6522,16 @@
 /obj/structure/table/optable,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
+"sx" = (
+/obj/machinery/transporter_pad{
+	icon_state = "2,4"
+	},
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "sy" = (
 /obj/structure/chair/comfy/shuttle{
 	icon_state = "shuttle_chair";
@@ -4890,12 +6539,60 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_tertiary)
+"sz" = (
+/obj/machinery/transporter_pad{
+	icon_state = "3,4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sA" = (
+/obj/machinery/transporter_pad{
+	icon_state = "4,4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "sB" = (
 /obj/machinery/transporter_pad{
 	icon_state = "4,3"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"sC" = (
+/obj/machinery/transporter_pad{
+	icon_state = "0,3"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sD" = (
+/obj/machinery/transporter_pad{
+	icon_state = "1,3"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sE" = (
+/obj/machinery/transporter_pad{
+	icon_state = "2,3"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sF" = (
+/obj/machinery/transporter_pad{
+	icon_state = "3,3"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sG" = (
+/obj/machinery/transporter_pad{
+	icon_state = "4,3"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sH" = (
+/obj/machinery/transporter_pad{
+	icon_state = "0,2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "sI" = (
 /obj/structure/rack,
 /obj/item/shard,
@@ -4904,6 +6601,12 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"sJ" = (
+/obj/machinery/transporter_pad{
+	icon_state = "1,2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "sK" = (
 /turf/closed/wall/trek_smooth/romulan,
 /area/ship/bridge/museum)
@@ -4917,12 +6620,49 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
+"sM" = (
+/obj/machinery/transporter_pad{
+	icon_state = "2,2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sN" = (
+/obj/machinery/transporter_pad{
+	icon_state = "3,2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sO" = (
+/obj/machinery/transporter_pad{
+	icon_state = "4,2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "sP" = (
 /obj/structure/rack,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"sQ" = (
+/obj/machinery/computer/camera_advanced/transporter_control{
+	dir = 8;
+	icon_state = "control"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sR" = (
+/obj/machinery/transporter_pad{
+	icon_state = "0,1"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sS" = (
+/obj/machinery/transporter_pad{
+	icon_state = "1,1"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "sT" = (
 /obj/structure/railing{
 	icon_state = "railing0";
@@ -4934,6 +6674,36 @@
 /obj/machinery/light,
 /turf/open/floor/trek/tile,
 /area/ship/ai_simulated)
+"sV" = (
+/obj/machinery/transporter_pad{
+	icon_state = "2,1"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sW" = (
+/obj/machinery/transporter_pad{
+	icon_state = "3,1"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sX" = (
+/obj/machinery/transporter_pad{
+	icon_state = "4,1"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sY" = (
+/obj/machinery/transporter_pad{
+	icon_state = "0,0"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"sZ" = (
+/obj/machinery/transporter_pad{
+	icon_state = "1,0"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
 "ta" = (
 /obj/machinery/shower{
 	dir = 8
@@ -4963,6 +6733,30 @@
 	},
 /turf/open/space/basic,
 /area/ship/ai_simulated_secondary)
+"tf" = (
+/obj/machinery/transporter_pad{
+	icon_state = "2,0"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"tg" = (
+/obj/machinery/transporter_pad{
+	icon_state = "3,0"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"th" = (
+/obj/machinery/transporter_pad{
+	icon_state = "4,0"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/space)
+"ti" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg,
+/area/space)
 "tj" = (
 /obj/structure/overmap_component/tactical{
 	req_access = null
@@ -4975,6 +6769,14 @@
 /obj/item/storage/bag/tray,
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
+"tl" = (
+/obj/structure/closet/cardboard,
+/turf/open/floor/trek/bsg,
+/area/space)
+"tm" = (
+/obj/structure/closet/cardboard/metal,
+/turf/open/floor/trek/bsg,
+/area/space)
 "tq" = (
 /obj/machinery/transporter_pad{
 	icon_state = "2,2"
@@ -21564,29 +23366,29 @@ ab
 ab
 ab
 ab
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
 aa
 aa
@@ -21843,7 +23645,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -22100,7 +23902,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -22357,7 +24159,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -22614,7 +24416,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -22871,7 +24673,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -23128,7 +24930,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -23385,7 +25187,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -23642,7 +25444,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -23899,7 +25701,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -24156,7 +25958,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -24413,7 +26215,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -24670,7 +26472,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -24927,7 +26729,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -25127,6 +26929,25 @@ aa
 aa
 aa
 aa
+lx
+lx
+lC
+lx
+lx
+lx
+lC
+lC
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
 aa
 aa
 aa
@@ -25165,26 +26986,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -25383,6 +27185,26 @@ aa
 aa
 aa
 aa
+lx
+lx
+mk
+mk
+mk
+lx
+mH
+na
+nD
+nD
+lx
+or
+oG
+lI
+oS
+oS
+lx
+mk
+pk
+lx
 aa
 aa
 aa
@@ -25421,27 +27243,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -25640,6 +27442,26 @@ aa
 aa
 aa
 aa
+lx
+lM
+mk
+mk
+mk
+lG
+lI
+lI
+lI
+nH
+lx
+lx
+lx
+oL
+lI
+pc
+lx
+pf
+mk
+lx
 aa
 aa
 aa
@@ -25678,27 +27500,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -25897,6 +27699,26 @@ aa
 aa
 aa
 aa
+lx
+mi
+mk
+mk
+mk
+mG
+lI
+lI
+lI
+lI
+lI
+ox
+lx
+oM
+oT
+lI
+lx
+pi
+mk
+lx
 aa
 aa
 aa
@@ -25935,27 +27757,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -26154,6 +27956,26 @@ aa
 aa
 aa
 aa
+lx
+lM
+mw
+mk
+mk
+lx
+mS
+lI
+lI
+lI
+lI
+ox
+lx
+oO
+lI
+lI
+lx
+pj
+mk
+lx
 aa
 aa
 aa
@@ -26169,6 +27991,15 @@ aa
 aa
 aa
 aa
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
 aa
 aa
 aa
@@ -26183,36 +28014,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -26411,6 +28213,52 @@ aa
 aa
 aa
 aa
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+os
+lx
+lx
+lx
+lx
+lx
+lx
+pd
+lx
+lx
+pl
+lx
+lx
+lC
+lC
+lC
+lC
+lx
+lx
+lx
+lx
+lx
+qZ
+lx
+aa
+aa
+aa
+lx
+lI
+lx
+lI
+lx
+lI
+lx
+lI
+lx
+lx
+lx
 aa
 aa
 aa
@@ -26423,53 +28271,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -26668,6 +28470,53 @@ aa
 aa
 aa
 aa
+lx
+lH
+lD
+mp
+lD
+lD
+nt
+lx
+ly
+ly
+oF
+ly
+ly
+ly
+ly
+ly
+ly
+ly
+ly
+lx
+pj
+pi
+mk
+mk
+mk
+pZ
+lx
+oc
+of
+on
+ot
+lx
+lx
+lC
+lx
+lx
+lI
+ry
+lI
+ry
+lI
+ry
+lI
+ry
+lI
+lx
+sn
 aa
 aa
 aa
@@ -26679,54 +28528,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -26925,6 +28727,54 @@ aa
 aa
 aa
 aa
+lx
+lN
+lD
+lD
+lD
+lD
+nB
+nU
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+ms
+lX
+qd
+od
+od
+od
+od
+od
+qa
+ql
+od
+og
+oo
+ou
+lx
+mk
+rS
+rR
+sg
+qu
+si
+qu
+si
+sj
+sk
+sl
+sm
+lI
+lx
+lx
+so
 aa
 aa
 aa
@@ -26935,55 +28785,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -27182,6 +28984,53 @@ aa
 aa
 aa
 aa
+lx
+lG
+lD
+mq
+mF
+nm
+mX
+lx
+mE
+ly
+ly
+ly
+ly
+ly
+ly
+ly
+ly
+mu
+oB
+lx
+po
+pv
+mw
+mk
+mk
+nI
+lx
+qP
+oi
+op
+ow
+lx
+qP
+rT
+mk
+lx
+lI
+rB
+lI
+rB
+lI
+rB
+lI
+rB
+lI
+lx
+sn
 aa
 aa
 aa
@@ -27193,54 +29042,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -27440,6 +29242,51 @@ aa
 aa
 aa
 aa
+lx
+lx
+lC
+lC
+lC
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+ly
+mu
+ly
+lx
+lx
+lx
+lx
+lx
+lx
+qH
+lx
+lx
+lx
+lx
+lx
+lx
+mk
+rT
+mk
+lx
+lI
+lx
+lI
+lx
+lI
+lx
+lI
+lx
+lx
+lx
 aa
 aa
 aa
@@ -27452,52 +29299,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -27705,6 +29507,41 @@ aa
 aa
 aa
 aa
+lx
+nK
+lD
+lx
+lD
+oX
+lG
+ly
+mu
+ly
+lx
+qg
+lJ
+lK
+lL
+ly
+mo
+oa
+lx
+lI
+lI
+rp
+lx
+mk
+rT
+mk
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
 aa
 aa
 aa
@@ -27719,42 +29556,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -27962,6 +29764,33 @@ aa
 aa
 aa
 aa
+lx
+nO
+lD
+lx
+lE
+oY
+lx
+ly
+mu
+ly
+lA
+ly
+ly
+ly
+ly
+ly
+ly
+ly
+lx
+qB
+lI
+rt
+lG
+mk
+rT
+sd
+lx
 aa
 aa
 aa
@@ -27984,34 +29813,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -28219,6 +30021,41 @@ aa
 aa
 aa
 aa
+lx
+nP
+pH
+lx
+lD
+oZ
+lx
+ly
+mu
+ly
+lA
+ly
+ly
+ly
+ly
+ly
+ly
+ly
+lx
+qI
+rk
+rv
+lx
+mk
+rT
+mk
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
 aa
 aa
 aa
@@ -28233,42 +30070,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -28476,6 +30278,43 @@ aa
 aa
 aa
 aa
+lx
+mx
+lD
+lx
+lD
+nh
+lx
+ly
+mu
+ly
+lA
+ly
+ly
+ly
+ly
+ly
+ly
+ly
+qT
+qM
+rl
+rw
+lx
+mk
+rT
+mk
+lx
+lI
+lx
+lI
+lx
+lI
+lx
+lI
+lx
+lx
+lx
 aa
 aa
 aa
@@ -28488,44 +30327,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -28728,6 +30530,49 @@ aa
 aa
 aa
 aa
+lx
+lx
+lC
+lC
+lx
+lx
+lx
+pI
+lx
+pI
+lx
+lx
+ly
+mu
+ly
+lG
+ly
+ly
+ly
+lU
+ly
+ly
+mE
+lx
+qU
+rn
+rx
+lx
+mk
+rT
+mk
+lx
+lI
+ry
+lI
+ry
+lI
+ry
+lI
+ry
+lI
+lx
+sn
 aa
 aa
 aa
@@ -28739,50 +30584,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -28985,6 +30787,50 @@ aa
 aa
 aa
 aa
+lx
+ly
+ly
+ly
+mm
+lx
+my
+ly
+oF
+ly
+mm
+lx
+pX
+mu
+ly
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+qX
+lx
+lx
+lx
+mk
+rV
+rR
+sg
+qu
+si
+qu
+si
+sj
+sk
+sl
+sm
+lI
+lx
+lx
+so
 aa
 aa
 aa
@@ -28995,51 +30841,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -29242,6 +31044,49 @@ aa
 aa
 aa
 aa
+lA
+mI
+ly
+ly
+mo
+oK
+lX
+lX
+lX
+lX
+ni
+pS
+lX
+nz
+ly
+lx
+lI
+lI
+pA
+qz
+pY
+qc
+qz
+qq
+rd
+ro
+rz
+lx
+lx
+rW
+lx
+lx
+lI
+rB
+lI
+rB
+lI
+rB
+lI
+rB
+lI
+lx
+sn
 aa
 aa
 aa
@@ -29253,50 +31098,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -29499,6 +31301,48 @@ aa
 aa
 aa
 aa
+lA
+mK
+ly
+ly
+oB
+lG
+lD
+mN
+mN
+mN
+lD
+lx
+ly
+mu
+ly
+lG
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+rf
+lI
+qm
+lx
+rQ
+rY
+pj
+lx
+lI
+lx
+lI
+lx
+lI
+lx
+lI
+lx
+lx
+lx
 aa
 aa
 aa
@@ -29511,49 +31355,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -29756,6 +31558,46 @@ aa
 aa
 aa
 aa
+lA
+ly
+ly
+ly
+ly
+lx
+mz
+mO
+mO
+mO
+nm
+lx
+ly
+mu
+ly
+lx
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+rf
+lI
+lI
+lx
+mk
+rT
+mk
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
 aa
 aa
 aa
@@ -29770,47 +31612,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -30013,6 +31815,38 @@ aa
 aa
 aa
 aa
+lx
+ma
+nG
+oe
+ly
+lx
+lE
+mO
+mO
+oP
+lD
+lx
+ma
+mu
+ly
+lx
+qi
+lI
+lI
+lI
+lI
+qf
+qn
+qu
+ri
+qu
+qu
+rC
+rR
+rZ
+sf
+lx
 aa
 aa
 aa
@@ -30035,39 +31869,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -30270,6 +32072,46 @@ aa
 aa
 aa
 aa
+lA
+ly
+ly
+ly
+ly
+lx
+mA
+mO
+mO
+mO
+nm
+lx
+ly
+mu
+ly
+lx
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+lx
+mk
+rT
+mk
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
 aa
 aa
 aa
@@ -30284,47 +32126,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -30527,6 +32329,48 @@ aa
 aa
 aa
 aa
+lA
+mW
+ly
+ly
+oB
+lx
+lD
+mQ
+mQ
+mQ
+lD
+lx
+ly
+mu
+ly
+lG
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+lI
+lx
+rQ
+rY
+pj
+lx
+lI
+lx
+lI
+lx
+lI
+lx
+lI
+lx
+lx
+lx
 aa
 aa
 aa
@@ -30539,49 +32383,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -30784,6 +32586,49 @@ aa
 aa
 aa
 aa
+lA
+nq
+ly
+ly
+ly
+pt
+ly
+ly
+ly
+ly
+ly
+pU
+ly
+mu
+ly
+lx
+lI
+lI
+pD
+qz
+qF
+qz
+qz
+qq
+lI
+qy
+qq
+lx
+lx
+rW
+lx
+lx
+lI
+ry
+lI
+ry
+lI
+ry
+lI
+ry
+lI
+lx
+sn
 aa
 aa
 aa
@@ -30795,50 +32640,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -31041,6 +32843,50 @@ aa
 aa
 aa
 aa
+lx
+ly
+mY
+nd
+mE
+lx
+mB
+ly
+lU
+ly
+pa
+lx
+pX
+mu
+ly
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+qW
+lx
+lx
+lx
+mk
+sa
+rR
+sg
+qu
+si
+qu
+si
+sj
+sk
+sl
+sm
+lI
+lx
+lx
+so
 aa
 aa
 aa
@@ -31051,51 +32897,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -31298,6 +33100,49 @@ aa
 aa
 aa
 aa
+lx
+lx
+lC
+lC
+lx
+lx
+lx
+pI
+lx
+pI
+lx
+lx
+ly
+mu
+ly
+lx
+pp
+pw
+pE
+pN
+lx
+nS
+ly
+ly
+ly
+ly
+oy
+lx
+mk
+rT
+mk
+lx
+lI
+rB
+lI
+rB
+lI
+rB
+lI
+rB
+lI
+lx
+sn
 aa
 aa
 aa
@@ -31309,50 +33154,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -31560,6 +33362,43 @@ aa
 aa
 aa
 aa
+lx
+mC
+lD
+lx
+lD
+no
+lx
+ly
+mu
+ly
+lA
+pr
+mk
+pJ
+pN
+lx
+nT
+ly
+ly
+ly
+ly
+oz
+lx
+mk
+rT
+mk
+lx
+lI
+lx
+lI
+lx
+lI
+lx
+lI
+lx
+lx
+lx
 aa
 aa
 aa
@@ -31572,44 +33411,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -31817,6 +33619,41 @@ aa
 aa
 aa
 aa
+lx
+nP
+pH
+lx
+lD
+oZ
+lx
+ly
+mu
+ly
+lA
+pr
+mk
+pJ
+pP
+lx
+qJ
+ly
+ly
+ly
+ly
+ra
+lx
+mk
+rT
+mk
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
 aa
 aa
 aa
@@ -31831,42 +33668,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -32074,6 +33876,33 @@ aa
 aa
 aa
 aa
+lx
+nO
+lD
+lx
+lE
+oY
+lx
+ly
+mu
+ly
+lA
+pr
+mk
+pM
+pN
+lx
+qj
+ly
+ly
+ly
+ly
+oE
+lG
+mk
+rT
+sd
+lx
 aa
 aa
 aa
@@ -32096,34 +33925,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -32331,6 +34133,41 @@ aa
 aa
 aa
 aa
+lx
+nX
+lD
+lx
+lD
+pb
+lG
+ly
+mu
+ly
+lx
+ps
+mk
+mk
+pR
+lx
+qk
+ly
+qv
+ny
+lX
+oa
+lx
+mk
+rT
+mk
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
 aa
 aa
 aa
@@ -32345,42 +34182,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -32580,6 +34382,51 @@ aa
 aa
 aa
 aa
+lx
+lx
+lC
+lC
+lC
+lC
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+ly
+mu
+ly
+lx
+lx
+px
+lx
+lx
+lx
+lx
+lx
+lx
+qY
+lx
+lx
+lx
+mk
+rT
+mk
+lx
+lI
+lx
+lI
+lx
+lI
+lx
+lI
+lx
+lx
+lx
 aa
 aa
 aa
@@ -32592,52 +34439,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -32836,6 +34638,53 @@ aa
 aa
 aa
 aa
+lx
+lx
+mE
+ly
+ly
+ly
+ly
+ly
+ly
+ly
+oF
+ly
+ly
+ly
+ly
+ly
+ny
+nz
+oB
+lx
+mm
+ly
+ly
+oF
+ly
+ly
+ly
+oF
+mu
+ly
+ly
+lx
+qP
+rT
+mk
+lx
+lI
+ry
+lI
+ry
+lI
+ry
+lI
+ry
+lI
+lx
+sn
 aa
 aa
 aa
@@ -32847,54 +34696,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -33093,6 +34895,54 @@ aa
 aa
 aa
 aa
+lx
+lO
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+ms
+lX
+lX
+lX
+lX
+lX
+lX
+mv
+mo
+lX
+qe
+nF
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+mv
+ly
+ly
+lx
+mk
+sb
+rR
+sg
+qu
+si
+qu
+si
+sj
+sk
+sl
+sm
+lI
+lx
+lx
+so
 aa
 aa
 aa
@@ -33103,55 +34953,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -33350,6 +35152,53 @@ aa
 aa
 aa
 aa
+lx
+lQ
+lZ
+lZ
+lZ
+lZ
+ly
+ly
+ly
+mu
+ly
+ly
+ly
+ly
+ly
+ly
+ly
+ly
+ly
+lx
+mE
+ly
+ly
+ly
+ly
+mE
+ly
+ly
+ly
+ly
+mE
+lx
+lx
+lC
+lx
+lx
+lI
+rB
+lI
+rB
+lI
+rB
+lI
+rB
+lI
+lx
+sn
 aa
 aa
 aa
@@ -33361,54 +35210,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -33607,6 +35409,52 @@ aa
 aa
 aa
 aa
+lx
+lx
+lY
+lY
+lY
+lY
+lx
+lx
+lx
+pu
+lx
+lx
+lx
+lx
+lx
+pV
+lx
+lx
+pl
+lx
+lx
+lC
+lC
+lC
+lx
+lx
+lx
+lC
+lC
+lC
+lx
+lx
+aa
+aa
+aa
+lx
+lI
+lx
+lI
+lx
+lI
+lx
+lI
+lx
+lx
+lx
 aa
 aa
 aa
@@ -33619,53 +35467,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -33864,6 +35666,26 @@ aa
 aa
 aa
 aa
+lA
+lR
+ly
+ly
+ly
+ly
+mh
+ne
+nE
+nI
+nY
+lx
+oH
+oR
+ly
+ly
+lx
+pj
+mk
+lx
 aa
 aa
 aa
@@ -33879,6 +35701,15 @@ aa
 aa
 aa
 aa
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
 aa
 aa
 aa
@@ -33893,36 +35724,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -34121,6 +35923,26 @@ aa
 aa
 aa
 aa
+lA
+lV
+ly
+ly
+ly
+ly
+nQ
+mk
+mk
+nI
+ob
+lx
+lx
+lx
+np
+ly
+lx
+pi
+mk
+lx
 aa
 aa
 aa
@@ -34159,27 +35981,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -34378,6 +36180,26 @@ aa
 aa
 aa
 aa
+lA
+lW
+ly
+ly
+ly
+nr
+lx
+ng
+od
+og
+ok
+lx
+oI
+qw
+ly
+ly
+lx
+pf
+mk
+lx
 aa
 aa
 aa
@@ -34416,27 +36238,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -34635,6 +36437,26 @@ aa
 aa
 aa
 aa
+lx
+lx
+md
+lJ
+ly
+me
+lx
+nA
+mk
+mk
+ol
+lx
+oJ
+lI
+ly
+nx
+lx
+mk
+pk
+lx
 aa
 aa
 aa
@@ -34673,27 +36495,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -34893,6 +36695,25 @@ aa
 aa
 aa
 aa
+lx
+lx
+lC
+lC
+lx
+lx
+lC
+lC
+lC
+lx
+lx
+lx
+lC
+lC
+lx
+lx
+lx
+lx
+lx
 aa
 aa
 aa
@@ -34931,26 +36752,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -35207,7 +37009,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -35464,7 +37266,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -35649,6 +37451,7 @@ aa
 aa
 aa
 aa
+ab
 aa
 aa
 aa
@@ -35720,8 +37523,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -35906,6 +37708,7 @@ aa
 aa
 aa
 aa
+ab
 aa
 aa
 aa
@@ -35977,8 +37780,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -36163,6 +37965,7 @@ aa
 aa
 aa
 aa
+ab
 aa
 aa
 aa
@@ -36234,8 +38037,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -36420,6 +38222,7 @@ aa
 aa
 aa
 aa
+ab
 aa
 aa
 aa
@@ -36491,8 +38294,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -36677,6 +38479,7 @@ aa
 aa
 aa
 aa
+ab
 aa
 aa
 aa
@@ -36748,8 +38551,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -36934,6 +38736,7 @@ aa
 aa
 aa
 aa
+ab
 aa
 aa
 aa
@@ -37005,8 +38808,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -37191,6 +38993,7 @@ aa
 aa
 aa
 aa
+ab
 aa
 aa
 aa
@@ -37262,8 +39065,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -37448,6 +39250,7 @@ aa
 aa
 aa
 aa
+ab
 aa
 aa
 aa
@@ -37519,8 +39322,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -37705,6 +39507,7 @@ aa
 aa
 aa
 aa
+ab
 aa
 aa
 aa
@@ -37776,8 +39579,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -37962,6 +39764,7 @@ aa
 aa
 aa
 aa
+ab
 aa
 aa
 aa
@@ -38033,8 +39836,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -38219,79 +40021,79 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
 aa
 aa
@@ -87066,63 +88868,63 @@ ab
 ab
 ab
 ab
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
 aa
 aa
@@ -87379,7 +89181,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -87636,7 +89438,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -87893,7 +89695,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -88150,7 +89952,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -88407,7 +90209,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -88664,7 +90466,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -88921,7 +90723,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -89178,7 +90980,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -89435,7 +91237,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -89692,7 +91494,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -89949,7 +91751,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -90206,7 +92008,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -90463,7 +92265,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -90678,6 +92480,10 @@ aa
 aa
 aa
 aa
+lx
+lx
+lx
+lx
 aa
 aa
 aa
@@ -90716,11 +92522,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -90935,6 +92737,10 @@ aa
 aa
 aa
 aa
+lx
+tl
+pk
+lx
 aa
 aa
 aa
@@ -90973,11 +92779,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -91192,6 +92994,10 @@ aa
 aa
 aa
 aa
+lx
+pf
+mk
+lx
 aa
 aa
 aa
@@ -91230,11 +93036,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -91449,6 +93251,10 @@ aa
 aa
 aa
 aa
+lx
+pj
+mk
+lx
 aa
 aa
 aa
@@ -91487,11 +93293,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -91706,6 +93508,10 @@ aa
 aa
 aa
 aa
+lx
+pi
+mk
+lx
 aa
 aa
 aa
@@ -91744,11 +93550,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -91962,6 +93764,11 @@ aa
 aa
 aa
 aa
+lx
+lx
+lx
+pl
+lx
 aa
 aa
 aa
@@ -92000,12 +93807,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -92219,6 +94021,11 @@ aa
 aa
 aa
 aa
+lx
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -92257,12 +94064,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -92476,6 +94278,11 @@ aa
 aa
 aa
 aa
+lx
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -92514,12 +94321,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -92733,6 +94535,11 @@ aa
 aa
 aa
 aa
+lx
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -92771,12 +94578,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -92984,6 +94786,17 @@ aa
 aa
 aa
 aa
+lx
+lx
+lx
+lx
+lx
+lx
+lG
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -93022,18 +94835,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -93241,6 +95043,17 @@ aa
 aa
 aa
 aa
+lx
+lI
+lI
+qw
+lI
+lI
+lx
+ti
+mk
+mk
+lx
 aa
 aa
 aa
@@ -93279,18 +95092,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -93498,6 +95300,17 @@ aa
 aa
 aa
 aa
+lx
+sp
+sC
+sH
+sR
+sY
+lA
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -93536,18 +95349,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -93755,6 +95557,17 @@ aa
 aa
 aa
 aa
+lx
+su
+sD
+sJ
+sS
+sZ
+lA
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -93793,18 +95606,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -94012,6 +95814,17 @@ aa
 aa
 aa
 aa
+lx
+sx
+sE
+sM
+sV
+tf
+lA
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -94050,18 +95863,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -94269,6 +96071,17 @@ aa
 aa
 aa
 aa
+lx
+sz
+sF
+sN
+sW
+tg
+lA
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -94307,18 +96120,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -94526,6 +96328,17 @@ aa
 aa
 aa
 aa
+lx
+sA
+sG
+sO
+sX
+th
+lA
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -94564,18 +96377,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -94783,6 +96585,17 @@ aa
 aa
 aa
 aa
+lG
+lI
+lI
+sQ
+lI
+lI
+lx
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -94821,18 +96634,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -95040,6 +96842,17 @@ aa
 aa
 aa
 aa
+lx
+ly
+ly
+ly
+ly
+ly
+lx
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -95078,18 +96891,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -95297,6 +97099,17 @@ aa
 aa
 aa
 aa
+lx
+pa
+ly
+ly
+ly
+ly
+rO
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -95335,18 +97148,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -95554,6 +97356,17 @@ aa
 aa
 aa
 aa
+lx
+rD
+ly
+ly
+ly
+oB
+lx
+qP
+mk
+sd
+lx
 aa
 aa
 aa
@@ -95592,18 +97405,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -95811,6 +97613,17 @@ aa
 aa
 aa
 aa
+lx
+pa
+ly
+ly
+ly
+ly
+rO
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -95849,18 +97662,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -96068,6 +97870,17 @@ aa
 aa
 aa
 aa
+lx
+ly
+ly
+ly
+ly
+ly
+lx
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -96106,18 +97919,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -96325,6 +98127,17 @@ aa
 aa
 aa
 aa
+lx
+ly
+ly
+ly
+ly
+ly
+lx
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -96363,18 +98176,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -96582,6 +98384,17 @@ aa
 aa
 aa
 aa
+lx
+lx
+lC
+lC
+lC
+lx
+lx
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -96620,18 +98433,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -96839,6 +98641,17 @@ aa
 aa
 aa
 aa
+lx
+rF
+ly
+ly
+ly
+rJ
+lx
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -96877,18 +98690,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -97096,6 +98898,17 @@ aa
 aa
 aa
 aa
+lx
+rG
+ly
+ly
+ly
+ly
+rP
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -97134,18 +98947,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -97353,6 +99155,17 @@ aa
 aa
 aa
 aa
+lx
+rI
+ly
+ly
+ly
+rK
+lx
+ti
+mk
+mk
+lx
 aa
 aa
 aa
@@ -97391,18 +99204,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -97610,6 +99412,17 @@ aa
 aa
 aa
 aa
+lx
+ly
+ly
+ly
+ly
+rL
+lx
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -97648,18 +99461,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -97867,6 +99669,17 @@ aa
 aa
 aa
 aa
+lx
+oN
+ly
+oN
+ly
+rM
+lx
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -97905,18 +99718,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -98124,6 +99926,17 @@ aa
 aa
 aa
 aa
+lx
+lx
+lx
+lx
+lx
+lx
+lG
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -98162,18 +99975,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -98387,6 +100189,11 @@ aa
 aa
 aa
 aa
+lx
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -98425,12 +100232,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -98644,6 +100446,11 @@ aa
 aa
 aa
 aa
+lx
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -98682,12 +100489,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -98901,6 +100703,11 @@ aa
 aa
 aa
 aa
+lx
+mk
+mk
+mk
+lx
 aa
 aa
 aa
@@ -98939,12 +100746,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -99158,6 +100960,11 @@ aa
 aa
 aa
 aa
+lx
+lx
+lx
+pl
+lx
 aa
 aa
 aa
@@ -99196,12 +101003,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -99416,6 +101218,10 @@ aa
 aa
 aa
 aa
+lx
+pi
+mk
+lx
 aa
 aa
 aa
@@ -99454,11 +101260,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -99673,6 +101475,10 @@ aa
 aa
 aa
 aa
+lx
+pj
+mk
+lx
 aa
 aa
 aa
@@ -99711,11 +101517,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -99930,6 +101732,10 @@ aa
 aa
 aa
 aa
+lx
+pf
+mk
+lx
 aa
 aa
 aa
@@ -99968,11 +101774,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -100187,6 +101989,10 @@ aa
 aa
 aa
 aa
+lx
+tm
+pk
+lx
 aa
 aa
 aa
@@ -100225,11 +102031,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -100444,6 +102246,10 @@ aa
 aa
 aa
 aa
+lx
+lx
+lx
+lx
 aa
 aa
 aa
@@ -100482,11 +102288,7 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
+ab
 aa
 aa
 aa
@@ -100743,7 +102545,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -101000,7 +102802,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -101257,7 +103059,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -101514,7 +103316,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -101771,7 +103573,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -102028,7 +103830,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -102285,7 +104087,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -102542,7 +104344,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -102799,7 +104601,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -103056,7 +104858,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -103313,7 +105115,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -103570,7 +105372,7 @@ aa
 aa
 aa
 aa
-aa
+ab
 aa
 aa
 aa
@@ -103771,63 +105573,63 @@ aa
 aa
 aa
 ab
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
 aa
 aa
