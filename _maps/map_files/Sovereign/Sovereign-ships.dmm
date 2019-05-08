@@ -4329,7 +4329,7 @@
 	id = "whisp_diner";
 	name = "Shutters control";
 	pixel_x = -28;
-	step_x = 2
+	step_x = 0
 	},
 /turf/open/floor/trek/bsg/tile,
 /area/space)
