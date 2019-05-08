@@ -4329,7 +4329,6 @@
 	id = "whisp_diner";
 	name = "Shutters control";
 	pixel_x = -28;
-	step_x = 0
 	},
 /turf/open/floor/trek/bsg/tile,
 /area/space)
@@ -5196,7 +5195,6 @@
 /area/space)
 "oH" = (
 /obj/structure/toilet{
-	step_y = 12
 	},
 /obj/machinery/light/small{
 	dir = 4
@@ -6233,14 +6231,10 @@
 	pixel_y = 4
 	},
 /obj/item/storage/firstaid/regular{
-	step_x = 0;
-	step_y = 0
 	},
 /obj/item/storage/firstaid/regular{
 	pixel_x = -4;
 	pixel_y = -4;
-	step_x = 0;
-	step_y = 0
 	},
 /turf/open/floor/trek/bsg/tile,
 /area/space)
