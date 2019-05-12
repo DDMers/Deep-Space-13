@@ -107,11 +107,13 @@
 	var/msg = "[key_name_admin(usr)] teleported [ADMIN_LOOKUPFLW(M)] to [ADMIN_VERBOSEJMP(loc)]"
 	message_admins(msg)
 	admin_ticket_log(M, msg)//DeepSpace13 start - Adds teleport fluff
-	playsound(M.loc, 'DS13/sound/effects/transporter/retrieve.ogg', 100, 4)
-	new /obj/effect/temp_visual/transporter(get_turf(M))
+	if(isliving(M))
+		playsound(M.loc, 'DS13/sound/effects/transporter/retrieve.ogg', 100, 4)
+		new /obj/effect/temp_visual/transporter(get_turf(M))
 	M.forceMove(loc)
-	playsound(M.loc, 'DS13/sound/effects/transporter/send.ogg', 100, 4)
-	new /obj/effect/temp_visual/transporter(get_turf(M)) //DeepSpace13 - end
+	if(isliving(M))
+		playsound(M.loc, 'DS13/sound/effects/transporter/send.ogg', 100, 4)
+		new /obj/effect/temp_visual/transporter(get_turf(M)) //DeepSpace13 - end
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Get Mob") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/Getkey()
