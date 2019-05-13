@@ -20,6 +20,7 @@
 	attack_sound = 'sound/weapons/resonator_blast.ogg'
 	miss_sound = 'sound/weapons/parry.ogg'
 
+
 /datum/species/t800/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H)
 	if(istype(I, /obj/item/weldingtool))
 		var/obj/item/weldingtool/W = I
@@ -118,6 +119,9 @@
 
 /mob/living/carbon/human/species/t800
 	race = /datum/species/t800
+
+/mob/living/carbon/human/species/t800/adjust_hygiene(amount)
+	return //Fuck off stinky robot
 
 /obj/item/organ/cyberimp/arm/t800
 	name = "eradication toolset"
