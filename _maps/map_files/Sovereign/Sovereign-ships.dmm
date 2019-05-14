@@ -5103,9 +5103,6 @@
 	icon_state = "manifold-1";
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 4
-	},
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
 "nF" = (
@@ -5124,9 +5121,6 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
 	icon_state = "manifold-1";
-	dir = 8
-	},
-/obj/machinery/light{
 	dir = 8
 	},
 /turf/open/floor/carpet/trek,
@@ -5546,7 +5540,9 @@
 	icon_state = "pipe11-1";
 	dir = 8
 	},
-/obj/machinery/jukebox/trek,
+/obj/machinery/jukebox/trek{
+	req_access = null
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
 "oH" = (
@@ -5585,10 +5581,11 @@
 /turf/open/floor/engine,
 /area/ship/runabout)
 "oL" = (
-/obj/structure/overmap_component/plasma_injector{
-	pixel_x = -32
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/overmap_component/plasma_injector{
+	pixel_x = -32;
+	req_access = null
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/runabout)
 "oM" = (
@@ -5618,10 +5615,11 @@
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
 "oR" = (
-/obj/structure/overmap_component/plasma_injector{
-	pixel_x = 32
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/structure/overmap_component/plasma_injector{
+	pixel_x = 32;
+	req_access = null
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/runabout)
 "oS" = (
@@ -5712,10 +5710,11 @@
 /turf/open/floor/plasteel/white,
 /area/ship/runabout)
 "pg" = (
-/obj/structure/overmap_component/plasma_injector{
-	pixel_x = 32
-	},
 /obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/structure/overmap_component/plasma_injector{
+	pixel_x = 32;
+	req_access = null
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/runabout)
 "ph" = (
