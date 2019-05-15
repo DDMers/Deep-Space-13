@@ -250,7 +250,6 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
 "aT" = (
-/obj/machinery/emh_emitter,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -871,7 +870,6 @@
 /area/hallway/secondary/command)
 "cK" = (
 /obj/structure/closet/secure_closet/CMO,
-/obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
 "cL" = (
@@ -1308,10 +1306,6 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/computer/holodeck,
-/turf/open/floor/carpet/trek,
-/area/crew_quarters/dorms)
-"eb" = (
-/obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/dorms)
 "ec" = (
@@ -2480,13 +2474,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
-"hy" = (
-/obj/machinery/emh_emitter,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/quartermaster/storage)
 "hz" = (
 /obj/structure/bed/roller,
 /turf/open/floor/carpet/trek,
@@ -4028,10 +4015,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
-"lG" = (
-/obj/machinery/ore_silo,
-/turf/open/floor/carpet/trek,
-/area/science/research)
 "lH" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
 	icon_state = "scrub_map_on-1";
@@ -9817,11 +9800,6 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/white,
 /area/hallway/secondary/entry)
-"Au" = (
-/obj/structure/rack,
-/obj/item/wrench,
-/turf/open/floor/carpet/trek,
-/area/science/research)
 "Av" = (
 /obj/machinery/computer/station_alert{
 	dir = 8
@@ -11233,13 +11211,6 @@
 /obj/structure/trek_catwalk,
 /turf/open/floor/plating,
 /area/maintenance/fore)
-"DX" = (
-/obj/machinery/airalarm{
-	pixel_y = 26
-	},
-/obj/structure/closet/secure_closet/miner,
-/turf/open/floor/carpet/trek,
-/area/quartermaster/miningdock)
 "DY" = (
 /obj/structure/janitorialcart,
 /turf/open/floor/carpet/trek,
@@ -11297,19 +11268,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/warehouse)
-"Eg" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/closet/emcloset,
-/turf/open/floor/carpet/trek,
-/area/quartermaster/miningdock)
-"Eh" = (
-/obj/structure/window/reinforced/fulltile/trek/middle,
-/obj/structure/grille,
-/obj/structure/grille,
-/turf/open/floor/carpet/trek,
-/area/quartermaster/miningdock)
 "Ei" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/trek/middle,
@@ -14054,10 +14012,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
-"Ky" = (
-/obj/structure/closet/wardrobe/miner,
-/turf/open/floor/carpet/trek,
-/area/quartermaster/miningdock)
 "Kz" = (
 /obj/structure/trek_catwalk/cargo,
 /obj/machinery/light{
@@ -14458,6 +14412,7 @@
 	dir = 8
 	},
 /obj/machinery/camera/trek,
+/obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/dorms)
 "Ly" = (
@@ -16029,14 +15984,16 @@
 /turf/open/space/basic,
 /area/quartermaster/miningdock)
 "Py" = (
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 1
+/obj/machinery/light{
+	dir = 4
 	},
+/obj/structure/closet/emcloset,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
 "Pz" = (
-/obj/machinery/light,
+/obj/structure/window/reinforced/fulltile/trek/middle,
+/obj/structure/grille,
+/obj/structure/grille,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
 "PA" = (
@@ -16063,6 +16020,17 @@
 /area/quartermaster/miningdock)
 "PB" = (
 /obj/machinery/mineral/equipment_vendor,
+/turf/open/floor/carpet/trek,
+/area/quartermaster/miningdock)
+"PC" = (
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/quartermaster/miningdock)
+"PD" = (
+/obj/machinery/light,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
 "PE" = (
@@ -16847,29 +16815,29 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
-"Th" = (
-/obj/machinery/door/airlock/trek/goon{
-	dir = 4;
-	icon_state = "closed";
-	name = "Laundry room"
+"RU" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/machinery/door/window/survival_pod,
+/obj/structure/window/reinforced/survival_pod{
+	icon_state = "pwindow";
+	dir = 4
+	},
+/obj/structure/mirror{
+	pixel_y = 26
 	},
 /turf/open/floor/plasteel/white,
-/area/hallway/secondary/entry)
-"TD" = (
-/obj/item/clothing/under/trek/neelix,
-/obj/item/clothing/under/trek/neelix,
-/obj/structure/closet{
-	name = "Civilian clothes"
+/area/hallway/secondary/command)
+"SU" = (
+/obj/structure/trek_catwalk/cargo/pad{
+	icon_state = "3,8"
 	},
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/turf/open/floor/plasteel/white,
-/area/hallway/secondary/entry)
-"WP" = (
+/obj/effect/landmark/runabout_dock,
+/obj/structure/overmap/runabout,
+/turf/open/floor/carpet/trek,
+/area/quartermaster/storage)
+"Ug" = (
 /obj/structure/closet{
 	name = "Combadges"
 	},
@@ -16892,39 +16860,59 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/hallway/secondary/entry)
-"Xl" = (
-/obj/structure/trek_catwalk/cargo/pad{
-	icon_state = "3,8"
+"UC" = (
+/obj/item/clothing/under/trek/neelix,
+/obj/item/clothing/under/trek/neelix,
+/obj/structure/closet{
+	name = "Civilian clothes"
 	},
-/obj/effect/landmark/runabout_dock,
-/obj/structure/overmap/runabout,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/turf/open/floor/plasteel/white,
+/area/hallway/secondary/entry)
+"Wm" = (
+/obj/machinery/airalarm{
+	pixel_y = 26
+	},
+/obj/structure/closet/secure_closet/miner,
 /turf/open/floor/carpet/trek,
-/area/quartermaster/storage)
-"Ze" = (
+/area/quartermaster/miningdock)
+"WF" = (
 /obj/structure/rack,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
-"ZA" = (
-/obj/machinery/shower{
-	dir = 4
-	},
-/obj/machinery/door/window/survival_pod,
-/obj/structure/window/reinforced/survival_pod{
-	icon_state = "pwindow";
-	dir = 4
-	},
-/obj/structure/mirror{
-	pixel_y = 26
-	},
-/turf/open/floor/plasteel/white,
-/area/hallway/secondary/command)
-"ZW" = (
+"WT" = (
+/obj/structure/closet/wardrobe/miner,
+/turf/open/floor/carpet/trek,
+/area/quartermaster/miningdock)
+"YN" = (
 /obj/machinery/door/airlock/trek/goon{
 	dir = 4;
 	icon_state = "closed";
 	name = "FTL simulator"
 	},
 /turf/open/floor/carpet/trek,
+/area/hallway/secondary/entry)
+"Zp" = (
+/obj/machinery/ore_silo,
+/turf/open/floor/carpet/trek,
+/area/science/research)
+"Zw" = (
+/obj/structure/rack,
+/obj/item/wrench,
+/turf/open/floor/carpet/trek,
+/area/science/research)
+"ZV" = (
+/obj/machinery/door/airlock/trek/goon{
+	dir = 4;
+	icon_state = "closed";
+	name = "Laundry room"
+	},
+/turf/open/floor/plasteel/white,
 /area/hallway/secondary/entry)
 
 (1,1,1) = {"
@@ -112923,7 +112911,7 @@ aI
 al
 al
 al
-ZW
+YN
 al
 vd
 AI
@@ -113149,7 +113137,7 @@ ag
 ag
 ag
 cb
-eb
+zf
 zn
 zC
 cl
@@ -113896,7 +113884,7 @@ aa
 aa
 aa
 cd
-NZ
+eo
 eo
 fw
 fw
@@ -113951,7 +113939,7 @@ aI
 al
 al
 al
-Th
+ZV
 al
 vd
 AI
@@ -114161,7 +114149,7 @@ Bw
 fB
 Ls
 cd
-eo
+NZ
 eo
 tX
 cd
@@ -114720,7 +114708,7 @@ aI
 aI
 hW
 al
-WP
+Ug
 Ar
 Ar
 At
@@ -114980,7 +114968,7 @@ al
 Aq
 Ar
 Ar
-TD
+UC
 vd
 AL
 HJ
@@ -118019,7 +118007,7 @@ bw
 fl
 fq
 fP
-lG
+Zp
 bw
 xZ
 gy
@@ -118533,7 +118521,7 @@ bw
 fp
 fv
 fv
-Au
+Zw
 bw
 gv
 gv
@@ -179257,7 +179245,7 @@ it
 iL
 iP
 iP
-Xl
+SU
 kt
 Qc
 kt
@@ -181059,10 +181047,10 @@ PJ
 bO
 mt
 Qv
-Ze
+WF
 Hr
 hS
-Ky
+WT
 bO
 sv
 sv
@@ -181299,7 +181287,7 @@ er
 er
 er
 bD
-hy
+Kx
 bJ
 hH
 bJ
@@ -181833,7 +181821,7 @@ Eb
 Gt
 hS
 hS
-Py
+PC
 bO
 sv
 sv
@@ -182085,7 +182073,7 @@ Ra
 PN
 hS
 bO
-DX
+Wm
 hS
 hS
 hS
@@ -182347,7 +182335,7 @@ hS
 hS
 Pw
 hS
-Pz
+PD
 bO
 sv
 sv
@@ -182859,7 +182847,7 @@ bO
 PB
 hS
 bO
-Eg
+Py
 hS
 hS
 bO
@@ -183116,7 +183104,7 @@ bO
 Ei
 Ei
 bO
-Eh
+Pz
 Hd
 Ei
 bO
@@ -241670,7 +241658,7 @@ JQ
 JQ
 JQ
 EG
-ZA
+RU
 aS
 az
 EG
@@ -246557,7 +246545,7 @@ EG
 ax
 EG
 EG
-ZA
+RU
 IF
 az
 EG
@@ -246568,7 +246556,7 @@ Nc
 dU
 sv
 EG
-ZA
+RU
 IF
 EL
 EG
@@ -246810,7 +246798,7 @@ Kd
 JZ
 Kc
 EG
-ZA
+RU
 IF
 aL
 EG
