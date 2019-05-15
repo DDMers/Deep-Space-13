@@ -264,10 +264,7 @@
 	var/area = pick(GLOB.teleportlocs)
 	var/area/target = GLOB.teleportlocs[area] //Pick a station area and yeet it.
 	if(target.explosion_exempt)
-		area = pick(GLOB.teleportlocs)
-		target = GLOB.teleportlocs[area]
-		if(target.explosion_exempt)
-			return //Welp, we tried.
+		return //Welp, we tried.
 	for(var/mob/player in GLOB.player_list)
 		if(is_station_level(player.z))
 			if(prob(50))
@@ -280,13 +277,13 @@
 				continue
 			var/sound/S = pick('DS13/sound/effects/damage/shiphit.ogg','DS13/sound/effects/damage/shiphit2.ogg','DS13/sound/effects/damage/shiphit3.ogg','DS13/sound/effects/damage/shiphit4.ogg','DS13/sound/effects/damage/FTL/explosionfar_2.ogg','DS13/sound/effects/damage/FTL/explosionfar_3.ogg','DS13/sound/effects/damage/FTL/explosionfar_4.ogg','DS13/sound/effects/damage/FTL/explosionfar_5.ogg','DS13/sound/effects/damage/FTL/explosionfar_6.ogg')
 			SEND_SOUND(player, S)
-	for(var/i = 0 to rand(1,5))
-		if(components.len)
-			var/obj/structure/X = pick(components)
-			X.explode_effect()
 	if(shields_absorbed)
+		for(var/i = 0 to rand(1,5))
+			if(components.len)
+				var/obj/structure/X = pick(components)
+				X.explode_effect()
 		return
-	if(prob(40))
+	if(prob(35))
 		var/turf/T = pick(get_area_turfs(target))
 		new /obj/effect/temp_visual/explosion_telegraph(T)
 		var/turf/TT = pick(get_area_turfs(target))
@@ -305,7 +302,7 @@
 	name = "Explosion imminent!"
 	icon = 'DS13/icons/effects/effects.dmi'
 	icon_state = "firing"
-	duration = 20
+	duration = 30
 	randomdir = 0
 	alpha = 255
 
@@ -384,12 +381,13 @@
 	if(health <= 0 && !destroyed)
 		destroyed = TRUE
 		explode()
-	var/mod = (damage/2) //So you don't blow out the relays too frequently.
+	var/mod = (damage/1.5) //So you don't blow out the relays too frequently.
 	for(var/obj/structure/overmap_component/XX in powered_components)
 		if(istype(XX, /obj/structure/overmap_component/plasma_relay))
 			var/obj/structure/overmap_component/plasma_relay/PS = XX
-			if(PS.supplying == OM.damage_sector && PS.obj_integrity > 0)
+			if(PS.supplying == OM.damage_sector && PS.obj_integrity > 40)
 				PS.take_damage(mod)
+				return
 
 /obj/structure/overmap/proc/explode()
 	send_sound_crew('DS13/sound/effects/damage/ship_explode.ogg')
@@ -477,12 +475,12 @@
 			continue
 		var/sound/S = pick('DS13/sound/effects/damage/shiphit.ogg','DS13/sound/effects/damage/shiphit2.ogg','DS13/sound/effects/damage/shiphit3.ogg','DS13/sound/effects/damage/creak1.ogg','DS13/sound/effects/damage/creak2.ogg')
 		SEND_SOUND(player, S)
-		if(prob(40))
-			var/turf/T = pick(get_area_turfs(target))
-			new /obj/effect/temp_visual/explosion_telegraph(T)
-		if(prob(10))
-			var/turf/T = pick(get_area_turfs(linked_area))
-			T.atmos_spawn_air("plasma=20;TEMP=1000")
+	if(prob(40))
+		var/turf/T = pick(get_area_turfs(target))
+		new /obj/effect/temp_visual/explosion_telegraph(T)
+	if(prob(10))
+		var/turf/T = pick(get_area_turfs(linked_area))
+		T.atmos_spawn_air("plasma=20;TEMP=1000")
 
 
 /obj/structure/overmap/proc/show_damage(var/amount, var/shields_absorbed) //Flash up numbers showing how much damage we just took
