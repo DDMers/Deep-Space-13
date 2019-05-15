@@ -22,6 +22,8 @@
 
 
 /datum/species/t800/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H)
+	if(user.a_intent != INTENT_HELP)//Help intent to heal
+		return ..()
 	if(istype(I, /obj/item/weldingtool))
 		var/obj/item/weldingtool/W = I
 		if(!W.tool_start_check(user, amount=3))
