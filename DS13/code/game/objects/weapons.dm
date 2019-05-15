@@ -147,7 +147,7 @@
 		cell.charge = 0
 		cut_overlays()
 		flick("[icon_state]_reload",src)
-		visible_message("<span class ='warning'>[user] pops the lid off [src].</span>", "<span class ='warning'>You pop the lid off [src] and start recharging it.</span>")
+		user.visible_message("<span class ='warning'>[user] pops the lid off [src].</span>", "<span class ='warning'>You pop the lid off [src] and start recharging it.</span>")
 		playsound(loc, 'sound/weapons/autoguninsert.ogg', 100, 1)
 		if(do_after(user, 30, target = src))
 			playsound(loc, 'sound/weapons/bulletinsert.ogg', 100, 1)
@@ -156,7 +156,7 @@
 			P.used()
 			cell.charge = cell.maxcharge
 			return
-		visible_message("<span class ='warning'>[user] quickly snaps [src]'s lid back on.</span>")
+		user.visible_message("<span class ='warning'>[user] quickly snaps [src]'s lid back on.</span>")
 		cell.charge = stored_power //They cancelled reload. Give them firing perms back
 		update_icon()
 
