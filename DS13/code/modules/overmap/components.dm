@@ -67,6 +67,7 @@
 	icon_state = "viewscreen"
 	icon = 'DS13/icons/obj/decor/viewscreen.dmi'
 	mouse_over_pointer = MOUSE_HAND_POINTER
+	density = FALSE
 
 /obj/structure/overmap_component/viewscreen/miranda
 	name = "Viewscreen"
