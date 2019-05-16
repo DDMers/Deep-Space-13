@@ -4215,30 +4215,127 @@
 /obj/machinery/telecomms/relay/preset/station,
 /turf/open/floor/engine,
 /area/ship/warbird)
+"lx" = (
+/turf/closed/wall/trek_smooth/room,
+/area/ship/runabout)
+"ly" = (
+/obj/structure/window/reinforced/fulltile/trek/viewport,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "lz" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Engine bay"
+/obj/structure/overmap_component/viewscreen,
+/turf/closed/wall/trek_smooth/room,
+/area/ship/runabout)
+"lA" = (
+/obj/item/twohanded/required/kirbyplants{
+	icon_state = "plant-21"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
 "lB" = (
 /obj/machinery/light,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_tertiary)
+"lC" = (
+/obj/structure/overmap_component/helm{
+	req_access = null;
+	req_access_txt = "31"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"lD" = (
+/obj/machinery/camera/trek,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"lE" = (
+/obj/structure/overmap_component/tactical{
+	dir = 4;
+	icon_state = "tactical";
+	req_access = null;
+	req_access_txt = "31"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "lF" = (
 /obj/machinery/transporter_pad{
 	icon_state = "3,1"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"lG" = (
+/obj/structure/overmap_component/plasma_relay,
+/turf/closed/wall/trek_smooth/room,
+/area/ship/runabout)
+"lH" = (
+/obj/structure/overmap_component/docking_computer,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"lI" = (
+/obj/structure/chair/trek{
+	icon_state = "comfy";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"lJ" = (
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"lK" = (
+/obj/structure/overmap_component/science{
+	req_access = null;
+	req_access_txt = "31"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"lL" = (
+/obj/item/twohanded/required/kirbyplants{
+	icon_state = "plant-21"
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"lM" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Medical bay"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"lN" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"lO" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Cargo bay"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "lP" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,4"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"lQ" = (
+/obj/item/twohanded/required/kirbyplants{
+	icon_state = "plant-21"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"lR" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "lS" = (
 /obj/machinery/transporter_pad{
 	icon_state = "1,0"
@@ -4251,6 +4348,52 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"lU" = (
+/obj/structure/table/glass,
+/obj/machinery/light,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"lV" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"lW" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"lX" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Medical bay"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"lY" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Bridge";
+	req_access_txt = "31"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"lZ" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 2;
+	name = "Cargo bay"
+	},
+/obj/effect/turf_decal/loading_area,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"ma" = (
+/obj/machinery/iv_drip{
+	layer = 2.7
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "mb" = (
 /obj/structure/trek_catwalk,
 /obj/structure/rack,
@@ -4261,8 +4404,24 @@
 /obj/structure/bed/abductor,
 /turf/open/floor/plasteel/dark,
 /area/ship/ai_simulated_secondary)
+"md" = (
+/obj/machinery/emh_emitter,
+/obj/item/twohanded/required/kirbyplants{
+	icon_state = "plant-10"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"me" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "mf" = (
-/obj/machinery/suit_storage_unit/trek,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 9
+	},
+/obj/machinery/telecomms/relay/preset/station,
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
 "mg" = (
@@ -4271,15 +4430,56 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"mh" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mi" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 1
+	},
+/obj/machinery/camera/trek,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable/white{
+	icon_state = "0-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "mj" = (
 /obj/structure/rack,
 /obj/machinery/microwave,
 /turf/open/floor/grass/fakebasalt,
 /area/ship/m_class)
+"mk" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 5
+	},
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-2";
+	pixel_y = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "ml" = (
 /obj/item/stack/rods,
 /turf/open/space/basic,
 /area/ship/debrisfield)
+"mm" = (
+/obj/structure/table/optable/trek,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "mn" = (
 /obj/structure/trek_catwalk,
 /obj/machinery/light,
@@ -4287,41 +4487,254 @@
 	icon_state = "platingdmg2"
 	},
 /area/ship/ai_simulated)
+"mo" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mp" = (
+/obj/structure/window/reinforced/fulltile/trek/middle,
+/obj/structure/grille,
+/obj/structure/curtain/black,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mq" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "mr" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,3"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"ms" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "mt" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/rack,
 /obj/item/stack/sheet/mineral/gold,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"mu" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 8
+	},
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable/white{
+	icon_state = "0-4"
+	},
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/obj/item/stack/sheet/mineral/plasma,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mv" = (
+/obj/structure/cable/white{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mw" = (
+/obj/structure/cable/white{
+	icon_state = "1-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mx" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 4
+	},
+/obj/machinery/suit_storage_unit/trek,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"my" = (
+/obj/machinery/iv_drip{
+	layer = 2.7
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mz" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
+	icon_state = "scrub_map_on-1";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mA" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mB" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Medical bay"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mC" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer1,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "mD" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
 /area/ship/debrisfield)
+"mE" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mF" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Cargo bay"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mG" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mH" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
+	icon_state = "scrub_map_on-1";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mI" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "mJ" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
-"mL" = (
-/obj/structure/chair/trek/standard{
-	icon_state = "chair";
+"mK" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 5
+/obj/machinery/suit_storage_unit/trek,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
+"mL" = (
+/obj/structure/table/glass,
+/obj/item/storage/firstaid/regular,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "mM" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
+	icon_state = "scrub_map_on-1";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mN" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
+	icon_state = "manifold-1";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mO" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 8
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
 "mP" = (
@@ -4332,10 +4745,28 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"mQ" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 10
+	},
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/shoes/magboots,
+/obj/item/tank/jetpack/carbondioxide,
+/obj/item/tank/jetpack/carbondioxide,
+/obj/structure/rack,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/weldingtool/largetank,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "mR" = (
 /obj/item/stack/sheet/mineral/silver,
 /turf/open/floor/plating/airless,
 /area/ship/asteroiddebris)
+"mS" = (
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "mT" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/food/snacks/cakeslice/cheese,
@@ -4347,6 +4778,41 @@
 /turf/open/floor/plating/airless,
 /area/ship/asteroiddebris)
 "mV" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 6
+	},
+/obj/structure/tank_dispenser,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mW" = (
+/obj/machinery/door/airlock/trek/ship,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mX" = (
+/obj/structure/window/reinforced/survival_pod,
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/obj/machinery/camera/trek,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/overmap_component/system_control{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"mY" = (
+/obj/structure/overmap_component/runabout_ladder,
+/obj/machinery/door/window/survival_pod,
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
 "mZ" = (
@@ -4354,6 +4820,13 @@
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/engine,
 /area/ship/bridge/museum)
+"na" = (
+/obj/structure/window/reinforced/survival_pod,
+/obj/item/twohanded/required/kirbyplants{
+	icon_state = "plant-10"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "nb" = (
 /obj/structure/ladder,
 /obj/machinery/light{
@@ -4365,11 +4838,79 @@
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/ship/debrisfield)
+"nd" = (
+/obj/item/twohanded/required/kirbyplants{
+	icon_state = "plant-21"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 6
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"ne" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "nf" = (
 /obj/effect/spawner/lootdrop/crate_spawner,
 /obj/effect/mob_spawn/human/corpse/assistant,
 /turf/open/floor/plating/airless,
 /area/ship/asteroiddebris)
+"ng" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nh" = (
+/obj/machinery/power/apc/auto_name/ds13/highcap,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"ni" = (
+/obj/item/twohanded/required/kirbyplants{
+	icon_state = "plant-21"
+	},
+/obj/machinery/camera/trek,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
+	},
+/obj/machinery/airalarm{
+	pixel_y = 26
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "nj" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	icon_state = "pipe11-2";
@@ -4390,19 +4931,76 @@
 "nl" = (
 /turf/closed/wall/mineral/titanium/survival/pod,
 /area/ship/m_class)
+"nm" = (
+/obj/structure/window/reinforced/survival_pod,
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/obj/machinery/camera/trek,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/overmap_component/system_control{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "nn" = (
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/trek/tile,
 /area/ship/ai_simulated_tertiary)
+"no" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 9
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"np" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nq" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 5
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nr" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "ns" = (
 /obj/structure/bed,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"nu" = (
-/obj/structure/chair/trek{
-	icon_state = "comfy";
+"nt" = (
+/obj/machinery/computer/camera_advanced/transporter_control{
+	dir = 1;
+	icon_state = "control";
+	req_access_txt = "31";
+	req_one_access = null
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
+	icon_state = "scrub_map_on-1";
 	dir = 1
 	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nu" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
 "nv" = (
@@ -4415,15 +5013,153 @@
 /obj/structure/fluff/broken_flooring,
 /turf/open/space/basic,
 /area/ship/ai_simulated_tertiary)
+"nx" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 9
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"ny" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 5
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nz" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 8
+	},
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 5
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nA" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nB" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "nC" = (
-/obj/structure/closet/crate{
-	icon_state = "crateopen"
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/asteroid/corner,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nD" = (
+/obj/machinery/door/airlock/trek/ship{
+	icon_state = "closed";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nE" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
+	icon_state = "manifold-1";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nF" = (
+/obj/structure/trek_decor/ai_wall,
+/turf/closed/wall/trek_smooth/corridor,
+/area/ship/runabout)
+"nG" = (
+/obj/machinery/transporter_pad{
+	icon_state = "2,2"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nH" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
+	icon_state = "manifold-1";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nI" = (
+/obj/machinery/door/airlock/trek/ship{
+	icon_state = "closed";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
 "nJ" = (
 /turf/closed/wall/trek_smooth/romulan,
 /area/ship/ai_simulated)
+"nK" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "nL" = (
 /obj/machinery/smartfridge/survival_pod,
 /turf/open/floor/pod/dark,
@@ -4438,10 +5174,67 @@
 "nN" = (
 /turf/open/floor/plating,
 /area/ship/m_class)
+"nO" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nQ" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 4
+	},
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
+	icon_state = "manifold-1";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "nR" = (
 /obj/effect/mob_spawn/human/corpse/assistant,
 /turf/open/floor/plasteel/airless,
 /area/ship/debrisfield)
+"nS" = (
+/obj/machinery/door/airlock/trek/goon/external/public{
+	icon_state = "closed";
+	dir = 8
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nT" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nU" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "nV" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/dark,
@@ -4452,8 +5245,83 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge/museum)
+"nX" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"nY" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "nZ" = (
-/obj/structure/window/reinforced/fulltile/trek/viewport,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oa" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/asteroid/corner,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"ob" = (
+/obj/structure/rack,
+/obj/machinery/light,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oc" = (
+/obj/effect/turf_decal/stripes/asteroid/corner,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"od" = (
+/obj/effect/turf_decal/stripes/asteroid/line,
+/obj/structure/closet/crate,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oe" = (
+/obj/effect/turf_decal/stripes/asteroid/line,
+/obj/structure/closet/crate,
+/obj/machinery/light,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"of" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 6
+	},
+/obj/structure/closet/crate{
+	icon_state = "crateopen"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"og" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 5
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
 "oh" = (
@@ -4461,17 +5329,117 @@
 /obj/structure/rack,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
+"oi" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/obj/machinery/light,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "oj" = (
-/obj/effect/turf_decal/bot_red,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
+	icon_state = "manifold-1";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"ok" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 4
+	},
+/obj/machinery/light,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"ol" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 9
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
 "om" = (
 /turf/open/floor/engine,
 /area/ship/bridge/museum)
-"oq" = (
-/obj/machinery/camera/trek,
-/obj/machinery/portable_atmospherics/canister/air,
+"on" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 10
+	},
+/obj/structure/closet/crate{
+	icon_state = "crateopen"
+	},
 /turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oo" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"op" = (
+/obj/machinery/door/airlock/trek/goon/external/public,
+/obj/structure/fans/tiny,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oq" = (
+/obj/machinery/door/airlock/trek/ship,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"or" = (
+/obj/machinery/door/airlock/trek/goon/external/public,
+/obj/structure/fans/tiny,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"os" = (
+/obj/structure/trek_catwalk,
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/ship/runabout)
+"ot" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
+	},
+/obj/machinery/airalarm{
+	pixel_y = 26
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/runabout)
+"ou" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
+	},
+/turf/open/floor/mineral/titanium/white,
 /area/ship/runabout)
 "ov" = (
 /obj/effect/spawner/lootdrop/crate_spawner,
@@ -4479,10 +5447,66 @@
 	icon_state = "platingdmg3"
 	},
 /area/ship/debrisfield)
+"ow" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"ox" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 6
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oy" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Quarters"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oz" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/obj/structure/overmap_component/system_control{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "oA" = (
 /obj/item/stack/sheet/mineral/plasma,
 /turf/open/floor/plating/airless,
 /area/ship/asteroiddebris)
+"oB" = (
+/obj/machinery/replicator,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "oC" = (
 /obj/structure/glowshroom/single,
 /turf/open/floor/grass/fakebasalt,
@@ -4493,13 +5517,117 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"oQ" = (
-/obj/item/pattern_enhancer,
-/obj/structure/overmap_component/plasma_injector{
-	pixel_y = 32;
-	req_access = null;
-	req_access_txt = "31"
+"oE" = (
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer1,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oF" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oG" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 8
+	},
+/obj/machinery/jukebox/trek{
+	req_access = null
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oH" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 10
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oI" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 5
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/runabout)
+"oJ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
+	icon_state = "pipe11-1";
+	dir = 10
+	},
+/obj/machinery/airalarm{
+	pixel_y = 26
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/runabout)
+"oK" = (
+/obj/structure/trek_catwalk,
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/ship/runabout)
+"oL" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/overmap_component/plasma_injector{
+	pixel_x = -32;
+	req_access = null
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/runabout)
+"oM" = (
+/turf/open/floor/mineral/titanium/white,
+/area/ship/runabout)
+"oN" = (
+/obj/structure/bed,
+/obj/item/bedsheet/red,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oO" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
+	icon_state = "scrub_map_on-1";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oP" = (
+/obj/structure/table/glass,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oQ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oR" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/structure/overmap_component/plasma_injector{
+	pixel_x = 32;
+	req_access = null
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/runabout)
+"oS" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/mineral/titanium/white,
+/area/ship/runabout)
+"oT" = (
+/obj/machinery/door/airlock/trek/ship,
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
 "oU" = (
@@ -4508,15 +5636,12 @@
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_tertiary)
 "oV" = (
-/obj/machinery/power/port_gen/pacman,
-/obj/machinery/light{
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
 	dir = 4
 	},
-/obj/item/stack/sheet/mineral/plasma{
-	amount = 15
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
@@ -4524,18 +5649,102 @@
 /obj/item/stack/sheet/metal,
 /turf/open/floor/plating/asteroid/airless,
 /area/ship/debrisfield)
-"pe" = (
-/turf/open/floor/plating/asteroid/airless,
-/area/ship/asteroiddebris)
-"pg" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+"oX" = (
+/obj/structure/table/glass,
+/obj/item/reagent_containers/glass/beaker/waterbottle,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oY" = (
+/obj/structure/table/glass,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"oZ" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
+"pa" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/turf/open/floor/mineral/titanium/white,
+/area/ship/runabout)
+"pb" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/machinery/door/window/survival_pod{
+	icon_state = "windoor";
+	dir = 4
+	},
+/obj/structure/window/reinforced/survival_pod,
+/turf/open/floor/plasteel/white,
+/area/ship/runabout)
+"pc" = (
+/obj/structure/table/glass,
+/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"pd" = (
+/obj/structure/table/glass,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"pe" = (
+/turf/open/floor/plating/asteroid/airless,
+/area/ship/asteroiddebris)
+"pf" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/machinery/door/window/survival_pod{
+	icon_state = "windoor";
+	dir = 8
+	},
+/obj/structure/window/reinforced/survival_pod,
+/turf/open/floor/plasteel/white,
+/area/ship/runabout)
+"pg" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/structure/overmap_component/plasma_injector{
+	pixel_x = 32;
+	req_access = null
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/runabout)
 "ph" = (
 /turf/closed/wall/trek_smooth/room,
 /area/ship/station/delivery_destination)
+"pi" = (
+/obj/machinery/atmospherics/components/unary/tank/air,
+/turf/open/floor/mineral/titanium/white,
+/area/ship/runabout)
+"pj" = (
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/runabout)
+"pk" = (
+/obj/machinery/door/window/survival_pod{
+	icon_state = "windoor";
+	dir = 4
+	},
+/obj/machinery/shower{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/runabout)
+"pl" = (
+/obj/machinery/light,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "pm" = (
 /obj/structure/bodycontainer/morgue{
 	icon_state = "morgue1";
@@ -4547,6 +5756,20 @@
 /obj/machinery/light,
 /turf/open/floor/trek/tile,
 /area/ship/ai_simulated_tertiary)
+"po" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Showers"
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"pp" = (
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 1
+	},
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "pq" = (
 /obj/structure/chair/borg/charging,
 /obj/machinery/light{
@@ -4554,6 +5777,37 @@
 	},
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
+"pr" = (
+/obj/machinery/door/window/survival_pod{
+	icon_state = "windoor";
+	dir = 8
+	},
+/obj/machinery/shower{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/runabout)
+"ps" = (
+/obj/machinery/atmospherics/components/unary/tank,
+/turf/open/floor/mineral/titanium/white,
+/area/ship/runabout)
+"pt" = (
+/obj/structure/window/reinforced/fulltile/trek/viewport,
+/obj/structure/curtain/black,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
+"pu" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/runabout)
+"pv" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/white,
+/area/ship/runabout)
 "py" = (
 /obj/item/bedsheet/green,
 /obj/structure/bed,
@@ -4584,15 +5838,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
-"pG" = (
-/obj/structure/overmap_component/tactical{
-	dir = 4;
-	icon_state = "tactical";
-	req_access = null;
-	req_access_txt = "31"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "pK" = (
 /obj/structure/trek_decor/romulan,
 /obj/structure/overmap_component/viewscreen,
@@ -4671,20 +5916,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"qC" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
-"qD" = (
-/obj/structure/closet/crate{
-	icon_state = "crateopen"
-	},
-/obj/effect/turf_decal/bot_red,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "qE" = (
 /obj/machinery/door/airlock/trek/ship,
 /turf/open/floor/carpet/trek,
@@ -4695,11 +5926,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_destination)
-"qK" = (
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer1,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "qL" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,2"
@@ -4837,10 +6063,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/ai_simulated)
-"sc" = (
-/obj/structure/overmap_component/runabout_ladder,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "se" = (
 /turf/open/floor/plasteel/airless{
 	icon_state = "damaged2"
@@ -4907,16 +6129,6 @@
 "sK" = (
 /turf/closed/wall/trek_smooth/romulan,
 /area/ship/bridge/museum)
-"sL" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8
-	},
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "sP" = (
 /obj/structure/rack,
 /obj/item/clothing/mask/gas/syndicate,
@@ -4969,12 +6181,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"tk" = (
-/obj/machinery/replicator,
-/obj/structure/table/glass,
-/obj/item/storage/bag/tray,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "tq" = (
 /obj/machinery/transporter_pad{
 	icon_state = "2,2"
@@ -4988,15 +6194,6 @@
 /obj/structure/overmap_component/borg_relay,
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
-"tx" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
-/obj/machinery/door/airlock/trek/ship{
-	name = "Bridge";
-	req_access_txt = "31"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "tz" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/asteroid{
@@ -5170,9 +6367,6 @@
 /obj/structure/overmap_component/viewscreen,
 /turf/closed/wall/trek_smooth/room,
 /area/ship/station/delivery_source)
-"vy" = (
-/turf/closed/wall/trek_smooth/room,
-/area/ship/runabout)
 "vA" = (
 /obj/item/storage/toolbox/mechanical,
 /obj/structure/rack,
@@ -5206,27 +6400,12 @@
 "vJ" = (
 /turf/closed/wall/mineral/titanium/interior,
 /area/ship/m_class)
-"vL" = (
-/obj/structure/overmap_component/viewscreen,
-/turf/closed/wall/trek_smooth/room,
-/area/ship/runabout)
-"vR" = (
-/obj/structure/trek_decor/viewscreen,
-/turf/closed/wall/trek_smooth/room,
-/area/ship/runabout)
 "vT" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
-"vU" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
-	icon_state = "scrub_map_on-1";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "vV" = (
 /obj/machinery/chem_dispenser,
 /obj/machinery/light{
@@ -5244,14 +6423,6 @@
 	name = "dirt"
 	},
 /area/ship/m_class)
-"vZ" = (
-/obj/structure/overmap_component/plasma_injector{
-	pixel_y = 32;
-	req_access = null;
-	req_access_txt = "31"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "wc" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -5269,12 +6440,6 @@
 /obj/machinery/power/apc/auto_name/ds13/highcap,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"wg" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Conference room"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "wk" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	icon_state = "pipe11-2";
@@ -5298,17 +6463,6 @@
 /obj/item/defibrillator/compact/loaded,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
-"wp" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/on{
-	icon_state = "dpvent_map_on-2";
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "wr" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating/airless{
@@ -5349,10 +6503,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"wG" = (
-/obj/structure/tank_dispenser,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "wM" = (
 /obj/machinery/transporter_pad{
 	icon_state = "2,3"
@@ -5378,17 +6528,6 @@
 	},
 /turf/open/space/basic,
 /area/ship/debrisfield)
-"wT" = (
-/obj/structure/table/glass,
-/obj/machinery/light,
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 1
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/filled/cola,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "wV" = (
 /obj/machinery/transporter_pad{
 	icon_state = "2,3"
@@ -5447,12 +6586,6 @@
 "xI" = (
 /turf/open/floor/trek/tile,
 /area/ship/ai_simulated_secondary)
-"xJ" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "xP" = (
 /turf/open/space/basic,
 /area/ship/asteroiddebris)
@@ -5462,12 +6595,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_destination)
-"xT" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 10
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "xZ" = (
 /obj/structure/trek_catwalk,
 /obj/effect/landmark/sealed_crate_spawn,
@@ -5550,10 +6677,6 @@
 /obj/machinery/door/airlock/trek/ship/maint,
 /turf/open/floor/plating,
 /area/ship/ai_simulated)
-"yQ" = (
-/obj/structure/trek_decor/ai_wall,
-/turf/closed/wall/trek_smooth/corridor,
-/area/ship/runabout)
 "yZ" = (
 /obj/item/twohanded/required/kirbyplants/photosynthetic,
 /turf/open/floor/carpet/trek/romulan,
@@ -5585,20 +6708,6 @@
 /obj/structure/flora/ausbushes,
 /turf/open/floor/grass,
 /area/ship/m_class)
-"zv" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 4
-	},
-/obj/machinery/door/airlock/trek/ship{
-	dir = 4;
-	name = "Medical bay"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "zB" = (
 /obj/structure/rack,
 /obj/item/tank/internals/emergency_oxygen/double,
@@ -5616,6 +6725,9 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_destination)
+"zJ" = (
+/turf/open/floor/mineral/titanium/white/airless,
+/area/space)
 "zK" = (
 /obj/structure/rack,
 /obj/item/storage/photo_album,
@@ -5694,34 +6806,10 @@
 	},
 /turf/open/space/basic,
 /area/space)
-"Aw" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Ay" = (
 /obj/structure/girder/displaced,
 /turf/open/space/basic,
 /area/ship/debrisfield)
-"AA" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 4
-	},
-/obj/machinery/door/airlock/trek/ship{
-	dir = 4;
-	name = "Quarters"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "AC" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg2"
@@ -5741,6 +6829,10 @@
 	},
 /turf/open/space/basic,
 /area/ship/debrisfield)
+"AP" = (
+/obj/structure/shuttle/engine/large,
+/turf/open/floor/mineral/titanium/white/airless,
+/area/space)
 "AS" = (
 /obj/structure/railing{
 	icon_state = "railing0";
@@ -5769,10 +6861,6 @@
 	},
 /turf/open/floor/trek/tile,
 /area/ship/ai_simulated_secondary)
-"Bh" = (
-/obj/structure/overmap_component/plasma_relay,
-/turf/closed/wall/trek_smooth/room,
-/area/ship/runabout)
 "Bj" = (
 /obj/structure/bonfire/prelit,
 /turf/open/floor/grass/fakebasalt,
@@ -5781,12 +6869,6 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"Bp" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Br" = (
 /obj/machinery/transporter_pad{
 	icon_state = "1,4"
@@ -5812,14 +6894,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_tertiary)
-"Bx" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
-	icon_state = "scrub_map_on-1";
-	dir = 8
-	},
-/obj/machinery/light,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Bz" = (
 /obj/structure/trek_catwalk,
 /obj/effect/spawner/lootdrop/crate_spawner,
@@ -5864,14 +6938,6 @@
 /obj/structure/trek_decor/romulan,
 /turf/closed/wall/trek_smooth/romulan,
 /area/ship/ai_simulated)
-"BM" = (
-/obj/item/twohanded/required/kirbyplants{
-	icon_state = "plant-21";
-	pixel_x = -3;
-	pixel_y = 3
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "BP" = (
 /obj/machinery/computer/operating,
 /turf/open/floor/carpet/trek/romulan,
@@ -5893,15 +6959,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"Cd" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Cg" = (
 /obj/machinery/transporter_pad{
 	icon_state = "4,0"
@@ -5922,29 +6979,6 @@
 "Cm" = (
 /turf/open/space/basic,
 /area/ship/debrisfield)
-"Cq" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
-"Cr" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 5
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
-"Cs" = (
-/obj/item/twohanded/required/kirbyplants{
-	icon_state = "plant-10"
-	},
-/obj/machinery/emh_emitter,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Cw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/maintenance{
@@ -5966,16 +7000,6 @@
 /obj/machinery/reagentgrinder,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"CC" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "CE" = (
 /obj/structure/sign/warning,
 /turf/closed/wall/trek_smooth/room,
@@ -6035,22 +7059,12 @@
 /obj/structure/overmap_component/borg_relay,
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
-"Dk" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 5
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Dl" = (
 /obj/structure/trek_catwalk,
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg2"
 	},
 /area/ship/debrisfield)
-"Dn" = (
-/obj/structure/table/optable/trek,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Dq" = (
 /obj/item/wallframe/camera,
 /turf/open/space/basic,
@@ -6075,15 +7089,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"DN" = (
-/obj/structure/rack,
-/obj/item/tank/jetpack/carbondioxide,
-/obj/item/tank/jetpack/carbondioxide,
-/obj/item/clothing/shoes/magboots,
-/obj/item/clothing/shoes/magboots,
-/obj/item/tank/jetpack/carbondioxide,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "DP" = (
 /obj/machinery/light{
 	dir = 8
@@ -6111,14 +7116,6 @@
 /obj/structure/sink,
 /turf/open/floor/plasteel/dark,
 /area/ship/ai_simulated_secondary)
-"Ed" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Conference room"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Ef" = (
 /obj/item/restraints/handcuffs,
 /obj/structure/table/reinforced,
@@ -6129,18 +7126,6 @@
 /obj/item/bedsheet/blue,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"Ei" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
-	icon_state = "manifold-1";
-	dir = 8
-	},
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 5
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Eo" = (
 /turf/open/floor/grass/fakebasalt,
 /area/ship/m_class)
@@ -6175,13 +7160,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"EM" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "ES" = (
 /obj/machinery/door/airlock/trek/ship{
 	dir = 4
@@ -6191,16 +7169,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
-"EX" = (
-/obj/machinery/shower{
-	dir = 8
-	},
-/obj/machinery/door/window/survival_pod{
-	icon_state = "windoor";
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/runabout)
 "Fc" = (
 /obj/structure/chair/office/dark{
 	dir = 4
@@ -6208,13 +7176,6 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"Fg" = (
-/obj/structure/chair/trek/standard{
-	icon_state = "chair";
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Fm" = (
 /obj/machinery/transporter_pad{
 	icon_state = "2,4"
@@ -6274,10 +7235,6 @@
 /mob/living/carbon/monkey,
 /turf/open/floor/grass,
 /area/ship/m_class)
-"FP" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "FR" = (
 /turf/open/floor/plasteel/white,
 /area/ship/bridge/museum)
@@ -6298,10 +7255,6 @@
 	},
 /turf/open/space/basic,
 /area/ship/ai_simulated_tertiary)
-"Gg" = (
-/obj/machinery/camera/trek,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Gi" = (
 /obj/structure/fluff/broken_flooring{
 	icon_state = "singular"
@@ -6450,10 +7403,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"Hx" = (
-/obj/structure/overmap_component/docking_computer,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "HC" = (
 /obj/effect/landmark/runabout_dock,
 /turf/open/space/basic,
@@ -6515,19 +7464,6 @@
 /obj/structure/rack,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"Ik" = (
-/obj/structure/bed,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
-	icon_state = "scrub_map_on-1";
-	dir = 8
-	},
-/obj/structure/window/reinforced/survival_pod,
-/obj/item/bedsheet/red,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Iu" = (
 /obj/structure/window/reinforced/fulltile/trek,
 /obj/structure/grille,
@@ -6549,15 +7485,6 @@
 /obj/structure/frame/machine,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
-"IH" = (
-/obj/machinery/computer/camera_advanced/transporter_control{
-	dir = 1;
-	icon_state = "control";
-	req_access_txt = "31";
-	req_one_access = null
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "II" = (
 /turf/open/openspace,
 /area/space)
@@ -6572,17 +7499,6 @@
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/plating,
 /area/ship/ai_simulated_secondary)
-"IS" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/overmap_component/plasma_injector{
-	pixel_y = 32;
-	req_access = null;
-	req_access_txt = "31"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "IU" = (
 /obj/item/stack/cable_coil/yellow{
 	amount = 1
@@ -6705,16 +7621,6 @@
 /obj/machinery/light,
 /turf/open/floor/plating,
 /area/ship/ai_simulated_tertiary)
-"JI" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
-	icon_state = "scrub_map_on-1";
-	dir = 4
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "JL" = (
 /obj/machinery/transporter_pad{
 	icon_state = "2,0"
@@ -6731,18 +7637,6 @@
 /obj/machinery/vending/medical,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_tertiary)
-"JQ" = (
-/obj/structure/closet/crate{
-	icon_state = "crateopen"
-	},
-/obj/structure/overmap_component/plasma_injector{
-	pixel_y = 32;
-	req_access = null;
-	req_access_txt = "31"
-	},
-/obj/item/wrench,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "JS" = (
 /obj/effect/mob_spawn/human/alive/trek/borg{
 	icon_state = "sleeper";
@@ -6769,23 +7663,11 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
-"Kc" = (
-/obj/effect/turf_decal/loading_area,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Kd" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/item/pattern_enhancer,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
-"Kf" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 6
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Ki" = (
 /turf/closed/mineral/random,
 /area/ship/asteroiddebris)
@@ -6839,16 +7721,6 @@
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/ship/ai_simulated)
-"KB" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "KC" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/emergency,
@@ -6941,17 +7813,6 @@
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/ship/ai_simulated)
-"LA" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
-	icon_state = "scrub_map_on-1";
-	dir = 8
-	},
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "LD" = (
 /obj/structure/fluff/broken_flooring{
 	icon_state = "pile";
@@ -6971,12 +7832,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_destination)
-"LM" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Storage pod"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "LO" = (
 /obj/item/stack/sheet/mineral/wood,
 /obj/item/stack/sheet/mineral/wood,
@@ -7113,12 +7968,6 @@
 	icon_state = "platingdmg2"
 	},
 /area/ship/debrisfield)
-"Ne" = (
-/obj/machinery/transporter_pad{
-	icon_state = "2,2"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Nf" = (
 /obj/structure/sink,
 /turf/open/floor/carpet/trek/romulan,
@@ -7195,13 +8044,6 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
-"NM" = (
-/obj/machinery/power/apc/auto_name/ds13/highcap,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "NZ" = (
 /turf/closed/wall/trek_smooth/romulan,
 /area/ship/ai_simulated_secondary)
@@ -7212,10 +8054,6 @@
 	icon_state = "damaged5"
 	},
 /area/ship/debrisfield)
-"Op" = (
-/obj/machinery/light,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Oq" = (
 /obj/machinery/transporter_pad{
 	icon_state = "3,2"
@@ -7231,23 +8069,6 @@
 /obj/structure/overmap_component/viewscreen,
 /turf/closed/wall/trek_smooth/romulan,
 /area/ship/ai_simulated_secondary)
-"OE" = (
-/obj/structure/overmap_component/helm{
-	req_access = null;
-	req_access_txt = "31"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
-"OF" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "OH" = (
 /obj/machinery/door/airlock/trek/ship/maint,
 /obj/structure/trek_catwalk,
@@ -7302,14 +8123,6 @@
 /obj/machinery/door/airlock/trek/ship,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
-"Ph" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
-	icon_state = "manifold-1";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Pw" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating/airless,
@@ -7324,15 +8137,6 @@
 /obj/item/storage/box/mousetraps,
 /turf/open/floor/plasteel/dark,
 /area/ship/ai_simulated_secondary)
-"PB" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/airalarm{
-	pixel_y = 32
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "PD" = (
 /obj/structure/overmap_component/helm/spawner/dderidex,
 /turf/open/floor/carpet/trek/romulan,
@@ -7378,15 +8182,6 @@
 /obj/machinery/power/apc/auto_name/ds13/highcap,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
-"PS" = (
-/obj/structure/table/glass,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
-	icon_state = "scrub_map_on-1";
-	dir = 8
-	},
-/obj/item/reagent_containers/food/drinks/flask,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "PV" = (
 /obj/machinery/transporter_pad{
 	icon_state = "1,2"
@@ -7396,18 +8191,6 @@
 "PW" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
-"PY" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/portables_connector{
-	dir = 4;
-	icon_state = "connector_map-2";
-	name = "air supply"
-	},
-/obj/machinery/portable_atmospherics/canister/air,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Qc" = (
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
@@ -7416,12 +8199,6 @@
 /obj/item/camera,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"Qh" = (
-/obj/structure/trek_decor/ai_wall,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
-/turf/closed/wall/trek_smooth/corridor,
-/area/ship/runabout)
 "Qk" = (
 /turf/closed/wall/trek_smooth/room,
 /area/ship/station/delivery_source)
@@ -7429,13 +8206,6 @@
 /obj/structure/trek_catwalk,
 /turf/open/floor/plating,
 /area/ship/ai_simulated)
-"Qm" = (
-/obj/structure/chair/trek/standard{
-	icon_state = "chair";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Qn" = (
 /obj/structure/chair/trek/dark{
 	icon_state = "dark";
@@ -7468,14 +8238,6 @@
 /obj/structure/overmap_component/science/warbird,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
-"Qz" = (
-/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
-"QB" = (
-/obj/structure/table/glass,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "QC" = (
 /obj/structure/trek_catwalk,
 /turf/open/floor/carpet/trek,
@@ -7538,11 +8300,6 @@
 "Rn" = (
 /turf/closed/mineral,
 /area/ship/m_class)
-"Rp" = (
-/obj/item/storage/firstaid/regular,
-/obj/structure/table/glass,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Rx" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/asteroid{
@@ -7575,13 +8332,6 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
-"RZ" = (
-/obj/machinery/door/airlock/trek/ship{
-	dir = 4;
-	name = "Storage pod"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Sg" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,2"
@@ -7599,14 +8349,6 @@
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/plating/airless,
 /area/ship/asteroiddebris)
-"Sp" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
-	icon_state = "manifold-1";
-	dir = 4
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Ss" = (
 /obj/structure/fluff/broken_flooring{
 	dir = 2;
@@ -7637,11 +8379,6 @@
 /obj/structure/trek_catwalk,
 /turf/open/floor/plating,
 /area/ship/ai_simulated)
-"SD" = (
-/obj/machinery/door/airlock/trek/goon/external/public,
-/obj/structure/fans/tiny,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "SL" = (
 /obj/machinery/door/airlock/titanium{
 	name = "Escape Pod Airlock"
@@ -7696,15 +8433,6 @@
 	icon_state = "platingdmg1"
 	},
 /area/ship/ai_simulated)
-"Tv" = (
-/obj/machinery/portable_atmospherics/canister,
-/obj/machinery/atmospherics/components/unary/portables_connector/layer1{
-	dir = 4;
-	icon_state = "connector_map-1";
-	name = "waste supply"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Tz" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -7719,13 +8447,6 @@
 /obj/item/restraints/handcuffs,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"TD" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Bridge";
-	req_access_txt = "31"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "TF" = (
 /obj/machinery/door/airlock/trek/ship,
 /turf/open/floor/carpet/trek/romulan,
@@ -7744,20 +8465,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"TZ" = (
-/obj/machinery/telecomms/relay/preset/station,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
-"Uc" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 6
-	},
-/obj/structure/chair/trek{
-	icon_state = "comfy";
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Ud" = (
 /obj/structure/chair/comfy/shuttle{
 	icon_state = "shuttle_chair";
@@ -7777,12 +8484,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"Un" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Engine bay"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Up" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -7882,22 +8583,12 @@
 	icon_state = "platingdmg1"
 	},
 /area/ship/asteroiddebris)
-"Vw" = (
-/obj/structure/fans/tiny,
-/obj/machinery/door/airlock/trek/goon/external/public,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Vx" = (
 /obj/machinery/shower{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge/museum)
-"Vz" = (
-/obj/structure/bed,
-/obj/item/bedsheet/red,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "VA" = (
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
@@ -7996,22 +8687,6 @@
 /obj/structure/bed,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
-"WB" = (
-/obj/structure/overmap_component/science{
-	req_access = null;
-	req_access_txt = "31"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
-"WF" = (
-/obj/item/storage/toolbox/mechanical,
-/obj/structure/table/glass,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
-"WM" = (
-/obj/item/pattern_enhancer,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "WP" = (
 /obj/machinery/paystand,
 /turf/open/floor/plasteel/dark,
@@ -8020,19 +8695,6 @@
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/plating/asteroid/airless,
 /area/ship/asteroiddebris)
-"WW" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
-"WX" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "WZ" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/grass/fakebasalt,
@@ -8067,16 +8729,6 @@
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/beach/sand,
 /area/ship/m_class)
-"XC" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "XG" = (
 /obj/machinery/chem_master,
 /turf/open/floor/carpet/trek/romulan,
@@ -8108,13 +8760,6 @@
 /mob/living/simple_animal/hostile/asteroid/gutlunch/gubbuck,
 /turf/open/floor/grass/fakebasalt,
 /area/ship/m_class)
-"XY" = (
-/obj/machinery/suit_storage_unit/trek,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Yc" = (
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
@@ -8122,23 +8767,6 @@
 /obj/structure/chair/borg/charging,
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
-"Yh" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
-"Yk" = (
-/obj/structure/closet/secure_closet/personal,
-/obj/item/twohanded/required/kirbyplants{
-	icon_state = "plant-10"
-	},
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
-"Yq" = (
-/obj/structure/rack,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Ys" = (
 /obj/structure/chair/comfy/shuttle{
 	icon_state = "shuttle_chair";
@@ -8169,17 +8797,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
-"YA" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/turf_decal/bot_red,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
-"YE" = (
-/obj/structure/closet/secure_closet/personal,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "YF" = (
 /obj/structure/table/optable,
 /turf/open/floor/carpet/trek/romulan,
@@ -8257,13 +8874,6 @@
 "Zk" = (
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_tertiary)
-"Zl" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/effect/turf_decal/bot_red,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
 "Zm" = (
 /obj/machinery/light{
 	dir = 1
@@ -25812,14 +26422,14 @@ aa
 aa
 aa
 aa
-vy
-vy
-vy
-vy
-vy
-vy
-vy
-vy
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -26064,21 +26674,21 @@ aa
 aa
 aa
 aa
+zJ
+zJ
+zJ
+zJ
+zJ
+zJ
+zJ
+zJ
+zJ
+zJ
+zJ
 aa
 aa
 aa
 aa
-aa
-vy
-mf
-XY
-mf
-nZ
-YA
-oj
-vy
-vy
-vy
 aa
 aa
 aa
@@ -26320,22 +26930,22 @@ aa
 aa
 aa
 aa
+zJ
+lx
+nS
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+zJ
 aa
 aa
 aa
 aa
-aa
-aa
-vy
-Gg
-mV
-mV
-LM
-Kc
-mV
-SD
-Aw
-Vw
 aa
 aa
 aa
@@ -26575,24 +27185,24 @@ aa
 aa
 aa
 aa
+zJ
+zJ
+zJ
+lx
+lD
+ob
+lx
+os
+lx
+os
+lx
+os
+lx
+zJ
 aa
 aa
-vy
-vy
-vy
-vy
-vy
 aa
-vy
-wG
-mV
-DN
-nZ
-Gg
-mV
-vy
-vy
-vy
+aa
 aa
 aa
 aa
@@ -26827,27 +27437,27 @@ aa
 aa
 aa
 aa
+zJ
+zJ
+zJ
+zJ
+zJ
+zJ
+lx
+lx
+lx
+nS
+lx
+lx
+ot
+oL
+oS
+oL
+pi
+lx
+AP
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-vy
-mV
-JI
-Dn
-vy
-vy
-vy
-vy
-RZ
-vy
-vy
-qD
-oj
-vy
 aa
 aa
 aa
@@ -27081,32 +27691,32 @@ aa
 aa
 aa
 aa
+zJ
+zJ
+zJ
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+no
+nz
+nT
+oc
+op
+ou
+oM
+pu
+oM
+pj
+lx
+zJ
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-Bh
-Gg
-qC
-mV
-vy
-JQ
-Tv
-PY
-mV
-nC
-vy
-vy
-vy
-vy
-vy
-vy
 aa
 aa
 aa
@@ -27337,33 +27947,33 @@ aa
 aa
 aa
 aa
+zJ
+lx
+lx
+lx
+lz
+ma
+mm
+my
+mm
+lx
+mX
+np
+nA
+nU
+od
+lx
+lx
+lx
+lx
+lx
+lx
+lx
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-vy
-vy
-vy
-vy
-vy
-Cs
-OF
-Rp
-vy
-vZ
-qC
-xT
-Dk
-mV
-Bh
-mV
-sc
-Yq
-BM
-nZ
 aa
 aa
 aa
@@ -27594,33 +28204,33 @@ aa
 aa
 aa
 aa
+zJ
+lx
+lL
+lR
+ly
+lD
+lJ
+lJ
+lJ
+lx
+mY
+mh
+nB
+lJ
+oe
+lx
+ow
+oN
+lx
+pb
+pk
+lx
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-nZ
-mV
-Hx
-mV
-vy
-vy
-zv
-vy
-vy
-NM
-qC
-mV
-pg
-mV
-vR
-QB
-mV
-mV
-mV
-vy
 aa
 aa
 aa
@@ -27849,35 +28459,35 @@ aa
 aa
 aa
 aa
+zJ
+zJ
+zJ
+lG
+lD
+lJ
+lX
+lJ
+mo
+mz
+lJ
+lx
+na
+nq
+nC
+nX
+of
+lx
+ox
+oO
+oT
+lJ
+pl
+pt
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-nZ
-OE
-Uc
-Kf
-tx
-Ei
-qK
-mM
-lz
-XC
-Sp
-Qh
-EM
-Ph
-Ed
-WX
-FP
-mL
-Fg
-nZ
 aa
 aa
 aa
@@ -28106,35 +28716,35 @@ aa
 aa
 aa
 aa
+lx
+lx
+lx
+lx
+lM
+lx
+lx
+md
+lJ
+mA
+mL
+lx
+lx
+lx
+nD
+lx
+lx
+lx
+oy
+lx
+lx
+lx
+po
+lx
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-vL
-mV
-Yh
-Bx
-vy
-vU
-wp
-Op
-vy
-Cd
-IH
-Ne
-mV
-LA
-vy
-sL
-mV
-PS
-wT
-nZ
 aa
 aa
 aa
@@ -28363,35 +28973,35 @@ aa
 aa
 aa
 aa
+zJ
+ly
+lA
+lH
+lJ
+lU
+lx
+lx
+mp
+mB
+lx
+lz
+nd
+nr
+nE
+nY
+og
+lx
+oz
+lR
+oV
+lR
+lJ
+ly
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-nZ
-pG
-nu
-mV
-TD
-mV
-CC
-mV
-Un
-xJ
-mV
-yQ
-mV
-mV
-wg
-mV
-mV
-Qm
-Qm
-nZ
 aa
 aa
 aa
@@ -28620,35 +29230,35 @@ aa
 aa
 aa
 aa
+zJ
+ly
+lC
+lI
+lJ
+lJ
+lx
+lJ
+mq
+mA
+mM
+lG
+ne
+lJ
+nF
+lJ
+oi
+lx
+oB
+oP
+oX
+pc
+lJ
+ly
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-nZ
-mV
-WB
-mV
-vy
-vy
-AA
-vy
-vy
-PB
-mV
-mV
-mV
-mV
-vy
-tk
-mV
-mV
-mV
-vy
 aa
 aa
 aa
@@ -28878,34 +29488,34 @@ aa
 aa
 aa
 aa
+lz
+lD
+lJ
+lN
+lV
+lY
+me
+me
+mC
+mN
+mW
+ng
+nt
+nG
+mo
+oj
+oq
+oE
+oQ
+oO
+lJ
+pp
+lz
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-vy
-vy
-vy
-vy
-vy
-Yk
-KB
-YE
-vy
-IS
-WW
-Cq
-mV
-mV
-Bh
-mV
-sc
-Yq
-BM
-nZ
 aa
 aa
 aa
@@ -29134,35 +29744,35 @@ aa
 aa
 aa
 aa
+zJ
+ly
+lE
+lI
+lJ
+lJ
+lx
+lD
+ms
+mE
+mO
+lx
+nh
+lJ
+nF
+lJ
+ok
+lG
+oF
+oP
+oY
+pd
+lJ
+ly
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-Bh
-Gg
-qC
-mV
-vy
-oQ
-mV
-oV
-mV
-WM
-vy
-vy
-vy
-vy
-vy
-vy
 aa
 aa
 aa
@@ -29391,33 +30001,33 @@ aa
 aa
 aa
 aa
+zJ
+ly
+lA
+lK
+lJ
+lU
+lx
+lx
+mp
+mF
+lx
+lx
+ni
+nu
+nH
+nr
+ol
+lx
+oG
+lW
+oZ
+lW
+lJ
+ly
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-vy
-Vz
-Ik
-EX
-vy
-vy
-vy
-vy
-RZ
-vy
-vy
-qD
-qD
-vy
 aa
 aa
 aa
@@ -29648,35 +30258,35 @@ aa
 aa
 aa
 aa
+lx
+lx
+lx
+lx
+lO
+lx
+lx
+mf
+mu
+mG
+mQ
+lx
+lx
+lx
+nI
+lx
+lx
+lx
+oy
+lx
+lx
+lx
+po
+lx
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-vy
-vy
-vy
-vy
-vy
-aa
-vy
-TZ
-mV
-WF
-nZ
-Gg
-mV
-vy
-vy
-vy
 aa
 aa
 aa
@@ -29905,35 +30515,35 @@ aa
 aa
 aa
 aa
+zJ
+zJ
+zJ
+lG
+lD
+lJ
+lZ
+mh
+mv
+mH
+mS
+lx
+na
+nx
+nK
+nZ
+on
+lx
+oH
+oO
+oT
+lJ
+pl
+pt
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-vy
-oq
-mV
-mV
-LM
-Kc
-mV
-SD
-Cr
-Vw
 aa
 aa
 aa
@@ -30164,33 +30774,33 @@ aa
 aa
 aa
 aa
+zJ
+lx
+lQ
+lW
+ly
+mi
+mw
+mI
+mS
+lx
+mY
+mh
+nO
+lJ
+oe
+lx
+ow
+oN
+lx
+pf
+pr
+lx
 aa
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-vy
-Qz
-Bp
-Qz
-nZ
-Zl
-oj
-vy
-vy
-vy
 aa
 aa
 aa
@@ -30421,31 +31031,31 @@ aa
 aa
 aa
 aa
+zJ
+lx
+lx
+lx
+lz
+mk
+mx
+mK
+mV
+lx
+nm
+np
+nP
+nU
+od
+lx
+lx
+lx
+lx
+lx
+lx
+lx
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-vy
-vy
-vy
-vy
-vy
-vy
-vy
-vy
 aa
 aa
 aa
@@ -30679,28 +31289,28 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+zJ
+zJ
+zJ
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+ny
+nQ
+oa
+oo
+or
+oI
+oM
+pv
+oM
+pj
+lx
+AP
 aa
 aa
 aa
@@ -30939,25 +31549,25 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+zJ
+zJ
+zJ
+zJ
+zJ
+zJ
+lx
+lx
+lx
+nS
+lx
+lx
+oJ
+oR
+pa
+pg
+ps
+lx
+zJ
 aa
 aa
 aa
@@ -31201,20 +31811,20 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+zJ
+zJ
+zJ
+lx
+lD
+ob
+lx
+oK
+lx
+oK
+lx
+oK
+lx
+zJ
 aa
 aa
 aa
@@ -31460,18 +32070,18 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+zJ
+lx
+nS
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+lx
+zJ
 aa
 aa
 aa
@@ -31718,17 +32328,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+zJ
+zJ
+zJ
+zJ
+zJ
+zJ
+zJ
+zJ
+zJ
+zJ
+zJ
 aa
 aa
 aa

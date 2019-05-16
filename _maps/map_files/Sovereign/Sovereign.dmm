@@ -250,7 +250,6 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
 "aT" = (
-/obj/machinery/emh_emitter,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -485,13 +484,27 @@
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "by" = (
-/obj/machinery/ore_silo,
 /obj/machinery/camera/trek,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	icon_state = "pipe11-2";
+	dir = 6
+	},
+/obj/structure/window/reinforced,
 /turf/open/floor/circuit/telecomms/server,
 /area/science/research)
 "bz" = (
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/machinery/rnd/server,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/obj/machinery/door/window/eastright{
+	dir = 2;
+	icon_state = "right";
+	name = "Research server access"
 	},
 /turf/open/floor/circuit/telecomms/server,
 /area/science/research)
@@ -503,7 +516,11 @@
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "bC" = (
-/obj/machinery/rnd/server,
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	icon_state = "pipe11-2";
+	dir = 10
+	},
+/obj/structure/window/reinforced,
 /turf/open/floor/circuit/telecomms/server,
 /area/science/research)
 "bD" = (
@@ -621,6 +638,10 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/fore)
 "bW" = (
+/obj/machinery/atmospherics/pipe/heat_exchanging/junction{
+	icon_state = "pipe11-2";
+	dir = 1
+	},
 /turf/open/floor/circuit/telecomms/server,
 /area/science/research)
 "bX" = (
@@ -689,10 +710,9 @@
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/dorms)
 "ck" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
-	dir = 4;
-	external_pressure_bound = 120;
-	name = "server vent"
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	icon_state = "pipe11-2";
+	dir = 5
 	},
 /turf/open/floor/plasteel/dark/telecomms,
 /area/science/research)
@@ -850,7 +870,6 @@
 /area/hallway/secondary/command)
 "cK" = (
 /obj/structure/closet/secure_closet/CMO,
-/obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
 "cL" = (
@@ -1244,7 +1263,7 @@
 /turf/closed/wall/trek_smooth/jeffries,
 /area/maintenance/department/bridge)
 "dV" = (
-/obj/machinery/atmospherics/pipe/manifold{
+/obj/machinery/atmospherics/pipe/manifold/cyan/visible{
 	icon_state = "manifold-2";
 	dir = 1
 	},
@@ -1287,10 +1306,6 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/computer/holodeck,
-/turf/open/floor/carpet/trek,
-/area/crew_quarters/dorms)
-"eb" = (
-/obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/dorms)
 "ec" = (
@@ -1628,17 +1643,15 @@
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "fd" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8;
-	external_pressure_bound = 140;
-	name = "server vent";
-	pressure_checks = 0
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	icon_state = "pipe11-2";
+	dir = 9
 	},
 /turf/open/floor/plasteel/dark/telecomms,
 /area/science/research)
 "fe" = (
-/obj/machinery/atmospherics/pipe/simple,
 /obj/machinery/door/airlock/trek/goon/command,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /turf/open/floor/carpet/trek,
 /area/science/research)
 "ff" = (
@@ -1710,7 +1723,7 @@
 /turf/open/floor/carpet/trek,
 /area/science/research)
 "fm" = (
-/obj/machinery/atmospherics/pipe/simple,
+/obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /turf/open/floor/carpet/trek,
 /area/science/research)
 "fn" = (
@@ -1728,9 +1741,9 @@
 /turf/open/floor/carpet/trek,
 /area/science/research)
 "fq" = (
-/obj/machinery/atmospherics/pipe/simple{
-	icon_state = "pipe11-2";
-	dir = 5
+/obj/machinery/atmospherics/pipe/manifold/cyan/visible{
+	icon_state = "manifold-2";
+	dir = 8
 	},
 /turf/open/floor/carpet/trek,
 /area/science/research)
@@ -1752,7 +1765,8 @@
 /turf/open/floor/carpet/trek/romulan,
 /area/library)
 "fu" = (
-/obj/machinery/atmospherics/pipe/simple{
+/obj/machinery/atmospherics/pipe/simple/cyan/visible{
+	icon_state = "pipe11-2";
 	dir = 9
 	},
 /turf/open/floor/carpet/trek,
@@ -1909,6 +1923,11 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	icon_state = "connector_map-2";
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister/nitrogen,
 /turf/open/floor/carpet/trek,
 /area/science/research)
 "fQ" = (
@@ -2455,13 +2474,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
-"hy" = (
-/obj/machinery/emh_emitter,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/carpet/trek,
-/area/quartermaster/storage)
 "hz" = (
 /obj/structure/bed/roller,
 /turf/open/floor/carpet/trek,
@@ -11199,10 +11211,6 @@
 /obj/structure/trek_catwalk,
 /turf/open/floor/plating,
 /area/maintenance/fore)
-"DX" = (
-/obj/structure/closet/emcloset,
-/turf/open/floor/carpet/trek,
-/area/quartermaster/miningdock)
 "DY" = (
 /obj/structure/janitorialcart,
 /turf/open/floor/carpet/trek,
@@ -11260,13 +11268,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/warehouse)
-"Eh" = (
-/obj/machinery/door/poddoor{
-	id = "QMLoaddoor";
-	name = "supply dock loading door"
-	},
-/turf/open/space/basic,
-/area/quartermaster/miningdock)
 "Ei" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/trek/middle,
@@ -14411,6 +14412,7 @@
 	dir = 8
 	},
 /obj/machinery/camera/trek,
+/obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/dorms)
 "Ly" = (
@@ -15985,10 +15987,12 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/closet/emcloset,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
 "Pz" = (
 /obj/structure/window/reinforced/fulltile/trek/middle,
+/obj/structure/grille,
 /obj/structure/grille,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
@@ -16019,7 +16023,6 @@
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
 "PC" = (
-/obj/structure/closet/wardrobe/miner,
 /obj/machinery/camera/trek{
 	icon_state = "camera";
 	dir = 1
@@ -16028,7 +16031,6 @@
 /area/quartermaster/miningdock)
 "PD" = (
 /obj/machinery/light,
-/obj/structure/closet/secure_closet/miner,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
 "PE" = (
@@ -16813,29 +16815,29 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
-"Th" = (
-/obj/machinery/door/airlock/trek/goon{
-	dir = 4;
-	icon_state = "closed";
-	name = "Laundry room"
+"RU" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/machinery/door/window/survival_pod,
+/obj/structure/window/reinforced/survival_pod{
+	icon_state = "pwindow";
+	dir = 4
+	},
+/obj/structure/mirror{
+	pixel_y = 26
 	},
 /turf/open/floor/plasteel/white,
-/area/hallway/secondary/entry)
-"TD" = (
-/obj/item/clothing/under/trek/neelix,
-/obj/item/clothing/under/trek/neelix,
-/obj/structure/closet{
-	name = "Civilian clothes"
+/area/hallway/secondary/command)
+"SU" = (
+/obj/structure/trek_catwalk/cargo/pad{
+	icon_state = "3,8"
 	},
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/obj/item/clothing/under/trek/cadet,
-/turf/open/floor/plasteel/white,
-/area/hallway/secondary/entry)
-"WP" = (
+/obj/effect/landmark/runabout_dock,
+/obj/structure/overmap/runabout,
+/turf/open/floor/carpet/trek,
+/area/quartermaster/storage)
+"Ug" = (
 /obj/structure/closet{
 	name = "Combadges"
 	},
@@ -16858,39 +16860,59 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/hallway/secondary/entry)
-"Xl" = (
-/obj/structure/trek_catwalk/cargo/pad{
-	icon_state = "3,8"
+"UC" = (
+/obj/item/clothing/under/trek/neelix,
+/obj/item/clothing/under/trek/neelix,
+/obj/structure/closet{
+	name = "Civilian clothes"
 	},
-/obj/effect/landmark/runabout_dock,
-/obj/structure/overmap/runabout,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/obj/item/clothing/under/trek/cadet,
+/turf/open/floor/plasteel/white,
+/area/hallway/secondary/entry)
+"Wm" = (
+/obj/machinery/airalarm{
+	pixel_y = 26
+	},
+/obj/structure/closet/secure_closet/miner,
 /turf/open/floor/carpet/trek,
-/area/quartermaster/storage)
-"Ze" = (
+/area/quartermaster/miningdock)
+"WF" = (
 /obj/structure/rack,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
-"ZA" = (
-/obj/machinery/shower{
-	dir = 4
-	},
-/obj/machinery/door/window/survival_pod,
-/obj/structure/window/reinforced/survival_pod{
-	icon_state = "pwindow";
-	dir = 4
-	},
-/obj/structure/mirror{
-	pixel_y = 26
-	},
-/turf/open/floor/plasteel/white,
-/area/hallway/secondary/command)
-"ZW" = (
+"WT" = (
+/obj/structure/closet/wardrobe/miner,
+/turf/open/floor/carpet/trek,
+/area/quartermaster/miningdock)
+"YN" = (
 /obj/machinery/door/airlock/trek/goon{
 	dir = 4;
 	icon_state = "closed";
 	name = "FTL simulator"
 	},
 /turf/open/floor/carpet/trek,
+/area/hallway/secondary/entry)
+"Zp" = (
+/obj/machinery/ore_silo,
+/turf/open/floor/carpet/trek,
+/area/science/research)
+"Zw" = (
+/obj/structure/rack,
+/obj/item/wrench,
+/turf/open/floor/carpet/trek,
+/area/science/research)
+"ZV" = (
+/obj/machinery/door/airlock/trek/goon{
+	dir = 4;
+	icon_state = "closed";
+	name = "Laundry room"
+	},
+/turf/open/floor/plasteel/white,
 /area/hallway/secondary/entry)
 
 (1,1,1) = {"
@@ -112889,7 +112911,7 @@ aI
 al
 al
 al
-ZW
+YN
 al
 vd
 AI
@@ -113115,7 +113137,7 @@ ag
 ag
 ag
 cb
-eb
+zf
 zn
 zC
 cl
@@ -113862,7 +113884,7 @@ aa
 aa
 aa
 cd
-NZ
+eo
 eo
 fw
 fw
@@ -113917,7 +113939,7 @@ aI
 al
 al
 al
-Th
+ZV
 al
 vd
 AI
@@ -114127,7 +114149,7 @@ Bw
 fB
 Ls
 cd
-eo
+NZ
 eo
 tX
 cd
@@ -114686,7 +114708,7 @@ aI
 aI
 hW
 al
-WP
+Ug
 Ar
 Ar
 At
@@ -114946,7 +114968,7 @@ al
 Aq
 Ar
 Ar
-TD
+UC
 vd
 AL
 HJ
@@ -117985,7 +118007,7 @@ bw
 fl
 fq
 fP
-fv
+Zp
 bw
 xZ
 gy
@@ -118499,7 +118521,7 @@ bw
 fp
 fv
 fv
-fv
+Zw
 bw
 gv
 gv
@@ -179223,7 +179245,7 @@ it
 iL
 iP
 iP
-Xl
+SU
 kt
 Qc
 kt
@@ -181025,10 +181047,10 @@ PJ
 bO
 mt
 Qv
-Ze
+WF
 Hr
 hS
-hS
+WT
 bO
 sv
 sv
@@ -181265,7 +181287,7 @@ er
 er
 er
 bD
-hy
+Kx
 bJ
 hH
 bJ
@@ -181282,10 +181304,10 @@ PJ
 bO
 mu
 Qz
+PV
 hS
 hS
 hS
-PB
 bO
 sv
 sv
@@ -181537,9 +181559,9 @@ hS
 Pi
 hS
 bO
-hS
+mu
 Qz
-hS
+PV
 hS
 hS
 hS
@@ -181797,8 +181819,8 @@ Rr
 Rq
 Eb
 Gt
-PV
-PV
+hS
+hS
 PC
 bO
 sv
@@ -182051,7 +182073,7 @@ Ra
 PN
 hS
 bO
-FK
+Wm
 hS
 hS
 hS
@@ -182308,7 +182330,7 @@ Rb
 Re
 hS
 bO
-mu
+hS
 hS
 hS
 Pw
@@ -182565,9 +182587,9 @@ PL
 Qi
 hS
 bO
+hS
+hS
 bO
-Eh
-Hb
 Px
 Hb
 PE
@@ -182822,9 +182844,9 @@ Rc
 Rd
 hS
 bO
-DX
+PB
 hS
-hS
+bO
 Py
 hS
 hS
@@ -183079,9 +183101,9 @@ bO
 bO
 bO
 bO
-bO
 Ei
-Hd
+Ei
+bO
 Pz
 Hd
 Ei
@@ -241636,7 +241658,7 @@ JQ
 JQ
 JQ
 EG
-ZA
+RU
 aS
 az
 EG
@@ -246523,7 +246545,7 @@ EG
 ax
 EG
 EG
-ZA
+RU
 IF
 az
 EG
@@ -246534,7 +246556,7 @@ Nc
 dU
 sv
 EG
-ZA
+RU
 IF
 EL
 EG
@@ -246776,7 +246798,7 @@ Kd
 JZ
 Kc
 EG
-ZA
+RU
 IF
 aL
 EG

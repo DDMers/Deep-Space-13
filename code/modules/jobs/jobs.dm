@@ -18,6 +18,7 @@ GLOBAL_LIST_INIT(medical_positions, list(
 	"Medical Doctor",
 	"Geneticist",
 	"Virologist",
+	ROLE_EMH, //DeepSpace13 - Emh banning
 	"Chemist"))
 
 

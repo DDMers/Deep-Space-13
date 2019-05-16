@@ -407,3 +407,35 @@
 		density = FALSE
 		open = TRUE
 		opacity = FALSE
+
+/obj/machinery/jukebox/trek
+	name = "Shipwide music player"
+	desc = "A shipwide interface modified by a bored cargo technician. It (ab)uses the ship's internal announcement subsystem to play music throughout the ship."
+	icon = 'DS13/icons/obj/decor/wall_decor.dmi'
+	pixel_y = 32
+	density = FALSE
+	mouse_over_pointer = MOUSE_HAND_POINTER
+
+/obj/machinery/jukebox/trek/process()
+	if(world.time < stop && active)
+		var/sound/song_played = sound(selection.song_path)
+
+		for(var/mob/M in get_area(src))
+			if(!M.client || !(M.client.prefs.toggles & SOUND_INSTRUMENTS))
+				continue
+			if(!(M in rangers))
+				rangers[M] = TRUE
+				M.playsound_local(get_turf(M), null, 100, channel = CHANNEL_JUKEBOX, S = song_played)
+		for(var/mob/L in rangers)
+			if(get_area(L) != get_area(src))
+				rangers -= L
+				if(!L || !L.client)
+					continue
+				L.stop_sound_channel(CHANNEL_JUKEBOX)
+	else if(active)
+		active = FALSE
+		STOP_PROCESSING(SSobj, src)
+		dance_over()
+		playsound(src,'DS13/sound/effects/computer/alert2.ogg',50,1)
+		update_icon()
+		stop = world.time + 100
