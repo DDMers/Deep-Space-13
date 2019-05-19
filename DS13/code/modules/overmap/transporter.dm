@@ -17,7 +17,6 @@
 	var/datum/action/innate/transporterlock/lock = new
 	var/datum/action/innate/cleartransporterlock/clearlock = new
 	var/mob/living/operator
-//	var/confinement_beam = ANNULAR_CONFINEMENT_NARROW //Narrow = only pickup humans, wide = pick up everything that isnt bolted to the ground
 	req_one_access = list(ACCESS_SEC_DOORS,ACCESS_ENGINE_EQUIP)
 	var/list/log = list() //Logging to check if anyone's marooned.
 	var/list/locked_on = list() //Who have we locked onto?
@@ -276,7 +275,7 @@
 				return
 	var/sound/S = pick('DS13/sound/effects/transporter/transporter_beep.ogg','DS13/sound/effects/transporter/transporter_beep2.ogg')
 	playsound(loc, S, 100)
-		var/obj/machinery/transporter_pad/T = pick(linked)
+	var/obj/machinery/transporter_pad/T = pick(linked)
 	var/obj/effect/temp_visual/transporter_lock/lockon = new(get_turf(eyeobj))
 	lockon.chosen = T //This handles the actual "beaming"
 	playsound(loc, 'DS13/sound/effects/transporter/retrieve.ogg', 100, 4)

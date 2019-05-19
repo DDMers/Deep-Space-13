@@ -13,7 +13,6 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
-#include "DS13\code\modules\client\client.dm"
 #include "_maps\_basemap.dm"
 #include "code\_compile_options.dm"
 #include "code\world.dm"
@@ -2773,6 +2772,7 @@
 #include "DS13\code\modules\borg\gamemode.dm"
 #include "DS13\code\modules\borg\items+structures.dm"
 #include "DS13\code\modules\borg\turfs.dm"
+#include "DS13\code\modules\client\client.dm"
 #include "DS13\code\modules\client\preferences.dm"
 #include "DS13\code\modules\client\preferences_toggles.dm"
 #include "DS13\code\modules\client\verbs\looc.dm"
