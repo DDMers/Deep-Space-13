@@ -21,6 +21,7 @@
 	req_one_access = list(ACCESS_SEC_DOORS,ACCESS_ENGINE_EQUIP)
 	var/list/log = list() //Logging to check if anyone's marooned.
 	var/list/locked_on = list() //Who have we locked onto?
+	var/datum/component/movement_check
 
 /obj/item/pattern_enhancer
 	name = "Pattern enhancer (inactive)"
@@ -296,6 +297,21 @@
 /obj/machinery/computer/camera_advanced/transporter_control/attack_ai(mob/user)
 	return attack_hand(user)
 
+/obj/machinery/computer/camera_advanced/transporter_control/remove_eye_control(mob/living/user)
+	..()
+	user.unset_machine()
+	operator = null
+	qdel(eyeobj)
+	eyeobj = null
+
+/obj/machinery/computer/camera_advanced/transporter_control/proc/operator_check()
+	if(!operator)
+		return FALSE
+	if(Adjacent(operator) || isAI(operator)) //Operator is in range, or is an AI and allowed to transport by default
+		return TRUE
+	remove_eye_control(operator)
+	movement_check.RemoveComponent()
+
 /obj/machinery/computer/camera_advanced/transporter_control/attack_hand(mob/user)
 	if(!isliving(user))
 		return
@@ -303,8 +319,16 @@
 		to_chat(user, "You require a security level access card to use this console!.")
 		return FALSE
 	if(operator)
+		var/question = alert("[operator] is already using this console, kick them off it?.",name,"yes","no")
+		if(question == "no" || !question)
+			return
+		to_chat(operator, "<span class='warning>[user] grabs your hands and forces you off of [src]!</span>")
 		remove_eye_control(operator)
-		operator.cancel_camera()
+		return
+	if(movement_check)//Add a component to see if theyve moved out of range. This way is cleaner than a process()
+		user.TakeComponent(movement_check)
+	else
+		movement_check = user.AddComponent(/datum/component/redirect, list(COMSIG_MOVABLE_MOVED = CALLBACK(src, .proc/operator_check, user))) //This component checks whether the operator is in range of the console.
 	choose_area(user)
 
 /obj/machinery/computer/camera_advanced/transporter_control/proc/choose_area(mob/user)
