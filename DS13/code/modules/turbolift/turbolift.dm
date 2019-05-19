@@ -40,9 +40,6 @@
 	can_be_unanchored = FALSE
 	mouse_over_pointer = MOUSE_HAND_POINTER
 	desc = "Starfleet's decision to replace the iconic turboladder was not met with unanimous praise, experts citing increased obesity figures from crewmen no longer needing to climb vertically through several miles of deck to reach their target. However this is undoubtedly much faster."
-	var/floor_directory = "Deck 1: Bridge <br>\
-		Deck 2: Promenade<br>\
-		Deck 3: Engineering<br>" //Change this if you intend to make a new map. Helps players know where they're going.
 	var/list/turbolift_turfs = list()
 	var/floor = 0 //This gets assigned on init(). Allows us to calculate where the lift needs to go next.
 	var/list/destinations = list() //Any elevator that's on our path.
@@ -54,6 +51,68 @@
 	var/is_controller = FALSE //Are we controlling the other lifts?
 	var/obj/structure/turbolift/master = null //Who is the one pulling the strings
 	var/obj/machinery/door/airlock/linked_door = null //Linked elevator door
+	flags_1 = HEAR_1
+	var/list/deck_1 = list("bridge","ready room","computer core","command escape pod") //Change these lists so that people know where to go! This one's the sovereign as it's the default map (for now)
+	var/list/deck_2 = list("brig","armoury","transporter","cargo") //MAKE SURE THAT EACH THING IS UNIQUE. Escape pod 1 and escape pod 2 may cause issues!
+	var/list/deck_3 = list("mess hall", "bar", "kitchen", "holodeck", "crew quarters", "sickbay", "research", "weapons locker", "janitorial supplies", "arrivals", "escape shuttle dock", "airponics", "botany", "medbay") //I'm going to add in the SS13 equivalents here too, as this whole feature is to help newbies
+	var/list/deck_4 = list("warp core", "engineering", "atmospherics", "telecomms", "warp nacelles")
+
+/obj/structure/turbolift/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode)
+	. = ..()
+	if(speaker == src)
+		return
+	if(findtext(raw_message, "?"))
+		return
+	if(get_area(speaker) == get_area(src)) //You have to be in our area. This avoids having to expend energy typing "computer, deck 4" etc. This is also what they do in the show :)
+		var/target_department = department_parse(raw_message)
+		if(findtext(raw_message, "deck") || findtext(raw_message, "floor") || target_department)
+			if(in_use)
+				to_chat(speaker, "The turbolift is already moving!")
+				return FALSE
+			send_sound_lift('DS13/sound/effects/turbolift/turbolift-close.ogg')
+			in_use = TRUE
+			if(!bolt_door())
+				to_chat(speaker, "<span class='notice'> The door cannot close when someone is standing in it.</span>")
+				bolted = FALSE
+				in_use = FALSE
+				return
+			var/target_floor = target_department //What floor we looking for? This first checks if they've said something like "cargo"
+			if(!target_floor) //We couldnt match a department to what they say. See if they asked for a specific floor.
+				for(var/I = 0, I <= max_floor, I++)
+					if(findtext(raw_message, num2text(I)) && I != floor) //Can't go to our floor idiot.
+						target_floor = I
+			if(!target_floor || !isnum(target_floor) || target_floor == floor) //Still havent found a floor? That means theyre a bloody idiot who can't make their mind up, or something has gone hideously wrong.
+				if(target_floor == floor) to_chat(speaker, "<span class='notice'>That department is on this deck, deck [floor]") //Quick bit of info so people dont get as lost.
+				unbolt_door()
+				return
+			for(var/obj/structure/turbolift/TS in destinations)
+				if(TS.floor == target_floor)
+					send_sound_lift('DS13/sound/effects/turbolift/turbolift.ogg', TRUE)
+					addtimer(CALLBACK(src, .proc/lift, TS, TRUE), 90)
+					icon_state = "lift-on"
+					return
+
+/obj/structure/turbolift/proc/department_parse(var/raw_message)
+	if(!deck_1.len)
+		return
+	for(var/entry in deck_1) //We have a list of every dept. sorted by floor. If they say they want a department on deck 1, then they want to go to deck 1.
+		if(findtext(raw_message, entry))
+			return 1
+	if(!deck_2.len) //We do this to avoid a runtime as it looks through an empty directory of deck_2.
+		return
+	for(var/entry in deck_2)
+		if(findtext(raw_message, entry))
+			return 2
+	if(!deck_3.len)
+		return
+	for(var/entry in deck_3)
+		if(findtext(raw_message, entry))
+			return 3
+	if(!deck_4.len)
+		return
+	for(var/entry in deck_4)
+		if(findtext(raw_message, entry))
+			return 4
 
 /obj/machinery/door/airlock/trek/goon/turbolift
 	name = "Turbolift airlock"
@@ -120,6 +179,14 @@
 /obj/structure/turbolift/attack_animal(mob/user)
 	return attack_hand(user)
 
+/obj/structure/turbolift/examine(mob/user)
+	. = ..()
+	to_chat(user, "<span class='notice'> Deck 1: [list2text(deck_1)]\
+	<br>Deck 2: [list2text(deck_2)]\
+	<br>Deck 3: [list2text(deck_3)]\
+	<br>Deck 4: [list2text(deck_4)]\
+	</span>")
+
 /obj/structure/turbolift/attack_hand(mob/user)
 	. = ..()
 	if(in_use)
@@ -132,7 +199,6 @@
 		in_use = FALSE
 		return
 	in_use = TRUE
-	to_chat(user, floor_directory)
 	icon_state = "lift-off"
 	var/S = input(user,"Select a deck (max: [max_floor])") as num
 	if(S > max_floor || S <= 0 || S == floor)
@@ -283,6 +349,11 @@
 				SSS.destinations -= SSS
 			break //No more lifts, no need to loop again.
 
+/area/turbolift/Entered(atom/movable/M)
+	. = ..()
+	if(isliving(M))
+		to_chat(M, "<span class='notice'>You have now entered a turbolift. Either say which department / floor you want to go to, or click the turbolift interface.</span>")
+
 /area/turbolift/ship //These areas MUST be unique if youre using manuals lifts!
 	name = "Ship turbolift"
 
@@ -309,9 +380,6 @@
 
 /obj/structure/turbolift/manual //These are manually set and used for ships, as the maps themselves aren't actually multiZ enabled
 	var/height = 1
-	floor_directory = "Deck 1: Bridge | Officers' Quarters.<br>\
-		Deck 2: Bar | Brig | Transporter Room 1.<br>\
-		Deck 3: Engineering.<br>" //Change this if you intend to make a new map. Helps players know where they're going.
 
 /obj/structure/turbolift/manual/height1
 	height = 2
@@ -324,9 +392,6 @@
 
 /obj/structure/turbolift/manual/romulan //These are manually set and used for ships, as the maps themselves aren't actually multiZ enabled
 	height = 1
-	floor_directory = "<span class='notice'>Deck 1: Bridge | Officers' Quarters.<br>\
-		Deck 2: Engineering | Brig | Transporter<br>\
-		Deck 3: Mess hall | Crew Quarters<br></span>" //Change this if you intend to make a new map. Helps players know where they're going.
 
 /obj/structure/turbolift/manual/romulan/height1
 	height = 2
