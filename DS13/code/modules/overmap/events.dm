@@ -457,7 +457,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	back = /obj/item/storage/backpack/satchel
 	ears = /obj/item/radio/headset/syndicate/alt
 	back = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/storage/box/syndie_kit/chameleon=1,/obj/item/book/granter/martial/cqc=1,/obj/item/reagent_containers/syringe/mulligan=1,/obj/item/ship_hijack_spawner=1)
+	backpack_contents = list(/obj/item/storage/box,/obj/item/storage/box/syndie_kit/chameleon=1,/obj/item/book/granter/martial/cqc=1,/obj/item/reagent_containers/syringe/mulligan=1,/obj/item/ship_hijack_spawner=1,/obj/item/phaser_pack/large=1)
 	implants = list(/obj/item/implant/storage) //Eases up on the meta a bit
 
 /obj/item/ship_hijack_spawner //Device used by tal shiar to formally take over the ship
@@ -465,6 +465,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	desc = "A device which allows you to summon a ship network hijacker, allowing one to take over a ship. ONCE YOU SPAWN THE HIJACKER, THERE IS NO TURNING BACK."
 	icon = 'DS13/icons/obj/device.dmi'
 	icon_state = "health"
+	w_class = 1
 
 /obj/item/ship_hijack_spawner/attack_self(mob/user)
 	. = ..()
