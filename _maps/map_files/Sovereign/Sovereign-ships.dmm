@@ -9392,6 +9392,13 @@
 	icon_state = "damaged2"
 	},
 /area/ship/debrisfield)
+"Ft" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Fx" = (
 /obj/structure/lattice,
 /turf/open/space/basic,
@@ -28706,7 +28713,7 @@ xo
 xo
 xo
 xo
-qi
+Ft
 rG
 xk
 pA
