@@ -5935,10 +5935,10 @@
 "pS" = (
 /obj/structure/table/reinforced,
 /obj/machinery/chem_dispenser/drinks/beer,
-/obj/machinery/button{
+/obj/machinery/button/door{
 	id = "whisp_diner";
-	name = "Shutters control";
-	pixel_x = -28
+	pixel_x = -28;
+	pixel_y = -6
 	},
 /turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
@@ -7110,7 +7110,9 @@
 /turf/open/floor/trek/bsg,
 /area/ship/merc)
 "tE" = (
-/obj/machinery/power/matter_injector,
+/obj/machinery/power/matter_injector{
+	req_access = null
+	},
 /obj/structure/overmap_component/viewscreen{
 	density = 0;
 	pixel_y = 32
@@ -7316,7 +7318,9 @@
 /turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "uk" = (
-/obj/machinery/power/matter_injector/antimatter,
+/obj/machinery/power/matter_injector/antimatter{
+	req_access = null
+	},
 /turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "ul" = (
@@ -7448,7 +7452,9 @@
 /turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "uE" = (
-/obj/machinery/power/warp_core,
+/obj/machinery/power/warp_core{
+	req_access = null
+	},
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
@@ -7613,7 +7619,9 @@
 /turf/open/floor/trek/bsg,
 /area/ship/merc)
 "vd" = (
-/obj/machinery/power/apc/auto_name/ds13/highcap,
+/obj/machinery/power/apc/auto_name/ds13/highcap{
+	locked = 0
+	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -8301,10 +8309,14 @@
 /area/ship/merc)
 "wY" = (
 /obj/structure/rack,
+/obj/item/stack/sheet/mineral/silver,
 /turf/open/floor/trek/bsg,
 /area/ship/merc)
 "wZ" = (
 /obj/structure/safe,
+/obj/item/coin/gold,
+/obj/item/coin/gold,
+/obj/item/coin/bananium,
 /turf/open/floor/trek/bsg,
 /area/ship/merc)
 "xa" = (
@@ -8802,12 +8814,44 @@
 /mob/living/simple_animal/hostile/retaliate/borg_drone,
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
+"yk" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"yl" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/mineral/gold,
+/obj/item/stack/sheet/mineral/gold,
+/obj/item/stack/sheet/mineral/gold,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "ym" = (
 /obj/structure/fluff/broken_flooring{
 	icon_state = "pile"
 	},
 /turf/open/space/basic,
 /area/space)
+"yn" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/mineral/diamond,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"yo" = (
+/obj/structure/rack,
+/obj/item/pinpointer/nuke,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"yp" = (
+/obj/machinery/nuclearbomb/syndicate,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"yq" = (
+/obj/structure/rack,
+/obj/item/stack/spacecash/c1000,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "yr" = (
 /obj/item/stack/sheet/mineral/wood,
 /obj/item/stack/sheet/mineral/wood,
@@ -28219,7 +28263,7 @@ pA
 qk
 pA
 pA
-qJ
+yk
 xY
 qJ
 xY
@@ -30275,7 +30319,7 @@ pX
 xM
 pX
 pA
-qJ
+yk
 xY
 qJ
 xY
@@ -32845,7 +32889,7 @@ pX
 xM
 pX
 pA
-qJ
+yk
 yb
 qJ
 yb
@@ -34901,7 +34945,7 @@ pA
 qk
 pA
 pA
-qJ
+yk
 yb
 qJ
 yb
@@ -94505,7 +94549,7 @@ pA
 pA
 pA
 pA
-pM
+pA
 qi
 qi
 qi
@@ -94762,7 +94806,7 @@ qJ
 sH
 qJ
 qJ
-pA
+pM
 tp
 qi
 qi
@@ -96567,8 +96611,8 @@ qi
 qi
 pA
 wY
-wY
-wY
+yl
+yo
 pA
 aa
 ab
@@ -97080,9 +97124,9 @@ qB
 qi
 rx
 pA
+tu
 pX
-pX
-xV
+yp
 pA
 aa
 ab
@@ -97595,8 +97639,8 @@ qi
 qi
 pA
 wZ
-wY
-wY
+yn
+yq
 pA
 aa
 ab
@@ -99388,7 +99432,7 @@ pX
 wp
 pX
 wN
-pA
+pM
 qi
 qi
 qi
@@ -99641,11 +99685,11 @@ aa
 ab
 pA
 pA
+qk
+qk
+qk
 pA
 pA
-pA
-pA
-pM
 qi
 qi
 qi
