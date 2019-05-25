@@ -50,3 +50,7 @@ endmap
 
 map multiz_debug
 endmap
+
+map Columbia
+	#voteweight 1.5
+endmap
