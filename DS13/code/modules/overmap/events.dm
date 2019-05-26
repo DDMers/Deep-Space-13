@@ -938,6 +938,8 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	desc = "A civilian ship has entered your system. Designation: CEV Whisp. You are ordered to investigate what they're doing in this system however, we have no reason to believe they're hostile."
 	fail_text = "The ship has been destroyed"
 	succeed_text = "It appeared to be harmless."
+	reward = 5000
+	completed = TRUE //Open ended mission that you can't complete traditionally
 
 /datum/overmap_event/mercenaries/fail() //Open ended
 	return FALSE
