@@ -132,7 +132,7 @@
 
 	//CRIT
 	if(!breath || (breath.total_moles() == 0) || !lungs)
-		if(reagents.has_reagent("epinephrine") && lungs)
+		if(reagents.has_reagent("inaprovaline") && lungs)
 			return
 		adjustOxyLoss(1)
 

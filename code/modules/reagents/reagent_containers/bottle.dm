@@ -41,9 +41,9 @@
 
 
 /obj/item/reagent_containers/glass/bottle/epinephrine
-	name = "epinephrine bottle"
-	desc = "A small bottle. Contains epinephrine - used to stabilize patients."
-	list_reagents = list("epinephrine" = 30)
+	name = "cortolin bottle"
+	desc = "A small bottle. Contains cortolin - used to stabilize patients."
+	list_reagents = list("cortolin" = 30)
 
 /obj/item/reagent_containers/glass/bottle/toxin
 	name = "toxin bottle"
@@ -61,10 +61,10 @@
 	list_reagents = list("spewium" = 30)
 
 /obj/item/reagent_containers/glass/bottle/morphine
-	name = "morphine bottle"
-	desc = "A small bottle of morphine."
+	name = "axonol bottle"
+	desc = "A small bottle of axonol."
 	icon = 'icons/obj/chemical.dmi'
-	list_reagents = list("morphine" = 30)
+	list_reagents = list("axonol" = 30)
 
 /obj/item/reagent_containers/glass/bottle/chloralhydrate
 	name = "chloral hydrate bottle"
@@ -72,10 +72,10 @@
 	icon_state = "bottle20"
 	list_reagents = list("chloralhydrate" = 15)
 
-/obj/item/reagent_containers/glass/bottle/mannitol
-	name = "mannitol bottle"
-	desc = "A small bottle of Mannitol. Useful for healing brain damage."
-	list_reagents = list("mannitol" = 30)
+/obj/item/reagent_containers/glass/bottle/alkysine
+	name = "alkysine bottle"
+	desc = "A small bottle of alkysine. Useful for healing brain damage."
+	list_reagents = list("alkysine" = 30)
 
 /obj/item/reagent_containers/glass/bottle/charcoal
 	name = "charcoal bottle"
@@ -222,9 +222,9 @@
 	list_reagents = list("salglu_solution" = 30)
 
 /obj/item/reagent_containers/glass/bottle/atropine
-	name = "atropine bottle"
-	desc = "A small bottle of atropine."
-	list_reagents = list("atropine" = 30)
+	name = "morathial bottle"
+	desc = "A small bottle of morathial."
+	list_reagents = list("morathial" = 30)
 
 /obj/item/reagent_containers/glass/bottle/romerol
 	name = "romerol bottle"
@@ -306,7 +306,7 @@
 /obj/item/reagent_containers/glass/bottle/tuberculosiscure
 	name = "BVAK bottle"
 	desc = "A small bottle containing Bio Virus Antidote Kit."
-	list_reagents = list("atropine" = 5, "epinephrine" = 5, "salbutamol" = 10, "spaceacillin" = 10)
+	list_reagents = list("morathial" = 5, "inaprovaline" = 5, "salbutamol" = 10, "spaceacillin" = 10)
 
 //Oldstation.dmm chemical storage bottles
 

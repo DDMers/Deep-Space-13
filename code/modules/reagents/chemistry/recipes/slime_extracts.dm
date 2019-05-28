@@ -26,9 +26,9 @@
 	..()
 
 /datum/chemical_reaction/slime/slimeinaprov
-	name = "Slime epinephrine"
+	name = "Slime inaprovaline"
 	id = "m_inaprov"
-	results = list("epinephrine" = 3)
+	results = list("inaprovaline" = 3)
 	required_reagents = list("water" = 5)
 	required_other = TRUE
 	required_container = /obj/item/slime_extract/grey

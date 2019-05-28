@@ -61,7 +61,7 @@
 	icon_state = "combat_hypo"
 	volume = 90
 	ignore_flags = 1 // So they can heal their comrades.
-	list_reagents = list("epinephrine" = 30, "omnizine" = 30, "leporazine" = 15, "atropine" = 15)
+	list_reagents = list("cortolin" = 30, "omnizine" = 30, "leporazine" = 15, "morathial" = 15)
 
 /obj/item/reagent_containers/hypospray/combat/nanites
 	desc = "A modified air-needle autoinjector for use in combat situations. Prefilled with experimental medical compounds for rapid healing."
@@ -79,7 +79,7 @@
 //MediPens
 
 /obj/item/reagent_containers/hypospray/medipen
-	name = "epinephrine medipen"
+	name = "cortolin medipen"
 	desc = "A rapid and safe way to stabilize patients in critical condition for personnel without advanced medical knowledge."
 	icon_state = "medipen"
 	item_state = "medipen"
@@ -90,7 +90,7 @@
 	ignore_flags = 1 //so you can medipen through hardsuits
 	reagent_flags = DRAWABLE
 	flags_1 = null
-	list_reagents = list("epinephrine" = 10)
+	list_reagents = list("cortolin" = 10)
 	custom_price = 40
 
 /obj/item/reagent_containers/hypospray/medipen/suicide_act(mob/living/carbon/user)
@@ -134,16 +134,16 @@
 	icon_state = "stimpen"
 	volume = 20
 	amount_per_transfer_from_this = 20
-	list_reagents = list("ephedrine" = 10, "coffee" = 10)
+	list_reagents = list("inaprovaline" = 10, "coffee" = 10)
 
 /obj/item/reagent_containers/hypospray/medipen/stimpack/traitor
 	desc = "A modified stimulants autoinjector for use in combat situations. Has a mild healing effect."
 	list_reagents = list("stimulants" = 10, "omnizine" = 10)
 
 /obj/item/reagent_containers/hypospray/medipen/morphine
-	name = "morphine medipen"
+	name = "axonol medipen"
 	desc = "A rapid way to get you out of a tight situation and fast! You'll feel rather drowsy, though."
-	list_reagents = list("morphine" = 10)
+	list_reagents = list("axonol" = 10)
 
 /obj/item/reagent_containers/hypospray/medipen/tuberculosiscure
 	name = "BVAK autoinjector"
@@ -151,7 +151,7 @@
 	icon_state = "stimpen"
 	volume = 60
 	amount_per_transfer_from_this = 30
-	list_reagents = list("atropine" = 10, "epinephrine" = 10, "salbutamol" = 20, "spaceacillin" = 20)
+	list_reagents = list("morathial" = 10, "cortolin" = 10, "dexalin" = 20, "spaceacillin" = 20)
 
 /obj/item/reagent_containers/hypospray/medipen/survival
 	name = "survival medipen"
@@ -159,7 +159,7 @@
 	icon_state = "stimpen"
 	volume = 57
 	amount_per_transfer_from_this = 57
-	list_reagents = list("salbutamol" = 10, "leporazine" = 15, "tricordrazine" = 15, "epinephrine" = 10, "lavaland_extract" = 2, "omnizine" = 5)
+	list_reagents = list("dexalin" = 10, "leporazine" = 15, "tricordrazine" = 15, "cortolin" = 10, "lavaland_extract" = 2, "omnizine" = 5)
 
 /obj/item/reagent_containers/hypospray/medipen/species_mutator
 	name = "species mutator medipen"
@@ -177,6 +177,6 @@
 	amount_per_transfer_from_this = 50
 
 /obj/item/reagent_containers/hypospray/medipen/atropine
-	name = "atropine autoinjector"
+	name = "morathial autoinjector"
 	desc = "A rapid way to save a person from a critical injury state!"
-	list_reagents = list("atropine" = 10)
+	list_reagents = list("morathial" = 10)

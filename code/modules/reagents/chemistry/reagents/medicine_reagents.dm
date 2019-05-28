@@ -217,7 +217,7 @@
 	name = "Spaceacillin"
 	id = "spaceacillin"
 	description = "Spaceacillin will prevent a patient from conventionally spreading any diseases they are currently infected with."
-	color = "#C8A5DC" // rgb: 200, 165, 220
+	color = "#00ffb0" // rgb: 200, 165, 220
 	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 
 //Goon Chems. Ported mainly from Goonstation. Easily mixable (or not so easily) and provide a variety of effects.
@@ -247,24 +247,24 @@
 	..()
 	. = 1
 
-/datum/reagent/medicine/oxandrolone
-	name = "Oxandrolone"
-	id = "oxandrolone"
-	description = "Stimulates the healing of severe burns. Extremely rapidly heals severe burns and slowly heals minor ones. Overdose will worsen existing burns."
+/datum/reagent/medicine/dermaline
+	name = "Dermaline"
+	id = "dermaline"
+	description = "Advanced medication that will rapidly rejunivate burn-damaged tissue. Overdose will worsen existing burns."
 	reagent_state = LIQUID
-	color = "#f7ffa5"
+	color = "#eb7327"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 25
 
-/datum/reagent/medicine/oxandrolone/on_mob_life(mob/living/carbon/M)
-	if(M.getFireLoss() > 50)
+/datum/reagent/medicine/dermaline/on_mob_life(mob/living/carbon/M)
+	if(M.getFireLoss() > 25)
 		M.adjustFireLoss(-4*REM, 0) //Twice as effective as silver sulfadiazine for severe burns
 	else
 		M.adjustFireLoss(-0.5*REM, 0) //But only a quarter as effective for more minor ones
 	..()
 	. = 1
 
-/datum/reagent/medicine/oxandrolone/overdose_process(mob/living/M)
+/datum/reagent/medicine/dermaline/overdose_process(mob/living/M)
 	if(M.getFireLoss()) //It only makes existing burns worse
 		M.adjustFireLoss(4.5*REM, FALSE, FALSE, BODYPART_ORGANIC) // it's going to be healing either 4 or 0.5
 		. = 1
@@ -300,7 +300,7 @@
 /datum/reagent/medicine/salglu_solution
 	name = "Saline-Glucose Solution"
 	id = "salglu_solution"
-	description = "Has a 33% chance per metabolism cycle to heal brute and burn damage. Can be used as a temporary blood substitute."
+	description = "Can be used as a temporary blood substitute. Overdosing causes displacement of regular blood oxygen."
 	reagent_state = LIQUID
 	color = "#DCDCDC"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
@@ -318,10 +318,6 @@
 		var/new_blood_level = min(M.blood_volume + amount_to_add, maximum_reachable)
 		last_added = new_blood_level - M.blood_volume
 		M.blood_volume = new_blood_level
-	if(prob(33))
-		M.adjustBruteLoss(-0.5*REM, 0)
-		M.adjustFireLoss(-0.5*REM, 0)
-		. = TRUE
 	..()
 
 /datum/reagent/medicine/salglu_solution/overdose_process(mob/living/M)
@@ -334,8 +330,7 @@
 		holder.add_reagent("sugar", 1)
 		holder.remove_reagent("salglu_solution", 0.5)
 	if(prob(33))
-		M.adjustBruteLoss(0.5*REM, FALSE, FALSE, BODYPART_ORGANIC)
-		M.adjustFireLoss(0.5*REM, FALSE, FALSE, BODYPART_ORGANIC)
+		M.adjustOxyLoss(3.0*REM, FALSE, FALSE, BODYPART_ORGANIC)
 		. = TRUE
 	..()
 
@@ -486,9 +481,9 @@
 	..()
 	. = 1
 
-/datum/reagent/medicine/sal_acid
-	name = "Salicyclic Acid"
-	id = "sal_acid"
+/datum/reagent/medicine/terakine
+	name = "Terakine"
+	id = "terakine"
 	description = "Stimulates the healing of severe bruises. Extremely rapidly heals severe bruising and slowly heals minor ones. Overdose will worsen existing bruising."
 	reagent_state = LIQUID
 	color = "#D2D2D2"
@@ -496,29 +491,29 @@
 	overdose_threshold = 25
 
 
-/datum/reagent/medicine/sal_acid/on_mob_life(mob/living/carbon/M)
-	if(M.getBruteLoss() > 50)
+/datum/reagent/medicine/terakine/on_mob_life(mob/living/carbon/M)
+	if(M.getBruteLoss() > 25)
 		M.adjustBruteLoss(-4*REM, 0) //Twice as effective as styptic powder for severe bruising
 	else
 		M.adjustBruteLoss(-0.5*REM, 0) //But only a quarter as effective for more minor ones
 	..()
 	. = 1
 
-/datum/reagent/medicine/sal_acid/overdose_process(mob/living/M)
+/datum/reagent/medicine/terakine/overdose_process(mob/living/M)
 	if(M.getBruteLoss()) //It only makes existing bruises worse
 		M.adjustBruteLoss(4.5*REM, FALSE, FALSE, BODYPART_ORGANIC) // it's going to be healing either 4 or 0.5
 		. = 1
 	..()
 
-/datum/reagent/medicine/salbutamol
-	name = "Salbutamol"
-	id = "salbutamol"
-	description = "Rapidly restores oxygen deprivation as well as preventing more of it to an extent."
+/datum/reagent/medicine/dexalin
+	name = "Dexalin"
+	id = "dexalin"
+	description = "Rapidly counters oxygen deprivation as well as preventing more of it to an extent."
 	reagent_state = LIQUID
 	color = "#00FFFF"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 
-/datum/reagent/medicine/salbutamol/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/dexalin/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-3*REM, 0)
 	if(M.losebreath >= 4)
 		M.losebreath -= 2
@@ -542,59 +537,58 @@
 	..()
 	return TRUE
 
-/datum/reagent/medicine/ephedrine
-	name = "Ephedrine"
-	id = "ephedrine"
-	description = "Increases stun resistance and movement speed. Overdose deals toxin damage and inhibits breathing."
+/datum/reagent/medicine/inaprovaline
+	name = "Inaprovaline"
+	id = "inaprov"
+	description = "A basic stimulant and revival drug! Increases stun resistance and movement speed. Overdose deals toxin damage and inhibits breathing."
 	reagent_state = LIQUID
 	color = "#D2FFFA"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 45
-	addiction_threshold = 30
+	overdose_threshold = 60
 
-/datum/reagent/medicine/ephedrine/on_mob_add(mob/living/L)
+/datum/reagent/medicine/inaprovaline/on_mob_add(mob/living/L)
 	..()
 	L.add_movespeed_modifier(id, update=TRUE, priority=100, multiplicative_slowdown=-1, blacklisted_movetypes=(FLYING|FLOATING))
 
-/datum/reagent/medicine/ephedrine/on_mob_delete(mob/living/L)
+/datum/reagent/medicine/inaprovaline/on_mob_delete(mob/living/L)
 	L.remove_movespeed_modifier(id)
 	..()
 
-/datum/reagent/medicine/ephedrine/on_mob_life(mob/living/carbon/M)
-	M.AdjustAllImmobility(-20, FALSE)
+/datum/reagent/medicine/inaprovaline/on_mob_life(mob/living/carbon/M)
+	M.adjustOxyLoss(-0.5*REM, 0)
 	M.adjustStaminaLoss(-1*REM, FALSE)
 	..()
 	return TRUE
 
-/datum/reagent/medicine/ephedrine/overdose_process(mob/living/M)
+/datum/reagent/medicine/inaprovaline/overdose_process(mob/living/M)
 	if(prob(33))
 		M.adjustToxLoss(0.5*REM, 0)
 		M.losebreath++
 		. = 1
 	return TRUE
 
-/datum/reagent/medicine/ephedrine/addiction_act_stage1(mob/living/M)
+/datum/reagent/medicine/inaprovaline/addiction_act_stage1(mob/living/M)
 	if(prob(33))
 		M.adjustToxLoss(2*REM, 0)
 		M.losebreath += 2
 		. = 1
 	..()
 
-/datum/reagent/medicine/ephedrine/addiction_act_stage2(mob/living/M)
+/datum/reagent/medicine/inaprovaline/addiction_act_stage2(mob/living/M)
 	if(prob(33))
 		M.adjustToxLoss(3*REM, 0)
 		M.losebreath += 3
 		. = 1
 	..()
 
-/datum/reagent/medicine/ephedrine/addiction_act_stage3(mob/living/M)
+/datum/reagent/medicine/inaprovaline/addiction_act_stage3(mob/living/M)
 	if(prob(33))
 		M.adjustToxLoss(4*REM, 0)
 		M.losebreath += 4
 		. = 1
 	..()
 
-/datum/reagent/medicine/ephedrine/addiction_act_stage4(mob/living/M)
+/datum/reagent/medicine/inaprovaline/addiction_act_stage4(mob/living/M)
 	if(prob(33))
 		M.adjustToxLoss(5*REM, 0)
 		M.losebreath += 5
@@ -616,25 +610,25 @@
 	M.reagents.remove_reagent("histamine",3)
 	..()
 
-/datum/reagent/medicine/morphine
-	name = "Morphine"
-	id = "morphine"
-	description = "A painkiller that allows the patient to move at full speed even in bulky objects. Causes drowsiness and eventually unconsciousness in high doses. Overdose will cause a variety of effects, ranging from minor to lethal."
+/datum/reagent/medicine/axonol
+	name = "Axonol"
+	id = "axonol"
+	description = "An anesthetic reagent that supresses the nervous system, allowing to endure certain strains, before causing unconsciousness. Overdose will cause a variety of effects, ranging from minor to lethal."
 	reagent_state = LIQUID
 	color = "#A9FBFB"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	addiction_threshold = 25
 
-/datum/reagent/medicine/morphine/on_mob_add(mob/living/L)
+/datum/reagent/medicine/axonol/on_mob_add(mob/living/L)
 	..()
 	L.ignore_slowdown(id)
 
-/datum/reagent/medicine/morphine/on_mob_delete(mob/living/L)
+/datum/reagent/medicine/axonol/on_mob_delete(mob/living/L)
 	L.unignore_slowdown(id)
 	..()
 
-/datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/axonol/on_mob_life(mob/living/carbon/M)
 	switch(current_cycle)
 		if(11)
 			to_chat(M, "<span class='warning'>You start to feel tired...</span>" )
@@ -645,20 +639,20 @@
 			. = 1
 	..()
 
-/datum/reagent/medicine/morphine/overdose_process(mob/living/M)
+/datum/reagent/medicine/axonol/overdose_process(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
 		M.Dizzy(2)
 		M.Jitter(2)
 	..()
 
-/datum/reagent/medicine/morphine/addiction_act_stage1(mob/living/M)
+/datum/reagent/medicine/axonol/addiction_act_stage1(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
 		M.Jitter(2)
 	..()
 
-/datum/reagent/medicine/morphine/addiction_act_stage2(mob/living/M)
+/datum/reagent/medicine/axonol/addiction_act_stage2(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
 		M.adjustToxLoss(1*REM, 0)
@@ -667,7 +661,7 @@
 		M.Jitter(3)
 	..()
 
-/datum/reagent/medicine/morphine/addiction_act_stage3(mob/living/M)
+/datum/reagent/medicine/axonol/addiction_act_stage3(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
 		M.adjustToxLoss(2*REM, 0)
@@ -676,7 +670,7 @@
 		M.Jitter(4)
 	..()
 
-/datum/reagent/medicine/morphine/addiction_act_stage4(mob/living/M)
+/datum/reagent/medicine/axonol/addiction_act_stage4(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
 		M.adjustToxLoss(3*REM, 0)
@@ -716,17 +710,17 @@
 		M.adjust_eye_damage(-1)
 	..()
 
-/datum/reagent/medicine/atropine
-	name = "Atropine"
-	id = "atropine"
-	description = "If a patient is in critical condition, rapidly heals all damage types as well as regulating oxygen in the body. Excellent for stabilizing wounded patients."
+/datum/reagent/medicine/morathial
+	name = "Morathial"
+	id = "morathial"
+	description = "If a patient is in critical condition it will rapidly stabilize their condition until they are stable enough to walk again."
 	reagent_state = LIQUID
 	color = "#000000"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 35
 
-/datum/reagent/medicine/atropine/on_mob_life(mob/living/carbon/M)
-	if(M.health < 0)
+/datum/reagent/medicine/morathial/on_mob_life(mob/living/carbon/M)
+	if(M.health < 10)
 		M.adjustToxLoss(-2*REM, 0)
 		M.adjustBruteLoss(-2*REM, 0)
 		M.adjustFireLoss(-2*REM, 0)
@@ -738,25 +732,24 @@
 		M.Jitter(5)
 	..()
 
-/datum/reagent/medicine/atropine/overdose_process(mob/living/M)
+/datum/reagent/medicine/morathial/overdose_process(mob/living/M)
 	M.adjustToxLoss(0.5*REM, 0)
 	. = 1
 	M.Dizzy(1)
 	M.Jitter(1)
 	..()
 
-/datum/reagent/medicine/epinephrine
-	name = "Epinephrine"
-	id = "epinephrine"
-	description = "Minor boost to stun resistance. Slowly heals damage if a patient is in critical condition, as well as regulating oxygen loss. Overdose causes weakness and toxin damage."
+/datum/reagent/medicine/cortolin
+	name = "Cortolin"
+	id = "cortolin"
+	description = "A resuscitative medication that stabilizes breathing and allows a patient to recover from severe injuries."
 	reagent_state = LIQUID
 	color = "#D2FFFA"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 
-/datum/reagent/medicine/epinephrine/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/cortolin/on_mob_life(mob/living/carbon/M)
 	if(M.health < 0)
-		M.adjustToxLoss(-0.5*REM, 0)
 		M.adjustBruteLoss(-0.5*REM, 0)
 		M.adjustFireLoss(-0.5*REM, 0)
 	if(M.oxyloss > 35)
@@ -771,7 +764,7 @@
 		M.AdjustAllImmobility(-20, FALSE)
 	..()
 
-/datum/reagent/medicine/epinephrine/overdose_process(mob/living/M)
+/datum/reagent/medicine/cortolin/overdose_process(mob/living/M)
 	if(prob(33))
 		M.adjustStaminaLoss(2.5*REM, 0)
 		M.adjustToxLoss(1*REM, 0)
@@ -818,13 +811,13 @@
 	..()
 	. = 1
 
-/datum/reagent/medicine/mannitol
-	name = "Mannitol"
-	id = "mannitol"
+/datum/reagent/medicine/alkysine
+	name = "Alkysine"
+	id = "alkysine"
 	description = "Efficiently restores brain damage."
 	color = "#DCDCFF"
 
-/datum/reagent/medicine/mannitol/on_mob_life(mob/living/carbon/C)
+/datum/reagent/medicine/alkysine/on_mob_life(mob/living/carbon/C)
 	C.adjustBrainLoss(-2*REM)
 	..()
 
@@ -926,9 +919,9 @@
 /datum/reagent/medicine/bicaridine
 	name = "Bicaridine"
 	id = "bicaridine"
-	description = "Restores bruising. Overdose causes it instead."
+	description = "A basic regenerative substance which can even heal severe muscular and vascular damage."
 	reagent_state = LIQUID
-	color = "#C8A5DC"
+	color = "#fd0000"
 	overdose_threshold = 30
 
 /datum/reagent/medicine/bicaridine/on_mob_life(mob/living/carbon/M)
@@ -941,30 +934,12 @@
 	..()
 	. = 1
 
-/datum/reagent/medicine/dexalin
-	name = "Dexalin"
-	id = "dexalin"
-	description = "Restores oxygen loss. Overdose causes it instead."
-	reagent_state = LIQUID
-	color = "#C8A5DC"
-	overdose_threshold = 30
-
-/datum/reagent/medicine/dexalin/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-2*REM, 0)
-	..()
-	. = 1
-
-/datum/reagent/medicine/dexalin/overdose_process(mob/living/M)
-	M.adjustOxyLoss(4*REM, 0)
-	..()
-	. = 1
-
 /datum/reagent/medicine/kelotane
 	name = "Kelotane"
 	id = "kelotane"
-	description = "Restores fire damage. Overdose causes it instead."
+	description = "A basic regenerative substance that counteracts burns and regenerates tissue damaged by such."
 	reagent_state = LIQUID
-	color = "#C8A5DC"
+	color = "#ffba08"
 	overdose_threshold = 30
 
 /datum/reagent/medicine/kelotane/on_mob_life(mob/living/carbon/M)
@@ -978,11 +953,11 @@
 	. = 1
 
 /datum/reagent/medicine/antitoxin
-	name = "Anti-Toxin"
+	name = "Dylovene"
 	id = "antitoxin"
 	description = "Heals toxin damage and removes toxins in the bloodstream. Overdose causes toxin damage."
 	reagent_state = LIQUID
-	color = "#C8A5DC"
+	color = "#05a728"
 	overdose_threshold = 30
 	taste_description = "a roll of gauze"
 
@@ -1001,13 +976,13 @@
 /datum/reagent/medicine/inaprovaline
 	name = "Inaprovaline"
 	id = "inaprovaline"
-	description = "Stabilizes the breathing of patients. Good for those in critical condition."
+	description = "Stabilizes the breathing of patients. Should be used if a patient is in critical condition."
 	reagent_state = LIQUID
-	color = "#C8A5DC"
+	color = "#66fbff"
 
 /datum/reagent/medicine/inaprovaline/on_mob_life(mob/living/carbon/M)
-	if(M.losebreath >= 5)
-		M.losebreath -= 5
+	if(M.losebreath > 0)
+		M.losebreath -= 10
 	..()
 
 /datum/reagent/medicine/tricordrazine
@@ -1015,7 +990,7 @@
 	id = "tricordrazine"
 	description = "Has a high chance to heal all types of damage. Overdose instead causes it."
 	reagent_state = LIQUID
-	color = "#C8A5DC"
+	color = "#595959"
 	overdose_threshold = 30
 	taste_description = "grossness"
 

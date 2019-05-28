@@ -207,8 +207,8 @@
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/charcoal(src)
 
-/obj/item/storage/pill_bottle/epinephrine
-	name = "bottle of epinephrine pills"
+/obj/item/storage/pill_bottle/cortolin
+	name = "bottle of cortolin pills"
 	desc = "Contains pills used to stabilize patients."
 
 /obj/item/storage/pill_bottle/epinephrine/PopulateContents()

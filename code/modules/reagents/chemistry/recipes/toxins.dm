@@ -43,7 +43,7 @@
 	name = "lipolicide"
 	id = "lipolicide"
 	results = list("lipolicide" = 3)
-	required_reagents = list("mercury" = 1, "diethylamine" = 1, "ephedrine" = 1)
+	required_reagents = list("mercury" = 1, "diethylamine" = 1, "inaprovaline" = 1)
 
 /datum/chemical_reaction/mutagen
 	name = "Unstable mutagen"
@@ -73,13 +73,13 @@
 	name = "Zombie Powder"
 	id = "zombiepowder"
 	results = list("zombiepowder" = 2)
-	required_reagents = list("carpotoxin" = 5, "morphine" = 5, "copper" = 5)
+	required_reagents = list("carpotoxin" = 5, "axonol" = 5, "copper" = 5)
 
 /datum/chemical_reaction/ghoulpowder
 	name = "Ghoul Powder"
 	id = "ghoulpowder"
 	results = list("ghoulpowder" = 2)
-	required_reagents = list("zombiepowder" = 1, "epinephrine" = 1)
+	required_reagents = list("zombiepowder" = 1, "inaprovaline" = 1)
 
 /datum/chemical_reaction/mindbreaker
 	name = "Mindbreaker Toxin"

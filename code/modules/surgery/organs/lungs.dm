@@ -52,7 +52,7 @@
 	var/heat_level_3_damage = HEAT_GAS_DAMAGE_LEVEL_3
 	var/heat_damage_type = BURN
 
-	var/crit_stabilizing_reagent = "epinephrine"
+	var/crit_stabilizing_reagent = "cortolin"
 
 
 /obj/item/organ/lungs/proc/check_breath(datum/gas_mixture/breath, mob/living/carbon/human/H)

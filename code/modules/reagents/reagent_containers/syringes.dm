@@ -177,9 +177,9 @@
 		M.update_inv_hands()
 
 /obj/item/reagent_containers/syringe/epinephrine
-	name = "syringe (epinephrine)"
-	desc = "Contains epinephrine - used to stabilize patients."
-	list_reagents = list("epinephrine" = 15)
+	name = "syringe (cortolin)"
+	desc = "Contains cortolin - used to stabilize patients."
+	list_reagents = list("inaprovaline" = 15)
 
 /obj/item/reagent_containers/syringe/charcoal
 	name = "syringe (charcoal)"

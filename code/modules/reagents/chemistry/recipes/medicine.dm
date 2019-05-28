@@ -16,7 +16,7 @@
 	name = "Spaceacillin"
 	id = "spaceacillin"
 	results = list("spaceacillin" = 2)
-	required_reagents = list("cryptobiolin" = 1, "epinephrine" = 1)
+	required_reagents = list("cryptobiolin" = 1, "inaprovaline" = 1)
 
 /datum/chemical_reaction/inacusiate
 	name = "inacusiate"
@@ -94,23 +94,24 @@
 	results = list("pen_acid" = 6)
 	required_reagents = list("welding_fuel" = 1, "chlorine" = 1, "ammonia" = 1, "formaldehyde" = 1, "sodium" = 1, "cyanide" = 1)
 
-/datum/chemical_reaction/sal_acid
-	name = "Salicyclic Acid"
-	id = "sal_acid"
-	results = list("sal_acid" = 5)
-	required_reagents = list("sodium" = 1, "phenol" = 1, "carbon" = 1, "oxygen" = 1, "sacid" = 1)
+/datum/chemical_reaction/terakine
+	name = "Terakine"
+	id = "terakine"
+	results = list("terakine" = 6)
+	required_reagents = list("sodium" = 1, "phenol" = 1, "bicaridine" = 1, "oxygen" = 1, "sacid" = 1)
 
-/datum/chemical_reaction/oxandrolone
-	name = "Oxandrolone"
-	id = "oxandrolone"
-	results = list("oxandrolone" = 6)
-	required_reagents = list("carbon" = 3, "phenol" = 1, "hydrogen" = 1, "oxygen" = 1)
+/datum/chemical_reaction/dermaline
+	name = "Deramline"
+	id = "dermaline"
+	results = list("dermaline" = 6)
+	required_reagents = list("carbon" = 3, "phenol" = 1, "hydrogen" = 1, "kelotane" = 1)
 
-/datum/chemical_reaction/salbutamol
-	name = "Salbutamol"
-	id = "salbutamol"
-	results = list("salbutamol" = 5)
-	required_reagents = list("sal_acid" = 1, "lithium" = 1, "aluminium" = 1, "bromine" = 1, "ammonia" = 1)
+/datum/chemical_reaction/dexalin
+	name = "Dexalin"
+	id = "dexalin"
+	results = list("dexalin" = 3)
+	required_reagents = list("oxygen" = 1, "iron" = 1, "carbon" = 1)
+	required_catalysts = list("plasma" = 5)
 
 /datum/chemical_reaction/perfluorodecalin
 	name = "Perfluorodecalin"
@@ -120,12 +121,12 @@
 	required_temp = 370
 	mix_message = "The mixture rapidly turns into a dense pink liquid."
 
-/datum/chemical_reaction/ephedrine
-	name = "Ephedrine"
-	id = "ephedrine"
-	results = list("ephedrine" = 4)
-	required_reagents = list("sugar" = 1, "oil" = 1, "hydrogen" = 1, "diethylamine" = 1)
-	mix_message = "The solution fizzes and gives off toxic fumes."
+/datum/chemical_reaction/inaprovaline
+	name = "Inaprovaline"
+	id = "Inaprovaline"
+	results = list("inaprovaline" = 3)
+	required_reagents = list("sugar" = 1, "oxygen" = 1, "carbon" = 1)
+	mix_message = "The solution bubbles softly with a slightly sweet smell."
 
 /datum/chemical_reaction/diphenhydramine
 	name = "Diphenhydramine"
@@ -141,17 +142,18 @@
 	required_reagents = list("charcoal" = 1, "carbon" = 1, "hydrogen" = 1)
 	mix_message = "The mixture sputters loudly and becomes a pale pink color."
 
-/datum/chemical_reaction/atropine
-	name = "Atropine"
-	id = "atropine"
-	results = list("atropine" = 5)
-	required_reagents = list("ethanol" = 1, "acetone" = 1, "diethylamine" = 1, "phenol" = 1, "sacid" = 1)
+/datum/chemical_reaction/morathial
+	name = "Morathial"
+	id = "morathial"
+	results = list("morathial" = 5)
+	required_reagents = list("ethanol" = 1, "acetone" = 1, "diethylamine" = 1, "phenol" = 1, "inaprovaline" = 1)
+	required_temp = 200
 
-/datum/chemical_reaction/epinephrine
-	name = "Epinephrine"
-	id = "epinephrine"
-	results = list("epinephrine" = 6)
-	required_reagents = list("phenol" = 1, "acetone" = 1, "diethylamine" = 1, "oxygen" = 1, "chlorine" = 1, "hydrogen" = 1)
+/datum/chemical_reaction/cortolin
+	name = "Corotolin"
+	id = "cortolin"
+	results = list("cortolin" = 6)
+	required_reagents = list("phenol" = 1, "acetone" = 1, "inaprovaline" = 1, "oxygen" = 1, "chlorine" = 1, "hydrogen" = 1)
 
 /datum/chemical_reaction/strange_reagent
 	name = "Strange Reagent"
@@ -159,18 +161,18 @@
 	results = list("strange_reagent" = 3)
 	required_reagents = list("omnizine" = 1, "holywater" = 1, "mutagen" = 1)
 
-/datum/chemical_reaction/mannitol
-	name = "Mannitol"
-	id = "mannitol"
-	results = list("mannitol" = 3)
+/datum/chemical_reaction/alkysine
+	name = "Alkysine"
+	id = "alkysine"
+	results = list("alkysine" = 3)
 	required_reagents = list("sugar" = 1, "hydrogen" = 1, "water" = 1)
 	mix_message = "The solution slightly bubbles, becoming thicker."
-	
+
 /datum/chemical_reaction/neurine
 	name = "Neurine"
 	id = "neurine"
 	results = list("neurine" = 3)
-	required_reagents = list("mannitol" = 1, "acetone" = 1, "oxygen" = 1)
+	required_reagents = list("alkysine" = 1, "acetone" = 1, "oxygen" = 1)
 
 /datum/chemical_reaction/mutadone
 	name = "Mutadone"
@@ -213,7 +215,7 @@
 	name = "Bicaridine"
 	id = "bicaridine"
 	results = list("bicaridine" = 3)
-	required_reagents = list("carbon" = 1, "oxygen" = 1, "sugar" = 1)
+	required_reagents = list("inaprovaline" = 1, "carbon" = 1)
 
 /datum/chemical_reaction/kelotane
 	name = "Kelotane"
@@ -222,7 +224,7 @@
 	required_reagents = list("carbon" = 1, "silicon" = 1)
 
 /datum/chemical_reaction/antitoxin
-	name = "Antitoxin"
+	name = "Dylovene"
 	id = "antitoxin"
 	results = list("antitoxin" = 3)
 	required_reagents = list("nitrogen" = 1, "silicon" = 1, "potassium" = 1)
@@ -245,10 +247,10 @@
 	results = list("corazone" = 3)
 	required_reagents = list("phenol" = 2, "lithium" = 1)
 
-/datum/chemical_reaction/morphine
-	name = "Morphine"
-	id = "morphine"
-	results = list("morphine" = 2)
+/datum/chemical_reaction/axonol
+	name = "Axonol"
+	id = "axonol"
+	results = list("axonol" = 2)
 	required_reagents = list("carbon" = 2, "hydrogen" = 2, "ethanol" = 1, "oxygen" = 1)
 	required_temp = 480
 
@@ -263,4 +265,4 @@
 	name = "Psicodine"
 	id = "psicodine"
 	results = list("psicodine" = 5)
-	required_reagents = list( "mannitol" = 2, "water" = 2, "impedrezene" = 1)
+	required_reagents = list( "alkysine" = 2, "water" = 2, "impedrezene" = 1)

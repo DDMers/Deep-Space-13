@@ -182,7 +182,7 @@
 
 /obj/item/storage/box/medipens
 	name = "box of medipens"
-	desc = "A box full of epinephrine MediPens."
+	desc = "A box full of cortolin MediPens."
 	illustration = "syringe"
 
 /obj/item/storage/box/medipens/PopulateContents()

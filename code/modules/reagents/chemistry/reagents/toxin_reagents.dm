@@ -64,8 +64,8 @@
 	toxpwr = 3
 
 /datum/reagent/toxin/plasma/on_mob_life(mob/living/carbon/C)
-	if(holder.has_reagent("epinephrine"))
-		holder.remove_reagent("epinephrine", 2*REM)
+	if(holder.has_reagent("inaprovaline"))
+		holder.remove_reagent("inaprovaline", 2*REM)
 	C.adjustPlasma(20)
 	return ..()
 
