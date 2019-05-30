@@ -1,0 +1,4 @@
+author: "Crossedfall"
+delete-after: True
+changes: 
+  - rscadd: "Exports the round ID whenever the bot subsystem is initialized"
