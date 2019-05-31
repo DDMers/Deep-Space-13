@@ -381,7 +381,7 @@
 	name = "Neurotoxin"
 	id = "neurotoxin"
 	results = list("neurotoxin" = 2)
-	required_reagents = list("gargleblaster" = 1, "morphine" = 1)
+	required_reagents = list("gargleblaster" = 1, "axonol" = 1)
 
 /datum/chemical_reaction/snowwhite
 	name = "Snow White"
