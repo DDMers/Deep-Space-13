@@ -109,10 +109,10 @@
 	list_reagents = list("ephedrine" = 10, "antihol" = 10, "coffee" = 30)
 	roundstart = TRUE
 /obj/item/reagent_containers/pill/salbutamol
-	name = "salbutamol pill"
+	name = "dexalin pill"
 	desc = "Used to treat oxygen deprivation."
 	icon_state = "pill16"
-	list_reagents = list("salbutamol" = 30)
+	list_reagents = list("dexalin" = 30)
 	roundstart = TRUE
 /obj/item/reagent_containers/pill/charcoal
 	name = "charcoal pill"
