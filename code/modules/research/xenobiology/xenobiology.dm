@@ -272,7 +272,7 @@
 	switch(activation_type)
 		if(SLIME_ACTIVATE_MINOR)
 			to_chat(user, "<span class='notice'>You activate [src]. You start feeling fast!</span>")
-			user.reagents.add_reagent("ephedrine",5)
+			user.reagents.add_reagent("inaprovaline",5)
 			return 450
 
 		if(SLIME_ACTIVATE_MAJOR)

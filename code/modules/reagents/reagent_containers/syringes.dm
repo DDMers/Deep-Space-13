@@ -179,7 +179,7 @@
 /obj/item/reagent_containers/syringe/epinephrine
 	name = "syringe (cortolin)"
 	desc = "Contains cortolin - used to stabilize patients."
-	list_reagents = list("inaprovaline" = 15)
+	list_reagents = list("cortolin" = 15)
 
 /obj/item/reagent_containers/syringe/charcoal
 	name = "syringe (charcoal)"

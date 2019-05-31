@@ -66,7 +66,7 @@
 						"mindbreaker" = 0.3,
 						"mercury" = 0.15,
 						"lithium" = 0.15,
-						"atropine" = 0.15,
+						"morathial" = 0.15,
 						"haloperidol" = 0.15,
 						"methamphetamine" = 0.15,
 						"capsaicin" = 0.15,

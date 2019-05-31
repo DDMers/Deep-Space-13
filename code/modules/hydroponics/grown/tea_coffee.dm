@@ -83,7 +83,7 @@
 	plantname = "Coffee Robusta Bush"
 	product = /obj/item/reagent_containers/food/snacks/grown/coffee/robusta
 	mutatelist = list()
-	reagents_add = list("ephedrine" = 0.1, "vitamin" = 0.04, "coffeepowder" = 0.1)
+	reagents_add = list("inaprovaline" = 0.1, "vitamin" = 0.04, "coffeepowder" = 0.1)
 	rarity = 20
 
 /obj/item/reagent_containers/food/snacks/grown/coffee/robusta

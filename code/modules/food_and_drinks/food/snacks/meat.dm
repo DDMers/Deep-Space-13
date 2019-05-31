@@ -188,7 +188,7 @@
 	name = "bear meat"
 	desc = "A very manly slab of meat."
 	icon_state = "bearmeat"
-	list_reagents = list("nutriment" = 12, "morphine" = 5, "vitamin" = 2, "cooking_oil" = 6)
+	list_reagents = list("nutriment" = 12, "axonol" = 5, "vitamin" = 2, "cooking_oil" = 6)
 	filling_color = "#FFB6C1"
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/bear
 	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/bear

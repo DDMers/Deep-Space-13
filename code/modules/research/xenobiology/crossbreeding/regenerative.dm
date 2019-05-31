@@ -174,7 +174,7 @@ Regenerative extracts:
 
 /obj/item/slimecross/regenerative/red/core_effect(mob/living/target, mob/user)
 	to_chat(target, "<span class='notice'>You feel... <i>faster.</i></span>")
-	target.reagents.add_reagent("ephedrine",3)
+	target.reagents.add_reagent("inaprovaline",3)
 
 /obj/item/slimecross/regenerative/green
 	colour = "green"
