@@ -919,13 +919,17 @@
 /datum/reagent/medicine/bicaridine
 	name = "Bicaridine"
 	id = "bicaridine"
-	description = "A basic regenerative substance which can even heal severe muscular and vascular damage."
+	description = "A basic regenerative substance which can even heal moderate muscular and vascular damage. It has issues handling massive trauma and thus won't heal them effectively."
 	reagent_state = LIQUID
 	color = "#fd0000"
 	overdose_threshold = 30
 
+
 /datum/reagent/medicine/bicaridine/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-2*REM, 0)
+	if(M.getBruteLoss() > 75)
+		M.adjustBruteLoss(-0.5*REM, 0)
+	else
+		M.adjustBruteLoss(-2*REM, 0)
 	..()
 	. = 1
 
@@ -937,13 +941,16 @@
 /datum/reagent/medicine/kelotane
 	name = "Kelotane"
 	id = "kelotane"
-	description = "A basic regenerative substance that counteracts burns and regenerates tissue damaged by such."
+	description = "A basic regenerative substance that counteracts burns and regenerates tissue damaged by such. It has issues handling massive burns and thus won't heal them effectively."
 	reagent_state = LIQUID
 	color = "#ffba08"
 	overdose_threshold = 30
 
 /datum/reagent/medicine/kelotane/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-2*REM, 0)
+	if(M.getFireLoss() > 75)
+		M.adjustFireLoss(-1*REM, 0) //Twice as effective as silver sulfadiazine for severe burns
+	else
+		M.adjustFireLoss(-2*REM, 0) //But only a quarter as effective for more minor ones
 	..()
 	. = 1
 

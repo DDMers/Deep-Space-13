@@ -109,7 +109,7 @@
 	icon_state = "brutepack"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	heal_brute = 40
+	heal_brute = 10
 	self_delay = 20
 	grind_results = list("styptic_powder" = 10)
 
@@ -164,7 +164,7 @@
 	icon_state = "ointment"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	heal_burn = 40
+	heal_burn = 10
 	self_delay = 20
 	grind_results = list("silver_sulfadiazine" = 10)
 
