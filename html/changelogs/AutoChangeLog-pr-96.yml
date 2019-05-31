@@ -1,0 +1,5 @@
+author: "Kmc2000"
+delete-after: True
+changes: 
+  - bugfix: "Transporters are less broken."
+  - server: "Experimental fix for naked people + unable to hear instruments / jukebox"

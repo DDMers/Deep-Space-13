@@ -118,11 +118,18 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 			to_chat(pilot, "<span class='notice'>Insufficient power. Ensure the warp core is active, and that the warp coils are charged.</span>")
 		return
 	addtimer(CALLBACK(src, .proc/reset_warp_cooldown), 300)//One warp per 30 seconds.
+	addtimer(CALLBACK(src, .proc/finish_warp), 45)
 	warp_ready = FALSE
 	if(pilot)
 		to_chat(pilot, "<span class='notice'>Charging warp engines. Please stand by.</span>")
-	addtimer(CALLBACK(src, .proc/finish_warp), 45)
+	warp_fx()
+
+/obj/structure/overmap/proc/warp_fx()
 	if(main_overmap)
+		for(var/mob/player in GLOB.player_list)
+			if(is_station_level(player.z))
+				SEND_SOUND(player, 'DS13/sound/effects/warpcore/warp.ogg')
+				to_chat(player, "<span_class='notice'><b>You feel the deck plating under your feet lurch forwards slightly.</b></span>")
 		var/list/areas = list()
 		areas = GLOB.teleportlocs.Copy()
 		for(var/AR in areas)
@@ -130,17 +137,17 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 			if(istype(ARR, /area/space))
 				continue
 			ARR.parallax_movedir = NORTH
-		for(var/mob/player in GLOB.player_list)
-			if(is_station_level(player.z))
-				SEND_SOUND(player, 'DS13/sound/effects/warpcore/warp.ogg')
 	else
 		if(!linked_area)
 			return
 		linked_area.parallax_movedir = NORTH
 		for(var/X in linked_area)
+			if(!X)
+				continue
 			if(ismob(X))
 				var/mob/player = X
 				SEND_SOUND(player, 'DS13/sound/effects/warpcore/warp.ogg')
+				to_chat(player, "<span_class='notice'><b>You feel the deck plating under your feet lurch forwards slightly.</b></span>")
 
 /obj/structure/overmap/proc/stop_warping()
 	warping = FALSE

@@ -7,7 +7,7 @@
 
 /datum/component/slippery/Initialize(_knockdown, _lube_flags = NONE, datum/callback/_callback, _paralyze, _force_drop = FALSE)
 	knockdown_time = max(_knockdown, 0)
-	paralyze_time = max(_paralyze, 0)
+	paralyze_time = knockdown_time //DeepSpace13 - Bringing back slip stuns
 	force_drop_items = _force_drop
 	lube_flags = _lube_flags
 	callback = _callback

@@ -210,7 +210,7 @@
 	design_ids = list("bluespace_cell", "quadratic_capacitor")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-	
+
 /datum/techweb_node/unregulated_bluespace
 	id = "unregulated_bluespace"
 	display_name = "Unregulated Bluespace Research"
@@ -555,7 +555,7 @@
 	display_name = "Weapon Development Technology"
 	description = "Our researchers have found new to weaponize just about everything now."
 	prereq_ids = list("engineering")
-	design_ids = list("pin_testing", "tele_shield")
+	design_ids = list("pin_testing", "tele_shield", "phasercell") //DeepSpace 13 - Phaser rebalance
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
 
@@ -564,7 +564,7 @@
 	display_name = "Advanced Weapon Development Technology"
 	description = "Our weapons are breaking the rules of reality by now."
 	prereq_ids = list("adv_engi", "weaponry")
-	design_ids = list("pin_loyalty")
+	design_ids = list("pin_loyalty", "phasercell_high") //DeepSpace 13 - Phaser rebalance
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
 

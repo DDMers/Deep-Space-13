@@ -2772,6 +2772,7 @@
 #include "DS13\code\modules\borg\gamemode.dm"
 #include "DS13\code\modules\borg\items+structures.dm"
 #include "DS13\code\modules\borg\turfs.dm"
+#include "DS13\code\modules\client\client.dm"
 #include "DS13\code\modules\client\preferences.dm"
 #include "DS13\code\modules\client\preferences_toggles.dm"
 #include "DS13\code\modules\client\verbs\looc.dm"
