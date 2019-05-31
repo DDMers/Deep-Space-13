@@ -17,10 +17,11 @@
 	var/datum/action/innate/transporterlock/lock = new
 	var/datum/action/innate/cleartransporterlock/clearlock = new
 	var/mob/living/operator
-//	var/confinement_beam = ANNULAR_CONFINEMENT_NARROW //Narrow = only pickup humans, wide = pick up everything that isnt bolted to the ground
 	req_one_access = list(ACCESS_SEC_DOORS,ACCESS_ENGINE_EQUIP)
 	var/list/log = list() //Logging to check if anyone's marooned.
 	var/list/locked_on = list() //Who have we locked onto?
+	var/locked = FALSE //Cooldown to prevent spam
+	var/datum/component/movement_check
 
 /obj/item/pattern_enhancer
 	name = "Pattern enhancer (inactive)"
@@ -171,6 +172,58 @@
 			linked += A
 			A.transporter_controller = src
 
+
+/obj/effect/temp_visual/transporter_lock
+	name = "Transporter locking on"
+	icon = 'DS13/icons/effects/effects.dmi'
+	icon_state = "transporter_lock"
+	duration = 30
+	randomdir = 0
+	layer = ABOVE_MOB_LAYER
+	var/obj/machinery/transporter_pad/chosen
+
+/obj/effect/temp_visual/transporter_patternbuffer_lock
+	name = "Transporter locking on"
+	icon = 'DS13/icons/effects/effects.dmi'
+	icon_state = "transporter_lock_buffer"
+	duration = 40
+	randomdir = 0
+	layer = ABOVE_MOB_LAYER
+	var/obj/machinery/computer/camera_advanced/transporter_control/chosen
+
+/obj/effect/temp_visual/transporter_patternbuffer_lock/Destroy()
+	if(chosen)
+		for(var/mob/M in get_turf(src))
+			if(isliving(M))
+				chosen.locked_on += M
+				chosen.log += "[station_time_timestamp()] : [chosen.operator] locked onto <b>[M]</b>."
+				to_chat(chosen.operator, "Stored [M] in pattern buffer. Use the beam down function to teleport them site-to-site.")
+				to_chat(M, "<span class='warning'>A transporter has locked onto you...</span>")
+		var/obj/item/pattern_enhancer/PE = locate(/obj/item/pattern_enhancer) in orange(src,3)
+		if(PE && PE.active) //Enhancer. Is it active? If so, allow them to teleport objects.
+			for(var/X in orange(src,1))
+				if(isobj(X))
+					var/obj/Y = X
+					if(!Y.anchored && !istype(X, /obj/structure/overmap))
+						chosen.locked_on += Y
+						chosen.log += "[station_time_timestamp()] : [chosen.operator] locked onto <b>[Y]</b>."
+						to_chat(chosen.operator, "Stored [Y] in pattern buffer. Use the beam down function to teleport it site-to-site.")
+	. = ..()
+
+/obj/effect/temp_visual/transporter_lock/Destroy()
+	if(chosen)
+		for(var/mob/M in get_turf(src))
+			if(isliving(M))
+				chosen.retrieve(M)
+		var/obj/item/pattern_enhancer/PE = locate(/obj/item/pattern_enhancer) in orange(src,3)
+		if(PE && PE.active) //Enhancer. Is it active? If so, allow them to teleport objects.
+			for(var/X in orange(src,1))
+				if(isobj(X))
+					var/obj/Y = X
+					if(!Y.anchored && !istype(X, /obj/structure/overmap))
+						chosen.retrieve(Y)
+	. = ..()
+
 /obj/machinery/computer/camera_advanced/transporter_control/proc/activate_pads()
 //	if(!powered())
 	//	return
@@ -202,9 +255,17 @@
 				T.send(Tu)
 				locked_on -= H
 
+/obj/machinery/computer/camera_advanced/transporter_control/proc/remove_cooldown()
+	locked = FALSE
+
 /obj/machinery/computer/camera_advanced/transporter_control/proc/transporters_retrieve()
 //	if(!powered())
 //		return
+	if(locked)
+		to_chat(operator, "Unable to comply, transporter pads are recharging.")
+		return
+	addtimer(CALLBACK(src, .proc/remove_cooldown), 50) //Spam protection, so you can't just SWARM the enemy ship with lockon visuals to force them to get beamed]
+	locked = TRUE
 	var/area/A = get_area(eyeobj)
 	if(A.linked_overmap)
 		if(A.linked_overmap.shields)
@@ -214,56 +275,19 @@
 				return
 	var/sound/S = pick('DS13/sound/effects/transporter/transporter_beep.ogg','DS13/sound/effects/transporter/transporter_beep2.ogg')
 	playsound(loc, S, 100)
-	for(var/mob/living/thehewmon in orange(eyeobj,1))
-		var/obj/machinery/transporter_pad/T = pick(linked)
-		T.retrieve(thehewmon)
-	var/obj/item/pattern_enhancer/PE = locate(/obj/item/pattern_enhancer) in orange(eyeobj,3)
-	if(PE && PE.active) //Enhancer. Is it active? If so, allow them to teleport objects.
-		for(var/X in orange(eyeobj,1))
-			if(isobj(X))
-				var/obj/Y = X
-				if(!Y.anchored && !istype(X, /obj/structure/overmap))
-					var/obj/machinery/transporter_pad/T = pick(linked)
-					T.retrieve(Y)
+	var/obj/machinery/transporter_pad/T = pick(linked)
+	var/obj/effect/temp_visual/transporter_lock/lockon = new(get_turf(eyeobj))
+	lockon.chosen = T //This handles the actual "beaming"
 	playsound(loc, 'DS13/sound/effects/transporter/retrieve.ogg', 100, 4)
 
 /obj/machinery/computer/camera_advanced/transporter_control/proc/transporters_lock()
-	var/list/mobs = list() //mobs near the eyeobj.
-	var/list/objects = list() //objects near the eyeobj
-	for(var/mob/living/inrange in orange(eyeobj,3))
-		if(isliving(inrange))
-			mobs += inrange
-	var/obj/item/pattern_enhancer/PE = locate(/obj/item/pattern_enhancer) in orange(eyeobj,3)
-	if(PE) //Enhancer. Is it active? If so, allow them to teleport objects.
-		if(PE.active)
-			for(var/X in orange(eyeobj,3))
-				if(isobj(X))
-					var/obj/Y = X
-					if(!Y.anchored)
-						objects += Y
-	if(!mobs.len && !objects.len)
-		to_chat(operator, "There is nothing to lock onto!")
+	if(locked)
+		to_chat(operator, "Unable to comply, transporter pads are recharging.")
 		return
-	var/question = alert("Lock onto a specific person? or everything nearby (including objects if there's an active pattern enhancer)?",name,"Specific person","Nearby")
-	if(!question)
-		return
-	if(question == "Specific person")
-		var/A
-		A = input("To whom shall we lock on?", "Transporter pattern buffer", A) as null|anything in mobs//overmap_objects
-		if(!A)
-			return
-		locked_on += A
-		log += "[station_time_timestamp()] : [operator] locked onto <b>[A]</b>."
-	else
-		if(mobs.len)
-			for(var/X in mobs)
-				locked_on += X
-				log += "[station_time_timestamp()] : [operator] locked onto <b>[X]</b>."
-		if(objects.len)
-			for(var/XR in objects)
-				locked_on += XR
-				log += "[station_time_timestamp()] : [operator] locked onto <b>[XR] with an active pattern enhancer.</b>."
-	to_chat(operator, "Pattern buffer ready. Use the down option to transfer pattern buffer contents to designated turfs.")
+	addtimer(CALLBACK(src, .proc/remove_cooldown), 50) //Spam protection, so you can't just SWARM the enemy ship with lockon visuals to force them to get beamed
+	locked = TRUE
+	var/obj/effect/temp_visual/transporter_patternbuffer_lock/stupidlizards = new(get_turf(eyeobj)) //In reference to the og transporter powergamers
+	stupidlizards.chosen = src
 
 /obj/machinery/computer/camera_advanced/transporter_control/CreateEye(var/turf/T)
 	if(eyeobj)
@@ -296,6 +320,21 @@
 /obj/machinery/computer/camera_advanced/transporter_control/attack_ai(mob/user)
 	return attack_hand(user)
 
+/obj/machinery/computer/camera_advanced/transporter_control/remove_eye_control(mob/living/user)
+	..()
+	user.unset_machine()
+	operator = null
+	qdel(eyeobj)
+	eyeobj = null
+
+/obj/machinery/computer/camera_advanced/transporter_control/proc/operator_check()
+	if(!operator)
+		return FALSE
+	if(Adjacent(operator) || isAI(operator)) //Operator is in range, or is an AI and allowed to transport by default
+		return TRUE
+	remove_eye_control(operator)
+	movement_check.RemoveComponent()
+
 /obj/machinery/computer/camera_advanced/transporter_control/attack_hand(mob/user)
 	if(!isliving(user))
 		return
@@ -303,8 +342,16 @@
 		to_chat(user, "You require a security level access card to use this console!.")
 		return FALSE
 	if(operator)
+		var/question = alert("[operator] is already using this console, kick them off it?.",name,"yes","no")
+		if(question == "no" || !question)
+			return
+		to_chat(operator, "<span class='warning>[user] grabs your hands and forces you off of [src]!</span>")
 		remove_eye_control(operator)
-		operator.cancel_camera()
+		return
+	if(movement_check)//Add a component to see if theyve moved out of range. This way is cleaner than a process()
+		user.TakeComponent(movement_check)
+	else
+		movement_check = user.AddComponent(/datum/component/redirect, list(COMSIG_MOVABLE_MOVED = CALLBACK(src, .proc/operator_check, user))) //This component checks whether the operator is in range of the console.
 	choose_area(user)
 
 /obj/machinery/computer/camera_advanced/transporter_control/proc/choose_area(mob/user)

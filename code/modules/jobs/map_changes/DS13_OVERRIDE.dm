@@ -53,6 +53,7 @@
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
+	r_pocket = /obj/item/phaser_pack
 	head = /obj/item/clothing/head/beret/sec/navyofficer
 	belt = /obj/item/gun/energy/phaser
 
@@ -66,6 +67,7 @@
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
+	r_pocket = /obj/item/phaser_pack
 	belt = /obj/item/gun/energy/phaser
 	suit = null
 
@@ -78,6 +80,7 @@
 	accessory = /obj/item/clothing/accessory/ds9_jacket
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
+	r_pocket = /obj/item/phaser_pack
 	head = /obj/item/clothing/head/beret/sec/navyofficer
 	belt = /obj/item/gun/energy/phaser
 

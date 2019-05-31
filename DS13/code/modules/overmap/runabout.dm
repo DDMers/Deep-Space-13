@@ -49,7 +49,7 @@
 	if(linked_area)
 		linked_area.name = name
 
-/obj/structure/overmap/try_warp() //Overwriting it so I dont have to phyiscally give it a warp core.
+/obj/structure/overmap/runabout/try_warp() //Overwriting it so I dont have to phyiscally give it a warp core.
 	if(engine_power <= 0)
 		if(pilot)
 			to_chat(pilot, "<span class='notice'>Unable to comply, engine subsystem is disabled.</span>")

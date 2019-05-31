@@ -67,7 +67,9 @@
 	. = ..()
 	visible_message("[user] brushes some dust off [src]")
 
-/obj/structure/trek_decor/plaque/proc/list2text(var/list/the_list, separator)
+/proc/list2text(var/list/the_list, separator)
+	if(!the_list.len)
+		return "Nothing"
 	var/total = the_list.len
 	if (total == 0)														// Nothing to work with.
 		return
@@ -76,7 +78,7 @@
 	for (count = 2, count <= total, count++)
 		if (separator)
 			newText += separator
-		newText += "[the_list[count]]"
+		newText += "[the_list[count]] "
 	return newText
 
 /obj/structure/trek_decor/plaque/examine(mob/user)
@@ -139,9 +141,10 @@
 	class = "saladin"
 
 /obj/structure/turbolift/akira
-	floor_directory = "<span class='notice'>Deck 1: Bridge, Cargo, Offices, Escapes<br>\
-		Deck 2: Civilian Sector, Transporter, Brig, Sick Bay, Science<br>\
-		Deck 3: Engineering, Hangar Bay, Atmospherics, Telecomms<br></span>" //Change this if you intend to make a new map. Helps players know where they're going.
+	deck_1 = list("bridge", "cargo", "offices", "escape shuttle dock")
+	deck_2 = list("crew quarters", "transporter","brig","sick bay", "research")
+	deck_3 = list("engineering", "warp core", "atmospherics", "telecomms")
+	deck_4 = null
 
 /obj/structure/trek_decor/plaque/akira
 	name = "Dedication plaque"
@@ -210,15 +213,12 @@
 	return pick(GLOB.romulan_bleeps)
 
 /obj/structure/turbolift/dderidex
-	floor_directory = "<span class='notice'>Deck 1: Bridge, officer quarters, EVA & suit storage<br>\
-		Deck 2: Engineering, brig, transporter<br>\
-		Deck 3: Dorms, showers, mess hall, medical bay<br></span>" //Change this if you intend to make a new map. Helps players know where they're going.
+	deck_1 = list("bridge", "cargo", "offices", "eva")
+	deck_2 = list("engineering", "warp core", "atmospherics", "telecomms")
+	deck_3 = list("crew quarters", "showers", "mess hall", "sickbay")
+	deck_4 = null
 
 /obj/structure/turbolift/sovereign
-	floor_directory = "<span class='notice'>Deck 1: Bridge, officers' quarters, EVA<br>\
-		Deck 2: Torpedo launcher, brig, weapons locker 1, cargo, transporter<br>\
-		Deck 3: Quarters, holodeck, ten forward, theatre, airponics, science labs, weapons locker 2, arrivals<br>\
-		Deck 4: Engineering, Atmospherics, Telecomms, Stardrive section, warp nacelles<br></span>" //Change this if you intend to make a new map. Helps players know where they're going.
 
 /obj/structure/trek_decor/plaque/sovereign
 	name = "Dedication plaque"
