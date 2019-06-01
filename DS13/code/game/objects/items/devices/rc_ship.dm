@@ -63,6 +63,7 @@
 	if(pilot)
 		return
 	else
+		vel = 0
 		user.overmap_ship = src
 		CreateEye(user)
 		pilot = user
@@ -91,6 +92,12 @@
 //	heading = -angle
 	M.Turn(-angle) //reverse angle due to weird logic
 	src.transform = M //set matrix
+
+/obj/item/rc_ship/Bump(atom/movable/AM)
+	if(istype(AM, /obj/machinery/door/airlock))
+		if(pilot)
+			AM.Bumped(pilot) //If the pilot has access, open the airlock.
+	. = ..()
 
 /obj/item/rc_ship/proc/ProcessMove()
 	EditAngle() //we need to edit the transform just incase
