@@ -4929,7 +4929,7 @@
 /area/ship/engineering/akira)
 "os" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
-	dir = 6;
+	dir = 2;
 	name = "Air to Distro"
 	},
 /turf/open/floor/plating,

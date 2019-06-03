@@ -1122,11 +1122,11 @@
 /turf/open/floor/plating,
 /area/engine/atmos)
 "dx" = (
-/obj/machinery/atmospherics/components/binary/pump/on{
-	dir = 1
-	},
 /obj/effect/turf_decal/bot{
 	dir = 2
+	},
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
