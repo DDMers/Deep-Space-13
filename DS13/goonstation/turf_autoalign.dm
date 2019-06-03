@@ -119,6 +119,14 @@
 	sheet_amount = 2
 	canSmoothWith = list(/turf/closed/wall/trek_smooth)
 
+/turf/closed/wall/trek_smooth/voy
+	name = "Polytrinic alloy hull"
+	icon = 'DS13/icons/turf/intrepid.dmi'
+	mod = null
+	sheet_type = /obj/item/stack/sheet/metal
+	sheet_amount = 2
+	canSmoothWith = list(/turf/closed/wall/trek_smooth)
+
 //Mats to make new walls:
 
 /datum/design/duranium_alloy

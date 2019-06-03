@@ -263,3 +263,36 @@
 	class = "nx01"
 	damage_states = FALSE //Damage FX
 	power_slots = 3
+
+/obj/structure/overmap/intrepid //A small ship with OK weapons
+	name = "Intrepid class light cruiser"
+	desc = "An advanced light cruiser built by starfleet for extended research missions. Its reaction times are unparalleled but its armaments are lacking."
+	icon = 'DS13/icons/overmap/intrepid.dmi'
+	icon_state = "intrepid"
+	main_overmap = FALSE
+	class = "intrepid"
+	damage_states = FALSE //Damage FX
+	damage = 10 //Will turn into 20 assuming weapons powered
+	max_shield_health = 200
+	acceleration = 0.6 //How quickly do you put on speed?
+	turnspeed = 0.8 //She's very nippy
+	power_slots = 5 //Decent power slots.
+	pixel_z = -64
+	pixel_w = -64
+	max_speed = 5
+
+/obj/structure/overmap/intrepid/starter //A small ship with OK weapons
+	name = "Intrepid class light cruiser"
+	main_overmap = TRUE
+
+/area/ship/bridge/voy
+	name = "Bridge"
+	looping_ambience = 'DS13/sound/ambience/voy_bridge.ogg'
+	class = "intrepid"
+
+/obj/structure/turbolift/voy
+	deck_1 = list("bridge", "cargo", "astrometrics", "arrivals", "escapes", "escape shuttle", "computer core")
+	deck_2 = list("bar", "ten forward", "mess hall","kitchen", "airponics", "hydroponics", "botany", "dorms", "crew quarters", "quarters", "brig", "security", "medical", "medbay", "sickbay", "science", "research", "transporter")
+	deck_3 = list("engineering","warp core", "hangar bay", "warp nacelles", "telecomms")
+	deck_4 = null
+

@@ -246,7 +246,9 @@
 				var/mob/living/M = AM
 				if(M.client)
 					shake_camera(M, 2,2)
-			AM.z = target.z //Avoids the teleportation effect of zooming to random tiles
+			var/turf/open/destination_turf = get_turf(locate(AM.x,AM.y,target.z))
+			AM.forceMove(destination_turf) //Locate the tile
+		//	AM.z = target.z //Avoids the teleportation effect of zooming to random tiles
 
 //Door management//
 

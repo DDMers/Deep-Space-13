@@ -79,6 +79,15 @@
 	icon = 'DS13/icons/turf/floors.dmi'
 	icon_state = "corrugated"
 
+/turf/open/floor/carpet/trek/voy
+	name = "dark carpet"
+	desc = "a more muted palette for a more professional starship"
+	icon = 'DS13/icons/turf/intrepid_carpet.dmi'
+	icon_state = "intrepid"
+	smooth = TRUE
+	canSmoothWith = list(/turf/open/floor/carpet/trek,/turf/open/floor/carpet/trek/voy)
+	floor_tile = /obj/item/stack/tile/carpet/trek
+
 /obj/structure/chair/trek
 	name = "padded leather chair"
 	desc = "Just looking at this thing makes you feel comfy."
