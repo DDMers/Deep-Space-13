@@ -198,14 +198,14 @@
 	main_overmap = FALSE
 	class = "dderidex"
 	damage_states = TRUE //Damage FX
-	damage = 10 //Will turn into 20 assuming weapons powered
+	damage = 20 //Will turn into 30 assuming weapons powered
 	faction = "romulan"
 	max_shield_health = 150 //Slightly worse than the Akira class
-	turnspeed = 0.5 //Very slow
-	acceleration = 0.3
-	max_health = 170 //Slightly less health due to the fact it has a cloak so it can run away from a fight instantly and repair.
-	max_speed = 2 //Slower than every ship.
-	power_slots = 5 //Same as Akira
+	turnspeed = 0.55 //Very slow
+	acceleration = 0.45
+	max_health = 200 //Slightly less health due to the fact it has a cloak so it can run away from a fight instantly and repair.
+	max_speed = 3 //Slower than every ship.
+	power_slots = 6 //Same as sov
 	pixel_z = -128
 	pixel_w = -120
 
