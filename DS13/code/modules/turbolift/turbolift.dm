@@ -181,10 +181,10 @@
 
 /obj/structure/turbolift/examine(mob/user)
 	. = ..()
-	to_chat(user, "<span class='notice'> Deck 1: [list2text(deck_1)]\
-	<br>Deck 2: [list2text(deck_2)]\
-	<br>Deck 3: [list2text(deck_3)]\
-	<br>Deck 4: [list2text(deck_4)]\
+	to_chat(user, "<span class='notice'> [deck_1 ? "<br>Deck 1: [list2text(deck_1)]" : ""]\
+	[deck_2 ? "<br>Deck 2: [list2text(deck_2)]" : ""]\
+	[deck_3 ? "<br>Deck 3: [list2text(deck_3)]" : ""]\
+	[deck_4 ? "<br>Deck 4: [list2text(deck_4)]" : ""]\
 	</span>")
 
 /obj/structure/turbolift/attack_hand(mob/user)

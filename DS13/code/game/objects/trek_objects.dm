@@ -37,6 +37,17 @@
 	icon = 'DS13/icons/obj/stack_objects.dmi'
 	icon_state = "carpet-rom"
 
+/obj/item/stack/tile/carpet/trek/voy
+	name = "carpet"
+	singular_name = "carpet"
+	turf_type = /turf/open/floor/carpet/trek/voy
+	resistance_flags = FLAMMABLE
+	icon = 'DS13/icons/obj/stack_objects.dmi'
+	icon_state = "carpet-voy"
+
+/obj/item/stack/tile/carpet/trek/fifty
+	amount = 50
+
 /obj/item/stack/tile/carpet/trek/romulan/fifty
 	amount = 50
 
@@ -86,7 +97,7 @@
 	icon_state = "intrepid"
 	smooth = TRUE
 	canSmoothWith = list(/turf/open/floor/carpet/trek,/turf/open/floor/carpet/trek/voy)
-	floor_tile = /obj/item/stack/tile/carpet/trek
+	floor_tile = /obj/item/stack/tile/carpet/trek/voy
 
 /obj/structure/chair/trek
 	name = "padded leather chair"

@@ -253,8 +253,7 @@
 	icon = 'DS13/icons/overmap/oversized_components.dmi'
 	icon_state = "pilot"
 	position = "pilot"
-	pixel_x = -32
-	bound_width = 128
+	bound_width = 96
 
 /obj/structure/overmap_component/science/miranda
 	name = "Science station"
@@ -269,7 +268,6 @@
 	icon_state = "science"
 	position = "science"
 	icon = 'DS13/icons/overmap/oversized_components.dmi'
-	pixel_x = -32
 
 /obj/structure/overmap_component/tactical/miranda
 	name = "Weapons station"

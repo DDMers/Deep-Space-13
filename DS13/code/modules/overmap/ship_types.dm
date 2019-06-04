@@ -76,9 +76,8 @@
 	var/newText = "[the_list[1]]"										// Treats any object/number as text also.
 	var/count
 	for (count = 2, count <= total, count++)
-		if (separator)
-			newText += separator
-		newText += "[the_list[count]] "
+		newText += " "
+		newText += "[the_list[count]]"
 	return newText
 
 /obj/structure/trek_decor/plaque/examine(mob/user)
@@ -289,6 +288,7 @@
 	name = "Bridge"
 	looping_ambience = 'DS13/sound/ambience/voy_bridge.ogg'
 	class = "intrepid"
+	noteleport = FALSE
 
 /obj/structure/turbolift/voy
 	deck_1 = list("bridge", "cargo", "astrometrics", "arrivals", "escapes", "escape shuttle", "computer core")
@@ -296,3 +296,10 @@
 	deck_3 = list("engineering","warp core", "hangar bay", "warp nacelles", "telecomms")
 	deck_4 = null
 
+/obj/structure/trek_decor/plaque/voy
+	name = "Dedication plaque"
+	desc = "A large, bronze plaque with a dedication: \n <b>USS Victoria. <b>Intrepid-class <> Starfleet registry: NCC-64507 <>\n  Launched stardate: NULL <> Utopia Planetia ShipYards <> United Federation Of Planets. \n</b>"
+	icon_state = "plaque"
+	supervisors = list()
+	engineers = list("Thomas Riker")
+	inscription = "Grief is the price we pay for love."
