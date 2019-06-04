@@ -16,6 +16,7 @@
 	name = "Primary turbolift"
 	requires_power = FALSE //no APCS in the lifts please
 	noteleport = TRUE
+	looping_ambience = 'DS13/sound/ambience/turbolift.ogg'
 
 /area/turbolift/secondary
 	name = "Secondary turbolift"
