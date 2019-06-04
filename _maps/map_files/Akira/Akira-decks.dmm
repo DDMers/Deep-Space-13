@@ -11597,6 +11597,7 @@
 	dir = 4;
 	pixel_x = -23
 	},
+/obj/structure/closet/secure_closet/RD,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hor)
 "Ef" = (
