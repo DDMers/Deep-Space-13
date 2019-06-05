@@ -28,6 +28,22 @@
 	item_color = "trekjacket"
 	item_state = "trekjacket"
 
+/obj/item/clothing/accessory/ds9_jacket/formal
+	name = "dress jacket"
+	desc = "An extremely comfortable jacket laced with gold silk, such a piece is usually reserved for diplomatic occasions."
+	icon = 'DS13/icons/obj/clothing/accessories.dmi'
+	icon_state = "trekjacket_formal"
+	item_color = "trekjacket_formal"
+	item_state = "trekjacket_formal"
+
+/obj/item/clothing/accessory/ds9_jacket/formal/captain
+	name = "captain's dress jacket"
+	desc = "An extremely comfortable jacket laced with gold silk, such a piece is usually reserved for diplomatic occasions. This one is reserved for starship captains and above, and is emblazened with the federation's crest."
+	icon = 'DS13/icons/obj/clothing/accessories.dmi'
+	icon_state = "trekjacket_captain"
+	item_color = "trekjacket_captain"
+	item_state = "trekjacket_captain"
+
 /obj/item/clothing/under/trek/neelix
 	name = "Civilian clothes"
 	desc = "An odd assortment of colours fashioned together into something only a morale officer would wear."

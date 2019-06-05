@@ -16,6 +16,7 @@
 	name = "Primary turbolift"
 	requires_power = FALSE //no APCS in the lifts please
 	noteleport = TRUE
+	looping_ambience = 'DS13/sound/ambience/turbolift.ogg'
 
 /area/turbolift/secondary
 	name = "Secondary turbolift"
@@ -181,10 +182,10 @@
 
 /obj/structure/turbolift/examine(mob/user)
 	. = ..()
-	to_chat(user, "<span class='notice'> Deck 1: [list2text(deck_1)]\
-	<br>Deck 2: [list2text(deck_2)]\
-	<br>Deck 3: [list2text(deck_3)]\
-	<br>Deck 4: [list2text(deck_4)]\
+	to_chat(user, "<span class='notice'> [deck_1 ? "<br>Deck 1: [list2text(deck_1)]" : ""]\
+	[deck_2 ? "<br>Deck 2: [list2text(deck_2)]" : ""]\
+	[deck_3 ? "<br>Deck 3: [list2text(deck_3)]" : ""]\
+	[deck_4 ? "<br>Deck 4: [list2text(deck_4)]" : ""]\
 	</span>")
 
 /obj/structure/turbolift/attack_hand(mob/user)
@@ -246,7 +247,9 @@
 				var/mob/living/M = AM
 				if(M.client)
 					shake_camera(M, 2,2)
-			AM.z = target.z //Avoids the teleportation effect of zooming to random tiles
+			var/turf/open/destination_turf = get_turf(locate(AM.x,AM.y,target.z))
+			AM.forceMove(destination_turf) //Locate the tile
+		//	AM.z = target.z //Avoids the teleportation effect of zooming to random tiles
 
 //Door management//
 
