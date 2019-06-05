@@ -12,7 +12,8 @@
 #define ROBOTICIST		(1<<8)
 #define AI_JF			(1<<9)
 #define CYBORG			(1<<10)
-#define BRIDGE			(1<<11)
+#define BRIDGE			(1<<11) //DeepSpace 13 - Jobs
+#define YEOMAN			(1<<12) //DeepSpace 13 - End
 
 
 #define MEDSCI			(1<<1)
@@ -42,7 +43,11 @@
 #define CLOWN			(1<<11)
 #define MIME			(1<<12)
 #define ASSISTANT		(1<<13)
-#define CADET		(1<<14) //DeepSpace 13 - Cadet tutorial role
+#define CADET			(1<<14) //DeepSpace 13 - Cadet tutorial role
+#define OFFDUTY_SEC		(1<<15) //DeepSpace 13 - Off duty officers
+#define OFFDUTY_DOCTOR		(1<<16) //DeepSpace 13 - Off duty officers
+#define OFFDUTY_ENGINEER	(1<<17) //DeepSpace 13 - Off duty officers
+#define OFFDUTY_BRIDGE		(1<<18) //DeepSpace 13 - Off duty officers
 
 #define JOB_AVAILABLE 0
 #define JOB_UNAVAILABLE_GENERIC 1
