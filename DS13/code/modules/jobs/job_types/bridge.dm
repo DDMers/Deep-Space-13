@@ -4,7 +4,7 @@ Bridge crew
 /datum/job/bridge_crew
 	title = "Bridge Officer"
 	description = "'Attack pattern omega!' Bridge officers are still ensigns, but with added duties. As a bridge officer you will take up one of the three stations on the bridge and follow any orders the captain gives. <br> When you spawn, you should decide what station you're going to take amongst yourselves but if you encounter a problem , defer to the captain's judgement. <br> If you're playing this role, you should be familiar with our mechanics and comfortable with combat as this role will test you.<br> Primary roles: Operate the ship."
-	flag = CADET
+	flag = BRIDGE
 	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 3
