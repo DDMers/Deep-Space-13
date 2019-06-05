@@ -38,7 +38,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "ai" = (
 /obj/machinery/atmospherics/pipe/simple/multiz,
@@ -49,7 +49,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "ak" = (
 /obj/machinery/light/small{
@@ -64,7 +64,7 @@
 /turf/open/floor/plating,
 /area/maintenance/department/medical)
 "am" = (
-/turf/closed/wall/trek_smooth/corridor,
+/turf/closed/wall/trek_smooth/voy,
 /area/ship/bridge/akira)
 "an" = (
 /obj/structure/cable{
@@ -88,7 +88,7 @@
 	dir = 1
 	},
 /obj/machinery/light,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "aq" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
@@ -108,7 +108,7 @@
 	dir = 1
 	},
 /obj/machinery/light,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "as" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
@@ -174,11 +174,11 @@
 /obj/item/twohanded/required/kirbyplants{
 	icon_state = "plant-21"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "ay" = (
 /obj/structure/overmap_component/viewscreen,
-/turf/closed/wall/trek_smooth/corridor,
+/turf/closed/wall/trek_smooth/voy,
 /area/ship/bridge/akira)
 "az" = (
 /obj/machinery/camera/trek{
@@ -228,13 +228,13 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "aE" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "aF" = (
 /obj/structure/cable{
@@ -261,7 +261,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "aI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -276,49 +276,36 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "aK" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "aL" = (
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "aM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/trek,
-/area/ship/bridge/akira)
-"aN" = (
-/obj/structure/overmap_component/helm,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "aO" = (
-/obj/structure/overmap_component/tactical,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "aP" = (
 /obj/structure/chair/trek/dark{
 	dir = 1
 	},
 /obj/effect/landmark/start/bridge_officer,
-/turf/open/floor/carpet/trek,
-/area/ship/bridge/akira)
-"aQ" = (
-/obj/structure/overmap_component/science,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "aR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -326,7 +313,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
-/turf/open/floor/carpet/trek,
+/obj/structure/overmap_component/tactical/voy,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "aS" = (
 /turf/closed/wall/trek_smooth/corridor,
@@ -364,7 +352,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "aX" = (
 /obj/structure/closet/secure_closet/security,
@@ -427,14 +415,18 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/trek,
+/obj/effect/landmark/start/bridge_officer,
+/obj/structure/chair/trek/dark{
+	dir = 1
+	},
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "bh" = (
 /obj/machinery/airalarm{
 	dir = 8;
 	pixel_x = 22
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "bi" = (
 /obj/structure/grille,
@@ -442,7 +434,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "bj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -483,7 +475,7 @@
 	icon_state = "pwindow";
 	dir = 8
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "bo" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
@@ -526,7 +518,7 @@
 "br" = (
 /obj/machinery/computer/communications,
 /obj/structure/window/reinforced/survival_pod,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "bs" = (
 /turf/open/floor/carpet/trek,
@@ -560,7 +552,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "bw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -583,7 +575,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "by" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
@@ -619,7 +611,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 1
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "bB" = (
 /turf/closed/wall/trek_smooth/corridor,
@@ -651,7 +643,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "bH" = (
 /obj/machinery/door/airlock/trek/goon/external,
@@ -718,7 +710,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/trek/middle,
 /obj/structure/cable,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "bS" = (
 /obj/structure/grille,
@@ -775,7 +767,7 @@
 /area/security/main)
 "bZ" = (
 /obj/structure/chair/trek/dark,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "ca" = (
 /turf/closed/wall/trek_smooth/corridor,
@@ -793,7 +785,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "ce" = (
 /turf/closed/wall/trek_smooth/corridor,
@@ -872,7 +864,7 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/fore)
 "cn" = (
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "co" = (
 /obj/structure/turbolift/sovereign,
@@ -898,7 +890,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "cs" = (
 /obj/structure/table/trek{
@@ -916,7 +908,7 @@
 /area/hallway/primary/fore)
 "cu" = (
 /obj/structure/table/glass,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "cv" = (
 /obj/structure/grille,
@@ -961,7 +953,7 @@
 /obj/machinery/computer/monitor{
 	dir = 1
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "cD" = (
 /obj/machinery/transporter_pad{
@@ -1062,13 +1054,13 @@
 /obj/machinery/computer/station_alert{
 	dir = 1
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "cS" = (
 /obj/machinery/computer/med_data{
 	dir = 1
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "cT" = (
 /obj/structure/cable{
@@ -1284,7 +1276,7 @@
 	icon_state = "chair";
 	dir = 4
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "dv" = (
 /obj/structure/sign/directions/evac{
@@ -1334,7 +1326,7 @@
 /obj/machinery/computer/card{
 	dir = 1
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "dC" = (
 /obj/structure/cable{
@@ -1343,7 +1335,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "dD" = (
 /obj/structure/chair/trek/standard,
@@ -1370,7 +1362,7 @@
 	icon_state = "chair";
 	dir = 1
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "dH" = (
 /obj/structure/table/trek/continued{
@@ -1562,7 +1554,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "eb" = (
 /obj/machinery/transporter_pad{
@@ -1586,7 +1578,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "ee" = (
 /obj/machinery/transporter_pad{
@@ -1604,7 +1596,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "eg" = (
 /obj/machinery/transporter_pad{
@@ -1649,7 +1641,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "em" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -1665,7 +1657,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/power/apc/auto_name/ds13,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "en" = (
 /obj/structure/table/wood,
@@ -1760,7 +1752,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "ez" = (
 /obj/machinery/transporter_pad{
@@ -1818,7 +1810,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "eI" = (
 /obj/machinery/door/airlock/trek/ship/cargo{
@@ -1833,7 +1825,7 @@
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
 "eJ" = (
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "eK" = (
 /obj/machinery/door/airlock/trek/ship/cargo{
@@ -1846,7 +1838,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "eM" = (
 /obj/machinery/transporter_pad{
@@ -1927,7 +1919,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 1
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "eV" = (
 /obj/effect/landmark/start/cook,
@@ -1960,11 +1952,11 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "fb" = (
 /obj/machinery/suit_storage_unit/trek,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "fc" = (
 /obj/structure/rack,
@@ -1972,7 +1964,7 @@
 /obj/item/gun/energy/phaser,
 /obj/item/gun/energy/phaser,
 /obj/item/gun/energy/phaser,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "fd" = (
 /obj/machinery/suit_storage_unit/trek,
@@ -1980,7 +1972,7 @@
 	icon_state = "camera";
 	dir = 5
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "fe" = (
 /obj/machinery/transporter_pad{
@@ -2079,7 +2071,7 @@
 	dir = 8;
 	pixel_x = 22
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "fq" = (
 /obj/structure/chair/trek/standard,
@@ -2252,7 +2244,7 @@
 	icon_state = "camera";
 	name = "Armory"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "fL" = (
 /obj/machinery/suit_storage_unit/trek,
@@ -2260,7 +2252,7 @@
 	icon_state = "camera";
 	dir = 9
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "fM" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -2990,7 +2982,7 @@
 	pixel_x = 24
 	},
 /obj/effect/landmark/start/chief_medical_officer,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/cmo)
 "ht" = (
 /obj/machinery/light{
@@ -3182,7 +3174,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/security/warden)
 "hT" = (
 /obj/structure/extinguisher_cabinet{
@@ -3409,7 +3401,7 @@
 	pixel_x = 24
 	},
 /obj/effect/landmark/start/research_director,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hor)
 "iz" = (
 /obj/structure/cable{
@@ -3437,7 +3429,7 @@
 	pixel_x = 24
 	},
 /obj/effect/landmark/start/chief_engineer,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/chief)
 "iC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -3447,7 +3439,7 @@
 	dir = 1
 	},
 /obj/effect/landmark/start/head_of_personnel,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hop)
 "iD" = (
 /obj/machinery/power/apc/auto_name/ds13,
@@ -3479,7 +3471,7 @@
 	dir = 8
 	},
 /obj/effect/landmark/start/captain,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "iH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -3490,7 +3482,7 @@
 	pixel_x = 24
 	},
 /obj/effect/landmark/start/head_of_security,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hos)
 "iI" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -4414,7 +4406,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet/red,
 /obj/effect/landmark/start/chaplain,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "kK" = (
 /obj/structure/cable{
@@ -4575,7 +4567,7 @@
 /obj/machinery/camera/trek{
 	name = "Nacelle Control"
 	},
-/turf/open/floor/carpet/trek/romulan,
+/turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
 "le" = (
 /obj/structure/cable/yellow{
@@ -4589,7 +4581,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/floor/carpet/trek/romulan,
+/turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
 "lf" = (
 /obj/machinery/power/smes,
@@ -4618,7 +4610,7 @@
 	},
 /obj/machinery/power/apc/auto_name/ds13,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
-/turf/open/floor/carpet/trek/romulan,
+/turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
 "li" = (
 /obj/structure/table/glass,
@@ -4643,7 +4635,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
-/turf/open/floor/carpet/trek/romulan,
+/turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
 "ll" = (
 /obj/machinery/light{
@@ -4730,7 +4722,7 @@
 /obj/item/radio/intercom{
 	pixel_y = 25
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "lw" = (
 /turf/open/floor/carpet/trek,
@@ -4834,7 +4826,7 @@
 /obj/machinery/airalarm{
 	pixel_y = 22
 	},
-/turf/open/floor/carpet/trek/romulan,
+/turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
 "lH" = (
 /obj/item/banner/cargo,
@@ -5081,7 +5073,7 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "mq" = (
 /obj/machinery/airalarm{
@@ -5674,7 +5666,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek/romulan,
+/turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
 "nL" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
@@ -5808,7 +5800,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek/romulan,
+/turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
 "oc" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
@@ -6179,7 +6171,7 @@
 /obj/item/radio/intercom{
 	pixel_y = 25
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "oW" = (
 /obj/structure/cable{
@@ -6464,7 +6456,7 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden{
 	dir = 6
 	},
-/turf/open/floor/carpet/trek/romulan,
+/turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
 "pE" = (
 /obj/structure/cable{
@@ -7350,7 +7342,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
-/turf/open/floor/carpet/trek/romulan,
+/turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
 "rw" = (
 /obj/structure/cable/yellow{
@@ -7366,7 +7358,7 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek/romulan,
+/turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
 "rx" = (
 /obj/structure/cable/yellow{
@@ -7381,7 +7373,7 @@
 /obj/machinery/atmospherics/pipe/simple/dark/hidden{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek/romulan,
+/turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
 "ry" = (
 /obj/structure/cable/yellow{
@@ -7401,7 +7393,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek/romulan,
+/turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
 "rz" = (
 /obj/structure/cable/yellow{
@@ -7800,7 +7792,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "sp" = (
 /obj/structure/cable{
@@ -10257,21 +10249,21 @@
 /obj/structure/mirror{
 	pixel_y = 26
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "xD" = (
 /obj/structure/table/glass,
 /obj/machinery/airalarm{
 	pixel_y = 26
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "xE" = (
 /obj/structure/overmap_component/viewscreen{
 	density = 0;
 	pixel_y = 32
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "xF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -10361,11 +10353,11 @@
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/dorms)
 "xM" = (
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "xN" = (
 /obj/structure/closet/secure_closet/personal,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "xO" = (
 /obj/structure/window/reinforced/survival_pod{
@@ -10474,7 +10466,7 @@
 /turf/open/floor/carpet/trek,
 /area/medical)
 "xX" = (
-/turf/closed/wall/trek_smooth/room,
+/turf/closed/wall/trek_smooth/voy,
 /area/tcommsat/server)
 "xY" = (
 /obj/structure/ladder,
@@ -10548,12 +10540,12 @@
 /area/medical)
 "yg" = (
 /obj/machinery/light,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "yh" = (
 /obj/structure/bed,
 /obj/item/bedsheet/red,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "yi" = (
 /obj/machinery/washing_machine,
@@ -10561,7 +10553,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "yj" = (
 /obj/effect/turf_decal/tile/green,
@@ -10585,7 +10577,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "yl" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
@@ -10594,19 +10586,19 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "ym" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "yn" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "yo" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
@@ -10615,7 +10607,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "yp" = (
 /obj/machinery/door/airlock/trek/ship{
@@ -10644,7 +10636,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "yr" = (
 /obj/structure/closet/crate/bin,
@@ -10652,7 +10644,7 @@
 /area/medical)
 "ys" = (
 /obj/structure/closet/crate/bin,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "yt" = (
 /obj/structure/sign/departments/custodian,
@@ -11992,7 +11984,7 @@
 /area/science/xenobiology)
 "Bu" = (
 /obj/structure/overmap_component/plasma_relay,
-/turf/closed/wall/trek_smooth/corridor,
+/turf/closed/wall/trek_smooth/voy,
 /area/ship/bridge/akira)
 "Bv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -12520,7 +12512,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/chief)
 "CA" = (
 /turf/closed/wall/trek_smooth/corridor,
@@ -12609,7 +12601,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hos)
 "CM" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
@@ -12880,7 +12872,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "Dw" = (
 /turf/closed/wall/trek_smooth/corridor,
@@ -13269,12 +13261,12 @@
 /obj/machinery/camera/trek{
 	name = "Captain's Office"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "Ez" = (
 /obj/structure/closet/secure_closet/captains,
 /obj/item/disk/nuclear,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "EA" = (
 /obj/structure/closet/crate/bin,
@@ -13286,7 +13278,7 @@
 /area/quartermaster/miningdock)
 "EC" = (
 /obj/structure/closet/crate/bin,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "ED" = (
 /obj/structure/closet/crate/bin,
@@ -13302,7 +13294,7 @@
 	dir = 4;
 	pixel_x = -24
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "EG" = (
 /obj/structure/closet/crate/bin,
@@ -13313,7 +13305,7 @@
 	icon_state = "plant-05";
 	pixel_y = 10
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "EI" = (
 /obj/structure/chair/trek{
@@ -13325,7 +13317,7 @@
 	icon_state = "pwindow";
 	dir = 4
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "EJ" = (
 /obj/machinery/camera/trek{
@@ -13429,7 +13421,7 @@
 	dir = 4;
 	pixel_x = 24
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "EU" = (
 /obj/structure/closet/secure_closet/hop,
@@ -13439,7 +13431,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hop)
 "EV" = (
 /obj/structure/sink{
@@ -13450,7 +13442,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hor)
 "EW" = (
 /obj/structure/cable{
@@ -13513,7 +13505,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "Fe" = (
 /obj/machinery/conveyor{
@@ -13531,7 +13523,7 @@
 	dir = 4;
 	pixel_x = 24
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "Fg" = (
 /obj/structure/extinguisher_cabinet{
@@ -13541,7 +13533,7 @@
 /area/hallway/primary/fore)
 "Fh" = (
 /obj/item/twohanded/required/kirbyplants/photosynthetic,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "Fi" = (
 /obj/item/twohanded/required/kirbyplants/photosynthetic,
@@ -13785,7 +13777,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "FK" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
@@ -13803,7 +13795,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "FL" = (
 /obj/structure/chair/trek/standard,
@@ -13816,7 +13808,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "FM" = (
 /obj/structure/chair/trek/standard,
@@ -13829,7 +13821,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "FN" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
@@ -13848,7 +13840,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "FO" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
@@ -13861,7 +13853,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "FP" = (
 /obj/structure/chair/trek/standard,
@@ -13877,7 +13869,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "FQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -13890,7 +13882,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "FR" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
@@ -13905,7 +13897,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "FS" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -13923,7 +13915,7 @@
 	req_one_access = null;
 	req_one_access_txt = "57"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hop)
 "FT" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -13936,7 +13928,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hop)
 "FU" = (
 /obj/machinery/recharge_station,
@@ -13951,7 +13943,7 @@
 	dir = 4;
 	pixel_x = 11
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hop)
 "FW" = (
 /obj/machinery/door/airlock/trek/ship/command{
@@ -13973,7 +13965,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "FY" = (
 /obj/structure/chair/trek/standard{
@@ -13985,7 +13977,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "FZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -13994,7 +13986,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "Ga" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -14012,7 +14004,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 8
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "Gc" = (
 /obj/structure/table/glass,
@@ -14021,14 +14013,14 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "Gd" = (
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
 	dir = 8
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "Ge" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -14036,7 +14028,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "Gf" = (
 /obj/item/bedsheet/hop,
@@ -14044,7 +14036,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hop)
 "Gg" = (
 /obj/structure/rack,
@@ -14074,7 +14066,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "Gj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -14085,14 +14077,14 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "Gk" = (
 /turf/closed/wall/trek_smooth/corridor,
 /area/crew_quarters/heads/captain/private)
 "Gl" = (
 /obj/machinery/light,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "Gm" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
@@ -14110,7 +14102,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "Go" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
@@ -14125,7 +14117,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "Gp" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -14143,7 +14135,7 @@
 	req_one_access = null;
 	req_one_access_txt = "20"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "Gq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -14156,7 +14148,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "Gr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -14168,7 +14160,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "Gs" = (
 /obj/structure/rack,
@@ -14204,7 +14196,7 @@
 	name = "Chief Medical Officer's quarters";
 	req_one_access = list(40)
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/cmo)
 "Gx" = (
 /turf/closed/wall/trek_smooth/corridor,
@@ -14216,7 +14208,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hor)
 "Gz" = (
 /turf/closed/wall/trek_smooth/corridor,
@@ -14228,7 +14220,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/chief)
 "GB" = (
 /turf/closed/wall/trek_smooth/corridor,
@@ -14240,25 +14232,25 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hos)
 "GD" = (
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "GE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "GF" = (
 /obj/machinery/computer/card{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "GG" = (
 /obj/machinery/door/window/survival_pod,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "GH" = (
 /obj/structure/bed,
@@ -14270,7 +14262,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/cmo)
 "GI" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -14283,7 +14275,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/cmo)
 "GJ" = (
 /obj/structure/bed,
@@ -14295,7 +14287,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hor)
 "GK" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -14308,7 +14300,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hor)
 "GL" = (
 /obj/structure/bed,
@@ -14320,7 +14312,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/chief)
 "GM" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -14333,7 +14325,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/chief)
 "GN" = (
 /obj/structure/table/glass,
@@ -14364,7 +14356,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hos)
 "GQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -14377,33 +14369,33 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hos)
 "GR" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 1
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "GS" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "GT" = (
 /obj/machinery/airalarm{
 	dir = 8;
 	pixel_x = 24
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "GU" = (
 /obj/structure/closet/secure_closet/CMO,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/cmo)
 "GV" = (
 /obj/machinery/light{
@@ -14450,7 +14442,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hor)
 "Hc" = (
 /obj/effect/landmark/start/ai,
@@ -14482,7 +14474,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/chief)
 "Hf" = (
 /obj/machinery/airalarm{
@@ -14499,7 +14491,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hos)
 "Hh" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -14524,7 +14516,7 @@
 "Hj" = (
 /obj/structure/bed,
 /obj/item/bedsheet/captain,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "Hk" = (
 /obj/machinery/door/window/survival_pod{
@@ -14557,7 +14549,7 @@
 	pixel_x = 11
 	},
 /obj/item/banner/medical,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/cmo)
 "Hn" = (
 /obj/machinery/door/window/survival_pod{
@@ -14635,7 +14627,7 @@
 /area/ai_monitored/turret_protected/ai)
 "Hu" = (
 /obj/machinery/light/small,
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "Hv" = (
 /obj/machinery/door/window/survival_pod{
@@ -14837,12 +14829,9 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/exit/departure_lounge)
-"HZ" = (
-/turf/closed/wall/trek_smooth/room,
-/area/ai_monitored/turret_protected/ai)
 "Ia" = (
 /obj/structure/trek_decor/rack,
-/turf/closed/wall/trek_smooth/room,
+/turf/closed/wall/trek_smooth/voy,
 /area/ai_monitored/turret_protected/ai)
 "Ib" = (
 /obj/machinery/door/airlock/trek/goon/engi{
@@ -15267,7 +15256,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "JE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -16037,6 +16026,30 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/aft)
+"QA" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/chair/trek/dark{
+	dir = 1
+	},
+/obj/effect/landmark/start/bridge_officer,
+/turf/open/floor/carpet/trek/voy,
+/area/ship/bridge/akira)
+"QS" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek/voy,
+/area/ship/bridge/akira)
+"Ru" = (
+/obj/structure/overmap_component/science/voy,
+/turf/open/floor/carpet/trek/voy,
+/area/ship/bridge/akira)
 "Sx" = (
 /obj/structure/overmap_component/plasma_injector{
 	pixel_y = 35
@@ -16052,6 +16065,17 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/port)
+"TS" = (
+/turf/closed/wall/trek_smooth/voy,
+/area/ai_monitored/turret_protected/ai)
+"VL" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
+/turf/open/floor/carpet/trek/voy,
+/area/ship/bridge/akira)
 "Wg" = (
 /obj/machinery/light/small,
 /turf/open/floor/engine/plasma,
@@ -16077,6 +16101,10 @@
 	},
 /turf/open/floor/engine/plasma,
 /area/maintenance/department/engine/atmos)
+"Xi" = (
+/obj/structure/overmap_component/helm/voy,
+/turf/open/floor/carpet/trek/voy,
+/area/ship/bridge/akira)
 "XA" = (
 /obj/machinery/camera/trek{
 	dir = 1;
@@ -240544,9 +240572,9 @@ dQ
 dX
 Fg
 aS
-Ft
-Ft
-Ft
+TS
+TS
+TS
 aa
 aa
 aa
@@ -240803,7 +240831,7 @@ dk
 Hq
 Fv
 Ht
-Ft
+TS
 aa
 aa
 aa
@@ -241060,7 +241088,7 @@ EL
 aS
 Fw
 HL
-Ft
+TS
 aa
 aa
 aa
@@ -241317,7 +241345,7 @@ tT
 tT
 FU
 HL
-Ft
+TS
 aa
 aa
 aa
@@ -241574,7 +241602,7 @@ Kc
 tT
 Ft
 tV
-Ft
+TS
 aa
 aa
 aa
@@ -241831,7 +241859,7 @@ tW
 tT
 Gg
 HL
-HZ
+TS
 xX
 xX
 xX
@@ -242074,8 +242102,8 @@ aM
 aO
 aR
 bg
-bg
-bg
+QS
+QS
 bx
 bZ
 ap
@@ -242088,7 +242116,7 @@ tT
 tT
 Gs
 HL
-HZ
+TS
 zr
 Ii
 Io
@@ -242329,7 +242357,7 @@ am
 aE
 aL
 aL
-aP
+aL
 aL
 aL
 aL
@@ -242584,7 +242612,7 @@ aa
 aa
 am
 aH
-aL
+Xi
 aL
 aL
 aL
@@ -242841,7 +242869,7 @@ aa
 aa
 ay
 dC
-aN
+aL
 aP
 Fh
 aL
@@ -243116,7 +243144,7 @@ pb
 om
 Ft
 HL
-HZ
+TS
 If
 Ik
 Ik
@@ -243357,7 +243385,7 @@ am
 aE
 aL
 aL
-aP
+Ru
 aL
 aL
 aL
@@ -243613,11 +243641,11 @@ aa
 Bu
 aK
 aM
-aQ
-aR
-bg
-bg
-bg
+aO
+VL
+QA
+QS
+QS
 bG
 bZ
 ar
@@ -243630,7 +243658,7 @@ tU
 tU
 Ho
 HL
-HZ
+TS
 Ih
 In
 Ik
@@ -243887,7 +243915,7 @@ uk
 tU
 Ho
 HL
-HZ
+TS
 xX
 xX
 xX
@@ -244142,9 +244170,9 @@ tU
 cH
 JV
 tU
-Ft
+TS
 tV
-Ft
+TS
 aa
 aa
 aa
@@ -244401,7 +244429,7 @@ tU
 tU
 FU
 HL
-Ft
+TS
 aa
 aa
 aa
@@ -244658,7 +244686,7 @@ EL
 aS
 Fw
 HL
-Ft
+TS
 aa
 aa
 aa
@@ -244915,7 +244943,7 @@ dk
 Hq
 Fv
 HN
-Ft
+TS
 aa
 aa
 aa
@@ -245170,9 +245198,9 @@ dQ
 Fu
 Fg
 aS
-Ft
-Ft
-Ft
+TS
+TS
+TS
 aa
 aa
 aa
