@@ -193,8 +193,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/camera/trek{
+	dir = 4;
 	icon_state = "camera";
-	dir = 4
+	name = "Port Conference Room"
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/fore)
@@ -353,7 +354,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/camera/trek,
+/obj/machinery/camera/trek{
+	name = "Security Equipment"
+	},
 /turf/open/floor/carpet/trek,
 /area/security/main)
 "aW" = (
@@ -1049,8 +1052,9 @@
 /area/hallway/primary/fore)
 "cQ" = (
 /obj/machinery/camera/trek{
+	dir = 9;
 	icon_state = "camera";
-	dir = 9
+	name = "Starboard Conference Room"
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/fore)
@@ -2096,7 +2100,9 @@
 /turf/open/floor/carpet/trek,
 /area/security/brig)
 "ft" = (
-/obj/machinery/camera/trek,
+/obj/machinery/camera/trek{
+	name = "Brig Lobby"
+	},
 /obj/structure/chair/trek/standard,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2242,8 +2248,9 @@
 /obj/item/gun/energy/phaser,
 /obj/item/gun/energy/phaser/rifle,
 /obj/machinery/camera/trek{
+	dir = 10;
 	icon_state = "camera";
-	dir = 10
+	name = "Armory"
 	},
 /turf/open/floor/carpet/trek,
 /area/security/warden)
@@ -2271,8 +2278,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/camera/trek{
+	dir = 9;
 	icon_state = "camera";
-	dir = 9
+	name = "Transporter Bay"
 	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 30;
@@ -2815,8 +2823,9 @@
 /area/security/brig)
 "gY" = (
 /obj/machinery/camera/trek{
+	dir = 1;
 	icon_state = "camera";
-	dir = 1
+	name = "Brig Control"
 	},
 /obj/structure/closet/secure_closet/brig,
 /obj/structure/window/reinforced/survival_pod{
@@ -2852,8 +2861,9 @@
 	dir = 1
 	},
 /obj/machinery/camera/trek{
+	dir = 1;
 	icon_state = "camera";
-	dir = 1
+	name = "Brig Cells"
 	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
@@ -3010,7 +3020,9 @@
 /area/quartermaster/office)
 "hx" = (
 /obj/machinery/portable_atmospherics/scrubber,
-/obj/machinery/camera/trek,
+/obj/machinery/camera/trek{
+	name = "Cargo Warehouse"
+	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/warehouse)
 "hy" = (
@@ -3028,7 +3040,9 @@
 	dir = 8;
 	pixel_x = 22
 	},
-/obj/machinery/camera/trek,
+/obj/machinery/camera/trek{
+	name = "Transporter Foyer"
+	},
 /obj/item/stamp/law,
 /turf/open/floor/carpet/trek,
 /area/security/checkpoint/customs)
@@ -3698,7 +3712,9 @@
 	dir = 4;
 	id = "QMLoad2"
 	},
-/obj/machinery/camera/trek,
+/obj/machinery/camera/trek{
+	name = "Cargo Loading Bay"
+	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
 "jn" = (
@@ -4308,8 +4324,9 @@
 /area/quartermaster)
 "ky" = (
 /obj/machinery/camera/trek{
+	dir = 4;
 	icon_state = "camera";
-	dir = 4
+	name = "Cargo Manufacturing"
 	},
 /obj/structure/table/glass,
 /turf/open/floor/carpet/trek,
@@ -4555,7 +4572,9 @@
 	dir = 4
 	},
 /obj/machinery/computer/station_alert,
-/obj/machinery/camera/trek,
+/obj/machinery/camera/trek{
+	name = "Nacelle Control"
+	},
 /turf/open/floor/carpet/trek/romulan,
 /area/maintenance/department/engine/atmos)
 "le" = (
@@ -4701,8 +4720,9 @@
 /area/maintenance/department/engine)
 "lv" = (
 /obj/machinery/camera/trek{
+	dir = 4;
 	icon_state = "camera";
-	dir = 4
+	name = "Bridge"
 	},
 /obj/item/twohanded/required/kirbyplants{
 	icon_state = "plant-22"
@@ -5247,8 +5267,9 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/structure/trek_catwalk,
 /obj/machinery/camera/trek{
+	dir = 4;
 	icon_state = "camera";
-	dir = 4
+	name = "Life Support North"
 	},
 /turf/open/floor/engine,
 /area/engine/atmos)
@@ -5395,8 +5416,9 @@
 /obj/structure/trek_catwalk,
 /obj/machinery/atmospherics/pipe/simple/dark/visible,
 /obj/machinery/camera/trek{
+	dir = 9;
 	icon_state = "camera";
-	dir = 9
+	name = "Hazardous Atmospherics North"
 	},
 /turf/open/floor/engine,
 /area/engine/atmos)
@@ -5909,8 +5931,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer1,
 /obj/structure/trek_catwalk,
 /obj/machinery/camera/trek{
+	dir = 9;
 	icon_state = "camera";
-	dir = 9
+	name = "Hazarous Atmospherics South"
 	},
 /turf/open/floor/engine,
 /area/engine/atmos)
@@ -6386,7 +6409,9 @@
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
 "pz" = (
-/obj/machinery/camera/trek,
+/obj/machinery/camera/trek{
+	name = "Nacelle Camera"
+	},
 /turf/open/floor/engine/plasma,
 /area/maintenance/department/engine/atmos)
 "pA" = (
@@ -6568,6 +6593,9 @@
 /obj/structure/overmap_component/plasma_injector{
 	pixel_y = 35
 	},
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/open/floor/engine/plasma,
 /area/maintenance/department/engine/atmos)
 "pS" = (
@@ -6696,8 +6724,9 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/structure/trek_catwalk,
 /obj/machinery/camera/trek{
+	dir = 4;
 	icon_state = "camera";
-	dir = 4
+	name = "Life Support South"
 	},
 /turf/open/floor/engine,
 /area/engine/atmos)
@@ -7025,9 +7054,11 @@
 /area/maintenance/department/engine)
 "qP" = (
 /obj/machinery/camera/trek{
+	dir = 5;
 	icon_state = "camera";
-	dir = 5
+	name = "Hazardous Atmospherics Filling"
 	},
+/obj/machinery/portable_atmospherics/scrubber/huge,
 /turf/open/floor/engine,
 /area/engine/atmos)
 "qQ" = (
@@ -8002,8 +8033,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/camera/trek{
+	dir = 10;
 	icon_state = "camera";
-	dir = 10
+	name = "Warp Core"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
@@ -8137,8 +8169,9 @@
 /area/ship/engineering/akira)
 "tf" = (
 /obj/machinery/camera/trek{
+	dir = 10;
 	icon_state = "camera";
-	dir = 10
+	name = "Warp Injector Room"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
@@ -8196,9 +8229,6 @@
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "tn" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
 /obj/structure/table/glass,
 /obj/item/clothing/gloves/color/yellow,
 /obj/item/clothing/gloves/color/yellow,
@@ -8216,6 +8246,9 @@
 /obj/item/stack/cable_coil{
 	amount = 50
 	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "to" = (
@@ -8228,6 +8261,11 @@
 "tp" = (
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/machinery/camera/trek{
+	dir = 10;
+	icon_state = "camera";
+	name = "Engineering Tool Storage"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
@@ -8537,8 +8575,9 @@
 /obj/structure/table/glass,
 /obj/item/reagent_containers/spray/cleaner,
 /obj/machinery/camera/trek{
+	dir = 8;
 	icon_state = "camera";
-	dir = 8
+	name = "Surgical Bay"
 	},
 /turf/open/floor/plasteel/dark/corner{
 	dir = 8
@@ -8656,8 +8695,9 @@
 /area/hallway/primary/aft)
 "us" = (
 /obj/machinery/camera/trek{
+	dir = 10;
 	icon_state = "camera";
-	dir = 10
+	name = "Deck 4 Turbolifts Port"
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/aft)
@@ -8806,8 +8846,9 @@
 /area/janitor)
 "uJ" = (
 /obj/machinery/camera/trek{
+	dir = 10;
 	icon_state = "camera";
-	dir = 10
+	name = "Law Office"
 	},
 /turf/open/floor/carpet/trek,
 /area/lawoffice)
@@ -9665,8 +9706,9 @@
 "wC" = (
 /obj/structure/bodycontainer/morgue,
 /obj/machinery/camera/trek{
+	dir = 4;
 	icon_state = "camera";
-	dir = 4
+	name = "Morgue"
 	},
 /turf/open/floor/trek/bsg,
 /area/medical/morgue)
@@ -9702,8 +9744,9 @@
 /obj/item/reagent_containers/spray/cleaner,
 /obj/machinery/light,
 /obj/machinery/camera/trek{
+	dir = 8;
 	icon_state = "camera";
-	dir = 8
+	name = "Cloning Bay"
 	},
 /obj/item/storage/pill_bottle/mutadone{
 	pixel_x = -5
@@ -10184,8 +10227,9 @@
 /obj/effect/turf_decal/tile/green,
 /obj/machinery/seed_extractor,
 /obj/machinery/camera/trek{
+	dir = 1;
 	icon_state = "camera";
-	dir = 1
+	name = "Hydroponics"
 	},
 /turf/open/floor/grass,
 /area/hydroponics)
@@ -11440,7 +11484,9 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/glass/fifty,
-/obj/machinery/camera/trek,
+/obj/machinery/camera/trek{
+	name = "Research Bay"
+	},
 /obj/machinery/light{
 	dir = 8
 	},
@@ -11677,7 +11723,9 @@
 /obj/machinery/rnd/production/techfab/department/science,
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/glass/fifty,
-/obj/machinery/camera/trek,
+/obj/machinery/camera/trek{
+	name = "Science Office"
+	},
 /turf/open/floor/carpet/trek,
 /area/science)
 "AN" = (
@@ -11694,7 +11742,9 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer1{
 	dir = 10
 	},
-/obj/machinery/camera/trek,
+/obj/machinery/camera/trek{
+	name = "Research Server"
+	},
 /turf/open/floor/carpet/trek,
 /area/science/server)
 "AP" = (
@@ -12157,8 +12207,9 @@
 "BT" = (
 /obj/structure/window/reinforced/survival_pod,
 /obj/machinery/camera/trek{
+	dir = 8;
 	icon_state = "camera";
-	dir = 8
+	name = "Xenobiology"
 	},
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
@@ -12516,7 +12567,9 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/exit/departure_lounge)
 "CH" = (
-/obj/machinery/camera/trek,
+/obj/machinery/camera/trek{
+	name = "Evacuation Checkpoint"
+	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/exit/departure_lounge)
 "CI" = (
@@ -12788,8 +12841,9 @@
 /area/quartermaster/miningdock)
 "Dq" = (
 /obj/machinery/camera/trek{
+	dir = 1;
 	icon_state = "camera";
-	dir = 1
+	name = "Mining Dock"
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
@@ -13140,8 +13194,9 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/metal/fifty,
 /obj/machinery/camera/trek{
+	dir = 9;
 	icon_state = "camera";
-	dir = 9
+	name = "Torpedo Loading"
 	},
 /turf/open/floor/engine,
 /area/security)
@@ -13211,7 +13266,9 @@
 	},
 /obj/item/card/id/captains_spare,
 /obj/machinery/recharger,
-/obj/machinery/camera/trek,
+/obj/machinery/camera/trek{
+	name = "Captain's Office"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain/private)
 "Ez" = (
@@ -13604,8 +13661,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/camera/trek{
+	dir = 4;
 	icon_state = "camera";
-	dir = 4
+	name = "Cargo Office"
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/office)
@@ -13620,8 +13678,9 @@
 /area/quartermaster/office)
 "FA" = (
 /obj/machinery/camera/trek{
+	dir = 1;
 	icon_state = "camera";
-	dir = 1
+	name = "Shuttle Bay"
 	},
 /turf/open/floor/trek/tile,
 /area/quartermaster/office)
@@ -13735,7 +13794,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 1
 	},
-/obj/machinery/camera/trek,
+/obj/machinery/camera/trek{
+	name = "Officer's Lounge"
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -14801,7 +14862,9 @@
 /turf/open/floor/plasteel/dark/telecomms,
 /area/tcommsat/server)
 "Id" = (
-/obj/machinery/camera/trek,
+/obj/machinery/camera/trek{
+	name = "Tellecommunications"
+	},
 /turf/open/floor/plasteel/dark/telecomms,
 /area/tcommsat/server)
 "Ie" = (
@@ -15342,8 +15405,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/camera/trek{
+	dir = 9;
 	icon_state = "camera";
-	dir = 9
+	name = "Deck 2 Port Turbolifts"
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
@@ -15359,8 +15423,9 @@
 /area/hallway/secondary/entry)
 "Kn" = (
 /obj/machinery/camera/trek{
+	dir = 4;
 	icon_state = "camera";
-	dir = 4
+	name = "Arrivals"
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/entry)
@@ -15383,8 +15448,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/camera/trek{
+	dir = 5;
 	icon_state = "camera";
-	dir = 5
+	name = "Deck 2 Starboard Turbolifts"
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
@@ -15551,7 +15617,9 @@
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/cafeteria)
 "KL" = (
-/obj/machinery/camera/trek,
+/obj/machinery/camera/trek{
+	name = "Kitchen"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/kitchen)
 "KN" = (
@@ -15599,6 +15667,14 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/kitchen)
+"KU" = (
+/obj/machinery/camera/trek{
+	dir = 8;
+	icon_state = "camera";
+	name = "Medbay Treatment"
+	},
+/turf/open/floor/carpet/trek,
+/area/medical)
 "KV" = (
 /obj/structure/closet/secure_closet/freezer/meat,
 /turf/open/floor/plasteel/freezer,
@@ -15911,8 +15987,9 @@
 /area/crew_quarters/cafeteria)
 "LS" = (
 /obj/machinery/camera/trek{
+	dir = 10;
 	icon_state = "camera";
-	dir = 10
+	name = "Bar"
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/bar)
@@ -15934,10 +16011,80 @@
 "MF" = (
 /turf/open/floor/engine,
 /area/engine/gravity_generator)
+"Pe" = (
+/obj/machinery/camera/trek{
+	dir = 9;
+	icon_state = "camera";
+	name = "Detective's Office"
+	},
+/turf/open/floor/carpet/trek,
+/area/security/detectives_office)
 "Pf" = (
 /obj/machinery/camera/trek,
 /turf/open/floor/engine,
 /area/engine/gravity_generator)
+"Pv" = (
+/obj/machinery/camera/trek{
+	name = "Deck 3 Port Turbolifts"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/port)
+"Qb" = (
+/obj/machinery/camera/trek{
+	dir = 10;
+	icon_state = "camera";
+	name = "Deck 4 Turbolifts Starboard"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/aft)
+"Sx" = (
+/obj/structure/overmap_component/plasma_injector{
+	pixel_y = 35
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/engine/plasma,
+/area/maintenance/department/engine/atmos)
+"Te" = (
+/obj/machinery/camera/trek{
+	name = "Deck 3 Starboard Turbolifts"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/port)
+"Wg" = (
+/obj/machinery/light/small,
+/turf/open/floor/engine/plasma,
+/area/maintenance/department/engine/atmos)
+"Wz" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/overmap_component/plasma_injector{
+	pixel_y = 35
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/engine/plasma,
+/area/maintenance/department/engine/atmos)
+"WV" = (
+/obj/structure/overmap_component/plasma_injector{
+	pixel_y = 35
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/engine/plasma,
+/area/maintenance/department/engine/atmos)
+"XA" = (
+/obj/machinery/camera/trek{
+	dir = 1;
+	icon_state = "camera";
+	name = "Ten Forward"
+	},
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/cafeteria)
 
 (1,1,1) = {"
 aa
@@ -45605,7 +45752,7 @@ pl
 cY
 pN
 cY
-pN
+WV
 cY
 pN
 cY
@@ -46133,7 +46280,7 @@ pF
 qq
 pl
 pl
-pl
+Wg
 cY
 aa
 aa
@@ -46633,13 +46780,13 @@ pl
 cY
 pN
 cY
-pN
+Sx
 cY
 pN
 cY
 pN
 cY
-pR
+Wz
 cY
 pN
 cY
@@ -48412,7 +48559,7 @@ kZ
 ul
 kZ
 kZ
-us
+Qb
 ca
 ca
 ca
@@ -107773,7 +107920,7 @@ io
 wg
 wG
 tY
-uE
+Pv
 wf
 wY
 vq
@@ -109049,7 +109196,7 @@ wp
 wB
 wO
 wT
-zv
+KU
 ip
 uD
 xS
@@ -115740,7 +115887,7 @@ Ag
 Az
 Ag
 Ag
-uE
+Te
 yM
 uY
 Av
@@ -117800,7 +117947,7 @@ uO
 uQ
 pG
 uQ
-uQ
+Pe
 uQ
 uQ
 vj
@@ -175868,7 +176015,7 @@ KH
 KP
 KP
 LF
-LT
+XA
 DU
 DX
 Ek
