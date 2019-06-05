@@ -76,9 +76,8 @@
 	var/newText = "[the_list[1]]"										// Treats any object/number as text also.
 	var/count
 	for (count = 2, count <= total, count++)
-		if (separator)
-			newText += separator
-		newText += "[the_list[count]] "
+		newText += " "
+		newText += "[the_list[count]]"
 	return newText
 
 /obj/structure/trek_decor/plaque/examine(mob/user)
@@ -198,14 +197,14 @@
 	main_overmap = FALSE
 	class = "dderidex"
 	damage_states = TRUE //Damage FX
-	damage = 10 //Will turn into 20 assuming weapons powered
+	damage = 20 //Will turn into 30 assuming weapons powered
 	faction = "romulan"
 	max_shield_health = 150 //Slightly worse than the Akira class
-	turnspeed = 0.5 //Very slow
-	acceleration = 0.3
-	max_health = 170 //Slightly less health due to the fact it has a cloak so it can run away from a fight instantly and repair.
-	max_speed = 2 //Slower than every ship.
-	power_slots = 5 //Same as Akira
+	turnspeed = 0.55 //Very slow
+	acceleration = 0.45
+	max_health = 200 //Slightly less health due to the fact it has a cloak so it can run away from a fight instantly and repair.
+	max_speed = 3 //Slower than every ship.
+	power_slots = 6 //Same as sov
 	pixel_z = -128
 	pixel_w = -120
 
@@ -263,3 +262,44 @@
 	class = "nx01"
 	damage_states = FALSE //Damage FX
 	power_slots = 3
+
+/obj/structure/overmap/intrepid //A small ship with OK weapons
+	name = "Intrepid class light cruiser"
+	desc = "An advanced light cruiser built by starfleet for extended research missions. Its reaction times are unparalleled but its armaments are lacking."
+	icon = 'DS13/icons/overmap/intrepid.dmi'
+	icon_state = "intrepid"
+	main_overmap = FALSE
+	class = "intrepid"
+	damage_states = FALSE //Damage FX
+	damage = 10 //Will turn into 20 assuming weapons powered
+	max_shield_health = 200
+	acceleration = 0.6 //How quickly do you put on speed?
+	turnspeed = 0.8 //She's very nippy
+	power_slots = 5 //Decent power slots.
+	pixel_z = -64
+	pixel_w = -64
+	max_speed = 5
+
+/obj/structure/overmap/intrepid/starter //A small ship with OK weapons
+	name = "Intrepid class light cruiser"
+	main_overmap = TRUE
+
+/area/ship/bridge/voy
+	name = "Bridge"
+	looping_ambience = 'DS13/sound/ambience/voy_bridge.ogg'
+	class = "intrepid"
+	noteleport = FALSE
+
+/obj/structure/turbolift/voy
+	deck_1 = list("bridge", "cargo", "astrometrics", "arrivals", "escapes", "escape shuttle", "computer core")
+	deck_2 = list("bar", "ten forward", "mess hall","kitchen", "airponics", "hydroponics", "botany", "dorms", "crew quarters", "quarters", "brig", "security", "medical", "medbay", "sickbay", "science", "research", "transporter")
+	deck_3 = list("engineering","warp core", "hangar bay", "warp nacelles", "telecomms")
+	deck_4 = null
+
+/obj/structure/trek_decor/plaque/voy
+	name = "Dedication plaque"
+	desc = "A large, bronze plaque with a dedication: \n <b>USS Victoria. <b>Intrepid-class <> Starfleet registry: NCC-64507 <>\n  Launched stardate: NULL <> Utopia Planetia ShipYards <> United Federation Of Planets. \n</b>"
+	icon_state = "plaque"
+	supervisors = list()
+	engineers = list("Thomas Riker")
+	inscription = "Grief is the price we pay for love."

@@ -76,6 +76,12 @@
 	icon = 'DS13/icons/obj/decor/viewscreen.dmi'
 	id = "miranda"
 
+/obj/structure/overmap_component/viewscreen/voy
+	name = "Extra wide viewscreen"
+	desc = "Allows you to see your ship."
+	icon = 'DS13/icons/overmap/oversized_components.dmi'
+	pixel_x = -32
+
 /obj/structure/overmap_component/viewscreen/examine(mob/user)
 	if(!linked || QDELETED(linked))
 		find_overmap()
@@ -225,6 +231,15 @@
 	position = "tactical"
 	req_access = list(ACCESS_HEADS)
 
+/obj/structure/overmap_component/tactical/voy
+	name = "Weapons station"
+	desc = "Tuvok, photon torpedoes: full spread. What do you mean we're out of torpedoes?"
+	icon = 'DS13/icons/overmap/oversized_components.dmi'
+	icon_state = "tactical"
+	position = "tactical"
+	req_access = list(ACCESS_HEADS)
+	pixel_x = -32
+
 /obj/structure/overmap_component/helm/miranda
 	name = "Piloting station"
 	desc = "This console gives you the power to control a starship."
@@ -232,12 +247,27 @@
 	position = "pilot"
 	id = "miranda"
 
+/obj/structure/overmap_component/helm/voy
+	name = "Helm station"
+	desc = "There's coffee in that nebula, take us in."
+	icon = 'DS13/icons/overmap/oversized_components.dmi'
+	icon_state = "pilot"
+	position = "pilot"
+	bound_width = 96
+
 /obj/structure/overmap_component/science/miranda
 	name = "Science station"
 	desc = "This console gives you the power to control a starship."
 	icon_state = "science"
 	position = "science"
 	id = "miranda"
+
+/obj/structure/overmap_component/science/voy
+	name = "Science station"
+	desc = "Unleash your inner Harry Kim with over 100 buttons designed to perform science. There seems to be a listing for 4691 irradiated haggis in the ship's inventory logs."
+	icon_state = "science"
+	position = "science"
+	icon = 'DS13/icons/overmap/oversized_components.dmi'
 
 /obj/structure/overmap_component/tactical/miranda
 	name = "Weapons station"
