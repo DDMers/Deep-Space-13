@@ -16,3 +16,4 @@
 	var/is_fabric = FALSE //is this  a valid material for the loom?
 	var/loom_result //result from pulling on the loom
 	var/pull_effort = 0 //amount of delay when pulling on the loom
+	var/turf_type = null //Deep space 13 - What kind of turf does this build?
