@@ -1122,11 +1122,11 @@
 /turf/open/floor/plating,
 /area/engine/atmos)
 "dx" = (
-/obj/machinery/atmospherics/components/binary/pump/on{
-	dir = 1
-	},
 /obj/effect/turf_decal/bot{
 	dir = 2
+	},
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
@@ -9608,7 +9608,7 @@
 /turf/open/floor/plating,
 /area/engine/atmos)
 "zw" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/mix_output,
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/air_output,
 /turf/open/floor/engine/air,
 /area/engine/atmos)
 "zx" = (
@@ -13027,7 +13027,7 @@
 /turf/open/floor/trek,
 /area/quartermaster/storage)
 "UK" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/mix_input,
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input,
 /turf/open/floor/engine/air,
 /area/engine/atmos)
 "Vb" = (
@@ -13169,8 +13169,7 @@
 /turf/open/floor/carpet/trek,
 /area/maintenance/department/bridge)
 "XZ" = (
-/obj/machinery/atmospherics/components/trinary/mixer/on{
-	icon_state = "mixer_on";
+/obj/machinery/atmospherics/components/trinary/mixer/airmix{
 	dir = 1
 	},
 /turf/open/floor/plating,
