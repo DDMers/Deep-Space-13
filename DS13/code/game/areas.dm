@@ -54,6 +54,9 @@
 /area/science
 	looping_ambience = 'DS13/sound/ambience/science.ogg'
 
+/area/hallway/primary/aft //Engineering hallway
+	looping_ambience = 'DS13/sound/ambience/engineering_hall.ogg'
+
 /area/Entered(atom/movable/M)
 	// Ambience goes down here -- make sure to list each area separately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch
 	set waitfor = FALSE
@@ -93,4 +96,4 @@
 	L.client.ambience_playing = 0
 	if(L.client && !L.client.ambience_playing && L.client.prefs.toggles & SOUND_SHIP_AMBIENCE)
 		L.client.ambience_playing = 1
-		SEND_SOUND(L, sound('DS13/sound/ambience/enginehum.ogg', repeat = 1, wait = 0, volume = 100, channel = CHANNEL_BUZZ)) //DeepSpace13 - engine hum
+		SEND_SOUND(L, sound('DS13/sound/ambience/enginehum2.ogg', repeat = 1, wait = 0, volume = 100, channel = CHANNEL_BUZZ)) //DeepSpace13 - engine hum

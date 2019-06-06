@@ -119,6 +119,14 @@
 	sheet_amount = 2
 	canSmoothWith = list(/turf/closed/wall/trek_smooth)
 
+/turf/closed/wall/trek_smooth/voy
+	name = "Polytrinic alloy hull"
+	icon = 'DS13/icons/turf/intrepid.dmi'
+	mod = null
+	sheet_type = /obj/item/stack/sheet/polytrinic
+	sheet_amount = 2
+	canSmoothWith = list(/turf/closed/wall/trek_smooth)
+
 //Mats to make new walls:
 
 /datum/design/duranium_alloy
@@ -146,6 +154,7 @@
 	merge_type = /obj/item/stack/sheet/duranium
 	grind_results = list("iron" = 20, "silver" = 20)
 	point_value = 10
+	turf_type = /turf/closed/wall/trek_smooth/corridor
 
 /obj/item/stack/sheet/duranium/twenty
 	amount = 20
@@ -178,6 +187,7 @@
 	merge_type = /obj/item/stack/sheet/duotanium
 	grind_results = list("iron" = 20, "plasma" = 20)
 	point_value = 10
+	turf_type = /turf/closed/wall/trek_smooth/room
 
 /obj/item/stack/sheet/duotanium/twenty
 	amount = 20
@@ -186,38 +196,25 @@
 	amount = 50
 
 /obj/structure/girder/attackby(obj/item/W, mob/user, params) //Time to add support for our walls..
-	. = ..()
 	if(istype(W, /obj/item/stack/sheet))
 		var/obj/item/stack/sheet/S = W
-		if(istype(S, /obj/item/stack/sheet/duranium))
-			if(S.get_amount() < 2)
-				to_chat(user, "<span class='warning'>You need two sheets of duranium to finish a wall!</span>")
-				return
-			if (do_after(user, 40, target = src))
-				if(S.get_amount() < 2)
-					return
-				S.use(2)
-				to_chat(user, "<span class='notice'>You add the hull plating.</span>")
-				var/turf/T = get_turf(src)
-				T.PlaceOnTop(/turf/closed/wall/trek_smooth/corridor)
-				transfer_fingerprints_to(T)
-				qdel(src)
+		if(S.get_amount() < 2)
+			to_chat(user, "<span class='warning'>You need two sheets of [W] to finish a wall!</span>")
 			return
-
-		if(istype(S, /obj/item/stack/sheet/duotanium))
-			if(S.get_amount() < 2)
-				to_chat(user, "<span class='warning'>You need two sheets of duotanium to finish a wall!</span>")
-				return
-			if (do_after(user, 40, target = src))
-				if(S.get_amount() < 2)
-					return
-				S.use(2)
-				to_chat(user, "<span class='notice'>You add the hull plating.</span>")
-				var/turf/T = get_turf(src)
-				T.PlaceOnTop(/turf/closed/wall/trek_smooth/room)
-				transfer_fingerprints_to(T)
-				qdel(src)
+		if(!S.turf_type)
+			to_chat(user, "<span class='warning'>You can't build anything with [W].</span>")
 			return
+		if (do_after(user, 40, target = src))
+			if(S.get_amount() < 2)
+				return
+			S.use(2)
+			to_chat(user, "<span class='notice'>You add the hull plating.</span>")
+			var/turf/T = get_turf(src)
+			T.PlaceOnTop(S.turf_type)
+			transfer_fingerprints_to(T)
+			qdel(src)
+			return
+	. = ..()
 
 /datum/design/tritanium_alloy
 	name = "Tritanium alloy"
@@ -244,9 +241,43 @@
 	merge_type = /obj/item/stack/sheet/tritanium
 	grind_results = list("iron" = 20, "silver" = 20)
 	point_value = 10
+	turf_type = /turf/closed/wall/trek_smooth/jeffries
 
 /obj/item/stack/sheet/tritanium/twenty
 	amount = 20
 
 /obj/item/stack/sheet/tritanium/fifty
+	amount = 50
+
+/datum/design/polytrinic_alloy
+	name = "Polytrinic alloy"
+	id = "polytrinic"
+	build_type = SMELTER | PROTOLATHE
+	materials = list(MAT_METAL = MINERAL_MATERIAL_AMOUNT, MAT_SILVER = MINERAL_MATERIAL_AMOUNT)
+	build_path = /obj/item/stack/sheet/polytrinic
+	category = list("initial", "Stock Parts")
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
+	maxstack = 50
+
+/obj/item/stack/sheet/polytrinic
+	name = "polytrinic alloy"
+	singular_name = "polytrinic alloy sheet"
+	desc = "This sheet is an alloy of iron and silver, making an extremely robust material."
+	icon = 'DS13/icons/obj/stack_objects.dmi'
+	icon_state = "sheet-polytrinic"
+	item_state = "sheet-metal"
+	materials = list(MAT_METAL=2000, MAT_SILVER=2000)
+	throwforce = 5
+	flags_1 = CONDUCT_1
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 80)
+	resistance_flags = FIRE_PROOF
+	merge_type = /obj/item/stack/sheet/polytrinic
+	grind_results = list("iron" = 20, "silver" = 20)
+	point_value = 10
+	turf_type = /turf/closed/wall/trek_smooth/voy
+
+/obj/item/stack/sheet/polytrinic/twenty
+	amount = 20
+
+/obj/item/stack/sheet/polytrinic/fifty
 	amount = 50
