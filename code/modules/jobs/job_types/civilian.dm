@@ -158,24 +158,23 @@ Curator
 
 	H.grant_all_languages(omnitongue=TRUE)
 /*
-Lawyer
+Internal Affairs
 */
 /datum/job/lawyer
-	title = "Lawyer"
+	title = "Internal Affairs Officer"
 	flag = LAWYER
-	department_head = list("Head of Personnel")
+	department_head = list("Admiral")
 	department_flag = CIVILIAN
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
-	supervisors = "the head of personnel"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "starfleet command"
 	selection_color = "#dddddd"
-	var/lawyers = 0 //Counts lawyer amount
-	description = "'This is clearly against protocol officer, my defendant demands this fault be corrected!' Every person deserves a defense, no matter how horrible the crime, was the academy's teacher motto. You honor it by coming aboard here, to protect the unprotectable, to defend the undefendable, that is your task. <br> This role is heavily roleplay oriented and must defend criminals from miscarriages of justice."
+	description = "Captain, you are in violation of the federation charter! <br> As an internal affairs liason, your job is to ensure the captain is held accountable to the laws of the federation. You should remind them of appropriate regulations and contact the admiralty using your pager if they are in severe violation of the law. Your job is to make sure the federation's principals are upheld, NOT to persecute the command staff."
 
 	outfit = /datum/outfit/job/lawyer
 
-	access = list(ACCESS_LAWYER, ACCESS_COURT, ACCESS_SEC_DOORS)
+	access = list(ACCESS_LAWYER, ACCESS_COURT, ACCESS_SEC_DOORS,ACCESS_HEADS)
 	minimal_access = list(ACCESS_LAWYER, ACCESS_COURT, ACCESS_SEC_DOORS)
 	paycheck = PAYCHECK_EASY
 	paycheck_department = ACCOUNT_CIV
@@ -183,28 +182,18 @@ Lawyer
 
 
 /datum/outfit/job/lawyer
-	name = "Lawyer"
+	name = "Internal Affairs Officer"
 	jobtype = /datum/job/lawyer
 
-	belt = /obj/item/pda/lawyer
-	ears = /obj/item/radio/headset/headset_sec
-	uniform = /obj/item/clothing/under/lawyer/bluesuit
-	suit = /obj/item/clothing/suit/toggle/lawyer
-	shoes = /obj/item/clothing/shoes/laceup
-	l_hand = /obj/item/storage/briefcase/lawyer
-	l_pocket = /obj/item/laser_pointer
+	belt = /obj/item/pda
+	id = /obj/item/card/id/silver
+	ears = /obj/item/radio/headset/heads/hop
+	gloves = /obj/item/clothing/gloves/color/black
+	uniform =  /obj/item/clothing/under/trek/command/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+	backpack_contents = list(/obj/item/clipboard=1)
 	r_pocket = /obj/item/clothing/accessory/lawyers_badge
+	l_pocket = /obj/item/admiralty_pager
 
 	chameleon_extras = /obj/item/stamp/law
-
-
-/datum/outfit/job/lawyer/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-
-	var/datum/job/lawyer/J = SSjob.GetJobType(jobtype)
-	J.lawyers++
-	if(J.lawyers>1)
-		uniform = /obj/item/clothing/under/lawyer/purpsuit
-		suit = /obj/item/clothing/suit/toggle/lawyer/purple

@@ -893,6 +893,70 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	outfit = /datum/outfit/ashwalker
 	flavour_text = "<span class='big bold'>You are a tribesman!</span> <b> The stories tell of a great voyage by your ancestors, but several generations have caused your origins to become unclear... <br> You are a peaceful tribe, but you may attack outsiders if provoked."
 
+/area/ship/merc //Mercenary ship
+	name = "CEV Whisp"
+	class = "whisp"
+	has_gravity = TRUE
+
+/obj/effect/mob_spawn/human/alive/trek/merc
+	name = "Mercenary"
+	assignedrole = "mercenary"
+	outfit = /datum/outfit/mercenary
+	flavour_text = "<span class='big bold'>You are a mercenary!</span> <b> You're part of a ragtag crew who answer to no-one but themselves </b> <br> While you are able to kill, it must only be in the name of business or self-defense. Do not attack someone without getting paid for it - and remember, your true master is whoever pays you the most."
+
+/obj/effect/mob_spawn/human/alive/trek/merc/special(mob/living/new_spawn)  //Give them a new name
+	var/merc_prefix = pick("Agent", "Operative", "Specialist", "Privateer","Commander", "Solid", "Punished")
+	var/merc_suffix = pick("kiefer", "wirewolf", "hunter", "able archer", "guardian", "bane", "rodriguez", "ripley", "archer", "neo", "darius", "wren", "koi", "viper", "grasshopper", "snake")
+	var/species = pick(/datum/species/human, /datum/species/klingon, /datum/species/andorian) //very multicultural mercs.
+	new_spawn.set_species(species)
+	var/merc_name = "[merc_prefix] [merc_suffix]"
+	new_spawn.fully_replace_character_name(null,merc_name)
+
+/datum/outfit/mercenary
+	name = "Mercenary"
+	uniform = /obj/item/clothing/under/syndicate/camo
+	accessory = /obj/item/clothing/accessory/ds9_jacket
+	l_pocket = /obj/item/pda
+	shoes = /obj/item/clothing/shoes/jackboots
+	suit = null
+	gloves = /obj/item/clothing/gloves/color/black
+	head = null
+	id = /obj/item/card/id
+	back = /obj/item/storage/backpack/satchel
+	backpack_contents = list(/obj/item/clothing/mask/gas/syndicate=1)
+
+/obj/structure/overmap/whisp
+	name = "CEV Whisp"
+	desc = "An aging civilian ship that's been heavily modified with internal reinforcements and advanced weapon systems."
+	icon = 'DS13/icons/overmap/whisp.dmi'
+	icon_state = "whisp"
+	max_health = 120 //Weak, but not trash
+	damage = 10 //Will turn into 20 assuming weapons powered
+	class = "whisp"
+	turnspeed = 1
+	acceleration = 0.4
+	damage_states = FALSE
+
+/datum/overmap_event/mercenaries
+	name = "Mercenaries"
+	desc = "A civilian ship has entered your system. Designation: CEV Whisp. You are ordered to investigate what they're doing in this system however, we have no reason to believe they're hostile."
+	fail_text = "The ship has been destroyed"
+	succeed_text = "It appeared to be harmless."
+	reward = 5000
+	completed = TRUE //Open ended mission that you can't complete traditionally
+
+/datum/overmap_event/mercenaries/fail() //Open ended
+	return FALSE
+
+/datum/overmap_event/mercenaries/succeed()
+	return FALSE
+
+/datum/overmap_event/mercenaries/start() //Now we have a spawn. Let's do whatever this mission is supposed to. Override this when you make new missions
+	target = new /obj/structure/overmap/whisp(get_turf(spawner))
+	priority_announce("[desc]","Low priority alert:",'sound/ai/commandreport.ogg')
+	elements += target
+	for(var/obj/structure/overmap_component/XR in target.linked_area) //We call this to update the components with our new pod object, as it wasn't created at runtime!
+		XR.find_overmap()
 /*
 
 /datum/overmap_event/defend_colony

@@ -3529,6 +3529,7 @@
 /obj/item/aiModule/core/full/asimov,
 /obj/item/aiModule/core/freeformcore,
 /obj/item/aiModule/core/full/custom,
+/obj/item/aiModule/core/full/paladin,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "kp" = (
@@ -4129,11 +4130,11 @@
 /turf/open/floor/engine/air,
 /area/engine/atmos)
 "md" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/mix_output,
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/air_output,
 /turf/open/floor/engine/air,
 /area/engine/atmos)
 "me" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/mix_input,
+/obj/machinery/atmospherics/components/unary/outlet_injector/atmos/air_input,
 /turf/open/floor/engine/air,
 /area/engine/atmos)
 "mf" = (
@@ -4928,9 +4929,9 @@
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/engineering/akira)
 "os" = (
-/obj/machinery/atmospherics/components/binary/pump{
+/obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 2;
-	name = "Mix to Distro"
+	name = "Air to Distro"
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
@@ -5871,12 +5872,11 @@
 /turf/open/floor/plating,
 /area/engine/atmos)
 "qJ" = (
-/obj/machinery/atmospherics/components/trinary/mixer/on{
-	icon_state = "mixer_on";
-	dir = 1
-	},
 /obj/structure/trek_catwalk,
 /obj/effect/turf_decal/stripes/line,
+/obj/machinery/atmospherics/components/trinary/mixer/airmix/inverse{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/engine/atmos)
 "qK" = (
@@ -5911,7 +5911,7 @@
 /area/engine/atmos)
 "qO" = (
 /obj/structure/trek_catwalk,
-/obj/machinery/atmospherics/components/binary/pump/on{
+/obj/machinery/atmospherics/components/binary/pump{
 	dir = 1
 	},
 /turf/open/floor/plating,
