@@ -129,6 +129,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	if(!istype(target, /obj/structure/overmap))
 		return
 	var/obj/structure/overmap/SS = target
+	SS.vel = 0
 	SS.take_damage(null, meteor_damage)
 	qdel(src)
 
