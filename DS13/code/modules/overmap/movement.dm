@@ -257,9 +257,12 @@
 				S.crash(src)
 				O.vel = 0
 			else
-				if(istype(src, /obj/structure/overmap) && isturf(e))
-					O.vel = 0
-				return FALSE
+				Bump(e)
+				if(!CanPass(src, e))
+					if(istype(src, /obj/structure/overmap) && isturf(e))
+						O.vel = 0
+					return FALSE
+
 	real_pixel_x = real_pixel_x + x_to_move
 	real_pixel_y = real_pixel_y + y_to_move
 	while(real_pixel_x > 32) //Modulo doesn't work with this kind of stuff, don't know if there's a better method.
