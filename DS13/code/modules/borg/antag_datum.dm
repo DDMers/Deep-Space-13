@@ -17,7 +17,7 @@
 	O.owner = owner
 	objectives += O
 	borgify(owner.current)
-	to_chat(owner.current, "<span class='cult'><font size=3>We are a <B>borg drone</B>! We must help our fellow drones at all costs, and convert 70% of [station_name()]'s crew.</font></span>")
+	to_chat(owner.current, "<font size=6 color=red>We are a <B>borg drone</B>! <br>We must help our fellow drones at all costs, and convert 70% of [station_name()]'s crew.</font>")
 
 /datum/antagonist/borg_drone/on_removal()
 	to_chat(owner.current,  "We are no longer a <font color='red'><B>borg drone</B></font>")
@@ -86,8 +86,8 @@
 	return "(auxiliary subprocessor of [GLOB.borg_collective.name])"
 
 /datum/antagonist/borg_drone/proc/unborgify(mob/living/carbon/human/H = owner.current)
-	H.real_name = initial(H.name)
-	H.name = initial(H.real_name)
+	H.real_name = H.dna.species.random_name()
+	H.name = H.real_name
 	H.underwear = initial(H.underwear)
 	H.skin_tone = initial(H.skin_tone)
 	H.hair_style = initial(H.hair_style)

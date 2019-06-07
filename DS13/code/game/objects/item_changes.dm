@@ -37,10 +37,30 @@
 	icon = 'DS13/icons/obj/tools.dmi'
 	usesound = 'DS13/sound/effects/items/laser_scalpel.ogg'
 
+/obj/item/screwdriver
+	name = "Phase discriminator"
+	icon = 'DS13/icons/obj/tools.dmi'
+	desc = "A screwdriver like device which allows you to open all kinds of access ports"
+
+/obj/item/screwdriver/Initialize()
+	. = ..()
+	usesound = 'DS13/sound/effects/items/screwdriver.ogg'
+
+/obj/item/weldingtool
+	name = "Plasma welder"
+	icon = 'DS13/icons/obj/tools.dmi'
+	desc = "A powerful welding tool for cutting and mending"
+
 /obj/item/multitool
 	name = "ODN Scanner"
 	desc = "Used for testing isolinear circuitry by sending controlled electrical pulses."
 	icon = 'DS13/icons/obj/tools.dmi'
+
+/obj/item/wirecutters
+	name = "Phase calipers"
+	desc = "These calipers can cut through a lot of things with their inbuilt micro laser."
+	icon = 'DS13/icons/obj/tools.dmi'
+	usesound = 'DS13/sound/effects/items/laser_scalpel.ogg'
 
 /obj/item/defibrillator/compact
 	name = "Cortical stimulator"

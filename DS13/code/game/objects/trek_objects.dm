@@ -37,6 +37,17 @@
 	icon = 'DS13/icons/obj/stack_objects.dmi'
 	icon_state = "carpet-rom"
 
+/obj/item/stack/tile/carpet/trek/voy
+	name = "carpet"
+	singular_name = "carpet"
+	turf_type = /turf/open/floor/carpet/trek/voy
+	resistance_flags = FLAMMABLE
+	icon = 'DS13/icons/obj/stack_objects.dmi'
+	icon_state = "carpet-voy"
+
+/obj/item/stack/tile/carpet/trek/fifty
+	amount = 50
+
 /obj/item/stack/tile/carpet/trek/romulan/fifty
 	amount = 50
 
@@ -59,6 +70,34 @@
 /obj/effect/turf_decal/trek/grey
 	icon = 'DS13/icons/turf/trek_turfs.dmi'
 	icon_state = "trek_edge3"
+
+/turf/open/floor/trek/bsg
+	name = "Pressed steel hull plating"
+	desc = "A very militaristic looking hull segment"
+	icon = 'DS13/icons/turf/floors.dmi'
+	icon_state = "bsg1"
+	footstep = FOOTSTEP_PLATING
+	barefootstep = FOOTSTEP_PLATING
+	clawfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/trek/bsg/tile
+	name = "Padded steel tile"
+	icon = 'DS13/icons/turf/floors.dmi'
+	icon_state = "bsg2"
+
+/turf/open/floor/trek/bsg/corrugated
+	name = "Corrugated steel hull segment"
+	icon = 'DS13/icons/turf/floors.dmi'
+	icon_state = "corrugated"
+
+/turf/open/floor/carpet/trek/voy
+	name = "dark carpet"
+	desc = "a more muted palette for a more professional starship"
+	icon = 'DS13/icons/turf/intrepid_carpet.dmi'
+	icon_state = "intrepid"
+	smooth = TRUE
+	canSmoothWith = list(/turf/open/floor/carpet/trek,/turf/open/floor/carpet/trek/voy)
+	floor_tile = /obj/item/stack/tile/carpet/trek/voy
 
 /obj/structure/chair/trek
 	name = "padded leather chair"
@@ -141,6 +180,19 @@
 	icon_state = "porthole"
 	smooth = FALSE
 
+/obj/structure/window/reinforced/fulltile/trek/bsg
+	name = "Viewport"
+	icon = 'DS13/icons/obj/window.dmi'
+	desc = "A heavyset window surrounded by thick steel."
+	icon_state = "bsg"
+	smooth = FALSE
+	dir = 2
+
+/obj/structure/window/reinforced/fulltile/trek/bsg/middle
+	icon_state = "bsg_mid"
+	smooth = FALSE
+	dir = 2
+
 /obj/machinery/door/airlock/trek
 	name = "Airlock"
 	icon = 'DS13/icons/obj/machinery/voy_door.dmi'
@@ -202,8 +254,8 @@
 	icon_state = "cargo"
 
 /obj/structure/table/trek
-	name = "Futuristic table"
-	desc = "In the 24th century, people still need tables."
+	name = "Duranium alloy table"
+	desc = "A smooth table with a nice wooden finish. It's cold to the touch."
 	icon = 'DS13/icons/obj/decor/tables.dmi'
 	icon_state = "table1"
 	anchored = TRUE
@@ -212,14 +264,10 @@
 	layer = 3.1
 
 /obj/structure/table/trek/continued
-	name = "Epic sci fi space table"
-	desc = "In the 24th century, people still need tables."
 	icon = 'DS13/icons/obj/decor/tables.dmi'
 	icon_state = "table1-contd"
 
 /obj/structure/table/trek/medium
-	name = "Epic sci fi space table"
-	desc = "In the 24th century, people still need tables."
 	icon = 'DS13/icons/obj/decor/tables.dmi'
 	icon_state = "table2"
 
@@ -285,8 +333,8 @@
 	outfit = /datum/outfit/job/captain/DS13
 
 /obj/machinery/door/window/brigdoor/security/cell/trek
-	name = "brig force field"
-	desc = "For keeping in criminal scum."
+	name = "Brig force field"
+	desc = "A high energy barrier designed to keep things contained."
 	req_access = list(ACCESS_BRIG)
 	id = "Cell 1"
 	icon = 'DS13/icons/obj/decor/wall_decor.dmi'
@@ -375,3 +423,35 @@
 		density = FALSE
 		open = TRUE
 		opacity = FALSE
+
+/obj/machinery/jukebox/trek
+	name = "Shipwide music player"
+	desc = "A shipwide interface modified by a bored cargo technician. It (ab)uses the ship's internal announcement subsystem to play music throughout the ship."
+	icon = 'DS13/icons/obj/decor/wall_decor.dmi'
+	pixel_y = 32
+	density = FALSE
+	mouse_over_pointer = MOUSE_HAND_POINTER
+
+/obj/machinery/jukebox/trek/process()
+	if(world.time < stop && active)
+		var/sound/song_played = sound(selection.song_path)
+
+		for(var/mob/M in get_area(src))
+			if(!M.client || !(M.client.prefs.toggles & SOUND_INSTRUMENTS))
+				continue
+			if(!(M in rangers))
+				rangers[M] = TRUE
+				M.playsound_local(get_turf(M), null, 100, channel = CHANNEL_JUKEBOX, S = song_played)
+		for(var/mob/L in rangers)
+			if(get_area(L) != get_area(src))
+				rangers -= L
+				if(!L || !L.client)
+					continue
+				L.stop_sound_channel(CHANNEL_JUKEBOX)
+	else if(active)
+		active = FALSE
+		STOP_PROCESSING(SSobj, src)
+		dance_over()
+		playsound(src,'DS13/sound/effects/computer/alert2.ogg',50,1)
+		update_icon()
+		stop = world.time + 100

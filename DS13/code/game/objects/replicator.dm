@@ -12,8 +12,8 @@
 	anchored = TRUE
 	flags_1 = HEAR_1 //So it can hear you order your food
 	circuit = /obj/item/circuitboard/machine/replicator
-	var/list/menutier1 = list("rice", "egg", "ration pack", "glass") //It starts off terribly so the chef isn't replaced. You can then upgrade it via RnD to give actual food.
-	var/list/menutier2 = list("burger", "steak", "tea earl grey", "coffee", "fries","onion rings", "pancakes")
+	var/list/menutier1 = list("rice", "egg", "ration pack", "glass","tea earl grey") //It starts off terribly so the chef isn't replaced. You can then upgrade it via RnD to give actual food.
+	var/list/menutier2 = list("burger", "steak", "fries","onion rings", "pancakes","coffee")
 	var/list/menutier3 = list("cheese pizza", "meat pizza", "mushroom pizza", "meat pizza", "pineapple pizza", "donkpocket pizza", "vegetable pizza")
 	var/list/menutier4 = list("cake batter", "dough","egg box", "flour", "milk", "enzymes", "cheese wheel", "meat slab","an insult to pizza")
 	var/list/all_menus = list() //All the menu items. Built on init(). We scan for menu items that've been ordered here.
@@ -198,6 +198,14 @@
 			food = new /obj/item/reagent_containers/food/snacks/rationpack(get_turf(src))
 		if("glass")
 			food = new /obj/item/reagent_containers/food/drinks/drinkingglass(get_turf(src))
+		if("tea earl grey")
+			food = new /obj/item/reagent_containers/food/drinks/mug/tea(get_turf(src))
+			food.name = "Earl Grey tea"
+			food.desc = "Just how Captain Picard likes it."
+			if(emagged)
+				var/tea = food.reagents.get_reagent_amount("tea")
+				food.reagents.add_reagent("ethanol", tea)
+				food.reagents.remove_reagent("coffee",tea)
 		if("surprise me","you choose","something","i dont care")
 			if(emagged)
 				switch(rand(1,6))
@@ -233,14 +241,6 @@
 				food = new /obj/item/reagent_containers/food/snacks/onionrings(get_turf(src))
 			if("pancakes")
 				food = new /obj/item/reagent_containers/food/snacks/pancakes(get_turf(src))
-			if("tea earl grey")
-				food = new /obj/item/reagent_containers/food/drinks/mug/tea(get_turf(src))
-				food.name = "Earl Grey tea"
-				food.desc = "Just how Captain Picard likes it."
-				if(emagged)
-					var/tea = food.reagents.get_reagent_amount("tea")
-					food.reagents.add_reagent("ethanol", tea)
-					food.reagents.remove_reagent("coffee",tea)
 			if("coffee")
 				food = new /obj/item/reagent_containers/food/drinks/coffee(get_turf(src))
 				food.name = "coffee"

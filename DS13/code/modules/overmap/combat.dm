@@ -146,6 +146,9 @@
 /obj/structure/overmap/proc/tractor_pull() //Force the target to turn to us and move towards us.
 	if(!tractor_target)
 		return
+	if(tractor_target.z != z) //Runabout safety check.
+		release_tractor()
+		return
 	if(tractor_target.shields.check_vulnerability() || tractor_target.faction == faction)
 		tractor_target.nav_target = src
 		tractor_target.vel = 1
@@ -261,10 +264,7 @@
 	var/area = pick(GLOB.teleportlocs)
 	var/area/target = GLOB.teleportlocs[area] //Pick a station area and yeet it.
 	if(target.explosion_exempt)
-		area = pick(GLOB.teleportlocs)
-		target = GLOB.teleportlocs[area]
-		if(target.explosion_exempt)
-			return //Welp, we tried.
+		return //Welp, we tried.
 	for(var/mob/player in GLOB.player_list)
 		if(is_station_level(player.z))
 			if(prob(50))
@@ -277,13 +277,13 @@
 				continue
 			var/sound/S = pick('DS13/sound/effects/damage/shiphit.ogg','DS13/sound/effects/damage/shiphit2.ogg','DS13/sound/effects/damage/shiphit3.ogg','DS13/sound/effects/damage/shiphit4.ogg','DS13/sound/effects/damage/FTL/explosionfar_2.ogg','DS13/sound/effects/damage/FTL/explosionfar_3.ogg','DS13/sound/effects/damage/FTL/explosionfar_4.ogg','DS13/sound/effects/damage/FTL/explosionfar_5.ogg','DS13/sound/effects/damage/FTL/explosionfar_6.ogg')
 			SEND_SOUND(player, S)
-	for(0 to rand(1,5))
-		if(components.len)
-			var/obj/structure/X = pick(components)
-			X.explode_effect()
 	if(shields_absorbed)
+		for(var/i = 0 to rand(1,5))
+			if(components.len)
+				var/obj/structure/X = pick(components)
+				X.explode_effect()
 		return
-	if(prob(40))
+	if(prob(35))
 		var/turf/T = pick(get_area_turfs(target))
 		new /obj/effect/temp_visual/explosion_telegraph(T)
 		var/turf/TT = pick(get_area_turfs(target))
@@ -302,7 +302,7 @@
 	name = "Explosion imminent!"
 	icon = 'DS13/icons/effects/effects.dmi'
 	icon_state = "firing"
-	duration = 20
+	duration = 30
 	randomdir = 0
 	alpha = 255
 
@@ -381,18 +381,22 @@
 	if(health <= 0 && !destroyed)
 		destroyed = TRUE
 		explode()
-	var/mod = (damage/2) //So you don't blow out the relays too frequently.
+	var/mod = (damage/1.5) //So you don't blow out the relays too frequently.
 	for(var/obj/structure/overmap_component/XX in powered_components)
 		if(istype(XX, /obj/structure/overmap_component/plasma_relay))
 			var/obj/structure/overmap_component/plasma_relay/PS = XX
-			if(PS.supplying == OM.damage_sector && PS.obj_integrity > 0)
+			if(PS.supplying == OM.damage_sector && PS.obj_integrity > 40)
 				PS.take_damage(mod)
+				return
 
 /obj/structure/overmap/proc/explode()
 	send_sound_crew('DS13/sound/effects/damage/ship_explode.ogg')
-	if(warp_core && !QDELETED(warp_core)) //They have a core. So give them a chance to save the ship.
-		warp_core.containment = 0//Force a warp core breach. No matter if it's on or not. They'll then have 45 seconds to haul ass to engi and eject the core.
-		warp_core.breach()
+	if(main_overmap)
+		SSredbot.send_discord_message("admin", "[src] is undergoing a core breach!", "game")
+	if(warp_core && !QDELETED(warp_core) && !destroyed) //They have a core. So give them a chance to save the ship.
+		warp_core.containment = -5//Force a warp core breach. No matter if it's on or not. They'll then have 45 seconds to haul ass to engi and eject the core.
+		warp_core.breach(TRUE) //Force a core breach. It's done like this to prevent an infinite loop.
+		destroyed = TRUE
 		addtimer(CALLBACK(src, .proc/check_breach), 450)
 		for(var/mob/A in operators)
 			to_chat(A, "<span class='cult'><font size=3>Antimatter containment failing, evacuate the ship!</font></span>")
@@ -413,17 +417,23 @@
 			A.remote_control.forceMove(get_turf(A))
 	core_breach()
 
-
-/obj/structure/overmap/proc/check_breach()
+/obj/structure/overmap/proc/check_breach() //Check if the active warp core is salvaged. If not, explode the ship.
 	if(!warp_core || QDELETED(warp_core))
 		warp_core = null
 		health = 50 //Second wind! Gives them time to run, because the next core breach will actually destroy them.
+		destroyed = FALSE
+		message_admins("[src]'s warp core was ejected before it could breach.")
 		return FALSE
-	else
-		if(warp_core.containment <= 0) //They saved it.
-			health = 50 //Second wind! Gives them time to run, because the next core breach will actually destroy them.
-			return TRUE
-		return FALSE
+	if(warp_core.containment >= 0) //They saved it.
+		health = 50 //Second wind! Gives them time to run, because the next core breach will actually destroy them.
+		destroyed = FALSE
+		warp_core.breaching = FALSE
+		message_admins("[src]'s warp core was stabilized before it could breach.")
+		return TRUE
+	message_admins("[src]'s warp core has breached.")
+	core_breach_finish() //They didn't save it. Explode them.
+	if(main_overmap)
+		SSredbot.send_discord_message("admin", "[src]'s antimatter containment failed, ending the round", "game")
 
 /obj/structure/overmap/proc/core_breach()
 	if(!main_overmap)
@@ -439,7 +449,7 @@
 
 /obj/structure/overmap/proc/core_breach_finish()
 	if(main_overmap)
-		Cinematic(CINEMATIC_NUKE_WIN,world)
+		Cinematic(CINEMATIC_SHIPEXPLODE,world)
 		SSticker.mode.check_finished(TRUE)
 		SSticker.force_ending = 1
 		for(var/X in GLOB.teleportlocs) //If it's not a game-ender. Blow the shit out of the ship map
@@ -465,12 +475,12 @@
 			continue
 		var/sound/S = pick('DS13/sound/effects/damage/shiphit.ogg','DS13/sound/effects/damage/shiphit2.ogg','DS13/sound/effects/damage/shiphit3.ogg','DS13/sound/effects/damage/creak1.ogg','DS13/sound/effects/damage/creak2.ogg')
 		SEND_SOUND(player, S)
-		if(prob(40))
-			var/turf/T = pick(get_area_turfs(target))
-			new /obj/effect/temp_visual/explosion_telegraph(T)
-		if(prob(10))
-			var/turf/T = pick(get_area_turfs(linked_area))
-			T.atmos_spawn_air("plasma=20;TEMP=1000")
+	if(prob(40))
+		var/turf/T = pick(get_area_turfs(target))
+		new /obj/effect/temp_visual/explosion_telegraph(T)
+	if(prob(10))
+		var/turf/T = pick(get_area_turfs(linked_area))
+		T.atmos_spawn_air("plasma=20;TEMP=1000")
 
 
 /obj/structure/overmap/proc/show_damage(var/amount, var/shields_absorbed) //Flash up numbers showing how much damage we just took

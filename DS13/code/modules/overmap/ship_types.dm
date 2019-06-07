@@ -67,15 +67,16 @@
 	. = ..()
 	visible_message("[user] brushes some dust off [src]")
 
-/obj/structure/trek_decor/plaque/proc/list2text(var/list/the_list, separator)
+/proc/list2text(var/list/the_list, separator)
+	if(!the_list.len)
+		return "Nothing"
 	var/total = the_list.len
 	if (total == 0)														// Nothing to work with.
 		return
 	var/newText = "[the_list[1]]"										// Treats any object/number as text also.
 	var/count
 	for (count = 2, count <= total, count++)
-		if (separator)
-			newText += separator
+		newText += " "
 		newText += "[the_list[count]]"
 	return newText
 
@@ -139,9 +140,10 @@
 	class = "saladin"
 
 /obj/structure/turbolift/akira
-	floor_directory = "<span class='notice'>Deck 1: Bridge, Cargo, Offices, Escapes<br>\
-		Deck 2: Civilian Sector, Transporter, Brig, Sick Bay, Science<br>\
-		Deck 3: Engineering, Hangar Bay, Atmospherics, Telecomms<br></span>" //Change this if you intend to make a new map. Helps players know where they're going.
+	deck_1 = list("bridge", "cargo", "offices", "escape shuttle dock")
+	deck_2 = list("crew quarters", "transporter","brig","sick bay", "research")
+	deck_3 = list("engineering", "warp core", "atmospherics", "telecomms")
+	deck_4 = null
 
 /obj/structure/trek_decor/plaque/akira
 	name = "Dedication plaque"
@@ -195,14 +197,14 @@
 	main_overmap = FALSE
 	class = "dderidex"
 	damage_states = TRUE //Damage FX
-	damage = 10 //Will turn into 20 assuming weapons powered
+	damage = 20 //Will turn into 30 assuming weapons powered
 	faction = "romulan"
 	max_shield_health = 150 //Slightly worse than the Akira class
-	turnspeed = 0.5 //Very slow
-	acceleration = 0.3
-	max_health = 170 //Slightly less health due to the fact it has a cloak so it can run away from a fight instantly and repair.
-	max_speed = 2 //Slower than every ship.
-	power_slots = 5 //Same as Akira
+	turnspeed = 0.55 //Very slow
+	acceleration = 0.45
+	max_health = 200 //Slightly less health due to the fact it has a cloak so it can run away from a fight instantly and repair.
+	max_speed = 3 //Slower than every ship.
+	power_slots = 6 //Same as sov
 	pixel_z = -128
 	pixel_w = -120
 
@@ -210,15 +212,12 @@
 	return pick(GLOB.romulan_bleeps)
 
 /obj/structure/turbolift/dderidex
-	floor_directory = "<span class='notice'>Deck 1: Bridge, officer quarters, EVA & suit storage<br>\
-		Deck 2: Engineering, brig, transporter<br>\
-		Deck 3: Dorms, showers, mess hall, medical bay<br></span>" //Change this if you intend to make a new map. Helps players know where they're going.
+	deck_1 = list("bridge", "cargo", "offices", "eva")
+	deck_2 = list("engineering", "warp core", "atmospherics", "telecomms")
+	deck_3 = list("crew quarters", "showers", "mess hall", "sickbay")
+	deck_4 = null
 
 /obj/structure/turbolift/sovereign
-	floor_directory = "<span class='notice'>Deck 1: Bridge, officers' quarters, EVA<br>\
-		Deck 2: Torpedo launcher, brig, weapons locker 1, cargo, transporter<br>\
-		Deck 3: Quarters, holodeck, ten forward, theatre, airponics, science labs, weapons locker 2, arrivals<br>\
-		Deck 4: Engineering, Atmospherics, Telecomms, Stardrive section, warp nacelles<br></span>" //Change this if you intend to make a new map. Helps players know where they're going.
 
 /obj/structure/trek_decor/plaque/sovereign
 	name = "Dedication plaque"
@@ -252,3 +251,55 @@
 /obj/structure/overmap/sovereign/starter/Initialize()
 	. = ..()
 	name = station_name()
+
+/obj/structure/overmap/nx01
+	name = "USS Enterprise (NX-01)"
+	desc = "Humanity's first attempt at space exploration produced this ship. Now it's condemned to live its life in mothballs as a museum ship."
+	icon = 'DS13/icons/overmap/nx01.dmi'
+	icon_state = "enterprise"
+	main_overmap = FALSE
+	damage = 10 //Will turn into 20 assuming weapons powered
+	class = "nx01"
+	damage_states = FALSE //Damage FX
+	power_slots = 3
+
+/obj/structure/overmap/intrepid //A small ship with OK weapons
+	name = "Intrepid class light cruiser"
+	desc = "An advanced light cruiser built by starfleet for extended research missions. Its reaction times are unparalleled but its armaments are lacking."
+	icon = 'DS13/icons/overmap/intrepid.dmi'
+	icon_state = "intrepid"
+	main_overmap = FALSE
+	class = "intrepid"
+	damage_states = FALSE //Damage FX
+	damage = 10 //Will turn into 20 assuming weapons powered
+	max_shield_health = 200
+	acceleration = 0.6 //How quickly do you put on speed?
+	turnspeed = 0.8 //She's very nippy
+	power_slots = 5 //Decent power slots.
+	pixel_z = -64
+	pixel_w = -64
+	max_speed = 5
+
+/obj/structure/overmap/intrepid/starter //A small ship with OK weapons
+	name = "Intrepid class light cruiser"
+	main_overmap = TRUE
+
+/area/ship/bridge/voy
+	name = "Bridge"
+	looping_ambience = 'DS13/sound/ambience/voy_bridge.ogg'
+	class = "intrepid"
+	noteleport = FALSE
+
+/obj/structure/turbolift/voy
+	deck_1 = list("bridge", "cargo", "astrometrics", "arrivals", "escapes", "escape shuttle", "computer core")
+	deck_2 = list("bar", "ten forward", "mess hall","kitchen", "airponics", "hydroponics", "botany", "dorms", "crew quarters", "quarters", "brig", "security", "medical", "medbay", "sickbay", "science", "research", "transporter")
+	deck_3 = list("engineering","warp core", "hangar bay", "warp nacelles", "telecomms")
+	deck_4 = null
+
+/obj/structure/trek_decor/plaque/voy
+	name = "Dedication plaque"
+	desc = "A large, bronze plaque with a dedication: \n <b>USS Victoria. <b>Intrepid-class <> Starfleet registry: NCC-64507 <>\n  Launched stardate: NULL <> Utopia Planetia ShipYards <> United Federation Of Planets. \n</b>"
+	icon_state = "plaque"
+	supervisors = list()
+	engineers = list("Thomas Riker")
+	inscription = "Grief is the price we pay for love."

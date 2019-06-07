@@ -5,8 +5,9 @@ SUBSYSTEM_DEF(redbot)
 /datum/controller/subsystem/redbot/Initialize(timeofday)
 	var/comms_key = CONFIG_GET(string/comms_key)
 	var/bot_ip = CONFIG_GET(string/bot_ip)
+	var/round_id = GLOB.round_id
 	if(config && bot_ip)
-		var/query = "http://[bot_ip]/?serverStart=1&key=[comms_key]"
+		var/query = "http://[bot_ip]/?serverStart=1&roundID=[round_id]&key=[comms_key]"
 		world.Export(query)
 	return ..()
 

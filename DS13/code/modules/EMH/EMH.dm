@@ -245,6 +245,9 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	if(locked)
 		to_chat(user, "Unable to comply, interface cooldown in effect.")
 		return
+	if(locate(user.client.key in GLOB.EMH_blacklist) || is_banned_from(user.client.key, ROLE_EMH))
+		to_chat(user, "<span class='warning'>You have been blacklisted from playing an emergency medical hologram!</span>")
+		return
 	locked = TRUE
 	addtimer(CALLBACK(src, .proc/remove_cooldown), 30) //Stops you from annoying the crew too much.
 	if(emh) //AFK emh can get replaced with a live one!
@@ -270,7 +273,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	for(var/mob/dead/observer/S in candidates)
 		if(!S.client)
 			candidates -= S
-		if(S.key in GLOB.EMH_blacklist)
+		if(locate(S.client.key in GLOB.EMH_blacklist) || is_banned_from(S.key, ROLE_EMH))
 			candidates -= S
 	if(LAZYLEN(candidates))
 		var/mob/dead/observer/C = pick(candidates)
@@ -290,7 +293,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 		if(istype(S) && !QDELETED(S))
 			global_emh = S
 	if(global_emh && !QDELETED(global_emh))
-		if(global_emh.mind && global_emh.client)
+		if(global_emh.mind || global_emh.client)
 			return TRUE
 		else
 			return FALSE
@@ -402,10 +405,12 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 /obj/item/clothing/shoes/jackboots/emh
 	name = "holographic boots"
 	item_flags = NODROP
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/item/radio/headset/headset_med/emh
 	name = "holographic radio headset"
 	item_flags = NODROP
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/item/clothing/under/trek/medsci/ds9/emh
 	name = "holographic uniform"
@@ -415,6 +420,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	item_color = "trek_medsci_ds9"
 	item_state = "bl_suit"
 	item_flags = NODROP
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 /mob/living/carbon/human/species/holographic/adjust_hygiene(amount)
 	return //Fuck off stinky EMH
