@@ -48,7 +48,6 @@
 /turf/closed/wall/trek_smooth/corridor,
 /area/hydroponics)
 "aj" = (
-/obj/structure/closet/secure_closet/personal,
 /obj/machinery/computer/security/telescreen/rd{
 	pixel_y = 32
 	},
@@ -56,6 +55,7 @@
 	pixel_x = 3;
 	pixel_y = -2
 	},
+/obj/structure/closet/secure_closet/RD,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
 "ak" = (
