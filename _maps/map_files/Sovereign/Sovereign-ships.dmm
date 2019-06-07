@@ -5452,6 +5452,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/clothing/under/trek/shuttle,
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
 "ox" = (
@@ -5808,12 +5809,6 @@
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/runabout)
-"pw" = (
-/turf/closed/wall/trek_smooth/bsg,
-/area/space)
-"px" = (
-/turf/open/openspace,
-/area/ship/merc)
 "py" = (
 /obj/item/bedsheet/green,
 /obj/structure/bed,
@@ -5824,9 +5819,6 @@
 /obj/structure/rack,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
-"pA" = (
-/turf/closed/wall/trek_smooth/bsg,
-/area/ship/merc)
 "pB" = (
 /obj/machinery/computer/camera_advanced/transporter_control{
 	icon_state = "control";
@@ -5840,14 +5832,6 @@
 	},
 /turf/open/floor/grass/fakebasalt,
 /area/ship/m_class)
-"pD" = (
-/obj/structure/window/reinforced/fulltile/trek/bsg,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"pE" = (
-/obj/structure/closet/secure_closet/personal,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "pF" = (
 /obj/structure/overmap_component/helm/spawner/dderidex,
 /obj/machinery/light{
@@ -5855,31 +5839,13 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
-"pG" = (
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
-	},
-/obj/structure/closet/secure_closet/personal,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"pH" = (
-/obj/machinery/transporter_pad{
-	icon_state = "0,4"
+"pJ" = (
+/obj/machinery/computer/camera_advanced/transporter_control{
+	dir = 8;
+	icon_state = "control";
+	req_one_access = null
 	},
 /turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"pI" = (
-/obj/machinery/vending/cola/pwr_game,
-/turf/open/floor/carpet,
-/area/ship/merc)
-"pJ" = (
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
-	},
-/obj/machinery/vending/cigarette,
-/turf/open/floor/carpet,
 /area/ship/merc)
 "pK" = (
 /obj/structure/trek_decor/romulan,
@@ -5891,20 +5857,8 @@
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
 "pM" = (
-/obj/structure/overmap_component/plasma_relay,
-/turf/closed/wall/trek_smooth/bsg,
-/area/ship/merc)
-"pN" = (
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
-	},
-/obj/structure/disposalpipe/segment{
-	icon_state = "pipe";
-	dir = 6
-	},
-/obj/machinery/vending/cola/red,
-/turf/open/floor/trek/bsg/tile,
+/obj/structure/window/reinforced/fulltile/trek/bsg,
+/turf/open/floor/trek/bsg,
 /area/ship/merc)
 "pO" = (
 /obj/machinery/transporter_pad{
@@ -5912,51 +5866,21 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"pP" = (
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "pQ" = (
 /obj/machinery/replicator,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"pR" = (
-/obj/machinery/transporter_pad{
-	icon_state = "1,4"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"pS" = (
-/obj/structure/table/reinforced,
-/obj/machinery/chem_dispenser/drinks/beer,
-/obj/machinery/button/door{
-	id = "whisp_diner";
-	pixel_x = -28;
-	pixel_y = -6
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "pT" = (
 /obj/machinery/transporter_pad{
 	icon_state = "4,0"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"pU" = (
-/obj/structure/table/reinforced,
-/obj/machinery/chem_dispenser/drinks,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "pV" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/drinks/shaker,
-/turf/open/floor/trek/bsg/tile,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "pW" = (
 /obj/effect/turf_decal/stripes/line{
@@ -5964,27 +5888,12 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
-"pX" = (
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "pY" = (
-/obj/machinery/light{
-	dir = 4
+/obj/structure/disposalpipe/segment{
+	icon_state = "pipe";
+	dir = 6
 	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"pZ" = (
-/turf/open/floor/carpet,
-/area/ship/merc)
-"qa" = (
-/obj/machinery/transporter_pad{
-	icon_state = "2,4"
-	},
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
-	},
-/turf/open/floor/trek/bsg/corrugated,
+/turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "qb" = (
 /obj/machinery/door/airlock/trek/ship{
@@ -5992,70 +5901,20 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
-"qc" = (
-/obj/item/twohanded/required/kirbyplants/random,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"qd" = (
-/obj/machinery/transporter_pad{
-	icon_state = "3,4"
+"qg" = (
+/obj/machinery/power/apc/auto_name/ds13/highcap{
+	locked = 0
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"qe" = (
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"qf" = (
-/obj/structure/chair/trek/standard{
-	icon_state = "chair";
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 4
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"qg" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "whisp_diner"
-	},
-/turf/open/floor/trek/bsg,
 /area/ship/merc)
 "qh" = (
 /obj/structure/displaycase/trophy,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
 "qi" = (
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"qj" = (
-/obj/structure/sink/kitchen{
-	pixel_y = 32
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"qk" = (
-/obj/structure/window/reinforced/fulltile/trek/bsg/middle,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"ql" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/carpet,
-/area/ship/merc)
-"qm" = (
-/obj/structure/chair/trek/standard,
-/turf/open/floor/carpet,
-/area/ship/merc)
-"qn" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
@@ -6071,11 +5930,6 @@
 	},
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
-"qq" = (
-/obj/structure/table/wood/fancy,
-/obj/item/lighter,
-/turf/open/floor/carpet,
-/area/ship/merc)
 "qr" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/grass,
@@ -6089,80 +5943,22 @@
 /obj/machinery/door/airlock/trek/ship,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge/museum)
-"qu" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "High security storage"
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"qv" = (
-/obj/structure/chair/trek/standard{
-	icon_state = "chair";
-	dir = 1
-	},
-/turf/open/floor/carpet,
-/area/ship/merc)
-"qw" = (
-/obj/structure/chair/trek/dark{
-	icon_state = "dark";
-	dir = 4
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "qx" = (
 /obj/structure/chair/borg/charging,
 /obj/structure/overmap_component/borg_relay,
 /mob/living/simple_animal/hostile/retaliate/borg_drone,
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
-"qy" = (
-/obj/structure/overmap_component/science{
-	req_access = null
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"qz" = (
-/obj/machinery/transporter_pad{
-	icon_state = "4,4"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "qA" = (
 /obj/machinery/light{
 	dir = 4
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"qB" = (
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"qC" = (
-/obj/structure/overmap_component/tactical{
-	req_access = null
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"qD" = (
-/obj/structure/chair/trek/dark{
-	icon_state = "dark";
-	dir = 8
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "qE" = (
 /obj/machinery/door/airlock/trek/ship,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
-"qF" = (
-/obj/structure/table/reinforced,
-/obj/machinery/microwave,
-/obj/machinery/light,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "qG" = (
 /obj/machinery/transporter_pad{
 	icon_state = "4,3"
@@ -6170,30 +5966,8 @@
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_destination)
 "qH" = (
-/obj/structure/table/reinforced,
-/obj/machinery/reagentgrinder,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"qI" = (
-/obj/item/gun/ballistic/shotgun/automatic/combat,
-/obj/item/gun/energy/taser,
-/obj/item/storage/belt/security,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/rubbershot,
-/obj/item/storage/box/rubbershot,
-/obj/item/storage/box/beanbag,
-/obj/structure/closet/syndicate,
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"qJ" = (
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"qK" = (
-/obj/machinery/recharger,
-/obj/structure/table/reinforced,
-/turf/open/floor/trek/bsg/corrugated,
+/obj/machinery/gibber,
+/turf/open/floor/trek/bsg,
 /area/ship/merc)
 "qL" = (
 /obj/machinery/transporter_pad{
@@ -6201,13 +5975,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"qM" = (
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
-/turf/open/floor/carpet,
-/area/ship/merc)
 "qN" = (
 /obj/machinery/transporter_pad{
 	icon_state = "4,3"
@@ -6225,13 +5992,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
-"qP" = (
-/obj/structure/disposalpipe/segment{
-	icon_state = "pipe";
-	dir = 10
-	},
-/turf/open/floor/carpet,
-/area/ship/merc)
 "qQ" = (
 /obj/item/twohanded/required/kirbyplants/photosynthetic,
 /turf/open/floor/carpet/trek/romulan,
@@ -6246,14 +6006,6 @@
 /obj/structure/flora/ausbushes/pointybush,
 /turf/open/floor/grass,
 /area/ship/m_class)
-"qT" = (
-/obj/item/twohanded/required/kirbyplants/random,
-/turf/open/floor/carpet,
-/area/ship/merc)
-"qU" = (
-/obj/structure/chair/trek/dark,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "qV" = (
 /obj/structure/overmap_component/torpedo_tube,
 /obj/structure/torpedo_casing{
@@ -6262,110 +6014,6 @@
 /turf/open/floor/engine,
 /area/ship/bridge/museum)
 "qW" = (
-/obj/structure/overmap_component/helm{
-	req_access = null
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"qX" = (
-/obj/machinery/vending/boozeomat/all_access,
-/turf/closed/wall/trek_smooth/bsg,
-/area/ship/merc)
-"qY" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Diner workspace"
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"qZ" = (
-/obj/item/gun/energy/taser,
-/obj/item/storage/belt/security,
-/obj/structure/closet/syndicate,
-/obj/item/storage/backpack/duffelbag,
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"ra" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/trek/ship{
-	name = "Smoking room"
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"rb" = (
-/obj/structure/janitorialcart,
-/turf/open/floor/plasteel/dark,
-/area/ship/ai_simulated_secondary)
-"rc" = (
-/obj/machinery/atmospherics/components/binary/valve,
-/turf/open/floor/carpet/trek/romulan,
-/area/ship/ai_simulated)
-"rd" = (
-/obj/structure/table/reinforced,
-/obj/item/book/manual/wiki/security_space_law,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"re" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/open/floor/grass,
-/area/ship/m_class)
-"rf" = (
-/obj/structure/chair/trek/dark{
-	icon_state = "dark";
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"rg" = (
-/obj/structure/fluff/broken_flooring{
-	dir = 2;
-	icon_state = "plating"
-	},
-/turf/open/space/basic,
-/area/ship/debrisfield)
-"rh" = (
-/obj/structure/overmap_component/science/warbird,
-/turf/open/floor/carpet/trek/romulan,
-/area/ship/ai_simulated)
-"ri" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 8
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"rj" = (
-/obj/structure/overmap_component/viewscreen,
-/turf/closed/wall/trek_smooth,
-/area/ship/bridge/museum)
-"rk" = (
-/obj/machinery/computer/security{
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"rl" = (
-/obj/machinery/deepfryer,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"rm" = (
-/obj/structure/disposalpipe/trunk,
-/obj/machinery/disposal/bin,
-/turf/open/floor/plasteel/dark,
-/area/ship/ai_simulated_secondary)
-"rn" = (
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk,
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"ro" = (
-/obj/machinery/gibber,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"rp" = (
 /obj/item/gun/ballistic/automatic/wt550,
 /obj/item/ammo_box/magazine/wt550m9/wtap,
 /obj/item/ammo_box/magazine/wt550m9/wtap,
@@ -6382,6 +6030,62 @@
 /obj/item/storage/backpack/duffelbag,
 /turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
+"rb" = (
+/obj/structure/janitorialcart,
+/turf/open/floor/plasteel/dark,
+/area/ship/ai_simulated_secondary)
+"rc" = (
+/obj/machinery/atmospherics/components/binary/valve,
+/turf/open/floor/carpet/trek/romulan,
+/area/ship/ai_simulated)
+"rd" = (
+/obj/structure/table/wood/fancy,
+/obj/item/paper_bin,
+/obj/item/pen/fountain,
+/obj/item/pen/fourcolor{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/turf/open/floor/carpet,
+/area/ship/merc)
+"re" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/grass,
+/area/ship/m_class)
+"rf" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/trek/ship{
+	name = "Bridge"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"rg" = (
+/obj/structure/fluff/broken_flooring{
+	dir = 2;
+	icon_state = "plating"
+	},
+/turf/open/space/basic,
+/area/ship/debrisfield)
+"rh" = (
+/obj/structure/overmap_component/science/warbird,
+/turf/open/floor/carpet/trek/romulan,
+/area/ship/ai_simulated)
+"rj" = (
+/obj/structure/overmap_component/viewscreen,
+/turf/closed/wall/trek_smooth,
+/area/ship/bridge/museum)
+"rk" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "EVA"
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"rm" = (
+/obj/structure/disposalpipe/trunk,
+/obj/machinery/disposal/bin,
+/turf/open/floor/plasteel/dark,
+/area/ship/ai_simulated_secondary)
 "rq" = (
 /obj/structure/ladder,
 /turf/open/floor/plating/borg,
@@ -6400,44 +6104,25 @@
 	name = "dirt"
 	},
 /area/ship/m_class)
-"rt" = (
-/obj/machinery/door/airlock/trek/ship{
-	dir = 4;
-	name = "Armoury"
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "ru" = (
 /obj/structure/closet/crate,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
 "rv" = (
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk{
-	dir = 4
+/obj/machinery/door/airlock/trek/ship{
+	name = "Bridge"
 	},
 /turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"rw" = (
-/obj/structure/disposalpipe/segment{
-	icon_state = "pipe";
-	dir = 10
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"rx" = (
-/obj/machinery/light,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"ry" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/trek/bsg,
 /area/ship/merc)
 "rz" = (
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/trek/bsg,
+/obj/structure/table/reinforced,
+/obj/machinery/chem_dispenser/drinks/beer,
+/obj/machinery/button/door{
+	id = "whisp_diner";
+	pixel_x = -28;
+	pixel_y = -6
+	},
+/turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "rA" = (
 /obj/machinery/light{
@@ -6445,22 +6130,13 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
-"rB" = (
-/obj/machinery/light,
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "rC" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/trek/ship{
-	name = "Bridge"
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	icon_state = "connector_map-2";
+	dir = 1
 	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"rD" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Bridge"
-	},
-/turf/open/floor/trek/bsg/tile,
+/obj/machinery/portable_atmospherics/pump,
+/turf/open/floor/trek/bsg,
 /area/ship/merc)
 "rE" = (
 /obj/machinery/transporter_pad{
@@ -6468,13 +6144,9 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"rF" = (
-/obj/structure/disposalpipe/junction/flip,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "rG" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
+/obj/structure/closet/secure_closet/engineering_welding{
+	req_access = null
 	},
 /turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
@@ -6484,39 +6156,9 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"rI" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/machinery/door/airlock/trek/ship{
-	dir = 4;
-	name = "Diner storage"
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"rJ" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"rK" = (
-/obj/structure/disposalpipe/segment{
-	icon_state = "pipe";
-	dir = 9
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"rL" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "rM" = (
-/obj/structure/bed,
-/obj/item/bedsheet/patriot,
-/turf/open/floor/carpet,
+/obj/machinery/computer/operating,
+/turf/open/floor/trek/bsg,
 /area/ship/merc)
 "rN" = (
 /obj/machinery/transporter_pad{
@@ -6524,41 +6166,15 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"rO" = (
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
-	},
-/obj/structure/closet/wardrobe/grey,
-/turf/open/floor/carpet,
-/area/ship/merc)
-"rP" = (
-/obj/structure/dresser,
-/turf/open/floor/carpet,
-/area/ship/merc)
 "rQ" = (
-/obj/structure/bookcase/random/adult,
-/turf/open/floor/carpet,
-/area/ship/merc)
-"rR" = (
-/obj/machinery/vending/cigarette,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"rS" = (
-/obj/structure/chair/trek/standard,
-/obj/structure/trek_decor/viewscreen{
-	dir = 8;
-	icon_state = "viewscreen";
-	pixel_y = 32
-	},
-/turf/open/floor/carpet,
-/area/ship/merc)
-"rT" = (
 /obj/structure/overmap_component/viewscreen{
 	density = 0;
 	pixel_y = 32
 	},
-/turf/open/floor/carpet,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "rU" = (
 /obj/structure/railing{
@@ -6567,17 +6183,6 @@
 	},
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
-"rV" = (
-/obj/structure/chair/trek/standard,
-/obj/structure/trek_decor/viewscreen{
-	pixel_y = 32
-	},
-/turf/open/floor/carpet,
-/area/ship/merc)
-"rW" = (
-/obj/machinery/vending/coffee,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "rX" = (
 /obj/structure/trek_catwalk,
 /obj/machinery/door/airlock/trek/ship/maint{
@@ -6586,32 +6191,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/ai_simulated)
-"rY" = (
-/obj/structure/bookcase/random/religion,
-/turf/open/floor/carpet,
-/area/ship/merc)
 "rZ" = (
-/obj/structure/bed,
-/obj/item/bedsheet/centcom,
-/turf/open/floor/carpet,
-/area/ship/merc)
-"sa" = (
-/obj/machinery/nuclearbomb/beer,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"sb" = (
-/obj/machinery/vending/dinnerware,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"sc" = (
-/obj/structure/closet/secure_closet/freezer/kitchen{
-	req_access = null
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"sd" = (
-/obj/structure/closet/secure_closet/freezer/meat{
-	req_access = null
+/obj/machinery/light/small{
+	icon_state = "bulb";
+	dir = 1
 	},
 /turf/open/floor/trek/bsg,
 /area/ship/merc)
@@ -6620,75 +6203,30 @@
 	icon_state = "damaged2"
 	},
 /area/ship/debrisfield)
-"sf" = (
-/obj/structure/overmap_component/torpedo_tube,
-/obj/machinery/conveyor{
-	dir = 1;
-	id = "whisp_torpedo"
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "sg" = (
-/obj/structure/rack,
-/obj/item/clothing/head/helmet,
-/obj/item/clothing/head/helmet,
-/obj/item/clothing/suit/armor/vest/alt,
-/obj/item/clothing/suit/armor/vest/alt,
-/turf/open/floor/trek/bsg/corrugated,
+/obj/structure/bed,
+/obj/item/bedsheet/ian,
+/turf/open/floor/carpet,
 /area/ship/merc)
 "sh" = (
 /turf/open/floor/plating,
 /area/ship/ai_simulated_tertiary)
-"si" = (
-/obj/machinery/light/small,
-/turf/open/floor/carpet,
-/area/ship/merc)
 "sj" = (
-/obj/machinery/door/airlock/trek/ship{
-	dir = 4;
-	name = "Crew Living Quarter"
-	},
+/obj/structure/table/reinforced,
+/obj/item/dilithium_matrix,
+/obj/item/dilithium,
 /turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "sk" = (
-/obj/structure/chair/trek/standard{
-	icon_state = "chair";
-	dir = 4
-	},
-/turf/open/floor/carpet,
-/area/ship/merc)
-"sl" = (
-/obj/structure/table/wood/fancy,
-/turf/open/floor/carpet,
-/area/ship/merc)
-"sm" = (
-/obj/structure/chair/trek/standard{
-	icon_state = "chair";
-	dir = 8
-	},
-/turf/open/floor/carpet,
-/area/ship/merc)
-"sn" = (
-/obj/structure/plasticflaps,
-/obj/machinery/conveyor{
-	dir = 1;
-	id = "whisp_torpedo"
+/obj/machinery/power/smes,
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
 /turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
-"so" = (
-/obj/structure/table/reinforced,
-/obj/machinery/recharger,
+"sm" = (
+/obj/structure/closet/emcloset,
 /turf/open/floor/trek/bsg,
-/area/ship/merc)
-"sp" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "sq" = (
 /obj/structure/fluff/broken_flooring{
@@ -6714,15 +6252,11 @@
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_tertiary)
 "su" = (
-/obj/structure/toilet,
-/obj/machinery/light/small{
-	dir = 4
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Rest room"
 	},
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
-	},
-/turf/open/floor/trek/bsg,
+/turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "sv" = (
 /obj/structure/chair/trek/standard{
@@ -6736,11 +6270,10 @@
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
 "sx" = (
-/obj/machinery/shower{
-	dir = 4
+/obj/machinery/door/airlock/trek/ship{
+	name = "Power storage"
 	},
-/obj/item/storage/wallet/random,
-/turf/open/floor/trek/bsg/corrugated,
+/turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "sy" = (
 /obj/structure/chair/comfy/shuttle{
@@ -6749,17 +6282,11 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_tertiary)
-"sz" = (
-/obj/machinery/shower{
-	dir = 8
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "sA" = (
-/obj/machinery/conveyor_switch/oneway{
-	id = "whisp_torpedo"
+/obj/machinery/computer/security{
+	dir = 1
 	},
-/turf/open/floor/trek/bsg/corrugated,
+/turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "sB" = (
 /obj/machinery/transporter_pad{
@@ -6767,61 +6294,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"sC" = (
-/obj/structure/table/reinforced,
-/obj/item/stock_parts/matter_bin/adv,
-/obj/item/stock_parts/matter_bin/adv,
-/obj/item/stock_parts/matter_bin,
-/obj/item/stock_parts/matter_bin,
-/obj/item/stock_parts/matter_bin,
-/obj/item/stock_parts/matter_bin,
-/obj/item/stock_parts/scanning_module,
-/obj/item/stock_parts/scanning_module,
-/obj/item/stock_parts/scanning_module,
-/obj/item/stock_parts/scanning_module,
-/obj/item/stock_parts/scanning_module,
-/obj/item/stock_parts/scanning_module,
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"sD" = (
-/obj/structure/table/reinforced,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/storage/toolbox/mechanical,
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"sE" = (
-/obj/structure/table/reinforced,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"sF" = (
-/obj/structure/table/wood/fancy,
-/obj/item/paper_bin,
-/obj/item/pen/fountain,
-/obj/item/pen/fourcolor{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/turf/open/floor/carpet,
-/area/ship/merc)
-"sG" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Private unit"
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"sH" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "sI" = (
 /obj/structure/rack,
 /obj/item/shard,
@@ -6831,35 +6303,21 @@
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
 "sJ" = (
-/obj/structure/torpedo_casing{
-	desc = "A photon torpedo casing with some paint haphazardly scrawled over it to make it resemble a traditional HE round.";
-	name = "MAC Shell"
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 4
 	},
-/turf/open/floor/trek/bsg/corrugated,
+/turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "sK" = (
 /turf/closed/wall/trek_smooth/romulan,
 /area/ship/bridge/museum)
-"sL" = (
-/obj/structure/chair/trek/standard{
-	icon_state = "chair";
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "sM" = (
-/obj/structure/bed,
-/obj/item/bedsheet/ian,
-/turf/open/floor/carpet,
-/area/ship/merc)
-"sN" = (
-/obj/structure/closet/wardrobe/grey,
-/turf/open/floor/carpet,
-/area/ship/merc)
-"sO" = (
-/obj/machinery/light/small,
-/obj/structure/dresser,
-/turf/open/floor/carpet,
+/obj/structure/table/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "whisp_diner"
+	},
+/turf/open/floor/trek/bsg,
 /area/ship/merc)
 "sP" = (
 /obj/structure/rack,
@@ -6867,18 +6325,12 @@
 /obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"sQ" = (
-/obj/structure/bookcase/random/fiction,
-/turf/open/floor/carpet,
-/area/ship/merc)
 "sR" = (
-/obj/structure/disposalpipe/junction,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"sS" = (
-/obj/structure/table/reinforced,
-/obj/machinery/recharger,
-/turf/open/floor/trek/bsg/tile,
+/obj/structure/chair/trek/standard,
+/obj/structure/trek_decor/viewscreen{
+	pixel_y = 32
+	},
+/turf/open/floor/carpet,
 /area/ship/merc)
 "sT" = (
 /obj/structure/railing{
@@ -6891,34 +6343,28 @@
 /obj/machinery/light,
 /turf/open/floor/trek/tile,
 /area/ship/ai_simulated)
-"sV" = (
-/obj/structure/bookcase/random/nonfiction,
-/turf/open/floor/carpet,
-/area/ship/merc)
 "sW" = (
-/obj/machinery/computer/operating,
+/obj/machinery/atmospherics/pipe/manifold/purple/hidden{
+	icon_state = "manifold-2";
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/open/floor/trek/bsg,
 /area/ship/merc)
 "sX" = (
-/obj/structure/table/optable,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"sY" = (
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	icon_state = "pipe11-2";
+	dir = 10
 	},
-/obj/structure/table/reinforced,
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/machinery/light{
-	dir = 1
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
 	},
 /turf/open/floor/trek/bsg,
-/area/ship/merc)
-"sZ" = (
-/obj/structure/bed,
-/obj/item/bedsheet/clown,
-/turf/open/floor/carpet,
 /area/ship/merc)
 "ta" = (
 /obj/machinery/shower{
@@ -6950,29 +6396,18 @@
 /turf/open/space/basic,
 /area/ship/ai_simulated_secondary)
 "tf" = (
-/obj/machinery/transporter_pad{
-	icon_state = "0,3"
+/obj/structure/disposalpipe/segment{
+	dir = 8
 	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"tg" = (
-/obj/machinery/transporter_pad{
-	icon_state = "1,3"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"th" = (
-/obj/structure/mirror{
-	pixel_y = 32
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Diner storage"
 	},
 /turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
-"ti" = (
-/obj/structure/torpedo_casing{
-	desc = "A photon torpedo casing with some paint haphazardly scrawled over it to make it resemble a traditional HE round.";
-	name = "MAC Shell"
-	},
-/obj/machinery/light,
+"th" = (
+/obj/machinery/recharger,
+/obj/structure/table/reinforced,
 /turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "tj" = (
@@ -6981,47 +6416,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"tk" = (
-/obj/machinery/door/airlock/trek/ship/sec/torpedo{
-	dir = 4;
-	name = "Munitions";
-	req_one_access = null
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"tl" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Crew conference room"
-	},
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"tm" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Crew conference room"
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"tn" = (
-/obj/machinery/door/airlock/trek/ship{
-	dir = 4;
-	name = "Rest room"
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"to" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 11
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"tp" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "tq" = (
 /obj/machinery/transporter_pad{
 	icon_state = "2,2"
@@ -7035,89 +6429,17 @@
 /obj/structure/overmap_component/borg_relay,
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
-"ts" = (
-/obj/structure/disposalpipe/segment{
-	icon_state = "pipe";
-	dir = 6
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"tt" = (
-/obj/structure/disposalpipe/segment{
-	icon_state = "pipe";
-	dir = 9
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"tu" = (
-/obj/machinery/light/small{
-	icon_state = "bulb";
-	dir = 1
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"tv" = (
-/obj/structure/closet/emcloset,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"tw" = (
-/obj/structure/closet/firecloset/full,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"tx" = (
-/obj/structure/disposalpipe/junction{
-	dir = 8
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"ty" = (
-/obj/structure/ladder,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "tz" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/asteroid{
 	name = "dirt"
 	},
 /area/ship/m_class)
-"tA" = (
-/obj/machinery/door/airlock/trek/ship{
-	dir = 4;
-	name = "Ladder access"
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "tB" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/trek/ship{
-	name = "Washing room"
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"tC" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/trek/ship{
-	name = "Engineering"
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"tD" = (
-/obj/machinery/washing_machine,
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
+	name = "High security storage"
 	},
 /turf/open/floor/trek/bsg,
-/area/ship/merc)
-"tE" = (
-/obj/machinery/power/matter_injector{
-	req_access = null
-	},
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
-	},
-/turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "tF" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
@@ -7127,53 +6449,32 @@
 /turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "tG" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"tH" = (
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
+/obj/machinery/light{
+	dir = 4
 	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	icon_state = "ast_warn";
-	dir = 1
+	dir = 4
 	},
 /turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"tI" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 5
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"tJ" = (
-/obj/machinery/atmospherics/components/unary/tank/air,
-/turf/open/floor/trek/bsg,
 /area/ship/merc)
 "tK" = (
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/space)
-"tL" = (
-/obj/machinery/suit_storage_unit/trek,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "tM" = (
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
 "tN" = (
-/obj/machinery/suit_storage_unit/trek,
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
+/obj/structure/disposalpipe/segment{
+	dir = 8
 	},
-/turf/open/floor/trek/bsg,
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Injector room"
+	},
+/turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "tO" = (
 /obj/machinery/transporter_pad{
@@ -7181,23 +6482,12 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"tP" = (
-/obj/structure/disposalpipe/junction/flip{
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "tQ" = (
 /obj/machinery/transporter_pad{
 	icon_state = "1,1"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"tR" = (
-/obj/structure/bedsheetbin,
-/obj/structure/table,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "tS" = (
 /obj/structure/chair/trek/standard,
 /turf/open/floor/carpet/trek,
@@ -7206,42 +6496,16 @@
 /turf/closed/wall/trek_smooth,
 /area/ship/bridge/museum)
 "tU" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 8
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"tV" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
+/obj/structure/chair/trek/dark{
+	icon_state = "dark";
 	dir = 4
 	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"tW" = (
-/obj/machinery/atmospherics/pipe/simple/supplymain/hidden,
-/obj/structure/rack,
-/obj/item/wrench,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"tX" = (
-/obj/machinery/door/airlock/trek/ship{
-	dir = 4;
-	name = "EVA"
-	},
-/turf/open/floor/trek/bsg,
+/turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "tY" = (
 /obj/item/stack/sheet/mineral/plastitanium,
 /turf/open/space/basic,
 /area/ship/debrisfield)
-"tZ" = (
-/obj/structure/table/reinforced,
-/obj/item/dilithium_matrix,
-/obj/item/dilithium,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "ua" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/sheet/mineral/uranium,
@@ -7250,105 +6514,31 @@
 	icon_state = "damaged3"
 	},
 /area/ship/debrisfield)
-"ub" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/item/twohanded/required/kirbyplants/random,
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 8
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "uc" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},
 /area/ship/asteroiddebris)
-"ud" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/item/twohanded/required/kirbyplants/random,
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 4
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "ue" = (
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg3"
 	},
 /area/ship/asteroiddebris)
-"uf" = (
-/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
-	icon_state = "manifold-2";
-	dir = 8
-	},
-/obj/machinery/meter/atmos,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"ug" = (
-/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
-	icon_state = "manifold-2";
-	dir = 1
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "uh" = (
 /obj/structure/overmap_component/science{
 	req_access = null
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"ui" = (
-/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
-	icon_state = "pipe11-2";
-	dir = 10
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "uj" = (
-/obj/machinery/transporter_pad{
-	icon_state = "2,3"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"uk" = (
-/obj/machinery/power/matter_injector/antimatter{
-	req_access = null
-	},
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "ul" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 8
+/obj/structure/closet/secure_closet/freezer/meat{
+	req_access = null
 	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"um" = (
-/obj/effect/mob_spawn/human/alive/trek/merc,
-/turf/open/floor/trek/bsg,
-/area/space)
-"un" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 4
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"uo" = (
-/obj/machinery/atmospherics/components/unary/portables_connector{
-	icon_state = "connector_map-2";
-	dir = 1
-	},
-/obj/machinery/portable_atmospherics/pump,
 /turf/open/floor/trek/bsg,
 /area/ship/merc)
 "up" = (
@@ -7360,19 +6550,6 @@
 /obj/effect/spawner/lootdrop/three_course_meal,
 /turf/open/floor/plating,
 /area/ship/ai_simulated)
-"uq" = (
-/obj/machinery/atmospherics/components/unary/portables_connector{
-	icon_state = "connector_map-2";
-	dir = 1
-	},
-/obj/machinery/portable_atmospherics/pump,
-/obj/machinery/light,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"ur" = (
-/obj/structure/tank_dispenser/oxygen,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "us" = (
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/plasteel/dark,
@@ -7383,28 +6560,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_destination)
-"uu" = (
-/obj/structure/table/reinforced,
-/obj/machinery/recharger,
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 8
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"uv" = (
-/obj/structure/table/reinforced,
-/obj/machinery/cell_charger,
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 4
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"uw" = (
-/obj/machinery/vending/coffee,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "ux" = (
 /turf/open/floor/plating/airless,
 /area/ship/ai_simulated_tertiary)
@@ -7414,10 +6569,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
-"uz" = (
-/obj/structure/disposalpipe/junction/flip,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "uA" = (
 /obj/effect/turf_decal/bot_white,
 /obj/effect/spawner/lootdrop/maintenance,
@@ -7430,89 +6581,14 @@
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
 "uC" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/machinery/door/airlock/trek/ship{
-	dir = 4;
-	name = "Injector room"
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"uD" = (
-/obj/structure/table/reinforced,
-/obj/machinery/recharger,
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 8
-	},
-/mob/living/simple_animal/parrot{
-	name = "Exterminatus"
+/obj/machinery/transporter_pad{
+	icon_state = "0,2"
 	},
 /turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"uE" = (
-/obj/machinery/power/warp_core{
-	req_access = null
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"uF" = (
-/obj/machinery/vending/tool,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"uG" = (
-/obj/machinery/vending/engivend{
-	req_access = null
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"uH" = (
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
-	},
-/obj/machinery/autolathe,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"uI" = (
-/obj/machinery/cell_charger,
-/obj/structure/table/reinforced,
-/obj/item/multitool,
-/obj/item/storage/belt/utility,
-/turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "uJ" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/m_class)
-"uK" = (
-/obj/structure/table/reinforced,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"uL" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/trek/ship{
-	name = "Disposals"
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"uM" = (
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk{
-	icon_state = "pipe-t";
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "uN" = (
 /obj/structure/railing{
 	icon_state = "railing0";
@@ -7528,64 +6604,31 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
-"uP" = (
-/obj/structure/overmap_component/integrity_field_generator,
-/obj/machinery/atmospherics/components/binary/pump/on/warp,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"uQ" = (
-/obj/machinery/conveyor_switch/oneway{
-	id = "whisp_disposals"
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "uR" = (
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
+/obj/structure/disposalpipe/segment{
+	dir = 8
 	},
-/turf/open/floor/trek/bsg,
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/asteroid/corner,
+/turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "uS" = (
 /obj/item/clothing/under/trek/command/ent,
 /obj/structure/rack,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
-"uT" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Power storage"
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "uU" = (
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg2"
 	},
 /area/ship/asteroiddebris)
-"uV" = (
-/obj/item/twohanded/required/kirbyplants/random,
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 8
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"uW" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "uX" = (
-/obj/item/twohanded/required/kirbyplants/random,
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 4
+/obj/machinery/transporter_pad{
+	icon_state = "3,1"
 	},
 /turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
@@ -7596,66 +6639,18 @@
 "uZ" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/debrisfield)
-"va" = (
-/obj/machinery/autolathe,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"vb" = (
-/obj/machinery/button/massdriver{
-	id = "whisp_mass";
-	pixel_x = -28;
-	pixel_y = -6
-	},
-/obj/structure/disposalpipe/segment{
-	icon_state = "pipe";
-	dir = 6
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"vc" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"vd" = (
-/obj/machinery/power/apc/auto_name/ds13/highcap{
-	locked = 0
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "ve" = (
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/toxin{
+	pixel_x = 4;
+	pixel_y = 4
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"vf" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"vg" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/turf/open/floor/trek/bsg/corrugated,
+/obj/item/storage/firstaid/toxin,
+/turf/open/floor/trek/bsg,
 /area/ship/merc)
 "vh" = (
-/obj/machinery/door/airlock/trek/ship{
-	dir = 4;
-	name = "Engine core"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
+/obj/machinery/transporter_pad{
+	icon_state = "0,0"
 	},
 /turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
@@ -7670,40 +6665,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"vk" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	icon_state = "ast_warn_corner";
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	icon_state = "ast_warn_corner";
-	dir = 4
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"vl" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"vm" = (
-/obj/machinery/meter/atmos,
-/obj/machinery/atmospherics/pipe/simple/purple/hidden,
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "vn" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -7711,27 +6672,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
 "vo" = (
-/obj/effect/turf_decal/stripes/asteroid/corner,
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	icon_state = "ast_warn_corner";
-	dir = 8
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"vp" = (
-/obj/machinery/door/airlock/trek/ship{
-	dir = 4;
-	name = "Engine core"
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"vq" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/machinery/door/airlock/trek/ship{
-	dir = 4;
-	name = "Tool storage"
+/obj/machinery/power/matter_injector/antimatter{
+	req_access = null
 	},
 /turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
@@ -7739,18 +6681,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/airless,
 /area/ship/debrisfield)
-"vs" = (
-/obj/structure/disposaloutlet{
-	dir = 4
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "vt" = (
 /obj/machinery/door/airlock/trek/goon/external/public,
 /obj/structure/cable{
@@ -7758,17 +6688,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
-"vu" = (
-/obj/machinery/conveyor{
-	dir = 4;
-	id = "whisp_disposals"
-	},
-/obj/machinery/recycler,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "vv" = (
 /obj/machinery/chem_heater,
 /turf/open/floor/carpet/trek/romulan,
@@ -7778,29 +6697,10 @@
 /turf/closed/wall/trek_smooth/room,
 /area/ship/station/delivery_source)
 "vx" = (
-/obj/machinery/door/window/northright,
-/obj/machinery/conveyor{
-	dir = 6;
-	icon_state = "conveyor_map";
-	id = "whisp_disposals"
+/obj/structure/disposalpipe/segment{
+	dir = 8
 	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"vy" = (
-/obj/machinery/power/terminal,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"vz" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/trek/bsg/corrugated,
+/turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "vA" = (
 /obj/item/storage/toolbox/mechanical,
@@ -7808,12 +6708,14 @@
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
 "vB" = (
-/obj/machinery/power/terminal,
-/obj/structure/cable/yellow,
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
+/obj/machinery/light{
+	dir = 1
 	},
-/turf/open/floor/trek/bsg/corrugated,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "vC" = (
 /obj/structure/fans,
@@ -7822,19 +6724,6 @@
 "vD" = (
 /turf/open/floor/grass,
 /area/ship/m_class)
-"vE" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 8
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "vF" = (
 /obj/structure/chair{
 	dir = 4
@@ -7848,15 +6737,9 @@
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
 "vH" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 4
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
+/obj/effect/mob_spawn/human/alive/trek/merc,
+/turf/open/floor/trek/bsg,
+/area/space)
 "vI" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/plating/asteroid{
@@ -7866,78 +6749,12 @@
 "vJ" = (
 /turf/closed/wall/mineral/titanium/interior,
 /area/ship/m_class)
-"vK" = (
-/obj/machinery/transporter_pad{
-	icon_state = "3,3"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"vL" = (
-/obj/machinery/door/poddoor{
-	id = "whisp_mass";
-	layer = 2.95
-	},
-/obj/structure/plasticflaps/opaque,
-/obj/structure/fans/tiny,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"vM" = (
-/obj/machinery/mass_driver{
-	dir = 8;
-	id = "whisp_mass"
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"vN" = (
-/obj/machinery/transporter_pad{
-	icon_state = "4,3"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"vO" = (
-/obj/machinery/transporter_pad{
-	icon_state = "0,2"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"vP" = (
-/obj/machinery/transporter_pad{
-	icon_state = "1,2"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"vQ" = (
-/obj/machinery/transporter_pad{
-	icon_state = "2,2"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"vR" = (
-/obj/machinery/transporter_pad{
-	icon_state = "3,2"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"vS" = (
-/obj/machinery/transporter_pad{
-	icon_state = "4,2"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "vT" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
-"vU" = (
-/obj/machinery/computer/camera_advanced/transporter_control{
-	dir = 8;
-	icon_state = "control";
-	req_one_access = null
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "vV" = (
 /obj/machinery/chem_dispenser,
 /obj/machinery/light{
@@ -7956,29 +6773,10 @@
 	},
 /area/ship/m_class)
 "vY" = (
-/obj/structure/shuttle/engine/propulsion,
-/obj/structure/lattice/catwalk,
-/turf/open/space/basic,
-/area/space)
-"vZ" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/shuttle/engine/propulsion,
-/turf/open/space/basic,
-/area/space)
-"wa" = (
-/obj/machinery/conveyor{
-	dir = 8;
-	id = "whisp_disposals"
+/obj/machinery/transporter_pad{
+	icon_state = "0,1"
 	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"wb" = (
-/obj/machinery/conveyor{
-	dir = 10;
-	icon_state = "conveyor_map";
-	id = "whisp_disposals"
-	},
-/turf/open/floor/trek/bsg,
+/turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "wc" = (
 /obj/machinery/light/small{
@@ -7993,57 +6791,10 @@
 	name = "dirt"
 	},
 /area/space)
-"wd" = (
-/obj/structure/closet/firecloset/full,
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"we" = (
-/obj/structure/closet/secure_closet/engineering_electrical{
-	req_access = null
-	},
-/obj/item/inducer,
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "wf" = (
 /obj/machinery/power/apc/auto_name/ds13/highcap,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"wg" = (
-/obj/machinery/power/smes,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"wh" = (
-/obj/machinery/light,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"wi" = (
-/obj/machinery/power/smes,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"wj" = (
-/obj/machinery/computer/monitor{
-	icon_state = "computer";
-	dir = 4
-	},
-/obj/structure/cable/yellow,
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 10
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "wk" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	icon_state = "pipe11-2";
@@ -8051,18 +6802,6 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"wl" = (
-/obj/structure/chair/trek/standard{
-	icon_state = "chair";
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/asteroid/line,
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"wm" = (
-/obj/effect/turf_decal/stripes/asteroid/line,
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "wn" = (
 /obj/item/storage/firstaid/o2{
 	pixel_x = 3;
@@ -8080,24 +6819,17 @@
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
 "wo" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
+/obj/machinery/atmospherics/pipe/manifold/purple/hidden{
+	icon_state = "manifold-2";
+	dir = 1
 	},
-/obj/effect/turf_decal/stripes/asteroid/line,
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"wp" = (
-/obj/machinery/sleeper{
-	dir = 8
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/trek/bsg,
-/area/ship/merc)
-"wq" = (
-/obj/machinery/transporter_pad{
-	icon_state = "0,1"
-	},
-/turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "wr" = (
 /obj/effect/spawner/lootdrop/maintenance,
@@ -8105,18 +6837,6 @@
 	icon_state = "platingdmg1"
 	},
 /area/ship/asteroiddebris)
-"ws" = (
-/obj/machinery/transporter_pad{
-	icon_state = "1,1"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"wt" = (
-/obj/machinery/transporter_pad{
-	icon_state = "2,1"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "wu" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/debrisfield)
@@ -8124,17 +6844,9 @@
 /obj/effect/landmark/runabout_dock,
 /turf/open/space/basic,
 /area/ship/ai_simulated_secondary)
-"ww" = (
-/obj/machinery/transporter_pad{
-	icon_state = "3,1"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "wx" = (
-/obj/machinery/transporter_pad{
-	icon_state = "4,1"
-	},
-/turf/open/floor/trek/bsg/corrugated,
+/obj/structure/overmap_component/plasma_relay,
+/turf/closed/wall/trek_smooth/bsg,
 /area/ship/merc)
 "wy" = (
 /obj/structure/chair{
@@ -8148,12 +6860,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/ai_simulated)
-"wA" = (
-/obj/machinery/transporter_pad{
-	icon_state = "0,0"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "wB" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -8163,12 +6869,6 @@
 "wC" = (
 /turf/closed/wall/trek_smooth/reinforced,
 /area/ship/debrisfield)
-"wD" = (
-/obj/machinery/transporter_pad{
-	icon_state = "1,0"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "wE" = (
 /obj/machinery/transporter_pad{
 	icon_state = "4,0"
@@ -8176,59 +6876,18 @@
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
 "wF" = (
-/obj/machinery/transporter_pad{
-	icon_state = "2,0"
+/obj/structure/torpedo_casing{
+	desc = "A photon torpedo casing with some paint haphazardly scrawled over it to make it resemble a traditional HE round.";
+	name = "MAC Shell"
 	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"wG" = (
-/obj/machinery/transporter_pad{
-	icon_state = "3,0"
-	},
+/obj/machinery/light,
 /turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "wH" = (
-/obj/machinery/transporter_pad{
-	icon_state = "4,0"
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"wI" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	icon_state = "ast_warn_corner";
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	icon_state = "ast_warn_corner";
-	dir = 1
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"wJ" = (
-/obj/machinery/vending/medical,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"wK" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/regular{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/firstaid/regular{
-	pixel_x = -4;
-	pixel_y = -4
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"wL" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/toxin{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/storage/firstaid/toxin,
-/turf/open/floor/trek/bsg,
 /area/ship/merc)
 "wM" = (
 /obj/machinery/transporter_pad{
@@ -8236,25 +6895,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_destination)
-"wN" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/fire{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/fire{
-	pixel_x = -4;
-	pixel_y = -4
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"wO" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Transporter room"
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "wP" = (
 /obj/structure/chair/stool/bar,
 /turf/open/floor/carpet/trek/romulan,
@@ -8268,10 +6908,9 @@
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
 "wR" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Medical"
-	},
-/turf/open/floor/trek/bsg/tile,
+/obj/machinery/power/warp_coil,
+/obj/structure/cable/yellow,
+/turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "wS" = (
 /obj/structure/fluff/broken_flooring{
@@ -8280,110 +6919,28 @@
 	},
 /turf/open/space/basic,
 /area/ship/debrisfield)
-"wT" = (
-/obj/structure/railing{
-	icon_state = "railing0";
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"wU" = (
-/obj/structure/closet/cardboard,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "wV" = (
 /obj/machinery/transporter_pad{
 	icon_state = "2,3"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"wW" = (
-/obj/structure/closet/cardboard/metal,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"wX" = (
-/obj/machinery/door/airlock/trek/ship{
-	name = "Vault"
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"wY" = (
-/obj/structure/rack,
-/obj/item/stack/sheet/mineral/silver,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"wZ" = (
-/obj/structure/safe,
-/obj/item/coin/gold,
-/obj/item/coin/gold,
-/obj/item/coin/bananium,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"xa" = (
-/obj/structure/railing{
-	icon_state = "railing0";
-	dir = 1
-	},
-/obj/machinery/light{
+"xd" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	icon_state = "pipe11-2";
 	dir = 8
 	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xb" = (
-/obj/structure/railing{
-	icon_state = "railing0";
-	dir = 1
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xc" = (
-/obj/structure/chair/trek/standard{
-	icon_state = "chair";
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 5
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xd" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	icon_state = "ast_warn_corner";
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/tile,
+/turf/open/floor/trek/bsg,
 /area/ship/merc)
 "xe" = (
-/obj/item/twohanded/required/kirbyplants/random,
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 5
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xf" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
 	dir = 8
 	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xg" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 8
-	},
+/obj/effect/turf_decal/stripes/asteroid/line,
 /turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "xh" = (
@@ -8411,34 +6968,22 @@
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
-"xi" = (
-/obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/stripes/asteroid/corner,
+"xl" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
 /obj/effect/turf_decal/stripes/asteroid/corner{
 	icon_state = "ast_warn_corner";
 	dir = 1
 	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xj" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
 /obj/effect/turf_decal/stripes/asteroid/corner{
 	icon_state = "ast_warn_corner";
-	dir = 8
+	dir = 4
 	},
-/obj/effect/turf_decal/stripes/asteroid/corner,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xk" = (
-/obj/machinery/light,
-/obj/effect/turf_decal/stripes/asteroid/line,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xl" = (
-/obj/effect/turf_decal/stripes/asteroid/line,
-/turf/open/floor/trek/bsg/tile,
+/turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "xm" = (
 /obj/machinery/light{
@@ -8452,149 +6997,40 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/ship/ai_simulated)
-"xo" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 4
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xp" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xq" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xr" = (
-/obj/structure/overmap_component/viewscreen{
-	density = 0;
-	pixel_y = 32
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xs" = (
-/obj/item/twohanded/required/kirbyplants/random,
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 9
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xt" = (
-/obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xu" = (
-/obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	icon_state = "ast_warn_corner";
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	icon_state = "ast_warn_corner";
-	dir = 8
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
 "xv" = (
 /turf/open/floor/pod/dark,
 /area/space)
 "xw" = (
-/obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	icon_state = "ast_warn_corner";
-	dir = 4
+/obj/machinery/power/matter_injector{
+	req_access = null
+	},
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
 	},
 /turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xx" = (
-/obj/item/twohanded/required/kirbyplants/random,
-/obj/effect/turf_decal/stripes/asteroid/line{
-	icon_state = "ast_warn";
-	dir = 6
-	},
-/turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "xy" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	icon_state = "ast_warn_corner";
-	dir = 4
+/obj/machinery/power/smes,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xz" = (
-/obj/structure/disposalpipe/segment{
-	icon_state = "pipe";
-	dir = 6
-	},
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	icon_state = "ast_warn_corner";
-	dir = 4
-	},
-/turf/open/floor/trek/bsg/tile,
+/turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "xA" = (
 /turf/open/space/basic,
 /area/ship/ai_simulated_tertiary)
 "xB" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	icon_state = "ast_warn_corner";
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/asteroid/corner,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xC" = (
-/obj/structure/closet/secure_closet/engineering_welding{
-	req_access = null
-	},
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xD" = (
-/obj/structure/closet/secure_closet/engineering_electrical{
-	req_access = null
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
 	},
 /turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "xE" = (
-/obj/structure/closet/secure_closet/engineering_personal{
-	req_access = null
-	},
-/obj/machinery/light,
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/drinks/shaker,
 /turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xF" = (
-/obj/structure/closet/toolcloset,
-/turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"xG" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden,
-/obj/machinery/door/airlock/trek/ship{
-	name = "Plasma storage"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/trek/bsg,
 /area/ship/merc)
 "xH" = (
 /obj/machinery/door/airlock/trek/ship{
@@ -8605,82 +7041,24 @@
 "xI" = (
 /turf/open/floor/trek/tile,
 /area/ship/ai_simulated_secondary)
-"xJ" = (
-/obj/machinery/atmospherics/components/unary/tank/toxins,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"xK" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "xL" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	icon_state = "pipe11-2";
-	dir = 6
+/obj/structure/closet/secure_closet/engineering_electrical{
+	req_access = null
 	},
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"xM" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	icon_state = "pipe11-2";
-	dir = 8
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/trek/bsg,
+/obj/item/inducer,
+/turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "xN" = (
-/obj/machinery/atmospherics/pipe/manifold/purple/hidden{
-	icon_state = "manifold-2";
-	dir = 1
+/obj/machinery/transporter_pad{
+	icon_state = "1,1"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"xO" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	icon_state = "pipe11-2";
-	dir = 8
-	},
-/obj/machinery/door/airlock/trek/ship{
-	dir = 4;
-	name = "Warp coil ODN access"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/trek/bsg,
+/turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "xP" = (
 /turf/open/space/basic,
 /area/ship/asteroiddebris)
 "xQ" = (
-/obj/machinery/atmospherics/pipe/manifold/purple/hidden,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"xR" = (
-/obj/machinery/atmospherics/pipe/manifold/purple/hidden,
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
+/obj/machinery/nuclearbomb/beer,
 /turf/open/floor/trek/bsg,
 /area/ship/merc)
 "xS" = (
@@ -8689,122 +7067,40 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_destination)
-"xT" = (
-/obj/machinery/atmospherics/pipe/manifold/purple/hidden{
-	icon_state = "manifold-2";
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"xU" = (
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	icon_state = "pipe11-2";
-	dir = 10
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"xV" = (
-/obj/machinery/light,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"xW" = (
-/obj/machinery/light/small,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"xX" = (
-/obj/structure/fans/tiny,
-/obj/machinery/atmospherics/pipe/simple/purple/hidden,
-/obj/machinery/door/airlock/trek/ship{
-	name = "Warp coil bay"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"xY" = (
-/obj/structure/overmap_component/plasma_injector{
-	pixel_x = -32
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "xZ" = (
 /obj/structure/trek_catwalk,
 /obj/effect/landmark/sealed_crate_spawn,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
-"ya" = (
-/obj/machinery/power/warp_coil,
-/obj/machinery/atmospherics/pipe/simple/purple/hidden,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow,
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"yb" = (
-/obj/structure/overmap_component/plasma_injector{
-	pixel_x = 32
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "yc" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/rack,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
-"yd" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	icon_state = "inje_map-2";
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"ye" = (
-/obj/machinery/power/warp_coil,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow,
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "yf" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
 	},
-/turf/open/floor/trek/bsg/corrugated,
+/obj/machinery/vending/cigarette,
+/turf/open/floor/carpet,
 /area/ship/merc)
 "yg" = (
-/obj/machinery/power/warp_coil,
-/obj/structure/cable/yellow,
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"yh" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	icon_state = "ast_warn_corner";
+/obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/asteroid/line,
-/turf/open/floor/trek/bsg/tile,
+/obj/item/twohanded/required/kirbyplants/random,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "yi" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	icon_state = "ast_warn_corner";
-	dir = 8
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/trek/ship{
+	name = "Engineering"
 	},
-/obj/effect/turf_decal/stripes/asteroid/line,
 /turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
 "yj" = (
@@ -8814,49 +7110,38 @@
 /mob/living/simple_animal/hostile/retaliate/borg_drone,
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
-"yk" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
-"yl" = (
-/obj/structure/rack,
-/obj/item/stack/sheet/mineral/gold,
-/obj/item/stack/sheet/mineral/gold,
-/obj/item/stack/sheet/mineral/gold,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "ym" = (
 /obj/structure/fluff/broken_flooring{
 	icon_state = "pile"
 	},
 /turf/open/space/basic,
 /area/space)
-"yn" = (
-/obj/structure/rack,
-/obj/item/stack/sheet/mineral/diamond,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"yo" = (
-/obj/structure/rack,
-/obj/item/pinpointer/nuke,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"yp" = (
-/obj/machinery/nuclearbomb/syndicate,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
-"yq" = (
-/obj/structure/rack,
-/obj/item/stack/spacecash/c1000,
-/turf/open/floor/trek/bsg,
-/area/ship/merc)
 "yr" = (
 /obj/item/stack/sheet/mineral/wood,
 /obj/item/stack/sheet/mineral/wood,
 /turf/open/floor/grass/fakebasalt,
 /area/ship/m_class)
+"ys" = (
+/obj/structure/rack,
+/obj/item/pinpointer/nuke,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"yt" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/machinery/door/airlock/trek/ship{
+	name = "Plasma storage"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"yv" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Diner workspace"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "yw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8911,6 +7196,10 @@
 /obj/machinery/door/airlock/trek/ship/maint,
 /turf/open/floor/plating,
 /area/ship/ai_simulated)
+"yQ" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "yZ" = (
 /obj/item/twohanded/required/kirbyplants/photosynthetic,
 /turf/open/floor/carpet/trek/romulan,
@@ -8921,6 +7210,13 @@
 	icon_state = "platingdmg2"
 	},
 /area/ship/ai_simulated)
+"zd" = (
+/obj/structure/disposalpipe/segment{
+	icon_state = "pipe";
+	dir = 10
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "zg" = (
 /obj/machinery/transporter_pad{
 	icon_state = "3,3"
@@ -8932,6 +7228,16 @@
 /obj/item/pickaxe/drill,
 /turf/open/space/basic,
 /area/ship/asteroiddebris)
+"zk" = (
+/obj/structure/sink/kitchen{
+	pixel_y = 32
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "zm" = (
 /obj/structure/fluff/broken_flooring{
 	icon_state = "pile"
@@ -8942,6 +7248,22 @@
 /obj/structure/flora/ausbushes,
 /turf/open/floor/grass,
 /area/ship/m_class)
+"zq" = (
+/obj/machinery/conveyor_switch/oneway{
+	id = "whisp_disposals"
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"zz" = (
+/obj/structure/bookcase/random/religion,
+/turf/open/floor/carpet,
+/area/ship/merc)
+"zA" = (
+/obj/machinery/sleeper{
+	dir = 8
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "zB" = (
 /obj/structure/rack,
 /obj/item/tank/internals/emergency_oxygen/double,
@@ -8953,6 +7275,16 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"zC" = (
+/obj/machinery/transporter_pad{
+	icon_state = "2,4"
+	},
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "zI" = (
 /obj/machinery/transporter_pad{
 	icon_state = "4,1"
@@ -8978,6 +7310,16 @@
 /obj/machinery/door/airlock/trek/ship,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"zO" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "zR" = (
 /turf/open/floor/plating,
 /area/space)
@@ -9024,10 +7366,43 @@
 /obj/structure/overmap_component/tactical/warbird,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"Ak" = (
+/obj/structure/overmap_component/integrity_field_generator,
+/obj/machinery/atmospherics/components/binary/pump/on/warp,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Al" = (
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/plating,
 /area/ship/ai_simulated_tertiary)
+"Am" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk,
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"An" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	icon_state = "inje_map-2";
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"Ap" = (
+/obj/structure/closet/secure_closet/engineering_electrical{
+	req_access = null
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Aq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mob_spawn/human/corpse/assistant,
@@ -9044,6 +7419,15 @@
 /obj/structure/girder/displaced,
 /turf/open/space/basic,
 /area/ship/debrisfield)
+"Az" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "AC" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg2"
@@ -9056,6 +7440,14 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
+"AJ" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "AN" = (
 /obj/structure/fluff/broken_flooring{
 	icon_state = "pile";
@@ -9063,10 +7455,23 @@
 	},
 /turf/open/space/basic,
 /area/ship/debrisfield)
+"AO" = (
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "AP" = (
 /obj/structure/shuttle/engine/large,
 /turf/open/floor/mineral/titanium/white/airless,
 /area/space)
+"AQ" = (
+/obj/machinery/power/warp_core{
+	req_access = null
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "AS" = (
 /obj/structure/railing{
 	icon_state = "railing0";
@@ -9088,6 +7493,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"AW" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Bb" = (
 /obj/machinery/shower{
 	icon_state = "shower";
@@ -9095,10 +7504,42 @@
 	},
 /turf/open/floor/trek/tile,
 /area/ship/ai_simulated_secondary)
+"Bd" = (
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden,
+/obj/structure/rack,
+/obj/item/wrench,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"Bf" = (
+/obj/item/twohanded/required/kirbyplants/random,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 6
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"Bh" = (
+/obj/machinery/light,
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"Bi" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Bj" = (
 /obj/structure/bonfire/prelit,
 /turf/open/floor/grass/fakebasalt,
 /area/ship/m_class)
+"Bm" = (
+/obj/machinery/mass_driver{
+	dir = 8;
+	id = "whisp_mass"
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Bn" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/open/floor/carpet/trek/romulan,
@@ -9139,6 +7580,12 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"BC" = (
+/obj/machinery/conveyor_switch/oneway{
+	id = "whisp_torpedo"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "BD" = (
 /obj/machinery/computer/camera_advanced/transporter_control{
 	icon_state = "control";
@@ -9154,6 +7601,18 @@
 /obj/item/shovel,
 /turf/open/floor/grass/fakebasalt,
 /area/ship/m_class)
+"BF" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/obj/structure/table/reinforced,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "BI" = (
 /obj/structure/chair/office/dark{
 	dir = 4
@@ -9172,15 +7631,31 @@
 /obj/structure/trek_decor/romulan,
 /turf/closed/wall/trek_smooth/romulan,
 /area/ship/ai_simulated)
+"BN" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "BP" = (
 /obj/machinery/computer/operating,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
+"BR" = (
+/obj/structure/bed,
+/obj/item/bedsheet/clown,
+/turf/open/floor/carpet,
+/area/ship/merc)
 "BT" = (
 /obj/item/clothing/under/trek/medsci/ent,
 /obj/structure/rack,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"BW" = (
+/obj/structure/ladder,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "BZ" = (
 /obj/machinery/door/airlock/trek/ship{
 	name = "Weapons bay exhibit"
@@ -9193,6 +7668,23 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"Cb" = (
+/obj/machinery/transporter_pad{
+	icon_state = "1,2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"Cc" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/item/twohanded/required/kirbyplants/random,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Cg" = (
 /obj/machinery/transporter_pad{
 	icon_state = "4,0"
@@ -9213,6 +7705,19 @@
 "Cm" = (
 /turf/open/space/basic,
 /area/ship/debrisfield)
+"Cp" = (
+/obj/structure/closet/firecloset/full,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"Cr" = (
+/obj/machinery/light,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"Cs" = (
+/obj/machinery/light/small,
+/obj/structure/dresser,
+/turf/open/floor/carpet,
+/area/ship/merc)
 "Cw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/maintenance{
@@ -9241,6 +7746,10 @@
 "CH" = (
 /turf/open/floor/plating,
 /area/ship/bridge/museum)
+"CI" = (
+/obj/machinery/atmospherics/components/unary/tank/air,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "CJ" = (
 /obj/machinery/light{
 	dir = 4
@@ -9251,10 +7760,25 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"CP" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "CQ" = (
 /obj/structure/overmap_component/science/warbird,
 /turf/open/floor/plating,
 /area/ship/ai_simulated_tertiary)
+"CU" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/stripes/asteroid/corner,
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "CY" = (
 /obj/structure/fluff/broken_flooring{
 	icon_state = "pile"
@@ -9299,6 +7823,20 @@
 	icon_state = "platingdmg2"
 	},
 /area/ship/debrisfield)
+"Dn" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"Do" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Dq" = (
 /obj/item/wallframe/camera,
 /turf/open/space/basic,
@@ -9314,6 +7852,13 @@
 "Dz" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/ai_simulated_secondary)
+"DC" = (
+/obj/structure/closet/secure_closet/engineering_personal{
+	req_access = null
+	},
+/obj/machinery/light,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "DJ" = (
 /obj/structure/chair/office/dark{
 	dir = 4
@@ -9323,6 +7868,10 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"DO" = (
+/obj/machinery/light/small,
+/turf/open/floor/carpet,
+/area/ship/merc)
 "DP" = (
 /obj/machinery/light{
 	dir = 8
@@ -9336,6 +7885,26 @@
 /obj/item/stack/sheet/mineral/diamond,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"DT" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/trek/ship{
+	name = "Disposals"
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"DU" = (
+/obj/structure/rack,
+/obj/item/stack/spacecash/c1000,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"DV" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	icon_state = "pipe-t";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "DZ" = (
 /obj/structure/chair/trek/dark{
 	icon_state = "dark";
@@ -9350,6 +7919,15 @@
 /obj/structure/sink,
 /turf/open/floor/plasteel/dark,
 /area/ship/ai_simulated_secondary)
+"Eb" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/mineral/diamond,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"Ed" = (
+/obj/machinery/atmospherics/components/unary/tank/toxins,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Ef" = (
 /obj/item/restraints/handcuffs,
 /obj/structure/table/reinforced,
@@ -9360,6 +7938,21 @@
 /obj/item/bedsheet/blue,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"Eh" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 5
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"En" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Eo" = (
 /turf/open/floor/grass/fakebasalt,
 /area/ship/m_class)
@@ -9371,6 +7964,30 @@
 	icon_state = "platingdmg2"
 	},
 /area/ship/ai_simulated)
+"Et" = (
+/obj/machinery/transporter_pad{
+	icon_state = "2,3"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"Ey" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"EB" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"EC" = (
+/obj/structure/table/reinforced,
+/obj/item/book/manual/wiki/security_space_law,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "EE" = (
 /obj/machinery/transporter_pad{
 	icon_state = "3,4"
@@ -9394,6 +8011,28 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"EI" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"EJ" = (
+/obj/structure/torpedo_casing{
+	desc = "A photon torpedo casing with some paint haphazardly scrawled over it to make it resemble a traditional HE round.";
+	name = "MAC Shell"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"EK" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/mineral/silver,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "ES" = (
 /obj/machinery/door/airlock/trek/ship{
 	dir = 4
@@ -9403,6 +8042,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"Fa" = (
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Fc" = (
 /obj/structure/chair/office/dark{
 	dir = 4
@@ -9410,6 +8053,34 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"Fe" = (
+/obj/structure/table/reinforced,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"Ff" = (
+/obj/structure/bookcase/random/fiction,
+/turf/open/floor/carpet,
+/area/ship/merc)
+"Fi" = (
+/obj/machinery/atmospherics/pipe/manifold/purple/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"Fl" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Tool storage"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Fm" = (
 /obj/machinery/transporter_pad{
 	icon_state = "2,4"
@@ -9436,12 +8107,22 @@
 	icon_state = "damaged2"
 	},
 /area/ship/debrisfield)
-"Ft" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	icon_state = "ast_warn_corner";
-	dir = 8
-	},
-/turf/open/floor/trek/bsg/tile,
+"Fs" = (
+/obj/item/gun/ballistic/shotgun/automatic/combat,
+/obj/item/gun/energy/taser,
+/obj/item/storage/belt/security,
+/obj/item/storage/box/lethalshot,
+/obj/item/storage/box/lethalshot,
+/obj/item/storage/box/lethalshot,
+/obj/item/storage/box/rubbershot,
+/obj/item/storage/box/rubbershot,
+/obj/item/storage/box/beanbag,
+/obj/structure/closet/syndicate,
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"Fv" = (
+/obj/machinery/vending/dinnerware,
+/turf/open/floor/trek/bsg,
 /area/ship/merc)
 "Fx" = (
 /obj/structure/lattice,
@@ -9462,6 +8143,11 @@
 "FD" = (
 /turf/open/space/basic,
 /area/ship/ai_simulated)
+"FK" = (
+/obj/structure/shuttle/engine/propulsion,
+/obj/structure/lattice/catwalk,
+/turf/open/space/basic,
+/area/space)
 "FM" = (
 /obj/machinery/transporter_pad{
 	icon_state = "4,2"
@@ -9476,9 +8162,23 @@
 /mob/living/carbon/monkey,
 /turf/open/floor/grass,
 /area/ship/m_class)
+"FP" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/carpet,
+/area/ship/merc)
 "FR" = (
 /turf/open/floor/plasteel/white,
 /area/ship/bridge/museum)
+"FT" = (
+/obj/structure/disposalpipe/segment{
+	icon_state = "pipe";
+	dir = 10
+	},
+/turf/open/floor/carpet,
+/area/ship/merc)
 "FU" = (
 /turf/closed/wall,
 /area/ship/asteroiddebris)
@@ -9489,6 +8189,22 @@
 	},
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
+"Gc" = (
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+	icon_state = "manifold-2";
+	dir = 8
+	},
+/obj/machinery/meter/atmos,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"Gd" = (
+/obj/item/twohanded/required/kirbyplants/random,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 5
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Gf" = (
 /obj/structure/fluff/broken_flooring{
 	icon_state = "plating";
@@ -9502,6 +8218,16 @@
 	},
 /turf/open/space/basic,
 /area/space)
+"Gj" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Gn" = (
 /obj/structure/fluff/broken_flooring{
 	icon_state = "pile";
@@ -9538,6 +8264,13 @@
 /obj/effect/mob_spawn/human/corpse/assistant,
 /turf/open/floor/plating/airless,
 /area/ship/asteroiddebris)
+"Gw" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Gx" = (
 /obj/structure/railing,
 /turf/open/floor/carpet/trek/romulan,
@@ -9558,6 +8291,16 @@
 /obj/item/defibrillator/compact/loaded,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_tertiary)
+"Gz" = (
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"GA" = (
+/obj/machinery/transporter_pad{
+	icon_state = "0,4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "GI" = (
 /obj/structure/railing{
 	icon_state = "railing0";
@@ -9590,6 +8333,16 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_destination)
+"GP" = (
+/obj/machinery/transporter_pad{
+	icon_state = "3,2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"GQ" = (
+/obj/machinery/vending/medical,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "GR" = (
 /obj/structure/table/reinforced,
 /obj/item/restraints/handcuffs,
@@ -9611,6 +8364,30 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
+"GZ" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	icon_state = "pipe11-2";
+	dir = 8
+	},
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Warp coil ODN access"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"Ha" = (
+/obj/machinery/light,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Hc" = (
 /obj/structure/fluff/broken_flooring{
 	icon_state = "plating";
@@ -9618,6 +8395,26 @@
 	},
 /turf/open/space/basic,
 /area/ship/ai_simulated)
+"He" = (
+/obj/structure/table/reinforced,
+/obj/item/stock_parts/matter_bin/adv,
+/obj/item/stock_parts/matter_bin/adv,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/scanning_module,
+/obj/item/stock_parts/scanning_module,
+/obj/item/stock_parts/scanning_module,
+/obj/item/stock_parts/scanning_module,
+/obj/item/stock_parts/scanning_module,
+/obj/item/stock_parts/scanning_module,
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Hf" = (
 /obj/structure/displaycase/labcage,
 /turf/open/floor/plasteel/white,
@@ -9632,6 +8429,27 @@
 	},
 /turf/open/floor/plating,
 /area/ship/ai_simulated)
+"Hi" = (
+/obj/machinery/vending/boozeomat/all_access,
+/turf/closed/wall/trek_smooth/bsg,
+/area/ship/merc)
+"Hj" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"Hk" = (
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "whisp_disposals"
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"Ho" = (
+/obj/structure/window/reinforced/fulltile/trek/bsg/middle,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Hp" = (
 /obj/machinery/transporter_pad{
 	icon_state = "2,0"
@@ -9644,6 +8462,23 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"Hx" = (
+/obj/machinery/vending/engivend{
+	req_access = null
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"Hy" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "HC" = (
 /obj/effect/landmark/runabout_dock,
 /turf/open/space/basic,
@@ -9666,6 +8501,20 @@
 "HJ" = (
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"HM" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"HP" = (
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+	icon_state = "manifold-2";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "HR" = (
 /obj/structure/lattice,
 /obj/item/stack/sheet/mineral/plasma,
@@ -9680,6 +8529,13 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"HY" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Engine core"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Ib" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -9697,6 +8553,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"Ie" = (
+/obj/machinery/transporter_pad{
+	icon_state = "4,1"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"If" = (
+/obj/structure/overmap_component/science{
+	req_access = null
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Ig" = (
 /obj/structure/overmap_component/viewscreen,
 /turf/closed/wall/trek_smooth/room,
@@ -9705,6 +8573,23 @@
 /obj/structure/rack,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"Ip" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"Iq" = (
+/obj/structure/disposalpipe/junction/flip,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"Ir" = (
+/obj/structure/overmap_component/plasma_injector{
+	pixel_x = 32
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Iu" = (
 /obj/structure/window/reinforced/fulltile/trek,
 /obj/structure/grille,
@@ -9722,10 +8607,22 @@
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/plating/airless,
 /area/ship/ai_simulated_tertiary)
+"ID" = (
+/obj/structure/bed,
+/obj/item/bedsheet/centcom,
+/turf/open/floor/carpet,
+/area/ship/merc)
 "IE" = (
 /obj/structure/frame/machine,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
+"IH" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/turf/open/floor/carpet,
+/area/ship/merc)
 "II" = (
 /turf/open/openspace,
 /area/space)
@@ -9736,6 +8633,24 @@
 	},
 /turf/open/space/basic,
 /area/ship/ai_simulated_secondary)
+"IN" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"IO" = (
+/obj/machinery/computer/monitor{
+	icon_state = "computer";
+	dir = 4
+	},
+/obj/structure/cable/yellow,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 10
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "IP" = (
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/plating,
@@ -9756,6 +8671,17 @@
 /obj/structure/overmap_component/helm,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"IW" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Jc" = (
 /obj/machinery/transporter_pad{
 	icon_state = "1,4"
@@ -9779,6 +8705,14 @@
 "Jh" = (
 /turf/open/floor/plating,
 /area/ship/ai_simulated_secondary)
+"Jj" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Jq" = (
 /obj/machinery/transporter_pad{
 	icon_state = "3,3"
@@ -9799,6 +8733,10 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"Ju" = (
+/obj/structure/disposalpipe/junction/flip,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Jv" = (
 /mob/living/simple_animal/hostile/asteroid/gutlunch/guthen,
 /turf/open/floor/grass/fakebasalt,
@@ -9852,6 +8790,12 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"JF" = (
+/obj/machinery/transporter_pad{
+	icon_state = "1,4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "JG" = (
 /obj/machinery/transporter_pad{
 	icon_state = "2,2"
@@ -9862,6 +8806,24 @@
 /obj/machinery/light,
 /turf/open/floor/plating,
 /area/ship/ai_simulated_tertiary)
+"JI" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"JK" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "JL" = (
 /obj/machinery/transporter_pad{
 	icon_state = "2,0"
@@ -9891,6 +8853,15 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"JW" = (
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "JX" = (
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
@@ -9904,6 +8875,12 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
+"Kc" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Vault"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Kd" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/item/pattern_enhancer,
@@ -9921,6 +8898,13 @@
 	},
 /turf/open/floor/plasteel/airless,
 /area/ship/debrisfield)
+"Kk" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/trek/ship{
+	name = "Washing room"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Kl" = (
 /obj/machinery/door/airlock/trek/ship,
 /turf/open/floor/carpet/trek,
@@ -9962,17 +8946,32 @@
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/ship/ai_simulated)
+"KB" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Private unit"
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "KC" = (
 /obj/structure/rack,
 /obj/item/storage/toolbox/emergency,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
+"KG" = (
+/turf/open/floor/carpet,
+/area/ship/merc)
 "KJ" = (
 /obj/machinery/door/airlock/trek/ship{
 	name = "Warp core giftshop"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"KK" = (
+/obj/machinery/transporter_pad{
+	icon_state = "2,2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "KL" = (
 /obj/machinery/transporter_pad{
 	icon_state = "3,2"
@@ -9986,6 +8985,14 @@
 	},
 /turf/open/space/basic,
 /area/ship/ai_simulated_tertiary)
+"KR" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "KS" = (
 /obj/machinery/shower{
 	dir = 8
@@ -10008,12 +9015,25 @@
 	icon_state = "platingdmg2"
 	},
 /area/ship/debrisfield)
+"La" = (
+/obj/structure/overmap_component/helm{
+	req_access = null
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Lc" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,4"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"Ld" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Lg" = (
 /obj/structure/trek_decor/romulan,
 /turf/closed/wall/trek_smooth/romulan,
@@ -10022,6 +9042,17 @@
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_tertiary)
+"Lk" = (
+/obj/structure/toilet,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Lm" = (
 /obj/machinery/door/airlock/trek/ship{
 	icon_state = "closed";
@@ -10036,6 +9067,25 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"Lp" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	icon_state = "pipe11-2";
+	dir = 6
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"Lq" = (
+/obj/machinery/door/poddoor{
+	id = "whisp_mass";
+	layer = 2.95
+	},
+/obj/structure/plasticflaps/opaque,
+/obj/structure/fans/tiny,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Lr" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/machinery/door/airlock/trek/goon/external/public,
@@ -10046,6 +9096,11 @@
 /obj/structure/overmap_component/plasma_relay,
 /turf/closed/wall/trek_smooth,
 /area/ship/bridge/museum)
+"Lx" = (
+/obj/structure/table/reinforced,
+/obj/machinery/reagentgrinder,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Lz" = (
 /obj/structure/fluff/broken_flooring{
 	icon_state = "plating";
@@ -10067,12 +9122,30 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_destination)
+"LG" = (
+/obj/item/twohanded/required/kirbyplants/random,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"LH" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"LK" = (
+/turf/closed/wall/trek_smooth/bsg,
+/area/space)
 "LL" = (
 /obj/machinery/transporter_pad{
 	icon_state = "3,4"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_destination)
+"LN" = (
+/obj/machinery/light,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "LO" = (
 /obj/item/stack/sheet/mineral/wood,
 /obj/item/stack/sheet/mineral/wood,
@@ -10115,6 +9188,14 @@
 	name = "dirt"
 	},
 /area/ship/m_class)
+"LY" = (
+/obj/machinery/suit_storage_unit/trek,
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Mb" = (
 /obj/machinery/light{
 	dir = 4
@@ -10128,6 +9209,22 @@
 /obj/structure/table/glass,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
+"Mh" = (
+/obj/structure/disposalpipe/junction{
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"Mn" = (
+/obj/machinery/atmospherics/pipe/manifold/purple/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Mp" = (
 /obj/structure/table/glass,
 /turf/open/floor/carpet/trek,
@@ -10160,6 +9257,11 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"ME" = (
+/obj/structure/bedsheetbin,
+/obj/structure/table,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "MH" = (
 /obj/machinery/transporter_pad{
 	icon_state = "1,0"
@@ -10175,6 +9277,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium/airless,
 /area/ship/debrisfield)
+"MK" = (
+/obj/structure/fans/tiny,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/machinery/door/airlock/trek/ship{
+	name = "Warp coil bay"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "ML" = (
 /turf/open/space/basic,
 /area/ship/ai_simulated_secondary)
@@ -10185,6 +9298,13 @@
 	icon_state = "damaged2"
 	},
 /area/ship/debrisfield)
+"MO" = (
+/obj/structure/chair/trek/dark{
+	icon_state = "dark";
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "MP" = (
 /obj/structure/railing{
 	icon_state = "railing0";
@@ -10192,13 +9312,39 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
+"MS" = (
+/obj/machinery/autolathe,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"MT" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Engine core"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "MX" = (
 /mob/living/simple_animal/hostile/retaliate/borg_drone,
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
+"MY" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/asteroid/corner,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "MZ" = (
 /turf/closed/mineral/random/high_chance,
 /area/ship/debrisfield)
+"Na" = (
+/obj/structure/chair/trek/standard,
+/turf/open/floor/carpet,
+/area/ship/merc)
 "Nb" = (
 /obj/structure/trek_catwalk,
 /obj/effect/spawner/lootdrop/maintenance{
@@ -10209,6 +9355,12 @@
 	icon_state = "platingdmg2"
 	},
 /area/ship/debrisfield)
+"Nc" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Nf" = (
 /obj/structure/sink,
 /turf/open/floor/carpet/trek/romulan,
@@ -10249,6 +9401,14 @@
 /obj/machinery/light,
 /turf/open/floor/engine,
 /area/ship/bridge/museum)
+"Nu" = (
+/obj/structure/plasticflaps,
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "whisp_torpedo"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Nw" = (
 /obj/structure/fluff/broken_flooring{
 	dir = 2;
@@ -10285,9 +9445,53 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
+"NT" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"NW" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 8
+	},
+/mob/living/simple_animal/parrot{
+	name = "Exterminatus"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"NX" = (
+/obj/structure/chair/trek/standard,
+/obj/structure/trek_decor/viewscreen{
+	dir = 8;
+	icon_state = "viewscreen";
+	pixel_y = 32
+	},
+/turf/open/floor/carpet,
+/area/ship/merc)
+"NY" = (
+/obj/structure/disposalpipe/segment{
+	icon_state = "pipe";
+	dir = 9
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "NZ" = (
 /turf/closed/wall/trek_smooth/romulan,
 /area/ship/ai_simulated_secondary)
+"Od" = (
+/obj/structure/dresser,
+/turf/open/floor/carpet,
+/area/ship/merc)
+"Of" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Oj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/crate_spawner,
@@ -10295,6 +9499,32 @@
 	icon_state = "damaged5"
 	},
 /area/ship/debrisfield)
+"Ol" = (
+/obj/machinery/button/massdriver{
+	id = "whisp_mass";
+	pixel_x = -28;
+	pixel_y = -6
+	},
+/obj/structure/disposalpipe/segment{
+	icon_state = "pipe";
+	dir = 6
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"On" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/shuttle/engine/propulsion,
+/turf/open/space/basic,
+/area/space)
+"Oo" = (
+/obj/machinery/power/warp_coil,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow,
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Oq" = (
 /obj/machinery/transporter_pad{
 	icon_state = "3,2"
@@ -10305,11 +9535,30 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
+"Os" = (
+/obj/machinery/suit_storage_unit/trek,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"Ou" = (
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Oy" = (
 /obj/structure/trek_decor/romulan,
 /obj/structure/overmap_component/viewscreen,
 /turf/closed/wall/trek_smooth/romulan,
 /area/ship/ai_simulated_secondary)
+"OA" = (
+/obj/structure/closet/wardrobe/grey,
+/turf/open/floor/carpet,
+/area/ship/merc)
+"OE" = (
+/obj/structure/closet/cardboard/metal,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"OF" = (
+/obj/structure/closet/firecloset/full,
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "OH" = (
 /obj/machinery/door/airlock/trek/ship/maint,
 /obj/structure/trek_catwalk,
@@ -10352,6 +9601,14 @@
 /obj/item/lighter,
 /turf/open/floor/grass/fakebasalt,
 /area/ship/m_class)
+"OW" = (
+/obj/machinery/power/warp_coil,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow,
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "OX" = (
 /obj/structure/fluff/broken_flooring{
 	dir = 2;
@@ -10364,6 +9621,44 @@
 /obj/machinery/door/airlock/trek/ship,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
+"Pf" = (
+/obj/structure/table/wood/fancy,
+/obj/item/lighter,
+/turf/open/floor/carpet,
+/area/ship/merc)
+"Pg" = (
+/obj/item/twohanded/required/kirbyplants/random,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"Pk" = (
+/obj/structure/table/optable,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"Pl" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/regular{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular{
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"Pm" = (
+/obj/structure/bookcase/random/nonfiction,
+/turf/open/floor/carpet,
+/area/ship/merc)
+"Pv" = (
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Pw" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating/airless,
@@ -10394,6 +9689,10 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"PH" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "PJ" = (
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg2"
@@ -10416,6 +9715,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"PN" = (
+/obj/machinery/transporter_pad{
+	icon_state = "4,4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "PO" = (
 /turf/open/openspace,
 /area/ship/borg_cube)
@@ -10423,6 +9728,17 @@
 /obj/machinery/power/apc/auto_name/ds13/highcap,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
+"PS" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "PV" = (
 /obj/machinery/transporter_pad{
 	icon_state = "1,2"
@@ -10432,6 +9748,12 @@
 "PW" = (
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"PY" = (
+/obj/structure/table/reinforced,
+/obj/machinery/microwave,
+/obj/machinery/light,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Qc" = (
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
@@ -10440,6 +9762,17 @@
 /obj/item/camera,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"Qh" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"Qi" = (
+/obj/structure/chair/trek/dark,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Qk" = (
 /turf/closed/wall/trek_smooth/room,
 /area/ship/station/delivery_source)
@@ -10475,14 +9808,37 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
+"Qu" = (
+/obj/structure/closet/secure_closet/freezer/kitchen{
+	req_access = null
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Qv" = (
 /obj/structure/overmap_component/science/warbird,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
+"Qy" = (
+/obj/machinery/deepfryer,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "QC" = (
 /obj/structure/trek_catwalk,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_destination)
+"QD" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/fire{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/fire{
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "QE" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/grass,
@@ -10498,6 +9854,35 @@
 /obj/item/storage/firstaid/regular,
 /turf/open/floor/grass/fakebasalt,
 /area/ship/m_class)
+"QI" = (
+/obj/structure/disposaloutlet{
+	dir = 4
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"QM" = (
+/obj/machinery/cell_charger,
+/obj/structure/table/reinforced,
+/obj/item/multitool,
+/obj/item/storage/belt/utility,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"QN" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/item/storage/wallet/random,
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"QO" = (
+/turf/open/openspace,
+/area/ship/merc)
 "QP" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/carpet/trek,
@@ -10524,6 +9909,17 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"QW" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 5
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Rc" = (
 /obj/machinery/door/airlock/trek/ship,
 /turf/open/floor/plasteel/dark,
@@ -10534,19 +9930,43 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_tertiary)
+"Rf" = (
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Rl" = (
 /obj/machinery/door/airlock/trek/goon/sec,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"Rm" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Crew Living Quarter"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Rn" = (
 /turf/closed/mineral,
 /area/ship/m_class)
+"Rs" = (
+/obj/structure/safe,
+/obj/item/coin/gold,
+/obj/item/coin/gold,
+/obj/item/coin/bananium,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Rx" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/plating/asteroid{
 	name = "dirt"
 	},
 /area/ship/m_class)
+"RB" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Ladder access"
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "RC" = (
 /obj/machinery/door/airlock/trek/goon/sec{
 	icon_state = "closed";
@@ -10557,12 +9977,50 @@
 "RD" = (
 /turf/open/floor/plating/asteroid/airless,
 /area/ship/debrisfield)
+"RG" = (
+/obj/machinery/transporter_pad{
+	icon_state = "0,3"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "RI" = (
 /obj/machinery/door/airlock/trek/ship{
 	name = "Medical bay"
 	},
 /turf/open/space/basic,
 /area/ship/ai_simulated_secondary)
+"RN" = (
+/obj/item/twohanded/required/kirbyplants/random,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"RO" = (
+/obj/structure/disposalpipe/junction/flip{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"RP" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"RT" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "RU" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/airless{
@@ -10573,6 +10031,27 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"RX" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/trek/ship{
+	name = "Smoking room"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"Sa" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/obj/structure/closet/secure_closet/personal,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"Sf" = (
+/obj/machinery/transporter_pad{
+	icon_state = "2,1"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Sg" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,2"
@@ -10590,6 +10069,16 @@
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/plating/airless,
 /area/ship/asteroiddebris)
+"Sp" = (
+/obj/machinery/vending/tool,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"Sq" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Transporter room"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Ss" = (
 /obj/structure/fluff/broken_flooring{
 	dir = 2;
@@ -10605,6 +10094,13 @@
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/open/floor/grass,
 /area/ship/m_class)
+"Sy" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Sz" = (
 /obj/structure/railing,
 /obj/machinery/light{
@@ -10620,12 +10116,54 @@
 /obj/structure/trek_catwalk,
 /turf/open/floor/plating,
 /area/ship/ai_simulated)
+"SF" = (
+/obj/machinery/conveyor{
+	dir = 10;
+	icon_state = "conveyor_map";
+	id = "whisp_disposals"
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"SG" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 1
+	},
+/turf/open/floor/carpet,
+/area/ship/merc)
+"SK" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "SL" = (
 /obj/machinery/door/airlock/titanium{
 	name = "Escape Pod Airlock"
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ship/m_class)
+"SN" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"SO" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"SQ" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 8
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "SS" = (
 /obj/structure/railing,
 /obj/machinery/light{
@@ -10633,6 +10171,10 @@
 	},
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
+"ST" = (
+/obj/item/twohanded/required/kirbyplants/random,
+/turf/open/floor/carpet,
+/area/ship/merc)
 "SU" = (
 /obj/machinery/transporter_pad{
 	icon_state = "1,1"
@@ -10644,6 +10186,34 @@
 /obj/item/camera,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"SX" = (
+/obj/machinery/door/window/northright,
+/obj/machinery/conveyor{
+	dir = 6;
+	icon_state = "conveyor_map";
+	id = "whisp_disposals"
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"Ta" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/turf/open/floor/carpet,
+/area/ship/merc)
+"Tc" = (
+/obj/machinery/door/airlock/trek/ship/sec/torpedo{
+	dir = 4;
+	name = "Munitions";
+	req_one_access = null
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"Tg" = (
+/obj/machinery/light/small,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Th" = (
 /obj/structure/overmap_component/tactical/warbird,
 /turf/open/floor/carpet/trek/romulan,
@@ -10664,6 +10234,12 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/engine,
 /area/ship/bridge/museum)
+"Tm" = (
+/obj/machinery/transporter_pad{
+	icon_state = "3,0"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Tn" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/grass,
@@ -10674,12 +10250,37 @@
 	icon_state = "platingdmg1"
 	},
 /area/ship/ai_simulated)
+"Tq" = (
+/obj/machinery/vending/cola/pwr_game,
+/turf/open/floor/carpet,
+/area/ship/merc)
+"Tr" = (
+/obj/structure/closet/toolcloset,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"Tx" = (
+/obj/machinery/transporter_pad{
+	icon_state = "1,0"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Tz" = (
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"TA" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "whisp_disposals"
+	},
+/obj/machinery/recycler,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "TB" = (
 /turf/open/floor/plating,
 /area/ship/ai_simulated)
@@ -10688,6 +10289,11 @@
 /obj/item/restraints/handcuffs,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"TE" = (
+/obj/structure/bed,
+/obj/item/bedsheet/patriot,
+/turf/open/floor/carpet,
+/area/ship/merc)
 "TF" = (
 /obj/machinery/door/airlock/trek/ship,
 /turf/open/floor/carpet/trek/romulan,
@@ -10700,12 +10306,44 @@
 /obj/item/twohanded/required/kirbyplants/photosynthetic,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
+"TO" = (
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	icon_state = "pipe11-2";
+	dir = 10
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"TP" = (
+/obj/structure/closet/cardboard,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"TR" = (
+/obj/machinery/transporter_pad{
+	icon_state = "4,2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "TS" = (
 /obj/machinery/transporter_pad{
 	icon_state = "3,0"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"TU" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"Ua" = (
+/obj/structure/closet/secure_closet/personal,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Ud" = (
 /obj/structure/chair/comfy/shuttle{
 	icon_state = "shuttle_chair";
@@ -10725,15 +10363,35 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"Uo" = (
+/obj/structure/overmap_component/torpedo_tube,
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "whisp_torpedo"
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Up" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_destination)
+"Ur" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Ut" = (
 /turf/closed/wall/trek_smooth/romulan,
 /area/ship/ai_simulated_tertiary)
+"Uu" = (
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Uv" = (
 /obj/structure/flora/ausbushes/pointybush,
 /turf/open/floor/plating/asteroid{
@@ -10757,6 +10415,19 @@
 /obj/machinery/light,
 /turf/open/floor/plating,
 /area/ship/ai_simulated)
+"UB" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "UD" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,1"
@@ -10768,12 +10439,33 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/dark,
 /area/ship/ai_simulated_secondary)
+"UF" = (
+/obj/machinery/transporter_pad{
+	icon_state = "3,3"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "UI" = (
 /obj/structure/table/survival_pod,
 /obj/item/clothing/under/trek/engsec/next,
 /obj/item/twohanded/spear,
 /turf/open/floor/pod/dark,
 /area/space)
+"UK" = (
+/obj/structure/rack,
+/obj/item/clothing/head/helmet,
+/obj/item/clothing/head/helmet,
+/obj/item/clothing/suit/armor/vest/alt,
+/obj/item/clothing/suit/armor/vest/alt,
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"UM" = (
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/turf/open/floor/carpet,
+/area/ship/merc)
 "UN" = (
 /obj/structure/table/glass,
 /obj/machinery/light{
@@ -10792,6 +10484,20 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"UU" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"UW" = (
+/obj/machinery/transporter_pad{
+	icon_state = "2,0"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "UX" = (
 /turf/open/floor/holofloor/beach/water{
 	icon_state = "nicewater"
@@ -10800,6 +10506,12 @@
 "UY" = (
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
+"Vc" = (
+/obj/machinery/transporter_pad{
+	icon_state = "3,4"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Vm" = (
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
@@ -10807,6 +10519,12 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"Vo" = (
+/obj/machinery/transporter_pad{
+	icon_state = "4,3"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Vr" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,3"
@@ -10824,12 +10542,34 @@
 	icon_state = "platingdmg1"
 	},
 /area/ship/asteroiddebris)
+"Vv" = (
+/obj/structure/chair/trek/dark{
+	icon_state = "dark";
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Vx" = (
 /obj/machinery/shower{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge/museum)
+"Vy" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"Vz" = (
+/obj/machinery/washing_machine,
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "VA" = (
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
@@ -10841,10 +10581,26 @@
 /obj/structure/sign/warning/biohazard,
 /turf/closed/wall/trek_smooth/room,
 /area/ship/station/delivery_destination)
+"VC" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "VD" = (
 /obj/structure/railing,
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
+"VG" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "VH" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/spray/cleaner,
@@ -10860,18 +10616,42 @@
 "VN" = (
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
+"VP" = (
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	icon_state = "connector_map-2";
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/pump,
+/obj/machinery/light,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "VQ" = (
 /obj/machinery/transporter_pad{
 	icon_state = "0,1"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"VT" = (
+/obj/item/gun/energy/taser,
+/obj/item/storage/belt/security,
+/obj/structure/closet/syndicate,
+/obj/item/storage/backpack/duffelbag,
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "VU" = (
 /obj/machinery/transporter_pad{
 	icon_state = "4,2"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"VW" = (
+/obj/item/twohanded/required/kirbyplants/random,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 9
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "VX" = (
 /turf/open/floor/trek/tile,
 /area/ship/ai_simulated_tertiary)
@@ -10881,6 +10661,14 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_destination)
+"Wb" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/obj/structure/closet/wardrobe/grey,
+/turf/open/floor/carpet,
+/area/ship/merc)
 "Wc" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/black,
@@ -10895,6 +10683,9 @@
 /obj/structure/window/reinforced/fulltile/trek/viewport,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
+"Wl" = (
+/turf/closed/wall/trek_smooth/bsg,
+/area/ship/merc)
 "Wp" = (
 /obj/structure/window/reinforced/fulltile/trek/porthole,
 /turf/open/floor/carpet/trek,
@@ -10912,6 +10703,12 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
+"Wv" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "Ww" = (
 /obj/structure/chair/stool/bar,
 /turf/open/floor/plating,
@@ -10928,6 +10725,49 @@
 /obj/structure/bed,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
+"WC" = (
+/obj/machinery/meter/atmos,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"WD" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/mineral/gold,
+/obj/item/stack/sheet/mineral/gold,
+/obj/item/stack/sheet/mineral/gold,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"WJ" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/obj/structure/disposalpipe/segment{
+	icon_state = "pipe";
+	dir = 6
+	},
+/obj/machinery/vending/cola/red,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"WK" = (
+/obj/machinery/door/airlock/trek/ship{
+	dir = 4;
+	name = "Armoury"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"WM" = (
+/obj/structure/overmap_component/plasma_injector{
+	pixel_x = -32
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "WP" = (
 /obj/machinery/paystand,
 /turf/open/floor/plasteel/dark,
@@ -10936,6 +10776,13 @@
 /obj/effect/spawner/lootdrop/crate_spawner,
 /turf/open/floor/plating/asteroid/airless,
 /area/ship/asteroiddebris)
+"WX" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 11
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "WZ" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/grass/fakebasalt,
@@ -10945,6 +10792,18 @@
 	icon_state = "damaged3"
 	},
 /area/ship/debrisfield)
+"Xb" = (
+/obj/machinery/light,
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
+"Xc" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	icon_state = "ast_warn";
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Xd" = (
 /obj/structure/railing{
 	icon_state = "railing0";
@@ -10966,10 +10825,33 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
+"Xw" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Xz" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/beach/sand,
 /area/ship/m_class)
+"XA" = (
+/obj/structure/railing{
+	icon_state = "railing0";
+	dir = 1
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"XD" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "XG" = (
 /obj/machinery/chem_master,
 /turf/open/floor/carpet/trek/romulan,
@@ -10988,6 +10870,14 @@
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_source)
+"XJ" = (
+/obj/effect/turf_decal/stripes/asteroid/corner,
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 8
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "XL" = (
 /obj/structure/torpedo_casing{
 	name = "Photon torpedo exhibit"
@@ -10997,10 +10887,43 @@
 "XM" = (
 /turf/open/floor/plasteel/airless,
 /area/ship/debrisfield)
+"XP" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Crew conference room"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"XQ" = (
+/obj/structure/mirror{
+	pixel_y = 32
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"XS" = (
+/obj/structure/overmap_component/viewscreen{
+	density = 0;
+	pixel_y = 32
+	},
+/obj/machinery/autolathe,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"XU" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet,
+/area/ship/merc)
 "XW" = (
 /mob/living/simple_animal/hostile/asteroid/gutlunch/gubbuck,
 /turf/open/floor/grass/fakebasalt,
 /area/ship/m_class)
+"Yb" = (
+/obj/structure/disposalpipe/junction,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Yc" = (
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/bridge/museum)
@@ -11008,6 +10931,27 @@
 /obj/structure/chair/borg/charging,
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
+"Yi" = (
+/obj/structure/bookcase/random/adult,
+/turf/open/floor/carpet,
+/area/ship/merc)
+"Yk" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Medical"
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"Yn" = (
+/obj/structure/table/reinforced,
+/obj/machinery/chem_dispenser/drinks,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"Yp" = (
+/obj/structure/overmap_component/tactical{
+	req_access = null
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "Ys" = (
 /obj/structure/chair/comfy/shuttle{
 	icon_state = "shuttle_chair";
@@ -11031,6 +10975,17 @@
 	icon_state = "damaged3"
 	},
 /area/ship/debrisfield)
+"Yv" = (
+/obj/machinery/door/airlock/trek/ship{
+	name = "Crew conference room"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"Yx" = (
+/obj/structure/table/wood/fancy,
+/turf/open/floor/carpet,
+/area/ship/merc)
 "Yz" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/visible{
 	icon_state = "manifold-2";
@@ -11038,6 +10993,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"YA" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
+"YE" = (
+/obj/machinery/transporter_pad{
+	icon_state = "4,0"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "YF" = (
 /obj/structure/table/optable,
 /turf/open/floor/carpet/trek/romulan,
@@ -11048,6 +11015,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"YM" = (
+/obj/structure/disposalpipe/segment{
+	icon_state = "pipe";
+	dir = 9
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "YQ" = (
 /obj/item/twohanded/required/kirbyplants{
 	icon_state = "plant-10"
@@ -11134,10 +11108,22 @@
 /obj/machinery/iv_drip,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge/museum)
+"Zr" = (
+/obj/machinery/transporter_pad{
+	icon_state = "1,3"
+	},
+/turf/open/floor/trek/bsg/corrugated,
+/area/ship/merc)
 "Zs" = (
 /obj/effect/landmark/runabout_dock,
 /turf/open/space/basic,
 /area/ship/ai_simulated_tertiary)
+"Zy" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
 "ZA" = (
 /turf/closed/wall/trek_smooth/reinforced,
 /area/ship/ai_simulated)
@@ -11145,6 +11131,21 @@
 /obj/structure/trek_decor/romulan,
 /turf/closed/wall/trek_smooth/romulan,
 /area/ship/ai_simulated_tertiary)
+"ZD" = (
+/obj/machinery/nuclearbomb/syndicate,
+/turf/open/floor/trek/bsg,
+/area/ship/merc)
+"ZE" = (
+/obj/structure/disposalpipe/segment{
+	icon_state = "pipe";
+	dir = 6
+	},
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	icon_state = "ast_warn_corner";
+	dir = 4
+	},
+/turf/open/floor/trek/bsg/tile,
+/area/ship/merc)
 "ZF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -26686,25 +26687,25 @@ aa
 aa
 aa
 aa
-pA
-pA
-qk
-pA
-pA
-pA
-qk
-qk
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
+Wl
+Wl
+Ho
+Wl
+Wl
+Wl
+Ho
+Ho
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
 aa
 aa
 aa
@@ -26942,26 +26943,26 @@ aa
 aa
 aa
 aa
-pA
-pA
-um
-um
-um
-pA
-qI
-qZ
-rp
-rp
-pA
-sf
-sn
-qJ
-sJ
-sJ
-pA
-pX
-ty
-pA
+Wl
+Wl
+vH
+vH
+vH
+Wl
+Fs
+VT
+qW
+qW
+Wl
+Uo
+Nu
+Rf
+EJ
+EJ
+Wl
+Ou
+BW
+Wl
 aa
 aa
 aa
@@ -27199,26 +27200,26 @@ aa
 aa
 aa
 aa
-pA
-pE
-pX
-pX
-pX
-pM
-qJ
-qJ
-qJ
-rB
-pA
-pA
-pA
-sA
-qJ
-ti
-pM
-tu
-pX
-pA
+Wl
+Ua
+Ou
+Ou
+Ou
+wx
+Rf
+Rf
+Rf
+Xb
+Wl
+Wl
+Wl
+BC
+Rf
+wF
+wx
+rZ
+Ou
+Wl
 aa
 aa
 aa
@@ -27456,26 +27457,26 @@ aa
 aa
 aa
 aa
-pA
-pG
-pX
-pX
-pX
-qu
-qJ
-qJ
-qJ
-qJ
-qJ
-sg
-pA
-sC
-sL
-qJ
-pA
-tv
-pX
-pA
+Wl
+Sa
+Ou
+Ou
+Ou
+tB
+Rf
+Rf
+Rf
+Rf
+Rf
+UK
+Wl
+He
+Gw
+Rf
+Wl
+sm
+Ou
+Wl
 aa
 aa
 aa
@@ -27713,26 +27714,26 @@ aa
 aa
 aa
 aa
-pA
-pE
-pY
-pX
-pX
-pA
-qK
-qJ
-qJ
-qJ
-qJ
-sg
-pA
-sD
-qJ
-qJ
-pA
-tw
-pX
-pA
+Wl
+Ua
+IN
+Ou
+Ou
+Wl
+th
+Rf
+Rf
+Rf
+Rf
+UK
+Wl
+pV
+Rf
+Rf
+Wl
+Cp
+Ou
+Wl
 aa
 aa
 aa
@@ -27748,15 +27749,15 @@ aa
 aa
 aa
 aa
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
 aa
 aa
 aa
@@ -27970,52 +27971,52 @@ aa
 aa
 aa
 aa
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-rt
-pA
-pA
-pA
-pA
-pA
-pA
-tk
-pA
-pA
-tA
-pA
-pA
-qk
-qk
-qk
-qk
-pA
-pA
-pA
-pA
-pA
-vL
-pA
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+WK
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Tc
+Wl
+Wl
+RB
+Wl
+Wl
+Ho
+Ho
+Ho
+Ho
+Wl
+Wl
+Wl
+Wl
+Wl
+Lq
+Wl
 aa
 aa
 aa
-pA
-qJ
-pA
-qJ
-pA
-qJ
-pA
-qJ
-pA
-pA
-pA
+Wl
+Rf
+Wl
+Rf
+Wl
+Rf
+Wl
+Rf
+Wl
+Wl
+Wl
 aa
 aa
 ab
@@ -28227,53 +28228,53 @@ aa
 aa
 aa
 aa
-pA
-pI
-pZ
-ql
-pZ
-pZ
-qM
-pA
-xd
-xf
-xg
-xf
-xf
-xf
-xf
-xf
-xf
-xf
-yh
-pA
-tw
-tv
-pX
-pX
-pX
-uw
-pA
-uQ
-vb
-vs
-vM
-pA
-pA
-qk
-pA
-pA
-yk
-xY
-qJ
-xY
-qJ
-xY
-qJ
-xY
-qJ
-pA
-vY
+Wl
+Tq
+KG
+XU
+KG
+KG
+UM
+Wl
+TU
+EB
+EI
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+AJ
+Wl
+Cp
+sm
+Ou
+Ou
+Ou
+yQ
+Wl
+zq
+Ol
+QI
+Bm
+Wl
+Wl
+Ho
+Wl
+Wl
+Ur
+WM
+Rf
+WM
+Rf
+WM
+Rf
+WM
+Rf
+Wl
+FK
 aa
 ab
 aa
@@ -28484,54 +28485,54 @@ aa
 aa
 aa
 aa
-pA
-pJ
-pZ
-pZ
-pZ
-pZ
-qP
-ra
-xu
-qe
-qe
-qe
-qe
-qe
-qe
-qe
-qe
-rF
-xi
-tB
-rz
-rz
-rz
-rz
-rz
-uz
-uL
-rz
-rK
-vu
-wa
-pA
-pX
-xL
-xK
-xX
-uW
-ya
-uW
-ya
-yd
-ye
+Wl
 yf
-yg
-rB
-pA
-pw
-vZ
+KG
+KG
+KG
+KG
+FT
+RX
+JK
+uj
+uj
+uj
+uj
+uj
+uj
+uj
+uj
+Iq
+CU
+Kk
+AO
+AO
+AO
+AO
+AO
+Ju
+DT
+AO
+YM
+TA
+Hk
+Wl
+Ou
+Lp
+NT
+MK
+RT
+Oo
+RT
+Oo
+An
+OW
+XD
+wR
+Xb
+Wl
+LK
+On
 ab
 aa
 aa
@@ -28741,53 +28742,53 @@ aa
 aa
 aa
 aa
-pA
-pM
-pZ
-qm
-qq
-qv
-qT
-pA
-xe
-xo
-xo
-xo
-xo
-xo
-xo
-xo
-Ft
-rG
-xk
-pA
-tD
-tR
-pY
-pX
-pX
-rJ
-pA
-uR
-vc
+Wl
+wx
+KG
+Na
+Pf
+SG
+ST
+Wl
+Gd
+Ip
+Ip
+Ip
+Ip
+Ip
+Ip
+Ip
+SK
 vx
-wb
-pA
-uR
-xM
-pX
-pA
-qJ
-yb
-qJ
-yb
-qJ
-yb
-qJ
-yb
-qJ
-pA
-vY
+Bh
+Wl
+Vz
+ME
+IN
+Ou
+Ou
+Zy
+Wl
+Ld
+Wv
+SX
+SF
+Wl
+Ld
+xd
+Ou
+Wl
+Rf
+Ir
+Rf
+Ir
+Rf
+Ir
+Rf
+Ir
+Rf
+Wl
+FK
 aa
 ab
 aa
@@ -28999,51 +29000,51 @@ aa
 aa
 aa
 aa
-pA
-pA
-qk
-qk
-qk
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-xp
-rG
-xl
-pA
-pA
-pA
-pA
-pA
-pA
-uC
-pA
-pA
-pA
-pA
-pA
-pA
-pX
-xM
-pX
-pA
-qJ
-pA
-qJ
-pA
-qJ
-pA
-qJ
-pA
-pA
-pA
+Wl
+Wl
+Ho
+Ho
+Ho
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+HM
+vx
+Fa
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+tN
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Ou
+xd
+Ou
+Wl
+Rf
+Wl
+Rf
+Wl
+Rf
+Wl
+Rf
+Wl
+Wl
+Wl
 aa
 aa
 ab
@@ -29264,41 +29265,41 @@ aa
 aa
 aa
 aa
-pA
-rM
-pZ
-pA
-pZ
-sM
-pM
-xp
-rG
-xl
-pA
-tE
-qn
-tZ
-uk
+Wl
+TE
+KG
+Wl
+KG
+sg
+wx
+HM
+vx
+Fa
+Wl
+xw
 qi
-rw
-uM
-pA
-qJ
-qJ
-wd
-pA
-pX
-xM
-pX
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
+sj
+vo
+Uu
+zd
+DV
+Wl
+Rf
+Rf
+OF
+Wl
+Ou
+xd
+Ou
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
 aa
 aa
 aa
@@ -29521,33 +29522,33 @@ aa
 aa
 aa
 aa
-pA
-rO
-pZ
-pA
-rT
-sN
-pA
-xp
-rG
-xl
-pD
-qi
-qi
-qi
-qi
-qi
-qi
-qi
-pA
-vd
-qJ
-we
+Wl
+Wb
+KG
+Wl
+FP
+OA
+Wl
+HM
+vx
+Fa
 pM
-pX
-xM
-xV
-pA
+Uu
+Uu
+Uu
+Uu
+Uu
+Uu
+Uu
+Wl
+qg
+Rf
+xL
+wx
+Ou
+xd
+Cr
+Wl
 aa
 aa
 aa
@@ -29778,41 +29779,41 @@ aa
 aa
 aa
 aa
-pA
-rP
-si
-pA
-pZ
-sO
-pA
-xp
-rG
-xl
-pD
-qi
-qi
-qi
-qi
-qi
-qi
-qi
-pA
-ve
-vy
-wg
-pA
-pX
-xM
-pX
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
+Wl
+Od
+DO
+Wl
+KG
+Cs
+Wl
+HM
+vx
+Fa
+pM
+Uu
+Uu
+Uu
+Uu
+Uu
+Uu
+Uu
+Wl
+rQ
+LH
+xy
+Wl
+Ou
+xd
+Ou
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
 aa
 aa
 aa
@@ -30035,43 +30036,43 @@ aa
 aa
 aa
 aa
-pA
-rQ
-pZ
-pA
-pZ
-sQ
-pA
-xp
-rG
-xl
-pD
-qi
-qi
-qi
-qi
-qi
-qi
-qi
-uT
-vf
-vz
-wh
-pA
-pX
-xM
-pX
-pA
-qJ
-pA
-qJ
-pA
-qJ
-pA
-qJ
-pA
-pA
-pA
+Wl
+Yi
+KG
+Wl
+KG
+Ff
+Wl
+HM
+vx
+Fa
+pM
+Uu
+Uu
+Uu
+Uu
+Uu
+Uu
+Uu
+sx
+wH
+Az
+Ha
+Wl
+Ou
+xd
+Ou
+Wl
+Rf
+Wl
+Rf
+Wl
+Rf
+Wl
+Rf
+Wl
+Wl
+Wl
 aa
 aa
 ab
@@ -30287,49 +30288,49 @@ aa
 aa
 aa
 aa
-pA
-pA
-qk
-qk
-pA
-pA
-pA
-sj
-pA
-sj
-pA
-pA
-xp
-rG
-xl
-pM
-qi
-qi
-qi
-sp
-qi
-qi
-qc
-pA
-vg
-vB
-wi
-pA
-pX
-xM
-pX
-pA
-yk
-xY
-qJ
-xY
-qJ
-xY
-qJ
-xY
-qJ
-pA
-vY
+Wl
+Wl
+Ho
+Ho
+Wl
+Wl
+Wl
+Rm
+Wl
+Rm
+Wl
+Wl
+HM
+vx
+Fa
+wx
+Uu
+Uu
+Uu
+Nc
+Uu
+Uu
+LG
+Wl
+Bi
+En
+sk
+Wl
+Ou
+xd
+Ou
+Wl
+Ur
+WM
+Rf
+WM
+Rf
+WM
+Rf
+WM
+Rf
+Wl
+FK
 aa
 ab
 aa
@@ -30544,50 +30545,50 @@ aa
 aa
 aa
 aa
-pA
-qi
-qU
-rd
-rv
-pA
-rR
-qi
-rL
-qi
-rv
-pA
-xq
-rG
-xl
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-vh
-pA
-pA
-pA
-pX
-xN
-xK
-xX
-uW
-ya
-uW
-ya
-yd
-ye
-yf
-yg
-rB
-pA
-pw
-vZ
+Wl
+Uu
+Qi
+EC
+sJ
+Wl
+AW
+Uu
+CP
+Uu
+sJ
+Wl
+vB
+vx
+Fa
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+MT
+Wl
+Wl
+Wl
+Ou
+wo
+NT
+MK
+RT
+Oo
+RT
+Oo
+An
+OW
+XD
+wR
+Xb
+Wl
+LK
+On
 ab
 aa
 aa
@@ -30801,49 +30802,49 @@ aa
 aa
 aa
 aa
-pD
-qw
-qi
-qi
-rw
-rC
-qe
-qe
-qe
-qe
-sR
-tl
-xw
-tx
-xl
-pA
-tF
+pM
 tU
-ub
-ul
-uu
-uD
-ul
-uV
-vk
-vE
-wj
-pA
-pA
-xO
-pA
-pA
-qJ
-yb
-qJ
-yb
-qJ
-yb
-qJ
-yb
-qJ
-pA
-vY
+Uu
+Uu
+zd
+rf
+uj
+uj
+uj
+uj
+Yb
+Yv
+VC
+Mh
+Fa
+Wl
+tF
+SO
+Cc
+Xc
+Do
+NW
+Xc
+RN
+xl
+UB
+IO
+Wl
+Wl
+GZ
+Wl
+Wl
+Rf
+Ir
+Rf
+Ir
+Rf
+Ir
+Rf
+Ir
+Rf
+Wl
+FK
 aa
 ab
 aa
@@ -31058,48 +31059,48 @@ aa
 aa
 aa
 aa
-pD
-qy
-qi
-qi
-rx
 pM
-pZ
-sk
-sk
-sk
-pZ
-pA
-xp
-rG
-xl
-pM
-tG
-qJ
-qJ
-qJ
-qJ
-qJ
-qJ
-qJ
-vl
-qJ
-wl
-pA
-xJ
-xQ
-tw
-pA
-qJ
-pA
-qJ
-pA
-qJ
-pA
-qJ
-pA
-pA
-pA
+If
+Uu
+Uu
+LN
+wx
+KG
+Ta
+Ta
+Ta
+KG
+Wl
+HM
+vx
+Fa
+wx
+Qh
+Rf
+Rf
+Rf
+Rf
+Rf
+Rf
+Rf
+JI
+Rf
+UU
+Wl
+Ed
+Fi
+Cp
+Wl
+Rf
+Wl
+Rf
+Wl
+Rf
+Wl
+Rf
+Wl
+Wl
+Wl
 aa
 aa
 ab
@@ -31315,46 +31316,46 @@ aa
 aa
 aa
 aa
-pD
-qi
-qi
-qi
-qi
-pA
-rS
-sl
-sl
-sl
-qv
-pA
-xp
-rG
-xl
-pA
-tG
-qJ
-qJ
-qJ
-qJ
-qJ
-qJ
-qJ
-vl
-qJ
-wm
-pA
-pX
-xM
-pX
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
+pM
+Uu
+Uu
+Uu
+Uu
+Wl
+NX
+Yx
+Yx
+Yx
+SG
+Wl
+HM
+vx
+Fa
+Wl
+Qh
+Rf
+Rf
+Rf
+Rf
+Rf
+Rf
+Rf
+JI
+Rf
+Gz
+Wl
+Ou
+xd
+Ou
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
 aa
 aa
 aa
@@ -31572,38 +31573,38 @@ aa
 aa
 aa
 aa
-pA
-qB
-qW
-rf
-qi
-pA
-rT
-sl
-sl
-sF
-pZ
-pA
-xr
-rG
-xl
-pA
-tH
-qJ
-qJ
-qJ
-qJ
-uE
-uP
-uW
-vm
-uW
-wo
-xG
-xK
-xR
-xW
-pA
+Wl
+xB
+La
+Vv
+Uu
+Wl
+FP
+Yx
+Yx
+rd
+KG
+Wl
+Hy
+vx
+Fa
+Wl
+RP
+Rf
+Rf
+Rf
+Rf
+AQ
+Ak
+RT
+WC
+RT
+KR
+yt
+NT
+Mn
+Tg
+Wl
 aa
 aa
 aa
@@ -31829,46 +31830,46 @@ aa
 aa
 aa
 aa
-pD
-qi
-qi
-qi
-qi
-pA
-rV
-sl
-sl
-sl
-qv
-pA
-xp
-rG
-xl
-pA
-tG
-qJ
-qJ
-qJ
-qJ
-qJ
-qJ
-qJ
-qJ
-qJ
-wm
-pA
-pX
-xM
-pX
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
+pM
+Uu
+Uu
+Uu
+Uu
+Wl
+sR
+Yx
+Yx
+Yx
+SG
+Wl
+HM
+vx
+Fa
+Wl
+Qh
+Rf
+Rf
+Rf
+Rf
+Rf
+Rf
+Rf
+Rf
+Rf
+Gz
+Wl
+Ou
+xd
+Ou
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
 aa
 aa
 aa
@@ -32086,48 +32087,48 @@ aa
 aa
 aa
 aa
-pD
-qC
-qi
-qi
-rx
-pA
-pZ
-sm
-sm
-sm
-pZ
-pA
-xp
-rG
-xl
 pM
-tG
-qJ
-qJ
-qJ
-qJ
-qJ
-qJ
-qJ
-qJ
-qJ
-wm
-pA
-xJ
-xQ
-tw
-pA
-qJ
-pA
-qJ
-pA
-qJ
-pA
-qJ
-pA
-pA
-pA
+Yp
+Uu
+Uu
+LN
+Wl
+KG
+IH
+IH
+IH
+KG
+Wl
+HM
+vx
+Fa
+wx
+Qh
+Rf
+Rf
+Rf
+Rf
+Rf
+Rf
+Rf
+Rf
+Rf
+Gz
+Wl
+Ed
+Fi
+Cp
+Wl
+Rf
+Wl
+Rf
+Wl
+Rf
+Wl
+Rf
+Wl
+Wl
+Wl
 aa
 aa
 ab
@@ -32343,49 +32344,49 @@ aa
 aa
 aa
 aa
-pD
-qD
-qi
-qi
-qi
-rD
-qi
-qi
-qi
-qi
-qi
-tm
-xy
-rG
-xl
-pA
-tI
-tV
-ud
-un
-uv
-un
-un
-uX
-vo
-vH
-xx
-pA
-pA
-xO
-pA
-pA
-qJ
-xY
-qJ
-xY
-qJ
-xY
-qJ
-xY
-qJ
-pA
-vY
+pM
+MO
+Uu
+Uu
+Uu
+rv
+Uu
+Uu
+Uu
+Uu
+Uu
+XP
+Xw
+vx
+Fa
+Wl
+Eh
+BN
+yg
+VG
+JW
+VG
+VG
+Pg
+XJ
+tG
+Bf
+Wl
+Wl
+GZ
+Wl
+Wl
+Rf
+WM
+Rf
+WM
+Rf
+WM
+Rf
+WM
+Rf
+Wl
+FK
 aa
 ab
 aa
@@ -32600,50 +32601,50 @@ aa
 aa
 aa
 aa
-pA
-qi
-qU
-rk
-qc
-pA
-rW
-qi
-sp
-qi
-sS
-pA
-xq
-rG
-xl
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-vp
-pA
-pA
-pA
-pX
-xT
-xK
-xX
-uW
-ya
-uW
-ya
-yd
-ye
-yf
-yg
-rB
-pA
-pw
-vZ
+Wl
+Uu
+Qi
+sA
+LG
+Wl
+PH
+Uu
+Nc
+Uu
+Dn
+Wl
+vB
+vx
+Fa
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+HY
+Wl
+Wl
+Wl
+Ou
+sW
+NT
+MK
+RT
+Oo
+RT
+Oo
+An
+OW
+XD
+wR
+Xb
+Wl
+LK
+On
 ab
 aa
 aa
@@ -32857,49 +32858,49 @@ aa
 aa
 aa
 aa
-pA
-pA
-qk
-qk
-pA
-pA
-pA
-sj
-pA
-sj
-pA
-pA
-xp
+Wl
+Wl
+Ho
+Ho
+Wl
+Wl
+Wl
+Rm
+Wl
+Rm
+Wl
+Wl
+HM
+vx
+Fa
+Wl
+CI
+Bd
+Gc
+rC
+Wl
+Sp
+Uu
+Uu
+Uu
+Uu
 rG
-xl
-pA
-tJ
-tW
-uf
-uo
-pA
-uF
-qi
-qi
-qi
-qi
-xC
-pA
-pX
-xM
-pX
-pA
-yk
-yb
-qJ
-yb
-qJ
-yb
-qJ
-yb
-qJ
-pA
-vY
+Wl
+Ou
+xd
+Ou
+Wl
+Ur
+Ir
+Rf
+Ir
+Rf
+Ir
+Rf
+Ir
+Rf
+Wl
+FK
 aa
 ab
 aa
@@ -33119,43 +33120,43 @@ aa
 aa
 aa
 aa
-pA
-rY
-pZ
-pA
-pZ
-sV
-pA
-xp
-rG
-xl
-pD
-tL
-pX
-ug
-uo
-pA
-uG
-qi
-qi
-qi
-qi
-xD
-pA
-pX
-xM
-pX
-pA
-qJ
-pA
-qJ
-pA
-qJ
-pA
-qJ
-pA
-pA
-pA
+Wl
+zz
+KG
+Wl
+KG
+Pm
+Wl
+HM
+vx
+Fa
+pM
+Os
+Ou
+HP
+rC
+Wl
+Hx
+Uu
+Uu
+Uu
+Uu
+Ap
+Wl
+Ou
+xd
+Ou
+Wl
+Rf
+Wl
+Rf
+Wl
+Rf
+Wl
+Rf
+Wl
+Wl
+Wl
 aa
 aa
 ab
@@ -33376,41 +33377,41 @@ aa
 aa
 aa
 aa
-pA
-rP
-si
-pA
-pZ
-sO
-pA
-xp
-rG
-xl
-pD
-tL
-pX
-ug
-uq
-pA
-uH
-qi
-qi
-qi
-qi
-xE
-pA
-pX
-xM
-pX
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
+Wl
+Od
+DO
+Wl
+KG
+Cs
+Wl
+HM
+vx
+Fa
+pM
+Os
+Ou
+HP
+VP
+Wl
+XS
+Uu
+Uu
+Uu
+Uu
+DC
+Wl
+Ou
+xd
+Ou
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
 aa
 aa
 aa
@@ -33633,33 +33634,33 @@ aa
 aa
 aa
 aa
-pA
-rO
-pZ
-pA
-rT
-sN
-pA
-xp
-rG
-xl
-pD
-tL
-pX
-ui
-uo
-pA
-uI
-qi
-qi
-qi
-qi
-xF
+Wl
+Wb
+KG
+Wl
+FP
+OA
+Wl
+HM
+vx
+Fa
 pM
-pX
-xM
-xV
-pA
+Os
+Ou
+TO
+rC
+Wl
+QM
+Uu
+Uu
+Uu
+Uu
+Tr
+wx
+Ou
+xd
+Cr
+Wl
 aa
 aa
 aa
@@ -33890,41 +33891,41 @@ aa
 aa
 aa
 aa
-pA
-rZ
-pZ
-pA
-pZ
-sZ
-pM
-xp
-rG
-xl
-pA
-tN
-pX
-pX
-ur
-pA
-uK
-qi
-va
-ts
-qe
-uM
-pA
-pX
-xM
-pX
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
+Wl
+ID
+KG
+Wl
+KG
+BR
+wx
+HM
+vx
+Fa
+Wl
+LY
+Ou
+Ou
+Pv
+Wl
+Vy
+Uu
+MS
+pY
+uj
+DV
+Wl
+Ou
+xd
+Ou
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
 aa
 aa
 aa
@@ -34139,51 +34140,51 @@ aa
 aa
 aa
 aa
-pA
-pA
-qk
-qk
-qk
-qk
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-xp
-rG
-xl
-pA
-pA
-tX
-pA
-pA
-pA
-pA
-pA
-pA
-vq
-pA
-pA
-pA
-pX
-xM
-pX
-pA
-qJ
-pA
-qJ
-pA
-qJ
-pA
-qJ
-pA
-pA
-pA
+Wl
+Wl
+Ho
+Ho
+Ho
+Ho
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+HM
+vx
+Fa
+Wl
+Wl
+rk
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Fl
+Wl
+Wl
+Wl
+Ou
+xd
+Ou
+Wl
+Rf
+Wl
+Rf
+Wl
+Rf
+Wl
+Rf
+Wl
+Wl
+Wl
 aa
 aa
 ab
@@ -34395,53 +34396,53 @@ aa
 aa
 aa
 aa
-pA
-pA
-xs
-xf
-xf
-xf
-xf
-xf
-xf
-xf
-xg
-xf
-xf
-xf
-xf
-xf
-xz
-tx
-xk
-pA
-rv
-qi
-qi
-rL
-qi
-qi
-qi
-rL
-rG
-qi
-qi
-pA
-uR
-xM
-pX
-pA
-qJ
-xY
-qJ
-xY
-qJ
-xY
-qJ
-xY
-qJ
-pA
-vY
+Wl
+Wl
+VW
+EB
+EB
+EB
+EB
+EB
+EB
+EB
+EI
+EB
+EB
+EB
+EB
+EB
+ZE
+Mh
+Bh
+Wl
+sJ
+Uu
+Uu
+CP
+Uu
+Uu
+Uu
+CP
+vx
+Uu
+Uu
+Wl
+Ld
+xd
+Ou
+Wl
+Rf
+WM
+Rf
+WM
+Rf
+WM
+Rf
+WM
+Rf
+Wl
+FK
 aa
 ab
 aa
@@ -34652,54 +34653,54 @@ aa
 aa
 aa
 aa
-pA
-pN
-xt
-qe
-qe
-qe
-qe
-qe
-qe
-rF
-qe
-qe
-qe
-qe
-qe
-qe
-tt
-rw
-xi
-tC
-tP
-qe
-qe
-qe
-qe
-qe
-qe
-qe
-tt
-qi
-qi
-pA
-pX
-xU
-xK
-xX
-uW
-ya
-uW
-ya
-yd
-ye
-yf
-yg
-rB
-pA
-pw
-vZ
+Wl
+WJ
+Jj
+uj
+uj
+uj
+uj
+uj
+uj
+Iq
+uj
+uj
+uj
+uj
+uj
+uj
+NY
+zd
+CU
+yi
+RO
+uj
+uj
+uj
+uj
+uj
+uj
+uj
+NY
+Uu
+Uu
+Wl
+Ou
+sX
+NT
+MK
+RT
+Oo
+RT
+Oo
+An
+OW
+XD
+wR
+Xb
+Wl
+LK
+On
 ab
 aa
 aa
@@ -34909,53 +34910,53 @@ aa
 aa
 aa
 aa
-pA
-pP
-xc
-qf
-qf
-qf
-xo
-xo
-xo
-xj
-xo
-xo
-xo
-xo
-xo
-xB
-xo
-xo
-yi
-pA
-qc
-qi
-qi
-qi
-qi
-qc
-qi
-qi
-qi
-qi
-qc
-pA
-pA
-qk
-pA
-pA
-yk
-yb
-qJ
-yb
-qJ
-yb
-qJ
-yb
-qJ
-pA
-vY
+Wl
+Gj
+QW
+IW
+IW
+IW
+Ip
+Ip
+Ip
+uR
+Ip
+Ip
+Ip
+Ip
+Ip
+MY
+Ip
+Ip
+xe
+Wl
+LG
+Uu
+Uu
+Uu
+Uu
+LG
+Uu
+Uu
+Uu
+Uu
+LG
+Wl
+Wl
+Ho
+Wl
+Wl
+Ur
+Ir
+Rf
+Ir
+Rf
+Ir
+Rf
+Ir
+Rf
+Wl
+FK
 aa
 ab
 aa
@@ -35166,52 +35167,52 @@ aa
 aa
 aa
 aa
-pA
-pA
-qg
-qg
-qg
-qg
-pA
-pA
-pA
-rI
-pA
-pA
-pA
-pA
-pA
-tn
-pA
-pA
-tA
-pA
-pA
-qk
-qk
-qk
-pA
-pA
-pA
-qk
-qk
-qk
-pA
-pA
+Wl
+Wl
+sM
+sM
+sM
+sM
+Wl
+Wl
+Wl
+tf
+Wl
+Wl
+Wl
+Wl
+Wl
+su
+Wl
+Wl
+RB
+Wl
+Wl
+Ho
+Ho
+Ho
+Wl
+Wl
+Wl
+Ho
+Ho
+Ho
+Wl
+Wl
 aa
 aa
 aa
-pA
-qJ
-pA
-qJ
-pA
-qJ
-pA
-qJ
-pA
-pA
-pA
+Wl
+Rf
+Wl
+Rf
+Wl
+Rf
+Wl
+Rf
+Wl
+Wl
+Wl
 aa
 aa
 ab
@@ -35423,26 +35424,26 @@ aa
 aa
 aa
 aa
-pD
-pS
-qi
-qi
-qi
-qi
-qX
-rl
-ry
-rJ
-sa
-pA
-su
-sG
-qi
-qi
-pA
-tw
-pX
-pA
+pM
+rz
+Uu
+Uu
+Uu
+Uu
+Hi
+Qy
+Ey
+Zy
+xQ
+Wl
+Lk
+KB
+Uu
+Uu
+Wl
+Cp
+Ou
+Wl
 aa
 aa
 aa
@@ -35458,15 +35459,15 @@ aa
 aa
 aa
 aa
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
 aa
 aa
 aa
@@ -35680,26 +35681,26 @@ aa
 aa
 aa
 aa
-pD
-pU
-qi
-qi
-qi
-qi
-qY
-pX
-pX
-rJ
-sb
-pA
-pA
-pA
-th
-qi
-pA
-tv
-pX
-pA
+pM
+Yn
+Uu
+Uu
+Uu
+Uu
+yv
+Ou
+Ou
+Zy
+Fv
+Wl
+Wl
+Wl
+XQ
+Uu
+Wl
+sm
+Ou
+Wl
 aa
 aa
 aa
@@ -35937,26 +35938,26 @@ aa
 aa
 aa
 aa
-pD
-pV
-qi
-qi
-qi
-qF
-pA
-rn
-rz
-rK
-sc
-pA
-sx
-sH
-qi
-qi
 pM
-tu
-pX
-pA
+xE
+Uu
+Uu
+Uu
+PY
+Wl
+Am
+AO
+YM
+Qu
+Wl
+QN
+Hj
+Uu
+Uu
+wx
+rZ
+Ou
+Wl
 aa
 aa
 aa
@@ -36194,26 +36195,26 @@ aa
 aa
 aa
 aa
-pA
-pA
-qj
-qn
+Wl
+Wl
+zk
 qi
+Uu
+Lx
+Wl
 qH
-pA
-ro
-pX
-pX
-sd
-pA
-sz
-qJ
-qi
-to
-pA
-pX
-ty
-pA
+Ou
+Ou
+ul
+Wl
+SN
+Rf
+Uu
+WX
+Wl
+Ou
+BW
+Wl
 aa
 aa
 aa
@@ -36452,25 +36453,25 @@ aa
 aa
 aa
 aa
-pA
-pA
-qk
-qk
-pA
-pA
-qk
-qk
-qk
-pA
-pA
-pA
-qk
-qk
-pA
-pA
-pA
-pA
-pA
+Wl
+Wl
+Ho
+Ho
+Wl
+Wl
+Ho
+Ho
+Ho
+Wl
+Wl
+Wl
+Ho
+Ho
+Wl
+Wl
+Wl
+Wl
+Wl
 aa
 aa
 aa
@@ -92237,10 +92238,10 @@ aa
 aa
 aa
 aa
-pA
-pA
-pA
-pA
+Wl
+Wl
+Wl
+Wl
 aa
 aa
 aa
@@ -92494,10 +92495,10 @@ aa
 aa
 aa
 aa
-pA
-wU
-ty
-pA
+Wl
+TP
+BW
+Wl
 aa
 aa
 aa
@@ -92751,10 +92752,10 @@ aa
 aa
 aa
 aa
-pA
-tu
-pX
-pA
+Wl
+rZ
+Ou
+Wl
 aa
 aa
 aa
@@ -93008,10 +93009,10 @@ aa
 aa
 aa
 aa
-pA
-tw
-pX
-pA
+Wl
+Cp
+Ou
+Wl
 aa
 aa
 aa
@@ -93265,10 +93266,10 @@ aa
 aa
 aa
 aa
-pA
-tv
-pX
-pA
+Wl
+sm
+Ou
+Wl
 aa
 aa
 aa
@@ -93515,17 +93516,17 @@ aa
 aa
 aa
 ab
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-tA
-pA
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+RB
+Wl
 aa
 aa
 aa
@@ -93772,17 +93773,17 @@ aa
 aa
 aa
 ab
-pA
-px
-px
-px
-px
-px
-xa
-qi
-qi
-qi
-pA
+Wl
+QO
+QO
+QO
+QO
+QO
+zO
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -94029,17 +94030,17 @@ aa
 aa
 aa
 ab
-pA
-px
-px
-px
-px
-px
-wT
-qi
-qi
-qi
-pA
+Wl
+QO
+QO
+QO
+QO
+QO
+Sy
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -94286,17 +94287,17 @@ aa
 aa
 aa
 ab
-pA
-px
-px
-px
-px
-px
-wT
-qi
-qi
-qi
-pA
+Wl
+QO
+QO
+QO
+QO
+QO
+Sy
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -94543,17 +94544,17 @@ aa
 aa
 aa
 ab
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-qi
-qi
-qi
-pA
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -94800,17 +94801,17 @@ aa
 aa
 aa
 ab
-pA
-qJ
-qJ
-sH
-qJ
-qJ
-pM
-tp
-qi
-qi
-pA
+Wl
+Rf
+Rf
+Hj
+Rf
+Rf
+wx
+YA
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -95057,17 +95058,17 @@ aa
 aa
 aa
 ab
-pA
-pH
-tf
-vO
-wq
-wA
-pD
-qi
-qi
-qi
-pA
+Wl
+GA
+RG
+uC
+vY
+vh
+pM
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -95314,17 +95315,17 @@ aa
 aa
 aa
 ab
-pA
-pR
-tg
-vP
-ws
-wD
-pD
-qi
-qi
-qi
-pA
+Wl
+JF
+Zr
+Cb
+xN
+Tx
+pM
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -95571,17 +95572,17 @@ aa
 aa
 aa
 ab
-pA
-qa
-uj
-vQ
-wt
-wF
-pD
-qi
-qi
-qi
-pA
+Wl
+zC
+Et
+KK
+Sf
+UW
+pM
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -95828,17 +95829,17 @@ aa
 aa
 aa
 ab
-pA
-qd
-vK
-vR
-ww
-wG
-pD
-qi
-qi
-qi
-pA
+Wl
+Vc
+UF
+GP
+uX
+Tm
+pM
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -96085,17 +96086,17 @@ aa
 aa
 aa
 ab
-pA
-qz
-vN
-vS
-wx
-wH
-pD
-qi
-qi
-qi
-pA
+Wl
+PN
+Vo
+TR
+Ie
+YE
+pM
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -96342,21 +96343,21 @@ aa
 aa
 aa
 ab
-pM
-qJ
-qJ
-vU
-qJ
-qJ
-pA
-qi
-qi
-qi
-pA
-pA
-pA
-pA
-pA
+wx
+Rf
+Rf
+pJ
+Rf
+Rf
+Wl
+Uu
+Uu
+Uu
+Wl
+Wl
+Wl
+Wl
+Wl
 aa
 ab
 aa
@@ -96599,21 +96600,21 @@ aa
 aa
 aa
 ab
-pA
-ri
-ri
-wI
-ri
-ri
-pA
-qi
-qi
-qi
-pA
-wY
-yl
-yo
-pA
+Wl
+SQ
+SQ
+PS
+SQ
+SQ
+Wl
+Uu
+Uu
+Uu
+Wl
+EK
+WD
+ys
+Wl
 aa
 ab
 aa
@@ -96856,21 +96857,21 @@ aa
 aa
 aa
 ab
-pA
-so
-pX
-pX
-pX
-pX
-wO
-qi
-qi
-qi
-wX
-pX
-pX
-pX
-pA
+Wl
+Of
+Ou
+Ou
+Ou
+Ou
+Sq
+Uu
+Uu
+Uu
+Kc
+Ou
+Ou
+Ou
+Wl
 aa
 ab
 aa
@@ -97113,21 +97114,21 @@ aa
 aa
 aa
 ab
-pA
-sE
-pX
-pX
-pX
-xV
-pA
-qB
-qi
-rx
-pA
-tu
-pX
-yp
-pA
+Wl
+Fe
+Ou
+Ou
+Ou
+Cr
+Wl
+xB
+Uu
+LN
+Wl
+rZ
+Ou
+ZD
+Wl
 aa
 ab
 aa
@@ -97370,21 +97371,21 @@ aa
 aa
 aa
 ab
-pA
-so
-pX
-pX
-pX
-pX
-wO
-qi
-qi
-qi
-wX
-pX
-pX
-pX
-pA
+Wl
+Of
+Ou
+Ou
+Ou
+Ou
+Sq
+Uu
+Uu
+Uu
+Kc
+Ou
+Ou
+Ou
+Wl
 aa
 ab
 aa
@@ -97627,21 +97628,21 @@ aa
 aa
 aa
 ab
-pA
-pX
-pX
-pX
-pX
-pX
-pA
-qi
-qi
-qi
-pA
-wZ
-yn
-yq
-pA
+Wl
+Ou
+Ou
+Ou
+Ou
+Ou
+Wl
+Uu
+Uu
+Uu
+Wl
+Rs
+Eb
+DU
+Wl
 aa
 ab
 aa
@@ -97884,21 +97885,21 @@ aa
 aa
 aa
 ab
-pA
-pX
-pX
-pX
-pX
-pX
-pA
-qi
-qi
-qi
-pA
-pA
-pA
-pA
-pA
+Wl
+Ou
+Ou
+Ou
+Ou
+Ou
+Wl
+Uu
+Uu
+Uu
+Wl
+Wl
+Wl
+Wl
+Wl
 aa
 ab
 aa
@@ -98141,17 +98142,17 @@ aa
 aa
 aa
 ab
-pA
-pA
-qk
-qk
-qk
-pA
-pA
-qi
-qi
-qi
-pA
+Wl
+Wl
+Ho
+Ho
+Ho
+Wl
+Wl
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -98398,17 +98399,17 @@ aa
 aa
 aa
 ab
-pA
-sW
-pX
-pX
-pX
-wJ
-pA
-qi
-qi
-qi
-pA
+Wl
+rM
+Ou
+Ou
+Ou
+GQ
+Wl
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -98655,17 +98656,17 @@ aa
 aa
 aa
 ab
-pA
-sX
-pX
-pX
-pX
-pX
-wR
-qi
-qi
-qi
-pA
+Wl
+Pk
+Ou
+Ou
+Ou
+Ou
+Yk
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -98912,17 +98913,17 @@ aa
 aa
 aa
 ab
-pA
-sY
-pX
-pX
-pX
-wK
-pA
-tp
-qi
-qi
-pA
+Wl
+BF
+Ou
+Ou
+Ou
+Pl
+Wl
+YA
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -99169,17 +99170,17 @@ aa
 aa
 aa
 ab
-pA
-pX
-pX
-pX
-pX
-wL
-pA
-qi
-qi
-qi
-pA
+Wl
+Ou
+Ou
+Ou
+Ou
+ve
+Wl
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -99426,17 +99427,17 @@ aa
 aa
 aa
 ab
-pA
-wp
-pX
-wp
-pX
-wN
-pM
-qi
-qi
-qi
-pA
+Wl
+zA
+Ou
+zA
+Ou
+QD
+wx
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -99683,17 +99684,17 @@ aa
 aa
 aa
 ab
-pA
-pA
-qk
-qk
-qk
-pA
-pA
-qi
-qi
-qi
-pA
+Wl
+Wl
+Ho
+Ho
+Ho
+Wl
+Wl
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -99940,17 +99941,17 @@ aa
 aa
 aa
 ab
-pA
-px
-px
-px
-px
-px
-wT
-qi
-qi
-qi
-pA
+Wl
+QO
+QO
+QO
+QO
+QO
+Sy
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -100197,17 +100198,17 @@ aa
 aa
 aa
 ab
-pA
-px
-px
-px
-px
-px
-wT
-qi
-qi
-qi
-pA
+Wl
+QO
+QO
+QO
+QO
+QO
+Sy
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -100454,17 +100455,17 @@ aa
 aa
 aa
 ab
-pA
-px
-px
-px
-px
-px
-xb
-qi
-qi
-qi
-pA
+Wl
+QO
+QO
+QO
+QO
+QO
+XA
+Uu
+Uu
+Uu
+Wl
 aa
 aa
 aa
@@ -100711,17 +100712,17 @@ aa
 aa
 aa
 ab
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-pA
-tA
-pA
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+Wl
+RB
+Wl
 aa
 aa
 aa
@@ -100975,10 +100976,10 @@ aa
 aa
 aa
 aa
-pA
-tv
-pX
-pA
+Wl
+sm
+Ou
+Wl
 aa
 aa
 aa
@@ -101232,10 +101233,10 @@ aa
 aa
 aa
 aa
-pA
-tw
-pX
-pA
+Wl
+Cp
+Ou
+Wl
 aa
 aa
 aa
@@ -101489,10 +101490,10 @@ aa
 aa
 aa
 aa
-pA
-tu
-pX
-pA
+Wl
+rZ
+Ou
+Wl
 aa
 aa
 aa
@@ -101746,10 +101747,10 @@ aa
 aa
 aa
 aa
-pA
-wW
-ty
-pA
+Wl
+OE
+BW
+Wl
 aa
 aa
 aa
@@ -102003,10 +102004,10 @@ aa
 aa
 aa
 aa
-pA
-pA
-pA
-pA
+Wl
+Wl
+Wl
+Wl
 aa
 aa
 aa
