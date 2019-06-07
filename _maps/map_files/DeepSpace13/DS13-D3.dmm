@@ -31,10 +31,10 @@
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hor)
 "ah" = (
-/obj/structure/filingcabinet/chestdrawer,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/structure/closet/secure_closet/RD,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hor)
 "ai" = (
