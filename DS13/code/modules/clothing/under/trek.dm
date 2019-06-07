@@ -137,6 +137,29 @@
 	item_state = "bl_suit"
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 20,"energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 
+/obj/item/clothing/under/trek/shuttle
+	name = "Starfleet shuttle pilot jumpsuit"
+	desc = "A tight fitting but comfortable jumpsuit made of high quality materials. This particular uniform was designed for use by shuttle pilots in intense scenarios where endurance of multiple Gs was necessary. It comes fitted with a torsion system to keep you locked into your seat as well as fire retardant padding designed to extend the lifespan of combat pilots, though it's not designed to be worn for extended periods."
+	icon = 'DS13/icons/obj/clothing/uniforms.dmi'
+	alternate_worn_icon = 'DS13/icons/mob/uniform.dmi'
+	icon_state = "trek_shuttle"
+	item_color = "trek_shuttle"
+	item_state = "bl_suit"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 10,"energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 10)
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/under/trek/shuttle/equipped(mob/user, slot)
+	. = ..()
+	SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "tight suit", /datum/mood_event/tight_suit)
+
+/obj/item/clothing/under/trek/shuttle/dropped(mob/user, slot)
+	. = ..()
+	SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "tight suit", /datum/mood_event/tight_suit)
+
+/datum/mood_event/tight_suit
+	description = "<span class='warning'>This jumpsuit sure is tight...</span>\n"
+	mood_change = -1
+
 /obj/item/clothing/suit/DS13
 	name = "Placeholder"
 	icon = 'DS13/icons/obj/suits.dmi'
