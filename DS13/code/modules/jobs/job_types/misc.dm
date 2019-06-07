@@ -81,7 +81,7 @@
 
 
 /datum/job/offduty_doctor
-	title = "Medical Doctor"
+	title = "Medical Doctor (off duty)"
 	flag = OFFDUTY_DOCTOR
 	department_head = list("Chief Medical Officer")
 	department_flag = MEDSCI
