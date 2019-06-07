@@ -19,6 +19,7 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	icon = 'DS13/icons/overmap/pancake.dmi'
 	icon_state = "pancake"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+	density = TRUE
 	var/obj/shield_overlay/shield_overlay
 	var/class = "nothing" //This is a nothing class heavy cruiser
 	var/transporter_range = 8 //N Tile transporter range
