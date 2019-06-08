@@ -3374,7 +3374,7 @@
 	icon_state = "chair";
 	dir = 1
 	},
-/obj/effect/landmark/start/assistant,
+/obj/effect/landmark/start/offduty/engineer,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/bar)
 "jN" = (
@@ -6812,26 +6812,31 @@
 /turf/closed/wall/trek_smooth/room,
 /area/crew_quarters/heads/captain)
 "sv" = (
-/obj/structure/table/trek,
 /obj/structure/chair/trek/standard,
 /obj/effect/landmark/start/head_of_security,
+/obj/structure/table/trek{
+	layer = 4.1
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "sw" = (
-/obj/structure/table/trek{
-	icon_state = "table1";
-	dir = 1
-	},
 /obj/structure/chair/trek/standard,
+/obj/effect/landmark/start/lawyer,
+/obj/structure/table/trek{
+	dir = 1;
+	icon_state = "table1";
+	layer = 4.1
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "sx" = (
-/obj/structure/table/trek{
-	icon_state = "table1";
-	dir = 4
-	},
 /obj/structure/chair/trek/standard,
 /obj/effect/landmark/start/research_director,
+/obj/structure/table/trek{
+	dir = 4;
+	icon_state = "table1";
+	layer = 4.1
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "sy" = (
@@ -6885,6 +6890,11 @@
 	icon_state = "table1";
 	dir = 5
 	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "sI" = (
@@ -6892,12 +6902,22 @@
 	icon_state = "table1-contd";
 	dir = 9
 	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "sJ" = (
 /obj/structure/table/trek{
 	icon_state = "table1";
 	dir = 9
+	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
@@ -6990,12 +7010,22 @@
 	icon_state = "table1";
 	dir = 8
 	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "sY" = (
 /obj/structure/table/trek{
 	icon_state = "table1";
 	dir = 6
+	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
@@ -7144,6 +7174,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "tt" = (
@@ -7154,6 +7189,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "tu" = (
@@ -7163,6 +7203,11 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
@@ -10716,6 +10761,7 @@
 	icon_state = "vent_map_on-1";
 	dir = 4
 	},
+/obj/effect/landmark/start/yeoman,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/bar)
 "Cf" = (
@@ -12563,6 +12609,10 @@
 	},
 /turf/closed/wall/trek_smooth/room,
 /area/engine/atmos)
+"HW" = (
+/obj/effect/landmark/start/offduty/doctor,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/bar)
 "IE" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
@@ -12865,6 +12915,10 @@
 /obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"PW" = (
+/obj/effect/landmark/start/offduty/sec,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/bar)
 "PY" = (
 /obj/machinery/door/airlock/trek/goon/engi{
 	icon_state = "closed";
@@ -13111,7 +13165,7 @@
 /turf/open/floor/plating,
 /area/engine/atmos)
 "Xy" = (
-/obj/effect/landmark/start/librarian,
+/obj/effect/landmark/start/offduty/bridge,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/bar)
 "XD" = (
@@ -13119,11 +13173,11 @@
 	icon_state = "chair";
 	dir = 1
 	},
-/obj/effect/landmark/start/assistant,
 /obj/machinery/camera/trek{
 	icon_state = "camera";
 	dir = 9
 	},
+/obj/effect/landmark/start/offduty/engineer,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/bar)
 "XG" = (
@@ -13214,6 +13268,14 @@
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
+"ZM" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 1
+	},
+/obj/effect/landmark/start/offduty/doctor,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/bar)
 
 (1,1,1) = {"
 aa
@@ -107385,8 +107447,8 @@ iH
 iZ
 jg
 Ce
-jf
-jf
+PW
+PW
 Bl
 kL
 lm
@@ -108415,7 +108477,7 @@ jk
 jw
 jM
 jf
-jf
+HW
 kQ
 lm
 ll
@@ -108670,7 +108732,7 @@ iH
 BF
 jl
 jx
-jM
+ZM
 jf
 Xy
 kL
@@ -108929,7 +108991,7 @@ jX
 jt
 XD
 Cu
-jf
+Xy
 Jy
 lk
 ll

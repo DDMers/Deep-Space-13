@@ -981,7 +981,9 @@
 /turf/closed/wall/trek_smooth/room,
 /area/ai_monitored/turret_protected/ai)
 "dc" = (
-/obj/structure/table/trek,
+/obj/structure/table/trek{
+	layer = 4.1
+	},
 /obj/structure/chair/trek/standard,
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
@@ -1249,8 +1251,9 @@
 /area/crew_quarters/heads/captain)
 "dS" = (
 /obj/structure/table/trek{
+	dir = 1;
 	icon_state = "table1";
-	dir = 1
+	layer = 4.1
 	},
 /obj/structure/chair/trek/standard,
 /turf/open/floor/carpet/trek,
@@ -1548,6 +1551,7 @@
 	icon_state = "chair";
 	dir = 4
 	},
+/obj/effect/landmark/start/offduty/bridge,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/bar)
 "eQ" = (
@@ -1580,8 +1584,9 @@
 /area/hydroponics)
 "eV" = (
 /obj/structure/table/trek{
+	dir = 4;
 	icon_state = "table1";
-	dir = 4
+	layer = 4.1
 	},
 /obj/structure/chair/trek/standard,
 /turf/open/floor/carpet/trek,
@@ -2017,6 +2022,11 @@
 	icon_state = "table1";
 	dir = 5
 	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "gg" = (
@@ -2236,6 +2246,11 @@
 	dir = 10;
 	icon_state = "desk"
 	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek/romulan,
 /area/library)
 "gN" = (
@@ -2243,6 +2258,11 @@
 	density = 1
 	},
 /obj/item/pen,
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek/romulan,
 /area/library)
 "gO" = (
@@ -2256,6 +2276,11 @@
 	pixel_y = 9
 	},
 /obj/item/reagent_containers/food/drinks/britcup,
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek/romulan,
 /area/library)
 "gP" = (
@@ -2438,6 +2463,11 @@
 /obj/structure/table/trek/continued{
 	icon_state = "table1-contd";
 	dir = 9
+	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
@@ -3697,11 +3727,21 @@
 	dir = 10;
 	icon_state = "desk"
 	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
 "kI" = (
 /obj/structure/table/trek/desk{
 	density = 1
+	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
 	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
@@ -3724,6 +3764,11 @@
 /obj/item/paper_bin{
 	pixel_x = 1;
 	pixel_y = 9
+	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
 	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
@@ -8907,6 +8952,11 @@
 	dir = 10;
 	icon_state = "desk"
 	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/science/research)
 "yj" = (
@@ -8914,6 +8964,11 @@
 	density = 1
 	},
 /obj/item/pen,
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/science/research)
 "yk" = (
@@ -8927,6 +8982,11 @@
 	pixel_y = 9
 	},
 /obj/item/reagent_containers/food/drinks/britcup,
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/science/research)
 "yl" = (
@@ -9204,6 +9264,11 @@
 	dir = 10;
 	icon_state = "desk"
 	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "yW" = (
@@ -9211,6 +9276,11 @@
 	density = 1
 	},
 /obj/item/pen,
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "yX" = (
@@ -9224,6 +9294,11 @@
 	pixel_y = 9
 	},
 /obj/item/reagent_containers/food/drinks/britcup,
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/medical/medbay/central)
 "yY" = (
@@ -11363,6 +11438,11 @@
 	icon_state = "table1";
 	dir = 9
 	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "Et" = (
@@ -11414,6 +11494,11 @@
 	icon_state = "table1-contd";
 	dir = 4
 	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "Ey" = (
@@ -11421,12 +11506,22 @@
 	icon_state = "table1-contd";
 	dir = 8
 	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "Ez" = (
 /obj/structure/table/trek/continued{
 	icon_state = "table1-contd";
 	dir = 6
+	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
@@ -11628,11 +11723,21 @@
 	dir = 10;
 	icon_state = "desk"
 	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
 "Ff" = (
 /obj/structure/table/trek/desk{
 	density = 1
+	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
@@ -11647,6 +11752,11 @@
 	pixel_y = 9
 	},
 /obj/item/pen,
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain)
 "Fh" = (
@@ -11655,11 +11765,21 @@
 	dir = 10;
 	icon_state = "desk"
 	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
 "Fi" = (
 /obj/structure/table/trek/desk{
 	density = 1
+	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
 	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
@@ -11674,6 +11794,11 @@
 	pixel_y = 9
 	},
 /obj/item/pen,
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/hop)
 "Fk" = (
@@ -13031,6 +13156,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
+	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "If" = (
@@ -13040,6 +13170,11 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
@@ -13277,6 +13412,11 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/barricade{
+	alpha = 0;
+	mouse_opacity = 0;
+	name = "stop climbing on my tables idiot"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
@@ -13650,6 +13790,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/effect/landmark/start/lawyer,
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "Ju" = (
@@ -13704,6 +13845,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/landmark/start/bridge_officer,
 /turf/open/floor/carpet/trek,
 /area/ship/bridge/akira)
 "JA" = (
@@ -16837,6 +16979,22 @@
 /obj/structure/overmap/runabout,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
+"TB" = (
+/obj/structure/chair/trek{
+	icon_state = "comfy";
+	dir = 1
+	},
+/obj/effect/landmark/start/bridge_officer,
+/turf/open/floor/carpet/trek,
+/area/ship/bridge/akira)
+"TY" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/obj/effect/landmark/start/offduty/doctor,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/bar)
 "Ug" = (
 /obj/structure/closet{
 	name = "Combadges"
@@ -16889,6 +17047,14 @@
 /obj/structure/closet/wardrobe/miner,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
+"WY" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 4
+	},
+/obj/effect/landmark/start/offduty/engineer,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/bar)
 "YN" = (
 /obj/machinery/door/airlock/trek/goon{
 	dir = 4;
@@ -16901,6 +17067,14 @@
 /obj/machinery/ore_silo,
 /turf/open/floor/carpet/trek,
 /area/science/research)
+"Zq" = (
+/obj/structure/chair/trek/standard{
+	icon_state = "chair";
+	dir = 8
+	},
+/obj/effect/landmark/start/offduty/sec,
+/turf/open/floor/carpet/trek,
+/area/crew_quarters/bar)
 "Zw" = (
 /obj/structure/rack,
 /obj/item/wrench,
@@ -112858,8 +113032,8 @@ aa
 cd
 eu
 eo
-eP
-eP
+WY
+WY
 Bw
 fB
 eo
@@ -113886,8 +114060,8 @@ aa
 cd
 eo
 eo
-fw
-fw
+Zq
+Zq
 Bw
 fB
 eo
@@ -115942,8 +116116,8 @@ aa
 cd
 eo
 ew
-fw
-fw
+TY
+TY
 fB
 gY
 eo
@@ -244472,7 +244646,7 @@ ap
 ap
 aH
 aW
-bh
+TB
 MC
 bH
 cL
