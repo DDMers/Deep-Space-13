@@ -33,6 +33,12 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	var/max_warp = WARP_5
 	var/capture_in_progress = FALSE //Is someone trying to hijack the ship?
 
+/obj/structure/overmap/CanPass(atom/movable/mover, turf/target)
+	if(istype(mover, /obj/structure/overmap)) //overmaps may pass other overmaps
+		return TRUE
+	else
+		. = ..()
+
 /obj/shield_overlay
 	name = ""
 	animate_movement = 0
