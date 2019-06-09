@@ -4354,6 +4354,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/mob/living/simple_animal/sloth/paperwork,
 /turf/open/floor/carpet/trek,
 /area/quartermaster)
 "ky" = (
@@ -4680,6 +4681,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
+/mob/living/simple_animal/pet/dog/corgi/puppy/void,
 /turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
 "ll" = (
@@ -4872,6 +4874,7 @@
 /obj/machinery/airalarm{
 	pixel_y = 22
 	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
 "lH" = (
@@ -5257,6 +5260,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/machinery/washing_machine,
 /turf/open/floor/plating,
 /area/maintenance/department/engine/atmos)
 "mI" = (
@@ -5829,6 +5833,7 @@
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
 	dir = 4
 	},
+/obj/machinery/shower,
 /turf/open/floor/plating,
 /area/maintenance/department/engine/atmos)
 "oa" = (
@@ -6416,13 +6421,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"pw" = (
-/obj/machinery/atmospherics/pipe/simple/green/hidden{
-	dir = 4
-	},
-/obj/structure/closet/crate/bin,
-/turf/open/floor/plating,
-/area/maintenance/department/engine/atmos)
 "px" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -9569,6 +9567,7 @@
 /obj/item/storage/box/pillbottles,
 /obj/item/storage/box/beakers,
 /obj/item/storage/box/bodybags,
+/obj/item/geiger_counter,
 /turf/open/floor/plasteel/dark/side{
 	dir = 8
 	},
@@ -14154,6 +14153,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
 	},
+/mob/living/simple_animal/pet/dog/corgi,
 /turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hop)
 "Gg" = (
@@ -14393,6 +14393,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/mob/living/simple_animal/pet/cat/Runtime,
 /turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/cmo)
 "GJ" = (
@@ -14443,6 +14444,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/mob/living/simple_animal/parrot/Poly,
 /turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/chief)
 "GN" = (
@@ -14487,12 +14489,14 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/mob/living/simple_animal/pet/dog/pug,
 /turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hos)
 "GR" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 1
 	},
+/mob/living/simple_animal/pet/fox/Renault,
 /turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain/private)
 "GS" = (
@@ -14869,6 +14873,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/mob/living/simple_animal/pet/dog/corgi/puppy/void,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai)
 "HP" = (
@@ -16279,6 +16284,10 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/port)
+"Qq" = (
+/mob/living/simple_animal/pet/dog/corgi/puppy/void,
+/turf/open/floor/carpet/trek/voy,
+/area/ship/bridge/akira)
 "Qr" = (
 /obj/structure/table,
 /obj/item/storage/belt/utility/full,
@@ -47765,7 +47774,7 @@ aa
 aa
 aa
 cY
-pw
+nZ
 rz
 cY
 aa
@@ -243323,7 +243332,7 @@ dC
 aL
 aP
 Fh
-aL
+Qq
 aL
 br
 bA
