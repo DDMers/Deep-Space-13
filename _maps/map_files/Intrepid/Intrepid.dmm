@@ -5810,6 +5810,7 @@
 /obj/item/aiModule/core/full/asimov,
 /obj/item/aiModule/core/freeformcore,
 /obj/item/aiModule/core/full/custom,
+/obj/item/aiModule/core/full/paladin,
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "pa" = (
