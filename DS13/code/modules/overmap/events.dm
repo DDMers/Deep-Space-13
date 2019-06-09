@@ -116,6 +116,10 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	var/meteor_damage = 10 //She's takin' a beating captain!
 	density = TRUE
 
+/obj/structure/meteor/Bumped(atom/movable/AM)
+	. = ..()
+	crash(AM)
+
 /obj/structure/meteor/Initialize()
 	. = ..()
 	icon_state = pick("small", "large", "glowing","sharp","small1","dust")
@@ -125,6 +129,7 @@ GLOBAL_LIST_INIT(overmap_event_spawns, list())
 	if(!istype(target, /obj/structure/overmap))
 		return
 	var/obj/structure/overmap/SS = target
+	SS.vel = 0
 	SS.take_damage(null, meteor_damage)
 	qdel(src)
 
