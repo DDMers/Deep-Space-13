@@ -16325,6 +16325,10 @@
 /obj/structure/bedsheetbin,
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/port)
+"Qv" = (
+/obj/machinery/air_sensor/atmos/oxygen_tank,
+/turf/open/floor/engine/o2,
+/area/engine/atmos)
 "QA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -16361,10 +16365,18 @@
 /obj/structure/sign/directions/evac,
 /turf/closed/wall/trek_smooth/corridor,
 /area/security)
+"QX" = (
+/obj/machinery/air_sensor/atmos/nitrous_tank,
+/turf/open/floor/engine/n2o,
+/area/engine/atmos)
 "Ru" = (
 /obj/structure/overmap_component/science/voy,
 /turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
+"Rx" = (
+/obj/machinery/air_sensor/atmos/air_tank,
+/turf/open/floor/engine/air,
+/area/engine/atmos)
 "RX" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -16481,6 +16493,10 @@
 	},
 /turf/closed/wall/trek_smooth/corridor,
 /area/hallway/secondary/entry)
+"UA" = (
+/obj/machinery/air_sensor/atmos/carbon_tank,
+/turf/open/floor/engine/co2,
+/area/engine/atmos)
 "Vw" = (
 /obj/machinery/door/airlock/trek/ship/maint{
 	dir = 4
@@ -16613,6 +16629,10 @@
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/abandoned_gambling_den)
+"XW" = (
+/obj/machinery/air_sensor/atmos/nitrogen_tank,
+/turf/open/floor/engine/n2,
+/area/engine/atmos)
 "Yl" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -16638,6 +16658,10 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"Zp" = (
+/obj/machinery/air_sensor/atmos/toxin_tank,
+/turf/open/floor/engine/plasma,
+/area/engine/atmos)
 "Zx" = (
 /obj/item/bodybag,
 /turf/open/floor/trek/bsg,
@@ -42707,7 +42731,7 @@ mZ
 ma
 ca
 lM
-lM
+UA
 lM
 ca
 qP
@@ -42715,7 +42739,7 @@ nl
 nx
 ca
 nB
-nB
+Zp
 nP
 ca
 ou
@@ -50932,18 +50956,18 @@ ma
 ca
 lP
 mE
-lP
+Rx
 ca
 mX
-mX
+Qv
 mX
 ca
 nS
-nS
+XW
 nS
 ca
 qm
-qm
+QX
 qm
 ca
 aa
