@@ -176,10 +176,6 @@
 	},
 /turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
-"ay" = (
-/obj/structure/overmap_component/viewscreen,
-/turf/closed/wall/trek_smooth/voy,
-/area/ship/bridge/akira)
 "az" = (
 /obj/machinery/camera/trek{
 	icon_state = "camera";
@@ -255,31 +251,12 @@
 "aG" = (
 /turf/closed/wall/trek_smooth/corridor,
 /area/security/main)
-"aH" = (
-/obj/machinery/power/apc/auto_name/ds13,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/carpet/trek/voy,
-/area/ship/bridge/akira)
 "aI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 6
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/port)
-"aJ" = (
-/obj/machinery/airalarm{
-	pixel_y = 22
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/carpet/trek/voy,
-/area/ship/bridge/akira)
 "aK" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1249,6 +1226,11 @@
 	dir = 8;
 	pixel_y = 8
 	},
+/obj/structure/sign/directions/security,
+/obj/structure/sign/directions/science{
+	dir = 4;
+	pixel_y = -8
+	},
 /turf/closed/wall/trek_smooth/corridor,
 /area/janitor)
 "di" = (
@@ -1281,6 +1263,10 @@
 /area/hallway/primary/fore)
 "dl" = (
 /obj/structure/sign/directions/security,
+/obj/structure/sign/directions/medical{
+	dir = 1;
+	pixel_y = 8
+	},
 /turf/closed/wall/trek_smooth/corridor,
 /area/hallway/primary/port)
 "dm" = (
@@ -1291,6 +1277,11 @@
 /obj/structure/sign/directions/science{
 	dir = 4;
 	pixel_y = -8
+	},
+/obj/structure/sign/directions/security,
+/obj/structure/sign/directions/medical{
+	dir = 8;
+	pixel_y = 8
 	},
 /turf/closed/wall/trek_smooth/corridor,
 /area/janitor)
@@ -1308,6 +1299,9 @@
 /obj/structure/sign/directions/evac{
 	dir = 4
 	},
+/obj/structure/sign/directions/supply{
+	pixel_y = 8
+	},
 /turf/closed/wall/trek_smooth/corridor,
 /area/quartermaster/office)
 "ds" = (
@@ -1320,6 +1314,10 @@
 /obj/structure/sign/directions/evac{
 	dir = 4
 	},
+/obj/structure/sign/directions/supply{
+	dir = 8;
+	pixel_y = 8
+	},
 /turf/closed/wall/trek_smooth/corridor,
 /area/hallway/primary/central)
 "du" = (
@@ -1329,12 +1327,6 @@
 	},
 /turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
-"dv" = (
-/obj/structure/sign/directions/evac{
-	dir = 1
-	},
-/turf/closed/wall/trek_smooth/corridor,
-/area/quartermaster/miningdock)
 "dy" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -1366,6 +1358,9 @@
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/overmap_component/viewscreen/voy{
+	pixel_y = 35
 	},
 /turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
@@ -3332,6 +3327,9 @@
 	dir = 10
 	},
 /obj/structure/closet/crate/bin,
+/obj/structure/sign/plaques/atmos{
+	pixel_y = 30
+	},
 /turf/open/floor/engine,
 /area/engine/atmos)
 "im" = (
@@ -4613,6 +4611,7 @@
 /obj/machinery/camera/trek{
 	name = "Nacelle Control"
 	},
+/obj/item/twohanded/required/kirbyplants/photosynthetic,
 /turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
 "le" = (
@@ -4624,9 +4623,6 @@
 	dir = 4
 	},
 /obj/machinery/computer/monitor,
-/obj/machinery/light/small{
-	dir = 1
-	},
 /turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
 "lf" = (
@@ -5834,6 +5830,7 @@
 	dir = 4
 	},
 /obj/machinery/shower,
+/obj/item/geiger_counter,
 /turf/open/floor/plating,
 /area/maintenance/department/engine/atmos)
 "oa" = (
@@ -5919,9 +5916,9 @@
 /turf/open/floor/plating,
 /area/engine/atmos)
 "oj" = (
-/obj/machinery/atmospherics/components/binary/volume_pump{
+/obj/machinery/atmospherics/components/binary/pump{
 	dir = 4;
-	name = "Plasma Feed Pump"
+	name = "Plasma to Nacelle"
 	},
 /turf/open/floor/engine,
 /area/engine/atmos)
@@ -6187,6 +6184,7 @@
 	},
 /obj/structure/closet/secure_closet/engineering_personal,
 /obj/item/storage/belt/utility/full,
+/obj/item/sensor_device,
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "oS" = (
@@ -6203,6 +6201,7 @@
 	},
 /obj/structure/closet/secure_closet/engineering_personal,
 /obj/item/storage/belt/utility/full,
+/obj/item/sensor_device,
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "oU" = (
@@ -6665,6 +6664,7 @@
 /area/maintenance/department/engine/atmos)
 "pU" = (
 /obj/structure/closet/secure_closet/atmospherics,
+/obj/item/sensor_device,
 /turf/open/floor/plating,
 /area/maintenance/department/engine/atmos)
 "pV" = (
@@ -7260,6 +7260,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
+/obj/item/sensor_device,
 /turf/open/floor/plating,
 /area/maintenance/department/engine/atmos)
 "rh" = (
@@ -7268,6 +7269,7 @@
 	dir = 8;
 	pixel_x = 22
 	},
+/obj/item/sensor_device,
 /turf/open/floor/plating,
 /area/maintenance/department/engine/atmos)
 "ri" = (
@@ -15502,6 +15504,10 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/trek,
 /area/turbolift/tertiary)
+"JW" = (
+/obj/structure/sign/warning/radiation,
+/turf/closed/wall/trek_smooth/jeffries,
+/area/maintenance/department/engine/atmos)
 "JZ" = (
 /turf/open/floor/carpet/trek,
 /area/turbolift/quanery)
@@ -16163,6 +16169,15 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
+"Mk" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/airalarm{
+	pixel_y = 22
+	},
+/turf/open/floor/carpet/trek/voy,
+/area/ship/bridge/akira)
 "Mq" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -16197,6 +16212,12 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
+"Nf" = (
+/obj/structure/sign/directions/command{
+	dir = 8
+	},
+/turf/closed/wall/trek_smooth/voy,
+/area/ship/bridge/akira)
 "Ns" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/trek,
@@ -16224,6 +16245,15 @@
 "OF" = (
 /turf/closed/wall/trek_smooth/reinforced,
 /area/security/brig)
+"OI" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/carpet/trek/voy,
+/area/ship/bridge/akira)
 "Pd" = (
 /obj/machinery/smartfridge/chemistry,
 /obj/machinery/door/window/survival_pod{
@@ -16327,6 +16357,10 @@
 	},
 /turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
+"QV" = (
+/obj/structure/sign/directions/evac,
+/turf/closed/wall/trek_smooth/corridor,
+/area/security)
 "Ru" = (
 /obj/structure/overmap_component/science/voy,
 /turf/open/floor/carpet/trek/voy,
@@ -16391,13 +16425,30 @@
 /obj/structure/table/glass,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/abandoned_gambling_den)
+"TF" = (
+/obj/structure/sign/warning/radiation/rad_area,
+/turf/closed/wall/trek_smooth/jeffries,
+/area/maintenance/department/engine/atmos)
 "TS" = (
 /turf/closed/wall/trek_smooth/voy,
 /area/ai_monitored/turret_protected/ai)
+"TU" = (
+/obj/structure/sign/directions/command{
+	dir = 4
+	},
+/turf/closed/wall/trek_smooth/voy,
+/area/ship/bridge/akira)
 "Ud" = (
 /obj/machinery/vending/medical,
 /turf/open/floor/carpet/trek,
 /area/medical)
+"Uj" = (
+/obj/machinery/power/apc/auto_name/ds13,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/carpet/trek/voy,
+/area/ship/bridge/akira)
 "Um" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/trek/middle,
@@ -16420,6 +16471,16 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
+"Uy" = (
+/obj/structure/sign/directions/supply{
+	dir = 8
+	},
+/obj/structure/sign/directions/evac{
+	dir = 8;
+	pixel_y = 8
+	},
+/turf/closed/wall/trek_smooth/corridor,
+/area/hallway/secondary/entry)
 "Vw" = (
 /obj/machinery/door/airlock/trek/ship/maint{
 	dir = 4
@@ -16458,6 +16519,22 @@
 /obj/machinery/light/small,
 /turf/open/floor/engine/plasma,
 /area/maintenance/department/engine/atmos)
+"Wm" = (
+/obj/structure/sign/directions/supply{
+	dir = 8
+	},
+/obj/structure/sign/directions/evac{
+	dir = 4;
+	pixel_y = 8
+	},
+/turf/closed/wall/trek_smooth/corridor,
+/area/security/checkpoint/supply)
+"Wn" = (
+/obj/structure/sign/directions/engineering{
+	dir = 1
+	},
+/turf/closed/wall/trek_smooth/corridor,
+/area/ship/engineering/akira)
 "Wo" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/trek/middle,
@@ -16473,6 +16550,10 @@
 /obj/machinery/vending/tool,
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/port)
+"Wy" = (
+/obj/machinery/suit_storage_unit/trek,
+/turf/open/floor/plating,
+/area/maintenance/department/engine)
 "Wz" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -44670,7 +44751,7 @@ lw
 rT
 rW
 tf
-lx
+Wn
 ln
 qL
 ro
@@ -45206,7 +45287,7 @@ cY
 cY
 lc
 nE
-cY
+JW
 cY
 cY
 cY
@@ -45717,7 +45798,7 @@ aa
 aa
 aa
 aa
-cY
+JW
 nZ
 pT
 cY
@@ -45955,7 +46036,7 @@ lw
 lw
 rT
 rW
-lx
+Wn
 lr
 qL
 ro
@@ -46491,7 +46572,7 @@ la
 cY
 le
 ob
-cY
+TF
 pz
 pl
 pl
@@ -47005,7 +47086,7 @@ la
 cY
 lh
 rw
-cY
+TF
 pL
 pl
 pl
@@ -47497,7 +47578,7 @@ rP
 lw
 ss
 tb
-lx
+Wn
 lr
 qL
 ro
@@ -47773,7 +47854,7 @@ aa
 aa
 aa
 aa
-cY
+JW
 nZ
 rz
 cY
@@ -48290,7 +48371,7 @@ cY
 cY
 lc
 rA
-cY
+JW
 cY
 cY
 cY
@@ -48782,7 +48863,7 @@ pE
 tO
 kw
 tp
-lx
+Wn
 ln
 kZ
 ro
@@ -50321,8 +50402,8 @@ lp
 lp
 lp
 lp
-ma
-ma
+Wy
+Wy
 lp
 lu
 lu
@@ -114070,7 +114151,7 @@ fC
 fC
 fC
 fC
-fC
+hP
 zm
 aG
 aG
@@ -114327,8 +114408,8 @@ fC
 fC
 fC
 fC
-hP
-zm
+fC
+dl
 fO
 bd
 aG
@@ -176270,7 +176351,7 @@ tT
 hi
 zQ
 hi
-hi
+Wm
 ms
 zJ
 et
@@ -177276,7 +177357,7 @@ dE
 LD
 EX
 DU
-DU
+QV
 DU
 DU
 DU
@@ -177536,7 +177617,7 @@ aZ
 Em
 Gm
 HB
-kN
+GY
 kN
 kN
 kN
@@ -178049,7 +178130,7 @@ cc
 aZ
 FE
 kN
-GW
+kN
 GX
 kN
 kN
@@ -179354,7 +179435,7 @@ tU
 af
 rN
 af
-Dw
+Uy
 ms
 zN
 et
@@ -180126,7 +180207,7 @@ kN
 kN
 kN
 et
-dv
+mg
 mi
 mJ
 mg
@@ -241795,7 +241876,7 @@ am
 bi
 Jm
 bR
-am
+TU
 bB
 IO
 bB
@@ -242301,7 +242382,7 @@ aa
 aa
 am
 am
-aL
+Uj
 aL
 aL
 aL
@@ -242558,7 +242639,7 @@ aa
 aa
 Bu
 aD
-aM
+OI
 aO
 aR
 bg
@@ -243071,7 +243152,7 @@ aa
 aa
 aa
 am
-aH
+aE
 Xi
 aL
 aL
@@ -243327,7 +243408,7 @@ aa
 aa
 aa
 aa
-ay
+am
 dC
 aL
 aP
@@ -243585,7 +243666,7 @@ aa
 aa
 aa
 am
-aJ
+aE
 aL
 aL
 aL
@@ -243842,7 +243923,7 @@ aa
 aa
 aa
 am
-aE
+Mk
 aL
 aL
 Ru
@@ -244879,7 +244960,7 @@ am
 bi
 so
 bR
-am
+Nf
 qg
 IP
 qg
