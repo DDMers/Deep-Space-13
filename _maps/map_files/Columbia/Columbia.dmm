@@ -2637,11 +2637,16 @@
 	icon_state = "pwindow";
 	dir = 1
 	},
-/obj/structure/closet/wardrobe/orange,
 /obj/machinery/door_timer{
 	id = "Cell 1";
 	name = "Prisoner 1 Timer";
 	pixel_x = -32
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/computer/shuttle/labor{
+	dir = 4
 	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
@@ -2705,6 +2710,11 @@
 "gI" = (
 /obj/machinery/computer/security{
 	dir = 8
+	},
+/obj/machinery/door_timer{
+	id = "Cell 2";
+	name = "Prisoner 2 Timer";
+	pixel_x = 32
 	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
@@ -3301,18 +3311,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/port)
-"ih" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/structure/closet/crate/bin,
-/obj/machinery/door_timer{
-	id = "Cell 2";
-	name = "Prisoner 2 Timer";
-	pixel_x = -32
-	},
-/turf/open/floor/carpet/trek,
-/area/security/brig)
 "ii" = (
 /obj/machinery/camera/trek{
 	icon_state = "camera";
@@ -16190,10 +16188,10 @@
 "Mj" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/trek/middle,
-/obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/structure/cable,
 /turf/open/floor/carpet/trek,
 /area/security/brig)
 "Mk" = (
@@ -16250,6 +16248,22 @@
 /obj/structure/window/reinforced/fulltile/trek,
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/port)
+"Nu" = (
+/obj/structure/window/reinforced/survival_pod{
+	icon_state = "pwindow";
+	dir = 1
+	},
+/obj/machinery/door/window/survival_pod{
+	dir = 4;
+	icon_state = "windoor";
+	name = "Evidence Locker";
+	req_one_access_txt = "2"
+	},
+/obj/machinery/computer/security/labor{
+	dir = 4
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
 "NX" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -16317,6 +16331,18 @@
 /obj/structure/closet/wardrobe/atmospherics_yellow,
 /turf/open/floor/plating,
 /area/maintenance/department/engine/atmos)
+"PD" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 2;
+	height = 5;
+	id = "laborcamp_home";
+	name = "fore bay 1";
+	width = 9;
+	roundstart_template = /datum/map_template/shuttle/labour/box
+	},
+/turf/open/space/basic,
+/area/space)
 "Qb" = (
 /obj/machinery/camera/trek{
 	dir = 10;
@@ -16543,6 +16569,14 @@
 /obj/machinery/air_sensor/atmos/carbon_tank,
 /turf/open/floor/engine/co2,
 /area/engine/atmos)
+"UQ" = (
+/obj/machinery/door/airlock/external{
+	name = "Labor Camp Shuttle Airlock";
+	req_one_access_txt = "3"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
 "Vw" = (
 /obj/machinery/door/airlock/trek/ship/maint{
 	dir = 4
@@ -16734,6 +16768,10 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"YQ" = (
+/obj/structure/closet/wardrobe/orange,
+/turf/open/floor/carpet/trek,
+/area/security/brig)
 "Zp" = (
 /obj/machinery/air_sensor/atmos/toxin_tank,
 /turf/open/floor/engine/plasma,
@@ -108611,7 +108649,7 @@ aa
 aa
 aa
 aa
-aa
+PD
 aa
 aa
 aa
@@ -108868,7 +108906,7 @@ OF
 OF
 OF
 OF
-OF
+UQ
 OF
 OF
 OF
@@ -109120,12 +109158,12 @@ LK
 OF
 fQ
 fv
-bs
+YQ
 gw
 gw
-gw
+Nu
 gB
-ih
+bs
 kT
 gW
 OF
@@ -109894,7 +109932,7 @@ gh
 SM
 Yl
 gh
-bs
+ij
 gE
 gI
 gO
