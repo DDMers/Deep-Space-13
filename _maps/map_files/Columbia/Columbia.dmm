@@ -1302,7 +1302,7 @@
 /obj/structure/sign/directions/supply{
 	pixel_y = 8
 	},
-/turf/closed/wall/trek_smooth/corridor,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/quartermaster/office)
 "ds" = (
 /obj/structure/sign/directions/evac{
@@ -1318,7 +1318,7 @@
 	dir = 8;
 	pixel_y = 8
 	},
-/turf/closed/wall/trek_smooth/corridor,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/hallway/primary/central)
 "du" = (
 /obj/structure/chair/trek/standard{
@@ -2638,6 +2638,11 @@
 	dir = 1
 	},
 /obj/structure/closet/wardrobe/orange,
+/obj/machinery/door_timer{
+	id = "Cell 1";
+	name = "Prisoner 1 Timer";
+	pixel_x = -32
+	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
 "gC" = (
@@ -2823,10 +2828,13 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
 	},
+/obj/machinery/airalarm{
+	dir = 4;
+	pixel_x = -22
+	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
 "gX" = (
-/obj/structure/closet/secure_closet/brig,
 /obj/structure/window/reinforced/survival_pod{
 	icon_state = "pwindow";
 	dir = 8
@@ -2840,6 +2848,10 @@
 	icon_state = "windoor";
 	name = "Brig Control";
 	req_one_access_txt = "63"
+	},
+/obj/structure/closet/secure_closet/brig{
+	id = "Cell 1";
+	name = "Cell 1 Locker"
 	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
@@ -2849,7 +2861,6 @@
 	icon_state = "camera";
 	name = "Brig Control"
 	},
-/obj/structure/closet/secure_closet/brig,
 /obj/structure/window/reinforced/survival_pod{
 	icon_state = "pwindow";
 	dir = 8
@@ -2863,6 +2874,10 @@
 	icon_state = "windoor";
 	name = "Brig Control";
 	req_one_access_txt = "63"
+	},
+/obj/structure/closet/secure_closet/brig{
+	id = "Cell 2";
+	name = "Cell 2 Locker"
 	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
@@ -3291,6 +3306,11 @@
 	dir = 8
 	},
 /obj/structure/closet/crate/bin,
+/obj/machinery/door_timer{
+	id = "Cell 2";
+	name = "Prisoner 2 Timer";
+	pixel_x = -32
+	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
 "ii" = (
@@ -4536,13 +4556,14 @@
 "kT" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
-/obj/machinery/airalarm{
-	dir = 4;
-	pixel_x = -22
-	},
 /obj/item/defibrillator/compact/combat,
 /obj/item/storage/firstaid/regular,
 /obj/item/stamp/law,
+/obj/machinery/door_timer{
+	id = "Cell 3";
+	name = "Prisoner 3 Timer";
+	pixel_x = -32
+	},
 /turf/open/floor/carpet/trek,
 /area/security/brig)
 "kU" = (
@@ -12957,6 +12978,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/table/glass,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
 "Dr" = (
@@ -12964,6 +12986,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/table/glass,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
 "Ds" = (
@@ -13236,7 +13259,7 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
 "Ef" = (
-/turf/closed/wall/trek_smooth/corridor,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/crew_quarters/heads/captain)
 "Eg" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
@@ -13245,7 +13268,7 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
 "Eh" = (
-/turf/closed/wall/trek_smooth/corridor,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/crew_quarters/heads/hop)
 "Ei" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
@@ -13528,6 +13551,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/table/glass,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
 "ET" = (
@@ -14200,7 +14224,7 @@
 /turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
 "Gk" = (
-/turf/closed/wall/trek_smooth/corridor,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/crew_quarters/heads/captain/private)
 "Gl" = (
 /obj/machinery/light,
@@ -14304,7 +14328,7 @@
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/heads/captain/private)
 "Gv" = (
-/turf/closed/wall/trek_smooth/corridor,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/crew_quarters/heads/cmo)
 "Gw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -14319,7 +14343,7 @@
 /turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/cmo)
 "Gx" = (
-/turf/closed/wall/trek_smooth/corridor,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/crew_quarters/heads/hor)
 "Gy" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -14331,7 +14355,7 @@
 /turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hor)
 "Gz" = (
-/turf/closed/wall/trek_smooth/corridor,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/crew_quarters/heads/chief)
 "GA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -14343,7 +14367,7 @@
 /turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/chief)
 "GB" = (
-/turf/closed/wall/trek_smooth/corridor,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/crew_quarters/heads/hos)
 "GC" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -14958,7 +14982,7 @@
 /area/hallway/secondary/exit/departure_lounge)
 "Ia" = (
 /obj/structure/trek_decor/rack,
-/turf/closed/wall/trek_smooth/voy,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/ai_monitored/turret_protected/ai)
 "Ib" = (
 /obj/machinery/door/airlock/trek/goon/engi{
@@ -15493,6 +15517,9 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
+"JQ" = (
+/turf/closed/wall/trek_smooth/reinforced,
+/area/turbolift/quanery)
 "JR" = (
 /turf/open/floor/carpet/trek,
 /area/turbolift/secondary)
@@ -16353,6 +16380,9 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
+"QH" = (
+/turf/closed/wall/trek_smooth/reinforced,
+/area/turbolift/tertiary)
 "QS" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -16369,6 +16399,10 @@
 /obj/machinery/air_sensor/atmos/nitrous_tank,
 /turf/open/floor/engine/n2o,
 /area/engine/atmos)
+"Ri" = (
+/obj/structure/lattice/catwalk,
+/turf/open/lava/plasma,
+/area/maintenance/department/engine/atmos)
 "Ru" = (
 /obj/structure/overmap_component/science/voy,
 /turf/open/floor/carpet/trek/voy,
@@ -16384,6 +16418,9 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/sorting)
+"Sb" = (
+/turf/closed/wall/trek_smooth/reinforced,
+/area/hallway/primary/central)
 "So" = (
 /obj/machinery/sleeper{
 	dir = 4
@@ -16437,12 +16474,18 @@
 /obj/structure/table/glass,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/abandoned_gambling_den)
+"TA" = (
+/turf/closed/wall/trek_smooth/reinforced,
+/area/engine/gravity_generator)
 "TF" = (
 /obj/structure/sign/warning/radiation/rad_area,
 /turf/closed/wall/trek_smooth/jeffries,
 /area/maintenance/department/engine/atmos)
+"TK" = (
+/turf/closed/wall/trek_smooth/reinforced,
+/area/quartermaster)
 "TS" = (
-/turf/closed/wall/trek_smooth/voy,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/ai_monitored/turret_protected/ai)
 "TU" = (
 /obj/structure/sign/directions/command{
@@ -16450,6 +16493,9 @@
 	},
 /turf/closed/wall/trek_smooth/voy,
 /area/ship/bridge/akira)
+"TW" = (
+/turf/closed/wall/trek_smooth/reinforced,
+/area/hallway/secondary/exit/departure_lounge)
 "Ud" = (
 /obj/machinery/vending/medical,
 /turf/open/floor/carpet/trek,
@@ -16524,6 +16570,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
 /turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
+"VU" = (
+/turf/closed/wall/trek_smooth/reinforced,
+/area/hallway/primary/fore)
 "VV" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
@@ -16629,10 +16678,34 @@
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/abandoned_gambling_den)
+"XU" = (
+/turf/closed/wall/trek_smooth/reinforced,
+/area/security)
 "XW" = (
 /obj/machinery/air_sensor/atmos/nitrogen_tank,
 /turf/open/floor/engine/n2,
 /area/engine/atmos)
+"XZ" = (
+/obj/structure/window/reinforced/survival_pod{
+	icon_state = "pwindow";
+	dir = 8
+	},
+/obj/structure/window/reinforced/survival_pod{
+	icon_state = "pwindow";
+	dir = 4
+	},
+/obj/machinery/door/window/survival_pod{
+	dir = 1;
+	icon_state = "windoor";
+	name = "Brig Control";
+	req_one_access_txt = "63"
+	},
+/obj/structure/closet/secure_closet/brig{
+	id = "Cell 3";
+	name = "Cell 3 Locker"
+	},
+/turf/open/floor/carpet/trek,
+/area/security/brig)
 "Yl" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -16643,6 +16716,9 @@
 /obj/structure/closet/wardrobe/white/medical,
 /turf/open/floor/carpet/trek,
 /area/medical)
+"YF" = (
+/turf/closed/wall/trek_smooth/reinforced,
+/area/quartermaster/office)
 "YJ" = (
 /obj/structure/table/glass,
 /obj/machinery/firealarm{
@@ -46334,8 +46410,8 @@ aa
 cY
 cY
 cY
-la
-la
+Ri
+Ri
 cY
 ld
 nK
@@ -46589,10 +46665,10 @@ aa
 cY
 cY
 cY
+Ri
 la
 la
-la
-la
+Ri
 cY
 le
 ob
@@ -46844,12 +46920,12 @@ pb
 aa
 aa
 cY
+Ri
+Ri
+Ri
 la
 la
-la
-la
-la
-la
+Ri
 lb
 lk
 pD
@@ -47103,10 +47179,10 @@ aa
 cY
 cY
 cY
+Ri
 la
 la
-la
-la
+Ri
 cY
 lh
 rw
@@ -47362,8 +47438,8 @@ aa
 cY
 cY
 cY
-la
-la
+Ri
+Ri
 cY
 lG
 rx
@@ -109822,7 +109898,7 @@ bs
 gE
 gI
 gO
-gX
+XZ
 OF
 aa
 aa
@@ -172507,7 +172583,7 @@ aa
 aa
 aa
 aa
-eA
+TK
 eA
 kj
 kj
@@ -172764,7 +172840,7 @@ Ew
 Ew
 Ew
 Ew
-eA
+TK
 ht
 kk
 kk
@@ -173021,7 +173097,7 @@ Ew
 Jj
 Ji
 Jl
-eA
+TK
 iE
 kx
 kL
@@ -173268,7 +173344,7 @@ aa
 aa
 aa
 aa
-hw
+YF
 Ew
 Ew
 Ew
@@ -173278,7 +173354,7 @@ Ji
 Jk
 DT
 FC
-eA
+TK
 iK
 ff
 kk
@@ -173525,7 +173601,7 @@ aa
 bE
 bE
 bE
-hw
+YF
 FB
 Ji
 Ji
@@ -173535,7 +173611,7 @@ DT
 DT
 DT
 Fz
-eA
+TK
 jx
 jd
 vq
@@ -173782,7 +173858,7 @@ bE
 bE
 KJ
 KV
-hw
+YF
 DS
 DT
 DT
@@ -173792,7 +173868,7 @@ DT
 DT
 DT
 DT
-eA
+TK
 jy
 Mq
 vq
@@ -174039,7 +174115,7 @@ KF
 bE
 KZ
 KW
-hw
+YF
 DT
 DT
 DT
@@ -174049,7 +174125,7 @@ DT
 DT
 DT
 DT
-eA
+TK
 ke
 kk
 vq
@@ -174296,7 +174372,7 @@ er
 bE
 IS
 bE
-hw
+YF
 DT
 DT
 DT
@@ -174306,7 +174382,7 @@ DT
 DT
 DT
 DT
-eA
+TK
 eA
 eA
 vq
@@ -174553,7 +174629,7 @@ er
 bN
 KN
 ED
-hw
+YF
 DT
 DT
 DT
@@ -174563,7 +174639,7 @@ DT
 DT
 DT
 DT
-hw
+YF
 iF
 ju
 jS
@@ -174810,7 +174886,7 @@ KG
 KI
 KO
 er
-hw
+YF
 DT
 DT
 DT
@@ -175067,7 +175143,7 @@ eV
 er
 KN
 KX
-hw
+YF
 DT
 DT
 DT
@@ -175077,7 +175153,7 @@ DT
 DT
 DT
 Ex
-hw
+YF
 iL
 iL
 Eu
@@ -175324,7 +175400,7 @@ CN
 EW
 KT
 EZ
-hw
+YF
 DT
 DT
 DT
@@ -175333,8 +175409,8 @@ DT
 DT
 DT
 Fz
-hw
-hw
+YF
+YF
 hw
 hw
 hw
@@ -175581,7 +175657,7 @@ HI
 bE
 CS
 bE
-hw
+YF
 DS
 DT
 DT
@@ -175838,7 +175914,7 @@ cc
 cc
 LD
 tN
-hw
+YF
 DB
 DT
 DT
@@ -175847,7 +175923,7 @@ DT
 DT
 DT
 FA
-hw
+YF
 kN
 CU
 Eg
@@ -176095,16 +176171,16 @@ cc
 cc
 LD
 cc
-DU
-DU
-DU
-DU
-DU
-DU
-DU
-DU
-DU
-DU
+XU
+XU
+XU
+XU
+XU
+XU
+XU
+XU
+XU
+XU
 lD
 CW
 Ei
@@ -178674,7 +178750,7 @@ Gv
 GH
 GU
 Hl
-bO
+Sb
 mq
 kN
 Fa
@@ -178931,7 +179007,7 @@ Gw
 GI
 hs
 Hm
-bO
+Sb
 EM
 Ee
 FG
@@ -179188,7 +179264,7 @@ Gx
 Gx
 Gx
 Gx
-bO
+Sb
 kN
 kN
 FE
@@ -179445,7 +179521,7 @@ Gx
 GJ
 Hb
 Hn
-bO
+Sb
 kN
 kN
 FE
@@ -179702,7 +179778,7 @@ Gy
 GK
 iy
 EV
-bO
+Sb
 lD
 kN
 FH
@@ -179959,7 +180035,7 @@ Gz
 Gz
 Gz
 Gz
-bO
+Sb
 kN
 kN
 FE
@@ -180216,7 +180292,7 @@ Gz
 GL
 He
 Hp
-bO
+Sb
 kN
 kN
 FE
@@ -180473,7 +180549,7 @@ GA
 GM
 iB
 Cz
-mr
+TW
 mr
 dq
 JJ
@@ -180730,7 +180806,7 @@ GB
 GB
 GB
 GB
-mr
+TW
 CG
 Dy
 JK
@@ -180987,7 +181063,7 @@ GB
 GP
 Hg
 Hr
-mr
+TW
 HP
 HE
 Kr
@@ -181244,7 +181320,7 @@ GC
 GQ
 iH
 CL
-mr
+TW
 Df
 Dy
 JK
@@ -181265,7 +181341,7 @@ fh
 rt
 NX
 rs
-mj
+NX
 mg
 cz
 cz
@@ -181501,7 +181577,7 @@ Gk
 Gk
 Gk
 Gk
-mr
+TW
 Dy
 Dy
 EN
@@ -181758,7 +181834,7 @@ GD
 GD
 Hj
 Ez
-mr
+TW
 Dy
 HF
 Ks
@@ -182015,7 +182091,7 @@ GE
 GR
 GD
 Hu
-mr
+TW
 Dz
 HG
 Kt
@@ -182036,7 +182112,7 @@ ge
 rs
 mj
 rs
-mj
+NX
 mg
 cz
 cz
@@ -182272,7 +182348,7 @@ GF
 GS
 GD
 Dv
-mr
+TW
 Dy
 Dy
 EO
@@ -182529,7 +182605,7 @@ GG
 GT
 GD
 GD
-mr
+TW
 HC
 Dy
 Ku
@@ -182786,7 +182862,7 @@ Gu
 Gk
 Hk
 Hv
-mr
+TW
 CH
 HE
 Kv
@@ -183043,7 +183119,7 @@ aa
 Gk
 Gk
 Gk
-mr
+TW
 HD
 Jf
 Jf
@@ -183300,7 +183376,7 @@ aa
 aa
 aa
 aa
-mr
+TW
 BJ
 Fr
 Fs
@@ -241136,7 +241212,7 @@ dQ
 dQ
 dX
 Fg
-aS
+VU
 TS
 TS
 TS
@@ -241650,7 +241726,7 @@ cq
 cq
 cq
 EL
-aS
+VU
 Fw
 HL
 TS
@@ -241907,7 +241983,7 @@ bB
 tT
 IQ
 tT
-tT
+JQ
 FU
 HL
 TS
@@ -242164,8 +242240,8 @@ tJ
 tT
 Kd
 Kc
-tT
-Ft
+JQ
+TS
 tV
 TS
 aa
@@ -242421,7 +242497,7 @@ tQ
 tT
 JZ
 tW
-tT
+JQ
 Gg
 HL
 TS
@@ -242678,7 +242754,7 @@ bB
 tT
 tT
 tT
-tT
+JQ
 Gs
 HL
 TS
@@ -242935,7 +243011,7 @@ qf
 MF
 cW
 pb
-om
+TA
 Gt
 HL
 Ia
@@ -243192,7 +243268,7 @@ qi
 MF
 MF
 pb
-om
+TA
 Ft
 Hs
 Ia
@@ -243449,7 +243525,7 @@ qS
 MF
 rc
 pb
-om
+TA
 Hc
 HO
 Ib
@@ -243706,7 +243782,7 @@ MF
 MF
 MF
 pb
-om
+TA
 Ft
 HL
 TS
@@ -243963,7 +244039,7 @@ MF
 MF
 HX
 pb
-om
+TA
 Hd
 HL
 Ia
@@ -244220,7 +244296,7 @@ qg
 tU
 tU
 tU
-tU
+QH
 Ho
 HL
 TS
@@ -244477,7 +244553,7 @@ tR
 tU
 cI
 uk
-tU
+QH
 Ho
 HL
 TS
@@ -244734,7 +244810,7 @@ JS
 tU
 cH
 JV
-tU
+QH
 TS
 tV
 TS
@@ -244991,7 +245067,7 @@ qg
 tU
 IR
 tU
-tU
+QH
 FU
 HL
 TS
@@ -245248,7 +245324,7 @@ cq
 cq
 cq
 EL
-aS
+VU
 Fw
 HL
 TS
@@ -245762,7 +245838,7 @@ dQ
 dQ
 Fu
 Fg
-aS
+VU
 TS
 TS
 TS
