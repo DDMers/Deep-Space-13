@@ -14443,6 +14443,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/mob/living/simple_animal/pet/penguin/emperor/shamebrero,
 /turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/hor)
 "GL" = (
@@ -15843,6 +15844,7 @@
 /area/crew_quarters/kitchen)
 "KV" = (
 /obj/structure/closet/secure_closet/freezer/meat,
+/mob/living/simple_animal/cow,
 /turf/open/floor/plasteel/freezer,
 /area/crew_quarters/kitchen)
 "KW" = (
@@ -16321,6 +16323,13 @@
 /obj/machinery/camera/trek,
 /turf/open/floor/engine,
 /area/engine/gravity_generator)
+"Pg" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/mob/living/simple_animal/mouse/brown,
+/turf/open/floor/grass,
+/area/hallway/secondary/entry)
 "Pv" = (
 /obj/machinery/camera/trek{
 	name = "Deck 3 Port Turbolifts"
@@ -16367,8 +16376,13 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/port)
+"Qp" = (
+/obj/structure/window/reinforced,
+/mob/living/simple_animal/mouse/white,
+/turf/open/floor/grass,
+/area/hallway/secondary/entry)
 "Qq" = (
-/mob/living/simple_animal/pet/dog/corgi/puppy/void,
+/mob/living/simple_animal/pet/cat/space,
 /turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
 "Qr" = (
@@ -16750,6 +16764,10 @@
 /obj/structure/closet/wardrobe/white/medical,
 /turf/open/floor/carpet/trek,
 /area/medical)
+"Yy" = (
+/mob/living/simple_animal/crab/Coffee,
+/turf/open/floor/grass,
+/area/hallway/secondary/entry)
 "YF" = (
 /turf/closed/wall/trek_smooth/reinforced,
 /area/quartermaster/office)
@@ -16772,6 +16790,11 @@
 /obj/structure/closet/wardrobe/orange,
 /turf/open/floor/carpet/trek,
 /area/security/brig)
+"Zm" = (
+/obj/structure/window/reinforced,
+/mob/living/simple_animal/mouse/gray,
+/turf/open/floor/grass,
+/area/hallway/secondary/entry)
 "Zp" = (
 /obj/machinery/air_sensor/atmos/toxin_tank,
 /turf/open/floor/engine/plasma,
@@ -177265,7 +177288,7 @@ ms
 zK
 zV
 Ct
-Cx
+Zm
 et
 Jd
 bJ
@@ -177520,8 +177543,8 @@ DO
 DP
 rf
 zK
-zV
-Ct
+Pg
+Yy
 Cx
 et
 et
@@ -177779,7 +177802,7 @@ ms
 zL
 zV
 Ct
-Cx
+Qp
 et
 et
 bT
@@ -178548,9 +178571,9 @@ jJ
 Dw
 rf
 zK
-zV
+Pg
 Ct
-Cx
+Zm
 et
 et
 bT
@@ -178807,7 +178830,7 @@ ms
 zK
 zV
 Ct
-Cx
+Qp
 et
 Jd
 bJ
