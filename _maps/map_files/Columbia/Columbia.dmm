@@ -8600,7 +8600,9 @@
 	},
 /obj/machinery/door/airlock/trek/ship/command{
 	dir = 4;
-	name = "Computer core"
+	name = "Computer core";
+	req_one_access = null;
+	req_one_access_txt = "20, 30, 56"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -14734,7 +14736,9 @@
 /area/crew_quarters/heads/chief)
 "Hq" = (
 /obj/machinery/door/airlock/trek/ship/command{
-	name = "Computer core"
+	name = "Computer core";
+	req_one_access = null;
+	req_one_access_txt = "20, 30, 56"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -14991,7 +14995,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/carpet/trek,
+/turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai)
 "Ic" = (
 /obj/machinery/telecomms/bus/preset_four,
@@ -16265,6 +16269,16 @@
 /obj/structure/table/glass,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/miningdock)
+"Og" = (
+/obj/machinery/door/airlock/trek/ship/command{
+	name = "Computer core";
+	req_one_access_txt = "20, 30, 56"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/hallway/primary/fore)
 "Oy" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -245634,7 +245648,7 @@ cq
 cq
 dA
 dk
-Hq
+Og
 Fv
 HN
 TS
