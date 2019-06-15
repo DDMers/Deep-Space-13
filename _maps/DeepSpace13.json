@@ -1,6 +1,0 @@
-{
-    "map_name": "DeepSpace13",
-    "map_path": "map_files/DeepSpace13",
-    "map_file": ["DS13-D1.dmm", "DS13-D2.dmm", "DS13-D3.dmm", "overmap.dmm", "miranda.dmm"], 
-	"traits": [{"Up": 1}, {"Up": 1, "Down": -1}, {"Down": -1}, {"Down": -1}, {"Down": -1}]
-	}
