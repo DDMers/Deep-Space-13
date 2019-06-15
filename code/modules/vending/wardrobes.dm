@@ -17,7 +17,7 @@
 					/obj/item/storage/backpack/satchel/sec = 3,
 					/obj/item/storage/backpack/duffelbag/sec = 3,
 					/obj/item/clothing/under/trek/engsec/ds9 = 6,
-					/obj/item/clothing/shoes/jackboots = 3,
+					/obj/item/clothing/shoes/jackboots = 3)
 	refill_canister = /obj/item/vending_refill/wardrobe/sec_wardrobe
 	payment_department = ACCOUNT_SEC
 
