@@ -15322,17 +15322,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 8
 	},
-/obj/effect/turf_decal/stripes,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/entry)
 "Jd" = (
-/obj/effect/turf_decal/stripes,
-/turf/open/floor/carpet/trek,
-/area/hallway/secondary/entry)
-"Je" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	dir = 4
-	},
 /obj/effect/turf_decal/stripes,
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/entry)
@@ -177034,7 +177026,7 @@ Ct
 DD
 et
 Jc
-bJ
+Dw
 aa
 aa
 aa
@@ -178833,7 +178825,7 @@ Ct
 Qp
 et
 Jd
-bJ
+bT
 aa
 aa
 aa
@@ -179089,7 +179081,7 @@ zV
 Ct
 DD
 et
-Je
+zH
 bJ
 aa
 aa
