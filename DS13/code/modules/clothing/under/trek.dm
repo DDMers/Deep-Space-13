@@ -28,6 +28,30 @@
 	item_color = "trekjacket"
 	item_state = "trekjacket"
 
+/obj/item/clothing/accessory/ds9_jacket/command
+	name = "uniform jacket"
+	desc = "An extremely comfortable jacket with some storage pockets for tools."
+	icon = 'DS13/icons/obj/clothing/accessories.dmi'
+	icon_state = "trekjacket_command"
+	item_color = "trekjacket_command"
+	item_state = "trekjacket_command"
+
+/obj/item/clothing/accessory/ds9_jacket/engsec
+	name = "uniform jacket"
+	desc = "An extremely comfortable jacket with some storage pockets for tools."
+	icon = 'DS13/icons/obj/clothing/accessories.dmi'
+	icon_state = "trekjacket_engsec"
+	item_color = "trekjacket_engsec"
+	item_state = "trekjacket_engsec"
+
+/obj/item/clothing/accessory/ds9_jacket/medsci
+	name = "uniform jacket"
+	desc = "An extremely comfortable jacket with some storage pockets for tools"
+	icon = 'DS13/icons/obj/clothing/accessories.dmi'
+	icon_state = "trekjacket_medsci"
+	item_color = "trekjacket_medsci"
+	item_state = "trekjacket_medsci"
+
 /obj/item/clothing/accessory/ds9_jacket/formal
 	name = "dress jacket"
 	desc = "An extremely comfortable jacket laced with gold silk, such a piece is usually reserved for diplomatic occasions."
