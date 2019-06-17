@@ -141,20 +141,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
-"av" = (
-/obj/machinery/door/airlock/trek/ship/maint,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/trek_catwalk,
-/turf/open/floor/plating,
-/area/maintenance/department/science)
 "aw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
@@ -2518,7 +2504,8 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/visible/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
-/turf/open/floor/carpet/trek,
+/obj/structure/trek_catwalk,
+/turf/open/floor/engine,
 /area/engine/atmos)
 "gn" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
@@ -2811,7 +2798,7 @@
 /obj/item/radio/intercom{
 	pixel_y = 25
 	},
-/obj/machinery/atmospherics/components/unary/thermomachine{
+/obj/machinery/atmospherics/components/unary/thermomachine/freezer/on{
 	dir = 4
 	},
 /turf/open/floor/engine,
@@ -4655,10 +4642,10 @@
 /turf/open/floor/carpet/trek,
 /area/ship/engineering/akira)
 "lg" = (
-/obj/machinery/atmospherics/components/unary/thermomachine,
 /obj/item/radio/intercom{
 	pixel_y = 25
 	},
+/obj/machinery/atmospherics/components/unary/thermomachine/freezer/on,
 /turf/open/floor/engine,
 /area/engine/atmos)
 "lh" = (
@@ -6616,7 +6603,7 @@
 /obj/structure/cable/yellow,
 /obj/machinery/power/warp_coil,
 /turf/open/floor/engine/plasma,
-/area/maintenance/department/engine/atmos)
+/area/ship/engineering/akira)
 "pN" = (
 /obj/structure/overmap_component/plasma_injector{
 	pixel_y = 35
@@ -6890,12 +6877,12 @@
 	},
 /obj/machinery/power/warp_coil,
 /turf/open/floor/engine/plasma,
-/area/maintenance/department/engine/atmos)
+/area/ship/engineering/akira)
 "qq" = (
 /obj/structure/cable/yellow,
 /obj/machinery/power/warp_coil,
 /turf/open/floor/engine/plasma,
-/area/maintenance/department/engine/atmos)
+/area/ship/engineering/akira)
 "qr" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/trek/viewport,
@@ -8674,7 +8661,6 @@
 	dir = 1
 	},
 /obj/machinery/emh_emitter,
-/obj/machinery/smartfridge/chemistry,
 /turf/open/floor/plasteel/dark/corner,
 /area/medical/genetics/cloning)
 "ug" = (
@@ -8880,6 +8866,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/chem_dispenser,
 /turf/open/floor/carpet/trek,
 /area/medical)
 "uE" = (
@@ -9662,10 +9649,6 @@
 /obj/item/storage/box/beakers,
 /turf/open/floor/carpet/trek,
 /area/medical)
-"wp" = (
-/obj/machinery/smartfridge/chemistry,
-/turf/open/floor/carpet/trek,
-/area/medical)
 "wq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
@@ -9787,11 +9770,13 @@
 	},
 /area/medical/genetics/cloning)
 "wB" = (
-/obj/machinery/chem_master,
 /obj/machinery/camera/trek{
 	dir = 8;
 	icon_state = "camera";
 	name = "Medbay Treatment"
+	},
+/obj/machinery/sleeper{
+	dir = 8
 	},
 /turf/open/floor/carpet/trek,
 /area/medical)
@@ -9934,14 +9919,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/medical)
-"wO" = (
-/obj/machinery/chem_dispenser,
-/obj/machinery/airalarm{
-	dir = 8;
-	pixel_x = 22
-	},
-/turf/open/floor/carpet/trek,
-/area/medical)
 "wP" = (
 /obj/machinery/emh_emitter,
 /turf/open/floor/carpet/trek,
@@ -9976,7 +9953,9 @@
 /turf/open/floor/plating,
 /area/lawoffice)
 "wT" = (
-/obj/machinery/chem_heater,
+/obj/machinery/sleeper{
+	dir = 8
+	},
 /turf/open/floor/carpet/trek,
 /area/medical)
 "wU" = (
@@ -10457,6 +10436,12 @@
 /area/crew_quarters/dorms)
 "xN" = (
 /obj/structure/closet/secure_closet/personal,
+/obj/item/clothing/under/trek/medsci/ds9,
+/obj/item/clothing/under/trek/medsci/ds9,
+/obj/item/clothing/under/trek/command/ds9,
+/obj/item/clothing/under/trek/command/ds9,
+/obj/item/clothing/under/trek/engsec/ds9,
+/obj/item/clothing/under/trek/engsec/ds9,
 /turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/dorms)
 "xO" = (
@@ -10497,12 +10482,6 @@
 /obj/item/storage/firstaid/regular,
 /obj/item/defibrillator/compact,
 /obj/item/reagent_containers/hypospray,
-/turf/open/floor/carpet/trek,
-/area/medical)
-"xQ" = (
-/obj/machinery/sleeper{
-	dir = 4
-	},
 /turf/open/floor/carpet/trek,
 /area/medical)
 "xR" = (
@@ -11079,19 +11058,6 @@
 	},
 /obj/structure/trek_catwalk,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
-/turf/open/floor/plating,
-/area/maintenance/department/medical)
-"ze" = (
-/obj/machinery/door/airlock/trek/ship/maint,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /turf/open/floor/plating,
 /area/maintenance/department/medical)
 "zf" = (
@@ -11727,7 +11693,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
-/obj/machinery/door/airlock/trek/goon/research,
+/obj/machinery/door/airlock/trek/goon/research{
+	dir = 4
+	},
 /turf/open/floor/carpet/trek,
 /area/science)
 "AA" = (
@@ -11929,7 +11897,7 @@
 /turf/open/floor/carpet/trek,
 /area/science/server)
 "Ba" = (
-/obj/machinery/atmospherics/components/unary/thermomachine{
+/obj/machinery/atmospherics/components/unary/thermomachine/freezer/on{
 	dir = 1
 	},
 /turf/open/floor/carpet/trek,
@@ -15522,6 +15490,15 @@
 /obj/machinery/light,
 /turf/open/floor/carpet/trek,
 /area/turbolift/secondary)
+"JU" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/chem_heater,
+/turf/open/floor/carpet/trek,
+/area/medical)
 "JV" = (
 /obj/machinery/light,
 /turf/open/floor/carpet/trek,
@@ -16226,6 +16203,10 @@
 "MF" = (
 /turf/open/floor/engine,
 /area/engine/gravity_generator)
+"MZ" = (
+/obj/machinery/chem_master,
+/turf/open/floor/carpet/trek,
+/area/medical)
 "Ne" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -16279,6 +16260,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/hallway/primary/fore)
+"Ok" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/landmark/start/yeoman,
+/turf/open/floor/carpet/trek,
+/area/hallway/primary/central)
 "Oy" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -16445,10 +16435,22 @@
 /obj/machinery/air_sensor/atmos/nitrous_tank,
 /turf/open/floor/engine/n2o,
 /area/engine/atmos)
+"Rb" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/table/glass,
+/turf/open/floor/carpet/trek,
+/area/medical)
 "Ri" = (
 /obj/structure/lattice/catwalk,
 /turf/open/lava/plasma,
 /area/maintenance/department/engine/atmos)
+"Ro" = (
+/turf/open/floor/engine/plasma,
+/area/ship/engineering/akira)
 "Ru" = (
 /obj/structure/overmap_component/science/voy,
 /turf/open/floor/carpet/trek/voy,
@@ -16468,9 +16470,6 @@
 /turf/closed/wall/trek_smooth/reinforced,
 /area/hallway/primary/central)
 "So" = (
-/obj/machinery/sleeper{
-	dir = 4
-	},
 /obj/machinery/camera/trek{
 	icon_state = "camera";
 	dir = 5
@@ -16714,6 +16713,10 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"Xc" = (
+/obj/machinery/smartfridge/chemistry,
+/turf/open/floor/carpet/trek,
+/area/medical/genetics/cloning)
 "Xi" = (
 /obj/structure/overmap_component/helm/voy,
 /turf/open/floor/carpet/trek/voy,
@@ -46742,21 +46745,21 @@ ob
 TF
 pz
 pl
+Ro
 pl
+Ro
 pl
+Ro
 pl
+Ro
 pl
-pl
-pl
-pl
-pl
-pl
+Ro
 pV
+Ro
 pl
+Ro
 pl
-pl
-pl
-pl
+Ro
 pl
 cY
 cY
@@ -47256,21 +47259,21 @@ rw
 TF
 pL
 pl
+Ro
 pl
+Ro
 pl
+Ro
 pl
+Ro
 pl
-pl
-pl
-pl
-pl
-pl
+Ro
 pV
+Ro
 pl
+Ro
 pl
-pl
-pl
-pl
+Ro
 pl
 cY
 cY
@@ -108906,7 +108909,7 @@ wK
 wP
 uA
 tY
-vz
+Xc
 vz
 vz
 tY
@@ -109164,7 +109167,7 @@ wa
 wa
 So
 wa
-xQ
+wa
 wa
 xT
 xW
@@ -109675,9 +109678,9 @@ wn
 wn
 wN
 wQ
+Rb
 wQ
-wQ
-wn
+JU
 xR
 wn
 xU
@@ -109928,11 +109931,11 @@ ic
 ud
 vZ
 wk
-wp
-wB
-wO
-wT
 wa
+wB
+xS
+wT
+MZ
 wa
 uD
 xS
@@ -178047,7 +178050,7 @@ mo
 mo
 mo
 mo
-CI
+Ok
 CX
 HU
 oG
@@ -239992,7 +239995,7 @@ vq
 vq
 vq
 vq
-ze
+Mw
 vq
 vq
 aa
@@ -247188,7 +247191,7 @@ Av
 Av
 Av
 Av
-av
+Vw
 Av
 Av
 aa
