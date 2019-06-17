@@ -19,7 +19,7 @@
 	item_color = "trek_medsci_ds9"
 	item_state = "bl_suit"
 
-/obj/item/clothing/accessory/ds9_jacket
+/obj/item/clothing/accessory/ds9_jacket/civilian
 	name = "uniform jacket"
 	desc = "An extremely comfortable jacket with some storage pockets for tools."
 	icon = 'DS13/icons/obj/clothing/accessories.dmi'
@@ -28,7 +28,7 @@
 	item_color = "trekjacket"
 	item_state = "trekjacket"
 
-/obj/item/clothing/accessory/ds9_jacket/department/command
+/obj/item/clothing/accessory/ds9_jacket/command
 	name = "uniform jacket"
 	desc = "An extremely comfortable jacket with some storage pockets for tools."
 	icon = 'DS13/icons/obj/clothing/accessories.dmi'
@@ -36,7 +36,7 @@
 	item_color = "trekjacket_command"
 	item_state = "trekjacket_command"
 
-/obj/item/clothing/accessory/ds9_jacket/department/engsec
+/obj/item/clothing/accessory/ds9_jacket/engsec
 	name = "uniform jacket"
 	desc = "An extremely comfortable jacket with some storage pockets for tools."
 	icon = 'DS13/icons/obj/clothing/accessories.dmi'
@@ -44,7 +44,7 @@
 	item_color = "trekjacket_engsec"
 	item_state = "trekjacket_engsec"
 
-/obj/item/clothing/accessory/ds9_jacket/department/medsci
+/obj/item/clothing/accessory/ds9_jacket/medsci
 	name = "uniform jacket"
 	desc = "An extremely comfortable jacket with some storage pockets for tools"
 	icon = 'DS13/icons/obj/clothing/accessories.dmi'
