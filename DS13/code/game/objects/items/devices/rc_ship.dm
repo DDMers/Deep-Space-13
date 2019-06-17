@@ -48,6 +48,9 @@
 	w_class = 2 //Fits in your bag
 	layer = 4 //Layer over mobs and such
 
+/obj/item/rc_ship/can_be_pulled(mob/user) //Hahahah NO
+	return FALSE
+
 /obj/item/rc_ship/Initialize()
 	. = ..()
 	pass_flags |= PASSTABLE
