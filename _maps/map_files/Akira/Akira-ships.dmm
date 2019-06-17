@@ -5809,6 +5809,19 @@
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ship/runabout)
+"pw" = (
+/turf/open/floor/trek/bsg/corrugated{
+	initial_gas_mix = "plasma=70000;TEMP=293.15"
+	},
+/area/ship/merc)
+"px" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/trek/bsg/corrugated{
+	initial_gas_mix = "plasma=70000;TEMP=293.15"
+	},
+/area/ship/merc)
 "py" = (
 /obj/item/bedsheet/green,
 /obj/structure/bed,
@@ -5819,6 +5832,15 @@
 /obj/structure/rack,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge/museum)
+"pA" = (
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg/corrugated{
+	initial_gas_mix = "plasma=70000;TEMP=293.15"
+	},
+/area/ship/merc)
 "pB" = (
 /obj/machinery/computer/camera_advanced/transporter_control{
 	icon_state = "control";
@@ -5832,6 +5854,25 @@
 	},
 /turf/open/floor/grass/fakebasalt,
 /area/ship/m_class)
+"pD" = (
+/obj/structure/overmap_component/plasma_injector{
+	pixel_x = -32
+	},
+/turf/open/floor/trek/bsg/corrugated{
+	initial_gas_mix = "plasma=70000;TEMP=293.15"
+	},
+/area/ship/merc)
+"pE" = (
+/obj/machinery/power/warp_coil,
+/obj/machinery/atmospherics/pipe/simple/purple/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow,
+/turf/open/floor/trek/bsg/corrugated{
+	initial_gas_mix = "plasma=70000;TEMP=293.15"
+	},
+/area/ship/merc)
 "pF" = (
 /obj/structure/overmap_component/helm/spawner/dderidex,
 /obj/machinery/light{
@@ -5839,6 +5880,36 @@
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated_secondary)
+"pG" = (
+/obj/structure/overmap_component/plasma_injector{
+	pixel_x = 32
+	},
+/turf/open/floor/trek/bsg/corrugated{
+	initial_gas_mix = "plasma=70000;TEMP=293.15"
+	},
+/area/ship/merc)
+"pH" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	icon_state = "inje_map-2";
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg/corrugated{
+	initial_gas_mix = "plasma=70000;TEMP=293.15"
+	},
+/area/ship/merc)
+"pI" = (
+/obj/machinery/power/warp_coil,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow,
+/turf/open/floor/trek/bsg/corrugated{
+	initial_gas_mix = "plasma=70000;TEMP=293.15"
+	},
+/area/ship/merc)
 "pJ" = (
 /obj/machinery/computer/camera_advanced/transporter_control{
 	dir = 8;
@@ -5860,16 +5931,37 @@
 /obj/structure/window/reinforced/fulltile/trek/bsg,
 /turf/open/floor/trek/bsg,
 /area/ship/merc)
+"pN" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/trek/bsg/corrugated{
+	initial_gas_mix = "plasma=70000;TEMP=293.15"
+	},
+/area/ship/merc)
 "pO" = (
 /obj/machinery/transporter_pad{
 	icon_state = "1,1"
 	},
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"pP" = (
+/obj/machinery/power/warp_coil,
+/obj/structure/cable/yellow,
+/turf/open/floor/trek/bsg/corrugated{
+	initial_gas_mix = "plasma=70000;TEMP=293.15"
+	},
+/area/ship/merc)
 "pQ" = (
 /obj/machinery/replicator,
 /turf/open/floor/carpet/trek/romulan,
 /area/ship/ai_simulated)
+"pR" = (
+/obj/machinery/light,
+/turf/open/floor/trek/bsg/corrugated{
+	initial_gas_mix = "plasma=70000;TEMP=293.15"
+	},
+/area/ship/merc)
 "pT" = (
 /obj/machinery/transporter_pad{
 	icon_state = "4,0"
@@ -6907,11 +6999,6 @@
 /obj/machinery/light,
 /turf/open/floor/plating/borg,
 /area/ship/borg_cube)
-"wR" = (
-/obj/machinery/power/warp_coil,
-/obj/structure/cable/yellow,
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "wS" = (
 /obj/structure/fluff/broken_flooring{
 	icon_state = "plating";
@@ -7386,16 +7473,6 @@
 	pixel_y = 32
 	},
 /turf/open/floor/trek/bsg,
-/area/ship/merc)
-"An" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	icon_state = "inje_map-2";
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "Ap" = (
 /obj/structure/closet/secure_closet/engineering_electrical{
@@ -8584,12 +8661,6 @@
 /obj/structure/disposalpipe/junction/flip,
 /turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
-"Ir" = (
-/obj/structure/overmap_component/plasma_injector{
-	pixel_x = 32
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "Iu" = (
 /obj/structure/window/reinforced/fulltile/trek,
 /obj/structure/grille,
@@ -9516,15 +9587,6 @@
 /obj/structure/shuttle/engine/propulsion,
 /turf/open/space/basic,
 /area/space)
-"Oo" = (
-/obj/machinery/power/warp_coil,
-/obj/machinery/atmospherics/pipe/simple/purple/hidden,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow,
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "Oq" = (
 /obj/machinery/transporter_pad{
 	icon_state = "3,2"
@@ -9601,14 +9663,6 @@
 /obj/item/lighter,
 /turf/open/floor/grass/fakebasalt,
 /area/ship/m_class)
-"OW" = (
-/obj/machinery/power/warp_coil,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow,
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "OX" = (
 /obj/structure/fluff/broken_flooring{
 	dir = 2;
@@ -10380,12 +10434,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/station/delivery_destination)
-"Ur" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "Ut" = (
 /turf/closed/wall/trek_smooth/romulan,
 /area/ship/ai_simulated_tertiary)
@@ -10762,12 +10810,6 @@
 	},
 /turf/open/floor/trek/bsg/tile,
 /area/ship/merc)
-"WM" = (
-/obj/structure/overmap_component/plasma_injector{
-	pixel_x = -32
-	},
-/turf/open/floor/trek/bsg/corrugated,
-/area/ship/merc)
 "WP" = (
 /obj/machinery/paystand,
 /turf/open/floor/plasteel/dark,
@@ -10845,12 +10887,6 @@
 	dir = 4
 	},
 /turf/open/floor/trek/bsg/tile,
-/area/ship/merc)
-"XD" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/trek/bsg/corrugated,
 /area/ship/merc)
 "XG" = (
 /obj/machinery/chem_master,
@@ -28007,13 +28043,13 @@ aa
 aa
 aa
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
 Wl
 Wl
@@ -28264,15 +28300,15 @@ Wl
 Ho
 Wl
 Wl
-Ur
-WM
-Rf
-WM
-Rf
-WM
-Rf
-WM
-Rf
+px
+pD
+pw
+pD
+pw
+pD
+pw
+pD
+pw
 Wl
 FK
 aa
@@ -28521,15 +28557,15 @@ Ou
 Lp
 NT
 MK
-RT
-Oo
-RT
-Oo
-An
-OW
-XD
-wR
-Xb
+pA
+pE
+pA
+pE
+pH
+pI
+pN
+pP
+pR
 Wl
 LK
 On
@@ -28778,15 +28814,15 @@ Ld
 xd
 Ou
 Wl
-Rf
-Ir
-Rf
-Ir
-Rf
-Ir
-Rf
-Ir
-Rf
+pw
+pG
+pw
+pG
+pw
+pG
+pw
+pG
+pw
 Wl
 FK
 aa
@@ -29035,13 +29071,13 @@ Ou
 xd
 Ou
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
 Wl
 Wl
@@ -30063,13 +30099,13 @@ Ou
 xd
 Ou
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
 Wl
 Wl
@@ -30320,15 +30356,15 @@ Ou
 xd
 Ou
 Wl
-Ur
-WM
-Rf
-WM
-Rf
-WM
-Rf
-WM
-Rf
+px
+pD
+pw
+pD
+pw
+pD
+pw
+pD
+pw
 Wl
 FK
 aa
@@ -30577,15 +30613,15 @@ Ou
 wo
 NT
 MK
-RT
-Oo
-RT
-Oo
-An
-OW
-XD
-wR
-Xb
+pA
+pE
+pA
+pE
+pH
+pI
+pN
+pP
+pR
 Wl
 LK
 On
@@ -30834,15 +30870,15 @@ Wl
 GZ
 Wl
 Wl
-Rf
-Ir
-Rf
-Ir
-Rf
-Ir
-Rf
-Ir
-Rf
+pw
+pG
+pw
+pG
+pw
+pG
+pw
+pG
+pw
 Wl
 FK
 aa
@@ -31091,13 +31127,13 @@ Ed
 Fi
 Cp
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
 Wl
 Wl
@@ -32119,13 +32155,13 @@ Ed
 Fi
 Cp
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
 Wl
 Wl
@@ -32376,15 +32412,15 @@ Wl
 GZ
 Wl
 Wl
-Rf
-WM
-Rf
-WM
-Rf
-WM
-Rf
-WM
-Rf
+pw
+pD
+pw
+pD
+pw
+pD
+pw
+pD
+pw
 Wl
 FK
 aa
@@ -32633,15 +32669,15 @@ Ou
 sW
 NT
 MK
-RT
-Oo
-RT
-Oo
-An
-OW
-XD
-wR
-Xb
+pA
+pE
+pA
+pE
+pH
+pI
+pN
+pP
+pR
 Wl
 LK
 On
@@ -32890,15 +32926,15 @@ Ou
 xd
 Ou
 Wl
-Ur
-Ir
-Rf
-Ir
-Rf
-Ir
-Rf
-Ir
-Rf
+px
+pG
+pw
+pG
+pw
+pG
+pw
+pG
+pw
 Wl
 FK
 aa
@@ -33147,13 +33183,13 @@ Ou
 xd
 Ou
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
 Wl
 Wl
@@ -34175,13 +34211,13 @@ Ou
 xd
 Ou
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
 Wl
 Wl
@@ -34432,15 +34468,15 @@ Ld
 xd
 Ou
 Wl
-Rf
-WM
-Rf
-WM
-Rf
-WM
-Rf
-WM
-Rf
+pw
+pD
+pw
+pD
+pw
+pD
+pw
+pD
+pw
 Wl
 FK
 aa
@@ -34689,15 +34725,15 @@ Ou
 sX
 NT
 MK
-RT
-Oo
-RT
-Oo
-An
-OW
-XD
-wR
-Xb
+pA
+pE
+pA
+pE
+pH
+pI
+pN
+pP
+pR
 Wl
 LK
 On
@@ -34946,15 +34982,15 @@ Wl
 Ho
 Wl
 Wl
-Ur
-Ir
-Rf
-Ir
-Rf
-Ir
-Rf
-Ir
-Rf
+px
+pG
+pw
+pG
+pw
+pG
+pw
+pG
+pw
 Wl
 FK
 aa
@@ -35203,13 +35239,13 @@ aa
 aa
 aa
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
-Rf
+pw
 Wl
 Wl
 Wl
