@@ -4299,19 +4299,13 @@
 "lM" = (
 /obj/machinery/door/airlock/trek/ship{
 	dir = 4;
-	name = "Medical bay"
+	name = "Bridge";
+	req_access_txt = "31"
 	},
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
 "lN" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1,
-/turf/open/floor/carpet/trek,
-/area/ship/runabout)
-"lO" = (
-/obj/machinery/door/airlock/trek/ship{
-	dir = 4;
-	name = "Cargo bay"
-	},
 /turf/open/floor/carpet/trek,
 /area/ship/runabout)
 "lP" = (
@@ -30262,7 +30256,7 @@ lx
 lx
 lx
 lx
-lO
+lM
 lx
 lx
 mf
