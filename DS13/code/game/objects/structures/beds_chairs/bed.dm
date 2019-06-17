@@ -1,10 +1,17 @@
 /obj/structure/bed/post_buckle_mob(mob/living/M)
 	. = ..()
-	if(ishuman(M) && M.client)
-		to_chat(M, "<span class='boldnotice'>If you log out now, your character will leave the round permanently (you'll have 2 minutes to cancel this by logging back in).</span> - <span class='warning'>you start getting ready to sleep.</span>")
-	for(var/X in active_timers) //Reset their sleep logout timer.
+	if(!ishuman(M)) //Nope, we're not letting you delete everything, thanos.
+		return
+	if(M.client)
+		to_chat(M, "<span class='warning'>If you log out or ghost now, your character will leave the round permanently (you'll have 5 minutes to cancel this by logging back in).</span> - <span class='notice'>you start getting ready to sleep.</span>")
+	for(var/X in active_timers) //Reset any active sleep logout timers.
 		qdel(X)
-	addtimer(CALLBACK(src, /obj/structure/bed/proc/remove_from_round, M), 2 MINUTES)
+	addtimer(CALLBACK(src, /obj/structure/bed/proc/remove_from_round, M), 5 MINUTES)
+
+/obj/structure/bed/post_unbuckle_mob()
+	. = ..()
+	for(var/X in active_timers) //Seems they don't want you to go to sleep.
+		qdel(X)
 
 /obj/structure/bed/proc/remove_from_round(var/mob/living/user)
 	if(user.client)
