@@ -19,6 +19,7 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	icon = 'DS13/icons/overmap/pancake.dmi'
 	icon_state = "pancake"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+	density = TRUE
 	var/obj/shield_overlay/shield_overlay
 	var/class = "nothing" //This is a nothing class heavy cruiser
 	var/transporter_range = 8 //N Tile transporter range
@@ -31,6 +32,15 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	var/datum/action/innate/warp/warp_action = new
 	var/max_warp = WARP_5
 	var/capture_in_progress = FALSE //Is someone trying to hijack the ship?
+
+/obj/structure/overmap/CanPass(atom/movable/mover, turf/target)
+	if(istype(mover, /obj/structure/overmap)) //overmaps may pass other overmaps
+		return TRUE
+	else
+		. = ..()
+
+/obj/structure/overmap/can_be_pulled(mob/user) //Hahahah NO
+	return FALSE
 
 /obj/shield_overlay
 	name = ""

@@ -155,22 +155,25 @@
 		switch(what)
 			if("pilot")
 				if(pilot)
-					if(alert("Kick [pilot] off of the ship controls?","[name]","Yes","No") == "Yes")
-						to_chat(user, "you kick [pilot] off the ship controls!")
-						exit(pilot)
+					if(alert("Kick [pilot] off of the ship controls?","[name]","Yes","No") == "No")
+						return
+					to_chat(user, "you kick [pilot] off the ship controls!")
+					exit(pilot)
 				pilot = user
 				GrantActions(user)
 			if("tactical")
 				if(tactical)
-					if(alert("Kick [tactical] off of the ship controls?","[name]","Yes","No") == "Yes")
-						to_chat(user, "you kick [tactical] off the ship controls!")
-						exit(tactical)
+					if(alert("Kick [tactical] off of the ship controls?","[name]","Yes","No") == "No")
+						return
+					to_chat(user, "you kick [tactical] off the ship controls!")
+					exit(tactical)
 				tactical = user
 			if("science")
 				if(science)
-					if(alert("Kick [science] off of the ship controls?","[name]","Yes","No") == "Yes")
-						to_chat(user, "you kick [science] off the ship controls!")
-						exit(science)
+					if(alert("Kick [science] off of the ship controls?","[name]","Yes","No") == "No")
+						return
+					to_chat(user, "you kick [science] off the ship controls!")
+					exit(science)
 				science = user
 	operators += user
 	user.overmap_ship = src
@@ -249,7 +252,7 @@
 	var/pixel_collision_size_x = I.Width()
 	var/pixel_collision_size_y = I.Height()
 	for(var/atom/e in obounds(src, real_pixel_x + x_to_move + pixel_collision_size_x/4, real_pixel_y + y_to_move + pixel_collision_size_y/4, real_pixel_x + x_to_move + -pixel_collision_size_x/4, real_pixel_y + y_to_move + -pixel_collision_size_x/4) )//Basic block collision
-		if(e.density == 1) //We can change this so the ship takes damage later
+		if(e.density)
 			if(ismob(e))
 				return //Ignore mobs. Prevents the glitchy runabout behaviour
 			if(istype(e, /obj/structure/meteor))
@@ -257,9 +260,16 @@
 				S.crash(src)
 				O.vel = 0
 			else
-				if(istype(src, /obj/structure/overmap) && isturf(e))
-					O.vel = 0
-				return FALSE
+				if(e.CanPass(src))
+					continue
+				else
+					if(!e.mouse_opacity) //Ignore any kind of blockers that aren't truly there
+						continue
+					Bump(e)
+					if(istype(src, /obj/structure/overmap))
+						O.vel = 0
+					return FALSE
+
 	real_pixel_x = real_pixel_x + x_to_move
 	real_pixel_y = real_pixel_y + y_to_move
 	while(real_pixel_x > 32) //Modulo doesn't work with this kind of stuff, don't know if there's a better method.

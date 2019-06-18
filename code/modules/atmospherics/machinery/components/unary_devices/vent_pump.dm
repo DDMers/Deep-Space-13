@@ -379,6 +379,11 @@
 	id_tag = ATMOS_GAS_MONITOR_OUTPUT_TOXINS_LAB
 	frequency = FREQ_ATMOS_CONTROL
 
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/air_output
+	name = "air mix tank output inlet"
+	id_tag = ATMOS_GAS_MONITOR_OUTPUT_AIR
+
+
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/layer1
 	piping_layer = 1
 	icon_state = "vent_map-1"

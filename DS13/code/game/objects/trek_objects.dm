@@ -37,6 +37,17 @@
 	icon = 'DS13/icons/obj/stack_objects.dmi'
 	icon_state = "carpet-rom"
 
+/obj/item/stack/tile/carpet/trek/voy
+	name = "carpet"
+	singular_name = "carpet"
+	turf_type = /turf/open/floor/carpet/trek/voy
+	resistance_flags = FLAMMABLE
+	icon = 'DS13/icons/obj/stack_objects.dmi'
+	icon_state = "carpet-voy"
+
+/obj/item/stack/tile/carpet/trek/fifty
+	amount = 50
+
 /obj/item/stack/tile/carpet/trek/romulan/fifty
 	amount = 50
 
@@ -78,6 +89,15 @@
 	name = "Corrugated steel hull segment"
 	icon = 'DS13/icons/turf/floors.dmi'
 	icon_state = "corrugated"
+
+/turf/open/floor/carpet/trek/voy
+	name = "dark carpet"
+	desc = "a more muted palette for a more professional starship"
+	icon = 'DS13/icons/turf/intrepid_carpet.dmi'
+	icon_state = "intrepid"
+	smooth = TRUE
+	canSmoothWith = list(/turf/open/floor/carpet/trek,/turf/open/floor/carpet/trek/voy)
+	floor_tile = /obj/item/stack/tile/carpet/trek/voy
 
 /obj/structure/chair/trek
 	name = "padded leather chair"
@@ -234,8 +254,8 @@
 	icon_state = "cargo"
 
 /obj/structure/table/trek
-	name = "Futuristic table"
-	desc = "In the 24th century, people still need tables."
+	name = "Duranium alloy table"
+	desc = "A smooth table with a nice wooden finish. It's cold to the touch."
 	icon = 'DS13/icons/obj/decor/tables.dmi'
 	icon_state = "table1"
 	anchored = TRUE
@@ -244,14 +264,10 @@
 	layer = 3.1
 
 /obj/structure/table/trek/continued
-	name = "Epic sci fi space table"
-	desc = "In the 24th century, people still need tables."
 	icon = 'DS13/icons/obj/decor/tables.dmi'
 	icon_state = "table1-contd"
 
 /obj/structure/table/trek/medium
-	name = "Epic sci fi space table"
-	desc = "In the 24th century, people still need tables."
 	icon = 'DS13/icons/obj/decor/tables.dmi'
 	icon_state = "table2"
 
@@ -317,8 +333,8 @@
 	outfit = /datum/outfit/job/captain/DS13
 
 /obj/machinery/door/window/brigdoor/security/cell/trek
-	name = "brig force field"
-	desc = "For keeping in criminal scum."
+	name = "Brig force field"
+	desc = "A high energy barrier designed to keep things contained."
 	req_access = list(ACCESS_BRIG)
 	id = "Cell 1"
 	icon = 'DS13/icons/obj/decor/wall_decor.dmi'
