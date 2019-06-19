@@ -12896,6 +12896,10 @@
 /obj/structure/ladder,
 /turf/open/floor/plating,
 /area/maintenance/department/bridge)
+"Qb" = (
+/obj/machinery/vending/snack/random,
+/turf/open/floor/carpet/trek/voy,
+/area/bridge/meeting_room)
 "Qd" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -176009,7 +176013,7 @@ it
 lR
 it
 uJ
-zr
+Qb
 lK
 vA
 zk
@@ -176266,7 +176270,7 @@ it
 it
 it
 uJ
-it
+zr
 lK
 vA
 zk
@@ -178322,7 +178326,7 @@ it
 it
 it
 zp
-it
+zr
 lK
 vA
 zn
@@ -178579,7 +178583,7 @@ it
 rl
 it
 zp
-zr
+Qb
 lK
 vA
 zn
