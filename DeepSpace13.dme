@@ -2767,6 +2767,8 @@
 #include "DS13\code\game\objects\structures\beds_chairs\bed.dm"
 #include "DS13\code\modules\admin\admin.dm"
 #include "DS13\code\modules\admin\custom_verbs.dm"
+#include "DS13\code\modules\admin\verbs\adminhelp.dm"
+#include "DS13\code\modules\admin\verbs\mentors_edit.dm"
 #include "DS13\code\modules\antagonists\section31.dm"
 #include "DS13\code\modules\atmospherics\multiz_pipe.dm"
 #include "DS13\code\modules\borg\antag_datum.dm"
