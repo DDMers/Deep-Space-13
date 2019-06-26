@@ -10773,6 +10773,10 @@
 /area/janitor)
 "yu" = (
 /obj/structure/closet/crate/trashcart,
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12
+	},
 /turf/open/floor/plating,
 /area/janitor)
 "yv" = (
@@ -10871,6 +10875,8 @@
 	id = "Jani"
 	},
 /obj/machinery/door/window/survival_pod,
+/obj/structure/janitorialcart,
+/obj/item/mop,
 /turf/open/floor/plating,
 /area/janitor)
 "yH" = (
