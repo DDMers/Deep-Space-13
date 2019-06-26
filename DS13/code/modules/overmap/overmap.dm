@@ -39,6 +39,9 @@ GLOBAL_LIST_INIT(overmap_ships, list())
 	else
 		. = ..()
 
+/obj/structure/overmap/can_be_pulled(mob/user) //Hahahah NO
+	return FALSE
+
 /obj/shield_overlay
 	name = ""
 	animate_movement = 0

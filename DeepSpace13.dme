@@ -14,7 +14,6 @@
 
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
-#include "_maps\Sovereign.dm"
 #include "code\_compile_options.dm"
 #include "code\world.dm"
 #include "code\__DEFINES\_globals.dm"
@@ -2765,6 +2764,7 @@
 #include "DS13\code\game\objects\items\circuitboards\circuitboard.dm"
 #include "DS13\code\game\objects\items\devices\rc_ship.dm"
 #include "DS13\code\game\objects\items\devices\radio\headset_changes.dm"
+#include "DS13\code\game\objects\structures\beds_chairs\bed.dm"
 #include "DS13\code\modules\admin\admin.dm"
 #include "DS13\code\modules\admin\custom_verbs.dm"
 #include "DS13\code\modules\antagonists\section31.dm"

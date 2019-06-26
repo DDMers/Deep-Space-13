@@ -1,0 +1,4 @@
+author: "Shadow-Quill"
+delete-after: True
+changes: 
+  - bugfix: "Fixed saying 'No' to kicking someone off a bridge console kicking them off."
