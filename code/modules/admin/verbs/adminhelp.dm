@@ -435,8 +435,10 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 			Retitle()
 		if("reject")
 			Reject()
+		// DS13 - Mentor system ## Thanks Bee/CthulhuOnIce
 		if("mhelp")
 			MHelpThis()
+		// End DS13 - Mentor system
 		if("reply")
 			usr.client.cmd_ahelp_reply(initiator)
 		if("icissue")
