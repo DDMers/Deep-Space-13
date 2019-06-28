@@ -59,16 +59,16 @@
 	var/show_char = CONFIG_GET(flag/mentors_mobname_only)
 	if(C.is_mentor())
 		if(is_mentor())//both are mentors
-			to_chat(C, "<font color='purple'>Mentor PM from-<b>[key_name_mentor(src, C, 1, 0, 0)]</b>: [msg]</font>")
+			to_chat(C, "<font color='red'>Mentor PM from-<b>[key_name_mentor(src, C, 1, 0, 0)]</b>: [msg]</font>")
 			to_chat(src, "<font color='green'>Mentor PM to-<b>[key_name_mentor(C, C, 1, 0, 0)]</b>: [msg]</font>")
 
 		else		//recipient is an mentor but sender is not
-			to_chat(C, "<font color='purple'>Reply PM from-<b>[key_name_mentor(src, C, 1, 0, show_char)]</b>: [msg]</font>")
+			to_chat(C, "<font color='red'>Reply PM from-<b>[key_name_mentor(src, C, 1, 0, show_char)]</b>: [msg]</font>")
 			to_chat(src, "<font color='green'>Mentor PM to-<b>[key_name_mentor(C, C, 1, 0, 0)]</b>: [msg]</font>")
 
 	else
 		if(is_mentor())	//sender is an mentor but recipient is not.
-			to_chat(C, "<font color='purple'>Mentor PM from-<b>[key_name_mentor(src, C, 1, 0, 0)]</b>: [msg]</font>")
+			to_chat(C, "<font color='red'>Mentor PM from-<b>[key_name_mentor(src, C, 1, 0, 0)]</b>: [msg]</font>")
 			to_chat(src, "<font color='green'>Mentor PM to-<b>[key_name_mentor(C, C, 1, 0, show_char)]</b>: [msg]</font>")
 
 	//we don't use message_Mentors here because the sender/receiver might get it too

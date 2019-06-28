@@ -317,6 +317,8 @@ h1.alert, h2.alert		{color: #99aab5;}
 .boldnotice				{color: #3d5bc3;	font-weight: bold;}
 .adminnotice			{color: #3d5bc3;}
 .adminhelp              {color: #c51e1e;    font-weight: bold;}
+.mentor					{color: #3d5bc3;}
+.mentornotice			{color: #ff5050;}
 .unconscious			{color: #99aab5;	font-weight: bold;}
 .suicide				{color: #ff5050;	font-style: italic;}
 .green					{color: #059223;}

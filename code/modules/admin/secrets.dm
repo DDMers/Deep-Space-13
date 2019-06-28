@@ -109,10 +109,10 @@
 				dat += "No-one has done anything this round!"
 			usr << browse(dat, "window=admin_log")
 
-		// DS13 - Mentor system -- access mentor log
+		// DeepSpace13 - Mentor system -- access mentor log
 		if("mentor_log") 
 			MentorLogSecret() 
-		// DS13 - Mentor system end
+		// DeepSpace13 - Mentor system end
 
 		if("show_admins")
 			var/dat = "<B>Current admins:</B><HR>"
