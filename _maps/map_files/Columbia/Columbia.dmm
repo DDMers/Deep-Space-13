@@ -622,6 +622,11 @@
 /obj/machinery/airalarm{
 	pixel_y = 22
 	},
+/obj/machinery/button/door{
+	id = "Kitchen";
+	name = "Kitchen Shutter Controll";
+	pixel_x = -25
+	},
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/kitchen)
 "bJ" = (
@@ -13648,6 +13653,7 @@
 	dir = 4;
 	pixel_x = 24
 	},
+/obj/machinery/rnd/production/techfab/department/service,
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/kitchen)
 "Fa" = (
@@ -14814,6 +14820,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/light,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai)
 "Ht" = (
@@ -14903,6 +14910,10 @@
 "HI" = (
 /obj/structure/table,
 /obj/machinery/door/firedoor/heavy,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "Kitchen";
+	name = "Kitchen Shutters"
+	},
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/kitchen)
 "HJ" = (
@@ -15625,10 +15636,6 @@
 /obj/machinery/microwave,
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/kitchen)
-"Ki" = (
-/obj/machinery/vending/donksofttoyvendor,
-/turf/open/floor/carpet/trek,
-/area/quartermaster/miningoffice)
 "Kj" = (
 /obj/item/soap,
 /obj/machinery/deepfryer,
@@ -15868,7 +15875,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "KK" = (
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
@@ -16055,6 +16062,9 @@
 /area/crew_quarters/bar)
 "Lo" = (
 /obj/structure/table/wood,
+/obj/item/book/granter/action/drink_fling,
+/obj/item/reagent_containers/food/drinks/shaker,
+/obj/item/reagent_containers/glass/rag,
 /turf/open/floor/plasteel/chapel{
 	dir = 1
 	},
@@ -16388,6 +16398,17 @@
 "MF" = (
 /turf/open/floor/engine,
 /area/engine/gravity_generator)
+"MK" = (
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 2;
+	height = 13;
+	id = "ferry_home";
+	name = "port bay 2";
+	width = 5
+	},
+/turf/open/space/basic,
+/area/space)
 "MR" = (
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
@@ -16958,6 +16979,13 @@
 	},
 /turf/closed/wall/trek_smooth/corridor,
 /area/engine/atmos)
+"SY" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/light,
+/turf/open/floor/plasteel/dark,
+/area/ai_monitored/turret_protected/ai)
 "Te" = (
 /obj/machinery/camera/trek{
 	name = "Deck 3 Starboard Turbolifts"
@@ -17235,6 +17263,15 @@
 /obj/machinery/vending/tool,
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/port)
+"Wx" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/highsecurity{
+	icon = 'DS13/icons/obj/machinery/doors/command.dmi';
+	name = "Starfleet Command Shuttle Dock";
+	req_one_access_txt = "101"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ai_monitored/turret_protected/ai)
 "Wy" = (
 /obj/machinery/suit_storage_unit/trek,
 /turf/open/floor/plating,
@@ -181400,7 +181437,7 @@ cz
 cz
 cz
 cz
-Ki
+cz
 VD
 aa
 aa
@@ -242552,7 +242589,7 @@ cq
 EL
 VU
 Fw
-HL
+SY
 TS
 aa
 aa
@@ -244608,7 +244645,7 @@ MF
 pb
 TA
 Ft
-HL
+SY
 TS
 If
 Ik
@@ -246150,7 +246187,7 @@ cq
 EL
 VU
 Fw
-HL
+SY
 TS
 aa
 aa
@@ -246408,8 +246445,8 @@ dk
 Og
 Fv
 HN
-TS
-aa
+Wx
+MK
 aa
 aa
 aa
