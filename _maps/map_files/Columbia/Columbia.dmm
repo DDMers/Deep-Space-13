@@ -3704,7 +3704,8 @@
 "iX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
-	dir = 1
+	dir = 1;
+	filter_types = list(/datum/gas/carbon_dioxide,/datum/gas/miasma)
 	},
 /obj/effect/landmark/start/geneticist,
 /turf/open/floor/plasteel/dark,
@@ -9477,7 +9478,8 @@
 "vH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
-	dir = 1
+	dir = 1;
+	filter_types = list(/datum/gas/carbon_dioxide,/datum/gas/miasma)
 	},
 /obj/item/bodybag,
 /obj/structure/trek_catwalk,
@@ -9622,7 +9624,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 10
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	filter_types = list(/datum/gas/carbon_dioxide,/datum/gas/miasma)
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},

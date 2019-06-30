@@ -7840,6 +7840,10 @@
 /obj/machinery/vending/coffee,
 /turf/open/floor/trek/bsg,
 /area/ship/merc)
+"CW" = (
+/obj/machinery/holopad,
+/turf/open/floor/carpet/trek,
+/area/ship/runabout)
 "CX" = (
 /obj/structure/railing{
 	icon_state = "railing0";
@@ -31856,7 +31860,7 @@ aa
 aa
 vL
 Gg
-mV
+CW
 lC
 lH
 lJ
