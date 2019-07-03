@@ -17,6 +17,7 @@
 	requires_power = FALSE //no APCS in the lifts please
 	noteleport = TRUE
 	looping_ambience = 'DS13/sound/ambience/turbolift.ogg'
+	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 
 /area/turbolift/secondary
 	name = "Secondary turbolift"
