@@ -267,7 +267,7 @@ GLOBAL_LIST_INIT(EMH_blacklist, list())
 	qdel(user)
 	START_PROCESSING(SSfastprocess,src)
 
-/proc/offer_control_emh(mob/M) //Specialist proc to check they've not been blacklisted by the captain from being an EMH
+/proc/offer_control_emh(mob/M) //Specialist proc to check they've not been blacklisted by the captain from being an EMH.
 	var/poll_message = "Do you want to play as an emergency medical hologram?"
 	var/list/mob/dead/observer/candidates = pollCandidatesForMob(poll_message, ROLE_EMH, null, ROLE_EMH, 100, M)
 	for(var/mob/dead/observer/S in candidates)
