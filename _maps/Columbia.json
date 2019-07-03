@@ -1,0 +1,7 @@
+{
+    "map_name": "Columbia Class Escort Frigate",
+    "map_path": "map_files/Columbia",
+    "map_file": ["Columbia.dmm","Columbia-space.dmm","Columbia-ships.dmm"], 
+	"traits": [{"Up": 1}, {"Up": 1, "Down": -1},{"Up": 1, "Down": -1}, {"Down": -1}, {"Linkage": "Self", "Station":0}, {"Station":0},{"Up": 1,"Station":0}, {"Up": 1, "Down": -1,"Station":0}, {"Down": -1,"Station":0}],
+	"space_ruin_levels": -1
+	}

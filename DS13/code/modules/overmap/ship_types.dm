@@ -303,3 +303,44 @@
 	supervisors = list()
 	engineers = list("Thomas Riker")
 	inscription = "Grief is the price we pay for love."
+
+/obj/structure/overmap/columbia //A medium ship with OK weapons
+	name = "Columbia"
+	desc = "A retrofitted research ship built by starfleet for combat missions. Its reaction time and weapons are adequate."
+	icon = 'DS13/icons/overmap/columbia.dmi'
+	icon_state = "base"
+	main_overmap = FALSE
+	class = "Columbia Escort Frigate"
+	damage_states = FALSE //Damage FX
+	damage = 10 //Will turn into 20 assuming weapons powered
+	max_shield_health = 200
+	acceleration = 0.8 //How quickly do you put on speed?
+	turnspeed = 0.7 //She's pretty nippy
+	power_slots = 6 //Decent power slots.
+	pixel_z = -32
+	pixel_w = -32
+	max_speed = 6
+
+/obj/structure/overmap/columbia/starter //A small ship with OK weapons
+	name = "Columbia Escort Frigate"
+	main_overmap = TRUE
+
+/area/ship/bridge/columbia
+	name = "Bridge"
+	looping_ambience = 'DS13/sound/ambience/voy_bridge.ogg'
+	class = "Columbia"
+	noteleport = FALSE
+
+/obj/structure/turbolift/columbia
+	deck_1 = list("bridge", "computer core", "AI core")
+	deck_2 = list("bar", "ten forward", "mess hall","kitchen", "Shuttle Bay", "cargo", "Cargonia", "Mining", "Arrivals", "Escape", "Evac", "Officer's Quarters", "Torpedo Bay")
+	deck_3 = list("Hydroponics", "Quarters", "crew quarters", "transporter room", "Detective's office", "Law office", "Brig", "Medbay", "sickbay", "Research", "science", "Custodial", "Armory")
+	deck_4 = list("Engineering", "Atmospherics", "Atmos", "Engitopia", "Atmosia")
+
+/obj/structure/trek_decor/plaque/columbia
+	name = "Dedication plaque"
+	desc = "A large, bronze plaque with a dedication: \n <b>USS Ramos. <b>Columbia-class <> Starfleet registry: NCC-14529 <>\n  Launched stardate: NULL <> Jupiter ShipYards <> Starfleet. \n</b>"
+	icon_state = "plaque"
+	supervisors = list()
+	engineers = list("Shevil Ch'eviavek")
+	inscription = "In Firepower We Trust."
