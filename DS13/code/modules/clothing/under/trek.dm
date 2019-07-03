@@ -19,7 +19,7 @@
 	item_color = "trek_medsci_ds9"
 	item_state = "bl_suit"
 
-/obj/item/clothing/accessory/ds9_jacket/civilian
+/obj/item/clothing/accessory/ds9_jacket
 	name = "uniform jacket"
 	desc = "An extremely comfortable jacket with some storage pockets for tools."
 	icon = 'DS13/icons/obj/clothing/accessories.dmi'
@@ -27,6 +27,33 @@
 	icon_state = "trekjacket"
 	item_color = "trekjacket"
 	item_state = "trekjacket"
+	actions_types = list(/datum/action/item_action/ds13_jacket_swap)
+	var/toggled = TRUE //Starts by displaying your departmental colours
+
+/datum/action/item_action/ds13_jacket_swap
+	name = "Toggle jacket style"
+	desc = "Display or hide your departmental colours for your suit jacket by reversing its shoulder pads."
+	button_icon_state = "jacketswap"
+	icon_icon = 'DS13/icons/mob/actions/actions_spells.dmi'
+
+/obj/item/clothing/accessory/ds9_jacket/ui_action_click(mob/user, action)
+	if(istype(action, /datum/action/item_action/ds13_jacket_swap))
+		toggle(user)
+		return TRUE
+
+/obj/item/clothing/accessory/ds9_jacket/proc/toggle(mob/user)
+	if(toggled)
+		to_chat(user, "<span class='notice'>You cover up [src]'s departmental colours.</span>")
+		icon_state = "trekjacket"
+		item_color = "trekjacket"
+		item_state = "trekjacket"
+		toggled = FALSE
+	else
+		to_chat(user, "<span class='notice'>You display [src]'s departmental colours.</span>")
+		icon_state = initial(icon_state)
+		item_color = initial(item_color)
+		item_state = initial(item_state)
+		toggled = TRUE
 
 /obj/item/clothing/accessory/ds9_jacket/command
 	name = "uniform jacket"
