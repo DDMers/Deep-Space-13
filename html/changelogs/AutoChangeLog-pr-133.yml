@@ -1,0 +1,4 @@
+author: "Michael-Ashfield"
+delete-after: True
+changes: 
+  - tweak: "Starfleet are now no longer receiving scanner reports from Nanotrasen about rare aurora caelus events"
