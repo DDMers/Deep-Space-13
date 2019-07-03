@@ -21,7 +21,7 @@
 	suit = null
 	gloves = /obj/item/clothing/gloves/color/black
 	head = null
-	backpack_contents = /obj/item/clothing/accessory/ds9_jacket/formal/captain
+	backpack_contents = list(/obj/item/clothing/accessory/ds9_jacket/formal/captain=1)
 
 /datum/job/hop
 	outfit = /datum/outfit/job/hop/DS13
