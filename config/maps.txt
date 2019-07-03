@@ -29,6 +29,10 @@ map Intrepid
 	#voteweight 1.5
 endmap
 
+map Columbia
+	#voteweight 1.5
+endmap
+
 map boxstation
 	#voteweight 1.5
 endmap
