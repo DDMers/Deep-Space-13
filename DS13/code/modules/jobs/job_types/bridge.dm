@@ -21,7 +21,7 @@ Bridge crew
 	name = "Bridge Officer"
 	jobtype = /datum/job/bridge_crew
 	uniform = /obj/item/clothing/under/trek/command/ds9
-	accessory = /obj/item/clothing/accessory/ds9_jacket
+	accessory = /obj/item/clothing/accessory/ds9_jacket/command
 	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/heads/hop
 	id = /obj/item/card/id
