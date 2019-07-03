@@ -1,0 +1,7 @@
+author: "ben10083"
+delete-after: True
+changes: 
+  - rscadd: "New command jacket"
+  - rscadd: "New engsec jacket"
+  - rscadd: "New medsci jacket"
+  - tweak: "People now spawn with corresponding jacket"

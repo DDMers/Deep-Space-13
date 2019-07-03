@@ -1,0 +1,5 @@
+author: "Kmc2000"
+delete-after: True
+changes: 
+  - bugfix: "Touched up the uniform jackets to make them look nicer"
+  - rscadd: "You can now change your uniform jacket's style by taking it off and using its action button at the top of your screen."
