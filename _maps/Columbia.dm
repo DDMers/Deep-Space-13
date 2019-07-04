@@ -1,1 +1,1 @@
-#define FORCE_MAP "_maps/Sovereign.json"
+#define FORCE_MAP "_maps/Columbia.json"

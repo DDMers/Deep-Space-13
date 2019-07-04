@@ -37,11 +37,17 @@
 	pixel_z = -128
 	layer = LARGE_MOB_LAYER //3.9 -> Below mob. Change this if it becomes cancerous.
 	damage_states = TRUE
+	anchored = TRUE
 	var/list/ladders = list() //Where can you board, where can you exit?
 	var/locked = FALSE //Allows the keyholder to prevent people entering the runabout. Use this if you park it in a dodgy neighbourhood!
 	var/obj/item/carkey/key = null //Linked key which can control us.
 	var/lights_enabled = FALSE //Lets you activate your headlights if you want to go exploring / mining with it.
 
+/obj/structure/overmap/runabout/Bumped(atom/movable/AM)
+	if(ismob(AM))
+		return FALSE
+	else
+		. = ..()
 
 /obj/structure/overmap/runabout/OvermapInitialize()
 	. = ..()

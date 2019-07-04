@@ -2,10 +2,6 @@
 "aa" = (
 /turf/open/space/basic,
 /area/space)
-"ab" = (
-/obj/structure/overmap/sovereign/starter,
-/turf/open/space/basic,
-/area/space)
 "ac" = (
 /obj/effect/landmark/overmap_event_spawn,
 /turf/open/space/basic,
@@ -375,6 +371,10 @@
 /obj/structure/showcase/horrific_experiment,
 /turf/open/floor/carpet/trek,
 /area/ship/crashed_borg)
+"lh" = (
+/obj/structure/overmap/columbia/starter,
+/turf/open/space/basic,
+/area/space)
 "lx" = (
 /obj/machinery/computer{
 	icon_state = "computer";
@@ -26001,7 +26001,7 @@ aa
 aa
 aa
 aa
-aa
+lh
 aa
 aa
 aa
@@ -28014,7 +28014,7 @@ aa
 aa
 aa
 aa
-ab
+aa
 aa
 aa
 aa

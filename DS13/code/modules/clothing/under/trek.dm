@@ -27,6 +27,57 @@
 	icon_state = "trekjacket"
 	item_color = "trekjacket"
 	item_state = "trekjacket"
+	actions_types = list(/datum/action/item_action/ds13_jacket_swap)
+	var/toggled = TRUE //Starts by displaying your departmental colours
+
+/datum/action/item_action/ds13_jacket_swap
+	name = "Toggle jacket style"
+	desc = "Display or hide your departmental colours for your suit jacket by reversing its shoulder pads."
+	button_icon_state = "jacketswap"
+	icon_icon = 'DS13/icons/mob/actions/actions_spells.dmi'
+
+/obj/item/clothing/accessory/ds9_jacket/ui_action_click(mob/user, action)
+	if(istype(action, /datum/action/item_action/ds13_jacket_swap))
+		toggle(user)
+		return TRUE
+
+/obj/item/clothing/accessory/ds9_jacket/proc/toggle(mob/user)
+	if(toggled)
+		to_chat(user, "<span class='notice'>You cover up [src]'s departmental colours.</span>")
+		icon_state = "trekjacket"
+		item_color = "trekjacket"
+		item_state = "trekjacket"
+		toggled = FALSE
+	else
+		to_chat(user, "<span class='notice'>You display [src]'s departmental colours.</span>")
+		icon_state = initial(icon_state)
+		item_color = initial(item_color)
+		item_state = initial(item_state)
+		toggled = TRUE
+
+/obj/item/clothing/accessory/ds9_jacket/command
+	name = "uniform jacket"
+	desc = "An extremely comfortable jacket with some storage pockets for tools."
+	icon = 'DS13/icons/obj/clothing/accessories.dmi'
+	icon_state = "trekjacket_command"
+	item_color = "trekjacket_command"
+	item_state = "trekjacket_command"
+
+/obj/item/clothing/accessory/ds9_jacket/engsec
+	name = "uniform jacket"
+	desc = "An extremely comfortable jacket with some storage pockets for tools."
+	icon = 'DS13/icons/obj/clothing/accessories.dmi'
+	icon_state = "trekjacket_engsec"
+	item_color = "trekjacket_engsec"
+	item_state = "trekjacket_engsec"
+
+/obj/item/clothing/accessory/ds9_jacket/medsci
+	name = "uniform jacket"
+	desc = "An extremely comfortable jacket with some storage pockets for tools"
+	icon = 'DS13/icons/obj/clothing/accessories.dmi'
+	icon_state = "trekjacket_medsci"
+	item_color = "trekjacket_medsci"
+	item_state = "trekjacket_medsci"
 
 /obj/item/clothing/accessory/ds9_jacket/formal
 	name = "dress jacket"
@@ -136,6 +187,29 @@
 	item_color = "section31"
 	item_state = "bl_suit"
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 20,"energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
+
+/obj/item/clothing/under/trek/shuttle
+	name = "Starfleet shuttle pilot jumpsuit"
+	desc = "A tight fitting but comfortable jumpsuit made of high quality materials. This particular uniform was designed for use by shuttle pilots in intense scenarios where endurance of multiple Gs was necessary. It comes fitted with a torsion system to keep you locked into your seat as well as fire retardant padding designed to extend the lifespan of combat pilots, though it's not designed to be worn for extended periods."
+	icon = 'DS13/icons/obj/clothing/uniforms.dmi'
+	alternate_worn_icon = 'DS13/icons/mob/uniform.dmi'
+	icon_state = "trek_shuttle"
+	item_color = "trek_shuttle"
+	item_state = "bl_suit"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 10,"energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 10)
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/under/trek/shuttle/equipped(mob/user, slot)
+	. = ..()
+	SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "tight suit", /datum/mood_event/tight_suit)
+
+/obj/item/clothing/under/trek/shuttle/dropped(mob/user, slot)
+	. = ..()
+	SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "tight suit", /datum/mood_event/tight_suit)
+
+/datum/mood_event/tight_suit
+	description = "<span class='warning'>This jumpsuit sure is tight...</span>\n"
+	mood_change = -1
 
 /obj/item/clothing/suit/DS13
 	name = "Placeholder"

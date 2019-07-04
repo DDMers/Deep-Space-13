@@ -1,0 +1,4 @@
+author: "Kmc2000"
+delete-after: True
+changes: 
+  - rscadd: "You can now leave the round by buckling into a bed and logging out / ghosting."
