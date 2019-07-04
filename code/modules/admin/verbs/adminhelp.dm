@@ -83,7 +83,10 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	dat += "<A href='?_src_=holder;[HrefToken()];ahelp_tickets=[state]'>Refresh</A><br><br>"
 	for(var/I in l2b)
 		var/datum/admin_help/AH = I
-		dat += "<span class='adminnotice'><span class='adminhelp'>Ticket #[AH.id]</span>: <A href='?_src_=holder;[HrefToken()];ahelp=[REF(AH)];ahelp_action=ticket'>[AH.initiator_key_name]: [AH.name]</A></span><br>"
+		if(AH.is_mentor_ticket)
+			dat += "<span class='adminnotice'><span class='adminhelp'>Mentor: #[AH.id]</span>: <A href='?_src_=holder;[HrefToken()];ahelp=[REF(AH)];ahelp_action=ticket'>[AH.initiator_key_name]: [AH.name]</A></span><br>"
+		else
+			dat += "<span class='adminnotice'><span class='adminhelp'>Admin: #[AH.id]</span>: <A href='?_src_=holder;[HrefToken()];ahelp=[REF(AH)];ahelp_action=ticket'>[AH.initiator_key_name]: [AH.name]</A></span><br>"
 
 	usr << browse(dat.Join(), "window=ahelp_list[state];size=600x480")
 
@@ -94,7 +97,10 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	for(var/I in active_tickets)
 		var/datum/admin_help/AH = I
 		if(AH.initiator)
-			stat("#[AH.id]. [AH.initiator_key_name]:", AH.statclick.update())
+			if(AH.is_mentor_ticket)
+				stat("Mentor: #[AH.id]. [AH.initiator_key_name]:", AH.statclick.update())
+			else
+				stat("Admin: #[AH.id]. [AH.initiator_key_name]:", AH.statclick.update())
 		else
 			++num_disconnected
 	if(num_disconnected)
@@ -145,6 +151,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	var/id
 	var/name
 	var/state = AHELP_ACTIVE
+	var/is_mentor_ticket = FALSE //Set on New(). Allows sorting of tickets for admins / mentors.
 
 	var/opened_at
 	var/closed_at
@@ -163,7 +170,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 //call this on its own to create a ticket, don't manually assign current_ticket
 //msg is the title of the ticket: usually the ahelp text
 //is_bwoink is TRUE if this ticket was started by an admin PM
-/datum/admin_help/New(msg, client/C, is_bwoink)
+/datum/admin_help/New(msg, client/C, is_bwoink, mentor_status)
 	//clean the input msg
 	msg = sanitize(copytext(msg,1,MAX_MESSAGE_LEN))
 	if(!msg || !C || !C.mob)
@@ -188,14 +195,19 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 
 	statclick = new(null, src)
 	_interactions = list()
+	if(mentor_status)
+		is_mentor_ticket = TRUE
 
 	if(is_bwoink)
 		AddInteraction("<span class='notice'>[key_name_admin(usr)] PM'd [LinkedReplyName()]</span>")
 		message_admins("<span class='notice'>Ticket [TicketHref("#[id]")] created</span>")
+
 	else
 		MessageNoRecipient(msg)
-
-		SSredbot.send_discord_message("admin", "Ticket #[id] created by [usr.ckey] ([usr.real_name]): [name]", "ticket") //send the ticket to discord
+		if(is_mentor_ticket)
+			SSredbot.send_discord_message("admin", "Mentor ticket #[id] created by [usr.ckey] ([usr.real_name]): [name]", "ticket") //send the ticket to discord
+		else
+			SSredbot.send_discord_message("admin", "Admin Ticket #[id] created by [usr.ckey] ([usr.real_name]): [name]", "ticket") //send the ticket to discord
 		//send it to irc if nobody is on and tell us how many were on
 		var/admin_number_present = send2irc_adminless_only(initiator_ckey, "Ticket #[id]: [name]")
 		log_admin_private("Ticket #[id]: [key_name(initiator)]: [name] - heard by [admin_number_present] non-AFK admins who have +BAN.")
@@ -256,19 +268,28 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 /datum/admin_help/proc/MessageNoRecipient(msg)
 	var/ref_src = "[REF(src)]"
 	//Message to be sent to all admins
-	var/admin_msg = "<span class='adminnotice'><span class='adminhelp'>Ticket [TicketHref("#[id]", ref_src)]</span><b>: [LinkedReplyName(ref_src)] [FullMonty(ref_src)]:</b> <span class='linkify'>[keywords_lookup(msg)]</span></span>"
-
+	var/admin_msg
+	if(is_mentor_ticket) //DeepSpace13 - Mentors.
+		admin_msg = "<span class='adminnotice'><span class='nicegreen'><b>Mentor Ticket [TicketHref("#[id]", ref_src)]</span><b>: [LinkedReplyName(ref_src)] [FullMonty(ref_src)]:</b> <span class='linkify'>[keywords_lookup(msg)]</span></span></b>"
+	else
+		admin_msg = "<span class='adminnotice'><span class='adminhelp'>Admin Ticket [TicketHref("#[id]", ref_src)]</span><b>: [LinkedReplyName(ref_src)] [FullMonty(ref_src)]:</b> <span class='linkify'>[keywords_lookup(msg)]</span></span>"
 	AddInteraction("<font color='red'>[LinkedReplyName(ref_src)]: [msg]</font>")
 
 	//send this msg to all admins
 	for(var/client/X in GLOB.admins)
 		if(X.prefs.toggles & SOUND_ADMINHELP)
-			SEND_SOUND(X, sound('sound/effects/adminhelp.ogg'))
+			if(is_mentor_ticket) //DeepSpace13 - Mentors
+				SEND_SOUND(X, sound('DS13/sound/effects/mentorhelp.ogg'))
+			else
+				SEND_SOUND(X, sound('sound/effects/adminhelp.ogg'))
 		window_flash(X, ignorepref = TRUE)
 		to_chat(X, admin_msg)
 
 	//show it to the person adminhelping too
-	to_chat(initiator, "<span class='adminnotice'>PM to-<b>Admins</b>: <span class='linkify'>[msg]</span></span>")
+	if(is_mentor_ticket) //DeepSpace13 - Mentors
+		to_chat(initiator, "<span class='nicegreen'>PM to-<b>Mentors</b>: <span class='linkify'>[msg]</span></span>")
+	else
+		to_chat(initiator, "<span class='adminnotice'>PM to-<b>Admins</b>: <span class='linkify'>[msg]</span></span>")
 
 //Reopen a closed ticket
 /datum/admin_help/proc/Reopen()
@@ -387,7 +408,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 /datum/admin_help/proc/TicketPanel()
 	var/list/dat = list("<html><head><title>Ticket #[id]</title></head>")
 	var/ref_src = "[REF(src)]"
-	dat += "<h4>Admin Help Ticket #[id]: [LinkedReplyName(ref_src)]</h4>"
+	dat += "<h4>Ticket #[id]: [LinkedReplyName(ref_src)]</h4>"
 	dat += "<b>State: "
 	switch(state)
 		if(AHELP_ACTIVE)
@@ -513,8 +534,10 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		else
 			current_ticket.AddInteraction("[key_name_admin(usr)] opened a new ticket.")
 			current_ticket.Close()
-
-	new /datum/admin_help(msg, src, FALSE)
+	if(alert(usr,"Is this an administrative issue, or a general question?",,"admin issue","general question") == "general question")
+		new /datum/admin_help(msg, src, FALSE, TRUE)
+	else
+		new /datum/admin_help(msg, src, FALSE, FALSE)
 
 //
 // LOGGING
