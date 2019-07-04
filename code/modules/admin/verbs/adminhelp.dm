@@ -81,14 +81,17 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		return
 	var/list/dat = list("<html><head><title>[title]</title></head>")
 	dat += "<A href='?_src_=holder;[HrefToken()];ahelp_tickets=[state]'>Refresh</A><br><br>"
+	dat += "<table><tr><td width='340px' height='300px' valign='top'>"
 	for(var/I in l2b)
 		var/datum/admin_help/AH = I
 		if(AH.is_mentor_ticket)
-			dat += "<span class='adminnotice'><span class='adminhelp'>Mentor: #[AH.id]</span>: <A href='?_src_=holder;[HrefToken()];ahelp=[REF(AH)];ahelp_action=ticket'>[AH.initiator_key_name]: [AH.name]</A></span><br>"
+			dat += "<span class='adminnotice'><span class='adminhelp'><b>Mentor: #[AH.id]</span></b>: <A href='?_src_=holder;[HrefToken()];ahelp=[REF(AH)];ahelp_action=ticket'>[AH.initiator_key_name]: [AH.name]</A></span><br>"
 		else
-			dat += "<span class='adminnotice'><span class='adminhelp'>Admin: #[AH.id]</span>: <A href='?_src_=holder;[HrefToken()];ahelp=[REF(AH)];ahelp_action=ticket'>[AH.initiator_key_name]: [AH.name]</A></span><br>"
+			dat += "<span class='adminnotice'><span class='adminhelp'><b>Admin: #[AH.id]</span></b>: <A href='?_src_=holder;[HrefToken()];ahelp=[REF(AH)];ahelp_action=ticket'>[AH.initiator_key_name]: [AH.name]</A></span><br>"
 
-	usr << browse(dat.Join(), "window=ahelp_list[state];size=600x480")
+	var/datum/browser/browser = new(usr, "ahelp_list[state]", "<div align='center'>[title]</div>", 600, 480)
+	browser.set_content(dat.Join())
+	browser.open()
 
 //Tickets statpanel
 /datum/admin_help_tickets/proc/stat_entry()
@@ -273,7 +276,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		admin_msg = "<span class='adminnotice'><span class='nicegreen'><b>Mentor Ticket [TicketHref("#[id]", ref_src)]</span><b>: [LinkedReplyName(ref_src)] [FullMonty(ref_src)]:</b> <span class='linkify'>[keywords_lookup(msg)]</span></span></b>"
 	else
 		admin_msg = "<span class='adminnotice'><span class='adminhelp'>Admin Ticket [TicketHref("#[id]", ref_src)]</span><b>: [LinkedReplyName(ref_src)] [FullMonty(ref_src)]:</b> <span class='linkify'>[keywords_lookup(msg)]</span></span>"
-	AddInteraction("<font color='red'>[LinkedReplyName(ref_src)]: [msg]</font>")
+	AddInteraction("<font color='#ff8c8c'>[LinkedReplyName(ref_src)]: [msg]</font>")
 
 	//send this msg to all admins
 	for(var/client/X in GLOB.admins)
@@ -412,9 +415,9 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	dat += "<b>State: "
 	switch(state)
 		if(AHELP_ACTIVE)
-			dat += "<font color='red'>OPEN</font>"
+			dat += "<font color='#ff8c8c'>OPEN</font>"
 		if(AHELP_RESOLVED)
-			dat += "<font color='green'>RESOLVED</font>"
+			dat += "<font color='#9adb92'>RESOLVED</font>"
 		if(AHELP_CLOSED)
 			dat += "CLOSED"
 		else
@@ -422,9 +425,9 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	dat += "</b>[GLOB.TAB][TicketHref("Refresh", ref_src)][GLOB.TAB][TicketHref("Re-Title", ref_src, "retitle")]"
 	if(state != AHELP_ACTIVE)
 		dat += "[GLOB.TAB][TicketHref("Reopen", ref_src, "reopen")]"
-	dat += "<br><br>Opened at: [gameTimestamp(wtime = opened_at)] (Approx [DisplayTimeText(world.time - opened_at)] ago)"
+	dat += "<br><br><b>--Opened at: [gameTimestamp(wtime = opened_at)] (Approx [DisplayTimeText(world.time - opened_at)] ago)--</b>"
 	if(closed_at)
-		dat += "<br>Closed at: [gameTimestamp(wtime = closed_at)] (Approx [DisplayTimeText(world.time - closed_at)] ago)"
+		dat += "<br><b>|- Closed at: [gameTimestamp(wtime = closed_at)] (Approx [DisplayTimeText(world.time - closed_at)] ago) -|</b>"
 	dat += "<br><br>"
 	if(initiator)
 		dat += "<b>Actions:</b> [FullMonty(ref_src)]<br>"
@@ -434,7 +437,9 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	for(var/I in _interactions)
 		dat += "[I]<br>"
 
-	usr << browse(dat.Join(), "window=ahelp[id];size=620x480")
+	var/datum/browser/browser = new(usr, "ahelp[id]", "<div align='center'>Ticket #[id]</div>", 620, 480)
+	browser.set_content(dat.Join())
+	browser.open()
 
 /datum/admin_help/proc/Retitle()
 	var/new_title = input(usr, "Enter a title for the ticket", "Rename Ticket", name) as text|null
