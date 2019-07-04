@@ -3052,6 +3052,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "ik" = (
@@ -3075,7 +3076,7 @@
 "im" = (
 /obj/structure/trek_decor/ai_wall,
 /obj/structure/trek_decor/ai_wall/optronic,
-/turf/closed/wall/trek_smooth/voy,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/ai_monitored/turret_protected/ai)
 "in" = (
 /obj/machinery/door/airlock/trek/ship/maint{
@@ -3094,6 +3095,7 @@
 	name = "Computer core"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "ip" = (
@@ -3724,7 +3726,7 @@
 /turf/open/floor/carpet/trek/voy,
 /area/hallway/primary/central)
 "jL" = (
-/turf/closed/wall/trek_smooth/voy,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/ai_monitored/turret_protected/ai)
 "jM" = (
 /obj/machinery/door/airlock/trek/ship{
@@ -5690,6 +5692,7 @@
 "oM" = (
 /obj/structure/trek_catwalk,
 /obj/machinery/light,
+/obj/machinery/ai_slipper,
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "oN" = (
@@ -5706,6 +5709,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "oP" = (
@@ -5717,7 +5721,7 @@
 /area/maintenance/starboard/fore)
 "oQ" = (
 /obj/structure/trek_decor/ai_wall,
-/turf/closed/wall/trek_smooth/voy,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/ai_monitored/turret_protected/ai)
 "oR" = (
 /obj/structure/trek_catwalk,
@@ -5731,7 +5735,7 @@
 /area/vacant_room/office)
 "oS" = (
 /obj/structure/trek_decor/viewscreen,
-/turf/closed/wall/trek_smooth/voy,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/ai_monitored/turret_protected/ai)
 "oT" = (
 /obj/structure/railing,
@@ -5753,6 +5757,7 @@
 /obj/machinery/door/airlock/trek/ship/command{
 	name = "Computer core"
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "oW" = (
@@ -5818,6 +5823,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "pb" = (
@@ -6644,6 +6650,7 @@
 "qZ" = (
 /obj/structure/trek_catwalk,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "ra" = (
@@ -6933,13 +6940,11 @@
 /turf/open/floor/carpet/trek/voy,
 /area/hallway/secondary/command)
 "rD" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /turf/open/floor/carpet/trek/voy,
 /area/hallway/secondary/entry)
 "rE" = (
@@ -6957,13 +6962,10 @@
 /area/hallway/secondary/entry)
 "rF" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	icon_state = "pipe11-1";
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
 /turf/open/floor/carpet/trek/voy,
 /area/hallway/secondary/entry)
 "rG" = (
@@ -11473,6 +11475,14 @@
 	},
 /turf/open/floor/carpet/trek/voy,
 /area/hallway/primary/central)
+"Jx" = (
+/obj/structure/trek_catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/turf/open/floor/trek/tile,
+/area/ai_monitored/turret_protected/ai)
 "JE" = (
 /obj/machinery/camera/trek{
 	icon_state = "camera";
@@ -11608,6 +11618,14 @@
 /obj/machinery/camera/trek,
 /turf/open/floor/carpet/trek/voy,
 /area/turbolift/tertiary)
+"Lr" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/camera/trek,
+/obj/machinery/airalarm{
+	pixel_y = 22
+	},
+/turf/open/floor/trek/tile,
+/area/ai_monitored/turret_protected/ai)
 "LC" = (
 /obj/structure/trek_decor/brig,
 /obj/structure/trek_decor/rack,
@@ -11725,6 +11743,12 @@
 /obj/structure/extinguisher_cabinet,
 /turf/closed/wall/trek_smooth/voy,
 /area/ship/engineering/akira)
+"Oz" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/ai_slipper,
+/turf/open/floor/trek/tile,
+/area/ai_monitored/turret_protected/ai)
 "OC" = (
 /obj/structure/extinguisher_cabinet,
 /turf/closed/wall/trek_smooth/voy,
@@ -11910,6 +11934,15 @@
 /obj/structure/extinguisher_cabinet,
 /turf/closed/wall/trek_smooth/voy,
 /area/ship/engineering/akira)
+"Sd" = (
+/obj/structure/trek_catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/ai_slipper,
+/turf/open/floor/trek/tile,
+/area/ai_monitored/turret_protected/ai)
 "Se" = (
 /obj/machinery/camera/trek{
 	icon_state = "camera";
@@ -12098,6 +12131,11 @@
 	},
 /turf/open/floor/carpet/trek/voy,
 /area/bridge/meeting_room)
+"Yi" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/turf/open/floor/trek/tile,
+/area/ai_monitored/turret_protected/ai)
 "Yl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	icon_state = "pipe11-2";
@@ -172910,9 +172948,9 @@ yU
 jL
 ov
 oD
-oD
+Jx
 oO
-oD
+Sd
 pa
 ij
 rD
@@ -173168,8 +173206,8 @@ jL
 jL
 oE
 oG
-oQ
-oE
+jL
+Lr
 oG
 im
 rE
@@ -173938,9 +173976,9 @@ el
 jL
 ox
 oG
-oG
+Yi
 oV
-oG
+Oz
 qZ
 io
 rF
