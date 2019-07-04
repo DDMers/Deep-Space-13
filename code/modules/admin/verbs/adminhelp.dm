@@ -534,7 +534,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		else
 			current_ticket.AddInteraction("[key_name_admin(usr)] opened a new ticket.")
 			current_ticket.Close()
-	if(alert(usr,"Is this an administrative issue, or a general question?",,"admin issue","general question") == "general question")
+	if(alert(usr,"Is this an administrative issue, or a gameplay question?",,"Admin issue","Question") == "Question")
 		new /datum/admin_help(msg, src, FALSE, TRUE)
 	else
 		new /datum/admin_help(msg, src, FALSE, FALSE)
