@@ -3045,14 +3045,16 @@
 /turf/open/space/basic,
 /area/space)
 "ij" = (
-/obj/machinery/door/airlock/trek/ship/command{
-	name = "Computer core"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/door/airlock/highsecurity{
+	icon = 'DS13/icons/obj/machinery/doors/command.dmi';
+	locked = 1;
+	name = "Computer Core"
+	},
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "ik" = (
@@ -3091,11 +3093,13 @@
 /turf/open/floor/plating,
 /area/quartermaster/storage)
 "io" = (
-/obj/machinery/door/airlock/trek/ship/command{
-	name = "Computer core"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/door/airlock/highsecurity{
+	icon = 'DS13/icons/obj/machinery/doors/command.dmi';
+	locked = 1;
+	name = "Computer Core"
+	},
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "ip" = (
@@ -5703,13 +5707,15 @@
 /turf/open/floor/circuit,
 /area/ai_monitored/turret_protected/ai)
 "oO" = (
-/obj/machinery/door/airlock/trek/ship/command{
-	name = "Computer core"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/door/airlock/highsecurity{
+	icon = 'DS13/icons/obj/machinery/doors/command.dmi';
+	locked = 1;
+	name = "Computer Core"
+	},
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "oP" = (
@@ -5754,10 +5760,12 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "oV" = (
-/obj/machinery/door/airlock/trek/ship/command{
-	name = "Computer core"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/door/airlock/highsecurity{
+	icon = 'DS13/icons/obj/machinery/doors/command.dmi';
+	locked = 1;
+	name = "Computer Core"
+	},
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "oW" = (
