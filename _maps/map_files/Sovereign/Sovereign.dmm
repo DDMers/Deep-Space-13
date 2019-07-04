@@ -978,7 +978,7 @@
 /turf/closed/wall/trek_smooth/room,
 /area/maintenance/department/bridge)
 "db" = (
-/turf/closed/wall/trek_smooth/room,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/ai_monitored/turret_protected/ai)
 "dc" = (
 /obj/structure/table/trek,
@@ -2925,6 +2925,10 @@
 "iJ" = (
 /obj/structure/trek_catwalk,
 /obj/machinery/light,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/ai_slipper,
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "iK" = (
@@ -3004,18 +3008,23 @@
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
 "iU" = (
-/obj/machinery/door/airlock/trek/ship/command{
-	name = "Computer core"
+/obj/machinery/door/airlock/highsecurity{
+	icon = 'DS13/icons/obj/machinery/doors/command.dmi';
+	locked = 1;
+	name = "Computer Core"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "iV" = (
 /obj/structure/trek_decor/ai_wall,
-/turf/closed/wall/trek_smooth/room,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/ai_monitored/turret_protected/ai)
 "iW" = (
 /obj/structure/trek_decor/viewscreen,
-/turf/closed/wall/trek_smooth/room,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/ai_monitored/turret_protected/ai)
 "iX" = (
 /obj/structure/table,
@@ -3708,7 +3717,7 @@
 "kJ" = (
 /obj/structure/trek_decor/ai_wall,
 /obj/structure/trek_decor/ai_wall/optronic,
-/turf/closed/wall/trek_smooth/room,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/ai_monitored/turret_protected/ai)
 "kK" = (
 /obj/structure/bed,
@@ -3843,7 +3852,7 @@
 /area/engine/atmos)
 "lf" = (
 /obj/structure/overmap_component/system_control,
-/turf/closed/wall/trek_smooth/room,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/ai_monitored/turret_protected/ai)
 "lg" = (
 /obj/machinery/light,
@@ -13568,6 +13577,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
 "Jn" = (
@@ -13579,11 +13591,13 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/command)
 "Jo" = (
-/obj/machinery/door/airlock/trek/ship/command{
-	name = "Computer core"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/highsecurity{
+	icon = 'DS13/icons/obj/machinery/doors/command.dmi';
+	locked = 1;
+	name = "Computer Core"
 	},
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
@@ -16830,6 +16844,16 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/hallway/secondary/command)
+"Sy" = (
+/obj/structure/trek_catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/trek/tile,
+/area/ai_monitored/turret_protected/ai)
 "SU" = (
 /obj/structure/trek_catwalk/cargo/pad{
 	icon_state = "3,8"
@@ -16838,6 +16862,13 @@
 /obj/structure/overmap/runabout,
 /turf/open/floor/carpet/trek,
 /area/quartermaster/storage)
+"Uf" = (
+/obj/structure/trek_catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/trek/tile,
+/area/ai_monitored/turret_protected/ai)
 "Ug" = (
 /obj/structure/closet{
 	name = "Combadges"
@@ -16861,6 +16892,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/hallway/secondary/entry)
+"Ur" = (
+/obj/structure/trek_catwalk,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/ai_slipper,
+/turf/open/floor/trek/tile,
+/area/ai_monitored/turret_protected/ai)
 "UC" = (
 /obj/item/clothing/under/trek/neelix,
 /obj/item/clothing/under/trek/neelix,
@@ -16898,6 +16937,13 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/entry)
+"Zj" = (
+/obj/structure/trek_catwalk,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/trek/tile,
+/area/ai_monitored/turret_protected/ai)
 "Zp" = (
 /obj/machinery/ore_silo,
 /turf/open/floor/carpet/trek,
@@ -243981,9 +244027,9 @@ cX
 db
 Jc
 Jj
-Jj
+Sy
 Jo
-Jj
+Ur
 Jj
 Jo
 Pl
@@ -244238,7 +244284,7 @@ aS
 db
 db
 Mc
-eD
+Uf
 iV
 Mc
 eD
@@ -244752,7 +244798,7 @@ aS
 db
 db
 eD
-eD
+Uf
 iV
 eD
 eD
@@ -245009,13 +245055,13 @@ cX
 db
 Pp
 eD
-eD
+Zj
 iU
-eD
-eD
+Ur
+Jj
 iU
-aS
-aS
+Jp
+Jp
 Jm
 EK
 EG
