@@ -173,7 +173,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 //call this on its own to create a ticket, don't manually assign current_ticket
 //msg is the title of the ticket: usually the ahelp text
 //is_bwoink is TRUE if this ticket was started by an admin PM
-/datum/admin_help/New(msg, client/C, is_bwoink, mentor_status)
+/datum/admin_help/New(msg, client/C, is_bwoink, mentor_status = FALSE)
 	//clean the input msg
 	msg = sanitize(copytext(msg,1,MAX_MESSAGE_LEN))
 	if(!msg || !C || !C.mob)
@@ -539,10 +539,10 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		else
 			current_ticket.AddInteraction("[key_name_admin(usr)] opened a new ticket.")
 			current_ticket.Close()
-	if(alert(usr,"Is this an administrative issue, or a gameplay question?",,"Admin issue","Question") == "Question")
-		new /datum/admin_help(msg, src, FALSE, TRUE)
+	if(alert(usr,"Is this an administrative issue, or a gameplay question?",,"Admin issue (adminhelp)","Question (mentorhelp)") == "Question (mentorhelp)")
+		new /datum/admin_help(msg, src, is_bwoink = FALSE,mentor_status = TRUE)
 	else
-		new /datum/admin_help(msg, src, FALSE, FALSE)
+		new /datum/admin_help(msg, src, is_bwoink = FALSE,mentor_status = FALSE)
 
 //
 // LOGGING
