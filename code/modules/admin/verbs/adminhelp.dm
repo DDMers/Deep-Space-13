@@ -208,7 +208,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	else
 		MessageNoRecipient(msg)
 		if(is_mentor_ticket)
-			SSredbot.send_discord_message("admin", "Mentor ticket #[id] created by [usr.ckey] ([usr.real_name]): [name]", "ticket") //send the ticket to discord
+			SSredbot.send_discord_message("mentor", "Mentor ticket #[id] created by [usr.ckey] ([usr.real_name]): [name]", "ticket") //send the ticket to discord
 		else
 			SSredbot.send_discord_message("admin", "Admin Ticket #[id] created by [usr.ckey] ([usr.real_name]): [name]", "ticket") //send the ticket to discord
 		//send it to irc if nobody is on and tell us how many were on
