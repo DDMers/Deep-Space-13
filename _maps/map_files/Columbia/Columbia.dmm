@@ -3975,6 +3975,7 @@
 /area/quartermaster/sorting)
 "jF" = (
 /obj/structure/filingcabinet/employment,
+/obj/machinery/camera/trek,
 /turf/open/floor/carpet/trek,
 /area/security/checkpoint/supply)
 "jG" = (
@@ -9400,6 +9401,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "Chem_2";
+	name = "Chemistry shutters"
+	},
 /turf/open/floor/carpet/trek,
 /area/medical/genetics/cloning)
 "vA" = (
@@ -9448,6 +9453,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/filingcabinet/chestdrawer/wheeled,
 /turf/open/floor/plasteel/dark/side{
 	dir = 8
 	},
@@ -9693,6 +9699,10 @@
 /obj/item/storage/box/beakers,
 /obj/item/storage/box/bodybags,
 /obj/item/geiger_counter,
+/obj/machinery/button/door{
+	id = "Chem_2";
+	pixel_x = 25
+	},
 /turf/open/floor/plasteel/dark/side{
 	dir = 8
 	},
@@ -9957,6 +9967,10 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced/fulltile/trek,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "Chem_2";
+	name = "Chemistry shutters"
+	},
 /turf/open/floor/carpet/trek,
 /area/medical/genetics/cloning)
 "wI" = (
@@ -10085,6 +10099,10 @@
 "wT" = (
 /obj/machinery/sleeper{
 	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "Chem_1";
+	pixel_x = 25
 	},
 /turf/open/floor/carpet/trek,
 /area/medical)
@@ -10671,6 +10689,10 @@
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
 	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "Medbay";
+	pixel_x = -25
 	},
 /turf/open/floor/carpet/trek,
 /area/medical)
@@ -12072,6 +12094,7 @@
 /obj/item/stack/sheet/mineral/plasma,
 /obj/item/stack/sheet/mineral/plasma,
 /obj/item/stack/sheet/mineral/plasma,
+/obj/item/storage/box/monkeycubes,
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
 "Bf" = (
@@ -16102,6 +16125,7 @@
 /area/crew_quarters/kitchen)
 "KV" = (
 /obj/structure/closet/secure_closet/freezer/meat,
+/obj/item/storage/box/monkeycubes,
 /mob/living/simple_animal/cow,
 /turf/open/floor/plasteel/freezer,
 /area/crew_quarters/kitchen)
@@ -16901,6 +16925,10 @@
 	dir = 4;
 	icon_state = "windoor"
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "Chem_1";
+	name = "Chemistry shutters"
+	},
 /turf/open/floor/carpet/trek,
 /area/medical)
 "Pe" = (
@@ -17346,6 +17374,10 @@
 	dir = 4
 	},
 /obj/structure/table/glass,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "Chem_1";
+	name = "Chemistry shutters"
+	},
 /turf/open/floor/carpet/trek,
 /area/medical)
 "SA" = (
