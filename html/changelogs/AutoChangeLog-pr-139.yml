@@ -1,0 +1,4 @@
+author: "Kmc2000"
+delete-after: True
+changes: 
+  - rscadd: "Mentor tickets now exist. Use them for gameplay questions!"
