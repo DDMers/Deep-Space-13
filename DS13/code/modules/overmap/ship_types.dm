@@ -334,13 +334,13 @@
 /obj/structure/turbolift/columbia
 	deck_1 = list("bridge", "computer core", "AI core")
 	deck_2 = list("bar", "ten forward", "mess hall","kitchen", "Shuttle Bay", "cargo", "Cargonia", "Mining", "Arrivals", "Escape", "Evac", "Officer's Quarters", "Torpedo Bay")
-	deck_3 = list("Hydroponics", "Quarters", "crew quarters", "transporter room", "Detective's office", "Law office", "Brig", "Medbay", "sickbay", "Research", "science", "Custodial", "Armory")
+	deck_3 = list("Hydroponics", "Quarters", "crew quarters", "transporter room", "Detective's office", "Law office", "Brig", "Transporter", "Medbay", "sickbay", "Research", "science", "Custodial", "Armory")
 	deck_4 = list("Engineering", "Atmospherics", "Atmos", "Engitopia", "Atmosia")
 
 /obj/structure/trek_decor/plaque/columbia
 	name = "Dedication plaque"
 	desc = "A large, bronze plaque with a dedication: \n <b>USS Ramos. <b>Columbia-class <> Starfleet registry: NCC-14529 <>\n  Launched stardate: NULL <> Jupiter ShipYards <> Starfleet. \n</b>"
 	icon_state = "plaque"
-	supervisors = list()
+	supervisors = list("Shevil Ch'eviavek")
 	engineers = list("Shevil Ch'eviavek")
 	inscription = "In Firepower We Trust."
