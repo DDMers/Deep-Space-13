@@ -3975,6 +3975,7 @@
 /area/quartermaster/sorting)
 "jF" = (
 /obj/structure/filingcabinet/employment,
+/obj/machinery/camera/trek,
 /turf/open/floor/carpet/trek,
 /area/security/checkpoint/supply)
 "jG" = (
@@ -4485,6 +4486,9 @@
 /area/quartermaster/office)
 "kG" = (
 /obj/structure/filingcabinet/chestdrawer/wheeled,
+/obj/machinery/status_display/supply{
+	pixel_x = 32
+	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/office)
 "kH" = (
@@ -4562,6 +4566,9 @@
 /area/hallway/primary/central)
 "kO" = (
 /obj/structure/closet/wardrobe/cargotech,
+/obj/machinery/status_display/supply{
+	pixel_x = 32
+	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/sorting)
 "kP" = (
@@ -9394,6 +9401,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "Chem_2";
+	name = "Chemistry shutters"
+	},
 /turf/open/floor/carpet/trek,
 /area/medical/genetics/cloning)
 "vA" = (
@@ -9442,6 +9453,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/filingcabinet/chestdrawer/wheeled,
 /turf/open/floor/plasteel/dark/side{
 	dir = 8
 	},
@@ -9687,6 +9699,10 @@
 /obj/item/storage/box/beakers,
 /obj/item/storage/box/bodybags,
 /obj/item/geiger_counter,
+/obj/machinery/button/door{
+	id = "Chem_2";
+	pixel_x = 25
+	},
 /turf/open/floor/plasteel/dark/side{
 	dir = 8
 	},
@@ -9951,6 +9967,10 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced/fulltile/trek,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "Chem_2";
+	name = "Chemistry shutters"
+	},
 /turf/open/floor/carpet/trek,
 /area/medical/genetics/cloning)
 "wI" = (
@@ -10079,6 +10099,10 @@
 "wT" = (
 /obj/machinery/sleeper{
 	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "Chem_1";
+	pixel_x = 25
 	},
 /turf/open/floor/carpet/trek,
 /area/medical)
@@ -10665,6 +10689,10 @@
 /obj/structure/chair/trek/standard{
 	icon_state = "chair";
 	dir = 4
+	},
+/obj/machinery/button/door{
+	id = "Medbay";
+	pixel_x = -25
 	},
 /turf/open/floor/carpet/trek,
 /area/medical)
@@ -11515,6 +11543,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/entry)
 "zP" = (
@@ -12063,6 +12094,7 @@
 /obj/item/stack/sheet/mineral/plasma,
 /obj/item/stack/sheet/mineral/plasma,
 /obj/item/stack/sheet/mineral/plasma,
+/obj/item/storage/box/monkeycubes,
 /turf/open/floor/carpet/trek,
 /area/science/xenobiology)
 "Bf" = (
@@ -12694,6 +12726,10 @@
 	dir = 8;
 	pixel_x = 22
 	},
+/obj/machinery/camera/trek{
+	icon_state = "camera";
+	dir = 8
+	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/entry)
 "Cw" = (
@@ -12996,14 +13032,13 @@
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/exit/departure_lounge)
 "Dg" = (
-/obj/structure/closet/boxinggloves,
-/obj/item/megaphone/clown,
-/obj/item/grenade/chem_grenade/glitter/white,
+/obj/machinery/vending/autodrobe,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/abandoned_gambling_den)
 "Dh" = (
 /obj/structure/closet/masks,
 /obj/item/megaphone/clown,
+/obj/item/grenade/chem_grenade/glitter/white,
 /turf/open/floor/carpet/trek,
 /area/crew_quarters/abandoned_gambling_den)
 "Dk" = (
@@ -15832,13 +15867,6 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/secondary/entry)
-"Ko" = (
-/obj/machinery/camera/trek{
-	icon_state = "camera";
-	dir = 8
-	},
-/turf/open/floor/carpet/trek,
-/area/hallway/secondary/entry)
 "Kp" = (
 /obj/structure/table,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
@@ -16097,6 +16125,7 @@
 /area/crew_quarters/kitchen)
 "KV" = (
 /obj/structure/closet/secure_closet/freezer/meat,
+/obj/item/storage/box/monkeycubes,
 /mob/living/simple_animal/cow,
 /turf/open/floor/plasteel/freezer,
 /area/crew_quarters/kitchen)
@@ -16799,6 +16828,15 @@
 /obj/effect/landmark/start/yeoman,
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/central)
+"Om" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/exit/departure_lounge)
 "Oy" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -16832,6 +16870,18 @@
 	},
 /turf/open/floor/carpet/trek/voy,
 /area/ship/bridge/akira)
+"OK" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/entry)
 "OS" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 5
@@ -16874,6 +16924,10 @@
 /obj/machinery/door/window/survival_pod{
 	dir = 4;
 	icon_state = "windoor"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "Chem_1";
+	name = "Chemistry shutters"
 	},
 /turf/open/floor/carpet/trek,
 /area/medical)
@@ -17049,7 +17103,7 @@
 	},
 /obj/machinery/door/airlock/public/glass{
 	name = "Auxiliary Tool Storage";
-	req_access_txt = "12"
+	req_access_txt = "0"
 	},
 /turf/open/floor/carpet/trek,
 /area/hallway/primary/port)
@@ -17238,6 +17292,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai)
+"RJ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/entry)
 "RX" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -17245,6 +17307,13 @@
 	},
 /turf/open/floor/carpet/trek,
 /area/quartermaster/sorting)
+"RY" = (
+/obj/effect/turf_decal/delivery,
+/obj/machinery/status_display/supply{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/quartermaster/storage)
 "Sa" = (
 /obj/machinery/atmospherics/pipe/simple/dark/hidden,
 /turf/closed/wall/trek_smooth/corridor,
@@ -17305,6 +17374,10 @@
 	dir = 4
 	},
 /obj/structure/table/glass,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "Chem_1";
+	name = "Chemistry shutters"
+	},
 /turf/open/floor/carpet/trek,
 /area/medical)
 "SA" = (
@@ -17793,6 +17866,14 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/science)
+"WG" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/carpet/trek,
+/area/hallway/secondary/entry)
 "WL" = (
 /turf/open/floor/plasteel/yellowsiding{
 	dir = 6
@@ -17837,6 +17918,13 @@
 /obj/machinery/smartfridge/chemistry,
 /turf/open/floor/carpet/trek,
 /area/medical/genetics/cloning)
+"Xe" = (
+/obj/item/banner/cargo,
+/obj/machinery/status_display/supply{
+	pixel_x = 32
+	},
+/turf/open/floor/carpet/trek,
+/area/quartermaster)
 "Xf" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
@@ -17917,6 +18005,16 @@
 	},
 /turf/open/floor/carpet/trek/voy,
 /area/maintenance/department/engine/atmos)
+"Xs" = (
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "QMLoad"
+	},
+/obj/machinery/status_display/supply{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/dark,
+/area/quartermaster/storage)
 "Xv" = (
 /obj/machinery/holopad,
 /turf/open/floor/plasteel,
@@ -174782,7 +174880,7 @@ TK
 iK
 ff
 kk
-lH
+Xe
 lJ
 jV
 kB
@@ -174798,7 +174896,7 @@ gb
 Ty
 jq
 Ty
-jj
+Xs
 hj
 hp
 hN
@@ -176850,7 +176948,7 @@ hw
 eF
 jv
 fY
-fY
+RY
 hB
 hH
 fY
@@ -181219,9 +181317,9 @@ KD
 Dx
 zF
 zO
-AH
-zS
-zS
+OK
+WG
+RJ
 AH
 ER
 Dw
@@ -181478,7 +181576,7 @@ rm
 zP
 Cq
 Cv
-Ko
+zK
 Cq
 et
 Dw
@@ -184042,7 +184140,7 @@ Tv
 HG
 PM
 YE
-HG
+Om
 HG
 HG
 MB
