@@ -417,6 +417,9 @@
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/bar)
+"br" = (
+/turf/closed/wall/trek_smooth/reinforced,
+/area/ai_monitored/turret_protected/ai)
 "bs" = (
 /obj/structure/window/reinforced/fulltile/trek/viewport,
 /turf/open/floor/carpet/trek/voy,
@@ -525,6 +528,10 @@
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/bar)
+"bz" = (
+/obj/structure/trek_decor/ai_wall,
+/turf/closed/wall/trek_smooth/reinforced,
+/area/ai_monitored/turret_protected/ai)
 "bA" = (
 /obj/machinery/door/airlock/trek/ship,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -2132,6 +2139,10 @@
 /obj/effect/landmark/start/atmospheric_technician,
 /turf/open/floor/plating,
 /area/engine/atmos)
+"fI" = (
+/obj/structure/trek_decor/viewscreen,
+/turf/closed/wall/trek_smooth/reinforced,
+/area/ai_monitored/turret_protected/ai)
 "fJ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2278,6 +2289,11 @@
 	},
 /turf/open/floor/plating,
 /area/engine/atmos)
+"gb" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/ai_slipper,
+/turf/open/floor/trek/tile,
+/area/ai_monitored/turret_protected/ai)
 "gc" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	icon_state = "vent_map_on-1";
@@ -3186,14 +3202,16 @@
 /turf/open/space/basic,
 /area/space)
 "ij" = (
-/obj/machinery/door/airlock/trek/ship/command{
-	name = "Computer core"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/door/airlock/highsecurity{
+	icon = 'DS13/icons/obj/machinery/doors/command.dmi';
+	locked = 1;
+	name = "Computer Core";
+	req_one_access_txt = "19"
+	},
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "ik" = (
@@ -3220,7 +3238,7 @@
 "im" = (
 /obj/structure/trek_decor/ai_wall,
 /obj/structure/trek_decor/ai_wall/optronic,
-/turf/closed/wall/trek_smooth/voy,
+/turf/closed/wall/trek_smooth/reinforced,
 /area/ai_monitored/turret_protected/ai)
 "in" = (
 /obj/machinery/door/airlock/trek/ship/maint{
@@ -3238,11 +3256,13 @@
 /turf/open/floor/plating,
 /area/quartermaster/storage)
 "io" = (
-/obj/machinery/door/airlock/trek/ship/command{
-	name = "Computer core"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/door/airlock/highsecurity{
+	icon = 'DS13/icons/obj/machinery/doors/command.dmi';
+	locked = 1;
+	name = "Computer Core";
+	req_one_access_txt = "19"
+	},
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "ip" = (
@@ -3688,6 +3708,12 @@
 	},
 /turf/open/floor/carpet/trek/voy,
 /area/bridge/meeting_room)
+"jo" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/light,
+/obj/machinery/ai_slipper,
+/turf/open/floor/trek/tile,
+/area/ai_monitored/turret_protected/ai)
 "jp" = (
 /obj/structure/table/trek/desk{
 	density = 1;
@@ -4013,6 +4039,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/carpet/trek/voy,
 /area/hallway/primary/central)
+"kd" = (
+/obj/structure/trek_catwalk,
+/obj/machinery/airalarm{
+	pixel_y = 22
+	},
+/turf/open/floor/trek/tile,
+/area/ai_monitored/turret_protected/ai)
 "ke" = (
 /obj/machinery/computer/station_alert,
 /turf/open/floor/carpet/trek/voy,
@@ -4139,6 +4172,20 @@
 	},
 /turf/open/floor/carpet/trek/voy,
 /area/hallway/secondary/entry)
+"kx" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/door/airlock/highsecurity{
+	icon = 'DS13/icons/obj/machinery/doors/command.dmi';
+	locked = 1;
+	name = "Computer Core";
+	req_one_access_txt = "19"
+	},
+/turf/open/floor/trek/tile,
+/area/ai_monitored/turret_protected/ai)
 "ky" = (
 /obj/structure/chair/sofa/right{
 	color = "#696969"
@@ -5731,6 +5778,17 @@
 	},
 /turf/open/floor/carpet/trek/voy,
 /area/crew_quarters/heads/captain)
+"ot" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/door/airlock/highsecurity{
+	icon = 'DS13/icons/obj/machinery/doors/command.dmi';
+	locked = 1;
+	name = "Computer Core";
+	req_one_access_txt = "19"
+	},
+/turf/open/floor/trek/tile,
+/area/ai_monitored/turret_protected/ai)
 "ov" = (
 /obj/structure/trek_catwalk,
 /obj/machinery/power/apc/auto_name/ds13/highcap,
@@ -5763,17 +5821,6 @@
 	},
 /obj/machinery/camera/trek,
 /obj/structure/trek_catwalk,
-/turf/open/floor/trek/tile,
-/area/ai_monitored/turret_protected/ai)
-"ox" = (
-/obj/structure/trek_catwalk,
-/obj/machinery/button/door{
-	id = "weaponslocker";
-	name = "Open weapons lockers";
-	pixel_x = 0;
-	pixel_y = 25;
-	req_one_access = list(63)
-	},
 /turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "oy" = (
@@ -5897,27 +5944,12 @@
 /obj/structure/trek_catwalk,
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
-"oM" = (
-/obj/structure/trek_catwalk,
-/obj/machinery/light,
-/turf/open/floor/trek/tile,
-/area/ai_monitored/turret_protected/ai)
 "oN" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/item/stack/sheet/mineral/plasma,
 /obj/item/stack/sheet/mineral/plasma,
 /obj/machinery/ai_slipper,
 /turf/open/floor/circuit,
-/area/ai_monitored/turret_protected/ai)
-"oO" = (
-/obj/machinery/door/airlock/trek/ship/command{
-	name = "Computer core"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/trek/tile,
 /area/ai_monitored/turret_protected/ai)
 "oP" = (
 /obj/structure/cable{
@@ -5926,10 +5958,6 @@
 /obj/structure/trek_catwalk,
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
-"oQ" = (
-/obj/structure/trek_decor/ai_wall,
-/turf/closed/wall/trek_smooth/voy,
-/area/ai_monitored/turret_protected/ai)
 "oR" = (
 /obj/structure/trek_catwalk,
 /obj/structure/chair/comfy/shuttle{
@@ -5940,10 +5968,6 @@
 	},
 /turf/open/floor/carpet/trek/voy,
 /area/vacant_room/office)
-"oS" = (
-/obj/structure/trek_decor/viewscreen,
-/turf/closed/wall/trek_smooth/voy,
-/area/ai_monitored/turret_protected/ai)
 "oT" = (
 /obj/structure/railing,
 /obj/structure/cable{
@@ -5960,13 +5984,6 @@
 /obj/structure/trek_catwalk,
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
-"oV" = (
-/obj/machinery/door/airlock/trek/ship/command{
-	name = "Computer core"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/trek/tile,
-/area/ai_monitored/turret_protected/ai)
 "oW" = (
 /obj/structure/table,
 /obj/structure/trek_catwalk,
@@ -173964,14 +173981,14 @@ AL
 bm
 vA
 yV
-jL
-jL
-jL
-jL
-jL
-jL
-jL
-jL
+br
+br
+br
+br
+br
+br
+br
+br
 pf
 ih
 ih
@@ -174221,14 +174238,14 @@ nK
 bm
 vA
 LQ
-jL
+br
 kH
 oz
 oI
 jL
 oW
 oZ
-jL
+br
 pg
 YI
 XV
@@ -174478,14 +174495,14 @@ nK
 bm
 vA
 yU
-jL
+br
 ov
 oD
 Mn
-oO
+ij
 Mn
 pa
-ij
+kx
 rD
 Oy
 ia
@@ -174735,13 +174752,13 @@ AY
 bm
 vA
 yU
-jL
-jL
+br
+br
 oE
 oG
-oQ
+bz
 oE
-oG
+gb
 im
 Zo
 Iv
@@ -174992,14 +175009,14 @@ bm
 bm
 vA
 yU
-jL
+br
 ow
 oF
-oM
-oS
+jo
+fI
 oX
 pb
-jL
+br
 rE
 ih
 ia
@@ -175249,13 +175266,13 @@ vA
 bB
 vA
 yU
-jL
-jL
+br
+br
 oG
 oG
-oQ
-oG
-oG
+br
+kd
+gb
 im
 rE
 ih
@@ -175506,14 +175523,14 @@ zj
 rz
 vL
 el
-jL
-ox
+br
+oG
 XN
 Sl
-oV
+io
 Sl
 qZ
-io
+ot
 rF
 ih
 ia
@@ -175763,14 +175780,14 @@ zk
 Bv
 vA
 yU
-jL
+br
 oy
 oH
 oN
-jL
+br
 oY
 ra
-jL
+br
 rE
 ih
 ia
@@ -176020,14 +176037,14 @@ zk
 bB
 vA
 yU
-jL
-jL
-jL
-jL
-jL
-jL
-jL
-jL
+br
+br
+br
+br
+br
+br
+br
+br
 FU
 ih
 ia
