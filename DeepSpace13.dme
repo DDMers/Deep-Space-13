@@ -2790,6 +2790,7 @@
 #include "DS13\code\modules\mob\living\carbon\human\species_types\ferengi.dm"
 #include "DS13\code\modules\mob\living\carbon\human\species_types\klingon.dm"
 #include "DS13\code\modules\mob\living\carbon\human\species_types\t800.dm"
+#include "DS13\code\modules\mob\living\carbon\human\species_types\trill.dm"
 #include "DS13\code\modules\mob\living\carbon\human\species_types\vulcan.dm"
 #include "DS13\code\modules\overmap\ai.dm"
 #include "DS13\code\modules\overmap\cinematics.dm"
