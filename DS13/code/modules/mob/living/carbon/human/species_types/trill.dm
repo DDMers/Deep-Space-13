@@ -172,7 +172,7 @@ GLOBAL_LIST_INIT(trill_names, world.file2list("strings/names/trill.txt")) //Tril
 	return "[pick(GLOB.trill_names)]"
 
 /datum/species/trill/proc/special_after_spawn(mob/living/carbon/C)
-	to_chat(C, "<font size=3 color=green>You are a trill! You don't need to act in a specific way, but remember that you carry a precious symbiont containing the knowledge of hundreds of previous hosts.</font>")
+	to_chat(C, "<font size=3 color=green>You are a trill! Use the trill verb tab to activate your symbiont so you can get the full benefit of this race (this requires a player willing to control it).</font>")
 
 /datum/mood_event/trill
 	description = "<span class='nicegreen'>I've been joined - What an honour! My symbiont's experiences are now mine too.</span>\n" //Used for syndies, nukeops etc so they can focus on their goals
