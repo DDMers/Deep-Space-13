@@ -25,6 +25,7 @@ GLOBAL_LIST_INIT(trill_names, world.file2list("strings/names/trill.txt")) //Tril
 	slot = "trill"
 	icon_state = "trill"
 	var/mob/living/trill/player = null //The player who's able to speak
+	var/name_acquired = FALSE //Have we generated a symbiont, and got their surname? Even if the trill is removed and goes back to sleep, its name persists so you can have multiple "Dax"es.
 
 /obj/item/organ/body_egg/trill/proc/get_player()
 	if(!player)
@@ -51,15 +52,21 @@ GLOBAL_LIST_INIT(trill_names, world.file2list("strings/names/trill.txt")) //Tril
 	to_chat(player, "<span class='warning'>You are a trill symbiont!. While you can't directly speak, you can use the communicate button to speak to your host privately. You have been bonded to several other previous hosts in the past, and should be experienced and knowledgeable in most things.</span>")
 	player.owner = owner
 	player.forceMove(owner)
-	if(!GLOB.trill_surnames.len)
-		name = "Dax"
-		message_admins("All trill surnames used up, contact a coder please :)")
-		return
 	var/prefix = owner.first_name()
-	name = pick_n_take(GLOB.trill_surnames)
-	player.name = name
-	owner.name = "[prefix] [name]" //EG. Johar Ez becomes Johar Dax when they get their symbiont registered.
-	owner.real_name = owner.name
+	if(!name_acquired)
+		if(!GLOB.trill_surnames.len)
+			name = "Dax"
+			message_admins("All trill surnames used up, contact a coder please :)")
+			return
+		name = pick_n_take(GLOB.trill_surnames)
+		player.name = name
+		owner.name = "[prefix] [name]" //EG. Johar Ez becomes Johar Dax when they get their symbiont registered.
+		owner.real_name = owner.name
+		name_acquired = TRUE //We've got our trill surname now, don't change it if the symbiont goes AFK or dies.
+	else
+		player.name = name
+		owner.name = "[prefix] [name]" //EG. Johar Ez becomes Johar Dax when they get their symbiont registered.
+		owner.real_name = owner.name
 	to_chat(owner, "<span class='notice'>You can feel your symbiont awaken! You are now joined with [name] and share their invaluable knowledge and experience!</span>")
 	to_chat(player, "<span class='notice'>You awaken, your name is [name]. You have been joined with [owner.first_name()]!. You are there to guide them, let them make use of your endless experience and knowledge and the memories of your previous hosts.</span>")
 	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "trill", /datum/mood_event/trill)
@@ -72,6 +79,7 @@ GLOBAL_LIST_INIT(trill_names, world.file2list("strings/names/trill.txt")) //Tril
 
 /obj/item/organ/body_egg/trill/Remove(mob/living/carbon/M, special = 0) //Remove the mob's owner, making them unable to speak.
 	if(player)
+		to_chat(player, "<span class='warning'>Sensing your removal from your host, you go back into hibernation...</span>")
 		qdel(player) //Clean up the player mob.
 		player = null
 	M.verbs -= /mob/living/carbon/human/proc/trill_summon
@@ -129,6 +137,10 @@ GLOBAL_LIST_INIT(trill_names, world.file2list("strings/names/trill.txt")) //Tril
 	var/obj/item/organ/body_egg/trill/dax = new(get_turf(C))
 	dax.Insert(C)
 	addtimer(CALLBACK(src, .proc/special_after_spawn, C), 30)
+	if(!C.client) //Admin spawned trill need names too.
+		var/new_name = random_name()
+		C.real_name = new_name
+		C.name = new_name
 
 /mob/living/carbon/human/proc/trill_summon()
 	set name = "Awaken your trill symbiont"
