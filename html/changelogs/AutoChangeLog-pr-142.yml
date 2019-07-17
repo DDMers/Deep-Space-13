@@ -1,0 +1,4 @@
+author: "Kmc2000"
+delete-after: True
+changes: 
+  - rscadd: "Added ferengi to the game as a roundstart race. Go chase those profits."

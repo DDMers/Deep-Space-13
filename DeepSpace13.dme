@@ -2787,6 +2787,7 @@
 #include "DS13\code\modules\jobs\job_types\cadet.dm"
 #include "DS13\code\modules\jobs\job_types\misc.dm"
 #include "DS13\code\modules\mob\living\carbon\human\species_types\Andorian.dm"
+#include "DS13\code\modules\mob\living\carbon\human\species_types\ferengi.dm"
 #include "DS13\code\modules\mob\living\carbon\human\species_types\klingon.dm"
 #include "DS13\code\modules\mob\living\carbon\human\species_types\t800.dm"
 #include "DS13\code\modules\mob\living\carbon\human\species_types\trill.dm"
