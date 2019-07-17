@@ -6,15 +6,7 @@
 	#ifdef ALL_MAPS
 		#include "map_files\Mining\Lavaland.dmm"
 		#include "map_files\debug\runtimestation.dmm"
-		#include "map_files\Deltastation\DeltaStation2.dmm"
-		#include "map_files\MetaStation\MetaStation.dmm"
-		#include "map_files\PubbyStation\PubbyStation.dmm"
 		#include "map_files\BoxStation\BoxStation.dmm"
-		#include "map_files\Donutstation\Donutstation.dmm"
-		//DS13
-		#include "map_files\DeepSpace13\DS13-D1.dmm"
-		#include "map_files\DeepSpace13\DS13-D2.dmm"
-		#include "map_files\DeepSpace13\DS13-D3.dmm"
 
 		#ifdef TRAVISBUILDING
 			#include "templates.dm"
